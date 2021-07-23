@@ -4,16 +4,31 @@
 * Location: Innovation Hall 133
 * Instructor: Bob Weigel
 * Email: rweigel@gmu.edu
-* Office Hours: Tuesday/Thursday from 9:30-10:30 am
-* Office: 259 Planetary Hall
-* Course URL: http://bobweigel.net/phys305
 * Discord URL: See email
+* Office Hours: Tuesday/Thursday from 11:00 am -- noon (on Discord)
+* Office: 259 Planetary Hall
+* Course URL: http://rweigel.github.io/phys305
 
----
+# Tutorials
 
-Homework Tutorials: [HT1](HT#HT1) | [HT2](HT#HT2)
-
----
+1. [Vectors](vectors.html)
+1. [Vector Fields](vector_fields.html)
+1. [Field Lines](field_lines.html)
+1. [Divergence](divergence.html)
+1. [Equipotentials](equipotentials.html)
+1. [Coulomb's Law](coulombs_law.html)
+1. [Electric Field](electric_field.html)
+1. [Symmetry and Superposition](symmetry_and_superposition.html)
+1. [Discrete Charge Distributions](discrete_charge_distributions.html)
+1. [Charge Densities](charge_densities.html)
+1. [Limits](limits.html)
+1. [Binomial Expansion](binomial_expansion.html)
+1. [Continuous Charge Distributions](continuous_charge_distributions.html)
+1. [Gauss's Law](gausss_law.html)
+2. [Dirac Delta](dirac_delta.html)
+1. [Electrostatic Potential](electrostatic_potential.html)
+1. [Conductors](conductors.html)
+1. [Capacitors](capacitors.html)
 
 # Class Schedule
 

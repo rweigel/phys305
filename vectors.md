@@ -69,6 +69,10 @@ Several unique perspectives on vectors include
 
 ## Problems
 
+### Location in Cartesian
+
+Draw a sketch with a dot indicating the location of \((x,y,z)=(1,2,3)\)
+
 ###
 
 Why do you think that we write $A$ or $|\mathbf{A}|$ for the magnitude of a vector instead of $|A|$? Is $|A|$ a valid expression for the magnitude of a vector?
@@ -95,6 +99,32 @@ where $\theta$ is defined by ....
 1. Suppose that in the equations for $A_x$ and $A_y$, we want to use $\theta'$ instead of $\theta$. Write the equations for $A_x$ and $A_y$ in terms of $\theta'$.
 
 2. If $A=1$ and $\theta'=45^\circ$, find $A_x$ and $A_y$.
+
+
+If
+
+$$\mathbf{A} = A_x\hat{\mathbf{x}}+A_y\hat{\mathbf{y}}+A_z\hat{\mathbf{z}}$$
+
+is \(|\mathbf{A}|\) a scalar or vector?
+
+###
+
+If \(A\) is a magnitude of a vector (so it is a scalar), why does it not make sense to write \(|A|\)?
+
+{| class="wikitable collapsible collapsed"
+! align="left" |&nbsp;Notes
+|-
+|
+\(A\) is a magnitude of a vector that corresponds to a length so \(A\ge 0\) and taking its absolute value is not needed. A reader seeing the statement \(|A|\) may conclude that \(A\) can be a positive or negative number (because otherwise why would it be written as \(|A|\)?).
+|}
+
+###
+
+$$\mathbf{A} = (x-y)\hat{\mathbf{x}}-y\hat{\mathbf{y}}-z\hat{\mathbf{z}}$$
+
+1. Compute \(|\mathbf{A}|\)
+2. Compute \(A\)
+3. What are the values of \(x,y\), and \(z\) that will give \(A < 0\)?
 
 # Unit Vectors
 
@@ -163,7 +193,71 @@ Find the unit vector tangent to the curve $y=\sqrt{1-x^2}$
 
 # Vector Addition/Subtraction
 
+Adding or subtracting vectors in a non-Cartesian notation, in general, does not make sense because the direction of their unit vectors depends on position. To see this, consider drawing the following vectors given in cylindrical notation
+
+\(\mathbf{A} = 1\hat{\boldsymbol{\rho}} + 1\hat{\boldsymbol{\phi}}\) at the position \((\rho,\phi,z)\)= \((1,0,0)\)
+
+\(\mathbf{B} = 1\hat{\boldsymbol{\rho}} + 1\hat{\boldsymbol{\phi}}\) at the position \((\rho,\phi,z)\)= \((1,\pi/2,0)\)
+
+\(\mathbf{A}-\mathbf{B}=0\)
+
+In cartesian coordinates, the vectors are
+
+\(\mathbf{A} = 1\hat{\mathbf{x}}\)
+
+\(\mathbf{B} = 1\hat{\mathbf{y}}\)
+
+\(\mathbf{A}-\mathbf{B}=1\hat{\mathbf{x}}-1\hat{\mathbf{y}}\)
+
+### Problems
+
+###
+
+\(\mathbf{A}\) is 1 unit in the \(x-\)direction and \(\mathbf{B}\) is 1 unit in the \(y-\)direction.  
+
+Graphically (make no calculations) estimate the vectors \(\mathbf{A}\) + \(\mathbf{B}\) where 
+
+###
+
+* \(\mathbf{A}\) points east and \(A=4\) units
+* \(\mathbf{B}\) is at an angle of \(120^o\) from east and \(B=4\) units.
+* \(\mathbf{C}\) is at an angle of \(30^o\) south of east and \(|\mathbf{C}|=4\) units.
+
+Graphically (make no calculations) estimate the vectors
+
+1. \(\mathbf{A}+\mathbf{B}\)
+2. \(3\mathbf{A}-4\mathbf{C}\)
+3. \(\mathbf{A}+\mathbf{B}-\mathbf{C}\)
+
+###
+
+Vector \(\mathbf{A}\) connects the origin to the point \(a\) at \((x,y)=(2,1)\). Vector \(\mathbf{B}\) connects the origin to the point \(b\) at \((x,y)=(1,2)\).  Draw and label the following vectors to scale:
+*\(\mathbf{A}\) and \(\mathbf{B}\);
+*\(\hat{\mathbf{A}}\) and \(\hat{\mathbf{B}}\);
+*the unit vectors \(\hat{\mathbf{x}}\) and \(\hat{\mathbf{y}}\).
+*Draw and label
+**\(\mathbf{C}=\mathbf{A}+\mathbf{B}\)
+**\(\mathbf{D}=\mathbf{A}-\mathbf{B}\)
+**\(\mathbf{E}=-\mathbf{A}+\mathbf{B}\), and
+**\(\mathbf{F}=-\mathbf{A}-\mathbf{B}\).
+*Compute, in terms of \(\hat{\mathbf{x}}\) and \(\hat{\mathbf{y}}\) and numbers
+**\(\mathbf{C}\), \(C\), and \(\hat{\mathbf{C}}\)
+**\(\mathbf{D}\), \(D\), and \(\hat{\mathbf{D}}\)
+**\(\mathbf{E}\), \(E\), and \(\hat{\mathbf{E}}\)
+**\(\mathbf{F}\), \(F\), and \(\hat{\mathbf{F}}\)
+
+###
+
+Find the vector made by connecting a line from \((x,y,z)=(1,2,3)\) to \((x,y,z)=(4,5,6)\).
+
+###
+
+Write an equation for the vector made by connecting a line from \((x_o,y_o,z_o)\) to \((x,y,z)\).
 # Curvilinear Unit Vectors
+
+Vectors that are not written with cartesian unit vectors cannot be drawn unless one knows the position. The direction of the unit vectors depends on position.
+
+Convert $\hat{\mathbf{r}}$ to spherical and cylindrical.
 
 Often it is useful to write vectors in terms of unit vectors of either cylindrical or spherical coordinates.
 
@@ -173,3 +267,35 @@ https://math.stackexchange.com/questions/802077/cross-product-in-cylindrical-coo
 
 Discuss fact that cross and dot products require two vectors to have same position.
 
+=== Problems ===
+
+==== Cartesian ====
+
+Draw a sketch with a dot indicating the location of
+
+\(\mathbf{A} = 1\hat{\mathbf{x}} + 2\hat{\mathbf{y}} + 3\hat{\mathbf{z}}\)
+
+
+==== Cylindrical ====
+
+Draw a sketch with a dot indicating the location of \((\rho,\phi,z)=(1,\pi/4,3)\)
+
+==== Spherical ====
+
+Draw a sketch with a dot indicating the location of \((r,\theta,\varphi)=(1,\pi/4,\pi/4)\)
+
+==== Cylindrical ====
+
+Draw a sketch with a dot indicating the location of
+
+\(\mathbf{A} = 1\hat{\boldsymbol{\rho}} + 2\hat{\boldsymbol{\phi}}\) at the position \((\rho,\phi,z)\)= \((1,0,0)\)
+
+\(\mathbf{A} = 1\hat{\boldsymbol{\rho}} + 2\hat{\boldsymbol{\phi}}\) at the position \((\rho,\phi,z)\)= \((1,\pi/2,0)\)
+
+==== Spherical ====
+
+Draw a sketch with a dot indicating the location of 
+
+\(\mathbf{A} = 1\hat{\mathbf{r}} + 2\hat{\boldsymbol{\theta}}\) at the position \((\rho,\theta,\varphi)\)= \((1,0,0)\)
+
+\(\mathbf{A} = 1\hat{\mathbf{r}} + 2\hat{\boldsymbol{\theta}}\) at the position \((\rho,\theta,\varphi)\)= \((1,\pi/2,0)\)
