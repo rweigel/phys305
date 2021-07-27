@@ -1,11 +1,14 @@
+
+<center>
 **PHYS 305 Electromagnetic Theory**
+</center>
 
 * Day and Time: Tuesday/Thursday from 12:00 pm - 1:15 pm
+* Office Hours: Tuesday/Thursday from 11:00 am -- noon (on Discord)
 * Location: Innovation Hall 133
 * Instructor: Bob Weigel
 * Email: rweigel@gmu.edu
 * Discord URL: See email
-* Office Hours: Tuesday/Thursday from 11:00 am -- noon (on Discord)
 * Office: 259 Planetary Hall
 * Course URL: http://rweigel.github.io/phys305
 
@@ -14,6 +17,7 @@
 1. [Vectors](vectors.html)
 1. [Vector Fields](vector_fields.html)
 1. [Field Lines](field_lines.html)
+1. [Flux](flux.html)
 1. [Divergence](divergence.html)
 1. [Equipotentials](equipotentials.html)
 1. [Coulomb's Law](coulombs_law.html)
