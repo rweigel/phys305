@@ -10,51 +10,55 @@ Flux means "flow".
 
 Consider the following problem. Each of the particles shown as dots travels at a velocity of $v_x=$1 m/s. In one second, how many particles flow through the red line?
 
+<img src="figures/Flux-1D-1.svg" width="100%"/>
+
 In one second, all of the blue dots pass through the red line, so $N = 3\cdot 3$ particles pass through the rectangle per second.
 
 In more general terms, we can write
 
 $$\dot{N} = \eta v_x l_y$$
 
-where $\dot{N}$ is the number particles that pass through the line per second, $\eta$ is the number of particles per area and $l_y$ is the length of the line that particles pass through.
+where $\dot{N}$ is the number particles that pass through the line per second, $\eta$ is the number of particles per unit area and $l_y$ is the length of the line that particles pass through.
 
-Next, suppose we wanted to compute the number of particles that pass through the green line. In this case, we note that that the number of particles that pass through the green line is the same as the number of particles that pass through the black line. Although the length of the black line is larger, the length that matters in computing the number of particles is $l_y$, so we now have
+Next, suppose we wanted to compute the number of particles that pass through the green line. In this case, we note that that the number of particles that pass through the green line is the same as the number of particles that pass through the black line. Although the black line is longer, the length that matters in computing the number of particles is $l_y$, so the flux is still $\dot{N} = n v_x l_y$.
 
-$$\dot{N} = n v_x l_y$$
-
-Note that in the above we found a new line that was perpendicular to $\mathbf{v}$ to compute the flux. Equivalently, we can find the component of $\mathbf{v}$ that is perpendicular to the given line. That is, the component of velocity that is perpendicular to the green line is $v_x\cos\theta$ and so the flux through the green line is 
-
-$$\dot{N} = \eta (v_x\cos\theta) l = \eta v_x l\cos\theta = n v_x l_y$$
-
-where $l_y=l\cos\theta$ was used.
+Note that in the above we found a new line that was perpendicular to the velocity to compute the flux. Equivalently, we can multiply the component of velocity that is perpendicular to the green line by the length of the green line. The component of velocity that is perpendicular to the green line is $v_x\cos\theta$ and so the flux through the green line is still $\dot{N} = \eta (v_x\cos\theta) l = \eta v_x l\cos\theta = n v_x l_y$, where $l_y=l\cos\theta$ was used in the last step.
 
 Using the definition of the dot product, $\mathbf{A}\cdot \mathbf{B}=AB\cos\theta$, we can write
 
 $$\dot{N} = \eta \mathbf{v}\cdot\hat{\mathbf{n}} l$$
 
-where a normal vector $\hat{\mathbf{n}}$ was used. This normal vector which is defined to be perpendicular to the line through which the flux is computed.
+where a normal vector $\hat{\mathbf{n}}$ was used. This normal vector is defined to be perpendicular to the line through which the flux is computed. For a given line, two normal directions can be defined. As a result, if the computed $\dot{N}$ is positive, there is a net flow through the line in the direction of $\hat{\mathbf{n}}$; if the computed $\dot{N}$ is negative, there is a net flow through the line in the direction opposite of $\hat{\mathbf{n}}$.
 
 ### Example
 
-For $\mathbf{v}=v_x\xhat$, use the equation $\dot{N} = n \mathbf{v}\cdot\hat{\mathbf{n}} l$ to find $\dot{N}$ through (1) the black and (2) the green line.
+For $\mathbf{v}=v_x\xhat$, use the equation $\dot{N} = n \mathbf{v}\cdot\hat{\mathbf{n}} l$ to find $\dot{N}$ through (1) the red and (2) the green line.
+
+<img src="figures/Flux-1D-2.svg" width="100%"/>
 
 **Answer**
 
-For the black line, $\hat{\mathbf{n}}=\xhat$, so
+(1) For the red line, $\hat{\mathbf{n}}=\xhat$, so
 
 $$\dot{N} = \eta \mathbf{v}\cdot\hat{\mathbf{n}}l = \eta (v_x\xhat)\cdot(\xhat) l_y = \eta v_x\xhat\cdot\xhat l_y = \eta v l_y = \eta v_x l_y$$
 
-For the green line, $\hat{\mathbf{n}}=\cos\theta\xhat-\sin\theta\yhat$, so
+(2)
 
-$$\dot{N} = \eta \mathbf{v}\cdot\hat{\mathbf{n}} l = \eta (v_x\xhat)\cdot(\cos\theta\xhat-\sin\theta\yhat) l = \eta v_x\xhat\cdot\xhat l = \eta v_x l = \eta v_x l \cos\theta$$
+<img src="figures/Flux-1D-3.svg" width="100%"/>
 
-which is the same result found without using the dot product formula.
+From the diagram above, a unit vector normal to the green line is $\hat{\mathbf{n}}=\cos\theta\xhat-\sin\theta\yhat$, so
+
+$$\dot{N} = \eta \mathbf{v}\cdot\hat{\mathbf{n}} l = \eta (v_x\xhat)\cdot(\cos\theta\xhat-\sin\theta\yhat) l = \eta v_x \cos\theta l = \eta v_x l_y$$
+
+where $l_y=\cos\theta$ was used in the last step. This answer is the same as that in part (1), which is expected.
 
 ----
 
 ### Problem
 
-For $\mathbf{v}=v_y\yhat$, use the equation $\dot{N} = \eta \mathbf{v}\cdot\hat{\mathbf{n}} l$ to find $\dot{N}$ through (1) the black and (2) the green line. Compare your answer to that found using the method covered before the dot product equation was introduced.
+For $\mathbf{v}=v_y\yhat$, use the equation $\dot{N} = \eta \mathbf{v}\cdot\hat{\mathbf{n}} l$ to find $\dot{N}$ through (1) the red and (2) the green line.
+
+<img src="figures/Flux-1D-2.svg" width="100%"/>
 
 ----
 
@@ -65,24 +69,26 @@ If $\mathbf{v}=v_x\xhat+v_y\yhat$, compute $\dot{N}$ through the green line.
 
 ----
 
-## Through line using integration
+## Through Line using Integration
 
-Suppose that $\eta$ and/or $\mathbf{v}$ is not constant over the line $l$. In this case, we can first compute the number of particles that pass through a small length $dl$ on $L$ over which $n$ and $\mathbf{v}$ are constant. Replacing $N$ with $dN$ and $l$ with $dl$ gives
+Suppose that $\eta$ and/or $\mathbf{v}$ is not constant over the line $l$. In this case, we can first compute the number of particles that pass through a small length $dl$ on $l$ over which $\eta$ and $\mathbf{v}$ are constant. Replacing $N$ with $dN$ and $l$ with $dl$ gives
 
-$$d\dot{N} = n(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
+$$d\dot{N} = \eta(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
 
 Then, to find the total number that pass through $L$, sum over all differential lengths on the line
 
-$$\dot{N} = \int_0^{L} n(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
+$$\dot{N} = \int_0^{L} \eta(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
 
 ### Example
 
-If $\eta=\eta_o y/L_y$, where $a$ is a constant, and $\mathbf{v}=v_x\xhat$, find the flux that 
+If $\eta=\eta_o y/L_y$ and $\mathbf{v}=v_x\xhat$, find the flux that 
 
-1. passes through the black line and
+1. passes through the red line and
 2. passes through the green line.
 
 Prior to solving this problem, determine if the flux is expected to be smaller, equal, or larger than the flux if $\eta=\eta_o$.
+
+<img src="figures/Flux-1D-2.svg" width="100%"/>
 
 ### Problem
 
@@ -97,7 +103,64 @@ Prior to solving this problem, determine if the flux is expected to be smaller, 
 
 ### Example
 
-Compute $\dot{N}$ through the half--circle.
+Compute $\dot{N}$ through the half--circle shown as a solid black line. Use $\eta=\eta_o$.
+
+**Answer**
+
+The easy way to solve this problem is to note that the number of particles that pass through the black line in a given second must also pass through the dotted lines in a given second. As a result, the flux is
+
+$$\dot{N}=\eta_ov_xR$$
+
+The difficult way to solve this problem is to find the vector normal to the black line and then use
+
+$$\dot{N} = \int_0^{L} \eta(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
+
+As covered in ???, the outward normal to the surface of a circle is $\hat{\mathbf{n}}=\cos\theta\xhat+\sin\theta\yhat$. To be consistent with the previous calculation, we should multiply by $-1$ so that we are computing the flux through the line with positive flux corresponding to flow to the right.
+
+Substition of this and $\mathbf{v}=v_x\xhat$ and $\eta = \eta_o$ gives 
+
+$$\dot{N} = \int_0^{L} \eta_o v_x\xhat\cdot(-1)(\cos\theta\xhat+\sin\theta\yhat) dl=-\int_0^{L} \eta_o v_x\cos\theta dl$$
+
+In this integral, $\theta$ depends on the position along the line. As a result, we need to re-write the integrand so that either $dl$ is written in terms of $\theta$ or $\theta$ is written in terms of $l$. It is easier to use $dl=R d\theta$, giving 
+
+$$\dot{N} = -\int_{\pi/2}^{3\pi/2} \eta_o v_x\cos\theta Rd\theta=\eta_ov_xR$$
+
+which is the same result found using the easier method.
+
+### Problem
+
+The flux through the circle is zero - the flow into the circle through the left semi-circle is equal to the flow out of circle through the right semi-circle. Show this using 
+
+$$\dot{N} = \int_0^{L} \eta(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
+
+### Example
+
+A source of particles is at the origin that sends particles out radially with a velocity of $v_r$. Assume flow out of the circle corresponds to a positive flux.
+
+1. If the density of particles is $R$ is $\eta_o$, what is $\dot{N}$ through the circle?
+1. What is the density of particles at $2R$?
+1. What is $\dot{N}$ through a circle of radius $2R$.
+
+**Answer**
+
+(1)
+
+(2) In the following diagram it is shown that $\eta$ is inversely propotional to $r$. If the particles are traveling at a constant velocity outwards, the same number of particles will be on the line associated with the inner circle as the outer circle. The length of any circle is $2\pi r$, so $\eta = (\text{num particles on } l)/l = n_o/2\pi r$.
+
+(3)
+
+This is a key problem related to electric flux. Here we found that
+
+1. the net flux through a closed line is not zero when there is a source emitting particles inside of it and
+2. the net flux through a circle of any radius centered on the source is the same.
+
+In fact, the net flux through a circle of any radius is the same even if the source is not at the center of the circle. This can be demonstrated with a diagram.
+
+### Problem
+
+Using a diagram, explain why the flux through a circle is zero if a source sending out particles radially with a constant velocity.
+
+----
 
 ## Through Area
 
