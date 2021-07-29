@@ -6,7 +6,7 @@ Flux means "flow".
 
 # Particle Flux
 
-## Through Line
+## Through a Line
 
 Consider the following problem. Each of the particles shown as dots travels at a velocity of $v_x=$1 m/s. In one second, how many particles flow through the red line?
 
@@ -69,7 +69,7 @@ If $\mathbf{v}=v_x\xhat+v_y\yhat$, compute $\dot{N}$ through the green line.
 
 ----
 
-## Through Line using Integration
+## Through a Line using Integration
 
 Suppose that $\eta$ and/or $\mathbf{v}$ is not constant over the line $l$. In this case, we can first compute the number of particles that pass through a small length $dl$ on $l$ over which $\eta$ and $\mathbf{v}$ are constant. Replacing $N$ with $dN$ and $l$ with $dl$ gives
 
@@ -133,9 +133,13 @@ The flux through the circle is zero - the flow into the circle through the left 
 
 $$\dot{N} = \int_0^{L} \eta(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
 
+## Through a Closed Line
+
 ### Example
 
 A source of particles is at the origin that sends particles out radially with a velocity of $v_r$. Assume flow out of the circle corresponds to a positive flux.
+
+<img src="figures/Flux-1D-4.svg" width="100%"/>
 
 1. If the density of particles is $R$ is $\eta_o$, what is $\dot{N}$ through the circle?
 1. What is the density of particles at $2R$?
@@ -143,26 +147,46 @@ A source of particles is at the origin that sends particles out radially with a 
 
 **Answer**
 
-(1)
+(1) $\dot{N}=\eta_o v_r 2\pi R$
 
 (2) In the following diagram it is shown that $\eta$ is inversely propotional to $r$. If the particles are traveling at a constant velocity outwards, the same number of particles will be on the line associated with the inner circle as the outer circle. The length of any circle is $2\pi r$, so $\eta = (\text{num particles on } l)/l = n_o/2\pi r$.
 
-(3)
+From this, we can conclude that $\eta$ at $2R$ is $1/2$ that at $R$.
+
+(3) $\dot{N}=(\eta_o/2) v_r 2\pi (2R)=\eta_o v_r 2\pi R$, which is the same result as (1).
 
 This is a key problem related to electric flux. Here we found that
 
 1. the net flux through a closed line is not zero when there is a source emitting particles inside of it and
 2. the net flux through a circle of any radius centered on the source is the same.
 
-In fact, the net flux through a circle of any radius is the same even if the source is not at the center of the circle. This can be demonstrated with a diagram.
+In fact, the net flux through a circle of any radius is the same even if the source is not at the center of the circle. This can be demonstrated with a diagram using two approaches.
 
-### Problem
+<img src="figures/Flux-1D-5.svg" width="100%"/>
 
-Using a diagram, explain why the flux through a circle is zero if a source sending out particles radially with a constant velocity.
+If one visualizes the particles flowing outwards as on the left in the diagram above, the number of particles that pass the red line on the inner circle per second equals the number per second that pass through the through the red line on the outer circle. Given that this is true as the inner red line is expanded to be a full circle, we conclude that the flux through the outer circle must be the same as that through the inner circle.
+
+A mathematical way of showing this is to note that the flux through the inner differential length, $ds_i$, shown in the right of the diagram above is $2 \pi R_i d\theta$ so that the differential flux through $ds_i$ is
+
+$$dN_i=n(R_i)v_rds_i=\eta(R_i) v_r 2 \pi R_i d\theta$$
+
+and the flux through the outer differential length, $ds_o$, is, as $d\theta$ approaches zero, $2 \pi R_o d\theta$ so the differential flux through $ds_o$ is
+
+$$dN_o=n(R_o) v_r ds_o = \eta(R_o) v_r 2 \pi R_o d\theta$$
+
+If $n(R_i)=\eta_i$, then 
+
+$$\eta(R_o)=\eta_o\frac{R_i}{R_o}$$
+
+Subsituting this into the equation for $dN_o$ gives $dN_o=dN_i$:
+
+$$dN_o=n(R_o) v_r ds_o = n_i\frac{R_i}{R_o} v_r 2 \pi R_o d\theta = \eta_i v_r 2 \pi R_i d\theta$$
+
+Equivalently, we could start with a known value of density on the outer circle, $\eta(R_o) = n_o$ and use this to find $\eta(R_i)$ and still get $dN_o=dN_i$.
 
 ----
 
-## Through Area
+## Through an Area
 
 If the dots are uniformly spaced into the page and the black line is the side view of a square, then $N=3\cdot 3\cdot 3$.
 
@@ -194,9 +218,9 @@ As a final generalization, consider the definition of a vector normal to the lin
 
 # Electric Flux
 
-## Through Line
+## Through a Line
 
-## Through Area
+## Through a Area
 
 
 # Computing electric flux, $\Phi_E$
