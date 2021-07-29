@@ -2,6 +2,140 @@
 
 The videos https://www.youtube.com/watch?v=9MN0eTC-vzQ and https://www.youtube.com/watch?v=yOv4xxopQFQ describe most of what is covered in this section.
 
+Flux means "flow".
+
+# Particle Flux
+
+## Through Line
+
+Consider the following problem. Each of the particles shown as dots travels at a velocity of $v_x=$1 m/s. In one second, how many particles flow through the red line?
+
+In one second, all of the blue dots pass through the red line, so $N = 3\cdot 3$ particles pass through the rectangle per second.
+
+In more general terms, we can write
+
+$$\dot{N} = \eta v_x l_y$$
+
+where $\dot{N}$ is the number particles that pass through the line per second, $\eta$ is the number of particles per area and $l_y$ is the length of the line that particles pass through.
+
+Next, suppose we wanted to compute the number of particles that pass through the green line. In this case, we note that that the number of particles that pass through the green line is the same as the number of particles that pass through the black line. Although the length of the black line is larger, the length that matters in computing the number of particles is $l_y$, so we now have
+
+$$\dot{N} = n v_x l_y$$
+
+Note that in the above we found a new line that was perpendicular to $\mathbf{v}$ to compute the flux. Equivalently, we can find the component of $\mathbf{v}$ that is perpendicular to the given line. That is, the component of velocity that is perpendicular to the green line is $v_x\cos\theta$ and so the flux through the green line is 
+
+$$\dot{N} = \eta (v_x\cos\theta) l = \eta v_x l\cos\theta = n v_x l_y$$
+
+where $l_y=l\cos\theta$ was used.
+
+Using the definition of the dot product, $\mathbf{A}\cdot \mathbf{B}=AB\cos\theta$, we can write
+
+$$\dot{N} = \eta \mathbf{v}\cdot\hat{\mathbf{n}} l$$
+
+where a normal vector $\hat{\mathbf{n}}$ was used. This normal vector which is defined to be perpendicular to the line through which the flux is computed.
+
+### Example
+
+For $\mathbf{v}=v_x\xhat$, use the equation $\dot{N} = n \mathbf{v}\cdot\hat{\mathbf{n}} l$ to find $\dot{N}$ through (1) the black and (2) the green line.
+
+**Answer**
+
+For the black line, $\hat{\mathbf{n}}=\xhat$, so
+
+$$\dot{N} = \eta \mathbf{v}\cdot\hat{\mathbf{n}}l = \eta (v_x\xhat)\cdot(\xhat) l_y = \eta v_x\xhat\cdot\xhat l_y = \eta v l_y = \eta v_x l_y$$
+
+For the green line, $\hat{\mathbf{n}}=\cos\theta\xhat-\sin\theta\yhat$, so
+
+$$\dot{N} = \eta \mathbf{v}\cdot\hat{\mathbf{n}} l = \eta (v_x\xhat)\cdot(\cos\theta\xhat-\sin\theta\yhat) l = \eta v_x\xhat\cdot\xhat l = \eta v_x l = \eta v_x l \cos\theta$$
+
+which is the same result found without using the dot product formula.
+
+----
+
+### Problem
+
+For $\mathbf{v}=v_y\yhat$, use the equation $\dot{N} = \eta \mathbf{v}\cdot\hat{\mathbf{n}} l$ to find $\dot{N}$ through (1) the black and (2) the green line. Compare your answer to that found using the method covered before the dot product equation was introduced.
+
+----
+
+
+### Example
+
+If $\mathbf{v}=v_x\xhat+v_y\yhat$, compute $\dot{N}$ through the green line.
+
+----
+
+## Through line using integration
+
+Suppose that $\eta$ and/or $\mathbf{v}$ is not constant over the line $l$. In this case, we can first compute the number of particles that pass through a small length $dl$ on $L$ over which $n$ and $\mathbf{v}$ are constant. Replacing $N$ with $dN$ and $l$ with $dl$ gives
+
+$$d\dot{N} = n(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
+
+Then, to find the total number that pass through $L$, sum over all differential lengths on the line
+
+$$\dot{N} = \int_0^{L} n(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
+
+### Example
+
+If $\eta=\eta_o y/L_y$, where $a$ is a constant, and $\mathbf{v}=v_x\xhat$, find the flux that 
+
+1. passes through the black line and
+2. passes through the green line.
+
+Prior to solving this problem, determine if the flux is expected to be smaller, equal, or larger than the flux if $\eta=\eta_o$.
+
+### Problem
+
+If $\eta=\eta_o$ and $\mathbf{v}=v_x y/L_y\xhat$, find the flux that 
+
+1. passes through the black line and
+2. passes through the green line.
+
+Prior to solving this problem, determine if the flux is expected to be smaller, equal, or larger than the flux if $\mathbf{v}=v_x\xhat$.
+
+----
+
+### Example
+
+Compute $\dot{N}$ through the half--circle.
+
+## Through Area
+
+If the dots are uniformly spaced into the page and the black line is the side view of a square, then $N=3\cdot 3\cdot 3$.
+
+In more general terms, we can write
+
+$$N = n v_x L_yL_z$$
+
+where $N$ is the number particles that pass through the rectangle per second, $n$ is the number of particles per volume and $A$ is the cross-sectional area that particles pass through.
+
+Next, suppose that $n$ and/or $v_x$ is not constant over the surface $A$. In this case, we can compute the number of particles that pass through a small area $dA$ on $A$ over which $n$ and $v_x$ is constant. Replacing $N$ with $dN$ and $A$ with $dA$ gives
+
+$$dN = n v_x dA$$
+
+To find the total number that pass through $A$, sum
+
+$$N = \int n v_x dA$$
+
+where the integral is taken over the area $A$.
+
+Finally, suppose we wanted to compute the number of particles that pass through the green square. In this case, we note that that the number of particles that pass through the green square is the same as the number of particles that pass through the black square. Although the area of the black square is larger, the area that matters in computing the number of particles is $A\cos\theta$, so we now have
+
+$$N = \int n v_x dA\cos\theta$$
+
+Finally, using the definition of the dot product, $\mathbf{A}\cdot \mathbf{B}=AB\cos\theta$, we can write
+
+$$N = \int n \mathbf{v}\cdot d{\mathbf{A}}$$
+
+As a final generalization, consider the definition of a vector normal to the line.
+
+# Electric Flux
+
+## Through Line
+
+## Through Area
+
+
 # Computing electric flux, $\Phi_E$
 
 Electric flux is defined by (by convention, a mathematical definition is indicated by $\equiv$)
