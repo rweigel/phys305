@@ -20,15 +20,15 @@ $$\dot{N} = \eta v_x l_y$$
 
 where $\dot{N}$ is the number particles that pass through the line per second, $\eta$ is the number of particles per unit area and $l_y$ is the length of the line that particles pass through.
 
-Next, suppose we wanted to compute the number of particles that pass through the green line. In this case, we note that that the number of particles that pass through the green line is the same as the number of particles that pass through the black line. Although the black line is longer, the length that matters in computing the number of particles is $l_y$, so the flux is still $\dot{N} = n v_x l_y$.
+Next, suppose we wanted to compute the number of particles that pass through the green line. In this case, we note that that the number of particles that pass through the green line per second is the same as the number of particles that pass through the red line per second. Although the red line is longer, the length that matters in computing the number of particles is $l_y$, so the flux is still $\dot{N} = n v_x l_y$.
 
-Note that in the above we found a new line that was perpendicular to the velocity to compute the flux. Equivalently, we can multiply the component of velocity that is perpendicular to the green line by the length of the green line. The component of velocity that is perpendicular to the green line is $v_x\cos\theta$ and so the flux through the green line is still $\dot{N} = \eta (v_x\cos\theta) l = \eta v_x l\cos\theta = n v_x l_y$, where $l_y=l\cos\theta$ was used in the last step.
+Note that in the above we found a new line that was perpendicular to the velocity to compute the flux through a given line. Equivalently, we could have multiplied the component of velocity that is perpendicular to the green line by the length of the green line. The component of velocity that is perpendicular to the green line is $v_x\cos\theta$ and so the flux through the green line is still $\dot{N} = \eta (v_x\cos\theta) l = \eta v_x l\cos\theta = n v_x l_y$, where $l_y=l\cos\theta$ was used in the last step.
 
 Using the definition of the dot product, $\mathbf{A}\cdot \mathbf{B}=AB\cos\theta$, we can write
 
 $$\dot{N} = \eta \mathbf{v}\cdot\hat{\mathbf{n}} l$$
 
-where a normal vector $\hat{\mathbf{n}}$ was used. This normal vector is defined to be perpendicular to the line through which the flux is computed. For a given line, two normal directions can be defined. As a result, if the computed $\dot{N}$ is positive, there is a net flow through the line in the direction of $\hat{\mathbf{n}}$; if the computed $\dot{N}$ is negative, there is a net flow through the line in the direction opposite of $\hat{\mathbf{n}}$.
+where $\hat{\mathbf{n}}$ is a unit vector perpendicular to the line and $l$ is the length of the line. For a given line, two normal directions can be defined. As a result, if the computed $\dot{N}$ is positive, there is a net flow through the line in the direction of $\hat{\mathbf{n}}$; if the computed $\dot{N}$ is negative, there is a net flow through the line in the direction opposite of $\hat{\mathbf{n}}$.
 
 ### Example
 
@@ -40,7 +40,7 @@ For $\mathbf{v}=v_x\xhat$, use the equation $\dot{N} = n \mathbf{v}\cdot\hat{\ma
 
 (1) For the red line, $\hat{\mathbf{n}}=\xhat$, so
 
-$$\dot{N} = \eta \mathbf{v}\cdot\hat{\mathbf{n}}l = \eta (v_x\xhat)\cdot(\xhat) l_y = \eta v_x\xhat\cdot\xhat l_y = \eta v l_y = \eta v_x l_y$$
+$$\dot{N} = \eta \mathbf{v}\cdot\hat{\mathbf{n}}l = \eta (v_x\xhat)\cdot(\xhat) l_y = \eta v_x\xhat\cdot\xhat l_y = \eta v l_y$$
 
 (2)
 
@@ -56,7 +56,7 @@ where $l_y=\cos\theta$ was used in the last step. This answer is the same as tha
 
 ### Problem
 
-For $\mathbf{v}=v_y\yhat$, use the equation $\dot{N} = \eta \mathbf{v}\cdot\hat{\mathbf{n}} l$ to find $\dot{N}$ through (1) the red and (2) the green line.
+For $\mathbf{v}=v_y\yhat$, use the equation $\dot{N} = \eta \mathbf{v}\cdot\hat{\mathbf{n}} l$ to find $\dot{N}$ through (1) the red and (2) the green line. Show the direction of $\hat{\mathbf{n}}$ chosen on a diagram.
 
 <img src="figures/Flux-1D-2.svg" width="100%"/>
 
@@ -94,7 +94,7 @@ Prior to solving this problem, determine if the flux is expected to be smaller, 
 
 If $\eta=\eta_o$ and $\mathbf{v}=v_x y/L_y\xhat$, find the flux that 
 
-1. passes through the black line and
+1. passes through the red line and
 2. passes through the green line.
 
 Prior to solving this problem, determine if the flux is expected to be smaller, equal, or larger than the flux if $\mathbf{v}=v_x\xhat$.
@@ -107,9 +107,9 @@ Compute $\dot{N}$ through the half--circle shown as a solid black line. Use $\et
 
 **Answer**
 
-The easy way to solve this problem is to note that the number of particles that pass through the black line in a given second must also pass through the dotted lines in a given second. As a result, the flux is
+The easy way to solve this problem is to note that the number of particles that pass through the black line in a given second must also pass through the dotted lines in a given second. The flux through the dotted line is
 
-$$\dot{N}=\eta_ov_xR$$
+$$\dot{N}=\eta_ov_x2R$$
 
 The difficult way to solve this problem is to find the vector normal to the black line and then use
 
@@ -149,7 +149,7 @@ A source of particles is at the origin that sends particles out radially with a 
 
 (1) $\dot{N}=\eta_o v_r 2\pi R$
 
-(2) In the following diagram it is shown that $\eta$ is inversely propotional to $r$. If the particles are traveling at a constant velocity outwards, the same number of particles will be on the line associated with the inner circle as the outer circle. The length of any circle is $2\pi r$, so $\eta = (\text{num particles on } l)/l = n_o/2\pi r$.
+(2) In the following diagram it is shown that $\eta$ is inversely propotional to $r$. If the particles are traveling at a constant velocity outwards, the same number of particles will be on the red line on the inner circle as red line on the outer circle. The length of any circle is $2\pi r$, so $\eta = (\text{num particles on } l)/l = n_o/2\pi r$.
 
 From this, we can conclude that $\eta$ at $2R$ is $1/2$ that at $R$.
 
@@ -164,66 +164,74 @@ In fact, the net flux through a circle of any radius is the same even if the sou
 
 <img src="figures/Flux-1D-5.svg" width="100%"/>
 
-If one visualizes the particles flowing outwards as on the left in the diagram above, the number of particles that pass the red line on the inner circle per second equals the number per second that pass through the through the red line on the outer circle. Given that this is true as the inner red line is expanded to be a full circle, we conclude that the flux through the outer circle must be the same as that through the inner circle.
+If one visualizes the particles flowing outwards at a constant velocity as on the left in the diagram above, the number of particles that pass the red line on the inner circle per second must equal the number per second that pass through the through the red line on the outer circle. Given that this is true as the inner red line is expanded to be a full circle, we conclude that the flux through the outer circle must be the same as that through the inner circle.
 
 A mathematical way of showing this is to note that the flux through the inner differential length, $ds_i$, shown in the right of the diagram above is $2 \pi R_i d\theta$ so that the differential flux through $ds_i$ is
 
-$$dN_i=n(R_i)v_rds_i=\eta(R_i) v_r 2 \pi R_i d\theta$$
+$$dN_i=\eta_iv_rds_i=\eta_i v_r 2 \pi R_i d\theta$$
 
 and the flux through the outer differential length, $ds_o$, is, as $d\theta$ approaches zero, $2 \pi R_o d\theta$ so the differential flux through $ds_o$ is
 
-$$dN_o=n(R_o) v_r ds_o = \eta(R_o) v_r 2 \pi R_o d\theta$$
+$$dN_o=\eta_o v_r ds_o = \eta_o v_r 2 \pi R_o 
+d\theta$$
 
-If $n(R_i)=\eta_i$, then 
+To show that $dN_o=dN_i$, consider equating the last two equations. This gives the requirement that
 
-$$\eta(R_o)=\eta_o\frac{R_i}{R_o}$$
+$$R_o\eta_o=\eta_iR_i$$
 
-Subsituting this into the equation for $dN_o$ gives $dN_o=dN_i$:
+or
 
-$$dN_o=n(R_o) v_r ds_o = n_i\frac{R_i}{R_o} v_r 2 \pi R_o d\theta = \eta_i v_r 2 \pi R_i d\theta$$
+$$\eta_o=\eta_i\frac{R_i}{R_o}$$
 
-Equivalently, we could start with a known value of density on the outer circle, $\eta(R_o) = n_o$ and use this to find $\eta(R_i)$ and still get $dN_o=dN_i$.
+This equation states that the density is inversely proportitional to distance. This fact can be drived by considering a small patch of area associated with both red lines. The smaller has area $A_i = 2\pi r_i d\theta \times dr$ and the larger has dimensions  $A_o=2\pi R_o d\theta \times dr$. The number of particles in each of these areas must be the same, so 
+
+$$\eta_iA_i= \eta_oA_o$$
+
+or
+
+$$\eta_i 2\pi R_i d\theta dr = \eta_o 2\pi R_o d\theta dr$$
+
+Cancellation of common terms gives
+
+$$R_o\eta_o=\eta_iR_i$$
+
+which is the equation that was required in order to show that $dN_i=dN_o$.
+
+To finish this problem, we need to show that the flux through the outer black arc is the same as that through the outer red arc. Although visually it may be obvious that this must be true when particle flow is considered, we we consider the flux of a general vector, this will not be the case and such analysis is needed.
+
+This is the flux through the small black arc show in the diagram. The red arc is larger and $v_r$ is not perpendicular to it. The length of the red line is $2\pi d\theta/\cos\phi$ and the component of $v_r$ perpendicular to the red line is $v_r\cos\phi$. As a result, the increas in flux due to the increased length is exactly canceled by the decrease in flux due to the red line not being perpendicular to $v_r$. From this, we conclude that the flux through the black line is equal to that through the red line. This is intuitively expected based in the diagram in which we considered the flow of dots.
+
+
+Finally, the flux through a closed line of arbitrary shape is also equal to the flux through a circle centered on the source.
 
 ----
 
 ## Through an Area
 
-If the dots are uniformly spaced into the page and the black line is the side view of a square, then $N=3\cdot 3\cdot 3$.
+If the dots are uniformly spaced into the page and the red line is the side view of a square, then $N=3\cdot 3\cdot 3$.
+
+$$\dot{N} = \eta v_x L_yL_z$$
 
 In more general terms, we can write
 
-$$N = n v_x L_yL_z$$
+$$\dot{N} = \eta v_{\perp} A$$
 
-where $N$ is the number particles that pass through the rectangle per second, $n$ is the number of particles per volume and $A$ is the cross-sectional area that particles pass through.
+where $N$ is the number particles that pass through the rectangle per second, $A$ is the area that particles pass through, and now $\eta$ is the number of particles per unit _volume_ instead of per unit _area_ as was the case for flux through a line.
 
-Next, suppose that $n$ and/or $v_x$ is not constant over the surface $A$. In this case, we can compute the number of particles that pass through a small area $dA$ on $A$ over which $n$ and $v_x$ is constant. Replacing $N$ with $dN$ and $A$ with $dA$ gives
+The generalization of this equation using the dot product is
 
-$$dN = n v_x dA$$
+$$\dot{N} = \eta \mathbf{v}\cdot \hat{\mathbf{n}} A$$
 
-To find the total number that pass through $A$, sum
+where the unit vector $\hat{\mathbf{n}}$ is perpendicular to the surface A.
 
-$$N = \int n v_x dA$$
+As was the case for flux through a line, if $\eta$ and or $\mathbf{v}$ are not constant on the surface $A$, integration is needed. In this case, the flux is
 
-where the integral is taken over the area $A$.
+$$\dot{N} = \int \eta \mathbf{v}\cdot \hat{\mathbf{n}}d A$$
 
-Finally, suppose we wanted to compute the number of particles that pass through the green square. In this case, we note that that the number of particles that pass through the green square is the same as the number of particles that pass through the black square. Although the area of the black square is larger, the area that matters in computing the number of particles is $A\cos\theta$, so we now have
+where the integration is taken over an area.
 
-$$N = \int n v_x dA\cos\theta$$
-
-Finally, using the definition of the dot product, $\mathbf{A}\cdot \mathbf{B}=AB\cos\theta$, we can write
-
-$$N = \int n \mathbf{v}\cdot d{\mathbf{A}}$$
-
-As a final generalization, consider the definition of a vector normal to the line.
 
 # Electric Flux
-
-## Through a Line
-
-## Through a Area
-
-
-# Computing electric flux, $\Phi_E$
 
 Electric flux is defined by (by convention, a mathematical definition is indicated by $\equiv$)
 
