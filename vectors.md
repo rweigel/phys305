@@ -12,7 +12,7 @@ $$
 \mathbf{A} = A_x\ihat + A_y\jhat\quad\text{and}\quad \mathbf{A} = \langle A_x, A_y \rangle
 $$
 
-The vector $\mathbf{A}$ can be viewed as the sum of the two vectors $A_x\xhat$ and $A_y\yhat$. On the left-hand side of the diagram below, the two components of $\mathbf{A}$ are shown (assuming the scalar quantities $A_x$ and $A_y$ are both positive). On the right-hand side, the sum of these components is shown.
+The vector $\mathbf{A}$ can be viewed as the sum of the two vectors $A_x\xhat$ and $A_y\yhat$. On the left-hand side of the diagram below, the two components of $\mathbf{A}$ are shown (assuming the scalar quantities $A_x$ and $A_y$ are both positive). In the middle, the sum of these components is shown.
 
 By definition, the magnitude of $\mathbf{A}$ is the given by the Pythagorean formula
 
@@ -22,6 +22,7 @@ $$
 
 $A$ and $|\mathbf{A}|$ are equivalent -- often one is used instead of the other for clarity of presentation. Another representation for the magnitude of $\mathbf{A}$ uses the dot product -- $A =\sqrt{\mathbf{A}\cdot\mathbf{A}}$.
 
+<img src="figures/Vectors-1.svg" width="100%"/>
 
 ----
 
@@ -32,7 +33,7 @@ If done any programming, you've encountered the concept of ["operation overloadi
 ----
 
 
-Also by definition
+Also by definition,
 
 $$
 A_x = A\cos\theta\quad\text{and}\quad A_y=A\sin\theta
@@ -44,7 +45,7 @@ $$
 A_x = |\mathbf{A}|\cos\theta\quad\text{and}\quad A_y=|\mathbf{A}|\sin\theta
 $$
 
-makes it clear that the the sign of $A_x$ is due to the $\cos\theta$ term and not the term that multiplies it. Although we know that $A$ is a positive number because it is a magnitude, writing $A$ as $|\mathbf{A}|$ may make this point clearer.
+makes it clear that the the sign of $A_x$ (or $A_y$) is due to the $\cos\theta$ (or $\sin\theta$) term and not the term that multiplies it. Although we know that $A$ is a positive number because it is a magnitude, writing $A$ as $|\mathbf{A}|$ may make this point clearer.
 
 Elimination of $A$ in the two defining equations of
 
@@ -83,7 +84,7 @@ Draw $\mathbf{A}=-1\xhat + \yhat$ and compute $A$ and $\theta$, where $\theta$ i
 
 ### Notation
 
-The conventional notation is
+The conventional definition is 
 
 $$
 \mathbf{A} = A_x\xhat + A_y\yhat
@@ -98,9 +99,9 @@ where $\theta$ is as defined as the angle with respect to the $x$--axis with pos
 
 Let $\theta'$ be defined as the angle with respect to the $y$--axis with positive $\theta'$ corresponding to counter-clockwise rotation.
 
-1. Write the equations for $A_x$ and $A_y$ in terms of $\theta'$.
+1. Write the equations for $A'_x$ and $A'_y$ in terms of $\theta'$.
 
-2. If $A=1$ and $\theta'=45^\circ$, find $A_x$ and $A_y$.
+2. If $A=1$ and $\theta'=45^\circ$, find $A_x$, $A_y$, $A'_x$, and $A'_y$.
 
 
 ### Notation
@@ -111,26 +112,10 @@ $$\mathbf{A} = (x-y)\hat{\mathbf{x}}-y\hat{\mathbf{y}}$$
 
 1. Compute $|\mathbf{A}|$
 2. Compute $A$
-3. What are the values of $x$ and $y$ that will give $A < 0$?
-4. What are the values of $x$ and $y$ that will give $90^\circ \le \theta \le 270^\circ$?
+3. What, if possible, are the values of $x$ and $y$ that will give $A < 0$?
+4. What, if possible, are the values of $x$ and $y$ that will give $90^\circ \le \theta \le 270^\circ$?
 
 # Vector Addition/Subtraction
-
-Adding or subtracting vectors in a non-Cartesian notation, in general, does not make sense because the direction of their unit vectors depends on position. To see this, consider drawing the following vectors given in cylindrical notation
-
-\(\mathbf{A} = 1\hat{\boldsymbol{\rho}} + 1\hat{\boldsymbol{\phi}}\) at the position \((\rho,\phi,z)\)= \((1,0,0)\)
-
-\(\mathbf{B} = 1\hat{\boldsymbol{\rho}} + 1\hat{\boldsymbol{\phi}}\) at the position \((\rho,\phi,z)\)= \((1,\pi/2,0)\)
-
-\(\mathbf{A}-\mathbf{B}=0\)
-
-In cartesian coordinates, the vectors are
-
-\(\mathbf{A} = 1\hat{\mathbf{x}}\)
-
-\(\mathbf{B} = 1\hat{\mathbf{y}}\)
-
-\(\mathbf{A}-\mathbf{B}=1\hat{\mathbf{x}}-1\hat{\mathbf{y}}\)
 
 ### Problems
 
@@ -296,6 +281,18 @@ $\hat{\boldsymbol{\phi}} = -\sin\phi\xhat + \cos\phi\yhat$
 * https://math.stackexchange.com/questions/802077/cross-product-in-cylindrical-coordinates?rq=1
 
 ## Problems
+
+If $\mathbf{A} = 1\hat{\mathbf{s}} + 1\hat{\boldsymbol{\phi}}$ at the position $(s,\phi,z) = (1,0,0)$ and $\mathbf{B} = 1\hat{\mathbf{s}} + 1\hat{\boldsymbol{\phi}}$ at the position $(s,\phi,z) = (1,\pi/2,0)$
+
+1\. Draw $\mathbf{A}$ and $\mathbf{B}$ and 
+
+2\. Compute $\mathbf{A}-\mathbf{B}$.
+
+----
+
+**Answer**
+
+$\mathbf{A} = 1\hat{\mathbf{x}}$, $\mathbf{B} = 1\hat{\mathbf{y}}$, and $\mathbf{A}-\mathbf{B}=1\hat{\mathbf{x}}-1\hat{\mathbf{y}}$.
 
 ### Cartesian
 
