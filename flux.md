@@ -220,15 +220,34 @@ The previous problem is a key problem related to electric flux. In it we found f
 
 In fact, the net flux through a circle of any radius is the same even if the source is not at the center of the circle. This can be demonstrated with a diagram using two approaches.
 
-**Approach I**: If one visualizes the particles flowing outwards in the diagram above, the number of particles that pass the red line on the inner circle per second equals the number per second that pass through the red line on the outer circle. Given that this is true as the inner red line is expanded to be a full circle, we conclude that the flux through the outer circle must be the same as that through the inner circle.
+**Approach I**
 
-<img src="figures/Flux-1D-5a.svg" width="100%"/>
+<img src="figures/Flux-1D-5.svg" width="100%"/>
 
-----
+The above diagram shows particles flowing outwards at a constant velocity at a given point in time. The number of particles that pass the red line on the inner circle per second must equal the number per second that pass through the through the red line on the outer circle if the spacing between the blue dots is to remain constant. Given that this must be true if the particles flow at a constant velocity, we conclude that the flux through the inner red line must be the same as that through the outer red line. To complete the justification, note that this argument does not depend on the length of the inner red line - if it is a full circle, the same arguments apply and we conclude the flux through the inner circle must equal that through the outer circle.
 
-**Approach II**:
+**Approach II**
 
-<img src="figures/Flux-1D-5b.svg" width="100%"/>
+<img src="figures/Flux-1D-6.svg" width="100%"/>
+
+A mathematical way of showing this is to note that the flux through the inner differential length, $ds_i$, shown in the left of the diagram above is $2 \pi R_i d\theta$ so that the differential flux through $ds_i$ is
+
+$$dN_i=\eta_i v_r ds_i=\eta_i v_r 2 \pi R_i d\theta$$
+
+and the flux through the outer differential length, $ds_o$, is $2 \pi R_o d\theta$ so the differential flux through $ds_o$ is
+
+$$dN_o=\eta_o v_r ds_o = \eta_o v_r 2 \pi R_o 
+d\theta$$
+
+To show that $dN_o=dN_i$, consider equating the last two equations. This gives the requirement that
+
+$$R_o\eta_o=\eta_iR_i$$
+
+or
+
+$$\eta_o=\eta_i\frac{R_i}{R_o}$$
+
+This equation states that the density (number of particles per unit area) is inversely proportitional to distance. This is true and can be drived by considering a small patch of area associated with both red lines. The inner patch has an area of $A_i = 2\pi r_i d\theta \times dr$ and the larger has an area of $A_o=2\pi R_o d\theta \times dr$. The number of particles in each of these areas must be the same if they move at a constant velocity, so ...
 
 A mathematical way of showing this is to note that the flux through the inner differential length, $ds_i$, shown in the diagram above is $2 \pi R_i d\theta$ so that the differential flux through $ds_i$ is
 
@@ -245,6 +264,26 @@ $$\eta_o R_o=\eta_i R_i \qquad \text{or} \qquad \eta_o = \eta_i\frac{R_i}{R_o}$$
 Subsituting this into the equation for $dN_o$ gives $dN_o=dN_i$:
 
 $$dN_o=\eta_o v_r ds_o = \eta_i\frac{R_i}{R_o} v_r 2 \pi R_o d\theta = \eta_i v_r 2 \pi R_i d\theta$$
+
+To finish this problem, we need to show that the flux through the outer black arc is the same as that through the outer red arc. Although visually it may be obvious that this must be true using Approach I, in the future, we will consider the flux of a general vector. In this case, we replace $\eta \mathbf{v}$ with a vector $\mathbf{E}$ that is not related to the flow of particles and so Approach I is not valid.
+
+<img src="figures/Flux-1D-6.svg" width="100%"/>
+
+In the right-hand side of the previous diagram, the top part of the figure on the left is shown for small $d\theta$. The red line is longer than the black line and $v_r$ is perpendicular to the black arc but not the red line. The length of the red line is $2\pi d\theta/\cos\phi$ and the component of $v_r$ perpendicular to it is $v_r\cos\phi$. The flux through the red line involves the product of this area and $v_r\cos\phi$ and as a result, the $\cos\phi$ terms cancel and the flux through the red line is the same as that through the black line, as expected from Approach I.
+
+The aguments used in both Approach I and Approach II can be used to show that the flux through a closed line of arbitrary shape as shown in the figure below is also equal to the flux through a circle centered on the source.
+
+<img src="figures/Flux-1D-7.svg" width="100%"/>
+
+### Problem
+
+Use a diagram to show that the the flux through a closed line of arbitrary shape is also equal to the flux through a circle centered on the source.
+
+### Problem
+
+In the above, it is stated that the results hold for lines that close in on themselves.
+
+Is it correct to say that the flux through any two lines must be equal? Explain using a diagram.
 
 ----
 
