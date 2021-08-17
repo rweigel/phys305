@@ -1,7 +1,7 @@
-
 <center>
 **PHYS 305 Electromagnetic Theory**
 </center>
+
 
 * Day and Time: Tuesday/Thursday from 12:00 pm - 1:15 pm
 * Office Hours: Tuesday/Thursday from 11:00 am -- noon (on Discord)
@@ -17,9 +17,9 @@
 1. [Vectors](vectors.html)
 1. [Vector Fields](vector_fields.html)
 1. [Field Lines](field_lines.html)
+1. [Equipotentials](equipotentials.html)
 1. [Flux](flux.html)
 1. [Divergence](divergence.html)
-1. [Equipotentials](equipotentials.html)
 1. [Coulomb's Law](coulombs_law.html)
 1. [Electric Field](electric_field.html)
 1. [Symmetry and Superposition](symmetry_and_superposition.html)

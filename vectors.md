@@ -12,11 +12,7 @@ $$
 \mathbf{A} = A_x\ihat + A_y\jhat\quad\text{and}\quad \mathbf{A} = \langle A_x, A_y \rangle
 $$
 
-The vector $\mathbf{A}$ can be viewed as the sum of the two vectors $A_x\xhat$ and $A_y\yhat$. 
-
-Figure: Left diagram of $\mathbf{A}$ (assuming the scalar quantities $A_x$ and $A_y$ are both positive); Right - equivalent representation of $\mathbf{A}$.
-
-Figure: Left: Diagram showing $A_x\xhat$ and $A_y\yhat$; Right: Diagram used to aid in recalling the following definitions.
+The vector $\mathbf{A}$ can be viewed as the sum of the two vectors $A_x\xhat$ and $A_y\yhat$. On the left-hand side of the diagram below, the two components of $\mathbf{A}$ are shown (assuming the scalar quantities $A_x$ and $A_y$ are both positive). On the right-hand side, the sum of these components is shown.
 
 By definition, the magnitude of $\mathbf{A}$ is the given by the Pythagorean formula
 
@@ -24,7 +20,17 @@ $$
 A = |\mathbf{A}| = \sqrt{A_x^2 + A_y^2}
 $$
 
-$A$ and $|\mathbf{A}|$ are equivalent -- often one is used instead of the other for clarity of presentation. Yet another representation for the magnitude of $\mathbf{A}$ uses the dot product -- $A =sqrt{\mathbf{A}\cdot\mathbf{A}}$.
+$A$ and $|\mathbf{A}|$ are equivalent -- often one is used instead of the other for clarity of presentation. Another representation for the magnitude of $\mathbf{A}$ uses the dot product -- $A =\sqrt{\mathbf{A}\cdot\mathbf{A}}$.
+
+
+----
+
+**Common error**: referring to $|\mathbf{A}|$ as "The absolute value of $\mathbf{A}$". The absolute value operator operates on a scalar, e.g., $-12.1$. When used with a vector, the vertical bars mean "The magnitude of $\mathbf{A}$". Both the absolute value and magnitude operations yield a positive scalar, but their calculation is different. The absolute value operation is to simply drop a negative sign. The magnitude operation requires the use of the Pythagorean formula.
+
+If done any programming, you've encountered the concept of ["operation overloading"](https://en.wikipedia.org/wiki/Operator_overloading) - a mathemmatical operation has multiple meanings depending on the arguments. For example the `+` sign in the statement `1 + 2` means "add the numbers before and after it" and in the statement `'B' + 'ob'`, the `+` sign means "concatenate strings to give `'Bob'`. In a similar way, the operator $|\cdot|$ means "absolute value" if $\cdot$ is a scalar and "vector magnitude" if $\cdot$ is a vector.
+
+----
+
 
 Also by definition
 
@@ -40,7 +46,7 @@ $$
 
 makes it clear that the the sign of $A_x$ is due to the $\cos\theta$ term and not the term that multiplies it. Although we know that $A$ is a positive number because it is a magnitude, writing $A$ as $|\mathbf{A}|$ may make this point clearer.
 
-Elimination of $A$ in the two defining equations 
+Elimination of $A$ in the two defining equations of
 
 $$
 A_x = A\cos\theta\quad\text{and}\quad A_y=A\sin\theta
@@ -54,13 +60,9 @@ $$
 
 which is expected based on the diagram given above.
 
-Common error: referring to $|\mathbf{A}|$ as "The absolute value of $\mathbf{A}$". The absolute value operator operates on a scalar, e.g., $-12.1$. In this context, the vertical bars mean "The magnitude of $\mathbf{A}$". Both the absolute value and magnitude operations yield a positive scalar, but their calculation is different.
-
-If done any programming, you've encountered the concept of ["operation overloading"](https://en.wikipedia.org/wiki/Operator_overloading) - a mathemmatical operation has multiple meanings depending on the arguments. For example the `+` sign in the statement `1 + 2` means "add the numbers before and after it" and in the statement `'B' + 'ob'`, the `+` sign means "concatenate strings to give `'Bob'`. In a similar way, the operator $|\cdot|$ means "absolute value" if $\cdot$ is a scalar and "vector magnitude" if $\cdot$ is a vector.
-
 ## References
 
-Every introductory physics and calculaus textbook has a comprehensive introduction to vectors. The reader is encouraged to use them for review.
+Every introductory physics and calculus textbook has a comprehensive introduction to vectors. The reader is encouraged to use them for review.
 
 Several unique perspectives on vectors include 
 
@@ -69,19 +71,17 @@ Several unique perspectives on vectors include
 
 ## Problems
 
-### Location in Cartesian
+### Notation
 
-Draw a sketch with a dot indicating the location of \((x,y,z)=(1,2,3)\)
+Is $|A|$ a valid expression for the magnitude of a vector? If not, explain why.
 
-###
+**Answer**: $A$ is a magnitude of a vector that corresponds to a length so $A\ge 0$ and taking its absolute value is not needed. A reader seeing the statement $|A|$ may conclude that $A$ can be a positive or negative number (because otherwise why would it be written as $|A|$?).
 
-Why do you think that we write $A$ or $|\mathbf{A}|$ for the magnitude of a vector instead of $|A|$? Is $|A|$ a valid expression for the magnitude of a vector?
+### Computing magnitude and angle
 
-###
+Draw $\mathbf{A}=-1\xhat + \yhat$ and compute $A$ and $\theta$, where $\theta$ is as defined as the angle with respect to the $x$--axis with positive $\theta$ corresponding to counter-clockwise rotation.
 
-Draw ... and compute $A$ and $\theta$, where $\theta$ is as defined in the text.
-
-###
+### Notation
 
 The conventional notation is
 
@@ -93,103 +93,26 @@ $$
 A_x = A\cos\theta\quad\text{and}\quad A_y=A\sin\theta
 $$
 
-where $\theta$ is defined by ....
-'a'
+where $\theta$ is as defined as the angle with respect to the $x$--axis with positive $\theta$ corresponding to counter-clockwise rotation.
 
-1. Suppose that in the equations for $A_x$ and $A_y$, we want to use $\theta'$ instead of $\theta$. Write the equations for $A_x$ and $A_y$ in terms of $\theta'$.
+
+Let $\theta'$ be defined as the angle with respect to the $y$--axis with positive $\theta'$ corresponding to counter-clockwise rotation.
+
+1. Write the equations for $A_x$ and $A_y$ in terms of $\theta'$.
 
 2. If $A=1$ and $\theta'=45^\circ$, find $A_x$ and $A_y$.
 
 
-If
+### Notation
 
-$$\mathbf{A} = A_x\hat{\mathbf{x}}+A_y\hat{\mathbf{y}}+A_z\hat{\mathbf{z}}$$
+If 
 
-is \(|\mathbf{A}|\) a scalar or vector?
+$$\mathbf{A} = (x-y)\hat{\mathbf{x}}-y\hat{\mathbf{y}}$$
 
-###
-
-If \(A\) is a magnitude of a vector (so it is a scalar), why does it not make sense to write \(|A|\)?
-
-{| class="wikitable collapsible collapsed"
-! align="left" |&nbsp;Notes
-|-
-|
-\(A\) is a magnitude of a vector that corresponds to a length so \(A\ge 0\) and taking its absolute value is not needed. A reader seeing the statement \(|A|\) may conclude that \(A\) can be a positive or negative number (because otherwise why would it be written as \(|A|\)?).
-|}
-
-###
-
-$$\mathbf{A} = (x-y)\hat{\mathbf{x}}-y\hat{\mathbf{y}}-z\hat{\mathbf{z}}$$
-
-1. Compute \(|\mathbf{A}|\)
-2. Compute \(A\)
-3. What are the values of \(x,y\), and \(z\) that will give \(A < 0\)?
-
-# Unit Vectors
-
-
-A unit vector is a vector with "unit length" (meaning a length of unity, that is, 1).
-
-The "unit" in "unit vector" means "unit length"; perhaps confusingly, unit vectors do not have a unit (e.g., meters) -- they are dimensionless.
-
-A unit vector associated with an arbitrary vector is obtained by dividing it by its magnitude. We indicate that it is a unit vector by using a hat. So a vector such as
-
-$$\mathbf{r}=r_x\ihat + r_y\jhat\,,$$
-
-which has magnitude
-
-$$r = |\mathbf{r}|=\sqrt{r_x^2 + r_y^2}$$
-
-has an associated unit vector 
-
-$$\hat{\mathbf{r}} = \frac{\mathbf{r}}{r}=\frac{r_x\ihat + r_y\jhat}{r}=\frac{r_x}{\sqrt{r_x^2 + r_y^2}}\ihat + \frac{r_y}{\sqrt{r_x^2 + r_y^2}}\jhat $$
-
-## Example
-
-One reason that unit vectors are useful is that they allow us to make statements of the form: "An object is 10 meters along the direction of $\mathbf{r}$". Suppose $\mathbf{r}=(10\text{ m})\ihat+(20\text{ m})\jhat$. To find a position that is 11 meters along the direction of $\mathbf{r}$, first find a vector of length 1 that is in the direction of $\mathbf{r}$, namely, its unit vector. Then multiply this unit vector by 11 meters.
-
-$$r = \sqrt{(10\text{ m})^2 + (20\text{ m})^2} = \sqrt{500}\text{ m}$$
-
-$$\hat{\mathbf{r}}=\frac{\mathbf{r}}{r}=\frac{10\text{ m}}{\sqrt{500}\text{ m}}\ihat + \frac{20\text{ m}}{\sqrt{500}\text{ m}}\jhat=\frac{1}{\sqrt{5}}\ihat + \frac{2}{\sqrt{5}}\jhat$$
-
-Notice how the units of meters ($\text{m}$) canceled - a unit vector is dimensionless (we also use the term "unit--less" for "dimensionless").
-
-It was claimed that a unit vector has a length of 1. Let's check:
-
-$$|\hat{\mathbf{r}}| = \sqrt{\left(\frac{1}{\sqrt{5}}\right)^2 + \left(\frac{2}{\sqrt{5}}\right)^2}=1\quad\checkmark$$
-
-
-We can now form a vector for the position of the object that is 11 meters along the direction of $\mathbf{r}$:
-
-$$(11\text{ m})\\,\hat{\mathbf{r}}=(11\text{ m})\left(\frac{1}{\sqrt{5}}\ihat + \frac{2}{\sqrt{5}}\jhat\right)$$
-
-Note that unit vector can be associated with any type of vector, not just position vectors.
-
-### Example - Finding a unit vector tangent to a curve
-
-Find a unit vector that is tangent to the curve $y=x^2$.
-
-
-## References
-
-* https://www.youtube.com/watch?v=bJyPy4Del2E
-
-## Problems
-
-###
-
-If $\mathbf{A} = -3\xhat + 4\yhat$, find $\hat{\mathbf{A}}$, the unit vector in the direction of $\mathbf{A}$
-
-###
-
-The velocity of a particle is given by $\mathbf{v}= v_{x}\xhat - gt\yhat$, where $v_x = 10\text{ m/s}$ and $g=9.8\text{ m/s}^2$.
-
-Find a unit vector in the direction of $\mathbf{v}$ at $t=0$ and $t=1\text{ s}$.
-
-### 
-
-Find the unit vector tangent to the curve $y=\sqrt{1-x^2}$
+1. Compute $|\mathbf{A}|$
+2. Compute $A$
+3. What are the values of $x$ and $y$ that will give $A < 0$?
+4. What are the values of $x$ and $y$ that will give $90^\circ \le \theta \le 270^\circ$?
 
 # Vector Addition/Subtraction
 
@@ -253,49 +176,155 @@ Find the vector made by connecting a line from \((x,y,z)=(1,2,3)\) to \((x,y,z)=
 ###
 
 Write an equation for the vector made by connecting a line from \((x_o,y_o,z_o)\) to \((x,y,z)\).
+
+# Unit Vectors
+
+
+A unit vector is a vector with "unit length" (meaning a length of unity, that is, 1).
+
+The "unit" in "unit vector" means "unit length"; perhaps confusingly, unit vectors do not have a unit (e.g., meters) -- they are dimensionless.
+
+A unit vector associated with an arbitrary vector is obtained by dividing it by its magnitude. We indicate that it is a unit vector by using a hat. So a vector such as
+
+$$\mathbf{r}=r_x\ihat + r_y\jhat$$
+
+which has magnitude
+
+$$r = |\mathbf{r}|=\sqrt{r_x^2 + r_y^2}$$
+
+has an associated unit vector 
+
+$$\hat{\mathbf{r}} = \frac{\mathbf{r}}{r}=\frac{r_x\ihat + r_y\jhat}{r}=\frac{r_x}{\sqrt{r_x^2 + r_y^2}}\ihat + \frac{r_y}{\sqrt{r_x^2 + r_y^2}}\jhat $$
+
+## Example
+
+One reason that unit vectors are useful is that they allow us to make statements of the form: "An object is 10 meters along the direction of $\mathbf{r}$". Suppose $\mathbf{r}=(10\text{ m})\ihat+(20\text{ m})\jhat$. To find a position that is 11 meters along the direction of $\mathbf{r}$, first find a vector of length 1 that is in the direction of $\mathbf{r}$, namely, its unit vector. Then multiply this unit vector by 11 meters.
+
+$$r = \sqrt{(10\text{ m})^2 + (20\text{ m})^2} = \sqrt{500}\text{ m}$$
+
+$$\hat{\mathbf{r}}=\frac{\mathbf{r}}{r}=\frac{10\text{ m}}{\sqrt{500}\text{ m}}\ihat + \frac{20\text{ m}}{\sqrt{500}\text{ m}}\jhat=\frac{1}{\sqrt{5}}\ihat + \frac{2}{\sqrt{5}}\jhat$$
+
+Notice how the units of meters ($\text{m}$) canceled - a unit vector is dimensionless (we also use the term "unit--less" for "dimensionless").
+
+It was claimed that a unit vector has a length of 1. Let's check:
+
+$$|\hat{\mathbf{r}}| = \sqrt{\left(\frac{1}{\sqrt{5}}\right)^2 + \left(\frac{2}{\sqrt{5}}\right)^2}=1\quad\checkmark$$
+
+
+We can now form a vector for the position of the object that is 11 meters along the direction of $\mathbf{r}$:
+
+$$(11\text{ m})\\,\hat{\mathbf{r}}=(11\text{ m})\left(\frac{1}{\sqrt{5}}\ihat + \frac{2}{\sqrt{5}}\jhat\right)$$
+
+Note that unit vector can be associated with any type of vector, not just position vectors.
+
+## References
+
+* https://www.youtube.com/watch?v=bJyPy4Del2E
+
+## Problems
+
+###
+
+If $\mathbf{A} = -3\xhat + 4\yhat$, find $\hat{\mathbf{A}}$, the unit vector in the direction of $\mathbf{A}$
+
+###
+
+The velocity of a particle is given by $\mathbf{v}= v_{x}\xhat - gt\yhat$, where $v_x = 10\text{ m/s}$ and $g=9.8\text{ m/s}^2$.
+
+Find a unit vector in the direction of $\mathbf{v}$ at 
+
+1. $t=0$ and 
+1. $t=1\text{ s}$.
+
 # Curvilinear Unit Vectors
 
-Vectors that are not written with cartesian unit vectors cannot be drawn unless one knows the position. The direction of the unit vectors depends on position.
+Thus far, only the cartesian unit vectors $\xhat$, $\yhat$, and $\zhat$ have been considered.
 
-Convert $\hat{\mathbf{r}}$ to spherical and cylindrical.
+Two vectors that are not written with cartesian unit vectors
 
-Often it is useful to write vectors in terms of unit vectors of either cylindrical or spherical coordinates.
+1. cannot be drawn unless one knows the position because the direction of the unit vectors depends on position and
+2. cannot be added, subtracted, dotted, or crossed unless the positions of the vectors are the same.
 
-https://math.stackexchange.com/questions/1365622/adding-two-polar-vectors
+Two coordinate systems that have curilinear unit vector are cylindrical and spherical.
 
-https://math.stackexchange.com/questions/802077/cross-product-in-cylindrical-coordinates?rq=1
+In cylindrical coordinates, the unit vectors are $\hat{\mathbf{s}}$, $\hat{\boldsymbol{\phi}}$, and $\zhat$ as shown in the following diagram. Although the magnitudes of the unit vectors are the same at both locations, their direction is not.
 
-Discuss fact that cross and dot products require two vectors to have same position.
+By definition
 
-=== Problems ===
+* $\hat{\mathbf{s}}$ is always parallel to the $x$--$y$ plane and points radially outward, 
+* $\zhat$ always points parallel to the $z$--axis, and
+* $\hat{\boldsymbol{\phi}}$ is perpendicular to $\hat{\mathbf{s}}$ and $\zhat$ and points in the direction of increasing $\phi$.
 
-==== Cartesian ====
+To see that vectors written with cylindrical unit vectors cannot be added, consider the vectors
 
-Draw a sketch with a dot indicating the location of
+$\mathbf{A} = 1\hat{\mathbf{s}}$ at $(s,\phi,z)=(1,0,0)$
 
-\(\mathbf{A} = 1\hat{\mathbf{x}} + 2\hat{\mathbf{y}} + 3\hat{\mathbf{z}}\)
+$\mathbf{B} = 1\hat{\mathbf{s}}$ at $(s,\phi,z)=(1,\pi,0)$
+
+Visually, these vectors point in opposite directions and so their sum should be zero. However, straightforward addition gives $\mathbf{A}+\mathbf{B}=2\hat{\mathbf{s}}$, which is incorrect.
+
+As a result, to add, subtract, dot, or cross two vectors written with curvilinear unit vectors, one must first re-write the two vectors with cartesian unit vectors. 
+
+At $(s,\phi,z)=(1,0,0)$, $\mathbf{A} = 1\hat{\mathbf{s}} = \xhat$
+
+At $(s,\phi,z)=(1,\pi,0)$, $\mathbf{B} = 1\hat{\mathbf{s}} = -\xhat$
+
+so $\mathbf{A}+\mathbf{B} = \xhat - \xhat = 0$, which is correct.
+
+The relationship between cartesian and cylindrical unit vectors is
+
+$\hat{\mathbf{s}} = \cos\phi\xhat + \sin\phi\yhat$
+
+$\hat{\boldsymbol{\phi}} = -\sin\phi\xhat + \cos\phi\yhat$
+
+$\zhat=\zhat$
+
+The relationship between cartesian and spherical unit vectors is
+
+$\hat{\mathbf{r}} = \sin\theta\cos\phi\xhat + \sin\theta\sin\phi\yhat + \cos\theta\zhat$
+
+$\hat{\boldsymbol{\theta}} = \cos\theta\cos\phi\xhat + \cos\theta\sin\phi\yhat-\sin\theta\zhat$
+
+$\hat{\boldsymbol{\phi}} = -\sin\phi\xhat + \cos\phi\yhat$
+
+## Example - Deriving unit vector relationships with a sketch
 
 
-==== Cylindrical ====
+## References
 
-Draw a sketch with a dot indicating the location of \((\rho,\phi,z)=(1,\pi/4,3)\)
+* https://math.stackexchange.com/questions/1365622/adding-two-polar-vectors
+* https://math.stackexchange.com/questions/802077/cross-product-in-cylindrical-coordinates?rq=1
 
-==== Spherical ====
+## Problems
 
-Draw a sketch with a dot indicating the location of \((r,\theta,\varphi)=(1,\pi/4,\pi/4)\)
+### Cartesian
 
-==== Cylindrical ====
+Draw a sketch with a dot indicating the location of $(x,y,z)=(1,2,3)$
 
-Draw a sketch with a dot indicating the location of
+### Cylindrical
 
-\(\mathbf{A} = 1\hat{\boldsymbol{\rho}} + 2\hat{\boldsymbol{\phi}}\) at the position \((\rho,\phi,z)\)= \((1,0,0)\)
+Draw a sketch with a dot indicating the location of $(s,\phi,z)=(1,\pi/4,3)$
 
-\(\mathbf{A} = 1\hat{\boldsymbol{\rho}} + 2\hat{\boldsymbol{\phi}}\) at the position \((\rho,\phi,z)\)= \((1,\pi/2,0)\)
+### Spherical
 
-==== Spherical ====
+Draw a sketch with a dot indicating the location of $(r,\theta,\phi)=(1,\pi/4,\pi/4)$
+
+### Cylindrical
 
 Draw a sketch with a dot indicating the location of 
 
-\(\mathbf{A} = 1\hat{\mathbf{r}} + 2\hat{\boldsymbol{\theta}}\) at the position \((\rho,\theta,\varphi)\)= \((1,0,0)\)
+1. $\mathbf{A} = 1\hat{\boldsymbol{\rho}} + 2\hat{\boldsymbol{\phi}}$ at the position $(\rho,\phi,z) = (1,0,0)$ and
 
-\(\mathbf{A} = 1\hat{\mathbf{r}} + 2\hat{\boldsymbol{\theta}}\) at the position \((\rho,\theta,\varphi)\)= \((1,\pi/2,0)\)
+2. $\mathbf{A} = 1\hat{\boldsymbol{\rho}} + 2\hat{\boldsymbol{\phi}}$ at the position $(\rho,\phi,z) = (1,\pi/2,0)$.
+
+### Spherical
+
+Draw a sketch with a dot indicating the location of 
+
+$\mathbf{A} = 1\hat{\mathbf{r}} + 2\hat{\boldsymbol{\theta}}$ at the position $(\rho,\theta,\varphi) = (1,0,0)$
+
+$\mathbf{A} = 1\hat{\mathbf{r}} + 2\hat{\boldsymbol{\theta}}$ at the position $(\rho,\theta,\varphi) = (1,\pi/2,0)$
+
+# Tangent Vectors
+
+# Normal Vectors
