@@ -11,6 +11,28 @@
 * Office: 259 Planetary Hall
 * Course URL: http://rweigel.github.io/phys305
 
+# Tutorials
+
+1. [Vectors](vectors.html)
+1. [Vector Fields](vector_fields.html)
+1. [Field Lines](field_lines.html)
+1. [Equipotentials](equipotentials.html)
+1. [Flux](flux.html)
+1. [Divergence](divergence.html)
+1. [Coulomb's Law](coulombs_law.html)
+1. [Electric Field](electric_field.html)
+1. [Symmetry and Superposition](symmetry_and_superposition.html)
+1. [Discrete Charge Distributions](discrete_charge_distributions.html)
+1. [Charge Densities](charge_densities.html)
+1. [Limits](limits.html)
+1. [Binomial Expansion](binomial_expansion.html)
+1. [Continuous Charge Distributions](continuous_charge_distributions.html)
+1. [Gauss's Law](gausss_law.html)
+2. [Dirac Delta](dirac_delta.html)
+1. [Electrostatic Potential](electrostatic_potential.html)
+1. [Conductors](conductors.html)
+1. [Capacitors](capacitors.html)
+
 # Class Schedule
 
 ## Tuesday, August 24th
@@ -33,17 +55,61 @@
 * Answer questions on HW #1 topics
 * Homework #1 due at 3:00 pm
 
+## Tuesday, September 7th
+
+## Thursday, September 9th
+
+## Tuesday, September 14th
+
+## Thursday, September 16th
+
+## Tuesday, September 21st
+
+## Thursday, September 23rd
+
+## Tuesday, September 28th
+
+## Thursday, September 30th
+
+## Tuesday, October 5th
+
+## Thursday, October 7th
+
 ## Tuesday, October 12th
 
 * No class
 
 ## Thursday, October 14th
 
-* Mid-term exam during class time. Location and/or delivery method TBD.
+* Mid-term exam during class time. Location TBD.
+
+## Tuesday, October 19th
+
+## Thursday, October 21st
+
+## Tuesday, October 26th
+
+## Thursday, October 28th
+
+## Tuesday, November 2nd
+
+## Thursday, November 4th
+
+## Tuesday, November 9th
+
+## Thursday, November 11th
+
+## Tuesday, November 16th
+
+## Thursday, November 18th
+
+## Tuesday, November 23rd
 
 ## Thursday, November 25th
 
 * No class
+
+## Tuesday, November 30th
 
 ## Thursday, December 2nd
 
@@ -51,7 +117,7 @@
 
 ## Thursday, December 9th
 
-Final Exam from 10:30 am -- 1:15 pm. Location and/or delivery method TBD.
+Final Exam from 10:30 am -- 1:15 pm; location TBD.
 
 # Format of Course
 
@@ -91,11 +157,11 @@ How to read:
 * Close book and attempt to repeat the explanation. Check your answer. If you got it wrong, re-visit problem a day later.
 * If you are successful, attempt to re-solve the problem in a different way (for example, using a different coordinate system or using Gauss' Law instead of Coulomb's law, etc.). Check answer. If you got it wrong, re-visit problem a day later. Keep a separate notebook with a list of things that you had issues with and how you resolved them.
 
-%I learned quite a bit about how to think like a professional physicist from my advisor in graduate school. Anytime I would bring up a concept, he would start from first principles, set up a geometry, do dimensional analysis, and write down facts that he knew. Then he would repeat my question to me and attempt to answer it. Doing this over-and over serves two purposes (1) It cements in the fundamental concepts by repeating them often and (2) gets you thinking about the fundamentals. I often times rely on this approach when a student asks me about a problem on a physics-related topic that have not thought about for many years.
+I learned quite a bit about how to think like a professional physicist from my advisor in graduate school. Anytime I would bring up a concept, he would start from first principles, set up a geometry, do dimensional analysis, and write down facts that he knew. Then he would repeat my question to me and attempt to answer it. Doing this over-and over serves two purposes (1) It cements in the fundamental concepts by repeating them often and (2) gets you thinking about the fundamentals. I often times rely on this approach when a student asks me about a problem on a physics-related topic that have not thought about for many years.
 
-%To succeed in physics, you should do the same. Use Google and/or a textbook only after you have written down everything you know and attempted to solve a problem with what you wrote down as a starting point. In addition, think about symmetry, dimensions, and related problems that you know how to solve and can used to check your answer by taking a limit. I'll give many examples of this throughout the semester, but related to the last point, if you are given a 2-D problem, try to solve a simpler or 1-D problem for which you know the answer. Then try the more complex or 2-D problem. You probably happen to remember that the electric field falls off like $1/r$ for an infinite line of charge. It has to fall off more slowly than $1/r^2$, and you should know that Coulomb's Law depends on $1/r^2$. If asked to calculate the field for a finite line of charge, first see if you can calculate the equation for the 1/r dependence. Then try the finite line problem - the equation will be a bit more complicated, but having solved the 1/r problem, you will have a prepped yourself. As another example, if asked to compute the field associated with a finite sheet of charge, compute the field for a finite line of charge first, check that your answer is correct in the limit that the line is long, and then try the sheet problem.
+To succeed in physics, you should do the same. Use Google and/or a textbook only after you have written down everything you know and attempted to solve a problem with what you wrote down as a starting point. In addition, think about symmetry, dimensions, and related problems that you know how to solve and can used to check your answer by taking a limit. I'll give many examples of this throughout the semester, but related to the last point, if you are given a 2-D problem, try to solve a simpler or 1-D problem for which you know the answer. Then try the more complex or 2-D problem. You probably happen to remember that the electric field falls off like $1/r$ for an infinite line of charge. It has to fall off more slowly than $1/r^2$, and you should know that Coulomb's Law depends on $1/r^2$. If asked to calculate the field for a finite line of charge, first see if you can calculate the equation for the 1/r dependence. Then try the finite line problem - the equation will be a bit more complicated, but having solved the 1/r problem, you will have a prepped yourself. As another example, if asked to compute the field associated with a finite sheet of charge, compute the field for a finite line of charge first, check that your answer is correct in the limit that the line is long, and then try the sheet problem.
 
-%I will be giving you tips like this throughout the semester. Force yourself to follow the problem-solving approaches that I suggest. Many students have a problem-solving approach from freshman/sophomore physics that won't work for more advanced courses (for example, relying on memory instead of relying on your ability to solve a problem by building up from a few basic principles that you have memorized).
+I will be giving you tips like this throughout the semester. Force yourself to follow the problem-solving approaches that I suggest. Many students have a problem-solving approach from freshman/sophomore physics that won't work for more advanced courses (for example, relying on memory instead of relying on your ability to solve a problem by building up from a few basic principles that you have memorized).
 
 # Catalog Description
 

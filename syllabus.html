@@ -1,0 +1,863 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>syllabus</title>
+    <link id="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%220.9em%22 font-size=%22100%22>📖</text></svg>">
+    <style>
+        body { background-color: white; }
+        #toc { font-size: 85%; width: 14em; position: fixed; min-height: 95%; max-height: 95%; overflow: hidden auto; padding-left: 0.75em; padding-right: 1em; margin-right: 1em; font-family: "Open Sans"; }
+        #toc ol { list-style-type: decimal; padding-inline-start: 1em; }
+        #toc a { text-decoration: none; }
+        #display a { text-decoration: none black; text-underline-offset: 2px; }
+        #display { width: 100%; margin-left: 15em; max-height: 100%; min-height: 100%; overflow: hidden auto; padding-left: 1em; padding-right: 1em; border-left: 1px solid rgb(240, 240, 240); font-family: "Open Sans"; }
+        .title { text-align: center; font-size: 250%; font-weight: bold; color: black; margin-bottom: 0px; }
+        .subtitle { text-align: center; font-size: 150%; font-weight: bold; color: black; margin-top: 0.2em; }
+        .hanchor { text-decoration: none; color: inherit; }
+        h1 { color: darkblue; border-bottom: 2px solid darkblue; }
+        h2 { border-bottom: 1px solid black; }
+        h3 { border-bottom: 1px dotted black; }
+        h1, h2, h3, h4, h5, h6 { width: 100%; margin-block: 0.5em; }
+        #display .block ul { width: 100%; margin-left: 1em; padding-left: 1em; }
+        #display .block ol { width: 100%; margin-left: 1em; padding-left: 1em; }
+        code { width: 100%; background-color: rgba(0, 0, 0, 0.03); border-radius: 0px; font-size: 1.2em; white-space: pre-wrap; margin-top: 3px; margin-right: 3px; }
+        pre code { border-right: 1px solid black; }
+        code.language-Python { background-color: rgba(0, 0, 0, 0); font-size: 1.2em; }
+        pre { width: 100%; text-indent: 0.75em; padding-left: 0.5em; margin-left: 1em; white-space: pre-wrap; border-left: 3px solid black; background-color: rgba(0, 0, 0, 0.03); line-height: 1.5; overflow-x: clip; }
+        pre.language-Python { border-left: 5px solid blue; padding: 0.5em; margin-left: 1em; margin-right: 1em; line-height: 1.5; overflow-x: auto; }
+        .block { display: flex; }
+        .block.inline-html { display: block; }
+        .hr { width: 100%; height: 1px; display: block; margin: 0.5em; margin-block: 0.5em; border-top: 1px solid black; }
+        #display li > div { display: flex; }
+        p { width: 100%; display: block; margin-block: 0.5em; }
+        #display li { width: 100%; }
+        li .block p { width: 100%; display: block; margin-top: 0.5em; margin-bottom: 0.5em; }
+        li .block:first-of-type p { width: 100%; display: block; margin-top: 0em; margin-bottom: 0em; }
+        .section > .block ol ~ .line-number { display: none; }
+        .section > .block ul ~ .line-number { display: none; }
+        .section > .block pre ~ .line-number { display: none; }
+        .section > .block code ~ .line-number { }
+        pre .line-number { float: right; font-size: 8px; text-align: center; text-indent: 0px; }
+        .line-number { float: right; white-space: pre-wrap; font-size: 10%; }
+        p + .line-number { margin-block-start: 8px; }
+        .block > div.linenumber { margin-block-start: -0.5em; }
+        .blockquote + div.line-number { margin-top: 1rem; }
+        h1 + .line-number { margin-block-start: 20em; }
+        h2 + .line-number { margin-block-start: 15em; }
+        h3 + .line-number { margin-block-start: 15em; }
+        h4 + .line-number { margin-block-start: 15em; }
+        h5 + .line-number { margin-block-start: 15em; }
+        h6 + .line-number { margin-block-start: 15em; }
+        .blockquote { width: 100%; display: block; margin: 1em; border: 1px solid black; padding: 1em; border-radius: 0.5em; }
+        details > summary { font-weight: bold; }
+        details[open] { border: 1px solid black; padding: 1em; }
+        table { padding: 0px; }
+        table tr { border-top: 1px solid rgb(204, 204, 204); background-color: white; margin: 0px; padding: 0px; }
+        table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+        table tr th { font-weight: bold; border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+        table tr td { border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+        table tr th :first-child, table tr td :first-child { margin-top: 0px; }
+        table tr th :last-child, table tr td :last-child { margin-bottom: 0px; }
+        .katex { font-size: inherit !important; }
+        .katex-display { text-align: center; margin: 1em; font-size: 1.1em !important; }
+        @media print {
+          body, html { margin: 0in; color: rgb(0, 0, 0); height: auto; background-color: rgb(255, 255, 255); border: none; display: inline; }
+          h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+          .title { break-before: page; margin-top: 0px; }
+          #toc { display: none; font-size: 100%; margin: 0px; width: 100%; overflow-y: hidden; padding-left: 0px; padding-right: 0px; }
+          #display { margin-left: 0em; width: 100%; padding-left: 0px; padding-right: 0px; border: none; overflow-wrap: break-word; }
+        }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        
+    </style>
+
+
+
+    <script>
+        function tocClick() {
+            // No jQuery b/c also used in stand-alone HTML.
+            hs = document.querySelectorAll('#toc > ol ol');
+            for (var i = 0; i < hs.length; i++) {
+              if (hs[i].previousElementSibling) {
+                var el = hs[i].previousElementSibling.firstElementChild;
+                if (el.length == 0) {
+                  continue;
+                }
+                el.addEventListener('click', event => {
+                  var ns = event.target.parentNode.nextElementSibling;
+                  if (ns.style.display === 'none') {
+        ns.style.display = 'block';
+                  } else {
+        ns.style.display = 'none';
+                  }
+                });
+              }
+            }
+          }
+        if (
+            document.readyState === "complete" ||
+            (document.readyState !== "loading" && 
+              !document.documentElement.doScroll)
+        ) {
+          tocClick();
+        } else {
+          document.addEventListener("DOMContentLoaded", tocClick);
+        }
+    </script>
+
+</head>
+
+<body style="display: flex;min-width: 50%;max-height:100%;">
+
+    <div id="toc">
+        <ol>
+            <li><a number="1" href="#class-schedule">Class Schedule</a></li>
+            <ol style="display: none;">
+                <li><a number="1.1" href="#tuesday-august-24th">Tuesday, August 24th</a></li>
+                <li><a number="1.2" href="#thursday-august-26th">Thursday, August 26th</a></li>
+                <li><a number="1.3" href="#tuesday-august-31st">Tuesday, August 31st</a></li>
+                <li><a number="1.4" href="#thursday-september-2nd">Thursday, September 2nd</a></li>
+                <li><a number="1.5" href="#tuesday-october-12th">Tuesday, October 12th</a></li>
+                <li><a number="1.6" href="#thursday-october-14th" class="">Thursday, October 14th</a></li>
+                <li><a number="1.7" href="#thursday-november-25th">Thursday, November 25th</a></li>
+                <li><a number="1.8" href="#thursday-december-2nd">Thursday, December 2nd</a></li>
+                <li><a number="1.9" href="#thursday-december-9th" class="">Thursday, December 9th</a></li>
+            </ol>
+            <li><a number="2" href="#format-of-course" class="">Format of Course</a></li>
+            <li><a number="3" href="#discord">Discord</a></li>
+            <li><a number="4" href="#succeeding-in-this-course" class="highlighted">Succeeding in this Course</a></li>
+            <li><a number="5" href="#catalog-description">Catalog Description</a></li>
+            <li><a number="6" href="#grading">Grading</a></li>
+            <li><a number="7" href="#textbook">Textbook</a></li>
+            <li><a number="8" href="#suggested-references">Suggested References</a></li>
+            <li><a number="9" href="#important-dates">Important Dates</a></li>
+            <li><a number="10" href="#university-policy">University Policy</a></li>
+            <li><a number="11" href="#disability-accommodations">Disability Accommodations</a></li>
+            <li><a number="12" href="#counseling-and-student-support">Counseling and Student Support</a></li>
+        </ol>
+    </div>
+    <div id="display">
+        <div class="section">
+
+            <div class="block inline-html">
+                <div style="text-align:center;font-size:150%">
+                    <b>PHYS 305 Electromagnetic Theory</b>
+                </div>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>Day and Time: Tuesday/Thursday from 12:00 pm - 1:15 pm</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Office Hours: Tuesday/Thursday from 11:00 am – noon (on Discord)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Discord URL: See email</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Instructor: Bob Weigel</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Email: <a href="mailto:rweigel@gmu.edu">rweigel@gmu.edu</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Office: 259 Planetary Hall</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Course URL: <a href="http://rweigel.github.io/phys305">http://rweigel.github.io/phys305</a></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="class-schedule" number="1" class="hanchor" href="#class-schedule"><span class="hnumber">1 </span> <span class="htext">Class Schedule</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="tuesday-august-24th" number="1.1" class="hanchor" href="#tuesday-august-24th"><span class="hnumber">1.1 </span> <span class="htext">Tuesday, August 24th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>Introductions</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Discuss syllabus</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Assign HW #1</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Discuss HW #1 topics</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-august-26th" number="1.2" class="hanchor" href="#thursday-august-26th"><span class="hnumber">1.2 </span> <span class="htext">Thursday, August 26th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>Discuss HW #1 topics</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="tuesday-august-31st" number="1.3" class="hanchor" href="#tuesday-august-31st"><span class="hnumber">1.3 </span> <span class="htext">Tuesday, August 31st</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>Answer questions on HW #1 topics</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-september-2nd" number="1.4" class="hanchor" href="#thursday-september-2nd"><span class="hnumber">1.4 </span> <span class="htext">Thursday, September 2nd</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>Answer questions on HW #1 topics</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Homework #1 due at 3:00 pm</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="tuesday-october-12th" number="1.5" class="hanchor" href="#tuesday-october-12th"><span class="hnumber">1.5 </span> <span class="htext">Tuesday, October 12th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>No class</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2 class=""><a name="thursday-october-14th" number="1.6" class="hanchor" href="#thursday-october-14th"><span class="hnumber">1.6 </span> <span class="htext">Thursday, October 14th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul class="">
+                    <li class="">
+                        <div class="block">
+                            <p>Mid-term exam during class time. Location and/or delivery method TBD.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-november-25th" number="1.7" class="hanchor" href="#thursday-november-25th"><span class="hnumber">1.7 </span> <span class="htext">Thursday, November 25th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>No class</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-december-2nd" number="1.8" class="hanchor" href="#thursday-december-2nd"><span class="hnumber">1.8 </span> <span class="htext">Thursday, December 2nd</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>Last class</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2 class=""><a name="thursday-december-9th" number="1.9" class="hanchor" href="#thursday-december-9th"><span class="hnumber">1.9 </span> <span class="htext">Thursday, December 9th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <p class="">Final Exam from 10:30 am – 1:15 pm. Location and/or delivery method TBD.</p>
+
+            </div>
+
+
+
+
+
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1 class=""><a name="format-of-course" number="2" class="hanchor" href="#format-of-course"><span class="hnumber">2 </span> <span class="htext">Format of Course</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p class="">The delivery of this course is centered on tutorials. In general, I will not have a formal lecture prepared.</p>
+
+            </div>
+            <div class="block">
+                <ol>
+                    <li>
+                        <div class="block">
+                            <p>All of what I would normally lecture on has been written into the tutorials and its examples.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>I have done this to maximize the amount of time available for students to ask questions.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><strong>If you do not work on the tutorial prior to class, you will not find class attendance helpful.</strong></p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="discord" number="3" class="hanchor" href="#discord"><span class="hnumber">3 </span> <span class="htext">Discord</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>The first week of class, you should have received an email with an invitation to join a Discord server.</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1 class="highlighted"><a name="succeeding-in-this-course" number="4" class="hanchor" href="#succeeding-in-this-course"><span class="hnumber">4 </span> <span class="htext">Succeeding in this Course</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>For many, this may be your first junior/senior-level physics course. To succeed, you may need to change the way you study. In addition to what is written below, please see <a href="http://physics.gmu.edu/~joe/PHYS303/syllabus.pdf">Joe Weingartner’s PHYS 303 syllabus</a> for his perspective on this and Feynman’s <a href="https://www.scotthyoung.com/learnonsteroids/grab/TranscriptFeynman.pdf">Never forget an idea again</a>.</p>
+
+            </div>
+            <div class="block">
+                <p>Success in this course depends on four factors, in order of importance:</p>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>How many problems you solved</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>How many problems you pseudo-solved</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>How much use you made use of the in-class problem solving time</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>How much use you made of my time or your classmate’s time </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <p>By pseudo-solved, I mean that you</p>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>looked a problem statement,</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>thought of everything that you would need to account for in the solution,</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>wrote down a few key equations, and then</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>looked at the solution to verify that your reasoning was correct and that you are confident that given time and no algebraic mistakes, you could get the correct answer. Because I give so many potential exam problems, you will need to pseudo-solve some problems. I will not be able to provide detailed solutions to all problems. In some cases, only a terse explanation of major steps or the final answer will be given.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="blockquote">
+                    <p>It is easy to find solved physics problems. Reading the solution before thinking about them is about as useful as learning to play basketball by watching a video. If you aren’t confident that you can solve a problem, try a full solution and compare your solution with a classmates before looking at the answer. If you are fairly confident you can solve it, pseudo-solve it.</p>
+                </div>
+            </div>
+            <div class="block">
+                <p>How to read:</p>
+
+            </div>
+            <div class="block">
+                <ul class="">
+                    <li class="">
+                        <div class="block">
+                            <p>Read explanation of a topic and fill in missing steps.</p>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="block">
+                            <p>Close book and attempt to repeat the explanation. Check your answer. If you got it wrong, re-visit problem a day later.</p>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="block">
+                            <p>If you are successful, attempt to re-solve the problem in a different way (for example, using a different coordinate system or using Gauss’ Law instead of Coulomb’s law, etc.). Check answer. If you got it wrong, re-visit problem a day later. Keep a separate notebook with a list of things that you had issues with and how you resolved them.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--
+%I learned quite a bit about how to think like a professional physicist from my advisor in graduate school. Anytime I would bring up a concept, he would start from first principles, set up a geometry, do dimensional analysis, and write down facts that he knew. Then he would repeat my question to me and attempt to answer it. Doing this over-and over serves two purposes (1) It cements in the fundamental concepts by repeating them often and (2) gets you thinking about the fundamentals. I often times rely on this approach when a student asks me about a problem on a physics-related topic that have not thought about for many years.
+-->
+            <!--
+%To succeed in physics, you should do the same. Use Google and/or a textbook only after you have written down everything you know and attempted to solve a problem with what you wrote down as a starting point. In addition, think about symmetry, dimensions, and related problems that you know how to solve and can used to check your answer by taking a limit. I’ll give many examples of this throughout the semester, but related to the last point, if you are given a 2-D problem, try to solve a simpler or 1-D problem for which you know the answer. Then try the more complex or 2-D problem. You probably happen to remember that the electric field falls off like $1/r$ for an infinite line of charge. It has to fall off more slowly than $1/r^2$, and you should know that Coulomb’s Law depends on $1/r^2$. If asked to calculate the field for a finite line of charge, first see if you can calculate the equation for the 1/r dependence. Then try the finite line problem - the equation will be a bit more complicated, but having solved the 1/r problem, you will have a prepped yourself. As another example, if asked to compute the field associated with a finite sheet of charge, compute the field for a finite line of charge first, check that your answer is correct in the limit that the line is long, and then try the sheet problem.
+-->
+            <!--
+%I will be giving you tips like this throughout the semester. Force yourself to follow the problem-solving approaches that I suggest. Many students have a problem-solving approach from freshman/sophomore physics that won’t work for more advanced courses (for example, relying on memory instead of relying on your ability to solve a problem by building up from a few basic principles that you have memorized).
+-->
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="catalog-description" number="5" class="hanchor" href="#catalog-description"><span class="hnumber">5 </span> <span class="htext">Catalog Description</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p><a href="https://catalog.gmu.edu/search/?search=PHYS+305">Physics 305 Electromagnetic Theory</a></p>
+
+            </div>
+            <div class="block">
+                <p>Interaction of static charges, interaction of stationary currents, electromagnetic induction, and Maxwell’s equations.</p>
+
+            </div>
+            <div class="block">
+                <p>Required Prerequisites: PHYS 260<sup>C</sup> and PHYS 301<sup>*</sup>.</p>
+
+            </div>
+            <div class="block">
+                <p><sup>C</sup> Requires minimum grade of C.</p>
+
+            </div>
+            <div class="block">
+                <p><sup>*</sup> May be taken concurrently.</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="grading" number="6" class="hanchor" href="#grading"><span class="hnumber">6 </span> <span class="htext">Grading</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>Your grade for this course has two components:</p>
+
+            </div>
+            <div class="block">
+                <ol>
+                    <li>
+                        <div class="block">
+                            <p>Homework average (30%) - approximately one per week</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Exam average (70%) - two exams during the semester and one final exam, equally weighted.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="block">
+                <p>Because of the size of this class, I may not grade all problems on every homework assignment. You score is based only on the problems selected for grading.</p>
+
+            </div>
+            <div class="block">
+                <p>There will be two exams during the semester and a cumulative final exam. The exams carry equal weight.</p>
+
+            </div>
+            <div class="block">
+                <p>The midterm will cover Chapters 1-4 of Griffiths</p>
+
+            </div>
+            <div class="block">
+                <p>The final exam will cover Chapters 1-7 of Griffiths</p>
+
+            </div>
+            <div class="block">
+                <p>The nominal percentage-to-letter grade conversion is (this is subject to change such that the required percentage score for a given letter grade is lower)</p>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>&gt; 97: A+</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>93 to 96.<span style="text-decoration:overline">9</span>: A-</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>90 to 92.<span style="text-decoration:overline">9</span>: A-</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>87 to 89.<span style="text-decoration:overline">9</span>: B+</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>83 to 86.<span style="text-decoration:overline">9</span>: B</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>80 to 82.<span style="text-decoration:overline">9</span>: B-</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>77 to 79.<span style="text-decoration:overline">9</span>: C+</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>73 to 76.<span style="text-decoration:overline">9</span>: C</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>70 to 72.<span style="text-decoration:overline">9</span>: C-</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>60 to 69.<span style="text-decoration:overline">9</span>: D</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>&lt; 60: F</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="textbook" number="7" class="hanchor" href="#textbook"><span class="hnumber">7 </span> <span class="htext">Textbook</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>I will follow the outline of the topics covered in chapters 1-7 in <a href="https://www.amazon.com/Introduction-Electrodynamics-4th-David-Griffiths/dp/0321856562">Introduction to Electrodynamics (4th Edition) by David J. Griffiths</a>. Note that the 3rd Edition is also widely available. You may buy either edition. However, I will reference pages and problem numbers from 4th edition.</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="suggested-references" number="8" class="hanchor" href="#suggested-references"><span class="hnumber">8 </span> <span class="htext">Suggested References</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>The following references may be used as additional study aids. They have been listed in order of importance/usefulness.</p>
+
+            </div>
+            <div class="block">
+                <p><a href="https://www.amazon.com/Electricity-Magnetism-Edward-M-Purcell/dp/1107014026/">Electricity and Magnetism (3rd Edition) by Edward M. Purcell and David J. Morin</a> covers the same topics as Griffiths at the same level. If you are looking for an alternative explanation, this textbook will be helpful. The book contains far more examples, discussion, and content than Griffiths. It also includes solutions. </p>
+
+            </div>
+            <div class="block">
+                <p><a href="http://www.amazon.com/Schaums-Outline-Electromagnetics-4th-Outlines/dp/0071831479/">Schaum’s outline of theory and problems of electromagnetics by Joseph A. Edminister</a> is a great reference for problems with full solutions and summaries of topics.</p>
+
+            </div>
+            <div class="block">
+                <p><a href="https://www.amazon.com/Div-Grad-Curl-All-That/dp/0393925161/">Div, Grad, Curl, and All That: An Informal Text on Vector Calculus (4th Edition) by H. M. Schey</a> is an excellent reference for the mathematical background that you need to understand for this course. The book contains a concise and clear review of topics that are covered in a vector calculus course (usually “Calculus III”).</p>
+
+            </div>
+            <div class="block">
+                <p><a href="https://www.amazon.com/Students-Guide-Maxwells-Equations/dp/0521701473/">A Student’s Guide to Maxwell’s Equations (1st Edition) by Daniel Fleisch</a> notes that “the focus is exclusively on Maxwell’s Equations, which means you won’t have to wade through hundreds of pages of related topics to get to the essential concepts. This leaves room for in-depth explanations of the most relevant features, such as the difference between charge-based and induced electric fields, the physical meaning of divergence and curl, and the usefulness of both the integral and differential forms of each equation.” A web page with detailed solutions to problems is available at <a href="http://www.danfleisch.com/maxwell/">http://www.danfleisch.com/maxwell/</a>.</p>
+
+            </div>
+            <div class="block">
+                <p><a href="https://www.amazon.com/Feynman-Lectures-Physics-Mainly-Electromagnetism/dp/020102117X/">The Feynman Lectures on Physics: Mainly Electromagnetism and Matter, Volume 2, 1977</a> contains excellent lecture-style presentations on Electricity and Magnetism. The full volume is available <a href="http://www.feynmanlectures.caltech.edu/II_toc.html">online</a>.</p>
+
+            </div>
+            <div class="block">
+                <p><a href="https://www.youtube.com/playlist?list=PLD07B2225BB40E582&amp;feature=plcp">Yale Lectures on Physics II</a> is a lecture series on topics typically covered in a second-semester physics course and does not cover the mathematics at the level required for this course. These videos may be useful as a review.</p>
+
+            </div>
+            <div class="block">
+                <p><a href="http://web.mit.edu/viz/soft/visualizations/IntermediateE&amp;M/classNotes_2010_final.pdf">8.07 Class Notes by John Belcher</a> covers the same topics as Griffiths and has additional examples.</p>
+
+            </div>
+            <div class="block">
+                <p>Other links:</p>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p><a href="http://questions.gmu.edu/guideontheside/tutorial/find-ebooks">Finding E-Books at Mason</a></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="important-dates" number="9" class="hanchor" href="#important-dates"><span class="hnumber">9 </span> <span class="htext">Important Dates</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p><a href="https://registrar.gmu.edu/calendars/fall_2021/#dates">Important Dates from Registrar</a></p>
+
+            </div>
+            <div class="block">
+                <p><a href="https://registrar.gmu.edu/wp-content/uploads/Fall-2021-Final-Exam-Schedule.pdf">Final Exam Schedule</a></p>
+
+            </div>
+            <div class="block">
+                <p>Last class: Thursday, December 5th</p>
+
+            </div>
+            <div class="block">
+                <p>No class:</p>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>Tuesday, October 15th (Monday classes/labs meet Tuesday. Tuesday classes do not meet this week)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Thursday, November 28th (Thanksgiving)</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <p>Final Exam: Thursday, December 12th 10:30 am - 1:15 pm in regular classroom</p>
+
+            </div>
+            <div class="block">
+                <p>Midterm I: TBD</p>
+
+            </div>
+            <div class="block">
+                <p>Midterm II: TBD</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="university-policy" number="10" class="hanchor" href="#university-policy"><span class="hnumber">10 </span> <span class="htext">University Policy</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>University Policies: <a href="http://universitypolicy.gmu.edu/">http://universitypolicy.gmu.edu/</a></p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="disability-accommodations" number="11" class="hanchor" href="#disability-accommodations"><span class="hnumber">11 </span> <span class="htext">Disability Accommodations</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>If you have a learning disability or other condition that may affect academic performance, please: a) make sure documentation is on file with Office of Disability Services (<a href="http://ods.gmu.edu">http://ods.gmu.edu</a>) to determine the accommodations you need; and b) talk with me to discuss your accommodation needs.</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="counseling-and-student-support" number="12" class="hanchor" href="#counseling-and-student-support"><span class="hnumber">12 </span> <span class="htext">Counseling and Student Support</span></a></h1>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>Counseling and Psychological Services provides confidential psychological services, including 24/7 crisis intervention and consultation to faculty and staff: <a href="http://caps.gmu.edu/">http://caps.gmu.edu/</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Student Support helps students negotiate life situations by connecting them with appropriate on- and off-campus resources
+                                : <a href="http://studentsupport.gmu.edu/referral-form/">http://studentsupport.gmu.edu/referral-form/</a></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

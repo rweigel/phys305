@@ -12,7 +12,7 @@ $$
 \mathbf{A} = A_x\ihat + A_y\jhat\quad\text{and}\quad \mathbf{A} = \langle A_x, A_y \rangle
 $$
 
-The vector $\mathbf{A}$ can be viewed as the sum of the two vectors $A_x\xhat$ and $A_y\yhat$. On the left-hand side of the diagram below, the two components of $\mathbf{A}$ are shown (assuming the scalar quantities $A_x$ and $A_y$ are both positive). In the middle, the sum of these components is shown.
+The vector $\mathbf{A}$ can be viewed as the sum of the two vectors $A_x\xhat$ and $A_y\yhat$. On the left-hand side of the following diagram, the two components of $\mathbf{A}$ are shown (assuming the scalar quantities $A_x$ and $A_y$ are both positive). In the middle, the sum of these components is shown.
 
 By definition, the magnitude of $\mathbf{A}$ is the given by the Pythagorean formula
 
@@ -24,14 +24,9 @@ $A$ and $|\mathbf{A}|$ are equivalent -- often one is used instead of the other 
 
 <img src="figures/Vectors-1.svg" width="100%"/>
 
-----
-
 **Common error**: referring to $|\mathbf{A}|$ as "The absolute value of $\mathbf{A}$". The absolute value operator operates on a scalar, e.g., $-12.1$. When used with a vector, the vertical bars mean "The magnitude of $\mathbf{A}$". Both the absolute value and magnitude operations yield a positive scalar, but their calculation is different. The absolute value operation is to simply drop a negative sign. The magnitude operation requires the use of the Pythagorean formula.
 
-If done any programming, you've encountered the concept of ["operation overloading"](https://en.wikipedia.org/wiki/Operator_overloading) - a mathemmatical operation has multiple meanings depending on the arguments. For example the `+` sign in the statement `1 + 2` means "add the numbers before and after it" and in the statement `'B' + 'ob'`, the `+` sign means "concatenate strings to give `'Bob'`. In a similar way, the operator $|\cdot|$ means "absolute value" if $\cdot$ is a scalar and "vector magnitude" if $\cdot$ is a vector.
-
-----
-
+%If done any programming, you've encountered the concept of ["operation overloading"](https://en.wikipedia.org/wiki/Operator_overloading) - a mathemmatical operation has multiple meanings depending on the arguments. For example the `+` sign in the statement `1 + 2` means "add the numbers before and after it" and in the statement `'B' + 'ob'`, the `+` sign means "concatenate strings to give `'Bob'`. In a similar way, the operator $|\cdot|$ means "absolute value" if $\cdot$ is a scalar and "vector magnitude" if $\cdot$ is a vector.
 
 Also by definition,
 
@@ -117,50 +112,54 @@ $$\mathbf{A} = (x-y)\hat{\mathbf{x}}-y\hat{\mathbf{y}}$$
 
 # Vector Addition/Subtraction
 
-### Problems
+## Problems
 
 ###
 
-\(\mathbf{A}\) is 1 unit in the \(x-\)direction and \(\mathbf{B}\) is 1 unit in the \(y-\)direction.  
+$\mathbf{A}$ is 1 unit in the $x-$direction and $\mathbf{B}$ is 1 unit in the $y-$direction.  
 
-Graphically (make no calculations) estimate the vectors \(\mathbf{A}\) + \(\mathbf{B}\) where 
+Graphically (make no calculations) estimate the vectors $\mathbf{A}$ + $\mathbf{B}$ where 
 
 ###
 
-* \(\mathbf{A}\) points east and \(A=4\) units
-* \(\mathbf{B}\) is at an angle of \(120^o\) from east and \(B=4\) units.
-* \(\mathbf{C}\) is at an angle of \(30^o\) south of east and \(|\mathbf{C}|=4\) units.
+* $\mathbf{A}$ points east and $A=4$ units
+* $\mathbf{B}$ is at an angle of $120^o$ from east and $B=4$ units.
+* $\mathbf{C}$ is at an angle of $30^o$ south of east and $|\mathbf{C}|=4$ units.
 
 Graphically (make no calculations) estimate the vectors
 
-1. \(\mathbf{A}+\mathbf{B}\)
-2. \(3\mathbf{A}-4\mathbf{C}\)
-3. \(\mathbf{A}+\mathbf{B}-\mathbf{C}\)
+1. $\mathbf{A}+\mathbf{B}$
+2. $3\mathbf{A}-4\mathbf{C}$
+3. $\mathbf{A}+\mathbf{B}-\mathbf{C}$
 
 ###
 
-Vector \(\mathbf{A}\) connects the origin to the point \(a\) at \((x,y)=(2,1)\). Vector \(\mathbf{B}\) connects the origin to the point \(b\) at \((x,y)=(1,2)\).  Draw and label the following vectors to scale:
-*\(\mathbf{A}\) and \(\mathbf{B}\);
-*\(\hat{\mathbf{A}}\) and \(\hat{\mathbf{B}}\);
-*the unit vectors \(\hat{\mathbf{x}}\) and \(\hat{\mathbf{y}}\).
-*Draw and label
-**\(\mathbf{C}=\mathbf{A}+\mathbf{B}\)
-**\(\mathbf{D}=\mathbf{A}-\mathbf{B}\)
-**\(\mathbf{E}=-\mathbf{A}+\mathbf{B}\), and
-**\(\mathbf{F}=-\mathbf{A}-\mathbf{B}\).
-*Compute, in terms of \(\hat{\mathbf{x}}\) and \(\hat{\mathbf{y}}\) and numbers
-**\(\mathbf{C}\), \(C\), and \(\hat{\mathbf{C}}\)
-**\(\mathbf{D}\), \(D\), and \(\hat{\mathbf{D}}\)
-**\(\mathbf{E}\), \(E\), and \(\hat{\mathbf{E}}\)
-**\(\mathbf{F}\), \(F\), and \(\hat{\mathbf{F}}\)
+Vector $\mathbf{A}$ connects the origin to the point $a$ at $(x,y)=(2,1)$. Vector $\mathbf{B}$ connects the origin to the point $b$ at $(x,y)=(1,2)$.
+
+Draw and label the following vectors to scale:
+* $\mathbf{A}$ and $\mathbf{B}$;
+* $\hat{\mathbf{A}}$ and $\hat{\mathbf{B}}$;
+* the unit vectors $\hat{\mathbf{x}}$ and $\hat{\mathbf{y}}$.
+
+Draw and label
+* $\mathbf{C}=\mathbf{A}+\mathbf{B}$
+* $\mathbf{D}=\mathbf{A}-\mathbf{B}$
+* $\mathbf{E}=-\mathbf{A}+\mathbf{B}$, and
+* $\mathbf{F}=-\mathbf{A}-\mathbf{B}$.
+
+Compute, in terms of $\hat{\mathbf{x}}$ and $\hat{\mathbf{y}}$ and numbers
+* $\mathbf{C}$, $C$, and $\hat{\mathbf{C}}$
+* $\mathbf{D}$, $D$, and $\hat{\mathbf{D}}$
+* $\mathbf{E}$, $E$, and $\hat{\mathbf{E}}$
+* $\mathbf{F}$, $F$, and $\hat{\mathbf{F}}$
 
 ###
 
-Find the vector made by connecting a line from \((x,y,z)=(1,2,3)\) to \((x,y,z)=(4,5,6)\).
+Find the vector made by connecting a line from $(x,y,z)=(1,2,3)$ to $(x,y,z)=(4,5,6)$.
 
 ###
 
-Write an equation for the vector made by connecting a line from \((x_o,y_o,z_o)\) to \((x,y,z)\).
+Write an equation for the vector made by connecting a line from $(x_o,y_o,z_o)$ to $(x,y,z)$.
 
 # Unit Vectors
 
