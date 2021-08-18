@@ -2,7 +2,6 @@
 <b>PHYS 305 Electromagnetic Theory</b>
 </div>
 
-
 * Day and Time: Tuesday/Thursday from 12:00 pm - 1:15 pm
 * Office Hours: Tuesday/Thursday from 11:00 am -- noon (on Discord)
 * Discord URL: See email
