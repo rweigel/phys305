@@ -1,5 +1,5 @@
 <div style="text-align:center;font-size:150%">
-<b>PHYS 305 Electromagnetic Theory</b>
+<b>PHYS 305 - Electromagnetic Theory</b>
 </div>
 
 * Day and Time: Tuesday/Thursday from 12:00 pm - 1:15 pm
@@ -95,6 +95,7 @@ How to read:
 %To succeed in physics, you should do the same. Use Google and/or a textbook only after you have written down everything you know and attempted to solve a problem with what you wrote down as a starting point. In addition, think about symmetry, dimensions, and related problems that you know how to solve and can use to check your answer by taking a limit. I'll give many examples of this throughout the semester, but related to the last point, if you are given a 2-D problem, try to solve a simpler or 1-D problem for which you know the answer. Then try the more complex or 2-D problem. You probably happen to remember that the electric field falls off like $1/r$ for an infinite line of charge. It has to fall off more slowly than $1/r^2$, and you should know that Coulomb's Law depends on $1/r^2$. If asked to calculate the field for a finite line of charge, first see if you can calculate the equation for the 1/r dependence. Then try the finite line problem - the equation will be a bit more complicated, but having solved the 1/r problem, you will have a prepped yourself. As another example, if asked to compute the field associated with a finite sheet of charge, compute the field for a finite line of charge first, check that your answer is correct in the limit that the line is long, and then try the sheet problem.
 
 %I will be giving you tips like this throughout the semester. Force yourself to follow the problem-solving approaches that I suggest. Many students have a problem-solving approach from freshman/sophomore physics that won't work for more advanced courses (for example, relying on memory instead of relying on your ability to solve a problem by building up from a few basic principles that you have memorized).
+
 
 # Catalog Description
 
