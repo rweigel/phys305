@@ -8,7 +8,7 @@
 * Instructor: Bob Weigel
 * Email: rweigel@gmu.edu
 * Office: 259 Planetary Hall
-* Course URL: http://rweigel.github.io/phys305
+* Course URL: http://rweigel.github.io/phys305/
 
 # Class Schedule
 
@@ -56,13 +56,13 @@ Final Exam from 10:30 am -- 1:15 pm. Location and/or delivery method TBD.
 
 The delivery of this course is centered on tutorials. In general, I will not have a formal lecture prepared.
 
-1. All of what I would normally lecture on has been written into the tutorials and its examples.
+1. All of what I would normally lecture on has been written into the tutorials and their examples.
 2. I have done this to maximize the amount of time available for students to ask questions.
-3. **If you do not work on the tutorial prior to class, you will not find class attendance helpful.**
+3. **If you do not work on the tutorial before class, you will not find class attendance helpful.**
 
 # Discord
 
-The first week of class, you should have received an email with an invitation to join a Discord server.
+The first week of class, you should have received an email inviting you to join a Discord server.
 
 # Succeeding in this Course
 
@@ -72,7 +72,7 @@ Success in this course depends on four factors, in order of importance:
 
 * How many problems you solved
 * How many problems you pseudo-solved
-* How much use you made use of the in-class problem solving time
+* How much use you made use of the in-class problem-solving time
 * How much use you made of my time or your classmate's time 
 
 By pseudo-solved, I mean that you
@@ -82,17 +82,17 @@ By pseudo-solved, I mean that you
 * wrote down a few key equations, and then
 * looked at the solution to verify that your reasoning was correct and that you are confident that given time and no algebraic mistakes, you could get the correct answer. Because I give so many potential exam problems, you will need to pseudo-solve some problems. I will not be able to provide detailed solutions to all problems.  In some cases, only a terse explanation of major steps or the final answer will be given.
 
-> It is easy to find solved physics problems. Reading the solution before thinking about them is about as useful as learning to play basketball by watching a video. If you aren't confident that you can solve a problem, try a full solution and compare your solution with a classmates before looking at the answer. If you are fairly confident you can solve it, pseudo-solve it.
+> It is easy to find solved physics problems. Reading the solution before thinking about them is about as useful as learning to play basketball by watching a video. If you aren't confident that you can solve a problem, try a full solution and compare your solution with a classmate's before looking at the answer. If you are confident you can solve it, pseudo-solve it.
 
 How to read:
 
-* Read explanation of a topic and fill in missing steps.
-* Close book and attempt to repeat the explanation. Check your answer. If you got it wrong, re-visit problem a day later.
-* If you are successful, attempt to re-solve the problem in a different way (for example, using a different coordinate system or using Gauss' Law instead of Coulomb's law, etc.). Check answer. If you got it wrong, re-visit problem a day later. Keep a separate notebook with a list of things that you had issues with and how you resolved them.
+* Read an explanation of a topic and fill in the missing steps.
+* Close the book or web page and attempt to repeat the explanation. Check your answer. If you got it wrong, re-visit the problem a day later.
+* If you are successful, attempt to re-solve the problem differently (for example, using a different coordinate system or using Gauss' Law instead of Coulomb's law, etc.). Check answer. If you got it wrong, re-visit problem a day later. Keep a separate notebook with a list of things you had issues with and how you resolved them.
 
-%I learned quite a bit about how to think like a professional physicist from my advisor in graduate school. Anytime I would bring up a concept, he would start from first principles, set up a geometry, do dimensional analysis, and write down facts that he knew. Then he would repeat my question to me and attempt to answer it. Doing this over-and over serves two purposes (1) It cements in the fundamental concepts by repeating them often and (2) gets you thinking about the fundamentals. I often times rely on this approach when a student asks me about a problem on a physics-related topic that have not thought about for many years.
+%I learned quite a bit about how to think like a professional physicist from my advisor in graduate school. Anytime I would bring up a concept, he would start from first principles, set up a geometry, do dimensional analysis, and write down facts that he knew. Then he would repeat my question to me and attempt to answer it. Doing this repeately serves two purposes (1) It cements in the fundamental concepts by repeating them often and (2) gets you thinking about the fundamentals. I oftentimes rely on this approach when a student asks me about a problem on a physics-related topic that have not thought about for many years.
 
-%To succeed in physics, you should do the same. Use Google and/or a textbook only after you have written down everything you know and attempted to solve a problem with what you wrote down as a starting point. In addition, think about symmetry, dimensions, and related problems that you know how to solve and can used to check your answer by taking a limit. I'll give many examples of this throughout the semester, but related to the last point, if you are given a 2-D problem, try to solve a simpler or 1-D problem for which you know the answer. Then try the more complex or 2-D problem. You probably happen to remember that the electric field falls off like $1/r$ for an infinite line of charge. It has to fall off more slowly than $1/r^2$, and you should know that Coulomb's Law depends on $1/r^2$. If asked to calculate the field for a finite line of charge, first see if you can calculate the equation for the 1/r dependence. Then try the finite line problem - the equation will be a bit more complicated, but having solved the 1/r problem, you will have a prepped yourself. As another example, if asked to compute the field associated with a finite sheet of charge, compute the field for a finite line of charge first, check that your answer is correct in the limit that the line is long, and then try the sheet problem.
+%To succeed in physics, you should do the same. Use Google and/or a textbook only after you have written down everything you know and attempted to solve a problem with what you wrote down as a starting point. In addition, think about symmetry, dimensions, and related problems that you know how to solve and can use to check your answer by taking a limit. I'll give many examples of this throughout the semester, but related to the last point, if you are given a 2-D problem, try to solve a simpler or 1-D problem for which you know the answer. Then try the more complex or 2-D problem. You probably happen to remember that the electric field falls off like $1/r$ for an infinite line of charge. It has to fall off more slowly than $1/r^2$, and you should know that Coulomb's Law depends on $1/r^2$. If asked to calculate the field for a finite line of charge, first see if you can calculate the equation for the 1/r dependence. Then try the finite line problem - the equation will be a bit more complicated, but having solved the 1/r problem, you will have a prepped yourself. As another example, if asked to compute the field associated with a finite sheet of charge, compute the field for a finite line of charge first, check that your answer is correct in the limit that the line is long, and then try the sheet problem.
 
 %I will be giving you tips like this throughout the semester. Force yourself to follow the problem-solving approaches that I suggest. Many students have a problem-solving approach from freshman/sophomore physics that won't work for more advanced courses (for example, relying on memory instead of relying on your ability to solve a problem by building up from a few basic principles that you have memorized).
 
