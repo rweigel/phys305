@@ -2,8 +2,8 @@
 <b>PHYS 305 - Electromagnetic Theory</b>
 </div>
 
-* Day and Time: Tuesday/Thursday from 12:00 pm - 1:15 pm
-* Office Hours: Tuesday/Thursday from 11:00 am -- noon (on Discord)
+* Day and Time: Tuesday/Thursday from 12:00 pm - 1:15 pm (on Zoom)
+* Office Hours: Tuesday/Thursday from 11:00 am -- noon (on Zoom)
 * Discord URL: See email
 * Instructor: Bob Weigel
 * Email: rweigel@gmu.edu
@@ -16,7 +16,7 @@
 
 * Introductions
 * Discuss syllabus
-* Assign HW #1
+* Assign HW #1 covering Vectors, Vector Fields, Field Lines, and Equipotentials
 * Discuss HW #1 topics
 
 ## Thursday, August 26th 
@@ -31,6 +31,7 @@
 
 * Answer questions on HW #1 topics
 * Homework #1 due at 3:00 pm
+* Assign Homework #2 covering Flux, Divergence, Coulomb's Law, and Electric Field.
 
 ## Tuesday, October 12th
 
@@ -52,37 +53,45 @@
 
 Final Exam from 10:30 am -- 1:15 pm. Location and/or delivery method TBD.
 
+# Topics Covered and Catalog Description
+
+This course covers the topics in Chapters 1-7 of the [textbook](#textbook).
+
+The catalog description is
+
+> [Physics 305 Electromagnetic Theory](https://catalog.gmu.edu/search/?search=PHYS+305)
+>
+> Interaction of static charges, interaction of stationary currents, electromagnetic induction, and Maxwell's equations.
+>
+> Required Prerequisites: PHYS 260<sup>C</sup> and PHYS 301<sup>*</sup>.
+>
+> <sup>C</sup> Requires minimum grade of C.
+>
+><sup>*</sup> May be taken concurrently.
+
+
 # Format of Course
 
 The delivery of this course is centered on tutorials. In general, I will not have a formal lecture prepared.
 
-1. All of what I would normally lecture on has been written into the tutorials and their examples.
+1. Most of what I would normally lecture on has been written into the tutorials and their examples.
 2. I have done this to maximize the amount of time available for students to ask questions.
 3. **If you do not work on the tutorial before class, you will not find class attendance helpful.**
 
 # Discord
 
-The first week of class, you should have received an email inviting you to join a Discord server.
+The first week of class, you should have received an email inviting you to join a Discord server. I will use Discord to answer questions.
 
 # Succeeding in this Course
 
-For many, this may be your first junior/senior-level physics course.  To succeed, you may need to change the way you study.  In addition to what is written below, please see [Joe Weingartner's PHYS 303 syllabus](http://physics.gmu.edu/~joe/PHYS303/syllabus.pdf) for his perspective on this and Feynman's [Never forget an idea again](https://www.scotthyoung.com/learnonsteroids/grab/TranscriptFeynman.pdf).
+For many, this may be your first junior/senior-level physics course.  To succeed, you may need to change the way you study. In addition to what is written below, please see [Joe Weingartner's PHYS 303 syllabus](http://physics.gmu.edu/~joe/PHYS303/syllabus.pdf) for his perspective and Feynman's [Never forget an idea again](https://www.scotthyoung.com/learnonsteroids/grab/TranscriptFeynman.pdf).
 
-Success in this course depends on four factors, in order of importance:
+Success in this course depends primarily on two factors, in order of importance:
 
-* How many problems you solved
-* How many problems you pseudo-solved
-* How much use you made use of the in-class problem-solving time
-* How much use you made of my time or your classmate's time 
+1. How many problems you solved "the right way" (I will discuss this in class)
+2. How much you discussed problems and concepts with others
 
-By pseudo-solved, I mean that you
-
-* looked a problem statement,
-* thought of everything that you would need to account for in the solution,
-* wrote down a few key equations, and then
-* looked at the solution to verify that your reasoning was correct and that you are confident that given time and no algebraic mistakes, you could get the correct answer. Because I give so many potential exam problems, you will need to pseudo-solve some problems. I will not be able to provide detailed solutions to all problems.  In some cases, only a terse explanation of major steps or the final answer will be given.
-
-> It is easy to find solved physics problems. Reading the solution before thinking about them is about as useful as learning to play basketball by watching a video. If you aren't confident that you can solve a problem, try a full solution and compare your solution with a classmate's before looking at the answer. If you are confident you can solve it, pseudo-solve it.
+> It is easy to find solved physics problems. Reading their solution before thinking about them is about as useful as learning to play basketball by watching a video. If you aren't confident that you can solve a problem, attempt to solve it without the use of the solution and compare your solution with a classmate's _before_ looking at the solution.
 
 How to read:
 
@@ -97,50 +106,36 @@ How to read:
 %I will be giving you tips like this throughout the semester. Force yourself to follow the problem-solving approaches that I suggest. Many students have a problem-solving approach from freshman/sophomore physics that won't work for more advanced courses (for example, relying on memory instead of relying on your ability to solve a problem by building up from a few basic principles that you have memorized).
 
 
-# Catalog Description
-
-[Physics 305 Electromagnetic Theory](https://catalog.gmu.edu/search/?search=PHYS+305)
-
-Interaction of static charges, interaction of stationary currents, electromagnetic induction, and Maxwell's equations.
-
-Required Prerequisites: PHYS 260<sup>C</sup> and PHYS 301<sup>*</sup>.
-
-<sup>C</sup> Requires minimum grade of C.
-
-<sup>*</sup> May be taken concurrently.
-
 # Grading
 
 Your grade for this course has two components:
 
 1. Homework average (30%) - approximately one per week
-2. Exam average (70%) - two exams during the semester and one final exam, equally weighted.
+2. Exam average (70%) - one midterm and one final, equally weighted
 
 Because of the size of this class, I may not grade all problems on every homework assignment. You score is based only on the problems selected for grading.
 
 There will be two exams during the semester and a cumulative final exam. The exams carry equal weight.
 
-The midterm will cover Chapters 1-4 of Griffiths
+The midterm will cover Chapters 1-3 of Griffiths
 
-The final exam will cover Chapters 1-7 of Griffiths
+The final exam will cover Chapters 4-6 of Griffiths
 
 The nominal percentage-to-letter grade conversion is (this is subject to change such that the required percentage score for a given letter grade is lower)
 
-* &gt; 97: A+
-* 93 to 96.<span style="text-decoration:overline">9</span>: A-
-* 90 to 92.<span style="text-decoration:overline">9</span>: A-
-* 87 to 89.<span style="text-decoration:overline">9</span>: B+
-* 83 to 86.<span style="text-decoration:overline">9</span>: B
-* 80 to 82.<span style="text-decoration:overline">9</span>: B-
-* 77 to 79.<span style="text-decoration:overline">9</span>: C+
-* 73 to 76.<span style="text-decoration:overline">9</span>: C
-* 70 to 72.<span style="text-decoration:overline">9</span>: C-
+* &gt; 97: A+; 93 to 96.<span style="text-decoration:overline">9</span>: A-; 90 to 92.<span style="text-decoration:overline">9</span>: A-
+
+* 87 to 89.<span style="text-decoration:overline">9</span>: B+; 83 to 86.<span style="text-decoration:overline">9</span>: B; 80 to 82.<span style="text-decoration:overline">9</span>: B-
+
+* 77 to 79.<span style="text-decoration:overline">9</span>: C+; 73 to 76.<span style="text-decoration:overline">9</span>: C; 70 to 72.<span style="text-decoration:overline">9</span>: C-;
+ 
 * 60 to 69.<span style="text-decoration:overline">9</span>: D
+
 * < 60: F
 
 # Textbook
 
-I will follow the outline of the topics covered in chapters 1-7 in [Introduction to Electrodynamics (4th Edition) by David J. Griffiths](https://www.amazon.com/Introduction-Electrodynamics-4th-David-Griffiths/dp/0321856562). Note that the 3rd Edition is also widely available. You may buy either edition. However, I will reference pages and problem numbers from 4th edition.
+I will follow the outline of the topics covered in chapters 1-6 (and 7, if time) in [Introduction to Electrodynamics (4th Edition) by David J. Griffiths](https://www.amazon.com/Introduction-Electrodynamics-4th-David-Griffiths/dp/0321856562). Note that the 3rd Edition is also widely available. You may buy either edition. However, I will reference pages and problem numbers from 4th edition.
 
 # Suggested References
 
@@ -168,19 +163,14 @@ Other links:
 
 [Important Dates from Registrar](https://registrar.gmu.edu/calendars/fall_2021/#dates)
 
-[Final Exam Schedule](https://registrar.gmu.edu/wp-content/uploads/Fall-2021-Final-Exam-Schedule.pdf)
-
-Last class: Thursday, December 5th
-
 No class:
 * Tuesday, October 15th (Monday classes/labs meet Tuesday. Tuesday classes do not meet this week)
 * Thursday, November 28th (Thanksgiving)
 
-Final Exam: Thursday, December 12th 10:30 am - 1:15 pm in regular classroom
+Final Exam: Thursday, December 12th 10:30 am - 1:15 pm ([Final Exam Schedule](https://registrar.gmu.edu/wp-content/uploads/Fall-2021-Final-Exam-Schedule.pdf)). Location and deliver method TBD.
 
-Midterm I: TBD
+Last class: Thursday, December 5th
 
-Midterm II: TBD
 
 # University Policy
 
