@@ -10,49 +10,6 @@
 * Office: 259 Planetary Hall
 * Course URL: http://rweigel.github.io/phys305/
 
-# Class Schedule
-
-## Tuesday, August 24th
-
-* Introductions
-* Discuss syllabus
-* Assign HW #1 covering Vectors, Vector Fields, Field Lines, and Equipotentials
-* Discuss HW #1 topics
-
-## Thursday, August 26th 
-
-* Discuss HW #1 topics
-
-## Tuesday, August 31st
-
-* Answer questions on HW #1 topics
- 
-## Thursday, September 2nd 
-
-* Answer questions on HW #1 topics
-* Homework #1 due at 3:00 pm
-* Assign Homework #2 covering Flux, Divergence, Coulomb's Law, and Electric Field.
-
-## Tuesday, October 12th
-
-* No class
-
-## Thursday, October 14th
-
-* Mid-term exam during class time. Location and/or delivery method TBD.
-
-## Thursday, November 25th
-
-* No class
-
-## Thursday, December 2nd
-
-* Last class
-
-## Thursday, December 9th
-
-Final Exam from 10:30 am -- 1:15 pm. Location and/or delivery method TBD.
-
 # Topics Covered and Catalog Description
 
 This course covers the topics in Chapters 1-7 of the [textbook](#textbook).
@@ -69,13 +26,12 @@ The catalog description is
 >
 ><sup>*</sup> May be taken concurrently.
 
-
 # Format of Course
 
-The delivery of this course is centered on tutorials. In general, I will not have a formal lecture prepared.
+The delivery of this course is centered on tutorials that introduce topics, provide examples, and require you to solve problems related to the examples. In general, I will not have a formal lecture prepared.
 
 1. Most of what I would normally lecture on has been written into the tutorials and their examples.
-2. I have done this to maximize the amount of time available for students to ask questions.
+2. I have done this to maximize the amount of time available for students to ask question during class.
 3. **If you do not work on the tutorial before class, you will not find class attendance helpful.**
 
 # Discord
@@ -90,6 +46,8 @@ Success in this course depends primarily on two factors, in order of importance:
 
 1. How many problems you solved "the right way" (I will discuss this in class)
 2. How much you discussed problems and concepts with others
+
+Consistent with 1., nearly every concept is followed by an example and then a problem that you are expected to solve to determine if you understood the explanation of the concept and the example.
 
 > It is easy to find solved physics problems. Reading their solution before thinking about them is about as useful as learning to play basketball by watching a video. If you aren't confident that you can solve a problem, attempt to solve it without the use of the solution and compare your solution with a classmate's _before_ looking at the solution.
 

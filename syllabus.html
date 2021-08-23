@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>syllabus</title>
     <link id="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%220.9em%22 font-size=%22100%22>📖</text></svg>">
+
     <style>
         body { background-color: white; }
         #toc { font-size: 85%; width: 14em; position: fixed; min-height: 95%; max-height: 95%; overflow: hidden auto; padding-left: 0.75em; padding-right: 1em; margin-right: 1em; font-family: "Open Sans"; }
@@ -60,51 +61,25 @@
         table tr th :first-child, table tr td :first-child { margin-top: 0px; }
         table tr th :last-child, table tr td :last-child { margin-bottom: 0px; }
         .katex { font-size: inherit !important; }
-        .katex-display { text-align: center; margin: 1em; font-size: 1.1em !important; }
+        .katex-display { text-align: center; margin: 0.5em; font-size: 1.1em !important; }
         @media print {
           body, html { margin: 0in; color: rgb(0, 0, 0); height: auto; background-color: rgb(255, 255, 255); border: none; display: inline; }
           h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+          h1, h2, h3, h4, h5, h6 { width: 100%; margin-block: 0.1em; }
+          h1 { font-size: 1.25em; border-bottom: 1px solid darkblue; }
+          h3 { font-size: 1.15em; }
+          h4, h5, h6 { font-size: 1.15em; }
+          p { margin-top: 0px; margin-bottom: 0.5em; }
           .title { break-before: page; margin-top: 0px; }
           #toc { display: none; font-size: 100%; margin: 0px; width: 100%; overflow-y: hidden; padding-left: 0px; padding-right: 0px; }
           #display { margin-left: 0em; width: 100%; padding-left: 0px; padding-right: 0px; border: none; overflow-wrap: break-word; }
+          .katex { font: 1em / 1 KaTeX_Main, "Times New Roman", serif; white-space: nowrap; text-indent: 0px; text-rendering: auto; }
+          .katex-display { margin-top: 0px; }
         }
-        #toc > ol ol { display: none; }
-        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
-        #toc > ol ol { display: none; }
-        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
-        #toc > ol ol { display: none; }
-        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
-        #toc > ol ol { display: none; }
-        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
-        #toc > ol ol { display: none; }
-        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
-        #toc > ol ol { display: none; }
-        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
-        #toc > ol ol { display: none; }
-        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
-        #toc > ol ol { display: none; }
-        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
-        #toc > ol ol { display: none; }
-        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
-        #toc > ol ol { display: none; }
-        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
-        #toc > ol ol { display: none; }
-        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
-        #toc > ol ol { display: none; }
-        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
-        #toc > ol ol { display: none; }
-        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
-        #toc > ol ol { display: none; }
-        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
-        #toc > ol ol { display: none; }
-        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
-        #toc > ol ol { display: none; }
-        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
         #toc > ol ol { display: none; }
         body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
         
     </style>
-
 
 
     <script>
@@ -145,39 +120,27 @@
 
     <div id="toc">
         <ol>
-            <li><a number="1" href="#class-schedule" class="">Class Schedule</a></li>
-            <ol style="display: none;">
-                <li><a number="1.1" href="#tuesday-august-24th" class="">Tuesday, August 24th</a></li>
-                <li><a number="1.2" href="#thursday-august-26th">Thursday, August 26th</a></li>
-                <li><a number="1.3" href="#tuesday-august-31st">Tuesday, August 31st</a></li>
-                <li><a number="1.4" href="#thursday-september-2nd" class="">Thursday, September 2nd</a></li>
-                <li><a number="1.5" href="#tuesday-october-12th">Tuesday, October 12th</a></li>
-                <li><a number="1.6" href="#thursday-october-14th">Thursday, October 14th</a></li>
-                <li><a number="1.7" href="#thursday-november-25th">Thursday, November 25th</a></li>
-                <li><a number="1.8" href="#thursday-december-2nd">Thursday, December 2nd</a></li>
-                <li><a number="1.9" href="#thursday-december-9th">Thursday, December 9th</a></li>
-            </ol>
-            <li><a number="2" href="#topics-covered-and-catalog-description">Topics Covered and Catalog Description</a></li>
-            <li><a number="3" href="#format-of-course" class="">Format of Course</a></li>
-            <li><a number="4" href="#discord" class="">Discord</a></li>
-            <li><a number="5" href="#succeeding-in-this-course" class="highlighted">Succeeding in this Course</a></li>
-            <li><a number="6" href="#grading" class="">Grading</a></li>
-            <li><a number="7" href="#textbook" class="">Textbook</a></li>
-            <li><a number="8" href="#suggested-references">Suggested References</a></li>
-            <li><a number="9" href="#important-dates" class="">Important Dates</a></li>
-            <li><a number="10" href="#university-policy">University Policy</a></li>
-            <li><a number="11" href="#disability-accommodations">Disability Accommodations</a></li>
-            <li><a number="12" href="#counseling-and-student-support">Counseling and Student Support</a></li>
+            <li><a number="1" href="#topics-covered-and-catalog-description">Topics Covered and Catalog Description</a></li>
+            <li><a number="2" href="#format-of-course">Format of Course</a></li>
+            <li><a number="3" href="#discord">Discord</a></li>
+            <li><a number="4" href="#succeeding-in-this-course" class="highlighted">Succeeding in this Course</a></li>
+            <li><a number="5" href="#grading">Grading</a></li>
+            <li><a number="6" href="#textbook">Textbook</a></li>
+            <li><a number="7" href="#suggested-references">Suggested References</a></li>
+            <li><a number="8" href="#important-dates">Important Dates</a></li>
+            <li><a number="9" href="#university-policy">University Policy</a></li>
+            <li><a number="10" href="#disability-accommodations">Disability Accommodations</a></li>
+            <li><a number="11" href="#counseling-and-student-support">Counseling and Student Support</a></li>
         </ol>
     </div>
     <div id="display">
         <div class="section">
 
             <div class="block inline-html">
+
                 <div style="text-align:center;font-size:150%">
                     <b>PHYS 305 - Electromagnetic Theory</b>
                 </div>
-
             </div>
             <div class="block">
                 <ul>
@@ -222,179 +185,7 @@
         <div class="section">
 
             <div class="block">
-                <h1 class=""><a name="class-schedule" number="1" class="hanchor" href="#class-schedule"><span class="hnumber">1 </span> <span class="htext">Class Schedule</span></a></h1>
-
-            </div>
-        </div>
-        <div class="section">
-
-            <div class="block">
-                <h2 class=""><a name="tuesday-august-24th" number="1.1" class="hanchor" href="#tuesday-august-24th"><span class="hnumber">1.1 </span> <span class="htext">Tuesday, August 24th</span></a></h2>
-
-            </div>
-            <div class="block">
-                <ul>
-                    <li class="">
-                        <div class="block">
-                            <p>Introductions</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="block">
-                            <p>Discuss syllabus</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="block">
-                            <p>Assign HW #1 covering Vectors, Vector Fields, Field Lines, and Equipotentials</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="block">
-                            <p>Discuss HW #1 topics</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="section">
-
-            <div class="block">
-                <h2><a name="thursday-august-26th" number="1.2" class="hanchor" href="#thursday-august-26th"><span class="hnumber">1.2 </span> <span class="htext">Thursday, August 26th</span></a></h2>
-
-            </div>
-            <div class="block">
-                <ul>
-                    <li>
-                        <div class="block">
-                            <p>Discuss HW #1 topics</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="section">
-
-            <div class="block">
-                <h2><a name="tuesday-august-31st" number="1.3" class="hanchor" href="#tuesday-august-31st"><span class="hnumber">1.3 </span> <span class="htext">Tuesday, August 31st</span></a></h2>
-
-            </div>
-            <div class="block">
-                <ul>
-                    <li>
-                        <div class="block">
-                            <p>Answer questions on HW #1 topics</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="section">
-
-            <div class="block">
-                <h2 class=""><a name="thursday-september-2nd" number="1.4" class="hanchor" href="#thursday-september-2nd"><span class="hnumber">1.4 </span> <span class="htext">Thursday, September 2nd</span></a></h2>
-
-            </div>
-            <div class="block">
-                <ul>
-                    <li>
-                        <div class="block">
-                            <p>Answer questions on HW #1 topics</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="block">
-                            <p>Homework #1 due at 3:00 pm</p>
-                        </div>
-                    </li>
-                    <li class="">
-                        <div class="block">
-                            <p>Assign Homework #2 covering Flux, Divergence, Coulomb’s Law, and Electric Field.</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="section">
-
-            <div class="block">
-                <h2><a name="tuesday-october-12th" number="1.5" class="hanchor" href="#tuesday-october-12th"><span class="hnumber">1.5 </span> <span class="htext">Tuesday, October 12th</span></a></h2>
-
-            </div>
-            <div class="block">
-                <ul>
-                    <li>
-                        <div class="block">
-                            <p>No class</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="section">
-
-            <div class="block">
-                <h2><a name="thursday-october-14th" number="1.6" class="hanchor" href="#thursday-october-14th"><span class="hnumber">1.6 </span> <span class="htext">Thursday, October 14th</span></a></h2>
-
-            </div>
-            <div class="block">
-                <ul>
-                    <li>
-                        <div class="block">
-                            <p>Mid-term exam during class time. Location and/or delivery method TBD.</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="section">
-
-            <div class="block">
-                <h2><a name="thursday-november-25th" number="1.7" class="hanchor" href="#thursday-november-25th"><span class="hnumber">1.7 </span> <span class="htext">Thursday, November 25th</span></a></h2>
-
-            </div>
-            <div class="block">
-                <ul>
-                    <li>
-                        <div class="block">
-                            <p>No class</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="section">
-
-            <div class="block">
-                <h2><a name="thursday-december-2nd" number="1.8" class="hanchor" href="#thursday-december-2nd"><span class="hnumber">1.8 </span> <span class="htext">Thursday, December 2nd</span></a></h2>
-
-            </div>
-            <div class="block">
-                <ul>
-                    <li>
-                        <div class="block">
-                            <p>Last class</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="section">
-
-            <div class="block">
-                <h2><a name="thursday-december-9th" number="1.9" class="hanchor" href="#thursday-december-9th"><span class="hnumber">1.9 </span> <span class="htext">Thursday, December 9th</span></a></h2>
-
-            </div>
-            <div class="block">
-                <p>Final Exam from 10:30 am – 1:15 pm. Location and/or delivery method TBD.</p>
-
-            </div>
-
-        </div>
-        <div class="section">
-
-            <div class="block">
-                <h1><a name="topics-covered-and-catalog-description" number="2" class="hanchor" href="#topics-covered-and-catalog-description"><span class="hnumber">2 </span> <span class="htext">Topics Covered and Catalog Description</span></a></h1>
+                <h1><a name="topics-covered-and-catalog-description" number="1" class="hanchor" href="#topics-covered-and-catalog-description"><span class="hnumber">1 </span> <span class="htext">Topics Covered and Catalog Description</span></a></h1>
 
             </div>
             <div class="block">
@@ -419,175 +210,26 @@
         <div class="section">
 
             <div class="block">
-                <h1 class=""><a name="format-of-course" number="3" class="hanchor" href="#format-of-course"><span class="hnumber">3 </span> <span class="htext">Format of Course</span></a></h1>
+                <h1><a name="format-of-course" number="2" class="hanchor" href="#format-of-course"><span class="hnumber">2 </span> <span class="htext">Format of Course</span></a></h1>
 
             </div>
             <div class="block">
-                <p class="">The delivery of this course is centered on tutorials. In general, I will not have a formal lecture prepared.</p>
+                <p>The delivery of this course is centered on tutorials that introduce topics, provide examples, and require you to solve problems related to the examples. In general, I will not have a formal lecture prepared.</p>
 
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <div class="block">
-                <ol class="">
-                    <li class="">
+                <ol>
+                    <li>
                         <div class="block">
                             <p>Most of what I would normally lecture on has been written into the tutorials and their examples.</p>
                         </div>
                     </li>
-                    <li class="">
+                    <li>
                         <div class="block">
-                            <p>I have done this to maximize the amount of time available for students to ask questions.</p>
+                            <p>I have done this to maximize the amount of time available for students to ask question during class.</p>
                         </div>
                     </li>
-                    <li class="">
+                    <li>
                         <div class="block">
                             <p><strong>If you do not work on the tutorial before class, you will not find class attendance helpful.</strong></p>
                         </div>
@@ -598,104 +240,27 @@
         <div class="section">
 
             <div class="block">
-                <h1 class=""><a name="discord" number="4" class="hanchor" href="#discord"><span class="hnumber">4 </span> <span class="htext">Discord</span></a></h1>
+                <h1><a name="discord" number="3" class="hanchor" href="#discord"><span class="hnumber">3 </span> <span class="htext">Discord</span></a></h1>
 
             </div>
             <div class="block">
-                <p class="">The first week of class, you should have received an email inviting you to join a Discord server. I will use Discord to answer questions.</p>
+                <p>The first week of class, you should have received an email inviting you to join a Discord server. I will use Discord to answer questions.</p>
 
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         </div>
         <div class="section">
 
             <div class="block">
-                <h1 class="highlighted"><a name="succeeding-in-this-course" number="5" class="hanchor" href="#succeeding-in-this-course"><span class="hnumber">5 </span> <span class="htext">Succeeding in this Course</span></a></h1>
+                <h1 class="highlighted"><a name="succeeding-in-this-course" number="4" class="hanchor" href="#succeeding-in-this-course"><span class="hnumber">4 </span> <span class="htext">Succeeding in this Course</span></a></h1>
 
             </div>
             <div class="block">
-                <p class="">For many, this may be your first junior/senior-level physics course. To succeed, you may need to change the way you study. In addition to what is written below, please see <a href="http://physics.gmu.edu/~joe/PHYS303/syllabus.pdf">Joe Weingartner’s PHYS 303 syllabus</a> for his perspective and Feynman’s <a href="https://www.scotthyoung.com/learnonsteroids/grab/TranscriptFeynman.pdf">Never forget an idea again</a>.</p>
+                <p>For many, this may be your first junior/senior-level physics course. To succeed, you may need to change the way you study. In addition to what is written below, please see <a href="http://physics.gmu.edu/~joe/PHYS303/syllabus.pdf">Joe Weingartner’s PHYS 303 syllabus</a> for his perspective and Feynman’s <a href="https://www.scotthyoung.com/learnonsteroids/grab/TranscriptFeynman.pdf">Never forget an idea again</a>.</p>
 
             </div>
-
-
             <div class="block">
-                <p class="">Success in this course depends primarily on two factors, in order of importance:</p>
+                <p>Success in this course depends primarily on two factors, in order of importance:</p>
 
             </div>
             <div class="block">
@@ -713,10 +278,406 @@
                 </ol>
             </div>
             <div class="block">
+                <p class="">Consistent with 1., nearly every concept is followed by an example and then a problem that you are expected to solve to determine if you understood the explanation of the concept and the example.</p>
+
+            </div>
+            <div class="block">
                 <div class="blockquote">
                     <p>It is easy to find solved physics problems. Reading their solution before thinking about them is about as useful as learning to play basketball by watching a video. If you aren’t confident that you can solve a problem, attempt to solve it without the use of the solution and compare your solution with a classmate’s <em>before</em> looking at the solution.</p>
                 </div>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -800,7 +761,7 @@
         <div class="section">
 
             <div class="block">
-                <h1 class=""><a name="grading" number="6" class="hanchor" href="#grading"><span class="hnumber">6 </span> <span class="htext">Grading</span></a></h1>
+                <h1><a name="grading" number="5" class="hanchor" href="#grading"><span class="hnumber">5 </span> <span class="htext">Grading</span></a></h1>
 
             </div>
             <div class="block">
@@ -808,13 +769,13 @@
 
             </div>
             <div class="block">
-                <ol class="">
-                    <li class="">
+                <ol>
+                    <li>
                         <div class="block">
                             <p>Homework average (30%) - approximately one per week</p>
                         </div>
                     </li>
-                    <li class="">
+                    <li>
                         <div class="block">
                             <p>Exam average (70%) - one midterm and one final, equally weighted</p>
                         </div>
@@ -830,177 +791,68 @@
 
             </div>
             <div class="block">
-                <p class="">The midterm will cover Chapters 1-3 of Griffiths</p>
-
-            </div>
-
-
-            <div class="block">
-                <p class="">The final exam will cover Chapters 4-6 of Griffiths</p>
-
-            </div>
-
-
-
-
-
-
-            <div class="block">
-                <p class="">The nominal percentage-to-letter grade conversion is (this is subject to change such that the required percentage score for a given letter grade is lower)</p>
+                <p>The midterm will cover Chapters 1-3 of Griffiths</p>
 
             </div>
             <div class="block">
-                <ul class="">
-                    <li class="">
+                <p>The final exam will cover Chapters 4-6 of Griffiths</p>
+
+            </div>
+            <div class="block">
+                <p>The nominal percentage-to-letter grade conversion is (this is subject to change such that the required percentage score for a given letter grade is lower)</p>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
                         <div class="block">
-                            <p class="">&gt; 97: A+; 93 to 96.<span style="text-decoration:overline">9</span>: A-; 90 to 92.<span style="text-decoration:overline">9</span>: A-</p>
+                            <p>&gt; 97: A+; 93 to 96.<span style="text-decoration:overline">9</span>: A-; 90 to 92.<span style="text-decoration:overline">9</span>: A-</p>
 
                         </div>
                     </li>
-                    <li class="">
+                    <li>
                         <div class="block">
-                            <p class="">87 to 89.<span style="text-decoration:overline">9</span>: B+; 83 to 86.<span style="text-decoration:overline">9</span>: B; 80 to 82.<span style="text-decoration:overline">9</span>: B-</p>
+                            <p>87 to 89.<span style="text-decoration:overline">9</span>: B+; 83 to 86.<span style="text-decoration:overline">9</span>: B; 80 to 82.<span style="text-decoration:overline">9</span>: B-</p>
 
                         </div>
                     </li>
-                    <li class="">
+                    <li>
                         <div class="block">
-                            <p class="">77 to 79.<span style="text-decoration:overline">9</span>: C+; 73 to 76.<span style="text-decoration:overline">9</span>: C; 70 to 72.<span style="text-decoration:overline">9</span>: C-;</p>
+                            <p>77 to 79.<span style="text-decoration:overline">9</span>: C+; 73 to 76.<span style="text-decoration:overline">9</span>: C; 70 to 72.<span style="text-decoration:overline">9</span>: C-;</p>
 
                         </div>
                     </li>
-                    <li class="">
+                    <li>
                         <div class="block">
-                            <p class="">60 to 69.<span style="text-decoration:overline">9</span>: D</p>
+                            <p>60 to 69.<span style="text-decoration:overline">9</span>: D</p>
 
                         </div>
                     </li>
-                    <li class="">
+                    <li>
                         <div class="block">
-                            <p class="">&lt; 60: F</p>
+                            <p>&lt; 60: F</p>
 
                         </div>
                     </li>
                 </ul>
             </div>
+        </div>
+        <div class="section">
 
+            <div class="block">
+                <h1><a name="textbook" number="6" class="hanchor" href="#textbook"><span class="hnumber">6 </span> <span class="htext">Textbook</span></a></h1>
 
+            </div>
+            <div class="block">
+                <p>I will follow the outline of the topics covered in chapters 1-6 (and 7, if time) in <a href="https://www.amazon.com/Introduction-Electrodynamics-4th-David-Griffiths/dp/0321856562">Introduction to Electrodynamics (4th Edition) by David J. Griffiths</a>. Note that the 3rd Edition is also widely available. You may buy either edition. However, I will reference pages and problem numbers from 4th edition.</p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            </div>
 
         </div>
         <div class="section">
 
             <div class="block">
-                <h1 class=""><a name="textbook" number="7" class="hanchor" href="#textbook"><span class="hnumber">7 </span> <span class="htext">Textbook</span></a></h1>
-
-            </div>
-            <div class="block">
-                <p class="">I will follow the outline of the topics covered in chapters 1-6 (and 7, if time) in <a href="https://www.amazon.com/Introduction-Electrodynamics-4th-David-Griffiths/dp/0321856562">Introduction to Electrodynamics (4th Edition) by David J. Griffiths</a>. Note that the 3rd Edition is also widely available. You may buy either edition. However, I will reference pages and problem numbers from 4th edition.</p>
-
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </div>
-        <div class="section">
-
-            <div class="block">
-                <h1><a name="suggested-references" number="8" class="hanchor" href="#suggested-references"><span class="hnumber">8 </span> <span class="htext">Suggested References</span></a></h1>
+                <h1><a name="suggested-references" number="7" class="hanchor" href="#suggested-references"><span class="hnumber">7 </span> <span class="htext">Suggested References</span></a></h1>
 
             </div>
             <div class="block">
@@ -1052,35 +904,25 @@
         <div class="section">
 
             <div class="block">
-                <h1 class=""><a name="important-dates" number="9" class="hanchor" href="#important-dates"><span class="hnumber">9 </span> <span class="htext">Important Dates</span></a></h1>
+                <h1><a name="important-dates" number="8" class="hanchor" href="#important-dates"><span class="hnumber">8 </span> <span class="htext">Important Dates</span></a></h1>
 
             </div>
             <div class="block">
-                <p class=""><a href="https://registrar.gmu.edu/calendars/fall_2021/#dates">Important Dates from Registrar</a></p>
+                <p><a href="https://registrar.gmu.edu/calendars/fall_2021/#dates">Important Dates from Registrar</a></p>
 
             </div>
             <div class="block">
-                <p class="">No class:</p>
+                <p>No class:</p>
 
             </div>
-
-
-
-
-
-
-
-
-
-
             <div class="block">
-                <ul class="">
-                    <li class="">
+                <ul>
+                    <li>
                         <div class="block">
                             <p>Tuesday, October 15th (Monday classes/labs meet Tuesday. Tuesday classes do not meet this week)</p>
                         </div>
                     </li>
-                    <li class="">
+                    <li>
                         <div class="block">
                             <p>Thursday, November 28th (Thanksgiving)</p>
                         </div>
@@ -1088,65 +930,19 @@
                 </ul>
             </div>
             <div class="block">
-                <p class="">Final Exam: Thursday, December 12th 10:30 am - 1:15 pm (<a href="https://registrar.gmu.edu/wp-content/uploads/Fall-2021-Final-Exam-Schedule.pdf">Final Exam Schedule</a>). Location and deliver method TBD.</p>
+                <p>Final Exam: Thursday, December 12th 10:30 am - 1:15 pm (<a href="https://registrar.gmu.edu/wp-content/uploads/Fall-2021-Final-Exam-Schedule.pdf">Final Exam Schedule</a>). Location and deliver method TBD.</p>
 
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <div class="block">
-                <p class="">Last class: Thursday, December 5th</p>
+                <p>Last class: Thursday, December 5th</p>
 
             </div>
-
-
-
-
 
         </div>
         <div class="section">
 
             <div class="block">
-                <h1><a name="university-policy" number="10" class="hanchor" href="#university-policy"><span class="hnumber">10 </span> <span class="htext">University Policy</span></a></h1>
+                <h1><a name="university-policy" number="9" class="hanchor" href="#university-policy"><span class="hnumber">9 </span> <span class="htext">University Policy</span></a></h1>
 
             </div>
             <div class="block">
@@ -1158,7 +954,7 @@
         <div class="section">
 
             <div class="block">
-                <h1><a name="disability-accommodations" number="11" class="hanchor" href="#disability-accommodations"><span class="hnumber">11 </span> <span class="htext">Disability Accommodations</span></a></h1>
+                <h1><a name="disability-accommodations" number="10" class="hanchor" href="#disability-accommodations"><span class="hnumber">10 </span> <span class="htext">Disability Accommodations</span></a></h1>
 
             </div>
             <div class="block">
@@ -1170,7 +966,7 @@
         <div class="section">
 
             <div class="block">
-                <h1><a name="counseling-and-student-support" number="12" class="hanchor" href="#counseling-and-student-support"><span class="hnumber">12 </span> <span class="htext">Counseling and Student Support</span></a></h1>
+                <h1><a name="counseling-and-student-support" number="11" class="hanchor" href="#counseling-and-student-support"><span class="hnumber">11 </span> <span class="htext">Counseling and Student Support</span></a></h1>
 
             </div>
             <div class="block">
