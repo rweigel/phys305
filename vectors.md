@@ -14,7 +14,7 @@ $$
 \mathbf{A} = A_x\ihat + A_y\jhat\quad\text{and}\quad \mathbf{A} = \langle A_x, A_y \rangle
 $$
 
-The vector $\mathbf{A}$ can be viewed as the sum of the two vectors $A_x\xhat$ and $A_y\yhat$. On the left-hand side of the following diagram, the two components of $\mathbf{A}$ are shown (assuming the scalar quantities $A_x$ and $A_y$ are both positive). In the middle, the sum of these components is shown.
+The vector $\mathbf{A}$ can be viewed as the sum of the two vectors $A_x\xhat$ and $A_y\yhat$. On the left-hand side of the following figure, the two components of $\mathbf{A}$ are shown (assuming the scalar quantities $A_x$ and $A_y$ are both positive). In the middle, the sum of these components is shown.
 
 <img src="figures/Vectors-1.svg" width="100%"/>
 
@@ -202,22 +202,22 @@ If $\mathbf{r}=x\xhat + y\yhat$ and $\mathbf{r}' = x'\xhat + y'\yhat$,
 
 1\. Find $\boldsymbol{\hat{\mathcal{R}}}$, the unit vector in the direction of $\boldsymbol{\mathcal{R}} \equiv \mathbf{r}-\mathbf{r}'$.
 
-2\. Choose number for $(x,y)$ and $(x',y')$, sketch $\mathbf{r}$ and $\mathbf{r}'$, and verify that the direction of $\boldsymbol{\hat{\mathcal{R}}}$ is consistent with the unit vector $\boldsymbol{\mathcal{R}}$ that you computed.
+2\. Choose numbers for $(x,y)$ and $(x',y')$, sketch $\mathbf{r}$ and $\mathbf{r}'$, and verify that the direction of $\boldsymbol{\hat{\mathcal{R}}}$ is consistent with the unit vector $\boldsymbol{\mathcal{R}}$ that you computed.
 
 # Curvilinear Unit Vectors
 
-Thus far, only the cartesian unit vectors $\xhat$, $\yhat$, and $\zhat$ have been considered. There are many other coordinate systems, each of which has their own set of unit vectors. The most common non-cartesian coordinate systems are cylindrical and spherical.
+Thus far, only the cartesian unit vectors $\xhat$, $\yhat$, and $\zhat$ have been considered. There are many other coordinate systems, each of which has their own set of unit vectors. The most common curvilinear coordinate systems are cylindrical and spherical.
 
 ## Cylindrical
 
 ### Definitions and Notation
 
-The unit vectors for cylindrical, $\hat{\mathbf{s}}$, $\hat{\boldsymbol{\phi}}$, and $\zhat$, are shown in the following diagram at an arbitrary point $P$ (From [danfleisch.com](https://www.danfleisch.com/maxwell/CoordinateSystemReview.pdf)). Note that the conventional symbol for the radial coordinate in cylindrical is either $\rho$ or $r$, and $r$ is used in the following figure. In this course, $\rho$ is used for charge density, and $r$ is used for the spherical radial coordinate, so $s$ will be used instead.
+The unit vectors for cylindrical coordinates, $\hat{\mathbf{s}}$, $\hat{\boldsymbol{\phi}}$, and $\zhat$, are shown in the following figure at an arbitrary point $P$. Note that the conventional symbol for the radial coordinate in cylindrical is either $\rho$ or $r$, but $s$ is used in the following figure. In this course, $\rho$ is used for charge density, and $r$ is used for the spherical radial coordinate, so $s$ will be used instead.
 
-<img src="figures/cylindrical.png" width="47%"/>
+<img src="figures/Cylindrical-Notation-Diagram.svg" width="100%"/>
 
 * $\hat{\mathbf{s}}$ is always parallel to the $x$--$y$ plane and points radially outward, 
-* $\zhat$ always points parallel to the $z$--axis, and
+* $\zhat$ always points parallel to the $z$--axis in the direction of increasing $z$, and
 * $\hat{\boldsymbol{\phi}}$ is perpendicular to $\hat{\mathbf{s}}$ and $\zhat$ and points in the direction of increasing $\phi$.
 
 The relationship between cartesian and cylindrical **coordinates** is
@@ -242,7 +242,7 @@ As a check, compute $|\hat{\mathbf{s}}|$ and verify that it is $1$.
 
 ### Example - Drawing Cylindrical Unit Vectors
 
-Draw a sketch with a dot indicating the location of 
+Draw a sketch showing
 
 1. $\mathbf{A} = \hat{\mathbf{s}} + \hat{\boldsymbol{\phi}}$ at the position $(s,\phi,z) = (1,0,0)$ and
 
@@ -256,13 +256,13 @@ Draw a sketch with a dot indicating the location of
 
 Given the position $(x,y,z)=(1,1,1)$, compute $(s,\phi,z)$.
 
-**Answer**: Substitution of $x=1$ into $x=s\cos\phi$ and $y=1$ into $y=s\sin\phi$ gives $1=s\cos\phi$ and $1=s\sin\phi$. Elimination of $s$ gives $\tan\phi = 1$, so $\phi=\pi/2$. Squaring $x=s\cos\phi$ and $y=s\sin\phi$ and adding gives $x^2+y^2=s^2\cos^2\phi+s^2\sin^2\phi=s^2$, so $s^2=2$ and $s=\sqrt{2}$. Finally, $z$ in cylindrical is the same as $z$ in cartesian, so $z=1$.
+**Answer**: Substitution of $x=1$ into $x=s\cos\phi$ and $y=1$ into $y=s\sin\phi$ gives $1=s\cos\phi$ and $1=s\sin\phi$. Elimination of $s$ gives $\tan\phi = 1$, so $\phi=\pi/2$. Squaring $x=s\cos\phi$ and $y=s\sin\phi$ and adding gives $x^2+y^2=s^2\cos^2\phi+s^2\sin^2\phi=s^2$, so $s^2=2$ and $s=\sqrt{2}$. From $x=s\cos\phi$, it follows that $\phi=45^\circ$. Finally, $z$ in cylindrical is the same as $z$ in cartesian, so $z=1$.
 
 ## Spherical
 
 ### Definitions and Notation
 
-The unit vectors for spherical at an arbitrary point $P$ are shown in the following diagram (From [danfleisch.com](https://www.danfleisch.com/maxwell/CoordinateSystemReview.pdf)).
+The unit vectors for spherical at an arbitrary point $P$ are shown in the following figure (From [danfleisch.com](https://www.danfleisch.com/maxwell/CoordinateSystemReview.pdf)).
 
 <img src="figures/spherical.png" width="50%"/>
 
@@ -292,7 +292,7 @@ Write $\hat{\mathbf{r}}$ with cartesian coordinates and unit vectors.
 
 ### Problem - Drawing Spherical Unit Vectors
 
-Draw a sketch with a dot indicating the location of 
+Draw a sketch showing
 
 1. $\mathbf{A} = \hat{\mathbf{r}} + \hat{\boldsymbol{\theta}}$ at the position $(r,\theta,\phi) = (1,0,0)$ and
 
@@ -332,17 +332,17 @@ Given the position $(x,y,z)=(1,1,1)$, compute $(r,\theta, \phi)$.
 
 Derive the expression $\hat{\mathbf{s}} = \cos\phi\xhat + \sin\phi\yhat$ using a sketch.
 
-**Solution**: To solve this, compute the cartesian components of $\hat{\mathbf{s}}$. From the sketch, they are $\hat{s}_x=\cos\phi$ and $\hat{s}_y=\sin\phi$. So, $\hat{\mathbf{s}} = \cos\phi\xhat + \sin\phi\yhat$.
+**Solution**: To solve this, we need to compute the cartesian components of $\hat{\mathbf{s}}$. From the sketch, they are $\hat{s}_x=\cos\phi$ and $\hat{s}_y=\sin\phi$. So, $\hat{\mathbf{s}} = \cos\phi\xhat + \sin\phi\yhat$.
 
 <img src="figures/Curvilinear-Unit-Vectors-Cylindrical-Compute-1.svg"/>
 
-**Check**: From the diagram, we expect that when $\phi=0$, $\hat{\mathbf{s}}=\xhat$ and when $\phi=90^\circ$, $\hat{\mathbf{s}}=\yhat$, both of which are consistent with the answer.
+**Check**: From the figure, we expect that when $\phi=0$, $\hat{\mathbf{s}}=\xhat$ and when $\phi=90^\circ$, $\hat{\mathbf{s}}=\yhat$, both of which are consistent with the answer.
 
 ### Example - Deriving unit vector relationships with a sketch II
 
 Derive an expression for $\hat{\mathbf{x}}$ in terms of cylindrical unit vectors using a sketch.
 
-**Solution**: To solve this, compute the cylindrical components of $\hat{\mathbf{x}}$. In the diagram below on the left, the three relevant unit vectors are shown. On the diagram on the right, the triangle used to compute the components of $\hat{\mathbf{x}}$ in the $\mathbf{\hat{s}}$ and $\boldsymbol{\hat{\phi}}$ directions is shown. Based on this, $\hat{\mathbf{x}} = \cos\phi\mathbf{\hat{s}} - \sin\phi\boldsymbol{\hat{\phi}}$. Note that the negative sign appears because the component of $\xhat$ parallel to $\boldsymbol{\hat{\phi}}$ is opposite in direction to $\boldsymbol{\hat{\phi}}$.
+**Solution**: To solve this, compute the cylindrical components of $\hat{\mathbf{x}}$. In the figure below on the left, the three relevant unit vectors are shown. On the diagram on the right, the triangle used to compute the components of $\hat{\mathbf{x}}$ in the $\mathbf{\hat{s}}$ and $\boldsymbol{\hat{\phi}}$ directions is shown. Based on this, $\hat{\mathbf{x}} = \cos\phi\mathbf{\hat{s}} - \sin\phi\boldsymbol{\hat{\phi}}$. Note that the negative sign appears because the component of $\xhat$ parallel to $\boldsymbol{\hat{\phi}}$ is opposite in direction to $\boldsymbol{\hat{\phi}}$.
 
 <img src="figures/Curvilinear-Unit-Vectors-Cylindrical-Compute-2.svg"/>
 
@@ -428,23 +428,25 @@ $$\int_0^{\pi/2} \boldsymbol{\hat{\phi}} d\phi$$
 
 a common error is to factor out the unit vector and conclude
 
-$$\int_0^{\pi/2} \boldsymbol{\hat{\phi}} d\phi =\boldsymbol{\hat{\phi}}\int_0^{\pi/2}  d\phi=\boldsymbol{\hat{\phi}}\frac{\pi}{2}$$
+$$\int_0^{\pi/2} \boldsymbol{\hat{\phi}} d\phi =\boldsymbol{\hat{\phi}}\int_0^{\pi/2}  d\phi=\frac{\pi}{2}\boldsymbol{\hat{\phi}}$$
 
 To see why this is wrong, consider a diagram of the vectors being integrated. Each vector has a length of $\Delta\phi$, and the direction is given by the direction of $\hat{\boldsymbol{\phi}}$.
 
-<img src="figures/Curvilinear-Unit-Vectors-Integration.svg"/>
+<img src="figures/Curvilinear-Unit-Vectors-Integration-1a.svg"/>
 
-If one increases the number of vectors and decreases $\Delta \phi$ in the diagram, the sum of the vectors becomes and integral. Visually, we expect the integral to be a vector that points upwards and to the left because all of the vectors contributing to the sum are in this direction (except the first and last).
+If one increases the number of vectors and decreases $\Delta \phi$ in the figure, the sum of the vectors becomes and integral. Visually, we expect the integral to be a vector that points upwards and to the left because all of the vectors contributing to the sum are in this direction (except the first and last).
 
 As noted earlier, the addition of vectors expressed with unit vectors in general requires first expressing them with cartesian unit vectors. Integration is a form of addition, and so this rule also applies to integration. Using the relationship $\hat{\boldsymbol{\phi}} = -\sin\phi\xhat + \cos\phi\yhat$, we can write the integrand using cartesian unit vectors
 
 $$\int_0^{\pi/2} \boldsymbol{\hat{\phi}} d\phi = \int_0^{\pi/2}(-\sin\phi\xhat + \cos\phi\yhat)d\phi$$
 
-The cartesian unit vectors do not depend of $\phi$, so they can be factored out, giving
+The cartesian unit vectors do not depend on the coordinate of integration, $\phi$, so they can be factored out, giving
 
 $$\int_0^{\pi/2} \boldsymbol{\hat{\phi}} d\phi = -\xhat\int_0^{\pi/2}\sin\phi d\phi + \yhat\int_0^{\pi/2}\cos\phi d\phi = -\xhat + \yhat$$
 
-which has the expected direction of upwards and to the left. In addition, the angle is that of the vector at $\phi=\pi/4$, which is also expected because the average $x$ and $y$ components of the summed vectors are both $45^\circ$.
+which has the expected direction of upwards and to the left and is consistent with the summation of the small vectors from head to tail as shown in the following figure.
+
+<img src="figures/Curvilinear-Unit-Vectors-Integration-1b.svg"/>
 
 ### Problem - Integration of Vector with Curvilinear Unit Vectors
 
@@ -470,7 +472,7 @@ The general equation for a unit vector that is tangent to the curve $y=f(x)$ is
 
 $$\mathbf{\hat{t}}=\frac{\xhat + \frac{dy}{dx}\yhat}{\sqrt{1 + \left( \frac{dy}{dx}\right)^2}}$$
 
-This equation can be derived using the following diagram. At the point shown, the slope of the line is $dy/dx$. If we considered a small horizontal displacement of $dx$, then a point on the tangent line is given by stepping upwards by the slope times $dx$. 
+This equation can be derived using the following figure. At the point shown, the slope of the line is $dy/dx$. If we consider a small horizontal displacement of $dx$, then a point on the tangent line is given by stepping upwards by the slope times $dx$. 
 
 <img src="figures/Tangent-Vector-Derivation.svg"/>
 
@@ -505,9 +507,9 @@ Compute the unit tangent vector to the curve $y = 1+x^2$. Before computing, writ
 
 ### Example - Computing Tangent Unit Vector
 
-Show that the tangent unit vector to a circle centered on the origin is $\boldsymbol{\hat{\phi}}$.
+Show that the tangent unit vector to a circle centered on the origin is $\boldsymbol{\hat{\phi}}$, which is one of the unit vectors in both cylindrical and spherical coordiinates.
 
-**Answer**: For $y > 0$, the equation for a circle is $y = \sqrt{1-x^2}$. After computing the derivative and inserting into the equation for $\mathbf{\hat{t}}$, you should arrive at $\mathbf{\hat{t}}=(-y\xhat+x\yhat)/\sqrt{x^2+y^2}$. In cartesian coordinates, $x=s\cos\phi$ and $y=s\sin\phi$, and $s=\sqrt{x^2+y^2}$. Using these gives $\mathbf{\hat{t}}=-\sin\phi\xhat+\cos\phi\yhat$, which is the same as the definining formula for $\boldsymbol{\hat{\phi}}$ given previously.
+**Answer**: For $y > 0$, the equation for a circle is $y = \sqrt{1-x^2}$. After computing the derivative and inserting into the equation for $\mathbf{\hat{t}}$, you should arrive at $\mathbf{\hat{t}}=(-y\xhat+x\yhat)/\sqrt{x^2+y^2}$. In cartesian coordinates, $x=s\cos\phi$ and $y=s\sin\phi$, and $s=\sqrt{x^2+y^2}$. Using these gives $\mathbf{\hat{t}}=-\sin\phi\xhat+\cos\phi\yhat$, which is the same as the definining formula for $\boldsymbol{\hat{\phi}}$ in both cylindrical and spherical coordinates given previously.
 
 ## General Use
 
@@ -519,11 +521,11 @@ where the relationship $d\mathbf{l}=\mathbf{\hat{t}}dl$ was used. An alternative
 
 In the following figure, a force acts at an angle to the direction of movement of an object. The force that determines the acceleration in the $x$--direction is $F\cos\theta$.
 
-**INSERT FIGURE**
+<img src="figures/Tangent-Vector-2.svg"/>
 
-More generally, the force along the direction of movement is $\mathbf{F}\cdot \mathbf{\hat{t}}$, where $\mathbf{\hat{t}}$ is a unit vector in the direction of movement. In the above diagram, $\mathbf{F}=\cos\theta\xhat + \sin\theta\yhat$ and $\mathbf{\hat{t}}=\xhat$, so
+More generally, the force along the direction of movement is $\mathbf{F}\cdot \mathbf{\hat{t}}$, where $\mathbf{\hat{t}}$ is a unit vector in the direction of movement. In the above figure, $\mathbf{F}=F(\cos\theta\xhat + \sin\theta\yhat)$ and $\mathbf{\hat{t}}=\xhat$, so
 
-$F_\parallel = \mathbf{F}\cdot \mathbf{\hat{t}} = (\cos\theta\xhat + \sin\theta\yhat)\boldsymbol{\cdot}\xhat = \cos\theta\xhat\boldsymbol{\cdot}\xhat + \sin\theta\yhat\boldsymbol{\cdot}\xhat = F\cos\theta$
+$F_\parallel = \mathbf{F}\cdot \mathbf{\hat{t}} = F(\cos\theta\xhat + \sin\theta\yhat)\boldsymbol{\cdot}\xhat = \cos\theta\xhat\boldsymbol{\cdot}\xhat + \sin\theta\yhat\boldsymbol{\cdot}\xhat = F\cos\theta$
 
 ## Problem 
 
@@ -535,18 +537,22 @@ $F_\parallel = \mathbf{F}\cdot \mathbf{\hat{t}} = (\cos\theta\xhat + \sin\theta\
 
 **Answer**:
 
-1\. From the following diagram, $F_{\parallel}=F\cos\alpha\$ and $F_{\perp}=F\sin\alpha$.
+1\. From the following diagram, $F_{\parallel}=F\cos\alpha\$.
 
 <img src="figures/Tangent-Vector-1b.svg"/>
 
-From the equation for $\mathbf{F}$, $F=5F_o$, $\beta=\tan^{-1}(3/2)$. Based on the grid spacing, $\theta=\tan^{-1}(3/4)$. From the diagram, $\alpha=\beta-\theta$.
+Based on the grid spacing, $\theta=\tan^{-1}(3/4)$. From the equation for $\mathbf{F}$, $F=\sqrt{13}F_o$, $\beta=\tan^{-1}(3/2)$, and $\alpha=\beta-\theta$, so
+
+$F_\parallel = \sqrt{13}F_o\cos(\beta-\alpha)=\sqrt{13}F_o\cos[\tan^{-1}(3/2)-\theta=\tan^{-1}(3/4)]$
 
 2\. Based on the grid spacing a vector tangent to the plane is
 $\mathbf{\hat{T}}= 4\xhat + 3\yhat$, so $\mathbf{\hat{t}}=(4\xhat + 3\yhat)/5$.
 
 $\displaystyle F_{\parallel} = \mathbf{F}\cdot \mathbf{\hat{t}} = (2F_o\xhat+3F_o\yhat)\boldsymbol{\cdot}(4\xhat + 3\yhat)/5=\frac{8}{5}F_o+\frac{9}{5}F_o=\frac{17}{5}F_o$
 
-It is left to the reader to confirm that the answer from 1., $F\sin\alpha$, is the same as the answer to 2.
+It is left to the reader to confirm that the answer from 1. is the same as the answer to 2 (bonus -- do it without a calculator using trig identities).
+
+% Check: sqrt(13)*cos(atan(3/2)-atan(3/4))-17/5 = 0. Could use atan(x)-atan(y) =  atan [(x-y) / (1+xy)] and cos(atan(x)) = 1/sqrt(1+x^2) (https://www.mathway.com/popular-problems/Trigonometry/300305).
 
 # Normal Unit Vectors
 
@@ -560,21 +566,21 @@ Similar to the unit tangent vector, there are two unit vectors perpendicular to 
 
 ### Problem -- Derivation
 
-Derive the equation for $\mathbf{\hat{n}}$.
+Use a diagram to derive the equation for $\mathbf{\hat{n}}$.
 
 ### Problem -- Computing Normal Forces
 
 In the following figure, the component of $\mathbf{F}$ perpendicular to the direction of movement is $F_\perp = \mathbf{F}\cdot \mathbf{\hat{n}}$.
 
-**INSERT FIGURE**
+<img src="figures/Tangent-Vector-1a.svg"/>
 
-1\. Use a diagram to compute the component of $\mathbf{F}$ perpendicular to the direction of movement of the object.
+1\. Use a diagram to compute $F_\perp$ in terms of $F_o$.
 
-2\. Write $\mathbf{F}$ and $\mathbf{t}$ in vector notation an compute the component of $\mathbf{F}$ along the direction of movement using $F_\parallel=\mathbf{F}\cdot \mathbf{\hat{t}}$
+2\. Write $\mathbf{\hat{n}}$ in vector notation an compute the component of $\mathbf{F}$ perpendicular to the direction of movement using $F_\perp=\mathbf{F}\cdot \mathbf{\hat{n}}$
 
 ## Surface
 
-In E&M, normal vectors are more often used for surfaces rather than curves. The general equation for a vector perpendicular to a surface is 
+In E&M, normal (perpendicular) vectors are more often used for surfaces rather than curves. The general equation for a vector perpendicular to a surface is 
 
 $$\mathbf{\hat{n}} = \frac{\mathbf{u}\times\mathbf{v}}{|\mathbf{u}\times\mathbf{v}|}$$
 
@@ -582,7 +588,7 @@ where $\mathbf{u}$ and $\mathbf{v}$ are two non--colinear vectors on the surface
 
 ### Example
 
-Use the equation for $\mathbf{\hat{n}}$ to find a normal unit vector for the rectangular surface shown in the following figure. Use $\phi=45^\circ$ and $h=w=1$.
+Use the equation for $\mathbf{\hat{n}}$ to find a normal unit vector for the rectangular surface shown in the following figure.
 
 <img src="figures/Normal-Vectors-1a.svg"/>
 
@@ -598,7 +604,7 @@ as expected. If we had chosen $\mathbf{u}=3\xhat$ and $\mathbf{v}=4\zhat$, the a
 
 ### Problem
 
-Use the equation for $\mathbf{\hat{n}}$ to find the normal direction for the surface shown. Use $\phi=45^\circ$ and $w=h=1$.
+Use the equation for $\mathbf{\hat{n}}$ to find a normal vector for the surface shown. Use $\phi=45^\circ$.
 
 <img src="figures/Normal-Vectors-2a.svg"/>
 

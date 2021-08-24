@@ -17,10 +17,12 @@
 * Introductions
 * Discuss syllabus
 * Review [Vectors](vectors.html)
+* Before the next class, work through the problems at [Vectors](vectors.html)
 
 ## Thursday, August 26th 
 
-* Assign HW #1 covering Vectors, Vector Fields, Field Lines, and Equipotentials
+* Post and assign HW #1 covering Vectors, Vector Fields, Field Lines, and Equipotentials
+* Discuss questions on [Vectors](vectors.html)
 * Discuss HW #1 topics
 
 ## Tuesday, August 31st
