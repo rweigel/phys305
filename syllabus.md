@@ -10,6 +10,29 @@
 * Office: 259 Planetary Hall
 * Course URL: http://rweigel.github.io/phys305/
 
+# Class Schedule
+
+## Tuesday, August 24th
+
+* Introductions
+* Discuss syllabus
+* Review [Vectors](vectors.html)
+
+## Thursday, August 26th 
+
+* Assign HW #1 covering Vectors, Vector Fields, Field Lines, and Equipotentials
+* Discuss HW #1 topics
+
+## Tuesday, August 31st
+
+* Answer questions on HW #1 topics
+ 
+## Thursday, September 2nd 
+
+* Answer questions on HW #1 topics
+* Homework #1 due at 3:00 pm
+* Assign Homework #2 covering Flux, Divergence, Coulomb's Law, and Electric Field.
+
 # Topics Covered and Catalog Description
 
 This course covers the topics in Chapters 1-7 of the [textbook](#textbook).

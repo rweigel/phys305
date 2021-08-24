@@ -1,0 +1,1710 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>field_lines2</title>
+    <link id="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%220.9em%22 font-size=%22100%22>📖</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" />
+    <style>
+        body { background-color: white; }
+        #toc { font-size: 85%; width: 14em; position: fixed; min-height: 95%; max-height: 95%; overflow: hidden auto; padding-left: 0.75em; padding-right: 1em; margin-right: 1em; font-family: "Open Sans"; }
+        #toc ol { list-style-type: decimal; padding-inline-start: 1em; }
+        #toc a { text-decoration: none; }
+        #display a { text-decoration: none black; text-underline-offset: 2px; }
+        #display { width: 100%; margin-left: 15em; max-height: 100%; min-height: 100%; overflow: hidden auto; padding-left: 1em; padding-right: 1em; border-left: 1px solid rgb(240, 240, 240); font-family: "Open Sans"; }
+        .title { text-align: center; font-size: 250%; font-weight: bold; color: black; margin-bottom: 0px; }
+        .subtitle { text-align: center; font-size: 150%; font-weight: bold; color: black; margin-top: 0.2em; }
+        .hanchor { text-decoration: none; color: inherit; }
+        h1 { color: darkblue; border-bottom: 2px solid darkblue; }
+        h2 { border-bottom: 1px solid black; }
+        h3 { border-bottom: 1px dotted black; }
+        h1, h2, h3, h4, h5, h6 { width: 100%; margin-block: 0.5em; }
+        #display .block ul { width: 100%; margin-left: 1em; padding-left: 1em; }
+        #display .block ol { width: 100%; margin-left: 1em; padding-left: 1em; }
+        code { width: 100%; background-color: rgba(0, 0, 0, 0.03); border-radius: 0px; font-size: 1.2em; white-space: pre-wrap; margin-top: 3px; margin-right: 3px; }
+        pre code { border-right: 1px solid black; }
+        code.language-Python { background-color: rgba(0, 0, 0, 0); font-size: 1.2em; }
+        pre { width: 100%; text-indent: 0.75em; padding-left: 0.5em; margin-left: 1em; white-space: pre-wrap; border-left: 3px solid black; background-color: rgba(0, 0, 0, 0.03); line-height: 1.5; overflow-x: clip; }
+        pre.language-Python { border-left: 5px solid blue; padding: 0.5em; margin-left: 1em; margin-right: 1em; line-height: 1.5; overflow-x: auto; }
+        .block { display: flex; }
+        .block.inline-html { display: block; }
+        .hr { width: 100%; height: 1px; display: block; margin: 0.5em; margin-block: 0.5em; border-top: 1px solid black; }
+        #display li > div { display: flex; }
+        p { width: 100%; display: block; margin-block: 0.5em; }
+        #display li { width: 100%; }
+        li .block p { width: 100%; display: block; margin-top: 0.5em; margin-bottom: 0.5em; }
+        li .block:first-of-type p { width: 100%; display: block; margin-top: 0em; margin-bottom: 0em; }
+        .section > .block ol ~ .line-number { display: none; }
+        .section > .block ul ~ .line-number { display: none; }
+        .section > .block pre ~ .line-number { display: none; }
+        .section > .block code ~ .line-number { }
+        pre .line-number { float: right; font-size: 8px; text-align: center; text-indent: 0px; }
+        .line-number { float: right; white-space: pre-wrap; font-size: 10%; }
+        p + .line-number { margin-block-start: 8px; }
+        .block > div.linenumber { margin-block-start: -0.5em; }
+        .blockquote + div.line-number { margin-top: 1rem; }
+        h1 + .line-number { margin-block-start: 20em; }
+        h2 + .line-number { margin-block-start: 15em; }
+        h3 + .line-number { margin-block-start: 15em; }
+        h4 + .line-number { margin-block-start: 15em; }
+        h5 + .line-number { margin-block-start: 15em; }
+        h6 + .line-number { margin-block-start: 15em; }
+        .blockquote { width: 100%; display: block; margin: 1em; border: 1px solid black; padding: 1em; border-radius: 0.5em; }
+        details > summary { font-weight: bold; }
+        details[open] { border: 1px solid black; padding: 1em; }
+        table { padding: 0px; }
+        table tr { border-top: 1px solid rgb(204, 204, 204); background-color: white; margin: 0px; padding: 0px; }
+        table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+        table tr th { font-weight: bold; border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+        table tr td { border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+        table tr th :first-child, table tr td :first-child { margin-top: 0px; }
+        table tr th :last-child, table tr td :last-child { margin-bottom: 0px; }
+        .katex { font-size: inherit !important; }
+        .katex-display { text-align: center; margin: 0.5em; font-size: 1.1em !important; }
+        @media print {
+          body, html { margin: 0in; color: rgb(0, 0, 0); height: auto; background-color: rgb(255, 255, 255); border: none; display: inline; }
+          h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+          h1, h2, h3, h4, h5, h6 { width: 100%; margin-block: 0.1em; }
+          h1 { font-size: 1.25em; border-bottom: 1px solid darkblue; }
+          h2 { font-size: 1.15em; border-bottom: 1px solid darkblue; }
+          h3 { font-size: 1.1em; }
+          h4, h5, h6 { font-size: 1.05em; }
+          p { margin-top: 0px; margin-bottom: 0.5em; }
+          .title { break-before: page; margin-top: 0px; }
+          #toc { display: none; font-size: 100%; margin: 0px; width: 100%; overflow-y: hidden; padding-left: 0px; padding-right: 0px; }
+          #display { margin-left: 0em; width: 100%; padding-left: 0px; padding-right: 0px; border: none; overflow-wrap: break-word; }
+          .katex { font: 1em / 1 KaTeX_Main, "Times New Roman", serif; white-space: nowrap; text-indent: 0px; text-rendering: auto; }
+          .katex-display { margin-top: 0px; }
+          @page { size: 8.5in 11in; }
+        }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        
+    </style>
+
+
+    <script>
+        function tocClick() {
+            // No jQuery b/c also used in stand-alone HTML.
+            hs = document.querySelectorAll('#toc > ol ol');
+            for (var i = 0; i < hs.length; i++) {
+              if (hs[i].previousElementSibling) {
+                var el = hs[i].previousElementSibling.firstElementChild;
+                if (el.length == 0) {
+                  continue;
+                }
+                el.addEventListener('click', event => {
+                  var ns = event.target.parentNode.nextElementSibling;
+                  if (ns.style.display === 'none') {
+        ns.style.display = 'block';
+                  } else {
+        ns.style.display = 'none';
+                  }
+                });
+              }
+            }
+          }
+        if (
+            document.readyState === "complete" ||
+            (document.readyState !== "loading" && 
+              !document.documentElement.doScroll)
+        ) {
+          tocClick();
+        } else {
+          document.addEventListener("DOMContentLoaded", tocClick);
+        }
+    </script>
+
+</head>
+
+<body style="display: flex;min-width: 50%;max-height:100%;">
+
+    <div id="toc">
+        <ol>
+            <ol style="display: none;">
+                <li><a number="0.1" href="#problem">Problem</a></li>
+                <li><a number="0.2" href="#example">Example</a></li>
+                <li><a number="0.3" href="#problem">Problem</a></li>
+                <li><a number="0.4" href="#problem">Problem</a></li>
+                <li><a number="0.5" href="#example">Example</a></li>
+                <li><a number="0.6" href="#problem">Problem</a></li>
+                <li><a number="0.7" href="#problem">Problem</a></li>
+                <li><a number="0.8" href="#problem">Problem</a></li>
+                <li><a number="0.9" href="#example">Example</a></li>
+                <li><a number="0.10" href="#problem">Problem</a></li>
+                <li><a number="0.11" href="#problem">Problem</a></li>
+            </ol>
+        </ol>
+    </div>
+    <div id="display">
+        <div class="section">
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="problem" number="0.1" class="hanchor" href="#problem"><span class="hnumber">0.1 </span> <span class="htext">Problem</span></a></h2>
+
+            </div>
+            <div class="block">
+                <p>Plot field lines associated with the two starting points shown in the diagram for <span len="43" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mrow>
+                                            <mi mathvariant="bold">A</mi>
+                                        </mrow>
+                                        <mo>=</mo>
+                                        <mo>−</mo>
+                                        <mi>sin</mi>
+                                        <mo>⁡</mo>
+                                        <mi>ϕ</mi>
+                                        <mover accent="true">
+                                            <mrow>
+                                                <mrow>
+                                                    <mi mathvariant="bold">x</mi>
+                                                </mrow>
+                                            </mrow>
+                                            <mo>^</mo>
+                                        </mover>
+                                        <mo>+</mo>
+                                        <mi>cos</mi>
+                                        <mo>⁡</mo>
+                                        <mi>ϕ</mi>
+                                        <mover accent="true">
+                                            <mrow>
+                                                <mrow>
+                                                    <mi mathvariant="bold">y</mi>
+                                                </mrow>
+                                            </mrow>
+                                            <mo>^</mo>
+                                        </mover>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\mathbf{A}=-\sin\phi\hat{\mathbf{x}} + \cos\phi\hat{\mathbf{y}}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.70788em;"></span><span class="strut bottom" style="height:0.90232em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord"><span class="mord mathbf">A</span></span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord">−</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit">ϕ</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathbf">x</span></span></span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;">^</span></span></span></span></span></span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mop">cos</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit">ϕ</span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span></span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"></span></span></span></span></span></span></span>. Draw the field lines until they encounter the <span len="3" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mi>y</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">y</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span>–axis.</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="example" number="0.2" class="hanchor" href="#example"><span class="hnumber">0.2 </span> <span class="htext">Example</span></a></h2>
+
+            </div>
+            <div class="block">
+                <p>Draw a field line starting at <span len="13" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo>)</mo>
+                                        <mo>=</mo>
+                                        <mo>(</mo>
+                                        <mn>1</mn>
+                                        <mo separator="true">,</mo>
+                                        <mn>1</mn>
+                                        <mo>)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x,y)=(1,1)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span> for the vector field <span len="61" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mrow>
+                                            <mi mathvariant="bold">A</mi>
+                                        </mrow>
+                                        <mo>≡</mo>
+                                        <mrow>
+                                            <mi mathvariant="bold">E</mi>
+                                        </mrow>
+                                        <mo>(</mo>
+                                        <mi>r</mi>
+                                        <mo>)</mo>
+                                        <mi mathvariant="normal">/</mi>
+                                        <mi>k</mi>
+                                        <mi>Q</mi>
+                                        <mo>=</mo>
+                                        <mrow>
+                                            <mover accent="true">
+                                                <mrow>
+                                                    <mi mathvariant="bold-italic">r</mi>
+                                                </mrow>
+                                                <mo>^</mo>
+                                            </mover>
+                                        </mrow>
+                                        <mi mathvariant="normal">/</mi>
+                                        <msup>
+                                            <mi>r</mi>
+                                            <mn>2</mn>
+                                        </msup>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\mathbf{A}\equiv\mathbf{E}(r)/kQ = \boldsymbol{\hat{r}}/r^2</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base"><span class="mord"><span class="mord mathbf">A</span></span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≡</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span class="mord mathbf">E</span></span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mclose">)</span><span class="mord">/</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mord mathit">Q</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord boldsymbol" style="margin-right:0.03194em;">r</span></span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;">^</span></span></span></span></span></span></span><span class="mord">/</span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>.</p>
+
+            </div>
+
+            <div class="block inline-html">
+
+                <img src="figures/Field_Lines_1a.svg">
+            </div>
+            <div class="block">
+                <p>It is important to note that vectors 1, 2, and 3 are not the correct lengths. If we drew vectors with lengths that were consistent with the magnitude of the electric field, vector 1 would be much longer than vector 2, which would be much longer than vector 3.</p>
+
+            </div>
+            <div class="block">
+                <p>In the following figure, two additional field lines were drawn by following the same algorithm. In addition, dotted lines are shown – if we had drawn lines by following the algorithm except stepping in the opposite direction, these field lines result.</p>
+
+            </div>
+
+            <div class="block inline-html">
+
+                <img src="figures/Field_Lines_1b.svg">
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="problem" number="0.3" class="hanchor" href="#problem"><span class="hnumber">0.3 </span> <span class="htext">Problem</span></a></h2>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="problem" number="0.4" class="hanchor" href="#problem"><span class="hnumber">0.4 </span> <span class="htext">Problem</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>In Example 2.1, how much larger is the magnitude of electric field vector 1 than electric field vector 2? (State the ratio of their magnitudes.)</p>
+
+                        </div>
+                        <div class="block">
+                            <p> <strong>Answer</strong>: <span len="10" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>E</mi>
+                                                        <mn>1</mn>
+                                                    </msub>
+                                                    <mo>=</mo>
+                                                    <mi>k</mi>
+                                                    <mi>q</mi>
+                                                    <mi mathvariant="normal">/</mi>
+                                                    <mn>2</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">E_1=kq/2</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="mord">/</span><span class="mord">2</span></span></span></span>, <span len="10" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>E</mi>
+                                                        <mn>2</mn>
+                                                    </msub>
+                                                    <mo>=</mo>
+                                                    <mi>k</mi>
+                                                    <mi>q</mi>
+                                                    <mi mathvariant="normal">/</mi>
+                                                    <mn>4</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">E_2=kq/4</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="mord">/</span><span class="mord">4</span></span></span></span> <span len="13" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>⇒</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\Rightarrow</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.36687em;"></span><span class="strut bottom" style="height:0.36687em;vertical-align:0em;"></span><span class="base"><span class="mrel">⇒</span></span></span></span> <span len="11" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>E</mi>
+                                                        <mn>1</mn>
+                                                    </msub>
+                                                    <mi mathvariant="normal">/</mi>
+                                                    <msub>
+                                                        <mi>E</mi>
+                                                        <mn>2</mn>
+                                                    </msub>
+                                                    <mo>=</mo>
+                                                    <mn>2</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">E_1/E_2=2</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord">/</span><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord">2</span></span></span></span></p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Draw a field line starting at (a.) <span len="13" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo>)</mo>
+                                                    <mo>=</mo>
+                                                    <mo>(</mo>
+                                                    <mn>2</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mn>1</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">(x,y)=(2,1)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">2</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span> and (b.) <span len="13" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo>)</mo>
+                                                    <mo>=</mo>
+                                                    <mo>(</mo>
+                                                    <mn>3</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mn>1</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">(x,y)=(3,1)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">3</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span> on the diagram in Example 2.1.</p>
+
+                        </div>
+                        <div class="block">
+                            <p> <strong>Answer</strong>: Dotted lines were drawn to show that field lines for a single charge are straight lines that pass through the charge and the starting point. The vectors drawn on the left to help draw the field lines on the right are not the correct relative lengths for the reasons discussed earlier.</p>
+
+                        </div>
+                        <div class="block">
+                            <p> \input{Field_Lines/figures/Problem_2.1_Solution}</p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>If the point charge in Example 2.1 was replaced with a charge of magnitude <span len="5" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mn>1</mn>
+                                                    <mn>0</mn>
+                                                    <mi>q</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">10q</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord">1</span><span class="mord">0</span><span class="mord mathit" style="margin-right:0.03588em;">q</span></span></span></span>, how would field lines that you drew change?</p>
+
+                        </div>
+                        <div class="block">
+                            <p> <strong>Answer</strong>: No change. You did not account for the magnitude of the charge when you drew the field lines. As a result, for this case, the field lines would not change. If, however, there were multiple charges and only one of the charges changed magnitudes, the field lines would change.</p>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <p>Earlier it was stated that the closeness of the field lines tells you something about the relative magnitude of the electric field. You should be able to see this in your diagram - the three field lines drawn should be more closely spaced near <span len="3" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mi>q</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">q</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03588em;">q</span></span></span></span>, which corresponds to where the the electric field magnitude is large.</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="example" number="0.5" class="hanchor" href="#example"><span class="hnumber">0.5 </span> <span class="htext">Example</span></a></h2>
+
+            </div>
+            <div class="block">
+                <p>Positive point charges of <span len="4" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mo>+</mo>
+                                        <mi>q</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">+q</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.58333em;"></span><span class="strut bottom" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord">+</span><span class="mord mathit" style="margin-right:0.03588em;">q</span></span></span></span> are at <span len="18" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo>)</mo>
+                                        <mo>=</mo>
+                                        <mo>(</mo>
+                                        <mo>−</mo>
+                                        <mn>1</mn>
+                                        <mi>m</mi>
+                                        <mo separator="true">,</mo>
+                                        <mn>0</mn>
+                                        <mi>m</mi>
+                                        <mo>)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x,y) = (-1m,0m)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">1</span><span class="mord mathit">m</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord mathit">m</span><span class="mclose">)</span></span></span></span> and <span len="18" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo>)</mo>
+                                        <mo>=</mo>
+                                        <mo>(</mo>
+                                        <mo>+</mo>
+                                        <mn>1</mn>
+                                        <mi>m</mi>
+                                        <mo separator="true">,</mo>
+                                        <mn>0</mn>
+                                        <mi>m</mi>
+                                        <mo>)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x,y) = (+1m,0m)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">+</span><span class="mord">1</span><span class="mord mathit">m</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord mathit">m</span><span class="mclose">)</span></span></span></span>. In the diagram below, the plot on the left shows the vectors (black arrows) that were drawn to help determine field lines which are shown in the plot on the right. Calculating each of the vectors is described below.</p>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p><span len="19" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo>)</mo>
+                                                    <mo>=</mo>
+                                                    <mo>(</mo>
+                                                    <mo>−</mo>
+                                                    <mn>1</mn>
+                                                    <mi mathvariant="normal">.</mi>
+                                                    <mn>2</mn>
+                                                    <mn>5</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mn>0</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">(x,y) = (-1.25,0)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">1</span><span class="mord">.</span><span class="mord">2</span><span class="mord">5</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> The force on a charge <span len="5" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>q</mi>
+                                                        <mi>o</mi>
+                                                    </msub>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">q_o</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span></span> placed here due to the two charges will be directly to the left. The force due to the green charge will be smaller than the force due to the purple charge because the green charge is farther away. If you take a small step in along the direction of the resultant force vector to, say, <span len="16" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo>)</mo>
+                                                    <mo>=</mo>
+                                                    <mo>(</mo>
+                                                    <mo>−</mo>
+                                                    <mn>2</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mn>0</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">(x,y) = (-2,0)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">2</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span>, the force due to the two charges is still directly to the left. So the field line for this starting point should be a line going from <span len="19" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo>)</mo>
+                                                    <mo>=</mo>
+                                                    <mo>(</mo>
+                                                    <mo>−</mo>
+                                                    <mn>1</mn>
+                                                    <mi mathvariant="normal">.</mi>
+                                                    <mn>2</mn>
+                                                    <mn>5</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mn>0</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">(x,y) = (-1.25,0)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">1</span><span class="mord">.</span><span class="mord">2</span><span class="mord">5</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> to negative infinity.</p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><span len="19" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo>)</mo>
+                                                    <mo>=</mo>
+                                                    <mo>(</mo>
+                                                    <mo>+</mo>
+                                                    <mn>1</mn>
+                                                    <mi mathvariant="normal">.</mi>
+                                                    <mn>2</mn>
+                                                    <mn>5</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mn>0</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">(x,y) = (+1.25,0)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">+</span><span class="mord">1</span><span class="mord">.</span><span class="mord">2</span><span class="mord">5</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> Similar to the previous, but the force and thus field is to the right.</p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><span len="18" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo>)</mo>
+                                                    <mo>=</mo>
+                                                    <mo>(</mo>
+                                                    <mo>−</mo>
+                                                    <mn>0</mn>
+                                                    <mi mathvariant="normal">.</mi>
+                                                    <mn>5</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mn>0</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">(x,y) = (-0.5,0)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> the force due to the green charge is to the left and the force due to the purple charge is to the right. The net force (and thus field) is to the right because the force due to the purple charge is larger than the force due to the green charge. As one steps closer to the origin, the forces due to the two charges become nearly equal. At the origin, the force is zero and so the field line stops.</p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><span len="18" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo>)</mo>
+                                                    <mo>=</mo>
+                                                    <mo>(</mo>
+                                                    <mo>+</mo>
+                                                    <mn>0</mn>
+                                                    <mi mathvariant="normal">.</mi>
+                                                    <mn>5</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mn>0</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">(x,y) = (+0.5,0)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">+</span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> Similar to the previous but the net force and thus field is to the left.</p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><span len="18" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo>)</mo>
+                                                    <mo>=</mo>
+                                                    <mo>(</mo>
+                                                    <mn>0</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mo>+</mo>
+                                                    <mn>0</mn>
+                                                    <mi mathvariant="normal">.</mi>
+                                                    <mn>5</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">(x,y) = (0,+0.5)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">+</span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span><span class="mclose">)</span></span></span></span> The horizontal components of the force due to each charge are equal in magnitude but opposite in direction so they cancel leaving a net vertical force. A step upwards, the net force is still vertical so the field line continues upwards to infinity.</p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><span len="15" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo>)</mo>
+                                                    <mo>=</mo>
+                                                    <mo>(</mo>
+                                                    <mn>1</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mn>1</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">(x,y) = (1,1)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span> The electric field vector at <span len="15" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo>)</mo>
+                                                    <mo>=</mo>
+                                                    <mo>(</mo>
+                                                    <mn>1</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mn>1</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">(x,y) = (1,1)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span> associated with each charge is shown. The exact magnitude has not been calculated - we only want to get an approximation of the field line. We know that the field due to the purple charge must be smaller than that of the green charge, which is reflected by the length of the green vector. The direction of the purple vector was determined by drawing a straight line from the purple charge to <span len="15" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo>)</mo>
+                                                    <mo>=</mo>
+                                                    <mo>(</mo>
+                                                    <mn>1</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mn>1</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">(x,y) = (1,1)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>, and a similar process was used for the green vector. The vector sum of the purple and green vectors will be closer to the green vector because it is larger. Computing the vector the same way a step along the black vector, the electric field is in approximately the same direction, but is tilted slightly to the right relative to the previous vector. (Challenge question: Can you explain why there is a slight tilt to the right without making any calculations?)</p>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <p>\input{figures/Example_2.2.tex}</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="problem" number="0.6" class="hanchor" href="#problem"><span class="hnumber">0.6 </span> <span class="htext">Problem</span></a></h2>
+
+            </div>
+            <div class="block">
+                <p>On the same graph above, draw field lines for starting points of </p>
+
+            </div>
+            <div class="block">
+                <ol>
+                    <li>
+                        <div class="block">
+                            <p><span len="20" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo>)</mo>
+                                                    <mo>=</mo>
+                                                    <mo>(</mo>
+                                                    <mo>−</mo>
+                                                    <mn>0</mn>
+                                                    <mi mathvariant="normal">.</mi>
+                                                    <mn>5</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mn>0</mn>
+                                                    <mi mathvariant="normal">.</mi>
+                                                    <mn>5</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">(x,y) = (-0.5,0.5)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span><span class="mclose">)</span></span></span></span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><span len="21" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo>)</mo>
+                                                    <mo>=</mo>
+                                                    <mo>(</mo>
+                                                    <mo>−</mo>
+                                                    <mn>0</mn>
+                                                    <mi mathvariant="normal">.</mi>
+                                                    <mn>5</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mo>−</mo>
+                                                    <mn>0</mn>
+                                                    <mi mathvariant="normal">.</mi>
+                                                    <mn>5</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">(x,y) = (-0.5,-0.5)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">−</span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span><span class="mclose">)</span></span></span></span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><span len="20" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo>)</mo>
+                                                    <mo>=</mo>
+                                                    <mo>(</mo>
+                                                    <mn>0</mn>
+                                                    <mi mathvariant="normal">.</mi>
+                                                    <mn>5</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mo>−</mo>
+                                                    <mn>0</mn>
+                                                    <mi mathvariant="normal">.</mi>
+                                                    <mn>5</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">(x,y) = (0.5,-0.5)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">−</span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span><span class="mclose">)</span></span></span></span></p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="block">
+                <p><strong>Hints</strong>: The field lines will not be straight lines and will not cross other field lines. You need to reason out how the direction of the force on a charge at <span len="5" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mi>q</mi>
+                                            <mi>o</mi>
+                                        </msub>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">q_o</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span></span> will change as you make small steps to determine how the lines curve.</p>
+
+            </div>
+            <div class="block">
+                <p><strong>Answer</strong>: A test charge placed at point 1. will feel a force due to both charges, but the force due to the blue charge will be larger. The sum of the two forces will be approximately in the direction shown by the black vector. If one takes a small step along the black vector, the horizontal components of the electric field due to both charges becomes more equal. As a result, the field line becomes more vertical. Because field lines do not cross, the field line that starts at 1. will eventually become parallel to the vertical field line on the <span len="3" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mi>y</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">y</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span>-axis computed earlier.</p>
+
+            </div>
+            <div class="block">
+                <p>\input{Field_Lines/figures/Problem_2.2_Solution_Part_1}</p>
+
+            </div>
+            <div class="block">
+                <p>The field lines for 2. and 3. will have the same shape as that for 1. - the force magnitudes will be the same, but the direction will be different.</p>
+
+            </div>
+            <div class="block">
+                <p>\input{Field_Lines/figures/Problem_2.2_Solution_Part_2}</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="problem" number="0.7" class="hanchor" href="#problem"><span class="hnumber">0.7 </span> <span class="htext">Problem</span></a></h2>
+
+            </div>
+            <div class="block">
+                <p>A negative point charge <span len="4" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mo>−</mo>
+                                        <mi>q</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">-q</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.58333em;"></span><span class="strut bottom" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord">−</span><span class="mord mathit" style="margin-right:0.03588em;">q</span></span></span></span> is at <span len="16" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo>)</mo>
+                                        <mo>=</mo>
+                                        <mo>(</mo>
+                                        <mo>−</mo>
+                                        <mn>1</mn>
+                                        <mo separator="true">,</mo>
+                                        <mn>0</mn>
+                                        <mo>)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x,y) = (-1,0)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">1</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> and a positive point charge <span len="4" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mo>+</mo>
+                                        <mi>q</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">+q</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.58333em;"></span><span class="strut bottom" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord">+</span><span class="mord mathit" style="margin-right:0.03588em;">q</span></span></span></span> is at <span len="16" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo>)</mo>
+                                        <mo>=</mo>
+                                        <mo>(</mo>
+                                        <mo>+</mo>
+                                        <mn>1</mn>
+                                        <mo separator="true">,</mo>
+                                        <mn>0</mn>
+                                        <mo>)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x,y) = (+1,0)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">+</span><span class="mord">1</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> meters. Draw an electric field line for the following starting points.</p>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p><span len="19" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo>)</mo>
+                                                    <mo>=</mo>
+                                                    <mo>(</mo>
+                                                    <mo>−</mo>
+                                                    <mn>1</mn>
+                                                    <mi mathvariant="normal">.</mi>
+                                                    <mn>2</mn>
+                                                    <mn>5</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mn>0</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">(x,y) = (-1.25,0)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">1</span><span class="mord">.</span><span class="mord">2</span><span class="mord">5</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><span len="19" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo>)</mo>
+                                                    <mo>=</mo>
+                                                    <mo>(</mo>
+                                                    <mo>+</mo>
+                                                    <mn>1</mn>
+                                                    <mi mathvariant="normal">.</mi>
+                                                    <mn>2</mn>
+                                                    <mn>5</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mn>0</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">(x,y) = (+1.25,0)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">+</span><span class="mord">1</span><span class="mord">.</span><span class="mord">2</span><span class="mord">5</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><span len="18" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo>)</mo>
+                                                    <mo>=</mo>
+                                                    <mo>(</mo>
+                                                    <mo>−</mo>
+                                                    <mn>0</mn>
+                                                    <mi mathvariant="normal">.</mi>
+                                                    <mn>5</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mn>0</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">(x,y) = (-0.5,0)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><span len="15" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo>)</mo>
+                                                    <mo>=</mo>
+                                                    <mo>(</mo>
+                                                    <mn>1</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mn>1</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">(x,y) = (1,1)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <p>\input{figures/Problem_2.3.tex}</p>
+
+            </div>
+            <div class="block">
+                <p><strong>Answer</strong>: The force on a test charge placed at point 1. due to the blue charge will be to the right. The force on it due to the green charge will be to the left. The force due to the blue charge will be larger because point 1. is closer to it. Field lines stop when they hit a charge, a location where the field is zero, or go off the page. In this case, field line 1. runs into the blue charge. </p>
+
+            </div>
+            <div class="block">
+                <p>Similar arguments can be made to justify field lines that start on point 2. and 3.</p>
+
+            </div>
+            <div class="block">
+                <p>A test charge placed at point 4. will experience a force in the direction shown by the black arrow. The electric field due to the negative charge points along the line connecting the negative charge to point 4. The electric field due to the positive charge will be upwards. The vector sum of these two fields will be in the direction shown by the black arrow, which is the vector sum of the blue and green arrows. When you take a small step along the black arrow, the line will bend to become more horizontal because the force due to the green charge will have a component to the left. When the field line passes <span len="5" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                        <mo>=</mo>
+                                        <mn>0</mn>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x=0</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">x</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span></span>, the vertical electric field due to the two charges cancels; the electric field vectors for both charges is drawn at the point where the field line crosses the <span len="3" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mi>y</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">y</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span>-axis.</p>
+
+            </div>
+            <div class="block">
+                <p>\input{Field_Lines/figures/Problem_2.3_Solution}</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="problem" number="0.8" class="hanchor" href="#problem"><span class="hnumber">0.8 </span> <span class="htext">Problem</span></a></h2>
+
+            </div>
+            <div class="block">
+                <p>Later in the semester, you will encounter a line of charge, which is created by placing many closely spaced charges along a line. Suppose 17 positive charges are placed along the line connecting <span len="19" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo>)</mo>
+                                        <mo>=</mo>
+                                        <mo>(</mo>
+                                        <mo>−</mo>
+                                        <mn>3</mn>
+                                        <mi mathvariant="normal">.</mi>
+                                        <mn>5</mn>
+                                        <mo separator="true">,</mo>
+                                        <mn>0</mn>
+                                        <mo>)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x,y) = (-3.5, 0)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">3</span><span class="mord">.</span><span class="mord">5</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> and <span len="18" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo>)</mo>
+                                        <mo>=</mo>
+                                        <mo>(</mo>
+                                        <mn>3</mn>
+                                        <mi mathvariant="normal">.</mi>
+                                        <mn>5</mn>
+                                        <mo separator="true">,</mo>
+                                        <mn>0</mn>
+                                        <mo>)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x,y) = (3.5, 0)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">3</span><span class="mord">.</span><span class="mord">5</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span>.</p>
+
+            </div>
+            <div class="block">
+                <p>For starting points that are not on the line that connects <span len="19" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo>)</mo>
+                                        <mo>=</mo>
+                                        <mo>(</mo>
+                                        <mo>−</mo>
+                                        <mn>3</mn>
+                                        <mi mathvariant="normal">.</mi>
+                                        <mn>5</mn>
+                                        <mo separator="true">,</mo>
+                                        <mn>0</mn>
+                                        <mo>)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x,y) = (-3.5, 0)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">3</span><span class="mord">.</span><span class="mord">5</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> and <span len="18" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo>)</mo>
+                                        <mo>=</mo>
+                                        <mo>(</mo>
+                                        <mn>3</mn>
+                                        <mi mathvariant="normal">.</mi>
+                                        <mn>5</mn>
+                                        <mo separator="true">,</mo>
+                                        <mn>0</mn>
+                                        <mo>)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x,y) = (3.5, 0)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">3</span><span class="mord">.</span><span class="mord">5</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span>, identify all starting points where drawing the electric field line will be a straight line and draw the lines with an arrow to indicate the electric field direction.</p>
+
+            </div>
+            <div class="block">
+                <p>\input{figures/Problem_2.4.tex}</p>
+
+            </div>
+            <div class="block">
+                <p><strong>Answer</strong>: As shown in the following figure, at any point on the <span len="3" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mi>y</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">y</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span>-axis, one can find a charge on the left half (<span len="8" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                        <mo>&lt;</mo>
+                                        <mn>0</mn>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x&lt;0</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.68354em;vertical-align:-0.0391em;"></span><span class="base"><span class="mord mathit">x</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span></span>) of the line that has an equal an opposite horizontal electric field to a charge on the right half of the line (<span len="8" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                        <mo>&gt;</mo>
+                                        <mn>0</mn>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x&gt;0</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.68354em;vertical-align:-0.0391em;"></span><span class="base"><span class="mord mathit">x</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span></span>). Because there are an equal number of charges to the left and to the right of the <span len="3" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mi>y</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">y</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span>-axis, the net electric field will be vertical. This argument can be repeated by considering the electric field due to the blue and green charges shown at a point on the <span len="4" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mo>−</mo>
+                                        <mi>y</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">-y</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.58333em;"></span><span class="strut bottom" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord">−</span><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span>-axis.</p>
+
+            </div>
+            <div class="block">
+                <p>\input{figures/Problem_2.4_Solution_a.tex}</p>
+
+            </div>
+            <div class="block">
+                <p>A test charge placed on the <span len="3" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">x</span></span></span></span>-axis and to the left of the charges will have a net force to the left because the force on it from each charge on the line will be to the left. (Recall that by convention, a test charge is always positive). A test charge placed on the <span len="3" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">x</span></span></span></span>-axis and to the right of the charges will have a net force to the right because the force from each charge on the line will be to the right.</p>
+
+            </div>
+            <div class="block">
+                <p>The final result:</p>
+
+            </div>
+            <div class="block">
+                <p>\input{figures/Problem_2.4_Solution_b.tex}</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="example" number="0.9" class="hanchor" href="#example"><span class="hnumber">0.9 </span> <span class="htext">Example</span></a></h2>
+
+            </div>
+            <div class="block">
+                <p>In the previous section, an algorithm was given for starting electric field lines. There are three additional facts that can be used to complete an electric field line diagram.</p>
+
+            </div>
+            <div class="block">
+                <ol>
+                    <li>
+                        <div class="block">
+                            <p>Near a point charge, the electric field lines are radial. (Radial lines are made by drawing a straight line that passes through the point charge.) The reason for this is that when you are very close to a point charge, the electric field is dominated by that point charge - the electric field due to all other point charges is small in comparison.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>If you are far away enough from a collection of point charges, where the total charge is not zero, the electric field is approximately the same as if all of the charges were located at a single point.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Electric field line do not cross.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="block">
+                <p>For the charge configuration in Example 2.2, we can use the above facts to extend the field lines drawn previously and sketch new field lines. Below, the electric field vectors used as a guide for drawing the field lines in Example 2.2 are shown on the left. On the right, dashed or dotted lines have been added to the previously drawn field lines based on the following arguments.</p>
+
+            </div>
+            <div class="block">
+                <ol>
+                    <li>
+                        <div class="block">
+                            <p>The gap between the horizontal lines and charges were filled in by using the fact that in this gap region, the electric field must still be horizontal.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>The dashed line a. was drawn based on the fact that it far away from the two point charges. This line was drawn as if the two positive point charges are at the origin. If you trace this line backwards along a straight line, the line will pass through the origin.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>The dashed line b. is points radially outward from the green point charge.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>The dotted line c. was drawn to connect lines a. and b.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>The dotted line d. was drawn by asking how the line it connects to must look as it approaches the green charge. As this line is traced backwards, it must become more and more radial, and when it reaches the green charge, it must be exactly radially outward from the green charge.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>The dotted line e. was drawn by using the fact that there must be a field line that traces outwards and lies between the other two lines that were already drawn.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="block">
+                <p>\input{figures/Example_2.3.tex}</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="problem" number="0.10" class="hanchor" href="#problem"><span class="hnumber">0.10 </span> <span class="htext">Problem</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>Use the facts mentioned in Example 2.3 to fill out the electric field diagram that you started in Problem 2.3. Your diagram should have at least 10 lines with arrows that start near the line of charge and continue outwards.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Where are the field lines the straightest?</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>If many, and an equal number of, charges were added to both ends of the existing charges (with the same spacing) how would the field lines in the region between <span len="18" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mo>−</mo>
+                                                    <mn>3</mn>
+                                                    <mi mathvariant="normal">.</mi>
+                                                    <mn>5</mn>
+                                                    <mo>≤</mo>
+                                                    <mi>x</mi>
+                                                    <mo>≤</mo>
+                                                    <mn>3</mn>
+                                                    <mi mathvariant="normal">.</mi>
+                                                    <mn>5</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">-3.5\le x\le 3.5</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="base"><span class="mord">−</span><span class="mord">3</span><span class="mord">.</span><span class="mord">5</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit">x</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord">3</span><span class="mord">.</span><span class="mord">5</span></span></span></span> change?</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <p>\input{figures/Problem_2.4.tex}</p>
+
+            </div>
+            <div class="block">
+                <p><strong>Answer</strong></p>
+
+            </div>
+            <div class="block">
+                <p>1. </p>
+
+            </div>
+            <div class="block">
+                <p>\input{Field_Lines/figures/Problem_2.5_Solution}</p>
+
+            </div>
+            <div class="block">
+                <p>To see why the lines bend as shown, consider a point just above the charges and to the right of the <span len="3" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mi>y</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">y</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span>-axis as shown with an open circle. The charges with a blue line over them will produce a field that points in the <span len="4" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mo>+</mo>
+                                        <mi>y</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">+y</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.58333em;"></span><span class="strut bottom" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord">+</span><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span> direction (there are an equal number of blue charges to the left of the open circle as to the right). The charges with a red line over them will produce a field having a smaller magnitude (because of their distance) and a component in the <span len="4" class="katex"><span class="katex-mathml"><math>
+                                <semantics>
+                                    <mrow>
+                                        <mo>+</mo>
+                                        <mi>x</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">+x</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.58333em;"></span><span class="strut bottom" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="base"><span class="mord">+</span><span class="mord mathit">x</span></span></span></span> direction. The net field is shown with a black arrow.</p>
+
+            </div>
+            <div class="block">
+                <p>2. The field lines will be the straightest near the center.</p>
+
+            </div>
+            <div class="block">
+                <p>3. As more charges are added to left and right, the curved field lines shown become straighter.</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="problem" number="0.11" class="hanchor" href="#problem"><span class="hnumber">0.11 </span> <span class="htext">Problem</span></a></h2>
+
+            </div>
+            <div class="block">
+                <p>\includegraphics[scale=0.15]{figures/field-lines2.png}</p>
+
+            </div>
+            <div class="block">
+                <ol>
+                    <li>
+                        <div class="block">
+                            <p>In the above electric field line diagram, <span len="5" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>q</mi>
+                                                        <mi>L</mi>
+                                                    </msub>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">q_L</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span></span> is the charge on the left and <span len="5" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>q</mi>
+                                                        <mi>R</mi>
+                                                    </msub>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">q_R</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight" style="margin-right:0.00773em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span></span> is the charge on the right. What are the signs of these two charges? Circle one of the following answers.</p>
+
+                        </div>
+                        <div class="block">
+                            <p>a. <span len="12" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>q</mi>
+                                                        <mi>L</mi>
+                                                    </msub>
+                                                    <mo>&gt;</mo>
+                                                    <mn>0</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">q_L &gt; 0</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span></span>, <span len="12" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>q</mi>
+                                                        <mi>R</mi>
+                                                    </msub>
+                                                    <mo>&gt;</mo>
+                                                    <mn>0</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">q_R &gt; 0</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight" style="margin-right:0.00773em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span></span></p>
+
+                        </div>
+                        <div class="block">
+                            <p>b. <span len="12" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>q</mi>
+                                                        <mi>L</mi>
+                                                    </msub>
+                                                    <mo>&gt;</mo>
+                                                    <mn>0</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">q_L &gt; 0</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span></span>, <span len="12" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>q</mi>
+                                                        <mi>R</mi>
+                                                    </msub>
+                                                    <mo>&lt;</mo>
+                                                    <mn>0</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">q_R &lt; 0</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight" style="margin-right:0.00773em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span></span></p>
+
+                        </div>
+                        <div class="block">
+                            <p>c. <span len="12" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>q</mi>
+                                                        <mi>L</mi>
+                                                    </msub>
+                                                    <mo>&lt;</mo>
+                                                    <mn>0</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">q_L &lt; 0</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span></span>, <span len="12" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>q</mi>
+                                                        <mi>R</mi>
+                                                    </msub>
+                                                    <mo>&lt;</mo>
+                                                    <mn>0</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">q_R &lt; 0</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight" style="margin-right:0.00773em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span></span></p>
+
+                        </div>
+                        <div class="block">
+                            <p>d. <span len="12" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>q</mi>
+                                                        <mi>L</mi>
+                                                    </msub>
+                                                    <mo>&lt;</mo>
+                                                    <mn>0</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">q_L &lt; 0</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span></span>, <span len="12" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>q</mi>
+                                                        <mi>R</mi>
+                                                    </msub>
+                                                    <mo>&gt;</mo>
+                                                    <mn>0</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">q_R &gt; 0</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight" style="margin-right:0.00773em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span></span></p>
+
+                        </div>
+                        <div class="block">
+                            <p>e. Not enough information to determine.</p>
+
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="block">
+                <p><strong>Answer</strong>: b.</p>
+
+            </div>
+            <div class="block">
+                <ol start="2">
+                    <li>
+                        <div class="block">
+                            <p>What is the relationship between the magnitude of these two charges? Circle one of the following answers.</p>
+
+                        </div>
+                        <div class="block">
+                            <p> a. <span len="18" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                    <msub>
+                                                        <mi>q</mi>
+                                                        <mi>L</mi>
+                                                    </msub>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                    <mo>&gt;</mo>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                    <msub>
+                                                        <mi>q</mi>
+                                                        <mi>R</mi>
+                                                    </msub>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">|q_L| &gt; |q_R|</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord">∣</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord">∣</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord">∣</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight" style="margin-right:0.00773em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord">∣</span></span></span></span> </p>
+
+                        </div>
+                        <div class="block">
+                            <p> b. <span len="18" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                    <msub>
+                                                        <mi>q</mi>
+                                                        <mi>L</mi>
+                                                    </msub>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                    <mo>&lt;</mo>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                    <msub>
+                                                        <mi>q</mi>
+                                                        <mi>R</mi>
+                                                    </msub>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">|q_L| &lt; |q_R|</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord">∣</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord">∣</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord">∣</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight" style="margin-right:0.00773em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord">∣</span></span></span></span></p>
+
+                        </div>
+                        <div class="block">
+                            <p> c. <span len="15" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                    <msub>
+                                                        <mi>q</mi>
+                                                        <mi>L</mi>
+                                                    </msub>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                    <mo>=</mo>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                    <msub>
+                                                        <mi>q</mi>
+                                                        <mi>R</mi>
+                                                    </msub>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">|q_L| = |q_R|</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord">∣</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord">∣</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord">∣</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight" style="margin-right:0.00773em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord">∣</span></span></span></span></p>
+
+                        </div>
+                        <div class="block">
+                            <p> d. Not enough information to determine.</p>
+
+                        </div>
+                        <div class="block">
+                            <p> <strong>Answer</strong>: If charge magnitudes were equal the total field at the open dot, which is on the line half-way between the charges, would be in the +x-direction (as it is for a dipole, where charges are equal and opposite). For <span len="7" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                    <msub>
+                                                        <mi>q</mi>
+                                                        <mi>L</mi>
+                                                    </msub>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">|q_L|</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord">∣</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord">∣</span></span></span></span> larger than <span len="7" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                    <msub>
+                                                        <mi>q</mi>
+                                                        <mi>R</mi>
+                                                    </msub>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">|q_R|</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord">∣</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight" style="margin-right:0.00773em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord">∣</span></span></span></span>, the total field is rotated in the +y-direction. Make sure you can use drawing and vector addition to explain this.</p>
+
+                        </div>
+                    </li>
+                    <li class="active">
+                        <div class="block">
+                            <p>Briefly describe what these lines represent.</p>
+
+                        </div>
+                        <div class="block">
+                            <p> <strong>Answer</strong>: The lines represent the direction of the force on a positive charge if placed at a point on the line. The lines do not generally represent the path that a charge will follow if released.</p>
+
+                        </div>
+                        <div class="block">
+                            <p> \includegraphics[scale=0.35]{figures/field-lines.png}</p>
+
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

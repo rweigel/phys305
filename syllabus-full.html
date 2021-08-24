@@ -1,0 +1,955 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>syllabus-full</title>
+    <link id="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%220.9em%22 font-size=%22100%22>📖</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" />
+    <style>
+        body { background-color: white; }
+        #toc { font-size: 85%; width: 14em; position: fixed; min-height: 95%; max-height: 95%; overflow: hidden auto; padding-left: 0.75em; padding-right: 1em; margin-right: 1em; font-family: "Open Sans"; }
+        #toc ol { list-style-type: decimal; padding-inline-start: 1em; }
+        #toc a { text-decoration: none; }
+        #display a { text-decoration: none black; text-underline-offset: 2px; }
+        #display { width: 100%; margin-left: 15em; max-height: 100%; min-height: 100%; overflow: hidden auto; padding-left: 1em; padding-right: 1em; border-left: 1px solid rgb(240, 240, 240); font-family: "Open Sans"; }
+        .title { text-align: center; font-size: 250%; font-weight: bold; color: black; margin-bottom: 0px; }
+        .subtitle { text-align: center; font-size: 150%; font-weight: bold; color: black; margin-top: 0.2em; }
+        .hanchor { text-decoration: none; color: inherit; }
+        h1 { color: darkblue; border-bottom: 2px solid darkblue; }
+        h2 { border-bottom: 1px solid black; }
+        h3 { border-bottom: 1px dotted black; }
+        h1, h2, h3, h4, h5, h6 { width: 100%; margin-block: 0.5em; }
+        #display .block ul { width: 100%; margin-left: 1em; padding-left: 1em; }
+        #display .block ol { width: 100%; margin-left: 1em; padding-left: 1em; }
+        code { width: 100%; background-color: rgba(0, 0, 0, 0.03); border-radius: 0px; font-size: 1.2em; white-space: pre-wrap; margin-top: 3px; margin-right: 3px; }
+        pre code { border-right: 1px solid black; }
+        code.language-Python { background-color: rgba(0, 0, 0, 0); font-size: 1.2em; }
+        pre { width: 100%; text-indent: 0.75em; padding-left: 0.5em; margin-left: 1em; white-space: pre-wrap; border-left: 3px solid black; background-color: rgba(0, 0, 0, 0.03); line-height: 1.5; overflow-x: clip; }
+        pre.language-Python { border-left: 5px solid blue; padding: 0.5em; margin-left: 1em; margin-right: 1em; line-height: 1.5; overflow-x: auto; }
+        .block { display: flex; }
+        .block.inline-html { display: block; }
+        .hr { width: 100%; height: 1px; display: block; margin: 0.5em; margin-block: 0.5em; border-top: 1px solid black; }
+        #display li > div { display: flex; }
+        p { width: 100%; display: block; margin-block: 0.5em; }
+        #display li { width: 100%; }
+        li .block p { width: 100%; display: block; margin-top: 0.5em; margin-bottom: 0.5em; }
+        li .block:first-of-type p { width: 100%; display: block; margin-top: 0em; margin-bottom: 0em; }
+        .section > .block ol ~ .line-number { display: none; }
+        .section > .block ul ~ .line-number { display: none; }
+        .section > .block pre ~ .line-number { display: none; }
+        .section > .block code ~ .line-number { }
+        pre .line-number { float: right; font-size: 8px; text-align: center; text-indent: 0px; }
+        .line-number { float: right; white-space: pre-wrap; font-size: 10%; }
+        p + .line-number { margin-block-start: 8px; }
+        .block > div.linenumber { margin-block-start: -0.5em; }
+        .blockquote + div.line-number { margin-top: 1rem; }
+        h1 + .line-number { margin-block-start: 20em; }
+        h2 + .line-number { margin-block-start: 15em; }
+        h3 + .line-number { margin-block-start: 15em; }
+        h4 + .line-number { margin-block-start: 15em; }
+        h5 + .line-number { margin-block-start: 15em; }
+        h6 + .line-number { margin-block-start: 15em; }
+        .blockquote { width: 100%; display: block; margin: 1em; border: 1px solid black; padding: 1em; border-radius: 0.5em; }
+        details > summary { font-weight: bold; }
+        details[open] { border: 1px solid black; padding: 1em; }
+        table { padding: 0px; }
+        table tr { border-top: 1px solid rgb(204, 204, 204); background-color: white; margin: 0px; padding: 0px; }
+        table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+        table tr th { font-weight: bold; border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+        table tr td { border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+        table tr th :first-child, table tr td :first-child { margin-top: 0px; }
+        table tr th :last-child, table tr td :last-child { margin-bottom: 0px; }
+        .katex { font-size: inherit !important; }
+        .katex-display { text-align: center; margin: 0.5em; font-size: 1.1em !important; }
+        @media print {
+          body, html { margin: 0in; color: rgb(0, 0, 0); height: auto; background-color: rgb(255, 255, 255); border: none; display: inline; }
+          h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+          h1, h2, h3, h4, h5, h6 { width: 100%; margin-block: 0.1em; }
+          h1 { font-size: 1.25em; border-bottom: 1px solid darkblue; }
+          h3 { font-size: 1.15em; }
+          h4, h5, h6 { font-size: 1.15em; }
+          p { margin-top: 0px; margin-bottom: 0.5em; }
+          .title { break-before: page; margin-top: 0px; }
+          #toc { display: none; font-size: 100%; margin: 0px; width: 100%; overflow-y: hidden; padding-left: 0px; padding-right: 0px; }
+          #display { margin-left: 0em; width: 100%; padding-left: 0px; padding-right: 0px; border: none; overflow-wrap: break-word; }
+          .katex { font: 1em / 1 KaTeX_Main, "Times New Roman", serif; white-space: nowrap; text-indent: 0px; text-rendering: auto; }
+          .katex-display { margin-top: 0px; }
+        }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        
+    </style>
+
+
+    <script>
+        function tocClick() {
+            // No jQuery b/c also used in stand-alone HTML.
+            hs = document.querySelectorAll('#toc > ol ol');
+            for (var i = 0; i < hs.length; i++) {
+              if (hs[i].previousElementSibling) {
+                var el = hs[i].previousElementSibling.firstElementChild;
+                if (el.length == 0) {
+                  continue;
+                }
+                el.addEventListener('click', event => {
+                  var ns = event.target.parentNode.nextElementSibling;
+                  if (ns.style.display === 'none') {
+        ns.style.display = 'block';
+                  } else {
+        ns.style.display = 'none';
+                  }
+                });
+              }
+            }
+          }
+        if (
+            document.readyState === "complete" ||
+            (document.readyState !== "loading" && 
+              !document.documentElement.doScroll)
+        ) {
+          tocClick();
+        } else {
+          document.addEventListener("DOMContentLoaded", tocClick);
+        }
+    </script>
+
+</head>
+
+<body style="display: flex;min-width: 50%;max-height:100%;">
+
+    <div id="toc">
+        <ol>
+            <li><a number="1" href="#topics" class="highlighted">Topics</a></li>
+            <li><a number="2" href="#class-schedule">Class Schedule</a></li>
+            <ol style="display: none;">
+                <li><a number="2.1" href="#tuesday-august-24th">Tuesday, August 24th</a></li>
+                <li><a number="2.2" href="#thursday-august-26th">Thursday, August 26th</a></li>
+                <li><a number="2.3" href="#tuesday-august-31st">Tuesday, August 31st</a></li>
+                <li><a number="2.4" href="#thursday-september-2nd">Thursday, September 2nd</a></li>
+                <li><a number="2.5" href="#tuesday-september-7th">Tuesday, September 7th</a></li>
+                <li><a number="2.6" href="#thursday-september-9th">Thursday, September 9th</a></li>
+                <li><a number="2.7" href="#tuesday-september-14th">Tuesday, September 14th</a></li>
+                <li><a number="2.8" href="#thursday-september-16th">Thursday, September 16th</a></li>
+                <li><a number="2.9" href="#tuesday-september-21st">Tuesday, September 21st</a></li>
+                <li><a number="2.10" href="#thursday-september-23rd">Thursday, September 23rd</a></li>
+                <li><a number="2.11" href="#tuesday-september-28th">Tuesday, September 28th</a></li>
+                <li><a number="2.12" href="#thursday-september-30th">Thursday, September 30th</a></li>
+                <li><a number="2.13" href="#tuesday-october-5th">Tuesday, October 5th</a></li>
+                <li><a number="2.14" href="#thursday-october-7th">Thursday, October 7th</a></li>
+                <li><a number="2.15" href="#tuesday-october-12th">Tuesday, October 12th</a></li>
+                <li><a number="2.16" href="#thursday-october-14th">Thursday, October 14th</a></li>
+                <li><a number="2.17" href="#tuesday-october-19th">Tuesday, October 19th</a></li>
+                <li><a number="2.18" href="#thursday-october-21st">Thursday, October 21st</a></li>
+                <li><a number="2.19" href="#tuesday-october-26th">Tuesday, October 26th</a></li>
+                <li><a number="2.20" href="#thursday-october-28th">Thursday, October 28th</a></li>
+                <li><a number="2.21" href="#tuesday-november-2nd">Tuesday, November 2nd</a></li>
+                <li><a number="2.22" href="#thursday-november-4th">Thursday, November 4th</a></li>
+                <li><a number="2.23" href="#tuesday-november-9th">Tuesday, November 9th</a></li>
+                <li><a number="2.24" href="#thursday-november-11th">Thursday, November 11th</a></li>
+                <li><a number="2.25" href="#tuesday-november-16th">Tuesday, November 16th</a></li>
+                <li><a number="2.26" href="#thursday-november-18th">Thursday, November 18th</a></li>
+                <li><a number="2.27" href="#tuesday-november-23rd">Tuesday, November 23rd</a></li>
+                <li><a number="2.28" href="#thursday-november-25th">Thursday, November 25th</a></li>
+                <li><a number="2.29" href="#tuesday-november-30th">Tuesday, November 30th</a></li>
+                <li><a number="2.30" href="#thursday-december-2nd">Thursday, December 2nd</a></li>
+                <li><a number="2.31" href="#thursday-december-9th">Thursday, December 9th</a></li>
+            </ol>
+        </ol>
+    </div>
+    <div id="display">
+        <div class="section">
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1 class="highlighted"><a name="tutorials" number="1" class="hanchor" href="#topics">1 Topics</a></h1>
+
+            </div>
+            <div class="block">
+                <ol>
+                    <li>
+                        <div class="block">
+                            <p><a href="vectors.html">Vectors</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="vector_fields.html">Vector Fields</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="field_lines.html">Field Lines</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="equipotentials.html">Equipotentials</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="flux.html">Flux</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="divergence.html">Divergence</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="coulombs_law.html">Coulomb’s Law</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="electric_field.html">Electric Field</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="symmetry_and_superposition.html">Symmetry and Superposition</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="discrete_charge_distributions.html">Discrete Charge Distributions</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="charge_densities.html">Charge Densities</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="limits.html">Limits</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="binomial_expansion.html">Binomial Expansion</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="continuous_charge_distributions.html">Continuous Charge Distributions</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="gausss_law.html">Gauss’s Law</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="dirac_delta.html">Dirac Delta</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="electrostatic_potential.html">Electrostatic Potential</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="electrostatic_work_and_energy.html">Electrostatic Work and Energy</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="conductors.html">Conductors</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="capacitors.html">Capacitors</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="laplace_1d.html">Laplace’s Equation in 1-D</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="laplace_2d.html">Laplace’s Equation in 2-D</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="method_of_images.html">The Method of Images</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="multipole_expansion.html">Multipole Expansion</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="polarization.html">Polarization</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="dipole_torque.html">Dipole Torque</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="dipole_force_and_energy.html">Dipole Force and Energy</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="bound_charge_densities.html">Bound Charge Densities</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="displacement_field.html">The Displacement Field <span len="12" class="katex"><span class="katex-mathml"><math>
+                                                <semantics>
+                                                    <mrow>
+                                                        <mrow>
+                                                            <mi mathvariant="bold">D</mi>
+                                                        </mrow>
+                                                    </mrow>
+                                                    <annotation encoding="application/x-tex">\mathbf{D}</annotation>
+                                                </semantics>
+                                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68611em;"></span><span class="strut bottom" style="height:0.68611em;vertical-align:0em;"></span><span class="base"><span class="mord"><span class="mord mathbf">D</span></span></span></span></span></a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="gausss_law_for_dielectrics.html">Gauss’ Law for <span len="12" class="katex"><span class="katex-mathml"><math>
+                                                <semantics>
+                                                    <mrow>
+                                                        <mrow>
+                                                            <mi mathvariant="bold">D</mi>
+                                                        </mrow>
+                                                    </mrow>
+                                                    <annotation encoding="application/x-tex">\mathbf{D}</annotation>
+                                                </semantics>
+                                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68611em;"></span><span class="strut bottom" style="height:0.68611em;vertical-align:0em;"></span><span class="base"><span class="mord"><span class="mord mathbf">D</span></span></span></span></span></a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="linear_dielectrics.html">Dielectrics</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="current_densities.html">Current Densities</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="lorentz_force_law.html">Lorentz Force Law</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="biot_savart_law.html">Biot-Savart Law</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="divergence_and_curl_of_B.html">Divergence and Curl of B</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="amperes_law.html">Ampere’s Law</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="magnetic_vector_potential.html">Magnetic Vector Potential</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="magnetization.html">Magnetization</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="bound_current_densities.html">Bound Current Densities</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="auxiliary_field_H.html">The Auxiliary Field <span len="12" class="katex"><span class="katex-mathml"><math>
+                                                <semantics>
+                                                    <mrow>
+                                                        <mrow>
+                                                            <mi mathvariant="bold">H</mi>
+                                                        </mrow>
+                                                    </mrow>
+                                                    <annotation encoding="application/x-tex">\mathbf{H}</annotation>
+                                                </semantics>
+                                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68611em;"></span><span class="strut bottom" style="height:0.68611em;vertical-align:0em;"></span><span class="base"><span class="mord"><span class="mord mathbf">H</span></span></span></span></span></a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="amperes_law_for_H.html">Ampere’s Law for <span len="12" class="katex"><span class="katex-mathml"><math>
+                                                <semantics>
+                                                    <mrow>
+                                                        <mrow>
+                                                            <mi mathvariant="bold">H</mi>
+                                                        </mrow>
+                                                    </mrow>
+                                                    <annotation encoding="application/x-tex">\mathbf{H}</annotation>
+                                                </semantics>
+                                            </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68611em;"></span><span class="strut bottom" style="height:0.68611em;vertical-align:0em;"></span><span class="base"><span class="mord"><span class="mord mathbf">H</span></span></span></span></span></a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><a href="summary_of_maxwells_equations.html">Summary of Maxwell’s Equations</a></p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="class-schedule" number="2" class="hanchor" href="#class-schedule"><span class="hnumber">2 </span> <span class="htext">Class Schedule</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="tuesday-august-24th" number="2.1" class="hanchor" href="#tuesday-august-24th"><span class="hnumber">2.1 </span> <span class="htext">Tuesday, August 24th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>Introductions</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Discuss syllabus</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Assign HW #1 covering Vectors, Vector Fields, Field Lines, and Equipotentials</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Discuss HW #1 topics</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-august-26th" number="2.2" class="hanchor" href="#thursday-august-26th"><span class="hnumber">2.2 </span> <span class="htext">Thursday, August 26th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>Discuss HW #1 topics</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="tuesday-august-31st" number="2.3" class="hanchor" href="#tuesday-august-31st"><span class="hnumber">2.3 </span> <span class="htext">Tuesday, August 31st</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>Answer questions on HW #1 topics</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-september-2nd" number="2.4" class="hanchor" href="#thursday-september-2nd"><span class="hnumber">2.4 </span> <span class="htext">Thursday, September 2nd</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>Answer questions on HW #1 topics</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Homework #1 due at 3:00 pm</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Assign Homework #2 covering Flux, Divergence, Coulomb’s Law, and Electric Field.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="tuesday-september-7th" number="2.5" class="hanchor" href="#tuesday-september-7th"><span class="hnumber">2.5 </span> <span class="htext">Tuesday, September 7th</span></a></h2>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-september-9th" number="2.6" class="hanchor" href="#thursday-september-9th"><span class="hnumber">2.6 </span> <span class="htext">Thursday, September 9th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>HW #2 due.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Assign HW #3 covering Symmetry and Superposition, Discrete Charge Distributions, Charge Densities, the Binomial Expansion, and Limits.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="tuesday-september-14th" number="2.7" class="hanchor" href="#tuesday-september-14th"><span class="hnumber">2.7 </span> <span class="htext">Tuesday, September 14th</span></a></h2>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-september-16th" number="2.8" class="hanchor" href="#thursday-september-16th"><span class="hnumber">2.8 </span> <span class="htext">Thursday, September 16th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>HW #3 due.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Assign HW #4 covering Continuous Charge Distributions, Electrostatic Potential, and Electrostatic Work and Energy</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="tuesday-september-21st" number="2.9" class="hanchor" href="#tuesday-september-21st"><span class="hnumber">2.9 </span> <span class="htext">Tuesday, September 21st</span></a></h2>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-september-23rd" number="2.10" class="hanchor" href="#thursday-september-23rd"><span class="hnumber">2.10 </span> <span class="htext">Thursday, September 23rd</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>HW #4 due.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Assign HW #5 covering Gauss’s Law, Conductors, and Capacitors.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="tuesday-september-28th" number="2.11" class="hanchor" href="#tuesday-september-28th"><span class="hnumber">2.11 </span> <span class="htext">Tuesday, September 28th</span></a></h2>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-september-30th" number="2.12" class="hanchor" href="#thursday-september-30th"><span class="hnumber">2.12 </span> <span class="htext">Thursday, September 30th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>HW #5 due.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Assign HW #6 covering Laplace’s Equation in 1 and 2-D.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="tuesday-october-5th" number="2.13" class="hanchor" href="#tuesday-october-5th"><span class="hnumber">2.13 </span> <span class="htext">Tuesday, October 5th</span></a></h2>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-october-7th" number="2.14" class="hanchor" href="#thursday-october-7th"><span class="hnumber">2.14 </span> <span class="htext">Thursday, October 7th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>HW #6 due.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Assign HW #7 covering the Laplace’s Equation in 2-D</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="tuesday-october-12th" number="2.15" class="hanchor" href="#tuesday-october-12th"><span class="hnumber">2.15 </span> <span class="htext">Tuesday, October 12th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>No class</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-october-14th" number="2.16" class="hanchor" href="#thursday-october-14th"><span class="hnumber">2.16 </span> <span class="htext">Thursday, October 14th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>Mid-term exam during class time. Location TBD.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="tuesday-october-19th" number="2.17" class="hanchor" href="#tuesday-october-19th"><span class="hnumber">2.17 </span> <span class="htext">Tuesday, October 19th</span></a></h2>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-october-21st" number="2.18" class="hanchor" href="#thursday-october-21st"><span class="hnumber">2.18 </span> <span class="htext">Thursday, October 21st</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>Assign HW #8 covering the Method of Images and Dipole Expansion</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="tuesday-october-26th" number="2.19" class="hanchor" href="#tuesday-october-26th"><span class="hnumber">2.19 </span> <span class="htext">Tuesday, October 26th</span></a></h2>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-october-28th" number="2.20" class="hanchor" href="#thursday-october-28th"><span class="hnumber">2.20 </span> <span class="htext">Thursday, October 28th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>HW #8 due.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Assign HW #9 covering Polarization, Dipole Torque, and Bound Charge Densities</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="tuesday-november-2nd" number="2.21" class="hanchor" href="#tuesday-november-2nd"><span class="hnumber">2.21 </span> <span class="htext">Tuesday, November 2nd</span></a></h2>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-november-4th" number="2.22" class="hanchor" href="#thursday-november-4th"><span class="hnumber">2.22 </span> <span class="htext">Thursday, November 4th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>HW #9 due.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Assign HW #10 covering Displacement Field <span len="12" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mrow>
+                                                        <mi mathvariant="bold">D</mi>
+                                                    </mrow>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\mathbf{D}</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68611em;"></span><span class="strut bottom" style="height:0.68611em;vertical-align:0em;"></span><span class="base"><span class="mord"><span class="mord mathbf">D</span></span></span></span></span>, Gauss’s Law for $\mathbf{D}, and Dielectrics.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="tuesday-november-9th" number="2.23" class="hanchor" href="#tuesday-november-9th"><span class="hnumber">2.23 </span> <span class="htext">Tuesday, November 9th</span></a></h2>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-november-11th" number="2.24" class="hanchor" href="#thursday-november-11th"><span class="hnumber">2.24 </span> <span class="htext">Thursday, November 11th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>HW #10 due</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Assign HW #11 covering Current Densities, the Lorentz Force Law, and the Biot-Savart Law</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="tuesday-november-16th" number="2.25" class="hanchor" href="#tuesday-november-16th"><span class="hnumber">2.25 </span> <span class="htext">Tuesday, November 16th</span></a></h2>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-november-18th" number="2.26" class="hanchor" href="#thursday-november-18th"><span class="hnumber">2.26 </span> <span class="htext">Thursday, November 18th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>HW #11 due</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Assign HW #12 covering the divergence and curl of <span len="12" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mrow>
+                                                        <mi mathvariant="bold">B</mi>
+                                                    </mrow>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\mathbf{B}</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68611em;"></span><span class="strut bottom" style="height:0.68611em;vertical-align:0em;"></span><span class="base"><span class="mord"><span class="mord mathbf">B</span></span></span></span></span></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="tuesday-november-23rd" number="2.27" class="hanchor" href="#tuesday-november-23rd"><span class="hnumber">2.27 </span> <span class="htext">Tuesday, November 23rd</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>HW #12 due</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Assign HW #13 covering Ampere’s Law, Magnetic Vector Potential, and Magnetization.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-november-25th" number="2.28" class="hanchor" href="#thursday-november-25th"><span class="hnumber">2.28 </span> <span class="htext">Thursday, November 25th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>No class</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="tuesday-november-30th" number="2.29" class="hanchor" href="#tuesday-november-30th"><span class="hnumber">2.29 </span> <span class="htext">Tuesday, November 30th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>HW #13 due</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Assign HW #14 covering Bound Current Densities, the Auxiliary Field <span len="12" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mrow>
+                                                        <mi mathvariant="bold">H</mi>
+                                                    </mrow>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\mathbf{H}</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68611em;"></span><span class="strut bottom" style="height:0.68611em;vertical-align:0em;"></span><span class="base"><span class="mord"><span class="mord mathbf">H</span></span></span></span></span>, and Ampere’s Law for <span len="12" class="katex"><span class="katex-mathml"><math>
+                                            <semantics>
+                                                <mrow>
+                                                    <mrow>
+                                                        <mi mathvariant="bold">H</mi>
+                                                    </mrow>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\mathbf{H}</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68611em;"></span><span class="strut bottom" style="height:0.68611em;vertical-align:0em;"></span><span class="base"><span class="mord"><span class="mord mathbf">H</span></span></span></span></span></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-december-2nd" number="2.30" class="hanchor" href="#thursday-december-2nd"><span class="hnumber">2.30 </span> <span class="htext">Thursday, December 2nd</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>Last class</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>HW #14 due</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="thursday-december-9th" number="2.31" class="hanchor" href="#thursday-december-9th"><span class="hnumber">2.31 </span> <span class="htext">Thursday, December 9th</span></a></h2>
+
+            </div>
+            <div class="block">
+                <p>Final Exam from 10:30 am – 1:15 pm; location TBD.</p>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

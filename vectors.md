@@ -1,4 +1,4 @@
-This is primarily a review of concepts related to vectors that are important for E&M. If a topic covered is unfamiliar, please review the basic concepts first. Khan Acadamey has a comprehensive [introduction to vectors](https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:vectors) that is recommended.
+This is primarily a review of concepts related to vectors that are important for E&M. If a topic covered is unfamiliar, please review the basic concepts first. Khan Academy has a comprehensive [introduction to vectors](https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:vectors) that is recommended.
 
 # Vector Notation
 
@@ -18,7 +18,7 @@ The vector $\mathbf{A}$ can be viewed as the sum of the two vectors $A_x\xhat$ a
 
 <img src="figures/Vectors-1.svg" width="100%"/>
 
-By definition, the magnitude of $\mathbf{A}$ is the given by the Pythagorean formula
+By definition, the magnitude of $\mathbf{A}$ is given by the Pythagorean formula
 
 $$
 A = |\mathbf{A}| = \sqrt{A_x^2 + A_y^2}
@@ -29,9 +29,9 @@ As indicated in this equation, $A$ and $|\mathbf{A}|$ are equivalent -- often on
 
 **Common error**: Referring to $|\mathbf{A}|$ as "The absolute value of $\mathbf{A}$". The absolute value operator operates on a scalar, e.g., $-12.1$. When used with a vector, the vertical bars mean "The magnitude of $\mathbf{A}$". Both the absolute value and magnitude operations yield a positive scalar, but their calculation is different. The absolute value operation is to simply drop a negative sign. The magnitude operation requires the use of the Pythagorean formula. 
 
-%If done any programming, you've encountered the concept of ["operation overloading"](https://en.wikipedia.org/wiki/Operator_overloading) - a mathemmatical operation has multiple meanings depending on the arguments. For example the `+` sign in the statement `1 + 2` means "add the numbers before and after it" and in the statement `'B' + 'ob'`, the `+` sign means "concatenate strings to give `'Bob'`. In a similar way, the operator $|\cdot|$ means "absolute value" if $\cdot$ is a scalar and "vector magnitude" if $\cdot$ is a vector.
+%If done any programming, you've encountered the concept of ["operation overloading"](https://en.wikipedia.org/wiki/Operator_overloading) - a mathematical operation has multiple meanings depending on the arguments. For example the `+` sign in the statement `1 + 2` means "add the numbers before and after it" and in the statement `'B' + 'ob'`, the `+` sign means "concatenate strings to give `'Bob'`. Similarly, the operator $|\cdot|$ means "absolute value" if $\cdot$ is a scalar and "vector magnitude" if $\cdot$ is a vector.
 
-If $\theta$ is defined to be the angle from the $x$-axis with positive angles counter--clockwise,
+If $\theta$ is defined to be the angle from the $x$-axis with positive angles counterclockwise,
 
 $$
 A_x = A\cos\theta\quad\text{and}\quad A_y=A\sin\theta
@@ -43,7 +43,7 @@ $$
 A_x = |\mathbf{A}|\cos\theta\quad\text{and}\quad A_y=|\mathbf{A}|\sin\theta
 $$
 
-makes it clear that the the sign of $A_x$ (or $A_y$) is due to the $\cos\theta$ (or $\sin\theta$) term and not the term that multiplies it. Although $A$ is a positive number because it is a magnitude, writing it as $|\mathbf{A}|$ may make this point clearer.
+makes it clear that the sign of $A_x$ (or $A_y$) is due to the $\cos\theta$ (or $\sin\theta$) term and not the term that multiplies it. Although $A$ is a positive number because it is a magnitude, writing it as $|\mathbf{A}|$ may make this point clearer.
 
 Elimination of $A$ from $A_x = A\cos\theta$ and $A_y=A\sin\theta$ gives
 
@@ -51,9 +51,7 @@ $$
 \frac{\sin\theta}{\cos\theta} = \frac{A_y}{A_x}\quad\text{or} \quad \tan\theta = \frac{A_y}{A_x}
 $$
 
-which is expected based on the diagram on the right in the following figure.
-
-<img src="figures/Vectors-1.svg" width="100%"/>
+which is expected based on the diagram on the right of the previous figure.
 
 ## References
 
@@ -70,21 +68,17 @@ Several unique perspectives on vectors include
 
 Is $|A|$ a valid expression for the magnitude of a vector? If not, explain why.
 
-%**Answer**: $A$ is a magnitude of a vector that corresponds to a length so $A\ge 0$ and taking its absolute value is not needed. A reader seeing the statement $|A|$ may conclude that $A$ can be a positive or negative number (because otherwise why would it be written as $|A|$?).
+%**Answer**: $A$ is a magnitude of a vector that corresponds to a length so $A\ge 0$ and taking its absolute value is not needed. A reader seeing the statement $|A|$ may conclude that $A$ can be a positive or negative number (because otherwise, why would it be written as $|A|$?).
 
 ### Computing magnitude and angle
 
-Draw $\mathbf{A}=-1\xhat + \yhat$ and compute $A$ and $\theta$, where $\theta$ is as defined as the angle with respect to the $x$--axis with positive $\theta$ corresponding to counter-clockwise rotation.
+Draw $\mathbf{A}=-1\xhat + \yhat$ and compute $A$ and $\theta$, where $\theta$ is as defined as the angle with respect to the $x$--axis with positive $\theta$ corresponding to counterclockwise rotation.
 
 ### Notation
 
-The conventional definition of a vector, its components, and the angle is 
+The conventional definition of a vector, its components, and the angle is $\mathbf{A} = A_x\xhat + A_y\yhat$, where $A_x = A\cos\theta$, $A_y=A\sin\theta$, and $\theta$ is as defined as the angle with respect to the $x$--axis with positive $\theta$ corresponding to counter-clockwise rotation.
 
-$\mathbf{A} = A_x\xhat + A_y\yhat$ and $A_x = A\cos\theta\quad\text{and}\quad A_y=A\sin\theta$
-
-where $\theta$ is as defined as the angle with respect to the $x$--axis with positive $\theta$ corresponding to counter-clockwise rotation.
-
-Let $\theta'$ be defined as the angle with respect to the $y$--axis with positive $\theta'$ corresponding to counter-clockwise rotation.
+Let $\theta'$ be defined as the angle with respect to the $y$--axis with positive $\theta'$ corresponding to counterclockwise rotation.
 
 1\. Write the equations for $A'_x$ and $A'_y$ in terms of $\theta'$.
 
@@ -108,6 +102,8 @@ If $\mathbf{A} = (x-y)\hat{\mathbf{x}}-y\hat{\mathbf{y}}$,
 
 # Vector Addition/Subtraction
 
+See notes from class.
+
 ## Problems
 
 %###
@@ -119,7 +115,7 @@ If $\mathbf{A} = (x-y)\hat{\mathbf{x}}-y\hat{\mathbf{y}}$,
 %###
 
 %* $\mathbf{A}$ points east and $A=4$ units
-%* $\mathbf{B}$ is at an angle of $120^\circ$ from east and $B=4$ units.
+%* $\mathbf{B}$ is at an angle of $120^\circ$ from the east and $B=4$ units.
 %* $\mathbf{C}$ is at an angle of $30^\circ$ south of east and $|\mathbf{C}|=4$ units.
 
 %Graphically (make no calculations) estimate the vectors
@@ -143,10 +139,10 @@ Draw and label
 * $\mathbf{F}=-\mathbf{A}-\mathbf{B}$.
 
 Compute, in terms of $\hat{\mathbf{x}}$ and $\hat{\mathbf{y}}$ and numbers
-* $\mathbf{C}$ and $\hat{\mathbf{C}}$
-* $\mathbf{D}$ and $\hat{\mathbf{D}}$
-* $\mathbf{E}$ and $\hat{\mathbf{E}}$
-* $\mathbf{F}$ and $\hat{\mathbf{F}}$
+* $\mathbf{C}$ and $|\mathbf{C}|$
+* $\mathbf{D}$ and $|\mathbf{D}|$
+* $\mathbf{E}$ and $|\mathbf{E}|$
+* $\mathbf{F}$ and $|\mathbf{F}|$
 
 ###
 
@@ -179,7 +175,7 @@ Suppose $\mathbf{r}=(10\text{ m})\xhat+(20\text{ m})\yhat$. To find a position t
 
 $$r = \sqrt{(10\text{ m})^2 + (20\text{ m})^2} = \sqrt{500}\text{ m}$$
 
-$$\hat{\mathbf{r}}=\frac{\mathbf{r}}{r}=\frac{10\text{ m}}{\sqrt{500}\text{ m}}\xhat + \frac{20\text{ m}}{\sqrt{500}\text{ m}}\yhat=\frac{1}{\sqrt{5}}\xhat + \frac{2}{\sqrt{5}}\yhat$$
+$$\hat{\mathbf{r}}=\frac{\mathbf{r}}{r}=\frac{(10\text{ m})\xhat + (20\text{ m})\yhat}{\sqrt{500}\text{ m}}=\frac{\xhat + 2\yhat}{\sqrt{5}}$$
 
 Notice how the units of meters ($\text{m}$) canceled - a unit vector is dimensionless (we also use the term "unit--less" for "dimensionless").
 
@@ -192,7 +188,7 @@ We can now form a vector for the position of the object that is 11 meters along 
 
 $$(11\text{ m})\\,\hat{\mathbf{r}}=(11\text{ m})\left(\frac{1}{\sqrt{5}}\xhat + \frac{2}{\sqrt{5}}\yhat\right)$$
 
-Note that unit vector can be associated with any type of vector, not just position vectors.
+Note that a unit vector can be associated with any type of vector, not just position vectors.
 
 ## Problems
 
@@ -210,13 +206,13 @@ If $\mathbf{r}=x\xhat + y\yhat$ and $\mathbf{r}' = x'\xhat + y'\yhat$,
 
 # Curvilinear Unit Vectors
 
-Thus far, only the cartesian unit vectors $\xhat$, $\yhat$, and $\zhat$ have been considered. There are many other coordinate systems, each of which have their own set of unit vectors. The most common non-cartesian coordinate systems are cylindrical and spherical.
+Thus far, only the cartesian unit vectors $\xhat$, $\yhat$, and $\zhat$ have been considered. There are many other coordinate systems, each of which has their own set of unit vectors. The most common non-cartesian coordinate systems are cylindrical and spherical.
 
 ## Cylindrical
 
 ### Definitions and Notation
 
-The unit vectors for cylindrical, $\hat{\mathbf{s}}$, $\hat{\boldsymbol{\phi}}$, and $\zhat$, are shown in the following diagram at an arbitrary point $P$ (From [danfleisch.com](https://www.danfleisch.com/maxwell/CoordinateSystemReview.pdf)). Note that the conventional symbol for the radial coordinate in cylindrical is either $\rho$ or $r$ and $r$ is used in the following figure. In this course, both of these symbols are already used, so $s$ is used.
+The unit vectors for cylindrical, $\hat{\mathbf{s}}$, $\hat{\boldsymbol{\phi}}$, and $\zhat$, are shown in the following diagram at an arbitrary point $P$ (From [danfleisch.com](https://www.danfleisch.com/maxwell/CoordinateSystemReview.pdf)). Note that the conventional symbol for the radial coordinate in cylindrical is either $\rho$ or $r$, and $r$ is used in the following figure. In this course, $\rho$ is used for charge density, and $r$ is used for the spherical radial coordinate, so $s$ will be used instead.
 
 <img src="figures/cylindrical.png" width="47%"/>
 
@@ -248,9 +244,13 @@ As a check, compute $|\hat{\mathbf{s}}|$ and verify that it is $1$.
 
 Draw a sketch with a dot indicating the location of 
 
-1. $\mathbf{A} = 1\hat{\boldsymbol{\rho}} + 2\hat{\boldsymbol{\phi}}$ at the position $(\rho,\phi,z) = (1,0,0)$ and
+1. $\mathbf{A} = \hat{\mathbf{s}} + \hat{\boldsymbol{\phi}}$ at the position $(s,\phi,z) = (1,0,0)$ and
 
-2. $\mathbf{A} = 1\hat{\boldsymbol{\rho}} + 2\hat{\boldsymbol{\phi}}$ at the position $(\rho,\phi,z) = (1,\pi/2,0)$.
+2. $\mathbf{A} = \hat{\boldsymbol{\phi}}$ at the position $(s,\phi,z) = (1,\pi/2,0)$.
+
+**Answer**:
+
+<img src="figures/Cylindrical-Vector-Drawing.svg"/>
 
 ### Example - Computing Cylindrical Coordinates Given Cartesian Coordinates
 
@@ -267,7 +267,7 @@ The unit vectors for spherical at an arbitrary point $P$ are shown in the follow
 <img src="figures/spherical.png" width="50%"/>
 
 * $\hat{\mathbf{r}}$ is in the direction of a line drawn from the origin to $P$,
-* $\boldsymbol{\hat{\phi}}$ is tangent to a circle that passes through $P$ and is parallel to the $x$--$y$ plane.
+* $\boldsymbol{\hat{\phi}}$ is tangent to a circle that passes through $P$, is parallel to the $x$--$y$ plane, and has a center on the $z$-axis.
 * $\boldsymbol{\hat{\theta}}$ is perpendicular to the plane that contains $\hat{\mathbf{s}}$ and $\boldsymbol{\hat{\phi}}$.
 
 The relationship between cartesian and spherical coordinates is
@@ -284,39 +284,47 @@ $\hat{\boldsymbol{\theta}} = \cos\theta\cos\phi\xhat + \cos\theta\sin\phi\yhat-\
 
 $\hat{\boldsymbol{\phi}} = -\sin\phi\xhat + \cos\phi\yhat$
 
-Note that the equation for $\hat{\boldsymbol{\phi}}$ is the same as that for cylindrical coordinates.
+Note that the equation for $\hat{\boldsymbol{\phi}}$ in spherical coordinates is the same as that for cylindrical coordinates.
 
-### Example - Writing Spherical Unit Vectors with Cartesian Coordinates and Unit vectors
+### Problem - Writing Spherical Unit Vectors with Cartesian Coordinates and Unit vectors
+
+Write $\hat{\mathbf{r}}$ with cartesian coordinates and unit vectors.
 
 ### Problem - Drawing Spherical Unit Vectors
 
-### Example - Computing Spherical Coordinates Given Cartesian Coordinates
+Draw a sketch with a dot indicating the location of 
+
+1. $\mathbf{A} = \hat{\mathbf{r}} + \hat{\boldsymbol{\theta}}$ at the position $(r,\theta,\phi) = (1,0,0)$ and
+
+2. $\mathbf{A} = \hat{\boldsymbol{\theta}}$ at the position $(r,\theta,\phi) = (1,\pi/2,\pi/2)$.
+
+### Problem - Computing Spherical Coordinates Given Cartesian Coordinates
 
 Given the position $(x,y,z)=(1,1,1)$, compute $(r,\theta, \phi)$.
 
-**Answer**: Squaring and summing 
+%**Answer**: Squaring and summing 
 
-$x = r\cos\theta\cos\phi$
+%$x = r\cos\theta\cos\phi$
 
-$y = r\sin\theta\sin\phi$
+%$y = r\sin\theta\sin\phi$
 
-$z = r\cos\theta$
+%$z = r\cos\theta$
 
-gives
+%gives
 
-$x^2 + y^2 + z^2 = r^2\cos^2\theta\cos^2\phi + r^2\sin^2\theta\cos^2\phi + r^2\cos^2\theta$
+%$x^2 + y^2 + z^2 = r^2\cos^2\theta\cos^2\phi + r^2\sin^2\theta\cos^2\phi + r^2\cos^2\theta$
 
-$x^2 + y^2 + z^2 = r^2\cos^2\phi(\sin^2\theta + \cos^2\theta) + r^2\cos^2\theta$
+%$x^2 + y^2 + z^2 = r^2\cos^2\phi(\sin^2\theta + \cos^2\theta) + r^2\cos^2\theta$
 
-$x^2 + y^2 + z^2 = r^2\cos^2\phi + r^2\sin^2\phi$
+%$x^2 + y^2 + z^2 = r^2\cos^2\phi + r^2\sin^2\phi$
 
-$x^2 + y^2 + z^2 = r^2$
+%$x^2 + y^2 + z^2 = r^2$
 
-So $\fbox{r = \sqrt{3}}$.
+%So $\fbox{r = \sqrt{3}}$.
 
-Using $z = r\cos\theta$ gives $\fbox{\cos\theta = 1/\sqrt{3}}$.
+%Using $z = r\cos\theta$ gives $\fbox{\cos\theta = 1/\sqrt{3}}$.
 
-Using $x=r\cos\theta\cos\phi$ with $r=\sqrt{3}$ and $\cos{\theta}=1/\sqrt{3}$ gives $1 = \sqrt{3}\cdot 1/\sqrt{3} \cdot \cos\phi$, so $\fbox{\cos\phi = 1}$.
+%Using $x=r\cos\theta\cos\phi$ with $r=\sqrt{3}$ and $\cos{\theta}=1/\sqrt{3}$ gives $1 = \sqrt{3}\cdot 1/\sqrt{3} \cdot \cos\phi$, so $\fbox{\cos\phi = 1}$.
 
 ## Deriving
 
@@ -338,19 +346,24 @@ Derive an expression for $\hat{\mathbf{x}}$ in terms of cylindrical unit vectors
 
 <img src="figures/Curvilinear-Unit-Vectors-Cylindrical-Compute-2.svg"/>
 
-**Check I**:
+**Check I**: $|\xhat|=\sqrt{\cos^2\phi+(-\sin\phi)^2}=1$, so the answer has unit length.
+
+
+**Check II**:
 
 From the diagram on the left, we expect that when $\phi=0$, $\xhat=\hat{\mathbf{s}}$ and when $\phi=90^\circ$, $\xhat=-\boldsymbol{\hat{\phi}}$, both of which are consistent with the answer.
 
-**Check II**
+**Check III**
 
 Use the equations
 
 $\hat{\mathbf{s}} = \cos\phi\xhat + \sin\phi\yhat$ and $\hat{\boldsymbol{\phi}} = -\sin\phi\xhat + \cos\phi\yhat$
 
-to solve for $\xhat$. Multiply the the first equation by $\cos\phi$ and the second by $-\sin\phi$ and then add the two equations. The result is
+to solve for $\xhat$. Multiply the first equation by $\cos\phi$ and the second by $-\sin\phi$ and then add the two equations. The result is
 
-$\cos\phi\hat{\mathbf{s}} - \sin\phi\hat{\boldsymbol{\phi}} = \cos\phi(\cos\phi\xhat + \sin\phi\yhat) + \sin\phi(-\sin\phi\xhat + \cos\phi\yhat) = (\cos^2\phi + \sin^2\phi)\xhat = \xhat$
+$\cos\phi\hat{\mathbf{s}} - \sin\phi\hat{\boldsymbol{\phi}} = \cos\phi(\cos\phi\xhat + \sin\phi\yhat) - \sin\phi(-\sin\phi\xhat + \cos\phi\yhat)$
+
+$\phantom{\cos\phi\hat{\mathbf{s}} - \sin\phi\hat{\boldsymbol{\phi}}}= (\cos^2\phi + \sin^2\phi)\xhat = \xhat$
 
 ### Problem - Deriving unit vector relationships with a sketch
 
@@ -358,7 +371,7 @@ Derive the expression $\hat{\boldsymbol{\phi}} = -\sin\phi\xhat + \cos\phi\yhat$
 
 ### Problem - Deriving unit vector relationships
 
-Derive an expression for $\hat{\mathbf{y}}$ in terms of cylindrical unit vectors using a sketch and mathematically using $\hat{\mathbf{s}} = \cos\phi\xhat + \sin\phi\yhat$ and $\hat{\boldsymbol{\phi}} = -\sin\phi\xhat + \cos\phi\yhat$.
+Derive an expression for $\hat{\mathbf{y}}$ in terms of cylindrical unit vectors then mathematically using $\hat{\mathbf{s}} = \cos\phi\xhat + \sin\phi\yhat$ and $\hat{\boldsymbol{\phi}} = -\sin\phi\xhat + \cos\phi\yhat$.
 
 ## Adding
 
@@ -369,7 +382,7 @@ Two vectors that are not written with cartesian unit vectors:
 
 The reason is that curvilinear unit vectors depend on position. For example, in cylindrical coordinates, $\mathbf{\hat{s}}$ and $\boldsymbol{\hat{\phi}}$ depend on $\phi$ according to $\hat{\mathbf{s}} = \cos\phi\xhat + \sin\phi\yhat$ and $\hat{\boldsymbol{\phi}} = -\sin\phi\xhat + \cos\phi\yhat$.
 
-This issue is discussed in Griffiths in Section 1.4.1 where he notes that there is a poisionsus snake lurking in vectors expressed with curvilinear unit vectors. See also related discussions on StackExchange: [1](https://math.stackexchange.com/questions/1365622/adding-two-polar-vectors); [2](https://math.stackexchange.com/questions/802077/cross-product-in-cylindrical-coordinates?rq=1).
+This issue is discussed in Griffiths in Section 1.4.1 where he notes that there is a poisonous snake lurking in vectors expressed with curvilinear unit vectors. See also related discussions on StackExchange: [1](https://math.stackexchange.com/questions/1365622/adding-two-polar-vectors); [2](https://math.stackexchange.com/questions/802077/cross-product-in-cylindrical-coordinates?rq=1).
 
 To see that vectors written with cylindrical unit vectors cannot be added in general, consider the vectors
 
@@ -377,11 +390,11 @@ $\mathbf{A} = 1\hat{\mathbf{s}}$ at $(s,\phi,z)=(1,90^{\circ},0)$
 
 $\mathbf{B} = 1\hat{\mathbf{s}}$ at $(s,\phi,z)=(1,270^{\circ},0)$
 
-which are skectched below
+which are skectched below.
 
 <img src="figures/Adding-Cylindrical-Vectors.svg"/>
 
-Visually, these vectors point in opposite directions and so their sum should be zero. However, straightforward addition gives $\mathbf{A}+\mathbf{B}=2\hat{\mathbf{s}}$, which is incorrect.
+Visually, these vectors point in opposite directions and so their sum should be zero. However, straightforward addition gives $\mathbf{A}+\mathbf{B}=1\hat{\mathbf{s}} + 1\hat{\mathbf{s}} = 2\hat{\mathbf{s}}$, which is incorrect.
 
 To add, subtract, dot, cross, integrate, or differentiate two vectors written with curvilinear unit vectors associated with different points in space, one must first re-write the two vectors with cartesian unit vectors. 
 
@@ -391,25 +404,21 @@ At $(s,\phi,z)=(1,\pi,0)$, $\mathbf{B} = 1\hat{\mathbf{s}} = -\yhat$
 
 so $\mathbf{A}+\mathbf{B} = \yhat - \yhat = 0$, which is correct.
 
-### Example - Adding Vectors with Curvilinear Unit Vectors
+### Problem - Adding Vectors with Curvilinear Unit Vectors
 
-If $\mathbf{A} = -1\hat{\mathbf{s}} - 1\hat{\boldsymbol{\phi}}$ at the position $(s,\phi,z) = (1,0,0)$ and $\mathbf{B} = 1\hat{\mathbf{s}} + 1\hat{\boldsymbol{\phi}}$ at the position $(s,\phi,z) = (1,\pi/2,0)$
+If $\mathbf{A} = 1\hat{\mathbf{s}}$ at the position $(s,\phi,z) = (1,0,0)$ and $\mathbf{B} = 1\hat{\mathbf{s}}$ at the position $(s,\phi,z) = (1,\pi/2,0)$
 
 1\. Draw $\mathbf{A}$ and $\mathbf{B}$ and 
 
-2\. Compute $\mathbf{A}-\mathbf{B}$.
+2\. Compute $\mathbf{A}+\mathbf{B}$.
 
 ### Problem - Adding Vectors with Curvilinear Unit Vectors
 
-If $\mathbf{A} = 1\hat{\mathbf{s}} + 1\hat{\boldsymbol{\phi}}$ at the position $(s,\phi,z) = (1,0,0)$ and $\mathbf{B} = 1\hat{\mathbf{s}} + 1\hat{\boldsymbol{\phi}}$ at the position $(s,\phi,z) = (1,\pi/2,0)$
+If $\mathbf{A} = 1\hat{\mathbf{s}}$ at the position $(s,\phi,z) = (1,0,0)$ and $\mathbf{B} = \hat{\boldsymbol{\phi}}$ at the position $(s,\phi,z) = (1,\pi/2,0)$
 
 1\. Draw $\mathbf{A}$ and $\mathbf{B}$ and 
 
-2\. Compute $\mathbf{A}-\mathbf{B}$.
-
-%**Answer**
-
-%$\mathbf{A} = 1\hat{\mathbf{x}}$, $\mathbf{B} = 1\hat{\mathbf{y}}$, and $\mathbf{A}-\mathbf{B}=1\hat{\mathbf{x}}-1\hat{\mathbf{y}}$.
+2\. Compute $\mathbf{A}+\mathbf{B}$.
 
 ## Integrating
 
@@ -421,13 +430,13 @@ a common error is to factor out the unit vector and conclude
 
 $$\int_0^{\pi/2} \boldsymbol{\hat{\phi}} d\phi =\boldsymbol{\hat{\phi}}\int_0^{\pi/2}  d\phi=\boldsymbol{\hat{\phi}}\frac{\pi}{2}$$
 
-To see why this is wrong, consider a diagram of the vectors being integrated. Each vector has a length of $\Delta\phi$ and the direction is given by the direction of $\hat{\boldsymbol{\phi}}$.
+To see why this is wrong, consider a diagram of the vectors being integrated. Each vector has a length of $\Delta\phi$, and the direction is given by the direction of $\hat{\boldsymbol{\phi}}$.
 
 <img src="figures/Curvilinear-Unit-Vectors-Integration.svg"/>
 
-If one increases the number of vectors and decreases $\Delta \phi$ in the diagram, the sum becomes and integral. Visually, we expect the integral to be a vector that points upwards and to the left because all of the vectors contributing to the sum are in this direction (except the first and last).
+If one increases the number of vectors and decreases $\Delta \phi$ in the diagram, the sum of the vectors becomes and integral. Visually, we expect the integral to be a vector that points upwards and to the left because all of the vectors contributing to the sum are in this direction (except the first and last).
 
-As noted earlier, the addition of vectors expressed with unit vectors in general requires first expressing them with cartesian unit vectors. Integration is a form of addition, and so the rule also applies. Using the relationship $\hat{\boldsymbol{\phi}} = -\sin\phi\xhat + \cos\phi\yhat$, we can write the integrand using cartesian unit vectors
+As noted earlier, the addition of vectors expressed with unit vectors in general requires first expressing them with cartesian unit vectors. Integration is a form of addition, and so this rule also applies to integration. Using the relationship $\hat{\boldsymbol{\phi}} = -\sin\phi\xhat + \cos\phi\yhat$, we can write the integrand using cartesian unit vectors
 
 $$\int_0^{\pi/2} \boldsymbol{\hat{\phi}} d\phi = \int_0^{\pi/2}(-\sin\phi\xhat + \cos\phi\yhat)d\phi$$
 
@@ -435,7 +444,7 @@ The cartesian unit vectors do not depend of $\phi$, so they can be factored out,
 
 $$\int_0^{\pi/2} \boldsymbol{\hat{\phi}} d\phi = -\xhat\int_0^{\pi/2}\sin\phi d\phi + \yhat\int_0^{\pi/2}\cos\phi d\phi = -\xhat + \yhat$$
 
-which has the expected direction of upwards and to the left. In addition, the angle is that of the vector at $\phi=\pi/4$, which is also expected because the average $x$ and $y$ components are both $45^\circ$.
+which has the expected direction of upwards and to the left. In addition, the angle is that of the vector at $\phi=\pi/4$, which is also expected because the average $x$ and $y$ components of the summed vectors are both $45^\circ$.
 
 ### Problem - Integration of Vector with Curvilinear Unit Vectors
 
@@ -451,7 +460,7 @@ Compute
 
 $$\int_0^1 \mathbf{\hat{s}} ds$$
 
-and use a skecth to show that your answer has the expected direction.
+and use a sketch to show that your answer has the expected direction.
 
 # Tangent Unit Vectors
 
@@ -471,6 +480,15 @@ $$\mathbf{T} = dx\xhat + \frac{dy}{dx}dx\yhat$$
 
 Dividing $\mathbf{T}$ by $|\mathbf{T}|$ gives a unit vector $\mathbf{\hat{t}}=\mathbf{T}/|\mathbf{T}|$.
 
+Note that there are two unit vectors that are tangent to a given curve. Both $\mathbf{t}$ and $-\mathbf{t}$ are tangent to the curve shown in the previous figure. Generally, you will be given a convention to follow to determine which one to use. In mechanics, the choice will typically depend on the choice of the coordinate system, which determines the direction of positive movement. In E&M, a convention such as the right-hand rule will be used.
+
+----
+For curves in three dimensions, there is a more complex formula for the tangent vector that requires writing the path in parametric form. For the types of problems covered in this course, we will not need this formula.
+
+Unit vectors can also be derived for a surface. However, there are infinitely unit vectors that are tangent to a surface. To narrow the choices, one needs to specify a curve on the surface. As a result, the formula used for computing a vector tangent to a surface is usually the formula for the unit vector that is tangent to a curve in three dimensions.
+
+---
+
 ### Example - Computing Tangent Unit Vector
 
 Compute the unit tangent vector to the curve $y = 1+x$.
@@ -489,20 +507,106 @@ Compute the unit tangent vector to the curve $y = 1+x^2$. Before computing, writ
 
 Show that the tangent unit vector to a circle centered on the origin is $\boldsymbol{\hat{\phi}}$.
 
-**Answer**: For $y > 0$, the equation for a circle is $y = \sqrt{1-x^2}$. After computing the derivative and inserting into the equation above, you should arrive at $\mathbf{\hat{t}}=(-y\xhat+x\yhat)/\sqrt{x^2+y^2}$. In cartesian coordinates, $x=s\cos\phi$ and $y=s\sin\phi$, and $s=\sqrt{x^2+y^2}$. Using these gives $\mathbf{\hat{t}}=-\sin\phi\xhat+\cos\phi\yhat$, which is the same as the formula for $\boldsymbol{\hat{\phi}}$.
+**Answer**: For $y > 0$, the equation for a circle is $y = \sqrt{1-x^2}$. After computing the derivative and inserting into the equation for $\mathbf{\hat{t}}$, you should arrive at $\mathbf{\hat{t}}=(-y\xhat+x\yhat)/\sqrt{x^2+y^2}$. In cartesian coordinates, $x=s\cos\phi$ and $y=s\sin\phi$, and $s=\sqrt{x^2+y^2}$. Using these gives $\mathbf{\hat{t}}=-\sin\phi\xhat+\cos\phi\yhat$, which is the same as the definining formula for $\boldsymbol{\hat{\phi}}$ given previously.
 
-## Use in Integration
+## General Use
 
-The most common use of unit tangent vectors is in integration of either a force or an electric field (which is proportional to a force). For example, to compute work,
+The most common use of unit tangent vectors is in an integration involving either a force or an electric field (which is proportional to a force). For example, the equation for the work due to a force is
 
 $$W=\int \mathbf{F}\boldsymbol{\cdot} d\mathbf{l} = \int \mathbf{F}\boldsymbol{\cdot} \mathbf{\hat{t}} dl$$
 
-where the relationship $d\mathbf{l}=\mathbf{\hat{t}}dl$ was used.
+where the relationship $d\mathbf{l}=\mathbf{\hat{t}}dl$ was used. An alternative way of writing $\mathbf{F}\boldsymbol{\cdot} \mathbf{\hat{t}}$ is as $F$ with a subscript for "parallel", $F_{\parallel}$.
 
-### Example - Work in a constant gravitational field
+In the following figure, a force acts at an angle to the direction of movement of an object. The force that determines the acceleration in the $x$--direction is $F\cos\theta$.
+
+**INSERT FIGURE**
+
+More generally, the force along the direction of movement is $\mathbf{F}\cdot \mathbf{\hat{t}}$, where $\mathbf{\hat{t}}$ is a unit vector in the direction of movement. In the above diagram, $\mathbf{F}=\cos\theta\xhat + \sin\theta\yhat$ and $\mathbf{\hat{t}}=\xhat$, so
+
+$F_\parallel = \mathbf{F}\cdot \mathbf{\hat{t}} = (\cos\theta\xhat + \sin\theta\yhat)\boldsymbol{\cdot}\xhat = \cos\theta\xhat\boldsymbol{\cdot}\xhat + \sin\theta\yhat\boldsymbol{\cdot}\xhat = F\cos\theta$
+
+## Problem 
+
+<img src="figures/Tangent-Vector-1a.svg"/>
+
+1\. Use a diagram to compute the component of $\mathbf{F}$ in the direction of movement of the object on a frictionless inclined plane.
+
+2\. Write $\mathbf{F}$ and $\mathbf{t}$ in vector notation an compute the component of $\mathbf{F}$ in the direction of movement using $F_\parallel=\mathbf{F}\cdot \mathbf{\hat{t}}$
+
+**Answer**:
+
+1\. From the following diagram, $F_{\parallel}=F\cos\alpha\$ and $F_{\perp}=F\sin\alpha$.
+
+<img src="figures/Tangent-Vector-1b.svg"/>
+
+From the equation for $\mathbf{F}$, $F=5F_o$, $\beta=\tan^{-1}(3/2)$. Based on the grid spacing, $\theta=\tan^{-1}(3/4)$. From the diagram, $\alpha=\beta-\theta$.
+
+2\. Based on the grid spacing a vector tangent to the plane is
+$\mathbf{\hat{T}}= 4\xhat + 3\yhat$, so $\mathbf{\hat{t}}=(4\xhat + 3\yhat)/5$.
+
+$\displaystyle F_{\parallel} = \mathbf{F}\cdot \mathbf{\hat{t}} = (2F_o\xhat+3F_o\yhat)\boldsymbol{\cdot}(4\xhat + 3\yhat)/5=\frac{8}{5}F_o+\frac{9}{5}F_o=\frac{17}{5}F_o$
+
+It is left to the reader to confirm that the answer from 1., $F\sin\alpha$, is the same as the answer to 2.
 
 # Normal Unit Vectors
 
-## Computing
+## Curve
 
-## Use in Computing Work
+The general equation for a unit vector that is perpendicular (normal) to the curve $y=f(x)$ is
+
+$$\mathbf{\hat{n}}=\frac{\xhat - \frac{dy}{dx}\yhat}{\sqrt{1 + \left( \frac{dy}{dx}\right)^2}}$$
+
+Similar to the unit tangent vector, there are two unit vectors perpendicular to a curve, and the choice of which to use will depend on the choice of coordinate system or the right-hand rule.
+
+### Problem -- Derivation
+
+Derive the equation for $\mathbf{\hat{n}}$.
+
+### Problem -- Computing Normal Forces
+
+In the following figure, the component of $\mathbf{F}$ perpendicular to the direction of movement is $F_\perp = \mathbf{F}\cdot \mathbf{\hat{n}}$.
+
+**INSERT FIGURE**
+
+1\. Use a diagram to compute the component of $\mathbf{F}$ perpendicular to the direction of movement of the object.
+
+2\. Write $\mathbf{F}$ and $\mathbf{t}$ in vector notation an compute the component of $\mathbf{F}$ along the direction of movement using $F_\parallel=\mathbf{F}\cdot \mathbf{\hat{t}}$
+
+## Surface
+
+In E&M, normal vectors are more often used for surfaces rather than curves. The general equation for a vector perpendicular to a surface is 
+
+$$\mathbf{\hat{n}} = \frac{\mathbf{u}\times\mathbf{v}}{|\mathbf{u}\times\mathbf{v}|}$$
+
+where $\mathbf{u}$ and $\mathbf{v}$ are two non--colinear vectors on the surface.
+
+### Example
+
+Use the equation for $\mathbf{\hat{n}}$ to find a normal unit vector for the rectangular surface shown in the following figure. Use $\phi=45^\circ$ and $h=w=1$.
+
+<img src="figures/Normal-Vectors-1a.svg"/>
+
+**Answer**: Two non--colinear vectors on the surface can be formed by drawing vectors from the corner at the origin to two other corners. These vectors are $\mathbf{u}=4\zhat$ and $\mathbf{v}=3\xhat$. 
+
+<img src="figures/Normal-Vectors-1b.svg"/>
+
+$$\mathbf{u}\times\mathbf{v}=4\zhat\times 3\xhat=12\yhat$$
+
+$$\mathbf{\hat{n}} = \frac{\mathbf{u}\times\mathbf{v}}{|\mathbf{u}\times\mathbf{v}|}=\frac{12\zhat}{|12\zhat|}=\yhat$$
+
+as expected. If we had chosen $\mathbf{u}=3\xhat$ and $\mathbf{v}=4\zhat$, the answer would have been $-\yhat$, which is the other unit vector perpendicular to the surface. We could have also chosen one of the vectors to be the vector that connected the origin to the corner at $(x,y,z)=(3,0,4)$ and the other to be either $3\xhat$ or $4\zhat$.
+
+### Problem
+
+Use the equation for $\mathbf{\hat{n}}$ to find the normal direction for the surface shown. Use $\phi=45^\circ$ and $w=h=1$.
+
+<img src="figures/Normal-Vectors-2a.svg"/>
+
+%**Answer**: Following the same procedure as in the previous problem of drawing vectors from the origin to a corner, we have $\mathbf{u}=\xhat + \yhat$ and $\mathbf{v}=\zhat$,
+
+%$\mathbf{u}\times\mathbf{v}=(\xhat + \yhat)\times\zhat = \xhat\times\zhat + \yhat\times\zhat=-\yhat + \xhat$
+
+%and so
+
+%$\mathbf{\hat{n}}=\displaystyle\mathbf{u}\times\mathbf{v}=\frac{\xhat - \yhat}{|\xhat - \yhat|}=\frac{\xhat - \yhat}{\sqrt{2}}$
+DIA
