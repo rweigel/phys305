@@ -272,7 +272,7 @@ The unit vectors for spherical at an arbitrary point $P$ are shown in the follow
 
 The relationship between cartesian and spherical coordinates is
 
-$x = r\cos\theta\cos\phi\qquad
+$x = r\sin\theta\cos\phi\qquad
 y = r\sin\theta\sin\phi\qquad
 z = r\cos\theta$
 
@@ -604,7 +604,7 @@ as expected. If we had chosen $\mathbf{u}=3\xhat$ and $\mathbf{v}=4\zhat$, the a
 
 ### Problem
 
-Use the equation for $\mathbf{\hat{n}}$ to find a normal vector for the surface shown. Use $\phi=45^\circ$.
+Use the equation for $\mathbf{\hat{n}}$ to find a normal vector for the surface when $\phi=45^\circ$.
 
 <img src="figures/Normal-Vectors-2a.svg"/>
 
