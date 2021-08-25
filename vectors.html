@@ -79,6 +79,8 @@
         }
         #toc > ol ol { display: none; }
         body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
         
     </style>
 
@@ -195,20 +197,20 @@
                 <li><a number="5.2" href="#general-use">General Use</a></li>
                 <li><a number="5.3" href="#problem">Problem</a></li>
             </ol>
-            <li><a number="6" href="#cross-products" class="highlighted">Cross Products</a></li>
-            <li><a number="7" href="#normal-unit-vectors" class="">Normal Unit Vectors</a></li>
+            <li><a number="6" href="#normal-unit-vectors">Normal Unit Vectors</a></li>
             <ol style="display: none;">
-                <li><a number="7.1" href="#curve">Curve</a></li>
+                <li><a number="6.1" href="#curve">Curve</a></li>
                 <ol style="display: none;">
-                    <li><a number="7.1.1" href="#problem-derivation">Problem – Derivation</a></li>
-                    <li><a number="7.1.2" href="#problem-computing-normal-forces">Problem – Computing Normal Forces</a></li>
+                    <li><a number="6.1.1" href="#problem-derivation">Problem – Derivation</a></li>
+                    <li><a number="6.1.2" href="#problem-computing-normal-forces">Problem – Computing Normal Forces</a></li>
                 </ol>
-                <li><a number="7.2" href="#surface">Surface</a></li>
+                <li><a number="6.2" href="#surface">Surface</a></li>
                 <ol style="display: none;">
-                    <li><a number="7.2.1" href="#example">Example</a></li>
-                    <li><a number="7.2.2" href="#problem">Problem</a></li>
+                    <li><a number="6.2.1" href="#example">Example</a></li>
+                    <li><a number="6.2.2" href="#problem">Problem</a></li>
                 </ol>
             </ol>
+            <li><a number="7" href="#cross-products" class="highlighted">Cross Products</a></li>
         </ol>
     </div>
     <div id="display">
@@ -7277,439 +7279,14 @@ M834 80h400000v40h-400000z"></path>
         <div class="section">
 
             <div class="block">
-                <h1 class="highlighted"><a name="cross-products" number="6" class="hanchor" href="#cross-products"><span class="hnumber">6 </span> <span class="htext">Cross Products</span></a></h1>
-
-            </div>
-            <div class="block">
-                <p>The cross products for cartesian unit vectors are</p>
-
-            </div>
-            <div class="block">
-                <p><span len="614" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                                    <semantics>
-                                        <mtable rowspacing="0.2500em" columnalign="right left right left right left" columnspacing="0em 1em 0em 1em 0em">
-                                            <mtr>
-                                                <mtd>
-                                                    <mstyle scriptlevel="0" displaystyle="true">
-                                                        <mrow>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">x</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                            <mo>×</mo>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">x</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                        </mrow>
-                                                    </mstyle>
-                                                </mtd>
-                                                <mtd>
-                                                    <mstyle scriptlevel="0" displaystyle="true">
-                                                        <mrow>
-                                                            <mrow></mrow>
-                                                            <mo>=</mo>
-                                                            <mn>0</mn>
-                                                        </mrow>
-                                                    </mstyle>
-                                                </mtd>
-                                                <mtd>
-                                                    <mstyle scriptlevel="0" displaystyle="true">
-                                                        <mrow>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">y</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                            <mo>×</mo>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">y</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                        </mrow>
-                                                    </mstyle>
-                                                </mtd>
-                                                <mtd>
-                                                    <mstyle scriptlevel="0" displaystyle="true">
-                                                        <mrow>
-                                                            <mrow></mrow>
-                                                            <mo>=</mo>
-                                                            <mn>0</mn>
-                                                        </mrow>
-                                                    </mstyle>
-                                                </mtd>
-                                                <mtd>
-                                                    <mstyle scriptlevel="0" displaystyle="true">
-                                                        <mrow>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">z</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                            <mo>×</mo>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">z</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                        </mrow>
-                                                    </mstyle>
-                                                </mtd>
-                                                <mtd>
-                                                    <mstyle scriptlevel="0" displaystyle="true">
-                                                        <mrow>
-                                                            <mrow></mrow>
-                                                            <mo>=</mo>
-                                                            <mn>0</mn>
-                                                        </mrow>
-                                                    </mstyle>
-                                                </mtd>
-                                            </mtr>
-                                            <mtr>
-                                                <mtd>
-                                                    <mstyle scriptlevel="0" displaystyle="true">
-                                                        <mrow>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">x</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                            <mo>×</mo>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">y</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                        </mrow>
-                                                    </mstyle>
-                                                </mtd>
-                                                <mtd>
-                                                    <mstyle scriptlevel="0" displaystyle="true">
-                                                        <mrow>
-                                                            <mrow></mrow>
-                                                            <mo>=</mo>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">z</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                        </mrow>
-                                                    </mstyle>
-                                                </mtd>
-                                                <mtd>
-                                                    <mstyle scriptlevel="0" displaystyle="true">
-                                                        <mrow>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">y</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                            <mo>×</mo>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">z</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                        </mrow>
-                                                    </mstyle>
-                                                </mtd>
-                                                <mtd>
-                                                    <mstyle scriptlevel="0" displaystyle="true">
-                                                        <mrow>
-                                                            <mrow></mrow>
-                                                            <mo>=</mo>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">x</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                        </mrow>
-                                                    </mstyle>
-                                                </mtd>
-                                                <mtd>
-                                                    <mstyle scriptlevel="0" displaystyle="true">
-                                                        <mrow>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">z</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                            <mo>×</mo>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">x</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                        </mrow>
-                                                    </mstyle>
-                                                </mtd>
-                                                <mtd>
-                                                    <mstyle scriptlevel="0" displaystyle="true">
-                                                        <mrow>
-                                                            <mrow></mrow>
-                                                            <mo>=</mo>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">y</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                        </mrow>
-                                                    </mstyle>
-                                                </mtd>
-                                            </mtr>
-                                            <mtr>
-                                                <mtd>
-                                                    <mstyle scriptlevel="0" displaystyle="true">
-                                                        <mrow>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">y</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                            <mo>×</mo>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">x</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                        </mrow>
-                                                    </mstyle>
-                                                </mtd>
-                                                <mtd>
-                                                    <mstyle scriptlevel="0" displaystyle="true">
-                                                        <mrow>
-                                                            <mrow></mrow>
-                                                            <mo>=</mo>
-                                                            <mo>−</mo>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">z</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                        </mrow>
-                                                    </mstyle>
-                                                </mtd>
-                                                <mtd>
-                                                    <mstyle scriptlevel="0" displaystyle="true">
-                                                        <mrow>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">z</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                            <mo>×</mo>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">y</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                        </mrow>
-                                                    </mstyle>
-                                                </mtd>
-                                                <mtd>
-                                                    <mstyle scriptlevel="0" displaystyle="true">
-                                                        <mrow>
-                                                            <mrow></mrow>
-                                                            <mo>=</mo>
-                                                            <mo>−</mo>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">x</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                        </mrow>
-                                                    </mstyle>
-                                                </mtd>
-                                                <mtd>
-                                                    <mstyle scriptlevel="0" displaystyle="true">
-                                                        <mrow>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">x</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                            <mo>×</mo>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">z</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                        </mrow>
-                                                    </mstyle>
-                                                </mtd>
-                                                <mtd>
-                                                    <mstyle scriptlevel="0" displaystyle="true">
-                                                        <mrow>
-                                                            <mrow></mrow>
-                                                            <mo>=</mo>
-                                                            <mo>−</mo>
-                                                            <mover accent="true">
-                                                                <mi mathvariant="bold">y</mi>
-                                                                <mo>^</mo>
-                                                            </mover>
-                                                        </mrow>
-                                                    </mstyle>
-                                                </mtd>
-                                            </mtr>
-                                        </mtable>
-                                        <annotation encoding="application/x-tex">\begin{aligned}
-                                            \hat{\mathbf{x}}\times\hat{\mathbf{x}} &amp; = 0 &amp; \hat{\mathbf{y}}\times\hat{\mathbf{y}} &amp; = 0 &amp; \hat{\mathbf{z}}\times\hat{\mathbf{z}} &amp; = 0 \\
-                                            \hat{\mathbf{x}}\times\hat{\mathbf{y}} &amp; = \hat{\mathbf{z}} &amp; \hat{\mathbf{y}}\times\hat{\mathbf{z}} &amp; = \hat{\mathbf{x}} &amp; \hat{\mathbf{z}}\times\hat{\mathbf{x}} &amp; = \hat{\mathbf{y}} \\
-                                            \hat{\mathbf{y}}\times\hat{\mathbf{x}} &amp; = -\hat{\mathbf{z}} &amp; \hat{\mathbf{z}}\times\hat{\mathbf{y}} &amp; = -\hat{\mathbf{x}} &amp; \hat{\mathbf{x}}\times\hat{\mathbf{z}} &amp; = -\hat{\mathbf{y}} \\
-                                            \end{aligned}</annotation>
-                                    </semantics>
-                                </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.500000000000002em;vertical-align:-2.000000000000001em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">−</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">−</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">−</span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
-
-            </div>
-            <div class="block">
-                <p>These can be derived either by using the right-hand rule or a mnemonic (memory) aid for remembering this table. If you do the cross product of two consecutive unit vectors in the order indicated by the arrows in the circle shown in the following figure, the result is the remaining unit vector (the second row in the table).</p>
-
-            </div>
-            <div class="block">
-                <p>If you do the cross product of two unit vectors in reverse order, the result is the remaining unit vector with a negative sign (the third row in the table).</p>
-
-            </div>
-            <div class="block">
-                <p>For example, in <span len="18" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                                <semantics>
-                                    <mrow>
-                                        <mover accent="true">
-                                            <mi mathvariant="bold">x</mi>
-                                            <mo>^</mo>
-                                        </mover>
-                                        <mo>×</mo>
-                                        <mover accent="true">
-                                            <mi mathvariant="bold">y</mi>
-                                            <mo>^</mo>
-                                        </mover>
-                                    </mrow>
-                                    <annotation encoding="application/x-tex">\hat{\mathbf{x}}\times\hat{\mathbf{y}}</annotation>
-                                </semantics>
-                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.79121em;vertical-align:-0.08333em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.90232em;vertical-align:-0.19444em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span></span>, to go from <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                                <semantics>
-                                    <mrow>
-                                        <mover accent="true">
-                                            <mi mathvariant="bold">x</mi>
-                                            <mo>^</mo>
-                                        </mover>
-                                    </mrow>
-                                    <annotation encoding="application/x-tex">\hat{\mathbf{x}}</annotation>
-                                </semantics>
-                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.70788em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span> to <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                                <semantics>
-                                    <mrow>
-                                        <mover accent="true">
-                                            <mi mathvariant="bold">y</mi>
-                                            <mo>^</mo>
-                                        </mover>
-                                    </mrow>
-                                    <annotation encoding="application/x-tex">\hat{\mathbf{y}}</annotation>
-                                </semantics>
-                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.90232em;vertical-align:-0.19444em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span></span>, your rotate clockwise, so the result is <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                                <semantics>
-                                    <mrow>
-                                        <mover accent="true">
-                                            <mi mathvariant="bold">z</mi>
-                                            <mo>^</mo>
-                                        </mover>
-                                    </mrow>
-                                    <annotation encoding="application/x-tex">\hat{\mathbf{z}}</annotation>
-                                </semantics>
-                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.70788em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span>. In <span len="18" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                                <semantics>
-                                    <mrow>
-                                        <mover accent="true">
-                                            <mi mathvariant="bold">z</mi>
-                                            <mo>^</mo>
-                                        </mover>
-                                        <mo>×</mo>
-                                        <mover accent="true">
-                                            <mi mathvariant="bold">y</mi>
-                                            <mo>^</mo>
-                                        </mover>
-                                    </mrow>
-                                    <annotation encoding="application/x-tex">\hat{\mathbf{z}}\times\hat{\mathbf{y}}</annotation>
-                                </semantics>
-                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.79121em;vertical-align:-0.08333em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.90232em;vertical-align:-0.19444em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span></span>, you go from <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                                <semantics>
-                                    <mrow>
-                                        <mover accent="true">
-                                            <mi mathvariant="bold">z</mi>
-                                            <mo>^</mo>
-                                        </mover>
-                                    </mrow>
-                                    <annotation encoding="application/x-tex">\hat{\mathbf{z}}</annotation>
-                                </semantics>
-                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.70788em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span> to <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                                <semantics>
-                                    <mrow>
-                                        <mover accent="true">
-                                            <mi mathvariant="bold">y</mi>
-                                            <mo>^</mo>
-                                        </mover>
-                                    </mrow>
-                                    <annotation encoding="application/x-tex">\hat{\mathbf{y}}</annotation>
-                                </semantics>
-                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.90232em;vertical-align:-0.19444em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span></span> by rotating counterclockwise, so the result is <span len="8" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                                <semantics>
-                                    <mrow>
-                                        <mo>−</mo>
-                                        <mover accent="true">
-                                            <mi mathvariant="bold">x</mi>
-                                            <mo>^</mo>
-                                        </mover>
-                                    </mrow>
-                                    <annotation encoding="application/x-tex">-\hat{\mathbf{x}}</annotation>
-                                </semantics>
-                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.79121em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span>.</p>
-
-            </div>
-
-
-            <div class="block inline-html">
-
-                <img src="figures/Cross-Product-Cycle2.svg" class="">
-            </div>
-            <div class="block">
-                <p>The same procedure can be used for cylindrical and spherical unit vectors by using one of the diagrams in the following figure. Note that the order of the unit vectors is the same as one usually writes the coordinates. For example, we typically write <span len="9" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                                <semantics>
-                                    <mrow>
-                                        <mo stretchy="false">(</mo>
-                                        <mi>x</mi>
-                                        <mo separator="true">,</mo>
-                                        <mi>y</mi>
-                                        <mo separator="true">,</mo>
-                                        <mi>z</mi>
-                                        <mo stretchy="false">)</mo>
-                                    </mrow>
-                                    <annotation encoding="application/x-tex">(x,y,z)</annotation>
-                                </semantics>
-                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span></span></span></span>, <span len="12" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                                <semantics>
-                                    <mrow>
-                                        <mo stretchy="false">(</mo>
-                                        <mi>s</mi>
-                                        <mo separator="true">,</mo>
-                                        <mi>ϕ</mi>
-                                        <mo separator="true">,</mo>
-                                        <mi>z</mi>
-                                        <mo stretchy="false">)</mo>
-                                    </mrow>
-                                    <annotation encoding="application/x-tex">(s,\phi,z)</annotation>
-                                </semantics>
-                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">ϕ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span></span></span></span>, and <span len="17" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                                <semantics>
-                                    <mrow>
-                                        <mo stretchy="false">(</mo>
-                                        <mi>r</mi>
-                                        <mo separator="true">,</mo>
-                                        <mi>θ</mi>
-                                        <mo separator="true">,</mo>
-                                        <mi>ϕ</mi>
-                                        <mo stretchy="false">)</mo>
-                                    </mrow>
-                                    <annotation encoding="application/x-tex">(r,\theta,\phi)</annotation>
-                                </semantics>
-                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">ϕ</span><span class="mclose">)</span></span></span></span> when indicating a position in cartesian, cylindrical, and spherical coordinates, respectively.</p>
-
-            </div>
-
-            <div class="block inline-html">
-
-                <img src="figures/Cross-Product-Cycle-All.svg">
-            </div>
-        </div>
-        <div class="section">
-
-            <div class="block">
-                <h1 class=""><a name="normal-unit-vectors" number="7" class="hanchor" href="#normal-unit-vectors"><span class="hnumber">7 </span> <span class="htext">Normal Unit Vectors</span></a></h1>
+                <h1><a name="normal-unit-vectors" number="6" class="hanchor" href="#normal-unit-vectors"><span class="hnumber">6 </span> <span class="htext">Normal Unit Vectors</span></a></h1>
 
             </div>
         </div>
         <div class="section">
 
             <div class="block">
-                <h2><a name="curve" number="7.1" class="hanchor" href="#curve"><span class="hnumber">7.1 </span> <span class="htext">Curve</span></a></h2>
+                <h2><a name="curve" number="6.1" class="hanchor" href="#curve"><span class="hnumber">6.1 </span> <span class="htext">Curve</span></a></h2>
 
             </div>
             <div class="block">
@@ -8733,7 +8310,7 @@ h400000v40h-400000z"></path>
         <div class="section">
 
             <div class="block">
-                <h3><a name="problem-derivation" number="7.1.1" class="hanchor" href="#problem-derivation"><span class="hnumber">7.1.1 </span> <span class="htext">Problem – Derivation</span></a></h3>
+                <h3><a name="problem-derivation" number="6.1.1" class="hanchor" href="#problem-derivation"><span class="hnumber">6.1.1 </span> <span class="htext">Problem – Derivation</span></a></h3>
 
             </div>
             <div class="block">
@@ -8755,7 +8332,7 @@ h400000v40h-400000z"></path>
         <div class="section">
 
             <div class="block">
-                <h3><a name="problem-computing-normal-forces" number="7.1.2" class="hanchor" href="#problem-computing-normal-forces"><span class="hnumber">7.1.2 </span> <span class="htext">Problem – Computing Normal Forces</span></a></h3>
+                <h3><a name="problem-computing-normal-forces" number="6.1.2" class="hanchor" href="#problem-computing-normal-forces"><span class="hnumber">6.1.2 </span> <span class="htext">Problem – Computing Normal Forces</span></a></h3>
 
             </div>
             <div class="block">
@@ -8858,7 +8435,7 @@ h400000v40h-400000z"></path>
         <div class="section">
 
             <div class="block">
-                <h2><a name="surface" number="7.2" class="hanchor" href="#surface"><span class="hnumber">7.2 </span> <span class="htext">Surface</span></a></h2>
+                <h2><a name="surface" number="6.2" class="hanchor" href="#surface"><span class="hnumber">6.2 </span> <span class="htext">Surface</span></a></h2>
 
             </div>
             <div class="block">
@@ -8917,7 +8494,7 @@ h400000v40h-400000z"></path>
         <div class="section">
 
             <div class="block">
-                <h3><a name="example" number="7.2.1" class="hanchor" href="#example"><span class="hnumber">7.2.1 </span> <span class="htext">Example</span></a></h3>
+                <h3><a name="example" number="6.2.1" class="hanchor" href="#example"><span class="hnumber">6.2.1 </span> <span class="htext">Example</span></a></h3>
 
             </div>
             <div class="block">
@@ -9147,7 +8724,7 @@ h400000v40h-400000z"></path>
         <div class="section">
 
             <div class="block">
-                <h3><a name="problem" number="7.2.2" class="hanchor" href="#problem"><span class="hnumber">7.2.2 </span> <span class="htext">Problem</span></a></h3>
+                <h3><a name="problem" number="6.2.2" class="hanchor" href="#problem"><span class="hnumber">6.2.2 </span> <span class="htext">Problem</span></a></h3>
 
             </div>
             <div class="block">
@@ -9193,8 +8770,431 @@ h400000v40h-400000z"></path>
 -->
             <!--
 %$\mathbf{\hat{n}}=\displaystyle\mathbf{u}\times\mathbf{v}=\frac{\xhat - \yhat}{|\xhat - \yhat|}=\frac{\xhat - \yhat}{\sqrt{2}}$
-DIA
 -->
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1 class="highlighted"><a name="cross-products" number="7" class="hanchor" href="#cross-products"><span class="hnumber">7 </span> <span class="htext">Cross Products</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>The cross products for cartesian unit vectors are</p>
+
+            </div>
+            <div class="block">
+                <p><span len="614" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <semantics>
+                                        <mtable rowspacing="0.2500em" columnalign="right left right left right left" columnspacing="0em 1em 0em 1em 0em">
+                                            <mtr>
+                                                <mtd>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <mrow>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">x</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                            <mo>×</mo>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">x</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                        </mrow>
+                                                    </mstyle>
+                                                </mtd>
+                                                <mtd>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <mrow>
+                                                            <mrow></mrow>
+                                                            <mo>=</mo>
+                                                            <mn>0</mn>
+                                                        </mrow>
+                                                    </mstyle>
+                                                </mtd>
+                                                <mtd>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <mrow>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">y</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                            <mo>×</mo>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">y</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                        </mrow>
+                                                    </mstyle>
+                                                </mtd>
+                                                <mtd>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <mrow>
+                                                            <mrow></mrow>
+                                                            <mo>=</mo>
+                                                            <mn>0</mn>
+                                                        </mrow>
+                                                    </mstyle>
+                                                </mtd>
+                                                <mtd>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <mrow>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">z</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                            <mo>×</mo>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">z</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                        </mrow>
+                                                    </mstyle>
+                                                </mtd>
+                                                <mtd>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <mrow>
+                                                            <mrow></mrow>
+                                                            <mo>=</mo>
+                                                            <mn>0</mn>
+                                                        </mrow>
+                                                    </mstyle>
+                                                </mtd>
+                                            </mtr>
+                                            <mtr>
+                                                <mtd>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <mrow>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">x</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                            <mo>×</mo>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">y</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                        </mrow>
+                                                    </mstyle>
+                                                </mtd>
+                                                <mtd>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <mrow>
+                                                            <mrow></mrow>
+                                                            <mo>=</mo>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">z</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                        </mrow>
+                                                    </mstyle>
+                                                </mtd>
+                                                <mtd>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <mrow>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">y</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                            <mo>×</mo>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">z</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                        </mrow>
+                                                    </mstyle>
+                                                </mtd>
+                                                <mtd>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <mrow>
+                                                            <mrow></mrow>
+                                                            <mo>=</mo>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">x</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                        </mrow>
+                                                    </mstyle>
+                                                </mtd>
+                                                <mtd>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <mrow>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">z</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                            <mo>×</mo>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">x</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                        </mrow>
+                                                    </mstyle>
+                                                </mtd>
+                                                <mtd>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <mrow>
+                                                            <mrow></mrow>
+                                                            <mo>=</mo>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">y</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                        </mrow>
+                                                    </mstyle>
+                                                </mtd>
+                                            </mtr>
+                                            <mtr>
+                                                <mtd>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <mrow>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">y</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                            <mo>×</mo>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">x</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                        </mrow>
+                                                    </mstyle>
+                                                </mtd>
+                                                <mtd>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <mrow>
+                                                            <mrow></mrow>
+                                                            <mo>=</mo>
+                                                            <mo>−</mo>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">z</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                        </mrow>
+                                                    </mstyle>
+                                                </mtd>
+                                                <mtd>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <mrow>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">z</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                            <mo>×</mo>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">y</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                        </mrow>
+                                                    </mstyle>
+                                                </mtd>
+                                                <mtd>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <mrow>
+                                                            <mrow></mrow>
+                                                            <mo>=</mo>
+                                                            <mo>−</mo>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">x</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                        </mrow>
+                                                    </mstyle>
+                                                </mtd>
+                                                <mtd>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <mrow>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">x</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                            <mo>×</mo>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">z</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                        </mrow>
+                                                    </mstyle>
+                                                </mtd>
+                                                <mtd>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <mrow>
+                                                            <mrow></mrow>
+                                                            <mo>=</mo>
+                                                            <mo>−</mo>
+                                                            <mover accent="true">
+                                                                <mi mathvariant="bold">y</mi>
+                                                                <mo>^</mo>
+                                                            </mover>
+                                                        </mrow>
+                                                    </mstyle>
+                                                </mtd>
+                                            </mtr>
+                                        </mtable>
+                                        <annotation encoding="application/x-tex">\begin{aligned}
+                                            \hat{\mathbf{x}}\times\hat{\mathbf{x}} &amp; = 0 &amp; \hat{\mathbf{y}}\times\hat{\mathbf{y}} &amp; = 0 &amp; \hat{\mathbf{z}}\times\hat{\mathbf{z}} &amp; = 0 \\
+                                            \hat{\mathbf{x}}\times\hat{\mathbf{y}} &amp; = \hat{\mathbf{z}} &amp; \hat{\mathbf{y}}\times\hat{\mathbf{z}} &amp; = \hat{\mathbf{x}} &amp; \hat{\mathbf{z}}\times\hat{\mathbf{x}} &amp; = \hat{\mathbf{y}} \\
+                                            \hat{\mathbf{y}}\times\hat{\mathbf{x}} &amp; = -\hat{\mathbf{z}} &amp; \hat{\mathbf{z}}\times\hat{\mathbf{y}} &amp; = -\hat{\mathbf{x}} &amp; \hat{\mathbf{x}}\times\hat{\mathbf{z}} &amp; = -\hat{\mathbf{y}} \\
+                                            \end{aligned}</annotation>
+                                    </semantics>
+                                </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.500000000000002em;vertical-align:-2.000000000000001em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">−</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">−</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">−</span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+            </div>
+            <div class="block">
+                <p>These can be derived either by using the right-hand rule or a mnemonic (memory) aid for remembering this table. If you do the cross product of two consecutive unit vectors in the order indicated by the arrows in the circle shown in the following figure, the result is the remaining unit vector (the second row in the table).</p>
+
+            </div>
+            <div class="block">
+                <p>If you do the cross product of two unit vectors in reverse order, the result is the remaining unit vector with a negative sign (the third row in the table).</p>
+
+            </div>
+            <div class="block">
+                <p>For example, in <span len="18" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mover accent="true">
+                                            <mi mathvariant="bold">x</mi>
+                                            <mo>^</mo>
+                                        </mover>
+                                        <mo>×</mo>
+                                        <mover accent="true">
+                                            <mi mathvariant="bold">y</mi>
+                                            <mo>^</mo>
+                                        </mover>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\hat{\mathbf{x}}\times\hat{\mathbf{y}}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.79121em;vertical-align:-0.08333em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.90232em;vertical-align:-0.19444em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span></span>, to go from <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mover accent="true">
+                                            <mi mathvariant="bold">x</mi>
+                                            <mo>^</mo>
+                                        </mover>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\hat{\mathbf{x}}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.70788em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span> to <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mover accent="true">
+                                            <mi mathvariant="bold">y</mi>
+                                            <mo>^</mo>
+                                        </mover>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\hat{\mathbf{y}}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.90232em;vertical-align:-0.19444em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span></span>, your rotate clockwise, so the result is <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mover accent="true">
+                                            <mi mathvariant="bold">z</mi>
+                                            <mo>^</mo>
+                                        </mover>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\hat{\mathbf{z}}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.70788em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span>. In <span len="18" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mover accent="true">
+                                            <mi mathvariant="bold">z</mi>
+                                            <mo>^</mo>
+                                        </mover>
+                                        <mo>×</mo>
+                                        <mover accent="true">
+                                            <mi mathvariant="bold">y</mi>
+                                            <mo>^</mo>
+                                        </mover>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\hat{\mathbf{z}}\times\hat{\mathbf{y}}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.79121em;vertical-align:-0.08333em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.90232em;vertical-align:-0.19444em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span></span>, you go from <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mover accent="true">
+                                            <mi mathvariant="bold">z</mi>
+                                            <mo>^</mo>
+                                        </mover>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\hat{\mathbf{z}}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.70788em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span> to <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mover accent="true">
+                                            <mi mathvariant="bold">y</mi>
+                                            <mo>^</mo>
+                                        </mover>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\hat{\mathbf{y}}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.90232em;vertical-align:-0.19444em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span></span> by rotating counterclockwise, so the result is <span len="8" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mo>−</mo>
+                                        <mover accent="true">
+                                            <mi mathvariant="bold">x</mi>
+                                            <mo>^</mo>
+                                        </mover>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">-\hat{\mathbf{x}}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.79121em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span>.</p>
+
+            </div>
+
+            <div class="block inline-html">
+
+                <img src="figures/Cross-Product-Cycle2.svg">
+            </div>
+            <div class="block">
+                <p>The same procedure can be used for cylindrical and spherical unit vectors by using one of the diagrams in the following figure. Note that the order of the unit vectors is the same as one usually writes the coordinates. For example, we typically write <span len="9" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>z</mi>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x,y,z)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span></span></span></span>, <span len="12" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>s</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>ϕ</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>z</mi>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(s,\phi,z)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">ϕ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span></span></span></span>, and <span len="17" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>r</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>θ</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>ϕ</mi>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(r,\theta,\phi)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">ϕ</span><span class="mclose">)</span></span></span></span> when indicating a position in cartesian, cylindrical, and spherical coordinates, respectively.</p>
+
+            </div>
+
+            <div class="block inline-html">
+
+                <img src="figures/Cross-Product-Cycle-All.svg" class="active">
+            </div>
         </div>
     </div>
 

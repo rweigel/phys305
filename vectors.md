@@ -554,28 +554,6 @@ It is left to the reader to confirm that the answer from 1. is the same as the a
 
 % Check: sqrt(13)*cos(atan(3/2)-atan(3/4))-17/5 = 0. Could use atan(x)-atan(y) =  atan [(x-y) / (1+xy)] and cos(atan(x)) = 1/sqrt(1+x^2) (https://www.mathway.com/popular-problems/Trigonometry/300305).
 
-# Cross Products
-
-The cross products for cartesian unit vectors are
-
-\begin{aligned}
-\hat{\mathbf{x}}\times\hat{\mathbf{x}} & = 0  & \hat{\mathbf{y}}\times\hat{\mathbf{y}} & = 0  & \hat{\mathbf{z}}\times\hat{\mathbf{z}} & = 0  \\
-\hat{\mathbf{x}}\times\hat{\mathbf{y}} & =  \hat{\mathbf{z}} & \hat{\mathbf{y}}\times\hat{\mathbf{z}} & =  \hat{\mathbf{x}} & \hat{\mathbf{z}}\times\hat{\mathbf{x}} & =  \hat{\mathbf{y}} \\
-\hat{\mathbf{y}}\times\hat{\mathbf{x}} & = -\hat{\mathbf{z}} & \hat{\mathbf{z}}\times\hat{\mathbf{y}} & = -\hat{\mathbf{x}} & \hat{\mathbf{x}}\times\hat{\mathbf{z}} & = -\hat{\mathbf{y}} \\
-\end{aligned}
-
-These can be derived either by using the right-hand rule or a mnemonic (memory) aid for remembering this table. If you do the cross product of two consecutive unit vectors in the order indicated by the arrows in the circle shown in the following figure, the result is the remaining unit vector (the second row in the table).
-
-If you do the cross product of two unit vectors in reverse order, the result is the remaining unit vector with a negative sign (the third row in the table).
-
-For example, in $\xhat\times\yhat$, to go from $\xhat$ to $\yhat$, your rotate clockwise, so the result is $\zhat$. In $\zhat\times\yhat$, you go from $\zhat$ to $\yhat$ by rotating counterclockwise, so the result is $-\xhat$.
-
-<img src="figures/Cross-Product-Cycle2.svg"/>
-
-The same procedure can be used for cylindrical and spherical unit vectors by using one of the diagrams in the following figure. Note that the order of the unit vectors is the same as one usually writes the coordinates. For example, we typically write $(x,y,z)$, $(s,\phi,z)$, and $(r,\theta,\phi)$ when indicating a position in cartesian, cylindrical, and spherical coordinates, respectively.
-
-<img src="figures/Cross-Product-Cycle-All.svg"/>
-
 # Normal Unit Vectors
 
 ## Curve
@@ -668,4 +646,26 @@ Use the equation for $\mathbf{\hat{n}}$ to find a normal vector for the surface 
 %and so
 
 %$\mathbf{\hat{n}}=\displaystyle\mathbf{u}\times\mathbf{v}=\frac{\xhat - \yhat}{|\xhat - \yhat|}=\frac{\xhat - \yhat}{\sqrt{2}}$
-DIA
+
+
+# Cross Products
+
+The cross products for cartesian unit vectors are
+
+\begin{aligned}
+\hat{\mathbf{x}}\times\hat{\mathbf{x}} & = 0  & \hat{\mathbf{y}}\times\hat{\mathbf{y}} & = 0  & \hat{\mathbf{z}}\times\hat{\mathbf{z}} & = 0  \\
+\hat{\mathbf{x}}\times\hat{\mathbf{y}} & =  \hat{\mathbf{z}} & \hat{\mathbf{y}}\times\hat{\mathbf{z}} & =  \hat{\mathbf{x}} & \hat{\mathbf{z}}\times\hat{\mathbf{x}} & =  \hat{\mathbf{y}} \\
+\hat{\mathbf{y}}\times\hat{\mathbf{x}} & = -\hat{\mathbf{z}} & \hat{\mathbf{z}}\times\hat{\mathbf{y}} & = -\hat{\mathbf{x}} & \hat{\mathbf{x}}\times\hat{\mathbf{z}} & = -\hat{\mathbf{y}} \\
+\end{aligned}
+
+These can be derived either by using the right-hand rule or a mnemonic (memory) aid for remembering this table. If you do the cross product of two consecutive unit vectors in the order indicated by the arrows in the circle shown in the following figure, the result is the remaining unit vector (the second row in the table).
+
+If you do the cross product of two unit vectors in reverse order, the result is the remaining unit vector with a negative sign (the third row in the table).
+
+For example, in $\xhat\times\yhat$, to go from $\xhat$ to $\yhat$, your rotate clockwise, so the result is $\zhat$. In $\zhat\times\yhat$, you go from $\zhat$ to $\yhat$ by rotating counterclockwise, so the result is $-\xhat$.
+
+<img src="figures/Cross-Product-Cycle2.svg"/>
+
+The same procedure can be used for cylindrical and spherical unit vectors by using one of the diagrams in the following figure. Note that the order of the unit vectors is the same as one usually writes the coordinates. For example, we typically write $(x,y,z)$, $(s,\phi,z)$, and $(r,\theta,\phi)$ when indicating a position in cartesian, cylindrical, and spherical coordinates, respectively.
+
+<img src="figures/Cross-Product-Cycle-All.svg"/>
