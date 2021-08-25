@@ -554,15 +554,68 @@ It is left to the reader to confirm that the answer from 1. is the same as the a
 
 % Check: sqrt(13)*cos(atan(3/2)-atan(3/4))-17/5 = 0. Could use atan(x)-atan(y) =  atan [(x-y) / (1+xy)] and cos(atan(x)) = 1/sqrt(1+x^2) (https://www.mathway.com/popular-problems/Trigonometry/300305).
 
+# Cross Products
+
+The cross products for cartesian unit vectors are
+
+\begin{aligned}
+\hat{\mathbf{x}}\times\hat{\mathbf{x}} & = 0  & \hat{\mathbf{y}}\times\hat{\mathbf{y}} & = 0  & \hat{\mathbf{z}}\times\hat{\mathbf{z}} & = 0  \\
+\hat{\mathbf{x}}\times\hat{\mathbf{y}} & =  \hat{\mathbf{z}} & \hat{\mathbf{y}}\times\hat{\mathbf{z}} & =  \hat{\mathbf{x}} & \hat{\mathbf{z}}\times\hat{\mathbf{x}} & =  \hat{\mathbf{y}} \\
+\hat{\mathbf{y}}\times\hat{\mathbf{x}} & = -\hat{\mathbf{z}} & \hat{\mathbf{z}}\times\hat{\mathbf{y}} & = -\hat{\mathbf{x}} & \hat{\mathbf{x}}\times\hat{\mathbf{z}} & = -\hat{\mathbf{y}} \\
+\end{aligned}
+
+These can be derived either by using the right-hand rule or a mnemonic (memory) aid for remembering this table. If you do the cross product of two consecutive unit vectors in the order indicated by the arrows in the circle shown in the following figure, the result is the remaining unit vector (the second row in the table).
+
+If you do the cross product of two unit vectors in reverse order, the result is the remaining unit vector with a negative sign (the third row in the table).
+
+For example, in $\xhat\times\yhat$, to go from $\xhat$ to $\yhat$, your rotate clockwise, so the result is $\zhat$. In $\zhat\times\yhat$, you go from $\zhat$ to $\yhat$ by rotating counterclockwise, so the result is $-\xhat$.
+
+<img src="figures/Cross-Product-Cycle.svg"/>
+
+The same procedure can be used for cylindrical and spherical unit vectors by using one of the diagrams in the following figure. Note that the order of the unit vectors is the same as one usually writes the coordinates. For example, we typically write $(x,y,z)$, $(s,\phi,z)$, and $(r,\theta,\phi)$ when indicating a position in cartesian, cylindrical, and spherical coordinates, respectively.
+
+<img src="figures/Cross-Product-Cycle-All.svg"/>
+
 # Normal Unit Vectors
 
 ## Curve
 
 The general equation for a unit vector that is perpendicular (normal) to the curve $y=f(x)$ is
 
-$$\mathbf{\hat{n}}=\frac{\xhat - \frac{dy}{dx}\yhat}{\sqrt{1 + \left( \frac{dy}{dx}\right)^2}}$$
+$$\mathbf{\hat{n}}=\frac{-\frac{dy}{dx}\xhat + \yhat}{\sqrt{1 + \left( \frac{dy}{dx}\right)^2}}$$
 
-Similar to the unit tangent vector, there are two unit vectors perpendicular to a curve, and the choice of which to use will depend on the choice of coordinate system or the right-hand rule.
+Similar to the unit tangent vector, there are two unit vectors perpendicular to a curve, $\mathbf{\hat{n}}$ and $-\mathbf{\hat{n}}$, and the choice of which to use will depend on the choice of coordinate system or the right-hand rule.
+
+A mathematical derivation of $\mathbf{\hat{n}}$ is to note that we need a vector that satisfies $\mathbf{\hat{n}}\boldsymbol{\cdot}\mathbf{\hat{t}}=0$ and $|\mathbf{\hat{n}}|=1$. From the dot product and using the notation $\mathbf{\hat{n}}=\hat{n}_x\xhat+\hat{n}_y\yhat$ and $\mathbf{\hat{t}}=\hat{t}_x\xhat+\hat{t}_y\yhat$,
+
+$$\mathbf{\hat{n}}\boldsymbol{\cdot}\mathbf{\hat{t}}=0=\hat{n}_x\hat{t}_x+\hat{n}_y\hat{t}_y\\quad \Rightarrow\quad \hat{n}_x=-\hat{n}_y\frac{\hat{t}_y}{\hat{t}_x}$$
+
+Using
+
+$$\mathbf{\hat{t}}=\frac{\xhat + \frac{dy}{dx}\yhat}{\sqrt{1 + \left( \frac{dy}{dx}\right)^2}}$$
+
+gives
+
+$$\hat{n}_x=-n_y\frac{ \frac{\frac{dy}{dx}}{\sqrt{1 + \left( \frac{dy}{dx}\right)^2 }}}{\frac{1}{\sqrt{1 + \left( \frac{dy}{dx}\right)^2}}}  \quad\Rightarrow\quad \hat{n}_x=-\hat{n}_y\frac{dy}{dx}\quad\Rightarrow\quad \mathbf{\hat{n}}=-\hat{n}_y\frac{dy}{dx}\xhat + \hat{n}_y\yhat$$
+
+Using $|\mathbf{\hat{n}}|=1$, gives the requirement that $\hat{n}_y=1/\sqrt{1 + \left( \frac{dy}{dx}\right)^2}$.
+
+**Check I:** $\mathbf{\hat{n}}\boldsymbol{\cdot}\mathbf{\hat{t}}$ should be zero.
+
+$$\mathbf{\hat{n}}\boldsymbol{\cdot}\mathbf{\hat{t}}=\frac{(-\frac{dy}{dx}\xhat + \yhat)\boldsymbol{\cdot}(\xhat + \frac{dy}{dx}\yhat)}{1+\left( \frac{dy}{dx}\right)^2}=\frac{-\frac{dy}{dx}+\frac{dy}{dx}}{1+\left( \frac{dy}{dx}\right)^2}=0$$
+
+**Check II:** When $y=x$, we expect the normal vector to point down and to the right or up and to the left (recall that there are two unit vectors normal to a curve at a given point). With $y=x$, $\mathbf{\hat{n}}$ is proportional to $-\xhat+\yhat$, which points up and to the left.
+
+----
+
+In cylindrical coordinates, $\hat{\mathbf{s}}$ and $\hat{\boldsymbol{\phi}}$ are perpendicular and their equations are
+
+$\hat{\mathbf{s}} = \cos\phi\xhat + \sin\phi\yhat\qquad 
+\hat{\boldsymbol{\phi}} = -\sin\phi\xhat + \cos\phi\yhat$
+
+Note that the equation for $\hat{\boldsymbol{\phi}}$ is formed by swapping the $\cos\phi$ and $\sin\phi$ terms in the equation for $\hat{\mathbf{s}}$ and adding a negative sign to the $\xhat$ term. The equation for $\mathbf{\hat{n}}$ can also be formed by swapping the terms in the equation for $\mathbf{\hat{t}}$ and adding a negative sign to the $\xhat$ term.
+
+----
 
 ### Problem -- Derivation
 
