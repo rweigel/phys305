@@ -15,7 +15,7 @@ $$\mathbf{E}(r)=\frac{kQ}{r^2}\boldsymbol{\hat{r}}$$
 
 The vector field diagram of $\mathbf{A}\equiv\mathbf{E}(r)/kQ = \boldsymbol{\hat{r}}/r^2$ is
 
-<img src="figures/Vector_Field_of_Point_Charge.svg"/>
+<img src="figures/Vector_Field_of_Point_Charge-1a.svg"/>
 
 Generally, only the relative lengths of the vectors are of interest and so a scale allowing one to determine a numeric value of the magnitude of the vectors was omitted in this figure. Because the outer vectors are at a position that is 4x larger than the inner vectors, the outer vectors have a length that is 1/16 of the inner vectors.
 
