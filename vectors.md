@@ -1,5 +1,7 @@
 This is primarily a review of concepts related to vectors that are important for E&M. If a topic covered is unfamiliar, please review the basic concepts first. Khan Academy has a comprehensive [introduction to vectors](https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:vectors) that is recommended.
 
+The topics covered on this page are either discussed or used in Griffiths chapter 1.1--1.4.
+
 # Vector Notation
 
 The general form of a 2-dimensional vector is
@@ -152,6 +154,16 @@ Find the vector made by connecting a line from $(x,y,z)=(1,2,3)$ to $(x,y,z)=(4,
 
 Write an equation for the vector made by connecting a line from $(x',y',z')$ to $(x,y,z)$.
 
+**Answer**
+
+The requested vector can be formed by first computing the vectors from the origin to the given points. They are
+
+$\mathbf{r}=x\xhat + y\yhat + z\zhat$ and $\mathbf{r}'=x'\xhat + y'\yhat + z'\zhat$.
+
+If the requested vector is defined to be $\textbf{\char"0509}$, then from a diagram (draw this!), $\textbf{\char"0509}+\mathbf{r}'=\mathbf{r}$, or equivalently, $\textbf{\char"0509}=\mathbf{r}-\mathbf{r}'$. So
+
+$\textbf{\char"0509}=x\xhat + y\yhat + z\zhat-(x'\xhat + y'\yhat + z'\zhat) = (x-x')\xhat + (y-y')\yhat + (z-z')\zhat$
+
 # Unit Vectors
 
 A unit vector is a vector with "unit length" (meaning a length of unity, that is, 1).
@@ -186,7 +198,7 @@ $$|\hat{\mathbf{r}}| = \sqrt{\left(\frac{1}{\sqrt{5}}\right)^2 + \left(\frac{2}{
 
 We can now form a vector for the position of the object that is 11 meters along the direction of $\mathbf{r}$:
 
-$$(11\text{ m})\\,\hat{\mathbf{r}}=(11\text{ m})\left(\frac{1}{\sqrt{5}}\xhat + \frac{2}{\sqrt{5}}\yhat\right)$$
+$$(11\text{ m})\hat{\mathbf{r}}=(11\text{ m})\left(\frac{1}{\sqrt{5}}\xhat + \frac{2}{\sqrt{5}}\yhat\right)$$
 
 Note that a unit vector can be associated with any type of vector, not just position vectors.
 
@@ -200,9 +212,23 @@ If $\mathbf{A} = -3\xhat + 4\yhat$, find $\mathbf{\hat{A}}$, find the unit vecto
 
 If $\mathbf{r}=x\xhat + y\yhat$ and $\mathbf{r}' = x'\xhat + y'\yhat$, 
 
-1\. Find $\boldsymbol{\hat{\mathcal{R}}}$, the unit vector in the direction of $\boldsymbol{\mathcal{R}} \equiv \mathbf{r}-\mathbf{r}'$.
+1\. Find $\hat{\textbf{\char"0509}}$, the unit vector in the direction of $\textbf{\char"0509} \equiv \mathbf{r}-\mathbf{r}'$.
 
-2\. Choose numbers for $(x,y)$ and $(x',y')$, sketch $\mathbf{r}$ and $\mathbf{r}'$, and verify that the direction of $\boldsymbol{\hat{\mathcal{R}}}$ is consistent with the unit vector $\boldsymbol{\mathcal{R}}$ that you computed.
+2\. Choose numbers for $(x,y)$ and $(x',y')$, sketch $\mathbf{r}$ and $\mathbf{r}'$, and verify that the direction of $\hat{\textbf{\char"0509}}$ is consistent with the unit vector $ \textbf{\char"0509}$ that you computed.
+
+**Answer**
+
+1\.
+
+$$\hat{\textbf{\char"0509}}=\frac{\textbf{\char"0509}}{\char"0509}$$
+
+$$\textbf{\char"0509} = \mathbf{r}-\mathbf{r}' = x\xhat + y\yhat- (x'\xhat + y'\yhat)=(x-x')\xhat + (y-y')\yhat$$
+
+$$\char"0509=|\textbf{\char"0509}|=\sqrt{(x-x')^2+(y-y')^2}$$
+
+Substitution gives
+
+$$\hat{\textbf{\char"0509}}=\frac{\textbf{\char"0509}}{\char"0509}=\frac{(x-x')\xhat + (y-y')\yhat}{\sqrt{(x-x')^2+(y-y')^2}}$$
 
 # Curvilinear Unit Vectors
 
@@ -257,6 +283,10 @@ Draw a sketch showing
 Given the position $(x,y,z)=(1,1,1)$, compute $(s,\phi,z)$.
 
 **Answer**: Substitution of $x=1$ into $x=s\cos\phi$ and $y=1$ into $y=s\sin\phi$ gives $1=s\cos\phi$ and $1=s\sin\phi$. Elimination of $s$ gives $\tan\phi = 1$, so $\phi=\pi/2$. Squaring $x=s\cos\phi$ and $y=s\sin\phi$ and adding gives $x^2+y^2=s^2\cos^2\phi+s^2\sin^2\phi=s^2$, so $s^2=2$ and $s=\sqrt{2}$. From $x=s\cos\phi$, it follows that $\phi=45^\circ$. Finally, $z$ in cylindrical is the same as $z$ in cartesian, so $z=1$.
+
+### Problem
+
+Write $\hat{\mathbf{s}}/s$ in cartesian coordinates with cartesian unit vectors.
 
 ## Spherical
 
@@ -325,6 +355,10 @@ Given the position $(x,y,z)=(1,1,1)$, compute $(r,\theta, \phi)$.
 %Using $z = r\cos\theta$ gives $\fbox{\cos\theta = 1/\sqrt{3}}$.
 
 %Using $x=r\cos\theta\cos\phi$ with $r=\sqrt{3}$ and $\cos{\theta}=1/\sqrt{3}$ gives $1 = \sqrt{3}\cdot 1/\sqrt{3} \cdot \cos\phi$, so $\fbox{\cos\phi = 1}$.
+
+### Problem -- Writing Vector in Spherical in Cartesian
+
+Write $\hat{\mathbf{r}}/r^2$ in cartesian coordinates with cartesian unit vectors.
 
 ## Deriving
 
@@ -566,7 +600,7 @@ Similar to the unit tangent vector, there are two unit vectors perpendicular to 
 
 A mathematical derivation of $\mathbf{\hat{n}}$ is to note that we need a vector that satisfies $\mathbf{\hat{n}}\boldsymbol{\cdot}\mathbf{\hat{t}}=0$ and $|\mathbf{\hat{n}}|=1$. From the dot product and using the notation $\mathbf{\hat{n}}=\hat{n}_x\xhat+\hat{n}_y\yhat$ and $\mathbf{\hat{t}}=\hat{t}_x\xhat+\hat{t}_y\yhat$,
 
-$$\mathbf{\hat{n}}\boldsymbol{\cdot}\mathbf{\hat{t}}=0=\hat{n}_x\hat{t}_x+\hat{n}_y\hat{t}_y\\quad \Rightarrow\quad \hat{n}_x=-\hat{n}_y\frac{\hat{t}_y}{\hat{t}_x}$$
+$$\mathbf{\hat{n}}\boldsymbol{\cdot}\mathbf{\hat{t}}=0=\hat{n}_x\hat{t}_x+\hat{n}_y\hat{t}_y\quad \Rightarrow\quad  \hat{n}_x=-\hat{n}_y\frac{\hat{t}_y}{\hat{t}_x}$$
 
 Using
 
@@ -617,7 +651,7 @@ $$\mathbf{\hat{n}} = \frac{\mathbf{u}\times\mathbf{v}}{|\mathbf{u}\times\mathbf{
 
 where $\mathbf{u}$ and $\mathbf{v}$ are two non--colinear vectors on the surface.
 
-### Example
+### Example -- Finding the Normal to a Plane
 
 Use the equation for $\mathbf{\hat{n}}$ to find a normal unit vector for the rectangular surface shown in the following figure.
 
@@ -633,7 +667,7 @@ $$\mathbf{\hat{n}} = \frac{\mathbf{u}\times\mathbf{v}}{|\mathbf{u}\times\mathbf{
 
 as expected. If we had chosen $\mathbf{u}=3\xhat$ and $\mathbf{v}=4\zhat$, the answer would have been $-\yhat$, which is the other unit vector perpendicular to the surface. We could have also chosen one of the vectors to be the vector that connected the origin to the corner at $(x,y,z)=(3,0,4)$ and the other to be either $3\xhat$ or $4\zhat$.
 
-### Problem
+### Problem -- Finding the Normal to a Plane
 
 Use the equation for $\mathbf{\hat{n}}$ to find a normal vector for the surface when $\phi=45^\circ$.
 
@@ -646,7 +680,6 @@ Use the equation for $\mathbf{\hat{n}}$ to find a normal vector for the surface 
 %and so
 
 %$\mathbf{\hat{n}}=\displaystyle\mathbf{u}\times\mathbf{v}=\frac{\xhat - \yhat}{|\xhat - \yhat|}=\frac{\xhat - \yhat}{\sqrt{2}}$
-
 
 # Cross Products
 

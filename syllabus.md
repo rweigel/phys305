@@ -10,6 +10,8 @@
 * Office: 259 Planetary Hall
 * Course URL: http://rweigel.github.io/phys305/
 
+**Homeworks** [HW 1](hw1.html)
+
 # Class Schedule
 
 ## Tuesday, August 24th
@@ -20,17 +22,18 @@
 
 ## Thursday, August 26th 
 
-* Assign HW #1 covering [Vectors](vectors.html), Vector Fields, Field Lines, and Equipotentials
-* Discuss HW #1 topics
+* Assign [HW 1](hw1.html) covering [Vectors](vectors.html), [Vector Fields](vector_fields.html), [Field Lines](field_lines.html), and  [Equipotentials](equipotentials.html).
+ 
+* Discuss [HW 1](hw1.html) topics
 
 ## Tuesday, August 31st
 
-* Answer questions on HW #1 topics
+* Answer questions on [HW 1](hw1.html) topics
  
 ## Thursday, September 2nd 
 
-* Answer questions on HW #1 topics
-* Homework #1 due at 3:00 pm
+* Answer questions on [HW 1](hw1.html) topics
+* [HW 1](hw1.html) due at 3:00 pm
 * Assign Homework #2 covering Flux, Divergence, Coulomb's Law, and Electric Field.
 
 # Topics Covered and Catalog Description

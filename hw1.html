@@ -1,0 +1,1346 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>hw1</title>
+    <link id="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%220.9em%22 font-size=%22100%22>📖</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" />
+    <style>
+        body { background-color: white; }
+        #toc { font-size: 85%; width: 14em; position: fixed; min-height: 95%; max-height: 95%; overflow: hidden auto; padding-left: 0.75em; padding-right: 1em; margin-right: 1em; font-family: "Open Sans"; }
+        #toc ol { list-style-type: decimal; padding-inline-start: 1em; }
+        #toc a { text-decoration: none; }
+        #display a { text-decoration: none black; text-underline-offset: 2px; }
+        #display { width: 100%; margin-left: 15em; max-height: 100%; min-height: 100%; overflow: hidden auto; padding-left: 1em; padding-right: 1em; border-left: 1px solid rgb(240, 240, 240); font-family: "Open Sans"; }
+        .title { text-align: center; font-size: 250%; font-weight: bold; color: black; margin-bottom: 0px; }
+        .subtitle { text-align: center; font-size: 150%; font-weight: bold; color: black; margin-top: 0.2em; }
+        .hanchor { text-decoration: none; color: inherit; }
+        h1 { color: darkblue; border-bottom: 2px solid darkblue; }
+        h2 { border-bottom: 1px solid black; }
+        h3 { border-bottom: 1px dotted black; }
+        h1, h2, h3, h4, h5, h6 { width: 100%; margin-block: 0.5em; }
+        #display .block ul { width: 100%; margin-left: 1em; padding-left: 1em; }
+        #display .block ol { width: 100%; margin-left: 1em; padding-left: 1em; }
+        code { width: 100%; background-color: rgba(0, 0, 0, 0.03); border-radius: 0px; font-size: 1.2em; white-space: pre-wrap; margin-top: 3px; margin-right: 3px; }
+        pre code { border-right: 1px solid black; }
+        code.language-Python { background-color: rgba(0, 0, 0, 0); font-size: 1.2em; }
+        pre { width: 100%; text-indent: 0.75em; padding-left: 0.5em; margin-left: 1em; white-space: pre-wrap; border-left: 3px solid black; background-color: rgba(0, 0, 0, 0.03); line-height: 1.5; overflow-x: clip; }
+        pre.language-Python { border-left: 5px solid blue; padding: 0.5em; margin-left: 1em; margin-right: 1em; line-height: 1.5; overflow-x: auto; }
+        .block { display: flex; }
+        .block.inline-html { display: block; }
+        .hr { width: 100%; height: 1px; display: block; margin: 0.5em; margin-block: 0.5em; border-top: 1px solid black; }
+        #display li > div { display: flex; }
+        p { width: 100%; display: block; margin-block: 0.5em; }
+        #display li { width: 100%; }
+        li .block p { width: 100%; display: block; margin-top: 0.5em; margin-bottom: 0.5em; }
+        li .block:first-of-type p { width: 100%; display: block; margin-top: 0em; margin-bottom: 0em; }
+        .section > .block ol ~ .line-number { display: none; }
+        .section > .block ul ~ .line-number { display: none; }
+        .section > .block pre ~ .line-number { display: none; }
+        .section > .block code ~ .line-number { }
+        pre .line-number { float: right; font-size: 8px; text-align: center; text-indent: 0px; }
+        .line-number { float: right; white-space: pre-wrap; font-size: 10%; }
+        p + .line-number { margin-block-start: 8px; }
+        .block > div.linenumber { margin-block-start: -0.5em; }
+        .blockquote + div.line-number { margin-top: 1rem; }
+        h1 + .line-number { margin-block-start: 20em; }
+        h2 + .line-number { margin-block-start: 15em; }
+        h3 + .line-number { margin-block-start: 15em; }
+        h4 + .line-number { margin-block-start: 15em; }
+        h5 + .line-number { margin-block-start: 15em; }
+        h6 + .line-number { margin-block-start: 15em; }
+        .blockquote { width: 100%; display: block; margin: 1em; border: 1px solid black; padding: 1em; border-radius: 0.5em; }
+        details > summary { font-weight: bold; }
+        details[open] { border: 1px solid black; padding: 1em; }
+        table { padding: 0px; }
+        table tr { border-top: 1px solid rgb(204, 204, 204); background-color: white; margin: 0px; padding: 0px; }
+        table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+        table tr th { font-weight: bold; border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+        table tr td { border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+        table tr th :first-child, table tr td :first-child { margin-top: 0px; }
+        table tr th :last-child, table tr td :last-child { margin-bottom: 0px; }
+        .katex { font-size: inherit !important; }
+        .katex-display { text-align: center; margin: 0.5em; font-size: 1.1em !important; }
+        @media print {
+          body, html { margin: 0in; color: rgb(0, 0, 0); height: auto; background-color: rgb(255, 255, 255); border: none; display: inline; }
+          h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+          h1, h2, h3, h4, h5, h6 { width: 100%; margin-block: 0.1em; }
+          h1 { font-size: 1.25em; border-bottom: 1px solid darkblue; }
+          h2 { font-size: 1.15em; border-bottom: 1px solid darkblue; }
+          h3 { font-size: 1.1em; }
+          h4, h5, h6 { font-size: 1.05em; }
+          p { margin-top: 0px; margin-bottom: 0.5em; }
+          .title { break-before: page; margin-top: 0px; }
+          #toc { display: none; font-size: 100%; margin: 0px; width: 100%; overflow-y: hidden; padding-left: 0px; padding-right: 0px; }
+          #display { margin-left: 0em; width: 100%; padding-left: 0px; padding-right: 0px; border: none; overflow-wrap: break-word; }
+          .katex { font: 1em / 1 KaTeX_Main, "Times New Roman", serif; white-space: nowrap; text-indent: 0px; text-rendering: auto; }
+          .katex-display { margin-top: 0px; }
+        }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        
+    </style>
+
+
+    <script>
+        function tocClick() {
+            // No jQuery b/c also used in stand-alone HTML.
+            hs = document.querySelectorAll('#toc > ol ol');
+            for (var i = 0; i < hs.length; i++) {
+              if (hs[i].previousElementSibling) {
+                var el = hs[i].previousElementSibling.firstElementChild;
+                if (el.length == 0) {
+                  continue;
+                }
+                el.addEventListener('click', event => {
+                  var ns = event.target.parentNode.nextElementSibling;
+                  if (ns.style.display === 'none') {
+        ns.style.display = 'block';
+                  } else {
+        ns.style.display = 'none';
+                  }
+                });
+              }
+            }
+          }
+        if (
+            document.readyState === "complete" ||
+            (document.readyState !== "loading" && 
+              !document.documentElement.doScroll)
+        ) {
+          tocClick();
+        } else {
+          document.addEventListener("DOMContentLoaded", tocClick);
+        }
+    </script>
+
+</head>
+
+<body style="display: flex;min-width: 50%;max-height:100%;">
+
+    <div id="toc">
+        <ol>
+            <li><a number="1" href="#vector-notation">Vector Notation</a></li>
+            <li><a number="2" href="#tangent-vectors">Tangent Vectors</a></li>
+            <li><a number="3" href="#normal-vectors">Normal Vectors</a></li>
+            <li><a number="4" href="#notation-and-vector-fields">Notation and Vector Fields</a></li>
+            <li><a number="5" href="#field-lines-and-equipotentials" class="">Field Lines and Equipotentials</a></li>
+        </ol>
+    </div>
+    <div id="display">
+        <div class="section">
+            <div class="block">
+                <p>Due on Thursday, September 2nd at 3:00 pm.</p>
+
+            </div>
+            <div class="block">
+                <p>Send your solutions to the email address <a href="mailto:rweigel+phys305@gmu.edu">rweigel+phys305@gmu.edu</a> as a scanned PDF. If you do not have a scanner, use a smartphone PDF scanning app such as Genius Scan or Adobe Scan. <strong>Do not send photos of your assignment.</strong> If you have difficulty with this, feel free to contact me for help.</p>
+
+            </div>
+            <div class="block">
+                <p class="active">You are welcome to ask questions about homework problems on Discord. I will not give direct answers, but I will give hints. I will also first ask you for your solution to a related problem that was covered in class or in the notes. You are welcome to answer questions from other students on Discord, but please only give suggestions and hints.</p>
+
+            </div>
+            <div class="block">
+                <p class="">This homework involves topics covered in <a href="vectors.html">Vectors</a>, <a href="vector_fields.html">Vector Fields</a>, <a href="field_lines.html">Field Lines</a>, and <a href="equipotentials.html">Equipotentials</a>. </p>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="vector-notation" number="1" class="hanchor" href="#vector-notation"><span class="hnumber">1 </span> <span class="htext">Vector Notation</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>Given <span len="12" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi mathvariant="bold">r</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\mathbf{r}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.44444em;vertical-align:0em;"></span><span class="mord mathbf">r</span></span></span></span> is a vector from the origin to the point <span len="9" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>z</mi>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x,y,z)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span></span></span></span> and <span len="13" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msup>
+                                            <mi mathvariant="bold">r</mi>
+                                            <mo mathvariant="normal" lspace="0em" rspace="0em">′</mo>
+                                        </msup>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\mathbf{r}'</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.751892em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbf">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span> is a vector from the origin to the point <span len="12" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mo stretchy="false">(</mo>
+                                        <msup>
+                                            <mi>x</mi>
+                                            <mo mathvariant="normal" lspace="0em" rspace="0em">′</mo>
+                                        </msup>
+                                        <mo separator="true">,</mo>
+                                        <msup>
+                                            <mi>y</mi>
+                                            <mo mathvariant="normal" lspace="0em" rspace="0em">′</mo>
+                                        </msup>
+                                        <mo separator="true">,</mo>
+                                        <msup>
+                                            <mi>z</mi>
+                                            <mo mathvariant="normal" lspace="0em" rspace="0em">′</mo>
+                                        </msup>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x',y',z')</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> and a scalar function <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>f</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">f</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span> defined according to</p>
+
+            </div>
+            <div class="block">
+                <p><span len="44" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <semantics>
+                                        <mrow>
+                                            <mi>f</mi>
+                                            <mo>=</mo>
+                                            <mfrac>
+                                                <mn>1</mn>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                    <mi mathvariant="bold">r</mi>
+                                                    <mo>−</mo>
+                                                    <msup>
+                                                        <mi mathvariant="bold">r</mi>
+                                                        <mo mathvariant="normal" lspace="0em" rspace="0em">′</mo>
+                                                    </msup>
+                                                    <msup>
+                                                        <mi mathvariant="normal">∣</mi>
+                                                        <mn>2</mn>
+                                                    </msup>
+                                                </mrow>
+                                            </mfrac>
+                                        </mrow>
+                                        <annotation encoding="application/x-tex">f = \frac{1}{|\mathbf{r}-\mathbf{r}'|^2}</annotation>
+                                    </semantics>
+                                </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.25744em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">∣</span><span class="mord mathbf">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathbf">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6778919999999999em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord">∣</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+
+            </div>
+            <div class="block">
+                <ol>
+                    <li>
+                        <div class="block">
+                            <p>Write <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>f</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">f</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span> in cartesian coordinates.</p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Show that <span len="28" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                    <mi mathvariant="bold">r</mi>
+                                                    <mo>−</mo>
+                                                    <msup>
+                                                        <mi mathvariant="bold">r</mi>
+                                                        <mo mathvariant="normal" lspace="0em" rspace="0em">′</mo>
+                                                    </msup>
+                                                    <msup>
+                                                        <mi mathvariant="normal">∣</mi>
+                                                        <mn>2</mn>
+                                                    </msup>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">|\mathbf{r}-\mathbf{r}'|^2</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathbf">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathbf">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord">∣</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> can be written as <span len="37" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <msup>
+                                                        <mi>r</mi>
+                                                        <mn>2</mn>
+                                                    </msup>
+                                                    <mo>+</mo>
+                                                    <msup>
+                                                        <mi>r</mi>
+                                                        <mrow>
+                                                            <mo mathvariant="normal">′</mo>
+                                                            <mn>2</mn>
+                                                        </mrow>
+                                                    </msup>
+                                                    <mo>−</mo>
+                                                    <mn>2</mn>
+                                                    <mi mathvariant="bold">r</mi>
+                                                    <mo mathvariant="bold-italic" lspace="0.22em" rspace="0.22em">⋅</mo>
+                                                    <msup>
+                                                        <mi mathvariant="bold">r</mi>
+                                                        <mo mathvariant="normal" lspace="0em" rspace="0em">′</mo>
+                                                    </msup>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">r^2+r'^2-2\mathbf{r}\boldsymbol{\cdot}\mathbf{r}'</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′2</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord mathbf">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin"><span class="mord"><span class="mord mathbf">⋅</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.751892em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbf">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Compute <span len="68" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi mathvariant="bold">∇</mi>
+                                                    <mrow>
+                                                        <mo fence="true">(</mo>
+                                                        <mfrac>
+                                                            <mn>1</mn>
+                                                            <mrow>
+                                                                <mi mathvariant="normal">∣</mi>
+                                                                <mi mathvariant="bold">r</mi>
+                                                                <mo>−</mo>
+                                                                <msup>
+                                                                    <mi mathvariant="bold">r</mi>
+                                                                    <mo mathvariant="normal" lspace="0em" rspace="0em">′</mo>
+                                                                </msup>
+                                                                <mi mathvariant="normal">∣</mi>
+                                                            </mrow>
+                                                        </mfrac>
+                                                        <mo fence="true">)</mo>
+                                                    </mrow>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\boldsymbol{\nabla}\left(\frac{1}{|\mathbf{r}-\mathbf{r}'|}\right)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.80002em;vertical-align:-0.65002em;"></span><span class="mord"><span class="mord"><span class="mord mathbf">∇</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size2">(</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">∣</span><span class="mord mathbf mtight">r</span><span class="mbin mtight">−</span><span class="mord mtight"><span class="mord mathbf mtight">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6828285714285715em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord mtight">∣</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.52em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size2">)</span></span></span></span></span></span>, where <span len="134" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi mathvariant="bold">∇</mi>
+                                                    <mi>f</mi>
+                                                    <mo stretchy="false">(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>z</mi>
+                                                    <mo stretchy="false">)</mo>
+                                                    <mo>=</mo>
+                                                    <mfrac>
+                                                        <mrow>
+                                                            <mi mathvariant="normal">∂</mi>
+                                                            <mi>f</mi>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mi mathvariant="normal">∂</mi>
+                                                            <mi>x</mi>
+                                                        </mrow>
+                                                    </mfrac>
+                                                    <mover accent="true">
+                                                        <mi mathvariant="bold">x</mi>
+                                                        <mo>^</mo>
+                                                    </mover>
+                                                    <mo>+</mo>
+                                                    <mfrac>
+                                                        <mrow>
+                                                            <mi mathvariant="normal">∂</mi>
+                                                            <mi>f</mi>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mi mathvariant="normal">∂</mi>
+                                                            <mi>y</mi>
+                                                        </mrow>
+                                                    </mfrac>
+                                                    <mover accent="true">
+                                                        <mi mathvariant="bold">y</mi>
+                                                        <mo>^</mo>
+                                                    </mover>
+                                                    <mo>+</mo>
+                                                    <mfrac>
+                                                        <mrow>
+                                                            <mi mathvariant="normal">∂</mi>
+                                                            <mi>f</mi>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mi mathvariant="normal">∂</mi>
+                                                            <mi>z</mi>
+                                                        </mrow>
+                                                    </mfrac>
+                                                    <mover accent="true">
+                                                        <mi mathvariant="bold">z</mi>
+                                                        <mo>^</mo>
+                                                    </mover>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\boldsymbol{\nabla}f(x,y,z)=\frac{\partial f}{\partial x}\hat{\mathbf{x}}+\frac{\partial f}{\partial y}\hat{\mathbf{y}}+\frac{\partial f}{\partial z}\hat{\mathbf{z}}</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord"><span class="mord mathbf">∇</span></span></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.277216em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9322159999999999em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal mtight">x</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.446108em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.4133239999999998em;vertical-align:-0.481108em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9322159999999999em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.446108em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.481108em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.277216em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9322159999999999em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.446108em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span></p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>If <span len="51" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mtext mathvariant="bold">ԉ</mtext>
+                                                    <mo>≡</mo>
+                                                    <mi mathvariant="bold">r</mi>
+                                                    <mo>−</mo>
+                                                    <msup>
+                                                        <mi mathvariant="bold">r</mi>
+                                                        <mo mathvariant="normal" lspace="0em" rspace="0em">′</mo>
+                                                    </msup>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\textbf{\char"0509} \equiv \mathbf{r}-\mathbf{r}'</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46375em;vertical-align:0em;"></span><span class="mord text"><span class="mord textbf">ԉ</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathbf">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.751892em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbf">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+                        </div>
+                        <div class="block">
+                            <p> a. Show that</p>
+
+                        </div>
+                        <div class="block">
+                            <p> <span len="120" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                                <semantics>
+                                                    <mrow>
+                                                        <mfrac>
+                                                            <mrow>
+                                                                <mover accent="true">
+                                                                    <mtext mathvariant="bold">ԉ</mtext>
+                                                                    <mo>^</mo>
+                                                                </mover>
+                                                                <mphantom>
+                                                                    <msup>
+                                                                        <mrow></mrow>
+                                                                        <mn>2</mn>
+                                                                    </msup>
+                                                                </mphantom>
+                                                            </mrow>
+                                                            <msup>
+                                                                <mi mathvariant="normal">ԉ</mi>
+                                                                <mn>2</mn>
+                                                            </msup>
+                                                        </mfrac>
+                                                        <mo>=</mo>
+                                                        <mfrac>
+                                                            <mrow>
+                                                                <mi mathvariant="bold">r</mi>
+                                                                <mo>−</mo>
+                                                                <msup>
+                                                                    <mi mathvariant="bold">r</mi>
+                                                                    <mo mathvariant="normal" lspace="0em" rspace="0em">′</mo>
+                                                                </msup>
+                                                            </mrow>
+                                                            <mrow>
+                                                                <mi mathvariant="normal">∣</mi>
+                                                                <mi mathvariant="bold">r</mi>
+                                                                <mo>−</mo>
+                                                                <msup>
+                                                                    <mi mathvariant="bold">r</mi>
+                                                                    <mo mathvariant="normal" lspace="0em" rspace="0em">′</mo>
+                                                                </msup>
+                                                                <msup>
+                                                                    <mi mathvariant="normal">∣</mi>
+                                                                    <mn>3</mn>
+                                                                </msup>
+                                                            </mrow>
+                                                        </mfrac>
+                                                    </mrow>
+                                                    <annotation encoding="application/x-tex">\frac{\hat{\textbf{\char"0509}}\phantom{^2}}{\char"0509^2}=\frac{\mathbf{r}-\mathbf{r}'}{|\mathbf{r}-\mathbf{r}'|^3}</annotation>
+                                                </semantics>
+                                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.177108em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.491108em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord">ԉ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textbf">ԉ</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mord" style="color:transparent;"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style="color:transparent;"><span class="mord mtight" style="color:transparent;">2</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.364892em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.428892em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">∣</span><span class="mord mathbf">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathbf">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6778919999999999em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord">∣</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathbf">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathbf">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+
+                        </div>
+                        <div class="block">
+                            <p> b. Write <span len="42" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mover accent="true">
+                                                        <mtext mathvariant="bold">ԉ</mtext>
+                                                        <mo>^</mo>
+                                                    </mover>
+                                                    <mi mathvariant="normal">/</mi>
+                                                    <msup>
+                                                        <mi mathvariant="normal">ԉ</mi>
+                                                        <mn>2</mn>
+                                                    </msup>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\hat{\textbf{\char"0509}}/{\char"0509^2}</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textbf">ԉ</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mord">/</span><span class="mord"><span class="mord"><span class="mord">ԉ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span> in cartesian coordinates with cartesian unit vectors.</p>
+
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="tangent-vectors" number="2" class="hanchor" href="#tangent-vectors"><span class="hnumber">2 </span> <span class="htext">Tangent Vectors</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>An object is moved along the path <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>y</mi>
+                                        <mo>=</mo>
+                                        <msup>
+                                            <mi>x</mi>
+                                            <mn>2</mn>
+                                        </msup>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">y=x^2</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> from <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                        <mo>=</mo>
+                                        <mn>0</mn>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x=0</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> to <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                        <mo>=</mo>
+                                        <msub>
+                                            <mi>x</mi>
+                                            <mi>o</mi>
+                                        </msub>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x=x_o</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> when there is an external force of <span len="21" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi mathvariant="bold">F</mi>
+                                        <mo>=</mo>
+                                        <mo>−</mo>
+                                        <mi>m</mi>
+                                        <mi>g</mi>
+                                        <mover accent="true">
+                                            <mi mathvariant="bold">y</mi>
+                                            <mo>^</mo>
+                                        </mover>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\mathbf{F}=-mg\hat{\mathbf{y}}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord mathbf">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.90232em;vertical-align:-0.19444em;"></span><span class="mord">−</span><span class="mord mathnormal">m</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span></span>.</p>
+
+            </div>
+            <div class="block">
+                <p>1. Compute the force tangent to the path at <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mi>x</mi>
+                                            <mi>o</mi>
+                                        </msub>
+                                        <mi mathvariant="normal">/</mi>
+                                        <mn>2</mn>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x_o/2</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/2</span></span></span></span> and <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mi>x</mi>
+                                            <mi>o</mi>
+                                        </msub>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x_o</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.</p>
+
+            </div>
+            <div class="block">
+                <p>2. Compute the force perpendicular to the path at <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mi>x</mi>
+                                            <mi>o</mi>
+                                        </msub>
+                                        <mi mathvariant="normal">/</mi>
+                                        <mn>2</mn>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x_o/2</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/2</span></span></span></span> and <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mi>x</mi>
+                                            <mi>o</mi>
+                                        </msub>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x_o</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.</p>
+
+            </div>
+            <div class="block">
+                <p>3. (Extra credit) Compute <span len="46" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mo>∫</mo>
+                                            <mi mathvariant="script">L</mi>
+                                        </msub>
+                                        <mi mathvariant="bold">F</mi>
+                                        <mo mathvariant="bold-italic" lspace="0.22em" rspace="0.22em">⋅</mo>
+                                        <mi>d</mi>
+                                        <mi mathvariant="bold">l</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\int_{\mathcal{L}}\mathbf{F}\boldsymbol{\cdot} d\mathbf{l}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1608200000000002em;vertical-align:-0.35582em;"></span><span class="mop"><span class="mop op-symbol small-op" style="margin-right:0.19445em;position:relative;top:-0.0005599999999999772em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.12251099999999993em;"><span style="top:-2.34418em;margin-left:-0.19445em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathcal mtight">L</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.35582em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathbf">F</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin"><span class="mord"><span class="mord mathbf">⋅</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">d</span><span class="mord mathbf">l</span></span></span></span> where <span len="13" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi mathvariant="script">L</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\mathcal{L}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathcal">L</span></span></span></span> is the path along <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>y</mi>
+                                        <mo>=</mo>
+                                        <msup>
+                                            <mi>x</mi>
+                                            <mn>2</mn>
+                                        </msup>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">y=x^2</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> from <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                        <mo>=</mo>
+                                        <mn>0</mn>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x=0</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> to <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                        <mo>=</mo>
+                                        <msub>
+                                            <mi>x</mi>
+                                            <mi>o</mi>
+                                        </msub>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x=x_o</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="normal-vectors" number="3" class="hanchor" href="#normal-vectors"><span class="hnumber">3 </span> <span class="htext">Normal Vectors</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>A plane has corners at <span len="17" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>z</mi>
+                                        <mo stretchy="false">)</mo>
+                                        <mo>=</mo>
+                                        <mo stretchy="false">(</mo>
+                                        <mn>0</mn>
+                                        <mo separator="true">,</mo>
+                                        <mn>0</mn>
+                                        <mo separator="true">,</mo>
+                                        <mn>0</mn>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x,y,z)=(0,0,0)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span>, <span len="17" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>z</mi>
+                                        <mo stretchy="false">)</mo>
+                                        <mo>=</mo>
+                                        <mo stretchy="false">(</mo>
+                                        <mn>1</mn>
+                                        <mo separator="true">,</mo>
+                                        <mn>0</mn>
+                                        <mo separator="true">,</mo>
+                                        <mn>0</mn>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x,y,z)=(1,0,0)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span>, <span len="17" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>z</mi>
+                                        <mo stretchy="false">)</mo>
+                                        <mo>=</mo>
+                                        <mo stretchy="false">(</mo>
+                                        <mn>0</mn>
+                                        <mo separator="true">,</mo>
+                                        <mn>1</mn>
+                                        <mo separator="true">,</mo>
+                                        <mn>1</mn>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x,y,z)=(0,1,1)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>, and <span len="17" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>z</mi>
+                                        <mo stretchy="false">)</mo>
+                                        <mo>=</mo>
+                                        <mo stretchy="false">(</mo>
+                                        <mn>1</mn>
+                                        <mo separator="true">,</mo>
+                                        <mn>1</mn>
+                                        <mo separator="true">,</mo>
+                                        <mn>1</mn>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x,y,z)=(1,1,1)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>. </p>
+
+            </div>
+            <div class="block">
+                <p>1. Sketch the plane with a 3–dimensional diagram.</p>
+
+            </div>
+            <div class="block">
+                <p>2. Sketch the plane in the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>y</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">y</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span>–<span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>z</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">z</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span></span></span></span> plane. (That is, what you would see if you looked toward the origin from a point with large <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span>.)</p>
+
+            </div>
+            <div class="block">
+                <p>3. Find a vector normal to the plane that has a positive <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>z</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">z</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span></span></span></span>–component.</p>
+
+            </div>
+            <div class="block">
+                <p>4. There is a force acting on the plane of <span len="39" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi mathvariant="bold">F</mi>
+                                        <mo>=</mo>
+                                        <msub>
+                                            <mi>F</mi>
+                                            <mi>x</mi>
+                                        </msub>
+                                        <mover accent="true">
+                                            <mi mathvariant="bold">x</mi>
+                                            <mo>^</mo>
+                                        </mover>
+                                        <mo>+</mo>
+                                        <msub>
+                                            <mi>F</mi>
+                                            <mi>y</mi>
+                                        </msub>
+                                        <mover accent="true">
+                                            <mi mathvariant="bold">y</mi>
+                                            <mo>^</mo>
+                                        </mover>
+                                        <mo>+</mo>
+                                        <msub>
+                                            <mi>F</mi>
+                                            <mi>z</mi>
+                                        </msub>
+                                        <mover accent="true">
+                                            <mi mathvariant="bold">z</mi>
+                                            <mo>^</mo>
+                                        </mover>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\mathbf{F}=F_x\hat{\mathbf{x}}+F_y\hat{\mathbf{y}}+F_z\hat{\mathbf{z}}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord mathbf">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.85788em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.9939879999999999em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.85788em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span>. Find the component of force perpendicular to the plane.</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="notation-and-vector-fields" number="4" class="hanchor" href="#notation-and-vector-fields"><span class="hnumber">4 </span> <span class="htext">Notation and Vector Fields</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>A positive charge <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>q</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">q</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span> is placed at <span len="15" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo stretchy="false">)</mo>
+                                        <mo>=</mo>
+                                        <mo stretchy="false">(</mo>
+                                        <msub>
+                                            <mi>x</mi>
+                                            <mi>o</mi>
+                                        </msub>
+                                        <mo separator="true">,</mo>
+                                        <mn>0</mn>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x,y)=(x_o,0)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> and a negative charge <span len="4" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mo>−</mo>
+                                        <mi>q</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">-q</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="mord">−</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span> at <span len="16" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo stretchy="false">)</mo>
+                                        <mo>=</mo>
+                                        <mo stretchy="false">(</mo>
+                                        <mo>−</mo>
+                                        <msub>
+                                            <mi>x</mi>
+                                            <mi>o</mi>
+                                        </msub>
+                                        <mo separator="true">,</mo>
+                                        <mn>0</mn>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x,y)=(-x_o,0)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span>.</p>
+
+            </div>
+            <div class="block">
+                <p>The force on a charge <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>Q</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">Q</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">Q</span></span></span></span> due to <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>q</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">q</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span> and <span len="4" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mo>−</mo>
+                                        <mi>q</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">-q</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="mord">−</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span> is</p>
+
+            </div>
+            <div class="block">
+                <p><span len="126" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <semantics>
+                                        <mrow>
+                                            <mi mathvariant="bold">F</mi>
+                                            <mo>=</mo>
+                                            <mi>k</mi>
+                                            <mi>q</mi>
+                                            <mi>Q</mi>
+                                            <mfrac>
+                                                <msub>
+                                                    <mover accent="true">
+                                                        <mtext mathvariant="bold">ԉ</mtext>
+                                                        <mo>^</mo>
+                                                    </mover>
+                                                    <mo>+</mo>
+                                                </msub>
+                                                <msubsup>
+                                                    <mi mathvariant="normal">ԉ</mi>
+                                                    <mo>+</mo>
+                                                    <mn>2</mn>
+                                                </msubsup>
+                                            </mfrac>
+                                            <mo>−</mo>
+                                            <mi>k</mi>
+                                            <mi>q</mi>
+                                            <mi>Q</mi>
+                                            <mfrac>
+                                                <msub>
+                                                    <mover accent="true">
+                                                        <mtext mathvariant="bold">ԉ</mtext>
+                                                        <mo>^</mo>
+                                                    </mover>
+                                                    <mo lspace="0em" rspace="0em">−</mo>
+                                                </msub>
+                                                <msubsup>
+                                                    <mi mathvariant="normal">ԉ</mi>
+                                                    <mo lspace="0em" rspace="0em">−</mo>
+                                                    <mn>2</mn>
+                                                </msubsup>
+                                            </mfrac>
+                                        </mrow>
+                                        <annotation encoding="application/x-tex">\mathbf{F}=kqQ\frac{\hat{\textbf{\char"0509}}_+}{\char"0509^2_+}-kqQ\frac{\hat{\textbf{\char"0509}}_{-}}{\char"0509^2_{-}}</annotation>
+                                    </semantics>
+                                </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord mathbf">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.339302em;vertical-align:-0.967862em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal">qQ</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord">ԉ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.795908em;"><span style="top:-2.4764690000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span><span style="top:-3.0448000000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.28186199999999995em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textbf">ԉ</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.25833100000000003em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.967862em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.339302em;vertical-align:-0.967862em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal">qQ</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord">ԉ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.795908em;"><span style="top:-2.4764690000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span></span></span></span><span style="top:-3.0448000000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.28186199999999995em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textbf">ԉ</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.25833100000000003em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.967862em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+
+            </div>
+            <div class="block">
+                <p>where <span len="47" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mtext mathvariant="bold">ԉ</mtext>
+                                            <mo>+</mo>
+                                        </msub>
+                                        <mo>=</mo>
+                                        <mi mathvariant="bold">r</mi>
+                                        <mo>−</mo>
+                                        <msub>
+                                            <mi mathvariant="bold">r</mi>
+                                            <mo>+</mo>
+                                        </msub>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\textbf{\char"0509}_+=\mathbf{r}-\mathbf{r_+}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.575201em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord text"><span class="mord textbf">ԉ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.25833100000000003em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathbf">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.652771em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathbf">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.25833100000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span></span></span></span>, <span len="47" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mtext mathvariant="bold">ԉ</mtext>
+                                            <mo>−</mo>
+                                        </msub>
+                                        <mo>=</mo>
+                                        <mi mathvariant="bold">r</mi>
+                                        <mo>−</mo>
+                                        <msub>
+                                            <mi mathvariant="bold">r</mi>
+                                            <mo>−</mo>
+                                        </msub>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\textbf{\char"0509}_-=\mathbf{r}-\mathbf{r_-}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.575201em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord text"><span class="mord textbf">ԉ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.25833100000000003em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">−</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathbf">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.652771em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathbf">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.25833100000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">−</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span></span></span></span>, <span len="28" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi mathvariant="bold">r</mi>
+                                        <mo>=</mo>
+                                        <mi>x</mi>
+                                        <mover accent="true">
+                                            <mi mathvariant="bold">x</mi>
+                                            <mo>^</mo>
+                                        </mover>
+                                        <mo>+</mo>
+                                        <mi>y</mi>
+                                        <mover accent="true">
+                                            <mi mathvariant="bold">y</mi>
+                                            <mo>^</mo>
+                                        </mover>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\mathbf{r}=x\hat{\mathbf{x}} + y\hat{\mathbf{y}}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.44444em;vertical-align:0em;"></span><span class="mord mathbf">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.79121em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">x</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.90232em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span></span>, <span len="14" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mi mathvariant="bold">r</mi>
+                                            <mo>+</mo>
+                                        </msub>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\mathbf{r_+}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.652771em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathbf">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.25833100000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span></span></span></span> is the vector from the origin to the positive charge, and <span len="14" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mi mathvariant="bold">r</mi>
+                                            <mo>−</mo>
+                                        </msub>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\mathbf{r_-}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.652771em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathbf">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.25833100000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">−</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span></span></span></span> is the vector from the origin to the negative charge.</p>
+
+            </div>
+            <div class="block">
+                <p>Find <span len="12" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi mathvariant="bold">F</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\mathbf{F}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord mathbf">F</span></span></span></span> in cartesian coordinates with cartesian unit vectors in terms of the constants given at</p>
+
+            </div>
+            <div class="block">
+                <p>1. <span len="13" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo stretchy="false">)</mo>
+                                        <mo>=</mo>
+                                        <mo stretchy="false">(</mo>
+                                        <mn>2</mn>
+                                        <mo separator="true">,</mo>
+                                        <mn>0</mn>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x,y)=(2,0)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span></p>
+
+            </div>
+            <div class="block">
+                <p>2. <span len="13" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo stretchy="false">)</mo>
+                                        <mo>=</mo>
+                                        <mo stretchy="false">(</mo>
+                                        <mn>0</mn>
+                                        <mo separator="true">,</mo>
+                                        <mn>2</mn>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">(x,y)=(0,2)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mclose">)</span></span></span></span></p>
+
+            </div>
+            <div class="block">
+                <p>It may help to solve this by using the techniques from Physics 260 first. This is a straightforward problem that his written in the notation used by Griffiths.</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1 class=""><a name="field-lines-and-equipotentials" number="5" class="hanchor" href="#field-lines-and-equipotentials"><span class="hnumber">5 </span> <span class="htext">Field Lines and Equipotentials</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p class="">1. Draw field lines associated with the two starting points shown in the diagram for <span len="43" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi mathvariant="bold">A</mi>
+                                        <mo>=</mo>
+                                        <mo>−</mo>
+                                        <mi>sin</mi>
+                                        <mo>⁡</mo>
+                                        <mi>ϕ</mi>
+                                        <mover accent="true">
+                                            <mi mathvariant="bold">x</mi>
+                                            <mo>^</mo>
+                                        </mover>
+                                        <mo>+</mo>
+                                        <mi>cos</mi>
+                                        <mo>⁡</mo>
+                                        <mi>ϕ</mi>
+                                        <mover accent="true">
+                                            <mi mathvariant="bold">y</mi>
+                                            <mo>^</mo>
+                                        </mover>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\mathbf{A}=-\sin\phi\hat{\mathbf{x}} + \cos\phi\hat{\mathbf{y}}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord mathbf">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.90232em;vertical-align:-0.19444em;"></span><span class="mord">−</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">ϕ</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.90232em;vertical-align:-0.19444em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">ϕ</span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span></span>. Draw the field lines until they encounter the <span len="4" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mo>−</mo>
+                                        <mi>x</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">-x</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord mathnormal">x</span></span></span></span>–axis.</p>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            <div class="block">
+                <p class="">2. Sketch four equipotential lines.</p>
+
+            </div>
+
+            <div class="block inline-html">
+
+                <img src="figures/Field_Lines_3.svg" width="100%/" class="">
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>
