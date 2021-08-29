@@ -577,16 +577,14 @@ $F_\parallel = \mathbf{F}\cdot \mathbf{\hat{t}} = F(\cos\theta\xhat + \sin\theta
 
 Based on the grid spacing, $\theta=\tan^{-1}(3/4)$. From the equation for $\mathbf{F}$, $F=\sqrt{13}F_o$, $\beta=\tan^{-1}(3/2)$, and $\alpha=\beta-\theta$, so
 
-$F_\parallel = \sqrt{13}F_o\cos(\beta-\alpha)=\sqrt{13}F_o\cos[\tan^{-1}(3/2)-\theta=\tan^{-1}(3/4)]$
+$F_\parallel = \sqrt{13}F_o\cos(\beta-\alpha)=\sqrt{13}F_o\cos[\tan^{-1}(3/2)-\tan^{-1}(3/4)]$
 
 2\. Based on the grid spacing a vector tangent to the plane is
 $\mathbf{\hat{T}}= 4\xhat + 3\yhat$, so $\mathbf{\hat{t}}=(4\xhat + 3\yhat)/5$.
 
 $\displaystyle F_{\parallel} = \mathbf{F}\cdot \mathbf{\hat{t}} = (2F_o\xhat+3F_o\yhat)\boldsymbol{\cdot}(4\xhat + 3\yhat)/5=\frac{8}{5}F_o+\frac{9}{5}F_o=\frac{17}{5}F_o$
 
-It is left to the reader to confirm that the answer from 1. is the same as the answer to 2 (bonus -- do it without a calculator using trig identities).
-
-% Check: sqrt(13)*cos(atan(3/2)-atan(3/4))-17/5 = 0. Could use atan(x)-atan(y) =  atan [(x-y) / (1+xy)] and cos(atan(x)) = 1/sqrt(1+x^2) (https://www.mathway.com/popular-problems/Trigonometry/300305).
+It is left to the reader to confirm that the answer from 1. is the same as the answer to 2 (bonus -- do it without a calculator using trig identities: $\tan^{-1}x-\tan^{-1}y = \tan^{-1}[(x-y) / (1+xy)]$ and $\cos(\tan^{-1}x) = 1/\sqrt{1+x^2}$ ([derivation](https://www.mathway.com/popular-problems/Trigonometry/300305))).
 
 # Normal Unit Vectors
 
@@ -672,6 +670,10 @@ as expected. If we had chosen $\mathbf{u}=3\xhat$ and $\mathbf{v}=4\zhat$, the a
 Use the equation for $\mathbf{\hat{n}}$ to find a normal vector for the surface when $\phi=45^\circ$.
 
 <img src="figures/Normal-Vectors-2a.svg"/>
+
+**Comment:**  You should solve this using $\mathbf{\hat{n}} = {\mathbf{u}\times\mathbf{v}}/{|\mathbf{u}\times\mathbf{v}|}$, but in class, I noted a short--cut answer is "$\hat{\boldsymbol{\phi}}$ at $45^\circ$". To see this plot the plane as viewed from a point a large distance along the $z$--axis, as shown below. The blue line is along the cylindrical unit vector $\hat{\mathbf{s}}$ and by definition, $\hat{\boldsymbol{\phi}}$ is perpendicular to it. Using $\hat{\boldsymbol{\phi}} = -\sin\phi\xhat + \cos\phi\yhat$ with $45^\circ$ gives $\hat{\mathbf{n}}=(-\xhat+\yhat)/\sqrt{2}$. Note that the problem statement asks for "a normal vector", so $\hat{\mathbf{n}}=(\xhat-\yhat)/\sqrt{2}$ is also a valid answer.
+
+<img src="figures/Normal-Vectors-2b.svg"/>
 
 %**Answer**: Following the same procedure as in the previous problem of drawing vectors from the origin to a corner, we have $\mathbf{u}=\xhat + \yhat$ and $\mathbf{v}=\zhat$,
 

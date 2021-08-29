@@ -22,7 +22,7 @@ $$f = \frac{1}{|\mathbf{r}-\mathbf{r}'|^2}$$
 
     a. Show that
 
-    $$\frac{\hat{\textbf{\char"0509}}\phantom{^2}}{\char"0509^2}=\frac{\mathbf{r}-\mathbf{r}'}{|\mathbf{r}-\mathbf{r}'|^3}$$
+    $$\frac{\hat{\textbf{\char"0509}}\phantom{^2}}{\char"0509^2}=\frac{\phantom{|}\mathbf{r}-\mathbf{r}'\phantom{|^3}}{|\mathbf{r}-\mathbf{r}'|^3}$$
 
     b. Write $\hat{\textbf{\char"0509}}/{\char"0509^2}$ in cartesian coordinates with cartesian unit vectors.
 
