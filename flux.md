@@ -1,30 +1,74 @@
 # Introduction
 
-The videos [1](https://www.youtube.com/watch?v=9MN0eTC-vzQ) and [2](https://www.youtube.com/watch?v=yOv4xxopQFQ) describe most of what is covered in this section.
+Flux means "flow". In this tutorial, the rate of flow of particles (in units of particles per second) past a point, line, and area will first be considered. The rate of flow of particles past depends on the particle density and velocity.
 
-Flux means "flow". In this tutorial, the rate of flow of particles past a line will first be considered. The rate of flow of particles past a given line depends on the particle density and velocity.
+In this course, you will use the techniques covered here in two different ways:
 
-When computing electric current, you will need to compute the rate of flow of charged particles past either a line or an area. You will use the same techniques used here to compute the number of particles that pass a line or an area per second and then multiply the result by the charge per particle to arrive at a current.
+1. When computing electric current, you will need to compute the rate of flow of charged particles past a point, line, or area. You will use the same techniques used here and then multiply the result by the charge per particle to arrive at a current.
 
-In the development of E&M, Faraday and Maxwell supposed that electric and magnetic field vectors produced a flux - in place of the particle density times the velocity vector, they used the electric and magnetic field. 
+2. In the development of E&M, Faraday and Maxwell supposed that electric and magnetic field vectors produced a flux -- in place of the particle density times the velocity vector, they used the electric and magnetic field. In this case, although we speak of electric and magnetic flux, it is important to remember that these fluxes are abstractions; there is no flow of particles. Although electric and magnetic fluxes are not associated with the flow of particles, the techniques used for particle flux apply.
 
-In this tutorial, the steps required to compute particle flux past a line or an area are first considered. The techniques are then applied to electric and magnetic flux. Although electric and magnetic fluxes are not associated with the flow of particles, the techniques used for particle flux apply.
+> **Caution**: When dealing with electric and magnetic flux, don't think of the flow of particles -- just think about vectors.
 
-This section is primarily a mathematical review of flux and requires the use of normal vectors, which were reviewed previously. You will use electric flux in when Gauss's law is covered and magnetic flux when Faraday's law is covered. Particle flux will be used when computing current distributions for the Biot-Savart law.
+This section is primarily a mathematical review of flux and requires the use of normal vectors, which were reviewed previously. You will use electric flux in when Gauss's law (Chapter 3) is covered and magnetic flux when the Biot--Savart law is covered (Chapter 5) and also when Faraday's law is covered (Chapter 7). Particle flux will be used when computing current distributions for use in the Biot-Savart law (Chapter 5).
+
+Finally, electric and magnetic flux are a fundamental component of divergence and the divergence theorem, which is covered next.
 
 # Particle Flux
 
+In this section, the flux quantity is $\dot{N}$, which corresponds to a number of particles per second.
+
 ## Past a point
 
-The particles shown as dots travel at a velocity of 1 m/s to the right. In one second, how many particles pass the point shown?
+### Example
+
+The particles shown as dots travel at a velocity of 1 m/s to the right. What is $\dot{N}$, the number of particles pass the point shown in one second?
+
+**Answer**:
 
 In one second, all of the blue particles pass the point, so $\dot{N}=3/s$. More generally
 
 $$\dot{N}=\lambda v$$
 
-where $\lambda$ is the number of particles per unit length.
+where $\lambda$ is the number of particles per unit length and $v$ is the magnitude of the speed, both evaluated at the point.
+
+### Example
+
+The particles shown as dots flow outward from a source at the origin with a constant velocity. What is $\dot{N}$ out of the region between $x = \pm 1$? Assume that outward flow corresponds to positive $\dot{N}$.
+
+**Answer**:
+
+The flux past $x=-1$ is $\lambda v$ and past $x=+1$ is $\lambda v$. Both are postive because the flow is outward of the region. 
+
+To generalize this, we can state that the flux into or out of a linear region is
+
+$$\dot{N} = \lambda\mathbf{v}\bfcdot \hat{\mathbf{n}}$$
+
+where the vector $\hat{\mathbf{n}}$ is defined to point outward from the linear region on its endpoints. With this convention, if $\dot{N}$ is positive, there is a net flow out of the region; if $\dot{N}$ is negative, there is a net flow into the region. We will use this convention also with flow out of a closed area and a closed volume.
+
+Repeating the previous problem
+
+At $x=-1$, $\mathbf{v}=-v\xhat$ and $\hat{\mathbf{n}}=-\xhat$, so $\dot{N}_{x={-1}}=\lambda (-v\xhat)\bfcdot(-\hat{\mathbf{n}}\xhat)=\lambda v$
+
+At $x=+1$, $\mathbf{v}=+v\xhat$ and $\hat{\mathbf{n}}=+\xhat$, so $\dot{N}_{x={+1}}=\lambda (+v\xhat)\bfcdot(+\hat{\mathbf{n}}\xhat)=\lambda v$
+
+So the total flux out of the region between $x=\pm 1$ is
+
+$\dot{N} = \dot{N}\_{x={-1}} + \dot{N}\_{x={+1}} = 2\lambda v$
+
+### Problem
+
+Particles flow as shown in the following figure. When a particle encounters the origin, it is absorbed and does not continue to flow (another expression for this is "the origin is a sink").
+
+Use the equation $\dot{N} = \lambda\mathbf{v}\bfcdot \hat{\mathbf{n}}$ to find the the flux into or out of the region between $x=\pm 1$.
 
 ## Through a Line
+
+In this section, we consider computing the flux of particles through an open line (a line that does not form a closed loop) and then the flux of particles into or out of a region bounded by a closed loop.
+
+%The primary result is that if particles are emitted  from a point with constant velocity and uniformily in all directions, 
+
+### Through an Open Line
 
 Each of the $18$ particles shown as dots travels at a velocity of $v_x=$1 m/s to the right. All of the particles are in the $x$-$y$ plane. In one second, how many particles flow through the red line per second?
 
@@ -34,19 +78,19 @@ In one second, all of the blue dots pass through the red line, so $N = 3\cdot 3$
 
 In more general terms, we can write
 
-$$\dot{N} = \eta v_x l_y$$
+$$\dot{N} = \sigma v_x l_y$$
 
-where $\dot{N}$ is the number particles that pass through the line per second, $\eta$ is the number of particles per unit area and $l_y$ is the length of the red line that particles pass through.
+where $\dot{N}$ is the number particles that pass through the line per second, $\sigma$ is the number of particles per unit area and $l_y$ is the length of the red line that particles pass through.
 
-Next, suppose we wanted to compute the number of particles that pass through the green line per second. In this case, we note that that the number of particles that pass through the green line is the same as the number of particles that pass through the red line. Although the green line is longer, the length that matters in computing the number of particles is $l_y$, so the flux is still $\dot{N} = n v_x l_y$.
+Next, suppose we wanted to compute the number of particles that pass through the green line per second. In this case, we note that that the number of particles that pass through the green line is the same as the number of particles that pass through the red line. Although the green line is longer, the flux is still $\dot{N} = n v_x l_y$, which is justified by this observation.
 
-Note that in the previous paragraph, we found a new line that was perpendicular to the velocity to compute the flux through green line. Equivalently, we can multiply the component of velocity that is perpendicular to the green line by the length of the green line. 
+Note that in the previous paragraph, we found a new line that was perpendicular to the velocity to compute the flux through green line. Equivalently, we can multiply the component of velocity that is perpendicular to the green line by the length of the green line. That is, we break the velocity vector into two components -- a component parallel to the line and a component perpendicular to it.
 
 In the left-hand side of the diagram below, the velocity of one of the particles that is on the green line is broken down into components parallel and perpendicular to it. The right-hand side shows the a flow of particles parallel to the green line, which do not contribute to the flux, and perpendicular to the green line, which do contribute to the flux.
 
 <img src="figures/Flux-1D-1b.svg" width="100%"/>
 
-The component of velocity that is perpendicular to the green line is $v_{\perp}=v_x\cos\theta$ and so the flux through the green line is still $\dot{N} = \eta (v_x\cos\theta) l = \eta v_x (l\cos\theta) = n v_x l_y$, where $l_y=l\cos\theta$ was used in the last step.
+The component of velocity that is perpendicular to the green line is $v_{\perp}=v_x\cos\theta$ and so the flux through the green line is $\dot{N} = \sigma (v_x\cos\theta) l = \sigma v_x (l\cos\theta) = n v_x l_y$, where $l_y=l\cos\theta$ was used in the last step. This is the same answer as found previously.
 
 In summary, to compute the flux through the green line, we could equivalently
 
@@ -55,11 +99,11 @@ In summary, to compute the flux through the green line, we could equivalently
 
 Using the definition of the dot product, $\mathbf{A}\bfcdot \mathbf{B}=AB\cos\theta$, we can write
 
-$$\dot{N} = \eta \mathbf{v}\bfcdot\hat{\mathbf{n}} l$$
+$$\dot{N} = \sigma \mathbf{v}\bfcdot\hat{\mathbf{n}} l$$
 
 where a normal vector $\hat{\mathbf{n}}$ was used. This normal vector is defined to be perpendicular to the line through which the flux is computed. For a given line, two normal directions can be defined. As a result, if the computed $\dot{N}$ is positive, there is a net flow through the line in the direction of $\hat{\mathbf{n}}$; if the computed $\dot{N}$ is negative, there is a net flow through the line in the direction opposite of $\hat{\mathbf{n}}$.
 
-### Example
+#### Example
 
 For $\mathbf{v}=v_x\xhat$, use the equation $\dot{N} = n \mathbf{v}\cdot\hat{\mathbf{n}} l$ to find $\dot{N}$ through (1) the red and (2) the green line.
 
@@ -69,7 +113,7 @@ For $\mathbf{v}=v_x\xhat$, use the equation $\dot{N} = n \mathbf{v}\cdot\hat{\ma
 
 (1) For the red line, the line perpendicular to it that points to the right is $\hat{\mathbf{n}}=\xhat$, so
 
-$$\dot{N} = \eta \mathbf{v}\cdot\hat{\mathbf{n}}l = \eta (v_x\xhat)\cdot(\xhat) l_y = \eta v_x\xhat\cdot\xhat l_y$$
+$$\dot{N} = \sigma \mathbf{v}\cdot\hat{\mathbf{n}}l = \sigma (v_x\xhat)\cdot(\xhat) l_y = \sigma v_x\xhat\cdot\xhat l_y$$
 
 Because the answer is positive, there is a net flow across the line in the direction of the chosen direction of the normal vector (from left to right). If we would have chosen the normal vector to be $\hat{\mathbf{n}}=-\xhat$, $\dot{N}$ would be negative and we would conclude there is a net flow in the direction opposite of $\hat{\mathbf{n}}$ (corresponding to left to right).
 
@@ -79,17 +123,19 @@ Because the answer is positive, there is a net flow across the line in the direc
 
 From the diagram above, a unit vector normal to the green line is $\hat{\mathbf{n}}=\cos\theta\xhat-\sin\theta\yhat$, so
 
-$$\dot{N} = \eta \mathbf{v}\bfcdot\hat{\mathbf{n}} l = \eta (v_x\xhat)\bfcdot(\cos\theta\xhat-\sin\theta\yhat) l = \eta v_x \cos\theta l = \eta v_x l_y$$
+$\dot{N} = \sigma \mathbf{v}\bfcdot\hat{\mathbf{n}} l = \sigma (v_x\xhat)\bfcdot(\cos\theta\xhat-\sin\theta\yhat) l$
+
+$\phantom{\dot{N}}= \sigma v_x \cos\theta l = \sigma v_x l_y$
 
 where $l_y=l\cos\theta$ was used in the last step. This answer is the same as that in part (1), which is expected because the same number of particles flow past the red line per second as flow across the green line.
 
-### Problem
+#### Problem
 
-For $\mathbf{v}=v_y\yhat$, use the equation $\dot{N} = \eta \mathbf{v}\cdot\hat{\mathbf{n}} l$ to find $\dot{N}$ through (1) the red and (2) the green line. Use the same normal vector as in the previous example.
+For $\mathbf{v}=v_y\yhat$, use the equation $\dot{N} = \sigma \mathbf{v}\cdot\hat{\mathbf{n}} l$ to find $\dot{N}$ through (1) the red and (2) the green line. Use the same normal vector as in the previous example.
 
 <img src="figures/Flux-1D-2.svg" width="100%"/>
 
-### Example
+#### Example
 
 If $\mathbf{v}=v_x\xhat+v_y\yhat$, compute $\dot{N}$ through the green line.
 
@@ -97,46 +143,49 @@ If $\mathbf{v}=v_x\xhat+v_y\yhat$, compute $\dot{N}$ through the green line.
 
 **Answer**:
 
-To answer this, we can use (a) superposition or (b) $\dot{N} = \eta \mathbf{v}\cdot\hat{\mathbf{n}} l$. 
+To answer this, we can use (a) superposition or (b) $\dot{N} = \sigma \mathbf{v}\cdot\hat{\mathbf{n}} l$. 
 
 (a)
 
-In the previous problem, you computed $\dot{N}$ when $\mathbf{v}=v_y\yhat$ and should have found $\dot{N}=-\eta v_y l\sin\theta$. In the first example, $\dot{N}$ was computed for $\mathbf{v}=v_x\xhat$ and found $\dot{N}=-\eta v_x l\cos\theta$. In both cases, the same normal vector was used. 
+In the previous problem, you computed $\dot{N}$ when $\mathbf{v}=v_y\yhat$ and should have found $\dot{N}=-\sigma v_y l\sin\theta$. In the first example, $\dot{N}$ was computed for $\mathbf{v}=v_x\xhat$ and found $\dot{N}=\sigma v_x l\cos\theta$. In both cases, the same normal vector was used. 
 
 <img src="figures/Flux-1D-3.svg" width="100%"/>
 
 As a result,
 
-$$\dot{N} = \eta v_x l\cos\theta - \eta v_y l\sin\theta$$
+$$\dot{N} = \sigma v_x l\cos\theta - \sigma v_y l\sin\theta$$
 
 (b)
 
-$$\dot{N} = \eta \mathbf{v}\cdot\hat{\mathbf{n}} l =  \eta (v_x\xhat+v_y\yhat)\cdot(\cos\theta\xhat-\sin\theta\yhat) l= \eta v_x l\cos\theta - \eta v_y l\sin\theta$$
+$\dot{N} = \sigma \mathbf{v}\cdot\hat{\mathbf{n}} l =  \sigma (v_x\xhat+v_y\yhat)\cdot(\cos\theta\xhat-\sin\theta\yhat) l$
 
-which is the same as that found using superposition. Note that the sign of $\dot{N}$ can be positive or negative depending on the values of the constants $v_x$, $v_y$, and $\theta$. If $\dot{N}$ is negative, it means that the net flow of particles is in the direction oppostive to the normal vector drawn on the diagram above.
+$\phantom{\dot{N}}=\sigma v_x l\cos\theta - \sigma v_y l\sin\theta$
 
-----
+which is the same as that found in part (a) using superposition. Recall that the sign of $\dot{N}$ can be positive or negative depending on the values of the constants $v_x$, $v_y$, and $\theta$. If $\dot{N}$ is negative, it means that the net flow of particles is in the direction oppostive to the normal vector drawn on the diagram above.
 
-## Through a Line using Integration
+### Using Integration
 
-Suppose that $\eta$ and $\mathbf{v}$ are not constant over the red line of length $l$ as depicted in the following diagram.
+Suppose that $\sigma$ and $\mathbf{v}$ are not constant over the red line of length $l$ as depicted in the following diagram.
 
 <img src="figures/Flux-1D-9.svg" width="100%"/>
 
 
-In this case, we can first compute the number of particles that pass through a small length $dl$ on $l$ over which $\eta$ and $\mathbf{v}$ are constant. Replacing $N$ with $dN$ and $l$ with $dl$ gives
+In this case, we can first compute the number of particles that pass through an infinitesimal length $dl$ on $l$ over which $\sigma$ and $\mathbf{v}$ are constant. Replacing $N$ with $dN$ and $l$ with $dl$ gives the flux through $dl$:
 
-$$d\dot{N} = \eta(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
+$$d\dot{N} = \sigma(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
 
-Then, to find the total number that pass through $L$, sum over all differential lengths on the line
+To find the total number that pass through $L$, sum over all differential lengths on a line $\mathcal{L}$
 
-$$\dot{N} = \int_0^{L} \eta(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
+$$\dot{N} = \int_{\mathcal{L}} \sigma(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
 
-### Example
+#### Example
 
-If $\eta=\eta_o y/l_y$ and $\mathbf{v}=v_x\xhat$, find the flux that 
+If $\sigma=\sigma_o y/l_y$ and $\mathbf{v}=v_x\xhat$,
 
-1. Sketch particles with the given density and velocity variation and determine if the flux is expected to be smaller, equal, or larger than the flux if $\eta=\eta_o$
+1. sketch particles with the given density and velocity variation and determine if the flux is expected to be smaller, equal, or larger than the flux if $\sigma=\sigma_o$.
+
+Then find the flux that 
+
 2. passes through the red line and
 3. passes through the green line.
 
@@ -149,29 +198,32 @@ If $\eta=\eta_o y/l_y$ and $\mathbf{v}=v_x\xhat$, find the flux that
 
 <img src="figures/Flux-1D-9b.svg" width="100%"/>
 
-At the top, $y=l_y$, and the density is $\eta_o$. Because the density is lower on all other parts of the line, we expect the flux to be less than $\eta_ov_xl_y$.
+At the top, $y=l_y$, and the density is $\sigma_o$. Because the density is lower on all other parts of the line, we expect the flux to be less than $\sigma_ov_xl_y$.
 
 2\. The flux that passes the red line is
 
-$$\dot{N} = \int_0^{l_y} \eta_o \frac{y}{l_y} v_x dl=\frac{\eta_o}{2}v_xl_y$$
+$$\dot{N} = \int_0^{l_y} \sigma_o \frac{y}{l_y} v_x dl=\frac{\sigma_o}{2}v_xl_y$$
 
-This result is less than $\eta_o v_x l_y$, which was expected. The fact that the answer is 1/2 of this makes sense because the average density on the line is $\eta_o/2$.
+This result is less than $\sigma_o v_x l_y$, which was expected. The fact that the answer is 1/2 of this makes sense because the average density on the line is $\sigma_o/2$.
 
 3\. The flux is the same as 1.
 
-### Problem
+#### Problem
 
-If $\eta=\eta_o$ and $\mathbf{v}=(v_x y/L_y)\xhat$, find the flux that 
+If $\sigma=\sigma_o$ and $\mathbf{v}=(v_x y/l_y)\xhat$,
 
-1. Sketch particles with the given density variation and velocity, determine if the flux is expected to be smaller, equal, or larger than the flux if $\mathbf{v}=v_x\xhat$.
+1. sketch particles with the given density variation and velocity, determine if the flux is expected to be smaller, equal, or larger than the flux if $\mathbf{v}=v_x\xhat$.
+
+Then find the flux that 
+
 2. passes through the black line and
 3. passes through the green line.
 
 <img src="figures/Flux-1D-2.svg" width="100%"/>
 
-### Example
+#### Example
 
-Compute $\dot{N}$ through the half--circle shown as a solid line. Use $\eta=\eta_o$.
+Compute $\dot{N}$ through the half--circle shown as a solid line. Use $\sigma=\sigma_o$.
 
 <img src="figures/Flux-1D-6a.svg" width="100%"/>
 
@@ -179,63 +231,65 @@ Compute $\dot{N}$ through the half--circle shown as a solid line. Use $\eta=\eta
 
 The easy way to solve this problem is to note that the number of particles that pass through the solid line in a given second must also pass through the dotted line (of length $2R$) in a given second. As a result, the flux is
 
-$$\dot{N}=\eta_ov_x(2R)=2 \eta_o v_x R$$
+$$\dot{N}=\sigma_ov_x(2R)=2 \sigma_o v_x R$$
 
 The difficult way to solve this problem is to find the vector normal to the solid black line and then use
 
-$$\dot{N} = \int_0^{L} \eta(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
+$$\dot{N} = \int_0^{L} \sigma(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
 
-As covered in [Vectors](vectors.md#normal-unit-vectors) the outward normal to the surface of a circle is $\hat{\mathbf{s}}$ $\hat{\mathbf{n}}=\cos\phi\xhat+\sin\phi\yhat$, which is shown in black in the following diagram.
+As covered in [Vectors](vectors.md#normal-unit-vectors) the outward normal of a circle is $\hat{\mathbf{s}}$, so $\hat{\mathbf{n}}=\cos\phi\xhat+\sin\phi\yhat$, which is shown in black in the following diagram.
 
 <img src="figures/Flux-1D-6b.svg" width="100%"/>
 
 To be consistent with the previous calculation, we should multiply $\hat{\mathbf{n}}$ by $-1$ so that we are computing the flux through the line with positive flux corresponding to flow from left to right. The corresponding normal vector is shown in blue in the diagram above.
 
-Substition of $\hat{\mathbf{n}}=(-1)(\cos\theta\xhat+\sin\theta\yhat)$, $\mathbf{v}=v_x\xhat$, and $\eta = \eta_o$ gives 
+Substition of $\hat{\mathbf{n}}=(-1)(\cos\theta\xhat+\sin\theta\yhat)$, $\mathbf{v}=v_x\xhat$, and $\sigma = \sigma_o$ gives 
 
-$$\dot{N} = \int_0^{L} \eta_o v_x\xhat\cdot(-1)(\cos\theta\xhat+\sin\theta\yhat) dl=-\int_0^{L} \eta_o v_x\cos\theta dl$$
+$\dot{N} = \int_0^{L} \sigma_o v_x\xhat\cdot(-1)(\cos\theta\xhat+\sin\theta\yhat) dl$
+
+$\phantom{\dot{N}} = -\int_0^{L} \sigma_o v_x\cos\theta dl$$
 
 In this integral, $\theta$ depends on the position along the curved line. As a result, we need to re-write the integrand so that either $dl$ is written in terms of $\theta$ or $\theta$ is written in terms of $l$. It is easier to do the former using $dl=R d\theta$. Substitution gives
 
-$$\dot{N} = -\int_{\pi/2}^{3\pi/2} \eta_o v_x\cos\theta Rd\theta=-\eta_ov_xR\sin\theta\Big|^{3\pi/2}_{\pi/2}=-\eta_ov_xR(-1-1)=2 \eta_o v_x R$$
+$\dot{N} = -\int_{\pi/2}^{3\pi/2} \sigma_o v_x\cos\theta Rd\theta$
+
+$\phantom{\dot{N}} =-\sigma_ov_xR\sin\theta\Big|^{3\pi/2}_{\pi/2}=-\sigma_ov_xR(-1-1)=2 \sigma_o v_x R$
 
 which is the same result found using the easier method.
 
-### Problem
+#### Problem
 
-Particles with constant density $\eta_o$ flow with constant velocity $v_x$ as shown in the figure below.
+Particles with constant density $\sigma_o$ flow with constant velocity $v_x$ as shown in the figure below.
 
 <img src="figures/Flux-1D-8.svg" width="100%"/>
 
 Compute the flux through the circle using
 
-$$\dot{N} = \int_0^{L} \eta(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
+$$\dot{N} = \int_0^{L} \sigma(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
 
-Show your steps in detail and use $\eta=\eta_o$.
+Show your steps in dsigmail and use $\sigma=\sigma_o$.
 
-## Through a Closed Line
+### Through a Closed Line
 
-To indicate integration is taken over a closed line, we use $\oint$.
-
-### Example
+#### Example
 
 A source of particles is at the origin that sends particles out radially with a velocity of $v_r$. Assume that flow out of a circle corresponds to a positive flux.
 
 <img src="figures/Flux-1D-4.svg" width="100%"/>
 
-1. If the density of particles at the inner circle of radius $R$ is $\eta_i$, what is $\dot{N}$ through the inner circle?
-1. What is $\eta_o$, the density of particles through at the outer circle of radius $2R$?
+1. If the density of particles at the inner circle of radius $R$ is $\sigma_i$, what is $\dot{N}$ through the inner circle?
+1. What is $\sigma_o$, the density of particles through at the outer circle of radius $2R$?
 1. What is $\dot{N}$ through the outer circle of radius $2R$?
 
 **Answer**
 
-(1) $\dot{N}_i=\eta_i v_r 2\pi R$. We could have used $\dot{N}=\eta_i\mathbf{v}\bfcdot\hat{\mathbf{n}}l$; in this case $l=2\pi R$ and the velocity is in the same direction as the normal vector, so the dot product reduces to $v_r$.
+(1) $\dot{N}_i=\sigma_i v_r 2\pi R$. We could have used $\dot{N}=\sigma_i\mathbf{v}\bfcdot\hat{\mathbf{n}}l$; in this case $l=2\pi R$ and the velocity is in the same direction as the normal vector, so the dot product reduces to $v_r$.
 
-(2) In the following diagram it is shown that $\eta$ is inversely propotional to $r$. If the particles are traveling at a constant velocity outwards, the same number of particles will be on the line associated with the inner circle as the outer circle. The length of any circle is $2\pi r$, so $\eta = (\text{num particles on } l)/(l dr) = n_o/(2\pi r dr)$, where $dr$ is the thickness of the line.
+(2) In the following diagram it is shown that $\sigma$ is inversely propotional to $r$. If the particles are traveling at a constant velocity outwards, the same number of particles will be on the line associated with the inner circle as the outer circle. The length of any circle is $2\pi r$, so $\sigma = (\text{num particles on } l)/(l dr) = n_o/(2\pi r dr)$, where $dr$ is the thickness of the line.
 
-From this, we can conclude that $\eta$ at $2R$ is $1/2$ that at $R$. That is, $\eta_o=\eta_i/2$.
+From this, we can conclude that $\sigma$ at $2R$ is $1/2$ that at $R$. That is, $\sigma_o=\sigma_i/2$.
 
-(3) $\dot{N}_o=(\eta_o/2) v_r 2\pi (2R)=\eta_o v_r 2\pi R$, which is the same result as (1). This is expected - if the particles flow outwards at a constant velocity, each time a particle passes the outer circle, there is a particle behind it that passes the inner circle.
+(3) $\dot{N}_o=(\sigma_o/2) v_r 2\pi (2R)=\sigma_o v_r 2\pi R$, which is the same result as (1). This is expected - if the particles flow outwards at a constant velocity, each time a particle passes the outer circle, there is a particle behind it that passes the inner circle.
 
 ---
 
@@ -258,56 +312,56 @@ The above diagram shows particles flowing outwards at a constant velocity at a g
 
 A mathematical way of showing this is to note that the flux through the inner differential length, $ds_i$, shown in the left of the figure above is $2 \pi R_i d\theta$ so that the differential flux through $ds_i$ is
 
-$$dN_i=\eta_i v_r ds_i=\eta_i v_r 2 \pi R_i d\theta$$
+$$dN_i=\sigma_i v_r ds_i=\sigma_i v_r 2 \pi R_i d\theta$$
 
 and the flux through the outer differential length, $ds_o$, is $2 \pi R_o d\theta$ so the differential flux through $ds_o$ is
 
-$$dN_o=\eta_o v_r ds_o = \eta_o v_r 2 \pi R_o 
+$$dN_o=\sigma_o v_r ds_o = \sigma_o v_r 2 \pi R_o 
 d\theta$$
 
 To show that $dN_o=dN_i$, consider equating the last two equations. This gives the requirement that
 
-$$R_o\eta_o=\eta_iR_i$$
+$$R_o\sigma_o=\sigma_iR_i$$
 
 or
 
-$$\eta_o=\eta_i\frac{R_i}{R_o}$$
+$$\sigma_o=\sigma_i\frac{R_i}{R_o}$$
 
 This equation states that the density (number of particles per unit area) is inversely proportitional to distance. This is true based on the arguments given in the previous example.
 
 A mathematical way of showing this is to note that the flux through the inner differential length, $ds_i$, shown in the diagram above is $2 \pi R_i d\theta$ so that the differential flux through $ds_i$ is
 
-$$dN_i=\eta_i v_r ds_i = \eta_i v_r 2 \pi R_i d\theta$$
+$$dN_i=\sigma_i v_r ds_i = \sigma_i v_r 2 \pi R_i d\theta$$
 
 and the flux through the outer differential length, $ds_o=2 \pi R_o d\theta$,w is
 
-$$dN_o=\eta_o v_r ds_o = \eta_o v_r 2 \pi R_o d\theta$$
+$$dN_o=\sigma_o v_r ds_o = \sigma_o v_r 2 \pi R_o d\theta$$
 
 Previously we argued that if the particles flow outwards with a constant velocity, then the number of particles on a circle of radius $R_i$ will be the same as that on a circle of radius $R_o$ so that
 
-$$\eta_o R_o=\eta_i R_i \qquad \text{or} \qquad \eta_o = \eta_i\frac{R_i}{R_o}$$
+$$\sigma_o R_o=\sigma_i R_i \qquad \text{or} \qquad \sigma_o = \sigma_i\frac{R_i}{R_o}$$
 
 Subsituting this into the equation for $dN_o$ gives $dN_o=dN_i$:
 
-$$dN_o=\eta_o v_r ds_o = \eta_i\frac{R_i}{R_o} v_r 2 \pi R_o d\theta = \eta_i v_r 2 \pi R_i d\theta$$
+$$dN_o=\sigma_o v_r ds_o = \sigma_i\frac{R_i}{R_o} v_r 2 \pi R_o d\theta = \sigma_i v_r 2 \pi R_i d\theta$$
 
 To finish this problem, we need to show that the flux through the outer black arc segment in the right-hand side of the figure below (a repeat of that previously shown) is the same as that through the outer red arc. 
 
 <img src="figures/Flux-1D-5b.svg" width="100%"/>
 
-Although visually it may be obvious that this must be true using Approach I, in the future, we will consider the flux of a general vector. In this case, we replace $\eta \mathbf{v}$ with a vector $\mathbf{E}$ that is not related to the flow of particles and so Approach I is not valid.
+Although visually it may be obvious that this must be true using Approach I, in the future, we will consider the flux of a general vector. In this case, we replace $\sigma \mathbf{v}$ with a vector $\mathbf{E}$ that is not related to the flow of particles and so Approach I is not valid.
 
 The red line is longer than the black line and $v_r$ is perpendicular to the black arc segment but not the red arc segment. The length of the red arc segment is $2\pi d\theta/\cos\phi$ and the component of $v_r$ perpendicular to it is $v_r\cos\phi$. The flux through the red arc segment involves the product of its length and $v_r\cos\phi$ and as a result, the $\cos\phi$ terms cancel and the flux through the red line is the same as that through the black line, as expected from Approach I.
 
 The aguments used in both Approach I and Approach II can be used to show that the flux through a closed line of arbitrary shape as shown in the figure below is also equal to the flux through a circle centered on the source.
 
-### Problem
+#### Problem
 
 Use a diagram to show that the the flux through a closed line of arbitrary shape is also equal to the flux through a circle centered on the source.
 
 <img src="figures/Flux-1D-7a.svg" width="100%"/>
 
-### Problem
+#### Problem
 
 Explain why the flux through a circle that is outside a source that emits particles with a constant velocity is zero.
 
@@ -315,7 +369,13 @@ Explain why the flux through a circle that is outside a source that emits partic
 
 Does this result hold for a source that is outside of a close loop of arbitrary shape?
 
+### Summary of Results
+
+To indicate integration is taken over a closed line, we use and integral with a closed circle, $\oint_\mathcal{L}$.
+
 ## Through an Area
+
+### Through an Open Area
 
 The generalization from flux through a line to flux through an area is straightforward. Suppose the following is the cross-section of a three-dimensional diagram.
 
@@ -325,19 +385,22 @@ If the dots are uniformly spaced into and out of the page, and the red line is t
 
 In more general terms, we can write
 
-$$\dot{N} = \eta v_x A$$
+$$\dot{N} = \rho v_x A$$
 
-where $N$ is the number particles that pass through the rectangle per second, $\eta$ is now the number of particles per volume (instead of per area) and $A$ is the cross-sectional area that particles pass through (instead of the length of a line that the particles pass through). Using this equation for the diagram given above assuming the red line is the side of a square with area of $1\text{m}^2$,
+where $N$ is the number particles that pass through the rectangle per second, $\rho$ the number of particles per volume (instead of per area) and $A$ is the cross-sectional area that particles pass through (instead of the length of a line that the particles pass through). Using this equation for the diagram given above assuming the red line is the side of a square with area of $1\text{m}^2$,
 
-$$\dot{N} = \eta v_x A = (9/\text{m}^3) (1 \text{ m}/\text{s}) (1\text{ m}^2) = 9/s$$
+$$\dot{N} = \rho v_x A = (9/\text{m}^3) (1 \text{ m}/\text{s}) (1\text{ m}^2) = 9/s$$
  
 The most general equation for flux through an area is
 
-$$\dot{N} = \int \eta \mathbf{v}\cdot \hat{\mathbf{n}}d{A}$$
+$$\dot{N} = \int \rho \mathbf{v}\cdot \hat{\mathbf{n}}d{A}$$
 
 where here the normal vector is a vector that is perpendicular to the surface and the integral is taken over the area of interest. Note that often the definition $d\mathbf{A}=\hat{\mathbf{n}}d{A}$ is used to write this as 
 
-$$N = \int \eta \mathbf{v}\cdot d{\mathbf{A}}$$ 
+$$N = \int \rho \mathbf{v}\cdot d{\mathbf{A}}$$ 
+
+### Through a Closed Area
+
 
 # Electric Current
 
@@ -408,11 +471,23 @@ which follows from the previous equation by multiplying by a unit vector in the 
 
 # Electric Flux
 
-## Through a Line
+The videos [1](https://www.youtube.com/watch?v=9MN0eTC-vzQ) and [2](https://www.youtube.com/watch?v=yOv4xxopQFQ) describe most of what is covered in this section.
 
-In general, the electric flux through a line is not a quantity of interest.
+In the previous section, the flux due to the flow of particles was considered. In this section, we are going to stop thinking about the flow of particles and speak only of the "flux due to a vector". In place of $\rho \mathbf{v}$, we are going to use a vector $\mathbf{E}$.
 
-## Through a Area
+In general, the electric flux past a point or line is not a quantity of interest. In this section, only the flux through an area is covered.
+
+For the flow of particles through an area, the numper of particles that pass it per unit time was found to be
+
+$$\dot{N}=\int_{\mathcal{A}}\rho \mathbf{v}\bfcdot \hat{\mathbf{n}}dA$$
+
+where $\rho$ is a particle density (particles per unit volume).
+
+For the flow of charges through an area, the number of charges that pass it per unit time was found to be (by )
+
+$$I=\int_{\mathcal{A}}\rho \mathbf{v}\bfcdot \hat{\mathbf{n}}dA$$
+
+where $\rho$ is a charge density (charges per unit volume).
 
 Electric flux is defined by (by convention, a mathematical definition is indicated by $\equiv$)
 
@@ -421,25 +496,17 @@ $$
 $$
 \label{eqn:flux}
 
-where $\mathbf{E}$ is the electric field at $dA$, a small patch of area on a surface; the vector $d\mathbf{A}$ is $dA$ multiplied by a unit vector that is normal (perpendicular) to $dA$. Notice that this integral does not have the circle. This means that one can compute the electric flux through any surface. 
+where $\mathbf{E}$ is the electric field at $dA$, a small patch of area on a surface; the vector $d\mathbf{A}$ is $dA$ multiplied by a unit vector that is normal (perpendicular) to $dA$. Notice that this integral does not have the circle. This means that one can compute the electric flux through any surface. (Later we will see that if the surface is closed, then from Gauss's law it follows that the integral equals $Q_{encl}/\epsilon_o$).
 
-%If the surface is closed, then from Gauss's law it follows that the integral equals $Q_{encl}/\epsilon_o$.
+## Example -- Flux Through an Area
 
-As was done in Section 22.2 of the textbook, we will consider problems where integration is not required to compute the flux. In this case
+In part (a) of following figure, a 3-D view of two planes are shown. The planes are in a region of space where the electric field is in the $+y$-direction. Part (b) shows the planes when viewed from a position on the $+x$-axis; from this view, electric field lines are horizontal.
 
-$$
-\Phi_E=\mathbf{E}\cdot \mathbf{A}
-$$
-
-* $E$ is constant on a flat surface of area $A$, and
-* the angle of \mathbf{E} with respect to $A$ is constant.
-
-
-In part (a) of following diagram, a 3-D view of two planes are shown. The planes are in a region of space where the electric field is in the $+y$-direction. Part (b) shows the planes when viewed from a position on the $+x$-axis; from this view, electric field lines are horizontal. Suppose that the electric field lines  represent the flow direction of water that is moving with a velocity $v$. 
+Compute $\Phi_E$ through the two areas.
 
 \input{Gauss/figures/Flux_Basic}
 
-If we want to compute how much water flows through the surface area of the titled plane, we can note that it will be the same as the amount of water that flows through the plane with dashed boundaries. Every particle of fluid that flows through the blue surface will flow through the gray surface. If the water is moving at a velocity of $v$, then the quantity of water flowing through the dashed plane will be proportional to $v (A_{dashed})=v(L\cos\phi w)=vA\cos\phi$, where $A=Lw$ is the area of the titled gray plane. Now, even though nothing flows along electric field lines, it turns out that an important quantity is this equation with $E$ replaced $v$, defined to be the electric flux through the surface $A$:
+% If we want to compute how much water flows through the surface area of the titled plane, we can note that it will be the same as the amount of water that flows through the plane with dashed boundaries. Every particle of fluid that flows through the blue surface will flow through the gray surface. If the water is moving at a velocity of $v$, then the quantity of water flowing through the dashed plane will be proportional to $v (A_{dashed})=v(L\cos\phi w)=vA\cos\phi$, where $A=Lw$ is the area of the titled gray plane. Now, even though nothing flows along electric field lines, it turns out that an important quantity is this equation with $E$ replaced $v$, defined to be the electric flux through the surface $A$:
 
 $$
 \Phi_E=E(L\cos\phi)w=EA\cos\phi
@@ -464,7 +531,7 @@ To further generalize (complicate?) matters, if we define a unit vector that is 
 
 $$\mathbf{E}\cdot \mathbf{A} = \mathbf{E}\cdot A\hat{\mathbf{n}}=\mathbf{E}\cdot \hat{\mathbf{n}}A\,.$$
 
-The choice of $n$ as the variable name is because $\hat{\mathbf{n}}$ is normal (perpendicular) to A. In Example 22.2 of the textbook, the equation $\mathbf{E}\cdot \hat{\mathbf{n}}A$ is used and we provide more details about this example later in this section. For an alternative derivation of the last three equations, see Section 22.2 of the textbook. There is quite a bit of notation to digest in Section 22.2 and above. If you get lost, recall the last two diagrams or Figure 22.6 of the textbook. To help remember all of the relationships, attempt to recreate the last two diagrams from memory.
+The choice of $n$ as the variable name is because $\hat{\mathbf{n}}$ is normal (perpendicular) to A. In Example 22.2 of the textbook, the equation $\mathbf{E}\cdot \hat{\mathbf{n}}A$ is used and we provide more dsigmails about this example later in this section. For an alternative derivation of the last three equations, see Section 22.2 of the textbook. There is quite a bit of notation to digest in Section 22.2 and above. If you get lost, recall the last two diagrams or Figure 22.6 of the textbook. To help remember all of the relationships, attempt to recreate the last two diagrams from memory.
 
 In the above, an area vector was drawn in the direction of a vector perpendicular to a surface. You may have noticed that one can always draw two vectors perpendicular to a surface (the vectors point in opposite directions). Which to choose? The convention used for electric flux calculations is that if the surface is closed, the area vector points outwards. If the surface is not closed, one must state the direction used for the area vector or you will be asked for the magnitude of the electric flux, so the choice of direction does not matter.
 
@@ -623,3 +690,9 @@ $\Phi_E^6=-E_oA\sin 60^\circ = -E_oa^2\sin 60^\circ$
 
 \else
 \fi
+
+## Example -- Flux Through a Half Sphere
+
+Compute $\Phi_E$ through the half cylinder.
+
+## Problem -- Flux Through a Half Cylinder

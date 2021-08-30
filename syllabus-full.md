@@ -66,21 +66,21 @@
 
 * Answer questions on HW #1 topics
 * Homework #1 due at 3:00 pm
-* Assign Homework #2 covering Flux, Divergence, Coulomb's Law, and Electric Field.
+* Assign Homework #2 covering Flux, Divergence, Coulomb's Law, Electric Field, and Symmetry and Superposition.
 
 ## Tuesday, September 7th
 
 ## Thursday, September 9th
 
 * HW #2 due.
-* Assign HW #3 covering Symmetry and Superposition, Discrete Charge Distributions, Charge Densities, the Binomial Expansion, and Limits.
+* Assign HW #3 covering Discrete Charge Distributions, Charge Densities, the Binomial Expansion, Limits, and Continuous Charge Distributions.
 
 ## Tuesday, September 14th
 
 ## Thursday, September 16th
 
 * HW #3 due.
-* Assign HW #4 covering Continuous Charge Distributions, Electrostatic Potential, and Electrostatic Work and Energy
+* Assign HW #4 covering Gradients, Equipotentials, Electrostatic Potential, and Electrostatic Work and Energy
 
 ## Tuesday, September 21st
 
@@ -94,7 +94,7 @@
 ## Thursday, September 30th
 
 * HW #5 due.
-* Assign HW #6 covering Laplace's Equation in 1 and 2-D.
+* Assign HW #6 covering Laplace's Equation in 1-- and 2--D.
 
 ## Tuesday, October 5th
 
