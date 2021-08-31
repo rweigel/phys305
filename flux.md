@@ -7,7 +7,7 @@ Next, the flux, $\Phi_E$, associated with an electric field vector, $\mathbf{E}$
 In this E&M, you will use the techniques covered here in two different ways:
 
 1. To compute currents associated with the flow of charged particles.
-2. To compute the flux associated with either an electric field vector $\mathbf{E}$ or a magnetic field vector $\mathbf{B}$. In the development of E&M, Faraday and Maxwell supposed that $\mathbf{E}$ and $\mathbf{B}$ vectors produced a flux -- in the case of $\mathbf{E}$, they spoke of "electricity flowing along a field line". It was only later realized that there is no flow of "electricity" along a field line. An electric field only tells you about the force a charge would feel if placed at a point in space. An electric field line tells you about the direction of force on a charge when placed somewhere on the field line. Although $\mathbf{E}$ and $\mathbf{B}$ fluxes are not associated with the flow of particles, the techniques used for for calculating them is similar to that for particle fluxes.
+2. To compute the flux associated with either an electric field vector $\mathbf{E}$ or a magnetic field vector $\mathbf{B}$. In the development of E&M, Faraday and Maxwell supposed that $\mathbf{E}$ and $\mathbf{B}$ vectors produced a flux -- in the case of $\mathbf{E}$, they spoke of "electricity flowing along a field line". It was only later realized that there is no flow of "electricity" along a field line. An electric field only tells you about the force a charge would feel if placed at a point in space. An electric field line tells you about the direction of force on a charge when placed somewhere on the field line. Although $\mathbf{E}$ and $\mathbf{B}$ fluxes are not associated with the flow of anything, the techniques used for for calculating them is similar to that for particle fluxes.
 
 %    > **Caution**: When dealing with electric and magnetic flux, don't think of the flow of particles -- just think about vectors.
 
@@ -28,7 +28,6 @@ The particles shown as dots travel at a velocity of 1 m/s to the right. What is 
 <img src="figures/Flux-0D-1.svg"/>
 
 **Answer**:
-
 In one second, all of the blue particles pass the point, so $\dot{N}=3/s$. More generally
 
 $$\dot{N}=\lambda v$$
@@ -308,12 +307,13 @@ A source of particles is at the origin that sends particles out radially and uni
 
 (3) $\dot{N}_o=\sigma_o v_r 2\pi (2R)=(\sigma_i/2) v_r 2\pi 2R= \boxed{\sigma_i v_r 2\pi R}$, which is the same result as (1). This is expected - if the particles flow outwards at a constant velocity, each time a particle passes the outer circle, there is a particle behind it that passes the inner circle.
 
----
+----
 
-**Summary of Result**
+**Summary of Results**
 
-1. the net flux through a closed line is not zero when there is a source emitting particles inside of it, and
-2. the net flux through a circle of any radius centered on the source is the same.
+1. the net flux through a closed line is not zero when there is a source emitting particles inside of it,
+2. the net flux through a circle of any radius centered on the source is the same, and
+3. then density $\sigma$ decreases in proportional to distance from the source.
 
 In fact, the net flux through a circle of any radius is the same even if the source is not at the center of the circle. This can be demonstrated with a diagram using two approaches.
 
@@ -323,18 +323,21 @@ In fact, the net flux through a circle of any radius is the same even if the sou
 
 The above diagram shows particles flowing outwards at a constant velocity at a given point in time. The number of particles that pass the red line on the inner circle per second must equal the number per second that pass through the red line on the outer circle if the spacing between the blue dots is to remain constant. Given that this must be true if the particles flow at a constant velocity, we conclude that the flux through the inner red line must be the same as that through the outer red line. To complete the justification, note that this argument does not depend on the length of the inner red line - if it is a full circle, the same arguments apply and we conclude the flux through the inner circle must equal that through the outer circle.
 
-<details><summary>**Approach II**</summary>
+----
+
+----
+
+**Approach II** involves a detailed mathematical approached that may be skipped.
 
 <img src="figures/Flux-1D-5b.svg" width="100%"/>
 
-A mathematical way of showing this is to note that the flux through the inner differential length, $ds_i$, shown in the left of the figure above is $2 \pi R_i d\theta$ so that the differential flux through $ds_i$ is
+A mathematical way of showing this is to note that the inner differential length, $ds_i$, shown in the left of the figure above is $2 \pi R_i d\theta$ so that the differential flux through $ds_i$ is
 
 $$dN_i=\sigma_i v_r ds_i=\sigma_i v_r 2 \pi R_i d\theta$$
 
-and the flux through the outer differential length, $ds_o$, is $2 \pi R_o d\theta$ so the differential flux through $ds_o$ is
+and the outer differential length, $ds_o$, is $2 \pi R_o d\theta$ so the differential flux through $ds_o$ is
 
-$$dN_o=\sigma_o v_r ds_o = \sigma_o v_r 2 \pi R_o 
-d\theta$$
+$$dN_o=\sigma_o v_r ds_o = \sigma_o v_r 2 \pi R_o d\theta$$
 
 To show that $dN_o=dN_i$, consider equating the last two equations. This gives the requirement that
 
@@ -344,7 +347,7 @@ or
 
 $$\sigma_o=\sigma_i\frac{R_i}{R_o}$$
 
-This equation states that the density (number of particles per unit area) is inversely proportitional to distance. This is true based on the arguments given in the previous example.
+This equation states that the density (number of particles per unit area) is inversely proportitional to distance. This was shown to be true in the previous example.
 
 A mathematical way of showing this is to note that the flux through the inner differential length, $ds_i$, shown in the diagram above is $2 \pi R_i d\theta$ so that the differential flux through $ds_i$ is
 
@@ -371,7 +374,10 @@ Although visually it may be obvious that this must be true using Approach I, in 
 The red line is longer than the black line and $v_r$ is perpendicular to the black arc segment but not the red arc segment. The length of the red arc segment is $2\pi d\theta/\cos\phi$ and the component of $v_r$ perpendicular to it is $v_r\cos\phi$. The flux through the red arc segment involves the product of its length and $v_r\cos\phi$ and as a result, the $\cos\phi$ terms cancel and the flux through the red line is the same as that through the black line, as expected from Approach I.
 
 The aguments used in both Approach I and Approach II can be used to show that the flux through a closed line of arbitrary shape as shown in the figure below is also equal to the flux through a circle centered on the source.
-</details>
+
+----
+
+----
 
 #### Problem
 
@@ -442,6 +448,8 @@ $$I=\int_{\mathcal{A}}\rho \mathbf{v}\bfcdot \hat{\mathbf{n}}dA$$
 
 ## Surface Currents
 
+**This section on surface currents can be skipped. We will revisit it in Chapter 5.**
+
 When working with current flowing on a surface, we will need to use the current densities $\mathbf{K}$ and $\mathbf{J}$, respectively.
 
 Surface currents are described and used in Chapter 5.1 of Griffiths.
@@ -489,32 +497,33 @@ which follows from the previous equation by multiplying by a unit vector in the 
 
 # Electric Flux
 
-The videos [1](https://www.youtube.com/watch?v=9MN0eTC-vzQ) and [2](https://www.youtube.com/watch?v=yOv4xxopQFQ) describe most of what is covered in this section.
+The videos [1](https://www.youtube.com/watch?v=9MN0eTC-vzQ) and [2](https://www.youtube.com/watch?v=yOv4xxopQFQ) describe most of what is covered in this section. See also your textbook for Physics 260. This topic is briefly covered in the surface integral section in 1.3.1(b) of Griffiths.
 
-In the previous section, the flux due to the flow of particles was considered. In this section, we are going to stop thinking about the flow of particles and speak only of the "flux due to a vector". In place of $\rho \mathbf{v}$, we are going to use a vector $\mathbf{E}$.
+In the previous sections, the flux due to the flow of particles was considered. In this section, we are going to stop thinking about the flow of particles and speak only of the "flux due to a vector". In place of $\rho \mathbf{v}$, we are going to use a vector $\mathbf{E}$.
 
 In general, the electric flux past a point or line is not a quantity of interest. In this section, only the flux through an area is covered.
 
-For the flow of particles through an area, the numper of particles that pass it per unit time was found to be
+For the flow of particles through an area, recall that the number of particles that pass it per unit time was found to be
 
 $$\dot{N}=\int_{\mathcal{A}}\rho \mathbf{v}\bfcdot \hat{\mathbf{n}}dA$$
 
 where $\rho$ is a particle density (particles per unit volume).
 
-For the flow of charges through an area, the number of charges that pass it per unit time was found to be (by )
-
-$$I=\int_{\mathcal{A}}\rho \mathbf{v}\bfcdot \hat{\mathbf{n}}dA$$
-
-where $\rho$ is a charge density (charges per unit volume).
-
 Electric flux is defined by (by convention, a mathematical definition is indicated by $\equiv$)
 
 $$
-\Phi_E \equiv \int\mathbf{E}\cdot d\mathbf{A}
+\Phi_E \equiv \int_{\mathcal{A}} \mathbf{E}\cdot d\mathbf{A}
 $$
-\label{eqn:flux}
 
-where $\mathbf{E}$ is the electric field at $dA$, a small patch of area on a surface; the vector $d\mathbf{A}$ is $dA$ multiplied by a unit vector that is normal (perpendicular) to $dA$. Notice that this integral does not have the circle. This means that one can compute the electric flux through any surface. (Later we will see that if the surface is closed, then from Gauss's law it follows that the integral equals $Q_{encl}/\epsilon_o$).
+where $\mathbf{E}$ is the electric field at $dA$, a small patch of area on a surface ${\mathcal{A}}$; the vector $d\mathbf{A}$ is $dA$ multiplied by a unit vector that is normal (perpendicular) to $dA$. Note that the subscript ${\mathcal{A}}$ is often omitted; it is typically used when we want to refer to an area in a diagram or in the text describing an equation.
+
+The integral equation must be used if the integrand $\mathbf{E}\cdot d\mathbf{A}$ changes over the surface $\mathbf{A}$. The integrand can be rewritten using
+
+$ \mathbf{E}\cdot d\mathbf{A}=\mathbf{E}\cdot\hat{\mathbf{n}}dA=|\mathbf{E}||\hat{\mathbf{n}}|\cos\theta_{E\theta}dA=|\mathbf{E}|\cos\theta_{E\theta}dA$
+
+where $\theta_{E\theta}$ is the angle between the normal vector and $\mathbf{E}$. From this, we conclude that if the either $|\mathbf{E}|$ changes on the surface or if the angle between $\mathbf{E}$ and the normal vector at any point on the surface changess, integration is required.
+
+Also note that this integral does not have the circle. This means that one can compute the electric flux through any surface. (Later we will see that if the surface is closed, then from Gauss's law it follows that the integral equals $Q_{encl}/\epsilon_o$). When the surface is closed, there is no ambiguity in the direction of the normal. Although there are always to normal vectors for a surface at any point on it, by convention for a closed surface, we always use the one that points outwards from the volume enclosed by the surface.
 
 ## Example -- Flux Through an Area
 
@@ -522,26 +531,23 @@ In part (a) of following figure, a 3-D view of two planes are shown. The planes 
 
 Compute $\Phi_E$ through the two areas.
 
-\input{Gauss/figures/Flux_Basic}
+<img src="figures/Flux-2D-E-Field-1a.svg"/>
 
 % If we want to compute how much water flows through the surface area of the titled plane, we can note that it will be the same as the amount of water that flows through the plane with dashed boundaries. Every particle of fluid that flows through the blue surface will flow through the gray surface. If the water is moving at a velocity of $v$, then the quantity of water flowing through the dashed plane will be proportional to $v (A_{dashed})=v(L\cos\phi w)=vA\cos\phi$, where $A=Lw$ is the area of the titled gray plane. Now, even though nothing flows along electric field lines, it turns out that an important quantity is this equation with $E$ replaced $v$, defined to be the electric flux through the surface $A$:
 
-$$
-\Phi_E=E(L\cos\phi)w=EA\cos\phi
-$$
-\label{eqn:simpleflux}
+$$\Phi_E=E(L\cos\phi)w=EA\cos\phi$$
 
 One can always use a diagram similar to the above to find an equation for the electric flux. In general, it is not convenient or easy to draw a diagram for an arbitrarily oriented surface. So we are interested in a more general equation. It turns out that if you define an area vector with a direction that is perpendicular to the surface and use a dot product, you will get the same result: $EA\cos\phi$.
 
 Recall that the dot product of two vectors is the product of their magnitude times $\cos\phi$, where $\phi$ is the angle between them (See Section 1.10 of the textbook). In part (a) the following diagram, the tilt angle $\phi$ between the blue and gray surfaces in the previous diagram is equal to the angle between $\mathbf{E}$ and the newly defined area vector $\mathbf{A}$ (shown in green).
 
-\input{Gauss/figures/Flux_Equation_Forms}
+<img src="figures/Flux-2D-E-Field-1b.svg"/>
 
 From the definition of the dot product and this newly defined area vector,
 
-$$\mathbf{E}\cdot \mathbf{A} = EA\cos\phi\,,$$
+$$\mathbf{E}\cdot \mathbf{A} = EA\cos\phi$$
 
-which is the same result as Equation~\ref{eqn:simpleflux}. In part (b), the $\mathbf{E}$ vector is projected onto a line parallel to the area vector and this component is defined to be $E_{\perp}$. This gives yet another way of expressing the dot product:
+which is the same result as before. In part (b) of the figure above, the $\mathbf{E}$ vector is projected onto a line parallel to the area vector and this component is defined to be $E_{\perp}$. This gives yet another way of expressing the dot product:
 
 $$\mathbf{E}\cdot \mathbf{A} = E_{\perp}A$$
 
@@ -549,35 +555,32 @@ To further generalize (complicate?) matters, if we define a unit vector that is 
 
 $$\mathbf{E}\cdot \mathbf{A} = \mathbf{E}\cdot A\hat{\mathbf{n}}=\mathbf{E}\cdot \hat{\mathbf{n}}A\,.$$
 
-The choice of $n$ as the variable name is because $\hat{\mathbf{n}}$ is normal (perpendicular) to A. In Example 22.2 of the textbook, the equation $\mathbf{E}\cdot \hat{\mathbf{n}}A$ is used and we provide more dsigmails about this example later in this section. For an alternative derivation of the last three equations, see Section 22.2 of the textbook. There is quite a bit of notation to digest in Section 22.2 and above. If you get lost, recall the last two diagrams or Figure 22.6 of the textbook. To help remember all of the relationships, attempt to recreate the last two diagrams from memory.
+The choice of $n$ as the variable name is because $\hat{\mathbf{n}}$ is normal (perpendicular) to A.
 
 In the above, an area vector was drawn in the direction of a vector perpendicular to a surface. You may have noticed that one can always draw two vectors perpendicular to a surface (the vectors point in opposite directions). Which to choose? The convention used for electric flux calculations is that if the surface is closed, the area vector points outwards. If the surface is not closed, one must state the direction used for the area vector or you will be asked for the magnitude of the electric flux, so the choice of direction does not matter.
 
-\begin{comment}
-\begin{tcolorbox}[enhanced,breakable,parbox=false,colframe=black!50!black,colback=white,height fill,title=Flux through a tilted plane]
+If **either** the electric field magnitude or its direction changes on a surface $\mathcal{A}$, then we must use
 
-\input{Gauss/figures/Flux_Calculation_Problem}
+$$
+\Phi_E = \int_{\mathcal{A}} \mathbf{E}\cdot d\mathbf{A}
+$$
+
+
+## Problem -- Flux through a Tilted Plane
+
+<img src="figures/Flux-2D-E-Field-2.svg"/>
 
 What is the magnitude of electric flux through the plane when
 
-1. The electric field is in the $+x$-direction.
+1. The electric field has a magnitude of $E_o$ and is in the $+x$-direction.
 
-2. The electric field is in the $+y$-direction.
+2. The electric field has a magnitude of $E_o$ and is in the $+y$-direction.
 
 For both parts, check that your answer makes sense by asking what the expected answer is when $\phi=0^\circ$ and/or $\phi=90^\circ$.
 
-3. When the electric field is in the $+x$-direction, what is $E_\perp?$
+## Example - Flux through faces of a cube I
 
-4. When the electric field is in the $+y$-direction, what is $E_\perp?$
-
-\end{tcolorbox}
-
-\clearpage
-\end{comment}
-
-## Example - Flux through faces of a cube
-
-\input{Gauss/figures/Flux_Through_Cube_1}
+<img src="figures/Flux-2D-E-Field-3.svg"/>
 
 Find the flux through the six labeled faces of the cube with side length $a$ when the electric field is everywhere in the $+z$ direction.
 
@@ -585,7 +588,7 @@ Find the flux through the six labeled faces of the cube with side length $a$ whe
 
 This example is similar to Example 22.2a of the textbook. We'll solve part 1. using two methods. The first is a more visual method. The second is more mathematical. Although the mathematical complexity of the second method is not really needed for this problem, it allows one to solve the next problem without an additional diagram.
 
-Method I
+**Method I**
 
 The electric field is parallel to surfaces 1, 2, 5, and 6. Thinking in terms of the analogy of the electric field representing lines of flow, the flux is zero through these faces.
 
@@ -601,7 +604,7 @@ $\Phi_E^{4}=-E_oA=-E_oa^2$
 
 The total flux through the cube, $\Phi_E^1+...+\Phi_E^6$, is zero. Thinking again in terms of the electric field representing flow lines, every electric field line that enters the cube exits, so the flow in equals the flow out. (Perhaps confusingly, flow out of a volume corresponds to a positive flux. The reason for this convention for flux is that from Gauss's law, a net positive flow out of a closed surface corresponds to a net positive charge inside the surface.)
 
-Method II
+**Method II**
 
 Conveniently, the normal vectors are parallel to the Cartesian unit vectors. Based on the diagram, $\hat{\mathbf{n}}_1=\ihat$, $\hat{\mathbf{n}}_2=\jhat$, $\hat{\mathbf{n}}_3=\khat$, $\hat{\mathbf{n}}_4=-\khat$
 $\hat{\mathbf{n}}_5=-\jhat$, $\hat{\mathbf{n}}_6=-\ihat$. The negative sign for the last three normal vectors is due to the convention that the normal points outwards from a closed surface.
@@ -622,19 +625,19 @@ $\Phi_E^{5}=\mathbf{E}\cdot \mathbf{A}_5=\mathbf{E}\cdot A\hat{\mathbf{n}}_5=E_o
 
 $\Phi_E^{6}=\mathbf{E}\cdot \mathbf{A}_6=\mathbf{E}\cdot A\hat{\mathbf{n}}_6=E_o\hat{\mathbf{k}}\cdot (-A\ihat)=-E_oA(\khat\cdot\ihat)=0$
 
-Incidentally, there is an additional questions that could have been asked: How much charge is inside the cube? The net flux through the cube's surface is zero, so it follows from Gauss's law that the total charge enclosed is zero.
+%Incidentally, there is an additional questions that could have been asked: How much charge is inside the cube? The net flux through the cube's surface is zero, so it follows from Gauss's law that the total charge enclosed is zero.
 
 %\clearpage
 
-## Example - Flux through faces of a cube
+## Example - Flux through faces of a cube II
 
-\input{Gauss/figures/Flux_Through_Cube_2}
+<img src="figures/Flux-2D-E-Field-4a.svg"/>
 
 Find the flux through the faces of the cube, which have area $A$, when the electric field is at an angle of $30^\circ$ with respect to the $+z$-axis towards the $+y$-axis.
 
 {\bf Answer}
 
-Method I
+**Method I**
 
 The electric field is parallel to sides 1 and 6, so
 
@@ -642,21 +645,21 @@ $\Phi_E^1=\Phi_E^6=0$
 
 When using this method, it is necessary to draw a diagram to ensure the calculations are correct. In the following, the cube viewed from a point on the $+x$-axis is shown.
 
-\input{Gauss/figures/Flux_Through_Cube_2I}
+<img src="figures/Flux-2D-E-Field-4b.svg"/>
 
 The above diagram was used to compute the electric field perpendicular to the side faces.
 
-$\Phi_E^2=E_\perp\,2A=E_oA\sin 30^\circ$
+$\Phi_E^2=E_\perp2A=E_oA\sin 30^\circ$
 
-$\Phi_E^3=E_\perp\,3A=E_oA\cos 30^\circ$
+$\Phi_E^3=E_\perp3A=E_oA\cos 30^\circ$
 
-$\Phi_E^4=E_\perp\,4A=-E_oA\cos 30^\circ$
+$\Phi_E^4=E_\perp4A=-E_oA\cos 30^\circ$
 
-$\Phi_E^5=E_\perp\,5A=-E_oA\sin 30^\circ$
+$\Phi_E^5=E_\perp5A=-E_oA\sin 30^\circ$
 
 The negative signs in the last two equations were inserted based on the diagram which shows the electric field points into the volume.
 
-Method II
+**Method II**
 
 This is a problem for which Method II is easier in that an additional diagram is not needed. Compare it to the approach taken in Example 22.2b, which is similar to Method I except that an additional diagram was not given (but was likely used to figure out the answer given).
 
@@ -681,36 +684,92 @@ $\Phi_E^5=\mathbf{E}\cdot \hat{\mathbf{n}}_5A=E_o(\sin 30^\circ\jhat+\cos 30^\ci
 
 $\Phi_E^6=\mathbf{E}\cdot \hat{\mathbf{n}}_6A=E_o(\sin 30^\circ\jhat+\cos 30^\circ\khat)\cdot(-\ihat A) =  -E_oA(\jhat\cdot\ihat\sin 30^\circ+\khat\cdot\ihat\cos 30^\circ)=0$
 
-Checks: The flux is positive for faces 2 and 3. This is consistent with the diagram because if electric field lines were drawn, they would emerge from the volume out of these faces. The flux is negative for faces 4 and 5. This is consistent with the diagram because if electric field lines were drawn, they would enter the volume.
+**Checks**: The flux is positive for faces 2 and 3. This is consistent with the diagram because if electric field lines were drawn, they would emerge from the volume out of these faces. The flux is negative for faces 4 and 5. This is consistent with the diagram because if electric field lines were drawn, they would enter the volume.
 
-\newpage
-
-## Problem - Flux through faces of a cube
+## Problem - Flux Through a Cube III
 
 Find the flux through the faces of the cube with side length $a$ when the electric field is at an angle of $60^\circ$ with respect to the $+z$-axis towards the $+x$-axis.
 
-\input{Gauss/figures/Flux_Through_Cube_4}
+<img src="figures/Flux-2D-E-Field-5a.svg"/>
 
-\ifsolutions
-{\bf Answer}:
+%{\bf Answer}:
 
-$\Phi_E^1=E_oA\sin 60^\circ = E_oa^2\sin 60^\circ$
+%$\Phi_E^1=E_oA\sin 60^\circ = E_oa^2\sin 60^\circ$
 
-$\Phi_E^2=0$
+%$\Phi_E^2=0$
 
-$\Phi_E^3=E_oA\cos 60^\circ = E_oa^2\cos 60^\circ$
+%$\Phi_E^3=E_oA\cos 60^\circ = E_oa^2\cos 60^\circ$
 
-$\Phi_E^4=-E_oA\cos 60^\circ = -E_oa^2\cos 60^\circ$
+%$\Phi_E^4=-E_oA\cos 60^\circ = -E_oa^2\cos 60^\circ$
 
-$\Phi_E^5=0$
+%$\Phi_E^5=0$
 
-$\Phi_E^6=-E_oA\sin 60^\circ = -E_oa^2\sin 60^\circ$
+%$\Phi_E^6=-E_oA\sin 60^\circ = -E_oa^2\sin 60^\circ$
 
-\else
-\fi
+## Example -- Flux Through a Dome
 
-## Example -- Flux Through a Half Sphere
+A spherical shell of radius $R$ is centered on the origin and cut in half. A view from the $+x$--axis is shown one the right of the following figure.
 
-Compute $\Phi_E$ through the half cylinder.
+<img src="figures/Flux-2D-E-Field-Dome-1a.svg"/>
+
+Compute $\Phi_E = \int_{\mathcal{A}} \mathbf{E}\cdot d\mathbf{A}$. Justify all of your steps.
+
+**Answer**:
+
+In this problem, the magnitude of the electric field is constant on the surface, but its direction changes. As a result, we must use the integral form and add the fluxes on each differential element.
+
+A differential element on the surface on a sphere is $R^2 \sin\theta d\theta d\phi$. The normal vector is $\hat{\mathbf{r}}$. Thus
+
+$d\mathbf{A}=\hat{\mathbf{n}}dA = \hat{\mathbf{r}}R^2 \sin\theta d\theta d\phi $
+
+Dotting this with $\mathbf{E}=E_o\zhat$ gives
+
+$ \mathbf{E}\cdot d\mathbf{A}=E_oR^2\sin\theta d\theta d\phi \zhat\bfcdot \hat{\mathbf{r}}$.
+
+To do the dot product when the terms have unit vectors in different coordinate systems, in general, we need to convert write $\zhat$ with spherical unit vectors or $\hat{\mathbf{r}}$ with cartesian unit vectors. However, for $\zhat\bfcdot \hat{\mathbf{r}}$, we can use a short--cut. The dot product of two vectors is the product of the magnitudes of the vectors multiplied by $\cos$ of the angle between the two vectors. If you draw a diagram of $\zhat$ and $\hat{\mathbf{r}}$, you should see that the angle between them happens to be the spherical angle $\theta$! As a result, we can immediately write $\zhat\bfcdot \hat{\mathbf{r}}=\cos\theta$. So now the integrand is
+
+$\mathbf{E}\cdot d\mathbf{A}=E_oR^2\sin\theta d\theta d\phi \cos\theta$.
+
+The last step is to do the integration. Here we integrate over $\phi$ from $0$ to $2\pi$ and $\theta$ from $0$ to $\pi/2$.
+
+$\displaystyle\Phi_E = \int_{\mathcal{A}} \mathbf{E}\cdot d\mathbf{A}=\int_{\phi=0}^{2\pi}\int_{\theta=0}^{\pi/2} E_oR^2\sin\theta d\theta d\phi \cos\theta$
+
+Integrating over $\phi$ and factoring out the constants gives
+
+$\displaystyle\Phi_E = 2\pi E_oR^2\int_{\theta=0}^{\pi/2} \sin\theta \cos\theta d\theta  = 2\pi E_oR^2\int_{\theta=0}^{\pi/2} \frac{\sin 2\theta}{2} d\theta$
+
+The integral evaluates to $1/2$, so
+
+$\displaystyle\Phi_E=\pi E_oR^2$
+
+A related question is to compute the flux through a full sphere. You can do this without calculation by drawing the electric field and using symmetry. At each point on the top of the sphere, there is a differential element with a positive flux that is equal and opposite to a differential element with a negative flux on the bottom part of the sphere. As a result, the answer is zero for a closed sphere.
+
+## Example -- Flux Through a Sphere
+
+If $\mathbf{E}=kQ\hat{\mathbf{r}}/r^2$, find the flux through the surface of a sphere centered on the origin of radius 
+
+1. $R$
+2. $2R$
+
+**Answer**:
+
+Although the electric field direction changes on the surface of the sphere, we do not need integration. Earlier it was stated that if the either $|\mathbf{E}|$ changes on the surface or if the angle between $\mathbf{E}$ and the normal vector at any point on the surface changess, integration is required. Here the normal vector to the surface of the sphere is $\hat{\mathbf{r}}$, which is always aligned with $\mathbf{E}$, because its direction is given by  $\hat{\mathbf{r}}$. In addition, on the surface of a sphere, the electric field magnitude does not not change. Thus, both conditions that are needed to avoid integration are satisfied.
+
+1\. $\displaystyle\Phi_E=E_{\perp}A = \left(\frac{kQ}{R^2}\right) (4\pi R^2)=4\pi k Q$
+
+2\. $\displaystyle\Phi_E=E_{\perp}A = \left(\frac{kQ}{(2R)^2}\right) \Big(4\pi (2R)^2\Big)=4\pi k Q$
+
+## Problem -- Flux Through a Sphere
+
+Repeat the previous problem by starting with $\Phi_E = \int_{\mathcal{A}} \mathbf{E}\cdot d\mathbf{A}$. Show an justify your steps at the level of detail given in previous examples.
 
 ## Problem -- Flux Through a Half Cylinder
+
+A cylindrical shell (like a toilet paper roll with caps added to ends) is sliced in half. A view from the +$x$--axis is shown.
+
+<img src="figures/Flux-2D-E-Field-Half-Cylinder.svg"/>
+
+1\. Compute the magnitude of the electric flux through the surface using $\Phi_E = \int_{\mathcal{A}} \mathbf{E}\cdot d\mathbf{A}$. Justify all of your steps for the three integrals that must be evaluated (two caps and curved surface). Recall that a differential element of area on the curved surface of a cylinder of radius $R$ is $Rd\phi dz$ and a differential element on the caps is $sdsd\phi$.
+
+2\. What is the magnitude of the electric flux through a full cylindrical shell? Justify your answer.
+
