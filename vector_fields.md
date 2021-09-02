@@ -57,11 +57,11 @@ Sketch the vector field $\mathbf{A}\equiv\mathbf{E}/(2k\lambda)$ inside and outs
 
 Outside of a solid sphere of radius $R$ with uniformly distributed charge $Q$, the field is
 
-$$\mathbf{E}(r)=kQ\frac{1}{r^2}\boldsymbol{\hat{r}}$$
+$$\mathbf{E}(s)=kQ\frac{1}{r^2}\boldsymbol{\hat{r}}$$
 
 inside, it is
 
-$$\mathbf{E}(r)=kQ\frac{r}{R^3}\boldsymbol{\hat{r}}$$
+$$\mathbf{E}(s)=kQ\frac{r}{R^3}\boldsymbol{\hat{r}}$$
 
 Sketch the vector field $\mathbf{A}\equiv\mathbf{E}/(kQ)$ inside and outside of the sphere.
 
