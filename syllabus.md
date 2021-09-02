@@ -3,14 +3,14 @@
 </div>
 
 * Day and Time: Tuesday/Thursday from 12:00 pm - 1:15 pm (on Zoom)
-* Office Hours: Tuesday/Thursday from 11:00 am -- noon (on Zoom)
+* Office Hours: Tuesday/Thursday from 11:00 am -- noon (on Zoom) and immediately after class
 * Discord URL: See email
 * Instructor: Bob Weigel
 * Email: rweigel@gmu.edu
 * Office: 259 Planetary Hall
 * Course URL: http://rweigel.github.io/phys305/
 
-**Homeworks** [HW 1](hw1.html)
+**Homeworks** [HW 1](hw1.html) | [HW 2](hw2.html)
 
 # Class Schedule
 
@@ -23,7 +23,6 @@
 ## Thursday, August 26th 
 
 * Assign [HW 1](hw1.html) covering [Vectors](vectors.html), [Vector Fields](vector_fields.html), [Field Lines](field_lines.html), and  [Equipotentials](equipotentials.html).
- 
 * Discuss [HW 1](hw1.html) topics
 
 ## Tuesday, August 31st
@@ -32,9 +31,18 @@
  
 ## Thursday, September 2nd 
 
-* Answer questions on [HW 1](hw1.html) topics
-* [HW 1](hw1.html) due at 3:00 pm
-* Assign Homework #2 covering Flux, Divergence, Coulomb's Law, and Electric Field.
+* [HW #1](hw1.html) due at 3:00 pm; I will be available after class for last--minute questions
+* Discuss questions asked about HW #1 topics
+* Assign [HW #2](hw2.html) covering [Flux](flux.html), [Divergence](divergence.html), [Binomial Expansion](binomial_expansion.html), and [Symmetry](symmetry.html).
+* Discuss modified instructions on submitting HWs
+* Cover [HW #2](hw2.html) topics
+
+## Tuesday, September 7th 
+* Answer questions on [HW #2](hw2.html) topics ([Flux](flux.html), [Divergence](divergence.html), [Binomial Expansion](binomial_expansion.html), and [Symmetry](symmetry.html))
+
+## Thursday, September 9nd 
+* Return graded HW #1 and solutions; discuss common errors
+* [HW #2](hw2.html) due at 3:00 pm
 
 # Topics Covered and Catalog Description
 
@@ -58,7 +66,7 @@ The delivery of this course is centered on tutorials that introduce topics, prov
 
 1. Most of what I would normally lecture on has been written into the tutorials and their examples.
 2. I have done this to maximize the amount of time available for students to ask question during class.
-3. **If you do not work on the tutorial before class, you will not find class attendance helpful.**
+3. **If you do not work on the tutorials before class, you will not find class attendance helpful.**
 
 # Discord
 

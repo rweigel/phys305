@@ -14,7 +14,7 @@ $$f = \frac{1}{|\mathbf{r}-\mathbf{r}'|^2}$$
 
 1. Write $f$ in cartesian coordinates.
 
-2. Show that $|\mathbf{r}-\mathbf{r}'|^2$ can be written as $r^2+r'^2-2\mathbf{r}\dot\mathbf{r}'$
+2. Show that $|\mathbf{r}-\mathbf{r}'|^2$ can be written as $r^2+r'^2-2\mathbf{r}\cdot\mathbf{r}'$
 
 3. Compute $\boldsymbol{\nabla}\left(\frac{1}{|\mathbf{r}-\mathbf{r}'|}\right)$, where $\boldsymbol{\nabla}f(x,y,z)=\frac{\partial f}{\partial x}\xhat+\frac{\partial f}{\partial y}\yhat+\frac{\partial f}{\partial z}\zhat$
 
@@ -34,7 +34,7 @@ An object is moved along the path $y=x^2$ from $x=0$ to $x=x_o$ when there is an
 
 2\. Compute the force perpendicular to the path at $x_o/2$ and $x_o$.
 
-3\. (Extra credit) Compute $\int_{\mathcal{L}}\mathbf{F}\dot d\mathbf{l}$ where $\mathcal{L}$ is the path along $y=x^2$ from $x=0$ to $x=x_o$.
+3\. (Extra credit) Compute $\int_{\mathcal{L}}\mathbf{F}\cdot d\mathbf{l}$ where $\mathcal{L}$ is the path along $y=x^2$ from $x=0$ to $x=x_o$.
 
 # Normal Vectors
 

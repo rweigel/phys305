@@ -2,15 +2,33 @@
 
 See 1.2.4 of Griffiths.
 
-The divergence of a vector field is a scalar defined to be
+The divergence of a vector field is is a scalar defined to be
 
 $$\text{div}(\mathbf{U})=\lim_{\Delta \tau\rightarrow 0}\frac{\oint \mathbf{U}\bfcdot d\mathbf{A}}{\Delta \tau}\lim_{\Delta \tau\rightarrow 0}\frac{\Phi_U}{\Delta \tau}$$
 
 at any point in space, where $\Delta \tau$ is a differential volume that surrounds the point. The numerator is a flux, so the physical interpretation is that it represents the net flux into or out of a vanishingly small volume.
 
-In general, this formula will not be used to compute divergence. However, it is important to understand its meaning using it at least once, as done in the following example.
+In general, this formula will not be used to compute divergence. However, it is important to understand its meaning using it at least once, which is done in the following example.
 
-Note that Griffiths does not state the definition given above. Instead, in Chapter 1.2.4, he uses a formula for $\text{div}(\mathbf{U})$ that can be derived from the definition and only states that the divergence is a measure of "...".
+Note that Griffiths does not state the definition given above. Instead, in Chapter 1.2.4, he uses a formula for $\text{div}(\mathbf{U})$ that can be derived from the definition and only states that the divergence is "a measure of how much the vector $\mathbf{U}$ spreads out (diverges) from the point in question".
+
+One needs to be very careful with this definition as it does not always work as expected. Examples of this were given in class. There are two vector functions for each coordinate system that you should know
+
+**Cartesian**
+
+1. $\mathbf{U} = \xhat$ for $x>0$ and $\mathbf{U} = \xhat$ for $x<0$ -- the divergence is zero for all $x$ except as $x \rightarrow 0$ where it approaches infinity.
+2. $\mathbf{U} = x\xhat$ -- the divergence is constant for all $x$
+
+**Cylindrical**
+
+1. $\mathbf{U}=s\hat{\mathbf{s}}$ -- the divergence is constant for all $s$
+2. $\mathbf{U}=\hat{\mathbf{s}}/s$ -- the divergence is zero for all $s$ except as $s\rightarrow 0$ where it approaches infinity.
+
+**Spherical**
+
+1. $\mathbf{U}=r\hat{\mathbf{r}}$ -- the divergence is constant for all $r$
+2. $\mathbf{U}=\hat{\mathbf{r}}/r^2$ -- the divergence is zero for all $r$ except as $r\rightarrow 0$ where it approaches infinity.
+
 
 ## Example
 
@@ -43,7 +61,7 @@ $\displaystyle\text{div}(\mathbf{U})=\frac{dU_x(x)}{dx}$
 
 ----
 
-If $\partial U_x/\partial x$, $\partial U_y/\partial y$, and $\partial U_z/\partial z$ all exist, then we do not need to evaluate a surface integral and take a limit to compute $\text{div}(\mathbf{U})$. In this case, in cartesian coordinates, it can be shown that 
+If $\partial U_x/\partial x$, $\partial U_y/\partial y$, and $\partial U_z/\partial z$ all exist, then we do not need to evaluate a surface integral and take a limit to compute $\text{div}(\mathbf{U})$. In this case, in cartesian coordinates it can be shown that 
 
 $$\text{div}(\mathbf{U}) = \boldsymbol{\nabla}\bfcdot\mathbf{U}=\frac{\partial U_x}{\partial x}+\frac{\partial U_y}{\partial y}+\frac{\partial U_z}{\partial z}$$
 
@@ -158,7 +176,7 @@ The divergence theorem is
 
 $$\int_{\mathcal{V}} \text{div}(\mathbf{U}) d\tau=\oint_{\mathcal A} \mathbf{U}\cdot d\mathbf{A}=\Phi_U$$
 
-In general, the defining equation for divergence involving a limit will not be used and instead $\text{div}(\mathbf{U})=\boldsymbol{\nabla}\bfcdot\mathbf{U}$ is used. In this case, the divergence theorem is
+In general, the defining equation for divergence involving a limit will not be used and instead $\text{div}(\mathbf{U})=\boldsymbol{\nabla}\bfcdot\mathbf{U}$ is used. In this case the divergence theorem is
 
 $$\int_{\mathcal{V}} (\boldsymbol{\nabla}\bfcdot\mathbf{U}) d\tau=\oint_{\mathcal A} \mathbf{U}\cdot d\mathbf{A}=\Phi_U$$
 
