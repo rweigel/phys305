@@ -1,60 +1,82 @@
-= Binomial and Taylor Series =
+# Binomial Expansion Limit
 
-== Problems ==
+The Binomial Theorem is
 
-=== Binomial Expansion ===
-Your calculator does not have a square root button and you need to approximately calculate
+$$(x+y)^m = \sum_{k=0}^m {m \choose k}x^{m-k}y^k$$
 
-\(1/(z^2+L^2)^{1/2}\)
+When $x=1$, it simplifies to
 
-for \(z=3\) and \(L=1\) and \(z=1\) and \(L=10\).  Write down an approximate values as a fraction (e.g., 99/44). <span style='background-color:yellow'>++1 if ''both'' correct.</span>
+$$(1+y)^m = \sum_{k=0}^m {n \choose k}y^k$$
 
-<div style="background-color:#E8E8E8">
-In this problem, I expected you to know that \(\frac{1}{(1+\epsilon)^n}\simeq 1-n\epsilon\) for \(|\epsilon| << 1\); it is one of the formulas that you should just know.
-Can re-write in two ways:
-# \(\frac{1}{(z^2+L^2)^{1/2}} = \frac{1}{z}\frac{1}{(1+L^2/z^2)^{1/2}}\simeq \frac{1}{z}\left(1-\frac{L^2}{2z^2}\right)\) (approximation acceptable if \(L/z << 1\))
-# \(\frac{1}{(z^2+L^2)^{1/2}} = \frac{1}{L}\frac{1}{(1+z^2/L^2)^{1/2}}\simeq \frac{1}{L}\left(1-\frac{z^2}{2L^2}\right)\) (approximation acceptable if \(z/L << 1\))
+Written as a power series, it is
 
-# \(z=3\) and \(L=1\): \(17/54\)
-# \(z=1\) and \(L=10\): \(199/2000\)
+$$(1+y)^m = 1 + my + m(m-1)y^2 + ...$$
 
-Some students got an answer that was a negative number, was greater than one, or was close to one.  When you get an answer, always do a "sanity check".  For example, in the first problem, you are estimating \(1/\sqrt{10}\), which should be close to \(1/\sqrt{9}=1/3\).  If you answer is not close, something went wrong, and you should let me know that you noticed!
-</div>
+From this, it follows that
 
-=== Binomial Expansion ===
+$$\frac{1}{(1+y)^n} = 1 + my + m(m-1)y^2 + ...$$
 
-Write down, from memory, the first two terms in the Taylor Series expansion of <math>1/(1+\epsilon)^n</math>.  
+(This equation can also be derived using the Taylor series expansion around $y=0$.)
 
-Describe the constraints, if any, on <math>\epsilon</math> for the two-term approximation give above to be accurate.
+In this course, we are going to use this expansion many times when $y$ is small. To emphasize this, $\delta$ will be used instead of $y$ as the variable. 
 
-Answer:
+$$\frac{1}{(1+\delta)^n} = 1 - n\delta + n(n-1)\delta^2+...$$
 
-<math>\frac{1}{(1+\epsilon)^n} \simeq 1 - n\epsilon</math>
 
-<div style="background-color:yellow">Note: in an earlier version, I had a "+" sign instead of a "-" sign.  By inspection, I know this is incorrect - think about <math>1/(1+10)^1=0.1/(1+0.1)^1</math>.  The exact answer, <math>1/11</math>, should be less than 0.1 and not greater than 0.1.  The full Taylor Series expansion of [https://www.wolframalpha.com/input/?i=1%2F(1%2Bx)%5En+taylor+series this equation] can be found at [https://www.wolframalpha.com/ WolframAlpha].</div>
+The actual equation that you will use and should memorize is the truncated expansion to first order in $\delta$:
 
-<math>\frac{}{}|\epsilon| << 1</math>
+$$\boxed{\frac{1}{(1+\delta)^n} \simeq 1 - n\delta}$$
 
-=== Binomail Expansion ===
+> "First--order in $\delta$" means that the highest power in the approximate answer is $\delta$, so only the $n\delta$ terms is kept as in the boxed equation above. "Second--order in $\delta$" means that the $n(n-1)\delta^2$ term is kept.
 
-Your calculator does not have a square root button and you need to approximately calculate
+This equation becomes more and more accurate as $\delta \rightarrow 0$.
 
-<math>1/(z^2+L^2)^{1/2}</math>
+We will use this equation repeatedly to check our answers -- typically, we will be able to say, "For large $\delta$, I expect the answer to approach the answer to a similar to the answer for a simpler problem for which I know the answer". For example, if the problem is to compute the electric field for two positive charges $q$ at $x=\pm 1$, we expect the electric field to approach that for a charge of $2q$ at the origin, which is simply $2kq\hat{\mathbf{r}}/r^2$. This statement allows you to check your equation for the electric field -- if for large $r$ your equation matches the equation at the origin, you will be more confident that you solved the problem correctly.
 
-for <math>z=5</math> and <math>L=1</math>.  Write down an approximate value as a fraction (e.g., 99/44).
+To use this equation, you will typically need to rewrite an equation so that a term of this form appears. This is demonstrated in the following examples.
 
-=== Binomail Expansion ===
+## Example
 
-For <math>z<<L</math>, write down the first two terms in the Taylor Series expansion approximation of
+Approximate $\frac{1}{12}$ using ${1}/{(1+\delta)^n} \simeq 1 - n\delta$.
 
-<math>1/(z^2+L^2)^{3/2}</math>
+**Answer**
 
-(To check your answer, pick values of <math>z</math> and <math>L</math> and use the original formula to compute the answer and compare it with the answer given by the first two terms of the Taylor Series expansion and verify that the Taylor Series expansion formula gets closer to the answer for the original formula as you increase <math>L</math> relative to <math>z</math>.)
+$\displaystyle\frac{1}{12}=\frac{1}{10}\frac{1}{1+\frac{2}{10}}$
 
-----
+In this equation, we identify $n=1$ and $\delta = 2/10$, so
 
-For <math>z>>L</math>, write down the first two terms in the Taylor Series expansion approximation of
+$\displaystyle\frac{1}{12}\simeq\frac{1}{10}\left(1-\frac{2}{10}\right)=\frac{1}{10}\frac{8}{10}=\frac{8}{100}=0.08$
 
-<math>1/(z^2+L^2)^{3/2}</math>
+This is close to the exact answer of $1/12=0.08\overline{3}$.
 
-(To check your answer, follow a similar procedure as given above.)
+## Example
+
+Approximate $\{1}/{(3 + x)^2}$ using the binomial expansion to first order in $x$. Check your answer by using $x=0.1$ in the given equation and your approximation.
+
+**Answer**:
+
+Here $n=2$ and we can rewrite the equation by factoring out the $3$ from the term in the denominator to obtaiin a term of the form ${1}/{(1+\delta)^n}$
+
+$\displaystyle\frac{1}{(3 + x)^2}=\frac{1}{3^2}\frac{1}{(1 + \frac{x}{3})^2}$
+
+In the above, we identify $\delta=x/3$ and so
+
+$\displaystyle\frac{1}{3^2}\frac{1}{(1 + \frac{x}{3})^2}\simeq\frac{1}{3^2}\left[1-2\left(\frac{x}{3}\right)\right]=\frac{1}{3^2}\left(1-\frac{2}{3}x\right)$
+
+When $x=0.1$, the exact answer to four decimal places is $1/(3.1)^2=0.1041$. The approximate answer is $0.1037$
+
+## Problem
+
+Approximate ${1}/{\sqrt{a + x}}$ using the binomial expansion to first order in $x$. Check your answer by using plugging $a=1$ and $x=0.1$ into the given equation and your approximation. They should be close.
+
+## Problem
+
+The exact answer for the electric field in the $y=0$ plane due to a line of charge with charge density $\lambda$ between $\pm L$ on the $x$--axis is
+
+$$\mathbf{E} = \frac{k\lambda}{z}\left[\left(-1+\frac{z}{\sqrt{z^2+L^2}}\right)\hat{\mathbf{x}} + \left(\frac{L}{\sqrt{z^2+L^2}}\right)\hat{\mathbf{z}}\right]$$
+
+to first order in $z$. Note that $\sqrt{z^2}=|z|$.
+
+## Problem
+
+Find the equation for the electric field for two positive charges $q$ at $x=\pm a$. Verify that for large $r/a$, this equation approaches the equation for the electric field for $2q$ at the origin.

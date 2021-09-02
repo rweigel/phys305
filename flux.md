@@ -1,6 +1,6 @@
 In this tutorial, flux is reviewed. The flux due to a vector field is a fundamental concept in E&M, but Griffiths only provides a 1--page description of the flux due to a vector field in the surface integral section in 1.3.1(b).
 
-The flow of current also constitutes a flux and this is also covered in this tutorial in section 3. This section may be skipped and will be revisited later in the semester.
+The flow of current also constitutes a flux and this is also introduced in this tutorial in section 3. This section may be skipped and will be revisited later in the semester.
 
 # Introduction
 
@@ -11,13 +11,13 @@ Next, the flux, $\Phi_E$, associated with an electric field vector, $\mathbf{E}$
 In this E&M, you will use the techniques covered here in two different ways:
 
 1. To compute currents associated with the flow of charged particles.
-2. To compute the flux associated with either an electric field vector $\mathbf{E}$ or a magnetic field vector $\mathbf{B}$. In the development of E&M, Faraday and Maxwell supposed that $\mathbf{E}$ and $\mathbf{B}$ vectors produced a flux -- in the case of $\mathbf{E}$, they spoke of "electricity flowing along a field line". It was only later realized that there is no flow of "electricity" along a field line. An electric field only tells you about the force a charge would feel if placed at a point in space. An electric field line tells you about the direction of force on a charge when placed somewhere on the field line. Although $\mathbf{E}$ and $\mathbf{B}$ fluxes are not associated with the flow of anything, the techniques used for for calculating them is similar to that for particle fluxes.
+2. To compute the flux associated with either an electric field vector $\mathbf{E}$ or a magnetic field vector $\mathbf{B}$. In the development of E&M, Faraday and Maxwell supposed that $\mathbf{E}$ and $\mathbf{B}$ vectors produced a flux -- in the case of $\mathbf{E}$, they spoke of "electricity flowing along a field line." It was only later realized that there is no flow of "electricity" along a field line. An electric field only tells you about the force a charge would feel if placed at a point in space. An electric field line tells you about the direction of the force on a charge when placed somewhere on the field line. Although $\mathbf{E}$ and $\mathbf{B}$ fluxes are not associated with the flow of anything, the techniques used for calculating them is similar to those for particle fluxes.
 
 %    > **Caution**: When dealing with electric and magnetic flux, don't think of the flow of particles -- just think about vectors.
 
-This tutorial is primarily a mathematical review of flux and requires the use of normal vectors, which were reviewed previously in [Vectors](vectors.html#normal-unit-vectors). You will use electric flux, $\Phi_E$, when Gauss's law (Chapter 3) is covered and magnetic flux, $\Phi_B$, when the Biot--Savart law is covered (Chapter 5) and also when Faraday's law is covered (Chapter 7). Charged particle flux, $I$, will be used when computing current distributions for use in the Biot-Savart law (Chapter 5).
+This tutorial is primarily a mathematical review of flux and requires the use of normal vectors, which were reviewed previously in [Vectors](vectors.html#normal-unit-vectors). You will use electric flux, $\Phi_E$, when Gauss's law (Chapter 3) is covered, and magnetic flux, $\Phi_B$, when the Biot--Savart law is covered (Chapter 5) and also when Faraday's law is covered (Chapter 7). Charged particle flux, $I$, will be used when computing current distributions for use in the Biot-Savart law (Chapter 5).
 
-Finally, electric and magnetic flux are a fundamental component of divergence and the divergence theorem, which is covered next.
+Finally, electric and magnetic flux is a fundamental component of divergence and the divergence theorem, covered next.
 
 # Particle Flux
 
@@ -27,7 +27,7 @@ In this section, the flux quantity is $\dot{N}$, which corresponds to a number o
 
 ### Example
 
-The particles shown as dots travel at a velocity of 1 m/s to the right. What is $\dot{N}$, the number of particles pass the X in one second?
+The particles shown as dots travel at a velocity of 1 m/s to the right. What is $\dot{N}$, the number of particles that pass the X in one second?
 
 <img src="figures/Flux-0D-1.svg"/>
 
@@ -54,7 +54,7 @@ To generalize this, we can state that the flux into or out of a linear region is
 
 $$\dot{N} = \lambda\mathbf{v}\bfcdot \hat{\mathbf{n}}$$
 
-where the vector $\hat{\mathbf{n}}$ is defined to point outward from the region on its endpoints. With this convention, if $\dot{N}$ is positive, there is a net flow out of the region; if $\dot{N}$ is negative, there is a net flow into the region. We will use this convention also with flow past   closed lines and closed areas.
+where the vector $\hat{\mathbf{n}}$ is defined to point outward from the region on its endpoints. With this convention, if $\dot{N}$ is positive, there is a net flow out of the region; if $\dot{N}$ is negative, there is a net flow into the region. We will use this convention also with flow past closed lines and closed areas.
 
 Repeating this problem using $\dot{N} = \lambda\mathbf{v}\bfcdot \hat{\mathbf{n}}$,
 
@@ -80,7 +80,7 @@ Use the equation $\dot{N} = \lambda\mathbf{v}\bfcdot \hat{\mathbf{n}}$ to find t
 
 In this section, we consider computing the flux of particles through an open line (a line that does not form a closed loop) and then the flux of particles into or out of a region bounded by a closed loop.
 
-%The primary result is that if particles are emitted  from a point with constant velocity and uniformily in all directions, 
+%The primary result is that if particles are emitted  from a point with constant velocity and uniformly in all directions, 
 
 ### Through an Open Line
 
@@ -94,7 +94,7 @@ In more general terms, we can write
 
 $$\dot{N} = \sigma v_x l_y$$
 
-where $\dot{N}$ is the number particles that pass through the line per second, $\sigma$ is the number of particles per unit area and $l_y$ is the length of the red line that particles pass through. From the diagram, the density is given by $\sigma = 9/((1\text{ m})(l_y))$ and so 
+where $\dot{N}$ is the number of particles that pass through the line per second, $\sigma$ is the number of particles per unit area, and $l_y$ is the length of the red line that particles pass through. From the diagram, the density is given by $\sigma = 9/((1\text{ m})(l_y))$ and so 
 
 $\displaystyle\dot{N} = \sigma v_x l_y = \frac{9}{(1\text{ m})(l_y)} v_x l_y =\frac{9}{(1\text{ m})} v_x = \frac{9}{(1\text{ m})}\cdot 1\text{ m/s}= 9/s$
 
@@ -104,7 +104,7 @@ Next, suppose we wanted to compute the number of particles that pass through the
 
 Note that in the previous paragraph, to find the flux through the tilted green line, we used a different line that was perpendicular to the velocity to compute the flux. Equivalently, we can multiply the component of velocity that is perpendicular to the green line by the length of the green line. That is, we break the velocity vector into two components -- a component parallel to the line and a component perpendicular to it.
 
-In the left-hand side of the diagram below, the velocity of one of the particles that is on the green line is broken down into components parallel and perpendicular to it. The right-hand side shows the a flow of particles parallel to the green line, which do not contribute to the flux, and perpendicular to the green line, which do contribute to the flux.
+In the left-hand side of the diagram below, the velocity of one of the particles that is on the green line is broken down into components parallel and perpendicular to it. The right-hand side shows the flow of particles parallel to the green line, which does not contribute to the flux, and perpendicular to the green line, which does contribute to the flux.
 
 <img src="figures/Flux-1D-1b.svg" width="100%"/>
 
@@ -133,7 +133,7 @@ For $\mathbf{v}=v_x\xhat$, use the equation $\dot{N} = n \mathbf{v}\cdot\hat{\ma
 
 $\dot{N} = \sigma \mathbf{v}\cdot\hat{\mathbf{n}}l = \sigma (v_x\xhat)\cdot(\xhat) l_y = \sigma v_x\xhat\cdot\xhat l_y=\sigma v_x l_y$
 
-Because the answer is positive, there is a net flow across the line in the direction of the chosen direction of the normal vector (from left to right). If we would have chosen the normal vector to be $\hat{\mathbf{n}}=-\xhat$, $\dot{N}$ would be negative and we would conclude there is a net flow in the direction opposite of $\hat{\mathbf{n}}$ (corresponding to right to left).
+Because the answer is positive, there is a net flow across the line in the direction of the chosen direction of the normal vector (from left to right). If we would have chosen the normal vector to be $\hat{\mathbf{n}}=-\xhat$, $\dot{N}$ would be negative, and we would conclude there is a net flow in the direction opposite of $\hat{\mathbf{n}}$ (corresponding to right to left).
 
 (2)
 
@@ -179,7 +179,7 @@ $\dot{N} = \sigma \mathbf{v}\cdot\hat{\mathbf{n}} l =  \sigma (v_x\xhat+v_y\yhat
 
 $\phantom{\dot{N}}=\sigma v_x l\cos\theta - \sigma v_y l\sin\theta$
 
-which is the same as that found in part (a) using superposition. Recall that the sign of $\dot{N}$ can be positive or negative depending on the values of the constants $v_x$, $v_y$, and $\theta$. If $\dot{N}$ is negative, it means that the net flow of particles is in the direction oppostive to the normal vector drawn on the diagram above.
+which is the same as that found in part (a) using superposition. Recall that the sign of $\dot{N}$ can be positive or negative depending on the values of the constants $v_x$, $v_y$, and $\theta$. If $\dot{N}$ is negative, it means that the net flow of particles is in the direction opposite to the normal vector drawn on the diagram above.
 
 ### Using Integration
 
@@ -192,7 +192,7 @@ In this case, we can first compute the number of particles that pass through an 
 
 $$d\dot{N} = \sigma(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
 
-To find the total number that pass through $L$, sum over all differential lengths on a line $\mathcal{L}$
+To find the total number that passes through $L$, sum over all differential lengths on a line $\mathcal{L}$
 
 $$\dot{N} = \int_{\mathcal{L}} \sigma(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
 
@@ -309,7 +309,7 @@ A source of particles is at the origin that sends particles out radially and uni
 
 1\. $\boxed{\dot{N}_i=\sigma_i v_r 2\pi R}$. We could have used $\dot{N} = \sigma_i \mathbf{v} \bfcdot \hat{\mathbf{n}} l$; in this case $l=2\pi R$, $\mathbf{v}=v_r\hat{\mathbf{s}}$ and the normal vector is $\hat{\mathbf{s}}$, so the dot product reduces to $v_r$.
 
-2\. On the diagram given, there are eight blue dots on both the inner and outer circle. (If the particles move outwards with a constant velocity, the number of particles on a circle of any radius will be the same). The outer circle is 2x longer than the inner circle, so the density of particles on it must be 1/2 of that on the inner circle. That is, $\sigma_o=\sigma_i/2$.
+2\. On the diagram given, there are eight blue dots on both the inner and outer circles. (If the particles move outwards with a constant velocity, the number of particles on a circle of any radius will be the same). The outer circle is 2x longer than the inner circle, so the density of particles on it must be 1/2 of that on the inner circle. That is, $\sigma_o=\sigma_i/2$.
 
 3\. $\dot{N}_o=\sigma_o v_r 2\pi (2R)=(\sigma_i/2) v_r 2\pi 2R= \boxed{\sigma_i v_r 2\pi R}$, which is the same result as 1. This is expected - if the particles flow outwards at a constant velocity, each time a particle passes the outer circle, there is a particle behind it that passes the inner circle.
 
@@ -321,7 +321,7 @@ For a source emitting particles with uniform speed $v_s$ in all directions in a 
 
 1. the net flux through a closed loop is not zero when there is a source emitting particles inside of it,
 2. the net flux through a circle of any radius centered on the source is the same, and
-3. the density $\sigma$ decreases in proportional to distance from the source.
+3. the density $\sigma$ decreases in proportional to the distance from the source.
 
 In fact, the net flux through a circle of any radius is the same even if the source is not at the center of the circle. This can be demonstrated with a diagram using two approaches.
 
@@ -329,7 +329,7 @@ In fact, the net flux through a circle of any radius is the same even if the sou
 
 <img src="figures/Flux-1D-5a.svg" width="100%"/>
 
-The above diagram shows particles flowing outwards at a constant velocity at a given point in time. The number of particles that pass the red line on the inner circle per second must equal the number per second that pass through the red line on the outer circle if the spacing between the blue dots is to remain constant. Given that this must be true if the particles flow at a constant velocity, we conclude that the flux through the inner red line must be the same as that through the outer red line. To complete the justification, note that this argument does not depend on the length of the inner red line - if it is a full circle, the same arguments apply and we conclude the flux through the inner circle must equal that through the outer circle.
+The above diagram shows particles flowing outwards at a constant velocity at a given point in time. The number of particles that pass the red line on the inner circle per second must equal the number per second that pass through the red line on the outer circle if the spacing between the blue dots is to remain constant. Given that this must be true if the particles flow at a constant velocity, we conclude that the flux through the inner red line must be the same as that through the outer red line. To complete the justification, note that this argument does not depend on the length of the inner red line - if it is a full circle, the same arguments apply, and we conclude the flux through the inner circle must equal that through the outer circle.
 
 
 **Approach II** -- Mathematically
@@ -356,7 +356,7 @@ or
 
 $$\sigma_o=\sigma_i\frac{R_i}{R_o}$$
 
-This equation states that the density (number of particles per unit area) is inversely proportitional to distance. This was shown to be true in the previous example.
+This equation states that the density (number of particles per unit area) is inversely proportional to distance. This was shown to be true in the previous example.
 
 A mathematical way of showing this is to note that the flux through the inner differential length, $ds_i$, shown in the diagram above is $2 \pi R_i d\theta$ so that the differential flux through $ds_i$ is
 
@@ -380,7 +380,7 @@ To finish this problem, we need to show that the flux through the outer black ar
 
 Although visually it may be obvious that this must be true using Approach I, in the future, we will consider the flux of a general vector. In this case, we replace $\sigma \mathbf{v}$ with a vector $\mathbf{E}$ that is not related to the flow of particles and so Approach I is not valid.
 
-The red line is longer than the black line and $v_r$ is perpendicular to the black arc segment but not the red arc segment. The length of the red arc segment is $2\pi d\theta/\cos\phi$ and the component of $v_r$ perpendicular to it is $v_r\cos\phi$. The flux through the red arc segment involves the product of its length and $v_r\cos\phi$ and as a result, the $\cos\phi$ terms cancel and the flux through the red line is the same as that through the black line, as expected from Approach I.
+The red line is longer than the black line, and $v_r$ is perpendicular to the black arc segment but not the red arc segment. The length of the red arc segment is $2\pi d\theta/\cos\phi$ and the component of $v_r$ perpendicular to it is $v_r\cos\phi$. The flux through the red arc segment involves the product of its length and $v_r\cos\phi$ and as a result, the $\cos\phi$ terms cancel and the flux through the red line is the same as that through the black line, as expected from Approach I.
 
 The aguments used in both Approach I and Approach II can be used to show that the flux through a closed line of arbitrary shape as shown in the figure below is also equal to the flux through a circle centered on the source.
 </details>
@@ -393,7 +393,7 @@ Explain why the flux through a closed line of arbitrary shape is also equal to t
 
 #### Problem
 
-Explain why the flux is zero through a circle that is outside a source that emits particles uniformly in all directions with a speed $v_s$ in a plane.
+Explain why the flux is zero through a circle that is outside a source that emits particles uniformly in all directions with speed $v_s$ in a plane.
 
 <img src="figures/Flux-1D-7b.svg" width="100%"/>
 
@@ -403,7 +403,7 @@ Does this result hold for a source that is outside of a close loop of arbitrary 
 
 For a source emitting particles with uniform speed $v_s$ in all directions in a plane, or a sink that absorbs particles with uniform speed in all directions,
 
-1. the density $\sigma$ decreases in proportional to distance from the source or sink.
+1. the density $\sigma$ decreases in proportional to the distance from the source or sink.
 2. the net flux through an arbitrary closed path that surrounds the source is not zero,
 3. the flux through an arbitrary closed path that encloses a source or sink will be the same as that through a circle centered on the source or sink that is within the closd path, and
 4. the net flux is zero through an arbitrary closed path that does not enclose a source or sink.
@@ -450,7 +450,7 @@ A source at the origin emits particles with a uniform speed $v_r$ in all directi
 
 2\. Explain why the net flux through an arbitrary closed surface that surrounds the source is not zero,
 
-3\. Explain why the flux through an arbitrary closed surface that encloses a source or sink will be the same as that through a the surface of a sphere centered on the source that is fully within the closed arbitrary surface.
+3\. Explain why the flux through an arbitrary closed surface that encloses a source or sink will be the same as that through a the surface of a sphere centered on the source that is fully within the arbitrary closed surface.
 
 4\. Explain why the net flux through an arbitrary closed surface that does not enclose the source or sink is zero.
 
@@ -462,11 +462,11 @@ In the case of electric flux, the analog to a source or sink is the electric fie
 **This section on surface currents can be skipped. We will revisit it in Chapter 5.**
 </div>
 
-This topic is covered briefly in Chapter 5.1.3 of Griffiths. At this point, these notes only contain an overview and examples and problems will be added when Chapter 5 is covered.
+This topic is covered briefly in Chapter 5.1.3 of Griffiths. At this point, these notes only contain an overview, and examples and problems will be added when Chapter 5 is covered.
 
 ## Definitions
 
-The current that flows through a wire has units of charge/s. The equation developed for $\dot{N}$ at a point on a line can be used to compute current if we re--define $\lambda$ to be the number of charges per unit length instead of the number of particles per unit length. In this case, instead of using $\dot{N}$, we use $I$:
+The current that flows through a wire has units of charge/s. The equation developed for $\dot{N}$ at a point on a line can be used to compute current if we redefine $\lambda$ to be the number of charges per unit length instead of the number of particles per unit length. In this case, instead of using $\dot{N}$, we use $I$:
 
 $$I=\lambda v$$
 
@@ -474,7 +474,7 @@ Similarly, re--defining $\sigma$ as the number of charges per unit area, the flo
 
 $$I=\int_{\mathcal{L}}\sigma \mathbf{v}\bfcdot \hat{\mathbf{n}}dl$$
 
-Finally, re--defining $\rho$ as the number of charges per unit volume, the flow of current past an area $\mathcal{A}$ is 
+Finally, redefining $\rho$ as the number of charges per unit volume, the flow of current past an area $\mathcal{A}$ is 
 
 $$I=\int_{\mathcal{A}}\rho \mathbf{v}\bfcdot \hat{\mathbf{n}}dA$$
 
@@ -527,7 +527,7 @@ which follows from $dI = Jda_\perp$ by multiplying both sides by a unit vector i
 
 The videos [1](https://www.youtube.com/watch?v=9MN0eTC-vzQ) and [2](https://www.youtube.com/watch?v=yOv4xxopQFQ) describe most of what is covered in this section. See also your textbook for Physics 260. This topic is briefly covered in the surface integral section in 1.3.1(b) of Griffiths.
 
-In the previous sections, the flux due to the flow of particles was considered. In this section, we are going to stop thinking about the flow of particles and speak only of the "flux due to a vector". In place of $\rho \mathbf{v}$, we are going to use a vector $\mathbf{E}$.
+In the previous sections, the flux due to the flow of particles was considered. In this section, we are going to stop thinking about the flow of particles and speak only of the "flux due to a vector." In place of $\rho \mathbf{v}$, we are going to use a vector $\mathbf{E}$.
 
 In general, the electric flux past a point or line is not a quantity of interest. In this section, only the flux through an area is covered.
 
@@ -569,7 +569,7 @@ To see this, rewrite the integrand $\mathbf{E}\cdot \hat{\mathbf{n}}dA$ using th
 
 $$\mathbf{E}\cdot d\mathbf{A}=\mathbf{E}\cdot\hat{\mathbf{n}}dA=|\mathbf{E}||\hat{\mathbf{n}}|\cos\theta_{E\hat{n}}dA=|\mathbf{E}|\cos\theta_{E\hat{n}}dA$$
 
-where $\theta_{E\hat{n}}$ is the angle between the normal unit vector and $\mathbf{E}$ and the fact that a unit vector has a magnitude of $1$ was used. From this, we conclude that if the either $|\mathbf{E}|$ changes on the surface or if the angle between $\mathbf{E}$ and the normal vector at any point on the surface changes, integration is required.
+where $\theta_{E\hat{n}}$ is the angle between the normal unit vector and $\mathbf{E}$ and the fact that a unit vector has a magnitude of $1$ was used. From this, we conclude that if either $|\mathbf{E}|$ changes on the surface or if the angle between $\mathbf{E}$ and the normal vector at any point on the surface changes, integration is required.
 
 ## Example -- Flux Through an Area
 
@@ -579,9 +579,9 @@ Compute $\Phi_E$ through the two areas.
 
 <img src="figures/Flux-2D-E-Field-1a.svg"/>
 
-% If we want to compute how much water flows through the surface area of the titled plane, we can note that it will be the same as the amount of water that flows through the plane with dashed boundaries. Every particle of fluid that flows through the blue surface will flow through the gray surface. If the water is moving at a velocity of $v$, then the quantity of water flowing through the dashed plane will be proportional to $v (A_{dashed})=v(L\cos\phi w)=vA\cos\phi$, where $A=Lw$ is the area of the titled gray plane. Now, even though nothing flows along electric field lines, it turns out that an important quantity is this equation with $E$ replaced $v$, defined to be the electric flux through the surface $A$:
+% If we want to compute how much water flows through the surface area of the tilted plane, we can note that it will be the same as the amount of water that flows through the plane with dashed boundaries. Every particle of fluid that flows through the blue surface will flow through the gray surface. If the water is moving at a velocity of $v$, then the quantity of water flowing through the dashed plane will be proportional to $v (A_{dashed})=v(L\cos\phi w)=vA\cos\phi$, where $A=Lw$ is the area of the titled gray plane. Now, even though nothing flows along electric field lines, it turns out that an important quantity is this equation with $E$ replaced $v$, defined to be the electric flux through the surface $A$:
 
-In this problem, the electric field magnitude and direction direction does not change on either surface, so the integral equation is not needed.
+In this problem, the electric field magnitude and direction does not change on either surface, so the integral equation is not needed.
 
 **Approach I** -- Using $E_\perp A$
 
@@ -616,7 +616,7 @@ $\Phi_E=\mathbf{E}\bfcdot\hat{\mathbf{n}}A =(E\yhat)\bfcdot (\cos\varphi\yhat + 
 
 Note that an alternative way of computing $\hat{\mathbf{n}}$ is to use the fact that the plane is perpendicular to the tilted line, find the equation for the tilted line, and then use the equation for $\hat{\mathbf{n}}$ to a line covered in [Vectors](vectors.html#normal-unit-vectors).
 
-%Recall that the dot product of two vectors is the product of their magnitude times $\cos\phi$, where $\phi$ is the angle between them. In part (a) the following diagram, the tilt angle $\phi$ between the blue and gray surfaces in the previous diagram is equal to the angle between $\mathbf{E}$ and the newly defined area vector $\mathbf{A}$ (shown in green).
+%Recall that the dot product of two vectors is the product of their magnitude times $\cos\phi$, where $\phi$ is the angle between them. In part (a) in the following diagram, the tilt angle $\phi$ between the blue and gray surfaces in the previous diagram is equal to the angle between $\mathbf{E}$ and the newly defined area vector $\mathbf{A}$ (shown in green).
 
 %<img src="figures/Flux-2D-E-Field-1b.svg"/>
 
@@ -681,7 +681,7 @@ $\Phi_E^{5}=\mathbf{E}\cdot \mathbf{A}_5=\mathbf{E}\cdot A\hat{\mathbf{n}}_5=E_o
 
 $\Phi_E^{6}=\mathbf{E}\cdot \mathbf{A}_6=\mathbf{E}\cdot A\hat{\mathbf{n}}_6=E_o\hat{\mathbf{k}}\cdot (-A\ihat)=-E_oA(\khat\cdot\ihat)=0$
 
-%Incidentally, there is an additional questions that could have been asked: How much charge is inside the cube? The net flux through the cube's surface is zero, so it follows from Gauss's law that the total charge enclosed is zero.
+%Incidentally, there is an additional question that could have been asked: How much charge is inside the cube? The net flux through the cube's surface is zero, so it follows from Gauss's law that the total charge enclosed is zero.
 
 %\clearpage
 
@@ -689,7 +689,7 @@ $\Phi_E^{6}=\mathbf{E}\cdot \mathbf{A}_6=\mathbf{E}\cdot A\hat{\mathbf{n}}_6=E_o
 
 <img src="figures/Flux-2D-E-Field-4a.svg"/>
 
-Find the flux through the faces of the cube, which have area $A$, when the electric field is at an angle of $30^\circ$ with respect to the $+z$-axis towards the $+y$-axis.
+Find the flux through the faces of the cube, which have area $A$, when the electric field is at an angle of $30^\circ$ to the $+z$-axis towards the $+y$-axis.
 
 {\bf Answer}
 
@@ -742,7 +742,7 @@ $\Phi_E^6=\mathbf{E}\cdot \hat{\mathbf{n}}_6A=E_o(\sin 30^\circ\jhat+\cos 30^\ci
 
 ## Problem - Flux Through a Cube III
 
-Find the flux through the faces of the cube with side length $a$ when the electric field is at an angle of $60^\circ$ with respect to the $+z$-axis towards the $+x$-axis.
+Find the flux through the faces of the cube with side length $a$ when the electric field is at an angle of $60^\circ$ to the $+z$-axis towards the $+x$-axis.
 
 <img src="figures/Flux-2D-E-Field-5a.svg"/>
 
@@ -796,7 +796,7 @@ The integral evaluates to $1/2$, so
 
 $\displaystyle\Phi_E=E_o\pi R^2$
 
-**Check**: Because the electric field is the same everwhere and using the field line/particle flow analogy, we expect that if the shell had a circular cap on the bottom, the flux through the cap would be the same magnitude as the flux through the shell but negative. The field is perpendicular to the cap but in the direction opposite to the normal vector, so $\Phi_E=-E_o (\pi R^2)$, as expected. (Later we will see that even with an electric field that was not uniform, the fluxes would still add to zero provided that there are no charges inside the closed surface formed by the shell and cap.)
+**Check**: Because the electric field is the same everywhere and using the field line/particle flow analogy, we expect that if the shell had a circular cap on the bottom, the flux through the cap would be the same magnitude as the flux through the shell but negative. The field is perpendicular to the cap but in the direction opposite to the normal vector, so $\Phi_E=-E_o (\pi R^2)$, as expected. (Later, we will see that even with an electric field that was not uniform, the fluxes would still add to zero provided that there are no charges inside the closed surface formed by the shell and cap.)
 
 A related problem is to compute the flux through a full sphere. You can do this without calculation by drawing the electric field and using symmetry. At each point on the top of the sphere, there is a differential element with a positive flux that is equal and opposite to a differential element with a negative flux on the bottom part of the sphere. As a result, the answer is zero for a closed sphere.
 
@@ -835,7 +835,7 @@ Although the electric field direction changes on the surface of the sphere, we d
 
 ## Problem -- Flux Through a Sphere
 
-Repeat the previous problem by starting with $\Phi_E = \int_{\mathcal{A}} \mathbf{E}\cdot d\mathbf{A}$. Show an justify your steps at the level of detail given in previous examples.
+Repeat the previous problem by starting with $\Phi_E = \int_{\mathcal{A}} \mathbf{E}\cdot d\mathbf{A}$. Show and justify your steps at the level of detail given in previous examples.
 
 ## Problem -- Flux Through a Half Cylinder
 
