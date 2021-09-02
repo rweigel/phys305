@@ -16,21 +16,25 @@
 
 ## Tuesday, August 24th
 
+* [Class Video](https://gmu.zoom.us/rec/share/p1sgQwH8YagGQ89O5z2SU1u7OoEpi3NloJpBqgfBGelTdyBYpxGCdmB4Rzal-zei.yqEFeRi4WRIu_O3P)
 * Introductions
 * Discuss syllabus
 * Review [Vectors](vectors.html)
 
 ## Thursday, August 26th 
 
+* [Class Video](https://gmu.zoom.us/rec/share/qT-AzI9EFL8CS0Rs1O3srT2hp0pboc7Fv4H2978rVn9nOop1vwEi5e2yM1YHnX0f.NiC4ps_UgetKuDUu)
 * Assign [HW 1](hw1.html) covering [Vectors](vectors.html), [Vector Fields](vector_fields.html), [Field Lines](field_lines.html), and  [Equipotentials](equipotentials.html).
 * Discuss [HW 1](hw1.html) topics
 
 ## Tuesday, August 31st
 
+* [Class Video](https://gmu.zoom.us/rec/share/O6qDLFN8Wl47ZoCYZzgroRAWkU5zbjcmGG5BPkpLKE5ASmfQZL9v3nNcgKiSEBMY.ZQc6TOQg1aVKVwXW)
 * Answer questions on [HW 1](hw1.html) topics
  
 ## Thursday, September 2nd 
 
+* [Class Video](https://gmu.zoom.us/rec/share/xQ4IgtNx9iCAcol7-LxtGbVEb2QFs1sM_KSEuzyI2ORynxZTSuOwwfXzIcIFi-pi.mIiZfgL9-H599tUe)
 * [HW #1](hw1.html) due at 3:00 pm; I will be available after class for last--minute questions
 * Discuss questions asked about HW #1 topics
 * Assign [HW #2](hw2.html) covering [Flux](flux.html), [Divergence](divergence.html), [Binomial Expansion](binomial_expansion.html), and [Symmetry](symmetry.html).
