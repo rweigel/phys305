@@ -4,7 +4,7 @@ See 1.2.4 of Griffiths.
 
 The divergence of a vector field is is a scalar defined to be
 
-$$\text{div}(\mathbf{U})=\lim_{\Delta \tau\rightarrow 0}\frac{\oint \mathbf{U}\bfcdot d\mathbf{A}}{\Delta \tau}\lim_{\Delta \tau\rightarrow 0}\frac{\Phi_U}{\Delta \tau}$$
+$$\text{div}(\mathbf{U})=\lim_{\Delta \tau\rightarrow 0}\frac{\oint \mathbf{U}\bfcdot d\mathbf{A}}{\Delta \tau}=\lim_{\Delta \tau\rightarrow 0}\frac{\Phi_U}{\Delta \tau}$$
 
 at any point in space, where $\Delta \tau$ is a differential volume that surrounds the point. The numerator is a flux, so the physical interpretation is that it represents the net flux into or out of a vanishingly small volume.
 
