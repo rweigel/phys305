@@ -4,7 +4,7 @@ The flow of current also constitutes a flux and this is also covered in this tut
 
 # Introduction
 
-Flux means "flow". In this tutorial, the rate of flow (or flux) of particles, $\dot{N}$, (in units of # particles per second) and charge, $I$, (in units of charge per second) past a point, line, and area will first be considered. These fluxes depend on the particle density and velocity.
+Flux means "flow". In this tutorial, the rate of flow (or flux) of particles, $\dot{N}$, (in units of # particles per second) and charge, $I$, (in units of charge per second) past a point, line, and area will first be considered. These fluxes depend on a density and velocity.
 
 Next, the flux, $\Phi_E$, associated with an electric field vector, $\mathbf{E}$, will be considered. In this case, the flux does not correspond to the flow of particles, but the calculation technique is similar to that for particles.
 
@@ -15,19 +15,19 @@ In this E&M, you will use the techniques covered here in two different ways:
 
 %    > **Caution**: When dealing with electric and magnetic flux, don't think of the flow of particles -- just think about vectors.
 
-This tutorial is primarily a mathematical review of flux and requires the use of normal vectors, which were reviewed previously. You will use electric flux, $\Phi_E$, when Gauss's law (Chapter 3) is covered and magnetic flux, $\Phi_B$, when the Biot--Savart law is covered (Chapter 5) and also when Faraday's law is covered (Chapter 7). Charged particle flux, $I$, will be used when computing current distributions for use in the Biot-Savart law (Chapter 5).
+This tutorial is primarily a mathematical review of flux and requires the use of normal vectors, which were reviewed previously in [Vectors](vectors.html#normal-unit-vectors). You will use electric flux, $\Phi_E$, when Gauss's law (Chapter 3) is covered and magnetic flux, $\Phi_B$, when the Biot--Savart law is covered (Chapter 5) and also when Faraday's law is covered (Chapter 7). Charged particle flux, $I$, will be used when computing current distributions for use in the Biot-Savart law (Chapter 5).
 
 Finally, electric and magnetic flux are a fundamental component of divergence and the divergence theorem, which is covered next.
 
 # Particle Flux
 
-In this section, the flux quantity is $\dot{N}$, which corresponds to a number of particles per second past a point, line, or area.
+In this section, the flux quantity is $\dot{N}$, which corresponds to a number of particles per second that flow past a point, line, or area.
 
 ## Past a point
 
 ### Example
 
-The particles shown as dots travel at a velocity of 1 m/s to the right. What is $\dot{N}$, the number of particles pass the _x_ in one second?
+The particles shown as dots travel at a velocity of 1 m/s to the right. What is $\dot{N}$, the number of particles pass the X in one second?
 
 <img src="figures/Flux-0D-1.svg"/>
 
@@ -40,7 +40,7 @@ where $\lambda$ is the number of particles per unit length and $v$ is the magnit
 
 ### Example
 
-The particles shown as dots flow outward from a source _x_ at the origin with a constant velocity of 1 m/s. What is $\dot{N}$ out of the gray region between $x = \pm 1$? Assume that flow out of the region corresponds to positive $\dot{N}$.
+The particles shown as dots flow outward from a source X at the origin with a constant velocity of 1 m/s. What is $\dot{N}$ out of the gray region? Assume that flow out of the region corresponds to positive $\dot{N}$.
 
 <img src="figures/Flux-0D-2.svg"/>
 
@@ -54,21 +54,23 @@ To generalize this, we can state that the flux into or out of a linear region is
 
 $$\dot{N} = \lambda\mathbf{v}\bfcdot \hat{\mathbf{n}}$$
 
-where the vector $\hat{\mathbf{n}}$ is defined to point outward from the region on its endpoints. With this convention, if $\dot{N}$ is positive, there is a net flow out of the region; if $\dot{N}$ is negative, there is a net flow into the region. We will use this convention also with flow out of a closed area and a closed volume.
+where the vector $\hat{\mathbf{n}}$ is defined to point outward from the region on its endpoints. With this convention, if $\dot{N}$ is positive, there is a net flow out of the region; if $\dot{N}$ is negative, there is a net flow into the region. We will use this convention also with flow past   closed lines and closed areas.
 
-Repeating the previous problem
+Repeating this problem using $\dot{N} = \lambda\mathbf{v}\bfcdot \hat{\mathbf{n}}$,
 
-At $x=-1$, $\mathbf{v}=-v\xhat$ and $\hat{\mathbf{n}}=-\xhat$, so $\dot{N}_{x={-1}}=\lambda (-v\xhat)\bfcdot(-\hat{\mathbf{n}}\xhat)=\lambda v$
+at $x=-1$, $\mathbf{v}=-v\xhat$ and $\hat{\mathbf{n}}=-\xhat$, so $\dot{N}_{x={-1}}=\lambda (-v\xhat)\bfcdot(-\hat{\mathbf{n}}\xhat)=\lambda v$
 
-At $x=+1$, $\mathbf{v}=+v\xhat$ and $\hat{\mathbf{n}}=+\xhat$, so $\dot{N}_{x={+1}}=\lambda (+v\xhat)\bfcdot(+\hat{\mathbf{n}}\xhat)=\lambda v$
+at $x=+1$, $\mathbf{v}=+v\xhat$ and $\hat{\mathbf{n}}=+\xhat$, so $\dot{N}_{x={+1}}=\lambda (+v\xhat)\bfcdot(+\hat{\mathbf{n}}\xhat)=\lambda v$
 
 So the total flux out of the region between $x=\pm 1$ is
 
 $\dot{N} = \dot{N}\_{x={-1}} + \dot{N}\_{x={+1}} = 2\lambda v=2\cdot (3/\text{m})\cdot(1\text{ m/s})=6/s$
 
+which is the same result found previously.
+
 ### Problem
 
-Particles flow as shown in the following figure. When a particle encounters the origin _x_, it is absorbed and does not continue to flow (another expression for this is "the origin is a sink").
+Particles flow as shown in the following figure. When a particle encounters the origin X, it is absorbed and does not continue to flow (another expression for this is "the origin is a sink").
 
 <img src="figures/Flux-0D-3.svg"/>
 
@@ -94,11 +96,11 @@ $$\dot{N} = \sigma v_x l_y$$
 
 where $\dot{N}$ is the number particles that pass through the line per second, $\sigma$ is the number of particles per unit area and $l_y$ is the length of the red line that particles pass through. From the diagram, the density is given by $\sigma = 9/((1\text{ m})(l_y))$ and so 
 
-$\dot{N} = \sigma v_x l_y = \frac{9}{(1\text{ m})(l_y)} v_x l_y =\frac{9}{(1\text{ m})} v_x = \frac{9}{(1\text{ m})}\cdot 1\text{ m/s}= 9/s$
+$\displaystyle\dot{N} = \sigma v_x l_y = \frac{9}{(1\text{ m})(l_y)} v_x l_y =\frac{9}{(1\text{ m})} v_x = \frac{9}{(1\text{ m})}\cdot 1\text{ m/s}= 9/s$
 
 as before.
 
-Next, suppose we wanted to compute the number of particles that pass through the green line per second. In this case, we note that that the number of particles that pass through the green line is the same as the number of particles that pass through the red line. Although the green line is longer, we expect the flux to still be $\dot{N} = n v_x l_y$.
+Next, suppose we wanted to compute the number of particles that pass through the tilted green line per second. In this case, we note that that the number of particles per second that pass through the green line is the same as that for the red line. Although the green line is longer, we expect the flux to still be $\dot{N} = n v_x l_y$.
 
 Note that in the previous paragraph, to find the flux through the tilted green line, we used a different line that was perpendicular to the velocity to compute the flux. Equivalently, we can multiply the component of velocity that is perpendicular to the green line by the length of the green line. That is, we break the velocity vector into two components -- a component parallel to the line and a component perpendicular to it.
 
@@ -131,13 +133,13 @@ For $\mathbf{v}=v_x\xhat$, use the equation $\dot{N} = n \mathbf{v}\cdot\hat{\ma
 
 $\dot{N} = \sigma \mathbf{v}\cdot\hat{\mathbf{n}}l = \sigma (v_x\xhat)\cdot(\xhat) l_y = \sigma v_x\xhat\cdot\xhat l_y=\sigma v_x l_y$
 
-Because the answer is positive, there is a net flow across the line in the direction of the chosen direction of the normal vector (from left to right). If we would have chosen the normal vector to be $\hat{\mathbf{n}}=-\xhat$, $\dot{N}$ would be negative and we would conclude there is a net flow in the direction opposite of $\hat{\mathbf{n}}$ (corresponding to left to right).
+Because the answer is positive, there is a net flow across the line in the direction of the chosen direction of the normal vector (from left to right). If we would have chosen the normal vector to be $\hat{\mathbf{n}}=-\xhat$, $\dot{N}$ would be negative and we would conclude there is a net flow in the direction opposite of $\hat{\mathbf{n}}$ (corresponding to right to left).
 
 (2)
 
 <img src="figures/Flux-1D-3.svg" width="100%"/>
 
-From the diagram above, a unit vector perpendicular to the green line is $\hat{\mathbf{n}}=\cos\theta\xhat-\sin\theta\yhat$ (this could be derived using the technique covered in [Vectors](vectors.md!#deriving, so
+From the diagram above, a unit vector perpendicular to the green line is $\hat{\mathbf{n}}=\cos\theta\xhat-\sin\theta\yhat$ (this could be derived using the technique covered in [Vectors](vectors.md#deriving), so
 
 $\dot{N} = \sigma \mathbf{v}\bfcdot\hat{\mathbf{n}} l = \sigma (v_x\xhat)\bfcdot(\cos\theta\xhat-\sin\theta\yhat) l$
 
@@ -169,7 +171,7 @@ In the previous problem, you computed $\dot{N}$ when $\mathbf{v}=v_y\yhat$ and s
 
 As a result,
 
-$\dot{N} = \sigma v_x l\cos\theta - \sigma v_y l\sin\theta$$
+$\dot{N} = \sigma v_x l\cos\theta - \sigma v_y l\sin\theta$
 
 (b) Using $\dot{N} = \sigma \mathbf{v}\cdot\hat{\mathbf{n}} l$
 
@@ -181,7 +183,7 @@ which is the same as that found in part (a) using superposition. Recall that the
 
 ### Using Integration
 
-Suppose that $\sigma$ and $\mathbf{v}$ are not constant over the red line of length $l$ as depicted in the following diagram.
+Suppose that $\sigma$ and $\mathbf{v}$ are not constant over the red line of length $l$ as depicted in the following figure.
 
 <img src="figures/Flux-1D-9.svg" width="100%"/>
 
@@ -198,7 +200,7 @@ $$\dot{N} = \int_{\mathcal{L}} \sigma(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$$
 
 If $\sigma=\frac{y}{l_y}\sigma_o$ and $\mathbf{v}=v_x\xhat$,
 
-1. sketch particles with the given density and velocity variation and determine if the flux is expected to be smaller, equal, or larger than the flux if $\sigma=\sigma_o$.
+1. sketch particles with the given density and velocity variation and determine if the flux is expected to be smaller than, equal to, or larger than the flux if $\sigma=\sigma_o$.
 
 Then find the flux that 
 
@@ -214,7 +216,7 @@ Then find the flux that
 
 <img src="figures/Flux-1D-9b.svg" width="100%"/>
 
-At the top, $y=l_y$, and the density is $\sigma_o$. Because the density is lower on all other parts of the line, we expect the flux to be less than $\sigma_ov_xl_y$.
+At the top of the red line, $y=l_y$, and the density is $\sigma_o$. Because the density is lower on all other parts of the line, we expect the flux to be less than $\sigma_ov_xl_y$.
 
 2\. The flux that passes the red line is
 
@@ -255,7 +257,7 @@ Compute $\dot{N}$ through the half--circle shown as a solid line. Use $\sigma=\s
 
 **Answer**
 
-The easy way to solve this problem is to note that the number of particles that pass through the solid line in a given second must also pass through the dotted line (of length $2R$) in a given second. As a result, the flux is
+The easy way to solve this problem is to note that the number of particles that pass through the solid line in a given second must also pass through the dotted line (of length $2R$). As a result, the flux is
 
 $\dot{N}=\sigma_ov_x(2R)= \boxed{2 \sigma_o v_x R}$
 
@@ -269,7 +271,7 @@ As covered in [Vectors](vectors.md#normal-unit-vectors), the outward normal of a
 
 To be consistent with the previous calculation, we should multiply $\hat{\mathbf{n}}$ by $-1$ so that we are computing the flux through the line with positive flux corresponding to flow from left to right. The corresponding normal vector is shown in blue in the diagram above.
 
-Substition of $\hat{\mathbf{n}}=(-1)(\cos\phi\xhat+\sin\phi\yhat)$, $\mathbf{v}=v_x\xhat$, and $\sigma = \sigma_o$ gives 
+Substition of $\hat{\mathbf{n}}=(-1)(\cos\phi\xhat+\sin\phi\yhat)$, $\mathbf{v}=v_x\xhat$, and $\sigma = \sigma_o$ into the integrand for $\dot{N}$ gives 
 
 $\dot{N} = \int_\mathcal{L} \sigma_o v_x\xhat\cdot(-1)(\cos\phi\xhat+\sin\phi\yhat) dl$
 
@@ -277,9 +279,9 @@ $\phantom{\dot{N}} = -\int_\mathcal{L} \sigma_o v_x\cos\phi dl$
 
 In this integral, $\theta$ depends on the position $l$ along the curved line. As a result, we need to re-write the integrand so that either $dl$ is written in terms of $\phi$ or $\phi$ is written in terms of $l$. It is easier to do the former using $dl=R d\phi$. Substitution of this and using $\phi=\pi/2$ at $l=0$ and $\phi=3\pi/2$ at the end of $\mathcal{L}$ gives
 
-$\dot{N} = -\int_{\pi/2}^{3\pi/2} \sigma_o v_x\cos\phi Rd\phi$
+$\displaystyle\dot{N} = -\int_{\pi/2}^{3\pi/2} \sigma_o v_x\cos\phi Rd\phi$
 
-$\phantom{\dot{N}} =-\sigma_ov_xR\sin\phi\Big|^{3\pi/2}_{\pi/2}=-\sigma_ov_xR(-1-1)=\boxed{2 \sigma_o v_x R}$
+$\displaystyle\phantom{\dot{N}} =-\sigma_ov_xR\sin\phi\Big|^{3\pi/2}_{\pi/2}=-\sigma_ov_xR(-1-1)=\boxed{2 \sigma_o v_x R}$
 
 which is the same result found using the easier method.
 
@@ -289,7 +291,7 @@ Particles with constant density $\sigma_o$ flow with constant velocity $v_x$ as 
 
 <img src="figures/Flux-1D-8.svg" width="100%"/>
 
-Compute the flux through the circle using $\dot{N} = \int_\mathcal{L} \sigma(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$. Show your steps at the same level of detail as given in the example problems.
+Compute the flux through the circle using $\dot{N} = \int_\mathcal{L} \sigma(l) \mathbf{v}(l)\cdot\hat{\mathbf{n}} dl$. Show your steps at the same level of detail as given in the previous problems.
 
 ### Through a Closed Line
 
@@ -300,34 +302,39 @@ A source of particles is at the origin that sends particles out radially and uni
 <img src="figures/Flux-1D-4.svg" width="100%"/>
 
 1. If the density of particles at the inner circle of radius $R$ is $\sigma_i$, what is $\dot{N}$ through the inner circle?
-1. What is $\sigma_o$, the density of particles through at the outer circle of radius $2R$?
+1. What is $\sigma_o$, the density of particles at the outer circle of radius $2R$?
 1. What is $\dot{N}$ through the outer circle of radius $2R$ in terms of $\sigma_i$?
 
 **Answer**
 
-(1) $\boxed{\dot{N}_i=\sigma_i v_r 2\pi R}$. We could have used $\dot{N} = \sigma_i \mathbf{v} \bfcdot \hat{\mathbf{n}} l$; in this case $l=2\pi R$, $\mathbf{v}=v_r\hat{\mathbf{s}}$ and the normal vector is $\hat{\mathbf{s}}$, so the dot product reduces to $v_r$.
+1\. $\boxed{\dot{N}_i=\sigma_i v_r 2\pi R}$. We could have used $\dot{N} = \sigma_i \mathbf{v} \bfcdot \hat{\mathbf{n}} l$; in this case $l=2\pi R$, $\mathbf{v}=v_r\hat{\mathbf{s}}$ and the normal vector is $\hat{\mathbf{s}}$, so the dot product reduces to $v_r$.
 
-(2) On the diagram given, there are eight blue dots on both the inner and outer circle. (If the particles move outwards with a constant velocity, the number of particles on a circle of any radius will be the same). The outer circle is 2x longer than the inner circle, so the density of particles on it must be 1/2 of that on the inner circle. That is, $\sigma_o=\sigma_i/2$.
+2\. On the diagram given, there are eight blue dots on both the inner and outer circle. (If the particles move outwards with a constant velocity, the number of particles on a circle of any radius will be the same). The outer circle is 2x longer than the inner circle, so the density of particles on it must be 1/2 of that on the inner circle. That is, $\sigma_o=\sigma_i/2$.
 
-(3) $\dot{N}_o=\sigma_o v_r 2\pi (2R)=(\sigma_i/2) v_r 2\pi 2R= \boxed{\sigma_i v_r 2\pi R}$, which is the same result as (1). This is expected - if the particles flow outwards at a constant velocity, each time a particle passes the outer circle, there is a particle behind it that passes the inner circle.
+3\. $\dot{N}_o=\sigma_o v_r 2\pi (2R)=(\sigma_i/2) v_r 2\pi 2R= \boxed{\sigma_i v_r 2\pi R}$, which is the same result as 1. This is expected - if the particles flow outwards at a constant velocity, each time a particle passes the outer circle, there is a particle behind it that passes the inner circle.
 
 ----
 
 **Summary of Results**
 
-1. the net flux through a closed line is not zero when there is a source emitting particles inside of it,
+For a source emitting particles with uniform speed $v_s$ in all directions in a plane, or a sink that absorbs particles with uniform speed in all directions,
+
+1. the net flux through a closed loop is not zero when there is a source emitting particles inside of it,
 2. the net flux through a circle of any radius centered on the source is the same, and
-3. then density $\sigma$ decreases in proportional to distance from the source.
+3. the density $\sigma$ decreases in proportional to distance from the source.
 
 In fact, the net flux through a circle of any radius is the same even if the source is not at the center of the circle. This can be demonstrated with a diagram using two approaches.
 
-**Approach I**
+**Approach I** -- Using a Diagram
 
 <img src="figures/Flux-1D-5a.svg" width="100%"/>
 
 The above diagram shows particles flowing outwards at a constant velocity at a given point in time. The number of particles that pass the red line on the inner circle per second must equal the number per second that pass through the red line on the outer circle if the spacing between the blue dots is to remain constant. Given that this must be true if the particles flow at a constant velocity, we conclude that the flux through the inner red line must be the same as that through the outer red line. To complete the justification, note that this argument does not depend on the length of the inner red line - if it is a full circle, the same arguments apply and we conclude the flux through the inner circle must equal that through the outer circle.
 
-<div style="background-color:yellow">**Approach II involves a detailed mathematical approached that may be skipped.**</div>
+
+**Approach II** -- Mathematically
+
+<div style="background-color:yellow">The following details may be skipped.</div>
 
 <details>
 
@@ -396,12 +403,12 @@ Does this result hold for a source that is outside of a close loop of arbitrary 
 
 For a source emitting particles with uniform speed $v_s$ in all directions in a plane, or a sink that absorbs particles with uniform speed in all directions,
 
-1. then density $\sigma$ decreases in proportional to distance from the source or sink.
+1. the density $\sigma$ decreases in proportional to distance from the source or sink.
 2. the net flux through an arbitrary closed path that surrounds the source is not zero,
-3. the flux through an arbitrary closed path that encloses a source or sink will be the same as that through a circle centered on the source that is within the closd path, and
-4. the net flux through an arbitrary closed path that does not enclose the source or sink is zero.
+3. the flux through an arbitrary closed path that encloses a source or sink will be the same as that through a circle centered on the source or sink that is within the closd path, and
+4. the net flux is zero through an arbitrary closed path that does not enclose a source or sink.
 
-All of the above statements that apply to flow in a plane rely on the fact that $\sigma v_s$ is inversely proportional to the distance $s$ from the source or sink. In the case of electric flux, the analog to a source or sink is the electric field due to a positive or negative infinite line of charge, which has an electric field that is uniform in all directions and is inversely proportional to the distance $s$ from the line.
+All of the above statements that apply to flow in a plane rely on the fact that $\sigma v_s$ is inversely proportional to the distance $s$ from the source or sink. In the case of electric flux, the analog to a source or sink is the electric field due to a positive or negative infinite line of charge, which has an electric field that is uniform in all directions and is inversely proportional to the distance from the line.
 
 ## Through an Area
 
@@ -431,23 +438,21 @@ $$N = \int \rho \mathbf{v}\cdot d{\mathbf{A}}$$
 
 ### Through a Closed Area
 
-Previously, a source of particles that emitted particles with a uniform speed in all directions in a plane was considered.
+Previously, a source of particles that emitted particles with a uniform speed in all directions in a plane (2--dimensional flow) was considered.
 
 Here we suppose a source emits particles uniformly in all directions with a uniform speed $v_r$ in three dimensions. Think of a light bulb at the origin that emits photons in all directions, and think of the photons as the particle. Or, think of a bunch of tiny people at the origin who throw baseballs.
 
 #### Problem
 
-A source at the origin emits particles with a uniform speed $v_r$ in 3 dimensions.
+A source at the origin emits particles with a uniform speed $v_r$ in all directions.
 
-1\. Show that density of particles, $\rho$ is inversly proportional to the square of the distance $r$ from the origin.
+1\. Explain why the density of particles, $\rho$ is inversly proportional to the square of the distance $r$ from the origin.
 
 2\. Explain why the net flux through an arbitrary closed surface that surrounds the source is not zero,
 
-3\. Explain why the flux through an arbitrary closed surface that encloses a source or sink will be the same as that through a the surface of a sphere centered on the source that is within the closed arbitrary surface.
+3\. Explain why the flux through an arbitrary closed surface that encloses a source or sink will be the same as that through a the surface of a sphere centered on the source that is fully within the closed arbitrary surface.
 
-4\. Explain why the net flux through an arbitrary closed path that does not enclose the source or sink is zero.
-
-All of the above statements that apply to flow in a plane rely on the fact that $\rho v_r$ is inversely proportional to $r^2$, where $r$ is the distance from the source or sink.
+4\. Explain why the net flux through an arbitrary closed surface that does not enclose the source or sink is zero.
 
 In the case of electric flux, the analog to a source or sink is the electric field due to a positive or negative charge, which has an electric field that is uniform in all directions and is inversely proportional to $r^2$.
 
@@ -486,7 +491,7 @@ Surface currents are described and used in Chapter 5.1 of Griffiths.
 ### Surface Current $\mathbf{K}$
 
 
-$\mathbf{K}$ has units of (charge/s)/length and is defined by
+$\mathbf{K}$ has units of (charge/s)/length = (current/length) and is defined by
 
 $\displaystyle \mathbf{K} \equiv \sigma \mathbf{v}$ so that $\displaystyle I=\int_{\mathcal{L}}\sigma\mathbf{v}\bfcdot \hat{\mathbf{n}}=\int_{\mathcal{L}}\mathbf{K}\bfcdot \hat{\mathbf{n}}dl$
 
@@ -500,7 +505,7 @@ Griffiths uses the equivalent definition
 
 $\displaystyle \mathbf{K} \equiv \frac{d\mathbf{I}}{dl_\perp}$
 
-which follows from the previous equation by multiplying by a unit vector in the direction of $\mathbf{K}$.
+which follows from $dI=Kdl_\perp$ by multiplying both sides by a unit vector in the direction of $\mathbf{K}$.
 
 ### Volume Current $\mathbf{J}$
 
@@ -516,7 +521,7 @@ Griffiths uses the equivalent definition
 
 $\displaystyle \mathbf{J} \equiv \frac{d\mathbf{I}}{da_\perp}$
 
-which follows from the previous equation by multiplying by a unit vector in the direction of $\mathbf{J}$.
+which follows from $dI = Jda_\perp$ by multiplying both sides by a unit vector in the direction of $\mathbf{J}$.
 
 # Electric Flux
 
@@ -538,7 +543,9 @@ $$
 \Phi_E \equiv \int_{\mathcal{A}} \mathbf{E}\cdot d\mathbf{A}= \int_{\mathcal{A}} \mathbf{E}\cdot \hat{\mathbf{n}}dA
 $$
 
-where $\mathbf{E}$ is the electric field at $dA$, a small patch of area on a surface ${\mathcal{A}}$; the vector $d\mathbf{A}$ is $dA$ multiplied by a unit vector that is normal (perpendicular) to $dA$. Note that the subscript ${\mathcal{A}}$ is often omitted; it is typically used when we want to refer to an area in a diagram or in the text describing an equation. As before, there are two normal vectors to any surface. If $\Phi_E$ is found to be positive, then we say that the flux is in the direction of the normal. If $\Phi_E$ is found to be negative, then we say that the flux is in the opposite direction of the normal. Under certain conditions described below, the flux equation simplifies to
+where $\mathbf{E}$ is the electric field at $dA$, a small patch of area on a surface ${\mathcal{A}}$; the vector $d\mathbf{A}$ is $dA$ multiplied by a unit vector that is normal (perpendicular) to $dA$. Note that the subscript ${\mathcal{A}}$ on the integral is often omitted; it is typically used when we want to refer to an area in a diagram or in the text describing an equation.
+
+As before, there are two normal unit vectors to any surface. If $\Phi_E$ is found to be positive, then we say that the flux is in the direction of the normal. If $\Phi_E$ is found to be negative, then we say that the flux is in the opposite direction of the normal. Under certain conditions described below, the flux equation simplifies to
 
 $$\Phi_E=\mathbf{E}\bfcdot \mathbf{A}= \mathbf{E}\cdot \hat{\mathbf{n}}A$$
 
@@ -548,7 +555,7 @@ $$\Phi_E=E_\perp A$$
 
 where $E_\perp$ is the component of $\mathbf{E}$ that is perpendicular to the surface. (The notation here may be a bit confusing -- the dot product results in the component of $\mathbf{E}$ that is parallel to $\hat{\mathbf{n}}$, so it may seem strange that we use the perpendicular subscript. The reason we call it $E_\perp$ is that it is the component of $\mathbf{E}$ perpendicular to the area.)
 
-If $\mathcal{A}$ being used to compute the flux is closed, then we write the integral with a circle:
+If the $\mathcal{A}$ being used to compute the flux is closed, then we write the integral with a circle:
 
 $$
 \Phi_E = \oint_{\mathcal{A}} \mathbf{E}\cdot d\mathbf{A} = \oint_{\mathcal{A}} \mathbf{E}\cdot \hat{\mathbf{n}}dA
@@ -564,10 +571,9 @@ $$\mathbf{E}\cdot d\mathbf{A}=\mathbf{E}\cdot\hat{\mathbf{n}}dA=|\mathbf{E}||\ha
 
 where $\theta_{E\hat{n}}$ is the angle between the normal unit vector and $\mathbf{E}$ and the fact that a unit vector has a magnitude of $1$ was used. From this, we conclude that if the either $|\mathbf{E}|$ changes on the surface or if the angle between $\mathbf{E}$ and the normal vector at any point on the surface changes, integration is required.
 
-
 ## Example -- Flux Through an Area
 
-In part (a) of following figure, a 3-D view of two planes are shown. The planes are in a region of space where the electric field is in the $+y$-direction. Part (b) shows the planes when viewed from a position on the $+x$-axis; from this view, electric field lines are horizontal.
+In part (a) of following figure, a 3-D view of two planes are shown. The planes are in a region of space where the electric field is constant and in the $+y$-direction. Part (b) shows the planes when viewed from a position on the $+x$-axis; from this view, electric field lines are horizontal.
 
 Compute $\Phi_E$ through the two areas.
 
@@ -595,11 +601,11 @@ which is the same as the flux through the blue plane.
 
 **Approach I** -- Using $\Phi_E=\mathbf{E}\cdot \hat{\mathbf{n}}A$
 
-with, for the blue plane, $\mathbf{E}=E\yhat$, $A=wL\cos\varphi$, and $\hat{\mathbf{n}}=\yhat$ gives
+$\mathbf{E}=E\yhat$ was given and for the blue plane, $A=wL\cos\varphi$, and $\hat{\mathbf{n}}=\yhat$, so 
 
-$$\Phi_E=\mathbf{E}\bfcdot\hat{\mathbf{n}}A =(E\yhat)\bfcdot (wL\cos\varphi \yhat)=E(wL\cos\varphi)$$
+$$\Phi_E=\mathbf{E}\bfcdot\hat{\mathbf{n}}A =(E\yhat)\bfcdot \yhat(wL\cos\varphi )=E(wL\cos\varphi)$$
 
-For the blue plane, $A=wL$. From the diagram below,
+For the gray plane, $A=wL$. From the diagram below,
 $\hat{\mathbf{n}}=\cos\varphi\yhat + \sin\varphi \zhat$
 
 <img src="figures/Flux-2D-E-Field-1c.svg"/>
@@ -608,7 +614,7 @@ Substitution gives
 
 $\Phi_E=\mathbf{E}\bfcdot\hat{\mathbf{n}}A =(E\yhat)\bfcdot (\cos\varphi\yhat + \sin\varphi \zhat)(wL)=E(wL\cos\varphi)$
 
-Note that an alternative way of computing $\hat{\mathbf{n}}$ is to use the fact that the plane is perpendicular to the tilted line, find the equation for the line, and then use the equation for $\hat{\mathbf{n}}$ to a line covered in [Vectors](vectors.html#normal-unit-vectors).
+Note that an alternative way of computing $\hat{\mathbf{n}}$ is to use the fact that the plane is perpendicular to the tilted line, find the equation for the tilted line, and then use the equation for $\hat{\mathbf{n}}$ to a line covered in [Vectors](vectors.html#normal-unit-vectors).
 
 %Recall that the dot product of two vectors is the product of their magnitude times $\cos\phi$, where $\phi$ is the angle between them. In part (a) the following diagram, the tilt angle $\phi$ between the blue and gray surfaces in the previous diagram is equal to the angle between $\mathbf{E}$ and the newly defined area vector $\mathbf{A}$ (shown in green).
 
@@ -652,7 +658,7 @@ The normal direction for the bottom surface is downwards, which is in the opposi
 
 $\Phi_E^{4}=-E_oA=-E_oa^2$
 
-The total flux through the cube, $\Phi_E^1+...+\Phi_E^6$, is zero. Thinking again in terms of the electric field representing flow lines, every electric field line that enters the cube exits, so the flow in equals the flow out. (Perhaps confusingly, flow out of a volume corresponds to a positive flux. The reason for this convention for flux is that from Gauss's law, a net positive flow out of a closed surface corresponds to a net positive charge inside the surface.)
+The total flux through the cube, $\Phi_E^1+...+\Phi_E^6$, is zero. Thinking again in terms of the electric field representing flow lines, every electric field line that enters the cube exits, so the flow in equals the flow out. 
 
 **Method II**
 
@@ -661,7 +667,7 @@ $\hat{\mathbf{n}}_5=-\jhat$, $\hat{\mathbf{n}}_6=-\ihat$. The negative sign for 
 
 The area vector is the area times the normal vector, so $\mathbf{A}_1=A\ihat$, $\mathbf{A}_2=A\jhat$, $\mathbf{A}_3=A\khat$, $\mathbf{A}_4=-A\khat$, $\mathbf{A}_4=-A\jhat$, and $\mathbf{A}_4=-A\ihat$, where $A=a^2$.
 
-Recall that $\ihat\cdot\ihat=\jhat\cdot\jhat=\khat\cdot\khat=1$ and the dot product of any other combinations of Cartesian unit vectors is zero: $\ihat\cdot\jhat=0$, $\jhat\cdot\khat=0$, and $\ihat\cdot\khat=0$. Dot products of unit vectors are reviewed in Section 1.10 of the textbook.
+Recall that $\ihat\cdot\ihat=\jhat\cdot\jhat=\khat\cdot\khat=1$ and the dot product of any other combinations of Cartesian unit vectors is zero: $\ihat\cdot\jhat=0$, $\jhat\cdot\khat=0$, and $\ihat\cdot\khat=0$.
 
 $\Phi_E^{1}=\mathbf{E}\cdot \mathbf{A}_1=\mathbf{E}\cdot A\hat{\mathbf{n}}_1=E_o\khat\cdot A\ihat=E_oA(\khat\cdot \ihat)=0$
 
@@ -732,7 +738,7 @@ $\Phi_E^5=\mathbf{E}\cdot \hat{\mathbf{n}}_5A=E_o(\sin 30^\circ\jhat+\cos 30^\ci
 
 $\Phi_E^6=\mathbf{E}\cdot \hat{\mathbf{n}}_6A=E_o(\sin 30^\circ\jhat+\cos 30^\circ\khat)\cdot(-\ihat A) =  -E_oA(\jhat\cdot\ihat\sin 30^\circ+\khat\cdot\ihat\cos 30^\circ)=0$
 
-**Checks**: The flux is positive for faces 2 and 3. This is consistent with the diagram because if electric field lines were drawn, they would emerge from the volume out of these faces. The flux is negative for faces 4 and 5. This is consistent with the diagram because if electric field lines were drawn, they would enter the volume.
+**Check**: The flux is positive for faces 2 and 3. This is consistent with the previous figure because if electric field vectors point outward from the volume. The flux is negative for faces 4 and 5, which is consistent with the diagram because the electric field vectors point into the volume.
 
 ## Problem - Flux Through a Cube III
 
@@ -756,7 +762,7 @@ Find the flux through the faces of the cube with side length $a$ when the electr
 
 ## Example -- Flux Through a Dome
 
-A spherical shell of radius $R$ is centered on the origin and cut in half. A view from the $+x$--axis is shown one the right of the following figure.
+A spherical shell of radius $R$ is centered on the origin and cut in half. A view from the $+x$--axis is shown on the right of the following figure.
 
 <img src="figures/Flux-2D-E-Field-Dome-1a.svg"/>
 
@@ -764,9 +770,9 @@ Compute $\Phi_E = \int_{\mathcal{A}} \mathbf{E}\cdot d\mathbf{A}$ with $\mathbf{
 
 **Answer**:
 
-In this problem, the magnitude of the electric field is constant on the surface, but its direction changes with respect to a line that is perpendicular to the surface. As a result, we must use the integral form and add the fluxes on each differential element.
+In this problem, the magnitude of the electric field is constant on the surface, but its direction changes with respect to a line that is perpendicular to the surface. As a result, we must use the integral form and add the fluxes on each differential area element.
 
-A differential element on the surface on a sphere is $R^2 \sin\theta d\theta d\phi$. The normal vector is $\hat{\mathbf{r}}$. Thus
+A differential element on the surface on a sphere is of radius $R$ is $dA = R^2 \sin\theta d\theta d\phi$. The normal vector is $\hat{\mathbf{r}}$. Thus
 
 $d\mathbf{A}=\hat{\mathbf{n}}dA = \hat{\mathbf{r}}R^2 \sin\theta d\theta d\phi $
 
@@ -774,7 +780,7 @@ Dotting this with $\mathbf{E}=E_o\zhat$ gives
 
 $ \mathbf{E}\cdot d\mathbf{A}=E_oR^2\sin\theta d\theta d\phi \zhat\bfcdot \hat{\mathbf{r}}$.
 
-To do the dot product when the terms have unit vectors in different coordinate systems, in general, we need to write both in the same coordinate system. This means either writing $\zhat$ with spherical unit vectors or $\hat{\mathbf{r}}$ with cartesian unit vectors. However, for $\zhat\bfcdot \hat{\mathbf{r}}$, we can use a short--cut. The dot product of two vectors is the product of the magnitudes of the vectors multiplied by $\cos$ of the angle between the two vectors. If you draw a diagram of $\zhat$ and $\hat{\mathbf{r}}$, you should see that the angle between them happens to be the spherical angle $\theta$. As a result, we can immediately write $\zhat\bfcdot \hat{\mathbf{r}}=\cos\theta$. So now the integrand is
+To do the dot product when the terms have unit vectors in different coordinate systems, in general, we need to write both in the same coordinate system. This means either writing $\zhat$ with spherical unit vectors or $\hat{\mathbf{r}}$ with cartesian unit vectors. However, for $\zhat\bfcdot \hat{\mathbf{r}}$, we can use a short--cut. The dot product of two vectors is the product of the magnitudes of the vectors multiplied by $\cos$ of the angle between the two vectors. If you draw a diagram of $\zhat$ and $\hat{\mathbf{r}}$, you should see that the angle between them happens to be the spherical angle $\theta$. As a result, we can immediately write $\zhat\bfcdot \hat{\mathbf{r}}=\cos\theta$. Using this,
 
 $\mathbf{E}\cdot d\mathbf{A}=E_oR^2\sin\theta d\theta d\phi \cos\theta$.
 
@@ -792,13 +798,15 @@ $\displaystyle\Phi_E=E_o\pi R^2$
 
 **Check**: Because the electric field is the same everwhere and using the field line/particle flow analogy, we expect that if the shell had a circular cap on the bottom, the flux through the cap would be the same magnitude as the flux through the shell but negative. The field is perpendicular to the cap but in the direction opposite to the normal vector, so $\Phi_E=-E_o (\pi R^2)$, as expected. (Later we will see that even with an electric field that was not uniform, the fluxes would still add to zero provided that there are no charges inside the closed surface formed by the shell and cap.)
 
-A related question is to compute the flux through a full sphere. You can do this without calculation by drawing the electric field and using symmetry. At each point on the top of the sphere, there is a differential element with a positive flux that is equal and opposite to a differential element with a negative flux on the bottom part of the sphere. As a result, the answer is zero for a closed sphere. 
+A related problem is to compute the flux through a full sphere. You can do this without calculation by drawing the electric field and using symmetry. At each point on the top of the sphere, there is a differential element with a positive flux that is equal and opposite to a differential element with a negative flux on the bottom part of the sphere. As a result, the answer is zero for a closed sphere.
+
+**FIGURE**
 
 Alternatively, from the field line/particle flow analogy, the net flow in must equal the net flow out, so the answer should be zero.
 
 ## Problem -- Flux Through a Disk
 
-A disk of radius $R$ is centered on the origin and in the $x$--$y$ plane. Starting with the equation $\Phi_E=\int_{\mathcal{A}} \mathbf{E}\cdot d\mathbf{A}$, compute $\Phi_E$ using $\hat{\mathbf{n}}=\zhat$ for
+A disk of radius $R$ is centered on the origin and in the $x$--$y$ plane. Sketch the vector fields
 
 1\. $\mathbf{E}=E_o\zhat$
 
@@ -806,6 +814,8 @@ A disk of radius $R$ is centered on the origin and in the $x$--$y$ plane. Starti
 
 3\. $\mathbf{E}=E_o\hat{\mathbf{s}}$
 
+Then, starting with the equation $\Phi_E=\int_{\mathcal{A}} \mathbf{E}\cdot d\mathbf{A}$, compute $\Phi_E$ using $\hat{\mathbf{n}}=\zhat$ for each vector field.
+ 
 Justify your steps at the level of detail given in the example problems. Recall that a differential element of area on a disk is $s ds d\phi$.
 
 ## Example -- Flux Through a Sphere
@@ -817,7 +827,7 @@ If $\mathbf{E}=kQ\hat{\mathbf{r}}/r^2$, find the flux through the surface of a s
 
 **Answer**:
 
-Although the electric field direction changes on the surface of the sphere, we do not need integration. Earlier it was stated that if the either $|\mathbf{E}|$ changes on the surface or if the angle between $\mathbf{E}$ and the normal vector at any point on the surface changes, integration is required. Here the normal vector to the surface of the sphere is $\hat{\mathbf{r}}$, which is always aligned with $\mathbf{E}$, because its direction is given by  $\hat{\mathbf{r}}$. In addition, on the surface of a sphere, the electric field magnitude does not not change -- it is $E=kQ/R^2$. Thus, both conditions that are needed to avoid integration are satisfied.
+Although the electric field direction changes on the surface of the sphere, we do not need integration. Earlier it was stated that if the either $|\mathbf{E}|$ changes on the surface or if the angle between $\mathbf{E}$ and the normal vector at any point on the surface changes, integration is required. Here the normal vector to the surface of the sphere is $\hat{\mathbf{r}}$, which is always aligned with $\mathbf{E}$, because its direction is also given by $\hat{\mathbf{r}}$. In addition, on the surface of a sphere, the electric field magnitude does not not change -- it is $E=kQ/R^2$. Thus, both conditions that are needed to avoid integration are satisfied.
 
 1\. $\displaystyle\Phi_E=E_{\perp}A = \left(\frac{kQ}{R^2}\right) (4\pi R^2)=4\pi k Q$
 
@@ -833,7 +843,7 @@ A cylindrical shell (like a toilet paper roll with caps added to ends) is sliced
 
 <img src="figures/Flux-2D-E-Field-Half-Cylinder.svg"/>
 
-If $\mathbf{E}=E_o\zhat$,
+If $\mathbf{E}=E_o\yhat$,
 
 1\. compute the magnitude of the electric flux through the surface using $\Phi_E = \int_{\mathcal{A}} \mathbf{E}\cdot d\mathbf{A}$. Justify all of your steps for the three integrals that must be evaluated (two caps and curved surface). Recall that a differential element of area on the curved surface of a cylinder of radius $R$ is $Rd\phi dz$ and a differential element on a disk is $sdsd\phi$; and
 
