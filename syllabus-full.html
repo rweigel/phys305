@@ -52,7 +52,8 @@
         h6 + .line-number { margin-block-start: 15em; }
         .blockquote { width: 100%; display: block; margin: 1em; border: 1px solid black; padding: 1em; border-radius: 0.5em; }
         details > summary { font-weight: bold; }
-        details[open] { border: 1px solid black; padding: 1em; }
+        details { padding-left: 0.5em; }
+        details[open] { border: 1px solid black; padding: 0em 0em 0em 0.5em; }
         table { padding: 0px; }
         table tr { border-top: 1px solid rgb(204, 204, 204); background-color: white; margin: 0px; padding: 0px; }
         table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
@@ -77,10 +78,6 @@
           .katex { font: 1em / 1 KaTeX_Main, "Times New Roman", serif; white-space: nowrap; text-indent: 0px; text-rendering: auto; }
           .katex-display { margin-top: 0px; }
         }
-        #toc > ol ol { display: none; }
-        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
-        #toc > ol ol { display: none; }
-        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
         #toc > ol ol { display: none; }
         body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
         #toc > ol ol { display: none; }
@@ -131,38 +128,33 @@
         <ol>
             <li><a number="1" href="#topics">Topics</a></li>
             <li><a number="2" href="#class-schedule">Class Schedule</a></li>
-            <ol style="display: none;">
-                <li><a number="2.1" href="#tuesday-august-24th">Tuesday, August 24th</a></li>
-                <li><a number="2.2" href="#thursday-august-26th">Thursday, August 26th</a></li>
-                <li><a number="2.3" href="#tuesday-august-31st">Tuesday, August 31st</a></li>
-                <li><a number="2.4" href="#thursday-september-2nd" class="">Thursday, September 2nd</a></li>
-                <li><a number="2.5" href="#tuesday-september-7th">Tuesday, September 7th</a></li>
-                <li><a number="2.6" href="#thursday-september-9th" class="">Thursday, September 9th</a></li>
-                <li><a number="2.7" href="#tuesday-september-14th">Tuesday, September 14th</a></li>
-                <li><a number="2.8" href="#thursday-september-16th" class="highlighted">Thursday, September 16th</a></li>
-                <li><a number="2.9" href="#tuesday-september-21st">Tuesday, September 21st</a></li>
-                <li><a number="2.10" href="#thursday-september-23rd">Thursday, September 23rd</a></li>
-                <li><a number="2.11" href="#tuesday-september-28th">Tuesday, September 28th</a></li>
-                <li><a number="2.12" href="#thursday-september-30th" class="">Thursday, September 30th</a></li>
-                <li><a number="2.13" href="#tuesday-october-5th">Tuesday, October 5th</a></li>
-                <li><a number="2.14" href="#thursday-october-7th">Thursday, October 7th</a></li>
-                <li><a number="2.15" href="#tuesday-october-12th">Tuesday, October 12th</a></li>
-                <li><a number="2.16" href="#thursday-october-14th">Thursday, October 14th</a></li>
-                <li><a number="2.17" href="#tuesday-october-19th">Tuesday, October 19th</a></li>
-                <li><a number="2.18" href="#thursday-october-21st">Thursday, October 21st</a></li>
-                <li><a number="2.19" href="#tuesday-october-26th">Tuesday, October 26th</a></li>
-                <li><a number="2.20" href="#thursday-october-28th">Thursday, October 28th</a></li>
-                <li><a number="2.21" href="#tuesday-november-2nd">Tuesday, November 2nd</a></li>
-                <li><a number="2.22" href="#thursday-november-4th">Thursday, November 4th</a></li>
-                <li><a number="2.23" href="#tuesday-november-9th">Tuesday, November 9th</a></li>
-                <li><a number="2.24" href="#thursday-november-11th">Thursday, November 11th</a></li>
-                <li><a number="2.25" href="#tuesday-november-16th">Tuesday, November 16th</a></li>
-                <li><a number="2.26" href="#thursday-november-18th">Thursday, November 18th</a></li>
-                <li><a number="2.27" href="#tuesday-november-23rd">Tuesday, November 23rd</a></li>
-                <li><a number="2.28" href="#thursday-november-25th">Thursday, November 25th</a></li>
-                <li><a number="2.29" href="#tuesday-november-30th">Tuesday, November 30th</a></li>
-                <li><a number="2.30" href="#thursday-december-2nd">Thursday, December 2nd</a></li>
-                <li><a number="2.31" href="#thursday-december-9th">Thursday, December 9th</a></li>
+            <ol>
+                <li><a number="2.1" href="#thursday-september-9th">Thursday, September 9th</a></li>
+                <li><a number="2.2" href="#tuesday-september-14th">Tuesday, September 14th</a></li>
+                <li><a number="2.3" href="#thursday-september-16th">Thursday, September 16th</a></li>
+                <li><a number="2.4" href="#tuesday-september-21st">Tuesday, September 21st</a></li>
+                <li><a number="2.5" href="#thursday-september-23rd">Thursday, September 23rd</a></li>
+                <li><a number="2.6" href="#tuesday-september-28th">Tuesday, September 28th</a></li>
+                <li><a number="2.7" href="#thursday-september-30th">Thursday, September 30th</a></li>
+                <li><a number="2.8" href="#tuesday-october-5th">Tuesday, October 5th</a></li>
+                <li><a number="2.9" href="#thursday-october-7th">Thursday, October 7th</a></li>
+                <li><a number="2.10" href="#tuesday-october-12th">Tuesday, October 12th</a></li>
+                <li><a number="2.11" href="#thursday-october-14th">Thursday, October 14th</a></li>
+                <li><a number="2.12" href="#tuesday-october-19th">Tuesday, October 19th</a></li>
+                <li><a number="2.13" href="#thursday-october-21st">Thursday, October 21st</a></li>
+                <li><a number="2.14" href="#tuesday-october-26th">Tuesday, October 26th</a></li>
+                <li><a number="2.15" href="#thursday-october-28th">Thursday, October 28th</a></li>
+                <li><a number="2.16" href="#tuesday-november-2nd">Tuesday, November 2nd</a></li>
+                <li><a number="2.17" href="#thursday-november-4th">Thursday, November 4th</a></li>
+                <li><a number="2.18" href="#tuesday-november-9th">Tuesday, November 9th</a></li>
+                <li><a number="2.19" href="#thursday-november-11th">Thursday, November 11th</a></li>
+                <li><a number="2.20" href="#tuesday-november-16th">Tuesday, November 16th</a></li>
+                <li><a number="2.21" href="#thursday-november-18th">Thursday, November 18th</a></li>
+                <li><a number="2.22" href="#tuesday-november-23rd">Tuesday, November 23rd</a></li>
+                <li><a number="2.23" href="#thursday-november-25th">Thursday, November 25th</a></li>
+                <li><a number="2.24" href="#tuesday-november-30th">Tuesday, November 30th</a></li>
+                <li><a number="2.25" href="#thursday-december-2nd">Thursday, December 2nd</a></li>
+                <li><a number="2.26" href="#thursday-december-9th">Thursday, December 9th</a></li>
             </ol>
         </ol>
     </div>
@@ -439,115 +431,19 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="tuesday-august-24th" number="2.1" class="hanchor" href="#tuesday-august-24th"><span class="hnumber">2.1 </span> <span class="htext">Tuesday, August 24th</span></a></h2>
+                <h2><a name="thursday-september-9th" number="2.1" class="hanchor" href="#thursday-september-9th"><span class="hnumber">2.1 </span> <span class="htext">Thursday, September 9th</span></a></h2>
 
             </div>
             <div class="block">
                 <ul>
                     <li>
-                        <div class="block">
-                            <p>Introductions</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="block">
-                            <p>Discuss syllabus</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="block">
-                            <p>Assign HW #1 covering Vectors, Vector Fields, Field Lines, and Equipotentials</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="block">
-                            <p>Discuss HW #1 topics</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="section">
-
-            <div class="block">
-                <h2><a name="thursday-august-26th" number="2.2" class="hanchor" href="#thursday-august-26th"><span class="hnumber">2.2 </span> <span class="htext">Thursday, August 26th</span></a></h2>
-
-            </div>
-            <div class="block">
-                <ul>
-                    <li>
-                        <div class="block">
-                            <p>Discuss HW #1 topics</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="section">
-
-            <div class="block">
-                <h2><a name="tuesday-august-31st" number="2.3" class="hanchor" href="#tuesday-august-31st"><span class="hnumber">2.3 </span> <span class="htext">Tuesday, August 31st</span></a></h2>
-
-            </div>
-            <div class="block">
-                <ul>
-                    <li>
-                        <div class="block">
-                            <p>Answer questions on HW #1 topics</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="section">
-
-            <div class="block">
-                <h2 class=""><a name="thursday-september-2nd" number="2.4" class="hanchor" href="#thursday-september-2nd"><span class="hnumber">2.4 </span> <span class="htext">Thursday, September 2nd</span></a></h2>
-
-            </div>
-            <div class="block">
-                <ul class="">
-                    <li class="">
-                        <div class="block">
-                            <p>Answer questions on HW #1 topics</p>
-                        </div>
-                    </li>
-                    <li class="">
-                        <div class="block">
-                            <p>Homework #1 due at 3:00 pm</p>
-                        </div>
-                    </li>
-                    <li class="">
-                        <div class="block">
-                            <p>Assign Homework #2 covering Flux, Divergence, Coulomb’s Law, Electric Field, and Symmetry and Superposition.</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="section">
-
-            <div class="block">
-                <h2><a name="tuesday-september-7th" number="2.5" class="hanchor" href="#tuesday-september-7th"><span class="hnumber">2.5 </span> <span class="htext">Tuesday, September 7th</span></a></h2>
-
-            </div>
-        </div>
-        <div class="section">
-
-            <div class="block">
-                <h2 class=""><a name="thursday-september-9th" number="2.6" class="hanchor" href="#thursday-september-9th"><span class="hnumber">2.6 </span> <span class="htext">Thursday, September 9th</span></a></h2>
-
-            </div>
-            <div class="block">
-                <ul class="">
-                    <li class="">
                         <div class="block">
                             <p>HW #2 due.</p>
                         </div>
                     </li>
-                    <li class="">
+                    <li>
                         <div class="block">
-                            <p>Assign HW #3 covering Discrete Charge Distributions, Charge Densities, the Binomial Expansion, Limits, and Continuous Charge Distributions.</p>
+                            <p>Assign HW #3 covering Coulomb’s Law, Electric Field, Superposition, Discrete Charge Distributions, Charge Densities, and Continuous Charge Distributions.</p>
                         </div>
                     </li>
                 </ul>
@@ -556,24 +452,24 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="tuesday-september-14th" number="2.7" class="hanchor" href="#tuesday-september-14th"><span class="hnumber">2.7 </span> <span class="htext">Tuesday, September 14th</span></a></h2>
+                <h2><a name="tuesday-september-14th" number="2.2" class="hanchor" href="#tuesday-september-14th"><span class="hnumber">2.2 </span> <span class="htext">Tuesday, September 14th</span></a></h2>
 
             </div>
         </div>
         <div class="section">
 
             <div class="block">
-                <h2 class="highlighted"><a name="thursday-september-16th" number="2.8" class="hanchor" href="#thursday-september-16th"><span class="hnumber">2.8 </span> <span class="htext">Thursday, September 16th</span></a></h2>
+                <h2><a name="thursday-september-16th" number="2.3" class="hanchor" href="#thursday-september-16th"><span class="hnumber">2.3 </span> <span class="htext">Thursday, September 16th</span></a></h2>
 
             </div>
             <div class="block">
-                <ul class="">
-                    <li class="">
+                <ul>
+                    <li>
                         <div class="block">
                             <p>HW #3 due.</p>
                         </div>
                     </li>
-                    <li class="">
+                    <li>
                         <div class="block">
                             <p>Assign HW #4 covering Gradients, Equipotentials, Electrostatic Potential, and Electrostatic Work and Energy</p>
                         </div>
@@ -584,14 +480,14 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="tuesday-september-21st" number="2.9" class="hanchor" href="#tuesday-september-21st"><span class="hnumber">2.9 </span> <span class="htext">Tuesday, September 21st</span></a></h2>
+                <h2><a name="tuesday-september-21st" number="2.4" class="hanchor" href="#tuesday-september-21st"><span class="hnumber">2.4 </span> <span class="htext">Tuesday, September 21st</span></a></h2>
 
             </div>
         </div>
         <div class="section">
 
             <div class="block">
-                <h2><a name="thursday-september-23rd" number="2.10" class="hanchor" href="#thursday-september-23rd"><span class="hnumber">2.10 </span> <span class="htext">Thursday, September 23rd</span></a></h2>
+                <h2><a name="thursday-september-23rd" number="2.5" class="hanchor" href="#thursday-september-23rd"><span class="hnumber">2.5 </span> <span class="htext">Thursday, September 23rd</span></a></h2>
 
             </div>
             <div class="block">
@@ -612,24 +508,24 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="tuesday-september-28th" number="2.11" class="hanchor" href="#tuesday-september-28th"><span class="hnumber">2.11 </span> <span class="htext">Tuesday, September 28th</span></a></h2>
+                <h2><a name="tuesday-september-28th" number="2.6" class="hanchor" href="#tuesday-september-28th"><span class="hnumber">2.6 </span> <span class="htext">Tuesday, September 28th</span></a></h2>
 
             </div>
         </div>
         <div class="section">
 
             <div class="block">
-                <h2 class=""><a name="thursday-september-30th" number="2.12" class="hanchor" href="#thursday-september-30th"><span class="hnumber">2.12 </span> <span class="htext">Thursday, September 30th</span></a></h2>
+                <h2><a name="thursday-september-30th" number="2.7" class="hanchor" href="#thursday-september-30th"><span class="hnumber">2.7 </span> <span class="htext">Thursday, September 30th</span></a></h2>
 
             </div>
             <div class="block">
-                <ul class="">
-                    <li class="">
+                <ul>
+                    <li>
                         <div class="block">
                             <p>HW #5 due.</p>
                         </div>
                     </li>
-                    <li class="">
+                    <li>
                         <div class="block">
                             <p>Assign HW #6 covering Laplace’s Equation in 1– and 2–D.</p>
                         </div>
@@ -640,14 +536,14 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="tuesday-october-5th" number="2.13" class="hanchor" href="#tuesday-october-5th"><span class="hnumber">2.13 </span> <span class="htext">Tuesday, October 5th</span></a></h2>
+                <h2><a name="tuesday-october-5th" number="2.8" class="hanchor" href="#tuesday-october-5th"><span class="hnumber">2.8 </span> <span class="htext">Tuesday, October 5th</span></a></h2>
 
             </div>
         </div>
         <div class="section">
 
             <div class="block">
-                <h2><a name="thursday-october-7th" number="2.14" class="hanchor" href="#thursday-october-7th"><span class="hnumber">2.14 </span> <span class="htext">Thursday, October 7th</span></a></h2>
+                <h2><a name="thursday-october-7th" number="2.9" class="hanchor" href="#thursday-october-7th"><span class="hnumber">2.9 </span> <span class="htext">Thursday, October 7th</span></a></h2>
 
             </div>
             <div class="block">
@@ -659,7 +555,7 @@
                     </li>
                     <li>
                         <div class="block">
-                            <p>Assign HW #7 covering the Laplace’s Equation in 2-D</p>
+                            <p>Assign HW #7 covering Laplace’s Equation in 2-D</p>
                         </div>
                     </li>
                 </ul>
@@ -668,7 +564,7 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="tuesday-october-12th" number="2.15" class="hanchor" href="#tuesday-october-12th"><span class="hnumber">2.15 </span> <span class="htext">Tuesday, October 12th</span></a></h2>
+                <h2><a name="tuesday-october-12th" number="2.10" class="hanchor" href="#tuesday-october-12th"><span class="hnumber">2.10 </span> <span class="htext">Tuesday, October 12th</span></a></h2>
 
             </div>
             <div class="block">
@@ -684,7 +580,7 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="thursday-october-14th" number="2.16" class="hanchor" href="#thursday-october-14th"><span class="hnumber">2.16 </span> <span class="htext">Thursday, October 14th</span></a></h2>
+                <h2><a name="thursday-october-14th" number="2.11" class="hanchor" href="#thursday-october-14th"><span class="hnumber">2.11 </span> <span class="htext">Thursday, October 14th</span></a></h2>
 
             </div>
             <div class="block">
@@ -700,14 +596,14 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="tuesday-october-19th" number="2.17" class="hanchor" href="#tuesday-october-19th"><span class="hnumber">2.17 </span> <span class="htext">Tuesday, October 19th</span></a></h2>
+                <h2><a name="tuesday-october-19th" number="2.12" class="hanchor" href="#tuesday-october-19th"><span class="hnumber">2.12 </span> <span class="htext">Tuesday, October 19th</span></a></h2>
 
             </div>
         </div>
         <div class="section">
 
             <div class="block">
-                <h2><a name="thursday-october-21st" number="2.18" class="hanchor" href="#thursday-october-21st"><span class="hnumber">2.18 </span> <span class="htext">Thursday, October 21st</span></a></h2>
+                <h2><a name="thursday-october-21st" number="2.13" class="hanchor" href="#thursday-october-21st"><span class="hnumber">2.13 </span> <span class="htext">Thursday, October 21st</span></a></h2>
 
             </div>
             <div class="block">
@@ -723,14 +619,14 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="tuesday-october-26th" number="2.19" class="hanchor" href="#tuesday-october-26th"><span class="hnumber">2.19 </span> <span class="htext">Tuesday, October 26th</span></a></h2>
+                <h2><a name="tuesday-october-26th" number="2.14" class="hanchor" href="#tuesday-october-26th"><span class="hnumber">2.14 </span> <span class="htext">Tuesday, October 26th</span></a></h2>
 
             </div>
         </div>
         <div class="section">
 
             <div class="block">
-                <h2><a name="thursday-october-28th" number="2.20" class="hanchor" href="#thursday-october-28th"><span class="hnumber">2.20 </span> <span class="htext">Thursday, October 28th</span></a></h2>
+                <h2><a name="thursday-october-28th" number="2.15" class="hanchor" href="#thursday-october-28th"><span class="hnumber">2.15 </span> <span class="htext">Thursday, October 28th</span></a></h2>
 
             </div>
             <div class="block">
@@ -751,14 +647,14 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="tuesday-november-2nd" number="2.21" class="hanchor" href="#tuesday-november-2nd"><span class="hnumber">2.21 </span> <span class="htext">Tuesday, November 2nd</span></a></h2>
+                <h2><a name="tuesday-november-2nd" number="2.16" class="hanchor" href="#tuesday-november-2nd"><span class="hnumber">2.16 </span> <span class="htext">Tuesday, November 2nd</span></a></h2>
 
             </div>
         </div>
         <div class="section">
 
             <div class="block">
-                <h2><a name="thursday-november-4th" number="2.22" class="hanchor" href="#thursday-november-4th"><span class="hnumber">2.22 </span> <span class="htext">Thursday, November 4th</span></a></h2>
+                <h2><a name="thursday-november-4th" number="2.17" class="hanchor" href="#thursday-november-4th"><span class="hnumber">2.17 </span> <span class="htext">Thursday, November 4th</span></a></h2>
 
             </div>
             <div class="block">
@@ -786,14 +682,14 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="tuesday-november-9th" number="2.23" class="hanchor" href="#tuesday-november-9th"><span class="hnumber">2.23 </span> <span class="htext">Tuesday, November 9th</span></a></h2>
+                <h2><a name="tuesday-november-9th" number="2.18" class="hanchor" href="#tuesday-november-9th"><span class="hnumber">2.18 </span> <span class="htext">Tuesday, November 9th</span></a></h2>
 
             </div>
         </div>
         <div class="section">
 
             <div class="block">
-                <h2><a name="thursday-november-11th" number="2.24" class="hanchor" href="#thursday-november-11th"><span class="hnumber">2.24 </span> <span class="htext">Thursday, November 11th</span></a></h2>
+                <h2><a name="thursday-november-11th" number="2.19" class="hanchor" href="#thursday-november-11th"><span class="hnumber">2.19 </span> <span class="htext">Thursday, November 11th</span></a></h2>
 
             </div>
             <div class="block">
@@ -814,14 +710,14 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="tuesday-november-16th" number="2.25" class="hanchor" href="#tuesday-november-16th"><span class="hnumber">2.25 </span> <span class="htext">Tuesday, November 16th</span></a></h2>
+                <h2><a name="tuesday-november-16th" number="2.20" class="hanchor" href="#tuesday-november-16th"><span class="hnumber">2.20 </span> <span class="htext">Tuesday, November 16th</span></a></h2>
 
             </div>
         </div>
         <div class="section">
 
             <div class="block">
-                <h2><a name="thursday-november-18th" number="2.26" class="hanchor" href="#thursday-november-18th"><span class="hnumber">2.26 </span> <span class="htext">Thursday, November 18th</span></a></h2>
+                <h2><a name="thursday-november-18th" number="2.21" class="hanchor" href="#thursday-november-18th"><span class="hnumber">2.21 </span> <span class="htext">Thursday, November 18th</span></a></h2>
 
             </div>
             <div class="block">
@@ -849,7 +745,7 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="tuesday-november-23rd" number="2.27" class="hanchor" href="#tuesday-november-23rd"><span class="hnumber">2.27 </span> <span class="htext">Tuesday, November 23rd</span></a></h2>
+                <h2><a name="tuesday-november-23rd" number="2.22" class="hanchor" href="#tuesday-november-23rd"><span class="hnumber">2.22 </span> <span class="htext">Tuesday, November 23rd</span></a></h2>
 
             </div>
             <div class="block">
@@ -870,7 +766,7 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="thursday-november-25th" number="2.28" class="hanchor" href="#thursday-november-25th"><span class="hnumber">2.28 </span> <span class="htext">Thursday, November 25th</span></a></h2>
+                <h2><a name="thursday-november-25th" number="2.23" class="hanchor" href="#thursday-november-25th"><span class="hnumber">2.23 </span> <span class="htext">Thursday, November 25th</span></a></h2>
 
             </div>
             <div class="block">
@@ -886,7 +782,7 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="tuesday-november-30th" number="2.29" class="hanchor" href="#tuesday-november-30th"><span class="hnumber">2.29 </span> <span class="htext">Tuesday, November 30th</span></a></h2>
+                <h2><a name="tuesday-november-30th" number="2.24" class="hanchor" href="#tuesday-november-30th"><span class="hnumber">2.24 </span> <span class="htext">Tuesday, November 30th</span></a></h2>
 
             </div>
             <div class="block">
@@ -921,7 +817,7 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="thursday-december-2nd" number="2.30" class="hanchor" href="#thursday-december-2nd"><span class="hnumber">2.30 </span> <span class="htext">Thursday, December 2nd</span></a></h2>
+                <h2><a name="thursday-december-2nd" number="2.25" class="hanchor" href="#thursday-december-2nd"><span class="hnumber">2.25 </span> <span class="htext">Thursday, December 2nd</span></a></h2>
 
             </div>
             <div class="block">
@@ -942,7 +838,7 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="thursday-december-9th" number="2.31" class="hanchor" href="#thursday-december-9th"><span class="hnumber">2.31 </span> <span class="htext">Thursday, December 9th</span></a></h2>
+                <h2><a name="thursday-december-9th" number="2.26" class="hanchor" href="#thursday-december-9th"><span class="hnumber">2.26 </span> <span class="htext">Thursday, December 9th</span></a></h2>
 
             </div>
             <div class="block">

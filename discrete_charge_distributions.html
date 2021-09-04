@@ -1,0 +1,611 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>discrete_charge_distributions</title>
+    <link id="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%220.9em%22 font-size=%22100%22>📖</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" />
+    <style>
+        body { background-color: white; }
+        #toc { font-size: 85%; width: 14em; position: fixed; min-height: 95%; max-height: 95%; overflow: hidden auto; padding-left: 0.75em; padding-right: 1em; margin-right: 1em; font-family: "Open Sans"; }
+        #toc ol { list-style-type: decimal; padding-inline-start: 1em; }
+        #toc a { text-decoration: none; }
+        #display a { text-decoration: none black; text-underline-offset: 2px; }
+        #display { width: 100%; margin-left: 15em; max-height: 100%; min-height: 100%; overflow: hidden auto; padding-left: 1em; padding-right: 1em; border-left: 1px solid rgb(240, 240, 240); font-family: "Open Sans"; }
+        .title { text-align: center; font-size: 250%; font-weight: bold; color: black; margin-bottom: 0px; }
+        .subtitle { text-align: center; font-size: 150%; font-weight: bold; color: black; margin-top: 0.2em; }
+        .hanchor { text-decoration: none; color: inherit; }
+        h1 { color: darkblue; border-bottom: 2px solid darkblue; }
+        h2 { border-bottom: 1px solid black; }
+        h3 { border-bottom: 1px dotted black; }
+        h1, h2, h3, h4, h5, h6 { width: 100%; margin-block: 0.5em; }
+        #display .block ul { width: 100%; margin-left: 1em; padding-left: 1em; }
+        #display .block ol { width: 100%; margin-left: 1em; padding-left: 1em; }
+        code { width: 100%; background-color: rgba(0, 0, 0, 0.03); border-radius: 0px; font-size: 1.2em; white-space: pre-wrap; margin-top: 3px; margin-right: 3px; }
+        pre code { border-right: 1px solid black; }
+        code.language-Python { background-color: rgba(0, 0, 0, 0); font-size: 1.2em; }
+        pre { width: 100%; text-indent: 0.75em; padding-left: 0.5em; margin-left: 1em; white-space: pre-wrap; border-left: 3px solid black; background-color: rgba(0, 0, 0, 0.03); line-height: 1.5; overflow-x: clip; }
+        pre.language-Python { border-left: 5px solid blue; padding: 0.5em; margin-left: 1em; margin-right: 1em; line-height: 1.5; overflow-x: auto; }
+        .block { display: flex; }
+        .block.inline-html { display: block; }
+        .hr { width: 100%; height: 1px; display: block; margin: 0.5em; margin-block: 0.5em; border-top: 1px solid black; }
+        #display li > div { display: flex; }
+        p { width: 100%; display: block; margin-block: 0.5em; }
+        #display li { width: 100%; }
+        li .block p { width: 100%; display: block; margin-top: 0.5em; margin-bottom: 0.5em; }
+        li .block:first-of-type p { width: 100%; display: block; margin-top: 0em; margin-bottom: 0em; }
+        .section > .block ol ~ .line-number { display: none; }
+        .section > .block ul ~ .line-number { display: none; }
+        .section > .block pre ~ .line-number { display: none; }
+        .section > .block code ~ .line-number { }
+        pre .line-number { float: right; font-size: 8px; text-align: center; text-indent: 0px; }
+        .line-number { float: right; white-space: pre-wrap; font-size: 10%; }
+        p + .line-number { margin-block-start: 8px; }
+        .block > div.linenumber { margin-block-start: -0.5em; }
+        .blockquote + div.line-number { margin-top: 1rem; }
+        h1 + .line-number { margin-block-start: 20em; }
+        h2 + .line-number { margin-block-start: 15em; }
+        h3 + .line-number { margin-block-start: 15em; }
+        h4 + .line-number { margin-block-start: 15em; }
+        h5 + .line-number { margin-block-start: 15em; }
+        h6 + .line-number { margin-block-start: 15em; }
+        .blockquote { width: 100%; display: block; margin: 1em; border: 1px solid black; padding: 1em; border-radius: 0.5em; }
+        details > summary { font-weight: bold; }
+        details { padding-left: 0.5em; }
+        details[open] { border: 1px solid black; padding: 0em 0em 0em 0.5em; }
+        table { padding: 0px; }
+        table tr { border-top: 1px solid rgb(204, 204, 204); background-color: white; margin: 0px; padding: 0px; }
+        table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+        table tr th { font-weight: bold; border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+        table tr td { border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+        table tr th :first-child, table tr td :first-child { margin-top: 0px; }
+        table tr th :last-child, table tr td :last-child { margin-bottom: 0px; }
+        .katex { font-size: inherit !important; }
+        .katex-display { text-align: center; margin: 0.5em; font-size: 1.1em !important; }
+        @media print {
+          body, html { margin: 0in; color: rgb(0, 0, 0); height: auto; background-color: rgb(255, 255, 255); border: none; display: inline; }
+          h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+          h1, h2, h3, h4, h5, h6 { width: 100%; margin-block: 0.1em; }
+          h1 { font-size: 1.25em; border-bottom: 1px solid darkblue; }
+          h2 { font-size: 1.15em; border-bottom: 1px solid darkblue; }
+          h3 { font-size: 1.1em; }
+          h4, h5, h6 { font-size: 1.05em; }
+          p { margin-top: 0px; margin-bottom: 0.5em; }
+          .title { break-before: page; margin-top: 0px; }
+          #toc { display: none; font-size: 100%; margin: 0px; width: 100%; overflow-y: hidden; padding-left: 0px; padding-right: 0px; }
+          #display { margin-left: 0em; width: 100%; padding-left: 0px; padding-right: 0px; border: none; overflow-wrap: break-word; }
+          .katex { font: 1em / 1 KaTeX_Main, "Times New Roman", serif; white-space: nowrap; text-indent: 0px; text-rendering: auto; }
+          .katex-display { margin-top: 0px; }
+        }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        
+    </style>
+
+
+    <script>
+        function tocClick() {
+            // No jQuery b/c also used in stand-alone HTML.
+            hs = document.querySelectorAll('#toc > ol ol');
+            for (var i = 0; i < hs.length; i++) {
+              if (hs[i].previousElementSibling) {
+                var el = hs[i].previousElementSibling.firstElementChild;
+                if (el.length == 0) {
+                  continue;
+                }
+                el.addEventListener('click', event => {
+                  var ns = event.target.parentNode.nextElementSibling;
+                  if (ns.style.display === 'none') {
+        ns.style.display = 'block';
+                  } else {
+        ns.style.display = 'none';
+                  }
+                });
+              }
+            }
+          }
+        if (
+            document.readyState === "complete" ||
+            (document.readyState !== "loading" && 
+              !document.documentElement.doScroll)
+        ) {
+          tocClick();
+        } else {
+          document.addEventListener("DOMContentLoaded", tocClick);
+        }
+    </script>
+
+</head>
+
+<body style="display: flex;min-width: 50%;max-height:100%;">
+
+    <div id="toc">
+        <ol>
+            <li><a number="1" href="#sketch-the-electric-field-lines-in-the-y-z-plane-">Sketch the electric field lines in the (y,z) plane.</a></li>
+            <li><a number="2" href="#what-is-the-direction-of-the-total-electric-field-mathbf-e-along-the-y-axis-">What is the direction of the total electric field, (\mathbf{E}), along the (y)-axis?</a></li>
+            <li><a number="3" href="#what-is-the-total-electric-potential-v-on-the-y-axis-this-was-supposed-to-be-an-easier-version-of-the-next-question-but-it-caused-confusion-to-answer-this-question-use-the-equation-for-v-you-get-from-the-next-question-and-set-z-0-">What is the total electric potential, (V), on the (y)-axis? (This was supposed to be an easier version of the next question, but it caused confusion. To answer this question, use the equation for (V) you get from the next question and set (z=0).</a></li>
+            <li><a number="4" href="#what-is-v-as-a-function-of-y-z-">What is (V) as a function of ((y,z))?</a></li>
+            <li><a number="5" href="#what-is-mathbf-e-as-a-function-of-y-z-">What is (\mathbf{E}) as a function of ((y,z))?</a></li>
+            <li><a number="6" looks"="" like="" it="" is="" at="" the="" origin="" and="" so="" expected="" \(v\)="" that="" of="" a="" charge="" \(q\)="" origin:="" \(v="kq/|y|\)." show="" your="" equation="" for="" consistent="" with="" this="" expectation."="" href="#when-z-0-and-y-gt-gt-d-the-point-charge-at-the-origin-looks-like-it-is-at-the-origin-and-so-the-expected-v-is-that-of-a-charge-q-at-the-origin-v-kq-y-show-that-your-equation-for-v-is-consistent-with-this-expectation-">When (z=0) and (y&gt;&gt;d), the point charge at the origin “looks” like it is at the origin and so the expected (V) is that of a charge (q) at the origin: (V=kq/|y|). Show that your equation for (V) is consistent with this expectation.</a></li>
+            <li><a number="7" looks"="" like="" it="" is="" at="" the="" origin="" and="" so="" expected="" \(v\)="" that="" of="" a="" charge="" \(q\)="" origin:="" \(v="kq/|z|\)." show="" your="" equation="" for="" consistent="" with="" this="" expectation."="" href="#when-y-0-and-z-gt-gt-d-the-point-charge-at-the-origin-looks-like-it-is-at-the-origin-and-so-the-expected-v-is-that-of-a-charge-q-at-the-origin-v-kq-z-show-that-your-equation-for-v-is-consistent-with-this-expectation-">When (y=0) and (z&gt;&gt;d), the point charge at the origin “looks” like it is at the origin and so the expected (V) is that of a charge (q) at the origin: (V=kq/|z|). Show that your equation for (V) is consistent with this expectation.</a></li>
+            <li><a number="8" looks"="" like="" it="" is="" at="" the="" origin="" and="" so="" expected="" \(v\)="" that="" of="" a="" charge="" \(q\)="" origin:="" \(v="kq/\sqrt{y^2+z^2}\)." show="" your="" equation="" for="" consistent="" with="" this="" expectation."="" href="#a-large-distances-relative-to-d-in-the-y-z-plane-corresponding-to-y-2-z-2-gt-gt-d-2-the-point-charge-looks-like-it-is-at-the-origin-and-so-the-expected-v-is-that-of-a-charge-of-q-at-the-origin-v-kq-sqrt-y-2-z-2-show-that-your-equation-for-v-is-consistent-with-this-expectation-">A large distances relative to (d) in the ((y,z)) plane, corresponding to (y^2+z^2&gt;&gt;d^2), the point charge “looks” like it is at the origin and so the expected (V) is that of a charge of (q) at the origin: (V=kq/\sqrt{y^2+z^2}). Show that your equation for (V) is consistent with this expectation.</a></li>
+            <li><a number="9" href="#sketch-the-electric-field-lines-in-the-y-z-plane-">Sketch the electric field lines in the (y,z) plane.</a></li>
+            <li><a number="10" href="#what-is-the-direction-of-the-total-electric-field-mathbf-e-along-the-y-axis-">What is the direction of the total electric field, (\mathbf{E}), along the (y)-axis?</a></li>
+            <li><a number="11" href="#what-is-the-total-electric-potential-v-on-the-y-axis-">What is the total electric potential, (V), on the (y)-axis?</a></li>
+            <li><a number="12" href="#what-is-v-as-a-function-of-y-z-">What is (V) as a function of ((y,z))?</a></li>
+            <li><a number="13" href="#what-is-mathbf-e-as-a-function-of-y-z-">What is (\mathbf{E}) as a function of ((y,z))?</a></li>
+            <li><a number="14" look"="" like="" they="" overlap="" and="" \(v\)="" is="" expected="" to="" be="" approximately="" zero.="" show="" that="" your="" equation="" for="" consistent="" with="" this="" expectation."="" href="#when-z-0-and-y-gt-gt-d-the-two-point-charges-look-like-they-overlap-and-v-is-expected-to-be-approximately-zero-show-that-your-equation-for-v-is-consistent-with-this-expectation-">When (z=0) and (y&gt;&gt;d), the two point charges “look” like they overlap and (V) is expected to be approximately zero. Show that your equation for (V) is consistent with this expectation.</a></li>
+            <li><a number="15" look"="" like="" they="" overlap="" and="" \(v\)="" is="" expected="" to="" be="" approximately="" zero.="" show="" that="" your="" equation="" for="" consistent="" with="" this="" expectation."="" href="#when-y-0-and-z-gt-gt-d-the-two-point-charges-look-like-they-overlap-and-v-is-expected-to-be-approximately-zero-show-that-your-equation-for-v-is-consistent-with-this-expectation-">When (y=0) and (z&gt;&gt;d), the two point charges “look” like they overlap and (V) is expected to be approximately zero. Show that your equation for (V) is consistent with this expectation.</a></li>
+            <li><a number="16" look"="" like="" they="" overlap="" and="" \(v\)="" is="" expected="" to="" be="" approximately="" zero.="" show="" that="" your="" equation="" for="" consistent="" with="" this="" expectation."="" href="#a-large-distances-relative-to-d-in-the-y-z-plane-corresponding-to-y-2-z-2-gt-gt-d-2-the-two-point-charges-look-like-they-overlap-and-v-is-expected-to-be-approximately-zero-show-that-your-equation-for-v-is-consistent-with-this-expectation-">A large distances relative to (d) in the ((y,z)) plane, corresponding to (y^2+z^2&gt;&gt;d^2), the two point charges “look” like they overlap and (V) is expected to be approximately zero. Show that your equation for (V) is consistent with this expectation.</a></li>
+            <li><a number="17" href="#sketch-the-electric-field-lines-in-the-y-z-plane-">Sketch the electric field lines in the (y,z) plane.</a></li>
+            <li><a number="18" href="#what-is-the-direction-of-the-total-electric-field-mathbf-e-along-the-y-axis-">What is the direction of the total electric field, (\mathbf{E}), along the (y)-axis?</a></li>
+            <li><a number="19" href="#what-is-the-total-electric-potential-v-along-the-y-axis-">What is the total electric potential, (V), along the (y)-axis?</a></li>
+            <li><a number="20" href="#what-is-mathbf-e-as-a-function-of-y-z-">What is (\mathbf{E}) as a function of ((y,z))?</a></li>
+            <li><a number="21" href="#what-is-v-as-a-function-of-y-z-">What is (V) as a function of ((y,z))?</a></li>
+            <li><a number="22" look"="" like="" they="" overlap="" and="" so="" the="" expected="" \(v\)="" is="" that="" of="" a="" charge="" \(2q\)="" at="" origin:="" \(v="2kq/|y|\)." show="" your="" equation="" for="" consistent="" with="" this="" expectation."="" href="#when-z-0-and-y-gt-gt-d-the-two-point-charges-look-like-they-overlap-and-so-the-expected-v-is-that-of-a-charge-of-2q-at-the-origin-v-2kq-y-show-that-your-equation-for-v-is-consistent-with-this-expectation-">When (z=0) and (y&gt;&gt;d), the two-point charges “look” like they overlap and so the expected (V) is that of a charge of (2q) at the origin: (V=2kq/|y|). Show that your equation for (V) is consistent with this expectation.</a></li>
+            <li><a number="23" look"="" like="" they="" overlap="" and="" so="" the="" expected="" \(v\)="" is="" that="" of="" a="" charge="" \(2q\)="" at="" origin:="" \(v="2kq/\sqrt{y^2+z^2}\)." show="" your="" equation="" for="" consistent="" with="" this="" expectation."="" href="#a-large-distances-relative-to-d-in-the-y-z-plane-corresponding-to-y-2-z-2-gt-gt-d-2-the-two-point-charges-look-like-they-overlap-and-so-the-expected-v-is-that-of-a-charge-of-2q-at-the-origin-v-2kq-sqrt-y-2-z-2-show-that-your-equation-for-v-is-consistent-with-this-expectation-">A large distances relative to (d) in the ((y,z)) plane, corresponding to (y^2+z^2&gt;&gt;d^2), the two-point charges “look” like they overlap and so the expected (V) is that of a charge of (2q) at the origin: (V=2kq/\sqrt{y^2+z^2}). Show that your equation for (V) is consistent with this expectation.</a></li>
+            <li><a number="24" href="#what-is-the-direction-of-the-electric-field-mathbf-e-on-the-x-axis-both-positive-and-negative-x-">What is the direction of the electric field, (\mathbf{E}), on the (x)-axis? (Both positive and negative (x).)</a></li>
+            <li><a number="25" href="#what-is-the-direction-of-the-electric-field-mathbf-e-on-the-y-axis-both-positive-and-negative-x-">What is the direction of the electric field, (\mathbf{E}), on the (y)-axis? (Both positive and negative (x).)</a></li>
+            <li><a number="26" href="#what-is-the-direction-of-the-electric-field-mathbf-e-on-the-z-axis-both-positive-and-negative-x-">What is the direction of the electric field, (\mathbf{E}), on the (z)-axis? (Both positive and negative (x).)</a></li>
+            <li><a number="27" href="#what-is-the-total-electric-potential-v-as-a-function-of-y-z-">What is the total electric potential, (V), as a function of ((y,z))?</a></li>
+            <li><a number="28" href="#what-is-mathbf-e-as-a-function-of-y-z-">What is (\mathbf{E}) as a function of ((y,z))?</a></li>
+            <li><a number="29" look"="" like="" they="" overlap="" and="" \(v\)="" is="" expected="" to="" be="" approximately="" zero.="" show="" that="" your="" equation="" for="" consistent="" with="" this="" expectation."="" href="#when-y-0-and-z-gt-gt-d-the-three-point-charges-look-like-they-overlap-and-v-is-expected-to-be-approximately-zero-show-that-your-equation-for-v-is-consistent-with-this-expectation-">When (y=0) and (z&gt;&gt;d), the three point charges “look” like they overlap and (V) is expected to be approximately zero. Show that your equation for (V) is consistent with this expectation.</a></li>
+            <li><a number="30" look"="" like="" they="" overlap="" and="" \(v\)="" is="" expected="" to="" be="" approximately="" zero.="" show="" that="" your="" equation="" for="" consistent="" with="" this="" expectation."="" href="#when-z-0-and-y-gt-gt-d-the-three-point-charges-look-like-they-overlap-and-v-is-expected-to-be-approximately-zero-show-that-your-equation-for-v-is-consistent-with-this-expectation-">When (z=0) and (y&gt;&gt;d), the three point charges “look” like they overlap and (V) is expected to be approximately zero. Show that your equation for (V) is consistent with this expectation.</a></li>
+            <li><a number="31" look"="" like="" they="" overlap="" and="" \(v\)="" is="" expected="" to="" be="" approximately="" zero.="" show="" that="" your="" equation="" for="" consistent="" with="" this="" expectation."="" href="#a-large-distances-relative-to-d-in-the-y-z-plane-corresponding-to-y-2-z-2-gt-gt-d-2-the-three-point-charges-look-like-they-overlap-and-v-is-expected-to-be-approximately-zero-show-that-your-equation-for-v-is-consistent-with-this-expectation-">A large distances relative to (d) in the ((y,z)) plane, corresponding to (y^2+z^2&gt;&gt;d^2), the three-point charges “look” like they overlap and (V) is expected to be approximately zero. Show that your equation for (V) is consistent with this expectation.</a></li>
+        </ol>
+    </div>
+    <div id="display">
+        <div class="section">
+            <div class="block">
+                <p>= Discrete Charge Distributions =</p>
+
+            </div>
+            <div class="block">
+                <p>== Basic Calculation ==</p>
+
+            </div>
+            <div class="block">
+                <p>(q) is located at ((x,y,z) = (0,0,1)); (Q) is located ((x,y,z) = (0,1,0)). The force of (q) on (Q) is (\mathbf{F}_{qQ} = \frac{qQ}{4\pi\epsilon_0}(a\hat{\mathbf{x}} + b\hat{\mathbf{y}} + c\hat{\mathbf{z}})). What are (a), (b), and (c)? What is (F) (or (|\mathbf{F}|))?</p>
+
+            </div>
+            <div class="block">
+                <p>Use the formula (F = kqQ/d^2) to check your answer and signs.</p>
+
+            </div>
+            <div class="block">
+                <p>== Basic Calculation ==</p>
+
+            </div>
+            <div class="block">
+                <p>Charge (2q) is located at ((x,y,z))=((0,2d,2d)). Charge (3q) is located at ((x,y,z))=((0,-3d,-3d)). Compute the electric field due to these charges at ((d,0,0)).</p>
+
+            </div>
+            <div class="block">
+                <p>== Charge on Points of Triangle ==</p>
+
+            </div>
+            <div class="block">
+                <p>An equilateral triangle with sides of length (d) has charges of (+q) on each of its corners. Compute (or state answer with justification and no calculation) the electric field at the center of the triangle.</p>
+
+            </div>
+            <div class="block">
+                <p>== Charges on Points of Square ==</p>
+
+            </div>
+            <div class="block">
+                <p>A square with sides of length (d) has charges of (+q) on each of its corners. Compute (or state answer with justification and no calculation) the electric field at</p>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>the center of the square and</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>along the center of its sides.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <p>== One charge ==</p>
+
+            </div>
+            <div class="block">
+                <p>Charge (+q) is located at ((x,y,z)=(0,0,d)).</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="sketch-the-electric-field-lines-in-the-y-z-plane-" number="1" class="hanchor" href="#sketch-the-electric-field-lines-in-the-y-z-plane-"><span class="hnumber">1 </span> <span class="htext">Sketch the electric field lines in the (y,z) plane.</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="what-is-the-direction-of-the-total-electric-field-mathbf-e-along-the-y-axis-" number="2" class="hanchor" href="#what-is-the-direction-of-the-total-electric-field-mathbf-e-along-the-y-axis-"><span class="hnumber">2 </span> <span class="htext">What is the direction of the total electric field, (\mathbf{E}), along the (y)-axis?</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="what-is-the-total-electric-potential-v-on-the-y-axis-this-was-supposed-to-be-an-easier-version-of-the-next-question-but-it-caused-confusion-to-answer-this-question-use-the-equation-for-v-you-get-from-the-next-question-and-set-z-0-" number="3" class="hanchor" href="#what-is-the-total-electric-potential-v-on-the-y-axis-this-was-supposed-to-be-an-easier-version-of-the-next-question-but-it-caused-confusion-to-answer-this-question-use-the-equation-for-v-you-get-from-the-next-question-and-set-z-0-"><span class="hnumber">3 </span> <span class="htext">What is the total electric potential, (V), on the (y)-axis? (This was supposed to be an easier version of the next question, but it caused confusion. To answer this question, use the equation for (V) you get from the next question and set (z=0).</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="what-is-v-as-a-function-of-y-z-" number="4" class="hanchor" href="#what-is-v-as-a-function-of-y-z-"><span class="hnumber">4 </span> <span class="htext">What is (V) as a function of ((y,z))?</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="what-is-mathbf-e-as-a-function-of-y-z-" number="5" class="hanchor" href="#what-is-mathbf-e-as-a-function-of-y-z-"><span class="hnumber">5 </span> <span class="htext">What is (\mathbf{E}) as a function of ((y,z))?</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="when-z-0-and-y-gt-gt-d-the-point-charge-at-the-origin-looks-like-it-is-at-the-origin-and-so-the-expected-v-is-that-of-a-charge-q-at-the-origin-v-kq-y-show-that-your-equation-for-v-is-consistent-with-this-expectation-" number="6" looks"="" like="" it="" is="" at="" the="" origin="" and="" so="" expected="" \(v\)="" that="" of="" a="" charge="" \(q\)="" origin:="" \(v="kq/|y|\)." show="" your="" equation="" for="" consistent="" with="" this="" expectation."="" class="hanchor" href="#when-z-0-and-y-gt-gt-d-the-point-charge-at-the-origin-looks-like-it-is-at-the-origin-and-so-the-expected-v-is-that-of-a-charge-q-at-the-origin-v-kq-y-show-that-your-equation-for-v-is-consistent-with-this-expectation-"><span class="hnumber">6 </span> <span class="htext">When (z=0) and (y&gt;&gt;d), the point charge at the origin “looks” like it is at the origin and so the expected (V) is that of a charge (q) at the origin: (V=kq/|y|). Show that your equation for (V) is consistent with this expectation.</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="when-y-0-and-z-gt-gt-d-the-point-charge-at-the-origin-looks-like-it-is-at-the-origin-and-so-the-expected-v-is-that-of-a-charge-q-at-the-origin-v-kq-z-show-that-your-equation-for-v-is-consistent-with-this-expectation-" number="7" looks"="" like="" it="" is="" at="" the="" origin="" and="" so="" expected="" \(v\)="" that="" of="" a="" charge="" \(q\)="" origin:="" \(v="kq/|z|\)." show="" your="" equation="" for="" consistent="" with="" this="" expectation."="" class="hanchor" href="#when-y-0-and-z-gt-gt-d-the-point-charge-at-the-origin-looks-like-it-is-at-the-origin-and-so-the-expected-v-is-that-of-a-charge-q-at-the-origin-v-kq-z-show-that-your-equation-for-v-is-consistent-with-this-expectation-"><span class="hnumber">7 </span> <span class="htext">When (y=0) and (z&gt;&gt;d), the point charge at the origin “looks” like it is at the origin and so the expected (V) is that of a charge (q) at the origin: (V=kq/|z|). Show that your equation for (V) is consistent with this expectation.</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="a-large-distances-relative-to-d-in-the-y-z-plane-corresponding-to-y-2-z-2-gt-gt-d-2-the-point-charge-looks-like-it-is-at-the-origin-and-so-the-expected-v-is-that-of-a-charge-of-q-at-the-origin-v-kq-sqrt-y-2-z-2-show-that-your-equation-for-v-is-consistent-with-this-expectation-" number="8" looks"="" like="" it="" is="" at="" the="" origin="" and="" so="" expected="" \(v\)="" that="" of="" a="" charge="" \(q\)="" origin:="" \(v="kq/\sqrt{y^2+z^2}\)." show="" your="" equation="" for="" consistent="" with="" this="" expectation."="" class="hanchor" href="#a-large-distances-relative-to-d-in-the-y-z-plane-corresponding-to-y-2-z-2-gt-gt-d-2-the-point-charge-looks-like-it-is-at-the-origin-and-so-the-expected-v-is-that-of-a-charge-of-q-at-the-origin-v-kq-sqrt-y-2-z-2-show-that-your-equation-for-v-is-consistent-with-this-expectation-"><span class="hnumber">8 </span> <span class="htext">A large distances relative to (d) in the ((y,z)) plane, corresponding to (y^2+z^2&gt;&gt;d^2), the point charge “looks” like it is at the origin and so the expected (V) is that of a charge of (q) at the origin: (V=kq/\sqrt{y^2+z^2}). Show that your equation for (V) is consistent with this expectation.</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>{| class=”wikitable collapsible collapsed”
+                    ! align=”left” |&nbsp;Hint on last question
+                    |-
+                    |
+                    To simplify notation, define (\epsilon^2 \equiv d^2/(y^2+z^2)) and (r^2\equiv y^2+z^2) and then show (V(y,z)) can be written as</p>
+
+            </div>
+            <div class="block">
+                <p><span len="121" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <semantics>
+                                        <mrow>
+                                            <mi>V</mi>
+                                            <mo stretchy="false">(</mo>
+                                            <mi>y</mi>
+                                            <mo separator="true">,</mo>
+                                            <mi>z</mi>
+                                            <mo stretchy="false">)</mo>
+                                            <mo>=</mo>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mi>k</mi>
+                                                    <mi>q</mi>
+                                                </mrow>
+                                                <msqrt>
+                                                    <mrow>
+                                                        <msup>
+                                                            <mi>y</mi>
+                                                            <mn>2</mn>
+                                                        </msup>
+                                                        <mo>+</mo>
+                                                        <mo stretchy="false">(</mo>
+                                                        <mi>z</mi>
+                                                        <mo>−</mo>
+                                                        <mi>d</mi>
+                                                        <msup>
+                                                            <mo stretchy="false">)</mo>
+                                                            <mn>2</mn>
+                                                        </msup>
+                                                    </mrow>
+                                                </msqrt>
+                                            </mfrac>
+                                            <mo>=</mo>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mi>k</mi>
+                                                    <mi>q</mi>
+                                                </mrow>
+                                                <msqrt>
+                                                    <mrow>
+                                                        <msup>
+                                                            <mi>y</mi>
+                                                            <mn>2</mn>
+                                                        </msup>
+                                                        <mo>+</mo>
+                                                        <msup>
+                                                            <mi>z</mi>
+                                                            <mn>2</mn>
+                                                        </msup>
+                                                    </mrow>
+                                                </msqrt>
+                                            </mfrac>
+                                            <mo>⋅</mo>
+                                            <mfrac>
+                                                <mn>1</mn>
+                                                <msqrt>
+                                                    <mrow>
+                                                        <mn>1</mn>
+                                                        <mo>−</mo>
+                                                        <mn>2</mn>
+                                                        <mo stretchy="false">(</mo>
+                                                        <mi>z</mi>
+                                                        <mi mathvariant="normal">/</mi>
+                                                        <mi>r</mi>
+                                                        <mo stretchy="false">)</mo>
+                                                        <mi>ϵ</mi>
+                                                        <mo>+</mo>
+                                                        <msup>
+                                                            <mi>ϵ</mi>
+                                                            <mn>2</mn>
+                                                        </msup>
+                                                    </mrow>
+                                                </msqrt>
+                                            </mfrac>
+                                        </mrow>
+                                        <annotation encoding="application/x-tex">V(y,z) = \frac{kq}{\sqrt{y^2+(z-d)^2}} = \frac{kq}{\sqrt{y^2+z^2}}\cdot\frac{1}{\sqrt{1-2(z/r)\epsilon + \epsilon^2}}</annotation>
+                                    </semantics>
+                                </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.5014399999999997em;vertical-align:-1.13em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714399999999998em;"><span style="top:-2.175em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.935em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal">d</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-2.8950000000000005em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.28em" viewBox="0 0 400000 1296" preserveAspectRatio="xMinYMin slice">
+                                                                                            <path d="M263,681c0.7,0,18,39.7,52,119
+c34,79.3,68.167,158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120
+c340,-704.7,510.7,-1060.3,512,-1067
+l0 -0
+c4.7,-7.3,11,-11,19,-11
+H40000v40H1012.3
+s-271.3,567,-271.3,567c-38.7,80.7,-84,175,-136,283c-52,108,-89.167,185.3,-111.5,232
+c-22.3,46.7,-33.8,70.3,-34.5,71c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1
+s-109,-253,-109,-253c-72.7,-168,-109.3,-252,-110,-252c-10.7,8,-22,16.7,-34,26
+c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26s76,-59,76,-59s76,-60,76,-60z
+M1001 80h400000v40h-400000z"></path>
+                                                                                        </svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.30499999999999994em;"><span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.13em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.5014399999999997em;vertical-align:-1.13em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714399999999998em;"><span style="top:-2.1521660000000002em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9578340000000001em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-2.917834em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.28em" viewBox="0 0 400000 1296" preserveAspectRatio="xMinYMin slice">
+                                                                                            <path d="M263,681c0.7,0,18,39.7,52,119
+c34,79.3,68.167,158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120
+c340,-704.7,510.7,-1060.3,512,-1067
+l0 -0
+c4.7,-7.3,11,-11,19,-11
+H40000v40H1012.3
+s-271.3,567,-271.3,567c-38.7,80.7,-84,175,-136,283c-52,108,-89.167,185.3,-111.5,232
+c-22.3,46.7,-33.8,70.3,-34.5,71c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1
+s-109,-253,-109,-253c-72.7,-168,-109.3,-252,-110,-252c-10.7,8,-22,16.7,-34,26
+c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26s76,-59,76,-59s76,-60,76,-60z
+M1001 80h400000v40h-400000z"></path>
+                                                                                        </svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2821659999999999em;"><span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.13em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.45144em;vertical-align:-1.13em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.175em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.935em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span><span class="mord mathnormal">ϵ</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-2.8950000000000005em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.28em" viewBox="0 0 400000 1296" preserveAspectRatio="xMinYMin slice">
+                                                                                            <path d="M263,681c0.7,0,18,39.7,52,119
+c34,79.3,68.167,158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120
+c340,-704.7,510.7,-1060.3,512,-1067
+l0 -0
+c4.7,-7.3,11,-11,19,-11
+H40000v40H1012.3
+s-271.3,567,-271.3,567c-38.7,80.7,-84,175,-136,283c-52,108,-89.167,185.3,-111.5,232
+c-22.3,46.7,-33.8,70.3,-34.5,71c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1
+s-109,-253,-109,-253c-72.7,-168,-109.3,-252,-110,-252c-10.7,8,-22,16.7,-34,26
+c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26s76,-59,76,-59s76,-60,76,-60z
+M1001 80h400000v40h-400000z"></path>
+                                                                                        </svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.30499999999999994em;"><span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.13em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+
+            </div>
+            <div class="block">
+                <p>Note that the maximum value of (|z/r|) is 1, so (2(z/r)\epsilon) is small because (\epsilon &lt;&lt; 1).</p>
+
+            </div>
+            <div class="block">
+                <p>|}</p>
+
+            </div>
+            <div class="block">
+                <p>== Two charges ==</p>
+
+            </div>
+            <div class="block">
+                <p>Charge (+q) is located at ((x,y,z)=(0,0,d)). Charge (-q) is located at ((x,y,z)=(0,0,-d)).</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="sketch-the-electric-field-lines-in-the-y-z-plane-" number="9" class="hanchor" href="#sketch-the-electric-field-lines-in-the-y-z-plane-"><span class="hnumber">9 </span> <span class="htext">Sketch the electric field lines in the (y,z) plane.</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="what-is-the-direction-of-the-total-electric-field-mathbf-e-along-the-y-axis-" number="10" class="hanchor" href="#what-is-the-direction-of-the-total-electric-field-mathbf-e-along-the-y-axis-"><span class="hnumber">10 </span> <span class="htext">What is the direction of the total electric field, (\mathbf{E}), along the (y)-axis?</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="what-is-the-total-electric-potential-v-on-the-y-axis-" number="11" class="hanchor" href="#what-is-the-total-electric-potential-v-on-the-y-axis-"><span class="hnumber">11 </span> <span class="htext">What is the total electric potential, (V), on the (y)-axis?</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="what-is-v-as-a-function-of-y-z-" number="12" class="hanchor" href="#what-is-v-as-a-function-of-y-z-"><span class="hnumber">12 </span> <span class="htext">What is (V) as a function of ((y,z))?</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="what-is-mathbf-e-as-a-function-of-y-z-" number="13" class="hanchor" href="#what-is-mathbf-e-as-a-function-of-y-z-"><span class="hnumber">13 </span> <span class="htext">What is (\mathbf{E}) as a function of ((y,z))?</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="when-z-0-and-y-gt-gt-d-the-two-point-charges-look-like-they-overlap-and-v-is-expected-to-be-approximately-zero-show-that-your-equation-for-v-is-consistent-with-this-expectation-" number="14" look"="" like="" they="" overlap="" and="" \(v\)="" is="" expected="" to="" be="" approximately="" zero.="" show="" that="" your="" equation="" for="" consistent="" with="" this="" expectation."="" class="hanchor" href="#when-z-0-and-y-gt-gt-d-the-two-point-charges-look-like-they-overlap-and-v-is-expected-to-be-approximately-zero-show-that-your-equation-for-v-is-consistent-with-this-expectation-"><span class="hnumber">14 </span> <span class="htext">When (z=0) and (y&gt;&gt;d), the two point charges “look” like they overlap and (V) is expected to be approximately zero. Show that your equation for (V) is consistent with this expectation.</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="when-y-0-and-z-gt-gt-d-the-two-point-charges-look-like-they-overlap-and-v-is-expected-to-be-approximately-zero-show-that-your-equation-for-v-is-consistent-with-this-expectation-" number="15" look"="" like="" they="" overlap="" and="" \(v\)="" is="" expected="" to="" be="" approximately="" zero.="" show="" that="" your="" equation="" for="" consistent="" with="" this="" expectation."="" class="hanchor" href="#when-y-0-and-z-gt-gt-d-the-two-point-charges-look-like-they-overlap-and-v-is-expected-to-be-approximately-zero-show-that-your-equation-for-v-is-consistent-with-this-expectation-"><span class="hnumber">15 </span> <span class="htext">When (y=0) and (z&gt;&gt;d), the two point charges “look” like they overlap and (V) is expected to be approximately zero. Show that your equation for (V) is consistent with this expectation.</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="a-large-distances-relative-to-d-in-the-y-z-plane-corresponding-to-y-2-z-2-gt-gt-d-2-the-two-point-charges-look-like-they-overlap-and-v-is-expected-to-be-approximately-zero-show-that-your-equation-for-v-is-consistent-with-this-expectation-" number="16" look"="" like="" they="" overlap="" and="" \(v\)="" is="" expected="" to="" be="" approximately="" zero.="" show="" that="" your="" equation="" for="" consistent="" with="" this="" expectation."="" class="hanchor" href="#a-large-distances-relative-to-d-in-the-y-z-plane-corresponding-to-y-2-z-2-gt-gt-d-2-the-two-point-charges-look-like-they-overlap-and-v-is-expected-to-be-approximately-zero-show-that-your-equation-for-v-is-consistent-with-this-expectation-"><span class="hnumber">16 </span> <span class="htext">A large distances relative to (d) in the ((y,z)) plane, corresponding to (y^2+z^2&gt;&gt;d^2), the two point charges “look” like they overlap and (V) is expected to be approximately zero. Show that your equation for (V) is consistent with this expectation.</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>== Two charges ==</p>
+
+            </div>
+            <div class="block">
+                <p>Charge (+q) is located at ((x,y,z)=(0,0,d)). Charge (+q) is located at ((x,y,z)=(0,0,-d)).</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="sketch-the-electric-field-lines-in-the-y-z-plane-" number="17" class="hanchor" href="#sketch-the-electric-field-lines-in-the-y-z-plane-"><span class="hnumber">17 </span> <span class="htext">Sketch the electric field lines in the (y,z) plane.</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="what-is-the-direction-of-the-total-electric-field-mathbf-e-along-the-y-axis-" number="18" class="hanchor" href="#what-is-the-direction-of-the-total-electric-field-mathbf-e-along-the-y-axis-"><span class="hnumber">18 </span> <span class="htext">What is the direction of the total electric field, (\mathbf{E}), along the (y)-axis?</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="what-is-the-total-electric-potential-v-along-the-y-axis-" number="19" class="hanchor" href="#what-is-the-total-electric-potential-v-along-the-y-axis-"><span class="hnumber">19 </span> <span class="htext">What is the total electric potential, (V), along the (y)-axis?</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="what-is-mathbf-e-as-a-function-of-y-z-" number="20" class="hanchor" href="#what-is-mathbf-e-as-a-function-of-y-z-"><span class="hnumber">20 </span> <span class="htext">What is (\mathbf{E}) as a function of ((y,z))?</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="what-is-v-as-a-function-of-y-z-" number="21" class="hanchor" href="#what-is-v-as-a-function-of-y-z-"><span class="hnumber">21 </span> <span class="htext">What is (V) as a function of ((y,z))?</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="when-z-0-and-y-gt-gt-d-the-two-point-charges-look-like-they-overlap-and-so-the-expected-v-is-that-of-a-charge-of-2q-at-the-origin-v-2kq-y-show-that-your-equation-for-v-is-consistent-with-this-expectation-" number="22" look"="" like="" they="" overlap="" and="" so="" the="" expected="" \(v\)="" is="" that="" of="" a="" charge="" \(2q\)="" at="" origin:="" \(v="2kq/|y|\)." show="" your="" equation="" for="" consistent="" with="" this="" expectation."="" class="hanchor" href="#when-z-0-and-y-gt-gt-d-the-two-point-charges-look-like-they-overlap-and-so-the-expected-v-is-that-of-a-charge-of-2q-at-the-origin-v-2kq-y-show-that-your-equation-for-v-is-consistent-with-this-expectation-"><span class="hnumber">22 </span> <span class="htext">When (z=0) and (y&gt;&gt;d), the two-point charges “look” like they overlap and so the expected (V) is that of a charge of (2q) at the origin: (V=2kq/|y|). Show that your equation for (V) is consistent with this expectation.</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>#When (y=0) and (z&gt;&gt;d), the two-point charges “look” like they overlap and so the expected (V) is that of a charge of (2q) at the origin: (V=2kq/|z|). Show that your equation for (V) is consistent with this expectation.</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="a-large-distances-relative-to-d-in-the-y-z-plane-corresponding-to-y-2-z-2-gt-gt-d-2-the-two-point-charges-look-like-they-overlap-and-so-the-expected-v-is-that-of-a-charge-of-2q-at-the-origin-v-2kq-sqrt-y-2-z-2-show-that-your-equation-for-v-is-consistent-with-this-expectation-" number="23" look"="" like="" they="" overlap="" and="" so="" the="" expected="" \(v\)="" is="" that="" of="" a="" charge="" \(2q\)="" at="" origin:="" \(v="2kq/\sqrt{y^2+z^2}\)." show="" your="" equation="" for="" consistent="" with="" this="" expectation."="" class="hanchor" href="#a-large-distances-relative-to-d-in-the-y-z-plane-corresponding-to-y-2-z-2-gt-gt-d-2-the-two-point-charges-look-like-they-overlap-and-so-the-expected-v-is-that-of-a-charge-of-2q-at-the-origin-v-2kq-sqrt-y-2-z-2-show-that-your-equation-for-v-is-consistent-with-this-expectation-"><span class="hnumber">23 </span> <span class="htext">A large distances relative to (d) in the ((y,z)) plane, corresponding to (y^2+z^2&gt;&gt;d^2), the two-point charges “look” like they overlap and so the expected (V) is that of a charge of (2q) at the origin: (V=2kq/\sqrt{y^2+z^2}). Show that your equation for (V) is consistent with this expectation.</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>== Three charges ==</p>
+
+            </div>
+            <div class="block">
+                <p>Charge (+q) is located at ((x,y,z)=(0,0,d)). Charge (+q) is located at ((x,y,z)=(0,0,-d)). Charge (-2q) is located at ((x,y,z)=(0,0,0)).</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="what-is-the-direction-of-the-electric-field-mathbf-e-on-the-x-axis-both-positive-and-negative-x-" number="24" class="hanchor" href="#what-is-the-direction-of-the-electric-field-mathbf-e-on-the-x-axis-both-positive-and-negative-x-"><span class="hnumber">24 </span> <span class="htext">What is the direction of the electric field, (\mathbf{E}), on the (x)-axis? (Both positive and negative (x).)</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="what-is-the-direction-of-the-electric-field-mathbf-e-on-the-y-axis-both-positive-and-negative-x-" number="25" class="hanchor" href="#what-is-the-direction-of-the-electric-field-mathbf-e-on-the-y-axis-both-positive-and-negative-x-"><span class="hnumber">25 </span> <span class="htext">What is the direction of the electric field, (\mathbf{E}), on the (y)-axis? (Both positive and negative (x).)</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="what-is-the-direction-of-the-electric-field-mathbf-e-on-the-z-axis-both-positive-and-negative-x-" number="26" class="hanchor" href="#what-is-the-direction-of-the-electric-field-mathbf-e-on-the-z-axis-both-positive-and-negative-x-"><span class="hnumber">26 </span> <span class="htext">What is the direction of the electric field, (\mathbf{E}), on the (z)-axis? (Both positive and negative (x).)</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="what-is-the-total-electric-potential-v-as-a-function-of-y-z-" number="27" class="hanchor" href="#what-is-the-total-electric-potential-v-as-a-function-of-y-z-"><span class="hnumber">27 </span> <span class="htext">What is the total electric potential, (V), as a function of ((y,z))?</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="what-is-mathbf-e-as-a-function-of-y-z-" number="28" class="hanchor" href="#what-is-mathbf-e-as-a-function-of-y-z-"><span class="hnumber">28 </span> <span class="htext">What is (\mathbf{E}) as a function of ((y,z))?</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="when-y-0-and-z-gt-gt-d-the-three-point-charges-look-like-they-overlap-and-v-is-expected-to-be-approximately-zero-show-that-your-equation-for-v-is-consistent-with-this-expectation-" number="29" look"="" like="" they="" overlap="" and="" \(v\)="" is="" expected="" to="" be="" approximately="" zero.="" show="" that="" your="" equation="" for="" consistent="" with="" this="" expectation."="" class="hanchor" href="#when-y-0-and-z-gt-gt-d-the-three-point-charges-look-like-they-overlap-and-v-is-expected-to-be-approximately-zero-show-that-your-equation-for-v-is-consistent-with-this-expectation-"><span class="hnumber">29 </span> <span class="htext">When (y=0) and (z&gt;&gt;d), the three point charges “look” like they overlap and (V) is expected to be approximately zero. Show that your equation for (V) is consistent with this expectation.</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="when-z-0-and-y-gt-gt-d-the-three-point-charges-look-like-they-overlap-and-v-is-expected-to-be-approximately-zero-show-that-your-equation-for-v-is-consistent-with-this-expectation-" number="30" look"="" like="" they="" overlap="" and="" \(v\)="" is="" expected="" to="" be="" approximately="" zero.="" show="" that="" your="" equation="" for="" consistent="" with="" this="" expectation."="" class="hanchor" href="#when-z-0-and-y-gt-gt-d-the-three-point-charges-look-like-they-overlap-and-v-is-expected-to-be-approximately-zero-show-that-your-equation-for-v-is-consistent-with-this-expectation-"><span class="hnumber">30 </span> <span class="htext">When (z=0) and (y&gt;&gt;d), the three point charges “look” like they overlap and (V) is expected to be approximately zero. Show that your equation for (V) is consistent with this expectation.</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="a-large-distances-relative-to-d-in-the-y-z-plane-corresponding-to-y-2-z-2-gt-gt-d-2-the-three-point-charges-look-like-they-overlap-and-v-is-expected-to-be-approximately-zero-show-that-your-equation-for-v-is-consistent-with-this-expectation-" number="31" look"="" like="" they="" overlap="" and="" \(v\)="" is="" expected="" to="" be="" approximately="" zero.="" show="" that="" your="" equation="" for="" consistent="" with="" this="" expectation."="" class="hanchor" href="#a-large-distances-relative-to-d-in-the-y-z-plane-corresponding-to-y-2-z-2-gt-gt-d-2-the-three-point-charges-look-like-they-overlap-and-v-is-expected-to-be-approximately-zero-show-that-your-equation-for-v-is-consistent-with-this-expectation-"><span class="hnumber">31 </span> <span class="htext">A large distances relative to (d) in the ((y,z)) plane, corresponding to (y^2+z^2&gt;&gt;d^2), the three-point charges “look” like they overlap and (V) is expected to be approximately zero. Show that your equation for (V) is consistent with this expectation.</span></a></h1>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

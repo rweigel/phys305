@@ -47,33 +47,10 @@
 
 # Class Schedule
 
-## Tuesday, August 24th
-
-* Introductions
-* Discuss syllabus
-* Assign HW #1 covering Vectors, Vector Fields, Field Lines, and Equipotentials
-* Discuss HW #1 topics
-
-## Thursday, August 26th 
-
-* Discuss HW #1 topics
-
-## Tuesday, August 31st
-
-* Answer questions on HW #1 topics
- 
-## Thursday, September 2nd 
-
-* Answer questions on HW #1 topics
-* Homework #1 due at 3:00 pm
-* Assign Homework #2 covering Flux, Divergence, Coulomb's Law, Electric Field, and Symmetry and Superposition.
-
-## Tuesday, September 7th
-
 ## Thursday, September 9th
 
 * HW #2 due.
-* Assign HW #3 covering Discrete Charge Distributions, Charge Densities, the Binomial Expansion, Limits, and Continuous Charge Distributions.
+* Assign HW #3 covering Coulomb's Law, Electric Field, Superposition, Discrete Charge Distributions, Charge Densities, and Continuous Charge Distributions.
 
 ## Tuesday, September 14th
 
@@ -100,7 +77,7 @@
 
 ## Thursday, October 7th
 * HW #6 due.
-* Assign HW #7 covering the Laplace's Equation in 2-D
+* Assign HW #7 covering Laplace's Equation in 2-D
 
 ## Tuesday, October 12th
 

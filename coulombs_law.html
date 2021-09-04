@@ -1,0 +1,290 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>coulombs_law</title>
+    <link id="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%220.9em%22 font-size=%22100%22>📖</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" />
+    <style>
+        body { background-color: white; }
+        #toc { font-size: 85%; width: 14em; position: fixed; min-height: 95%; max-height: 95%; overflow: hidden auto; padding-left: 0.75em; padding-right: 1em; margin-right: 1em; font-family: "Open Sans"; }
+        #toc ol { list-style-type: decimal; padding-inline-start: 1em; }
+        #toc a { text-decoration: none; }
+        #display a { text-decoration: none black; text-underline-offset: 2px; }
+        #display { width: 100%; margin-left: 15em; max-height: 100%; min-height: 100%; overflow: hidden auto; padding-left: 1em; padding-right: 1em; border-left: 1px solid rgb(240, 240, 240); font-family: "Open Sans"; }
+        .title { text-align: center; font-size: 250%; font-weight: bold; color: black; margin-bottom: 0px; }
+        .subtitle { text-align: center; font-size: 150%; font-weight: bold; color: black; margin-top: 0.2em; }
+        .hanchor { text-decoration: none; color: inherit; }
+        h1 { color: darkblue; border-bottom: 2px solid darkblue; }
+        h2 { border-bottom: 1px solid black; }
+        h3 { border-bottom: 1px dotted black; }
+        h1, h2, h3, h4, h5, h6 { width: 100%; margin-block: 0.5em; }
+        #display .block ul { width: 100%; margin-left: 1em; padding-left: 1em; }
+        #display .block ol { width: 100%; margin-left: 1em; padding-left: 1em; }
+        code { width: 100%; background-color: rgba(0, 0, 0, 0.03); border-radius: 0px; font-size: 1.2em; white-space: pre-wrap; margin-top: 3px; margin-right: 3px; }
+        pre code { border-right: 1px solid black; }
+        code.language-Python { background-color: rgba(0, 0, 0, 0); font-size: 1.2em; }
+        pre { width: 100%; text-indent: 0.75em; padding-left: 0.5em; margin-left: 1em; white-space: pre-wrap; border-left: 3px solid black; background-color: rgba(0, 0, 0, 0.03); line-height: 1.5; overflow-x: clip; }
+        pre.language-Python { border-left: 5px solid blue; padding: 0.5em; margin-left: 1em; margin-right: 1em; line-height: 1.5; overflow-x: auto; }
+        .block { display: flex; }
+        .block.inline-html { display: block; }
+        .hr { width: 100%; height: 1px; display: block; margin: 0.5em; margin-block: 0.5em; border-top: 1px solid black; }
+        #display li > div { display: flex; }
+        p { width: 100%; display: block; margin-block: 0.5em; }
+        #display li { width: 100%; }
+        li .block p { width: 100%; display: block; margin-top: 0.5em; margin-bottom: 0.5em; }
+        li .block:first-of-type p { width: 100%; display: block; margin-top: 0em; margin-bottom: 0em; }
+        .section > .block ol ~ .line-number { display: none; }
+        .section > .block ul ~ .line-number { display: none; }
+        .section > .block pre ~ .line-number { display: none; }
+        .section > .block code ~ .line-number { }
+        pre .line-number { float: right; font-size: 8px; text-align: center; text-indent: 0px; }
+        .line-number { float: right; white-space: pre-wrap; font-size: 10%; }
+        p + .line-number { margin-block-start: 8px; }
+        .block > div.linenumber { margin-block-start: -0.5em; }
+        .blockquote + div.line-number { margin-top: 1rem; }
+        h1 + .line-number { margin-block-start: 20em; }
+        h2 + .line-number { margin-block-start: 15em; }
+        h3 + .line-number { margin-block-start: 15em; }
+        h4 + .line-number { margin-block-start: 15em; }
+        h5 + .line-number { margin-block-start: 15em; }
+        h6 + .line-number { margin-block-start: 15em; }
+        .blockquote { width: 100%; display: block; margin: 1em; border: 1px solid black; padding: 1em; border-radius: 0.5em; }
+        details > summary { font-weight: bold; }
+        details { padding-left: 0.5em; }
+        details[open] { border: 1px solid black; padding: 0em 0em 0em 0.5em; }
+        table { padding: 0px; }
+        table tr { border-top: 1px solid rgb(204, 204, 204); background-color: white; margin: 0px; padding: 0px; }
+        table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+        table tr th { font-weight: bold; border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+        table tr td { border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+        table tr th :first-child, table tr td :first-child { margin-top: 0px; }
+        table tr th :last-child, table tr td :last-child { margin-bottom: 0px; }
+        .katex { font-size: inherit !important; }
+        .katex-display { text-align: center; margin: 0.5em; font-size: 1.1em !important; }
+        @media print {
+          body, html { margin: 0in; color: rgb(0, 0, 0); height: auto; background-color: rgb(255, 255, 255); border: none; display: inline; }
+          h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+          h1, h2, h3, h4, h5, h6 { width: 100%; margin-block: 0.1em; }
+          h1 { font-size: 1.25em; border-bottom: 1px solid darkblue; }
+          h2 { font-size: 1.15em; border-bottom: 1px solid darkblue; }
+          h3 { font-size: 1.1em; }
+          h4, h5, h6 { font-size: 1.05em; }
+          p { margin-top: 0px; margin-bottom: 0.5em; }
+          .title { break-before: page; margin-top: 0px; }
+          #toc { display: none; font-size: 100%; margin: 0px; width: 100%; overflow-y: hidden; padding-left: 0px; padding-right: 0px; }
+          #display { margin-left: 0em; width: 100%; padding-left: 0px; padding-right: 0px; border: none; overflow-wrap: break-word; }
+          .katex { font: 1em / 1 KaTeX_Main, "Times New Roman", serif; white-space: nowrap; text-indent: 0px; text-rendering: auto; }
+          .katex-display { margin-top: 0px; }
+        }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        
+    </style>
+
+
+    <script>
+        function tocClick() {
+            // No jQuery b/c also used in stand-alone HTML.
+            hs = document.querySelectorAll('#toc > ol ol');
+            for (var i = 0; i < hs.length; i++) {
+              if (hs[i].previousElementSibling) {
+                var el = hs[i].previousElementSibling.firstElementChild;
+                if (el.length == 0) {
+                  continue;
+                }
+                el.addEventListener('click', event => {
+                  var ns = event.target.parentNode.nextElementSibling;
+                  if (ns.style.display === 'none') {
+        ns.style.display = 'block';
+                  } else {
+        ns.style.display = 'none';
+                  }
+                });
+              }
+            }
+          }
+        if (
+            document.readyState === "complete" ||
+            (document.readyState !== "loading" && 
+              !document.documentElement.doScroll)
+        ) {
+          tocClick();
+        } else {
+          document.addEventListener("DOMContentLoaded", tocClick);
+        }
+    </script>
+
+</head>
+
+<body style="display: flex;min-width: 50%;max-height:100%;">
+
+    <div id="toc"></div>
+    <div id="display">
+        <div class="section">
+            <div class="block">
+                <p class="">= Coulomb’s Law =</p>
+
+            </div>
+            <div class="block">
+                <p class=""><span len="133" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <semantics>
+                                        <mrow>
+                                            <mi mathvariant="bold">E</mi>
+                                            <mo>=</mo>
+                                            <mfrac>
+                                                <msup>
+                                                    <mi>q</mi>
+                                                    <mo mathvariant="normal" lspace="0em" rspace="0em">′</mo>
+                                                </msup>
+                                                <mrow>
+                                                    <mn>4</mn>
+                                                    <mi>π</mi>
+                                                    <msub>
+                                                        <mi>ϵ</mi>
+                                                        <mn>0</mn>
+                                                    </msub>
+                                                </mrow>
+                                            </mfrac>
+                                            <mfrac>
+                                                <mn>1</mn>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                    <mi mathvariant="bold">r</mi>
+                                                    <mo>−</mo>
+                                                    <msup>
+                                                        <mi mathvariant="bold">r</mi>
+                                                        <mo mathvariant="normal" lspace="0em" rspace="0em">′</mo>
+                                                    </msup>
+                                                    <msup>
+                                                        <mi mathvariant="normal">∣</mi>
+                                                        <mn>2</mn>
+                                                    </msup>
+                                                </mrow>
+                                            </mfrac>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mi mathvariant="bold">r</mi>
+                                                    <mo>−</mo>
+                                                    <msup>
+                                                        <mi mathvariant="bold">r</mi>
+                                                        <mo mathvariant="normal" lspace="0em" rspace="0em">′</mo>
+                                                    </msup>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                    <mi mathvariant="bold">r</mi>
+                                                    <mo>−</mo>
+                                                    <msup>
+                                                        <mi mathvariant="bold">r</mi>
+                                                        <mo mathvariant="normal" lspace="0em" rspace="0em">′</mo>
+                                                    </msup>
+                                                    <mi mathvariant="normal">∣</mi>
+                                                </mrow>
+                                            </mfrac>
+                                        </mrow>
+                                        <annotation encoding="application/x-tex">\mathbf{E} = \frac{q'}{4\pi\epsilon_0}\frac{1}{|\mathbf{r}-\mathbf{r}'|^2}\frac{\mathbf{r}-\mathbf{r}'}{|\mathbf{r}-\mathbf{r}'|}</annotation>
+                                    </semantics>
+                                </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord mathbf">E</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.364892em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4288919999999998em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">4</span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8360000000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">∣</span><span class="mord mathbf">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathbf">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6778919999999999em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord">∣</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.428892em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">∣</span><span class="mord mathbf">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathbf">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6778919999999999em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord">∣</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathbf">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathbf">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+
+            </div>
+            <div class="block">
+                <p class="">Notation</p>
+
+            </div>
+            <div class="block">
+                <ul class="">
+                    <li class="">
+                        <div class="block">
+                            <p>A primed vector, (\mathbf{r}’) is usually used for location of a charge that is exerting a force on another charge. An unprimed vector (\mathbf{r}) is usually used for the location of the charge for which the force is being calculated.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <p class="">Related References:</p>
+
+            </div>
+            <div class="block">
+                <ul class="">
+                    <li class="">
+                        <div class="block">
+                            <p><a href="https://ocw.mit.edu/courses/physics/8-02t-electricity-and-magnetism-spring-2005/lecture-notes/chap2coulomb_law.pdf">https://ocw.mit.edu/courses/physics/8-02t-electricity-and-magnetism-spring-2005/lecture-notes/chap2coulomb_law.pdf</a></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <p class="">== Definition ==</p>
+
+            </div>
+            <div class="block">
+                <p class="">Two charges (q) and (q_o) are separated by a distance (d). Write down the equation for the magnitude of the force that each charge exerts on each other.</p>
+
+            </div>
+            <div class="block">
+                <p class="">== Use ==</p>
+
+            </div>
+            <div class="block">
+                <p class="">Write down formal version of Coulomb’s Law (with script “r”) and define all symbols; use a diagram if necessary.</p>
+
+            </div>
+            <div class="block">
+                <p class=""><math>q</math> is located at <math>(x,y,z) = (0,0,1)</math>; <math>Q</math> is located <math>(x,y,z) = (0,1,0)</math>. The force of <math>q</math> on <math>Q</math> is <math>\mathbf{F}_{qQ} = \frac{qQ}{4\pi\epsilon_0}(a\hat{\mathbf{x}} + b\hat{\mathbf{y}} + c\hat{\mathbf{z}})</math>. What are <math>a</math>, <math>b</math>, and <math>c</math>? What is <math>F</math> (or <math>|\mathbf{F}|</math>)?</p>
+
+            </div>
+            <div class="block">
+                <p class="">Use the formula <math>F = kqQ/d^2</math> to check your answer and signs.</p>
+
+            </div>
+            <div class="block">
+                <p class="">== Definition ==</p>
+
+            </div>
+            <div class="block">
+                <p class="">Two charges (q) and (q_o) are separated by a distance (d) and (q &gt;&gt; q_o). Is the magnitude of the force that (q) exerts on (q_o) smaller, equal to, or larger than the force that (q_o) exerts on (q)?</p>
+
+            </div>
+            <div class="block">
+                <p class="">== Definition ==</p>
+
+            </div>
+            <div class="block">
+                <p class="">Write down Coulomb’s Law in vector form for the force a charge (q) at (\mathbf{r}’) exerts on a charge (q_o) at (\mathbf{r}). Neither charge is at the origin. Define all symbols and draw a diagram.</p>
+
+            </div>
+            <div class="block">
+                <p class="">== Use ==</p>
+
+            </div>
+            <div class="block">
+                <p class="">Given the location of a charge and the position of a test charge in cartesian coordinates, draw, to scale, (1) (\mathbf{r}-\mathbf{r’}) and (2) the unit vector associated with (1). Compute their values with correct units. That is, make up your own problem like the previous problem and use the techniques given in class to make sure your answer is correct.</p>
+
+            </div>
+            <div class="block">
+                <p class="">== Derivation ==</p>
+
+            </div>
+            <div class="block">
+                <p class="">Suppose that Newton uniformly charged a spherical shell and found that everywhere inside the shell, a small test charge experienced no force. When the test charge was placed outside of the shell, it moved radially away from the shell. Provide an explanation for why it is reasonable for him to conclude that the force between two charges will depend on the inverse of the square of their separation and be directed along a straight line that connects them.</p>
+
+            </div>
+            <div class="block">
+                <p class="">{| class=”wikitable collapsible collapsed”
+                    ! align=”left” |&nbsp;Answer
+                    |-
+                    |
+                    This is somewhat of a subtle question written to emphasize some of the important properties of an inverse square force law. Newton’s Law of gravity, which has a magnitude of (F=GmM/d^2) and direction along the straight line that connects the masses, is an inverse square law. In Physics I, you learned that particle inside of an empty shell felt zero force everywhere inside of the shell. Outside of the shell, the mass experienced a radial force. See also [<a href="https://geometrydude.wordpress.com/2012/12/22/cavendishs-phenomenological-derivation-of-coulombs-law/%5D">https://geometrydude.wordpress.com/2012/12/22/cavendishs-phenomenological-derivation-of-coulombs-law/]</a> and [<a href="http://www.ep.ph.bham.ac.uk/general/outreach/Priestley/islspring2012.pdf%5D">http://www.ep.ph.bham.ac.uk/general/outreach/Priestley/islspring2012.pdf]</a>.
+                    |}</p>
+
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>
