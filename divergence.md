@@ -110,15 +110,15 @@ To compute
 
 $\displaystyle\boldsymbol{\nabla}\bfcdot\mathbf{U}=\frac{\partial U_x(x,y,z)}{\partial x}+\frac{\partial U_y(x,y,z)}{\partial y}+\frac{\partial U_z(x,y,z)}{\partial z}$
 
-we need to first write $\mathbf{\hat{s}}$ fully in cartesian coordinates. From [Vectors](vectors.md#cylindrical), $\hat{\mathbf{s}} = \cos\phi\xhat + \sin\phi\yhat$, $\cos\phi = x/\sqrt{x^2+y^2}$, and $\sin\phi = y/\sqrt{x^2+y^2}$, so
+we need to first write $\mathbf{\hat{s}}$ fully in cartesian coordinates. From [Vectors](vectors.md#cylindrical), $\hat{\mathbf{s}} = \cos\phi\xhat + \sin\phi\yhat$, $\cos\phi = x/(x^2+y^2)^{1/2}$, and $\sin\phi = y/(x^2+y^2)^{1/2}$, so
 
-$$\hat{\mathbf{s}}=\frac{x}{\sqrt{x^2+y^2}}\xhat + \frac{y}{\sqrt{x^2+y^2}}\yhat$$
+$$\hat{\mathbf{s}}=\frac{x}{(x^2+y^2)^{1/2}}\xhat + \frac{y}{(x^2+y^2)^{1/2}}\yhat$$
 
-and thus $U_x=U_ox/\sqrt{x^2+y^2}$, $U_y = U_o y/\sqrt{x^2+y^2}$, and $U_z=0$. To finish the problem, evaluate
+and thus $U_x=U_ox/(x^2+y^2)^{1/2}$, $U_y = U_o y/(x^2+y^2)^{1/2}$, and $U_z=0$. To finish the problem, evaluate
 
 $\displaystyle\frac{\partial U_x(x,y,z)}{\partial x}+\frac{\partial U_y(x,y,z)}{\partial y}+\frac{\partial U_z(x,y,z)}{\partial z}$
 
-The result should be $\displaystyle\frac{U_o}{\sqrt{x^2+y^2}}=\frac{U_o}{s}$.
+The result should be $\displaystyle\frac{U_o}{(x^2+y^2)^{1/2}}=\frac{U_o}{s}$.
 
 An easier way to solve this is to use the vector operator $\boldsymbol{\nabla}$ written in cylindrical coordinates. The equation is given on the second--to--last page of Griffiths and is
 
@@ -126,7 +126,7 @@ $\displaystyle\boldsymbol{\nabla}\cdot\mathbf{U}={1 \over s}{\partial \left( s U
 
 For $\mathbf{U}=U_o\hat{\mathbf{s}}$, $U_s=U_o$ and $U_\phi=U_z=0$ and so the last two terms are zero and the first term is straight--forward to calculate:
 
-$\displaystyle\boldsymbol{\nabla}\cdot\mathbf{U}={1 \over s}{\partial \left( s U_s  \right) \over \partial s}=\frac{1}{s}\frac{\partial (sU_o)}{\partial s}=\frac{U_o}{s}=\frac{U_o}{\sqrt{x^2+y^2}}$
+$\displaystyle\boldsymbol{\nabla}\cdot\mathbf{U}={1 \over s}{\partial \left( s U_s  \right) \over \partial s}=\frac{1}{s}\frac{\partial (sU_o)}{\partial s}=\frac{U_o}{s}=\frac{U_o}{(x^2+y^2)^{1/2}}$
 
 ### Problem
 
