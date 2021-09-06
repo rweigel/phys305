@@ -1,5 +1,40 @@
 = Discrete Charge Distributions =
 
+# Problem Point Charge Electric Field Calculation
+
+In the left part of the previous diagram, the 9 positive charges are uniformly spaced. If the distance between $q_1$ and $q_9$ is $6a$ and the open circle is a perpendicular distance $2a$ above the horizontal line, what is
+
+\begin{itemize}
+    \item $\mathbf{r}_1$? Write your answer in the form $\mathbf{r}_1 = r_x\ihat+r_y\jhat$ and find $r_x$ and $r_y$ in terms of $a$ and/or numbers.
+    \ifsolutions
+    \\
+    \\
+    {\bf Answer}: $\mathbf{r}_1=3a\ihat + 2a\jhat$
+    \else
+    \\[2cm]
+    \fi
+    \item $\hat{\mathbf{r}}_1$? Write your answer in the form $\hat{\mathbf{r}}_1 = \hat{r}_x\ihat+\hat{r}_y\jhat$ and find $\hat{r}_x$ and $\hat{r}_y$ in terms of $a$ and/or numbers.
+    \ifsolutions
+    \\
+    \\
+    {\bf Answer}: $\hat{\mathbf{r}}_1=\frac{3}{\sqrt{13}}\ihat + \frac{2}{\sqrt{13}}\jhat$. Unit vectors are dimensionless, so $a$ is not part of solution.
+    \else
+    \\[2cm]
+    \fi
+    \item $\mathbf{E}_1$, the electric field at the open circle due to $q_1$? Write your answer in the form $\mathbf{E}_1 = E_x\ihat+E_y\jhat$ and find $E_x$ and $E_y$ in terms of one or more of $k$, $a$, $q_1$, and numbers.
+    \ifsolutions
+    \\
+    \\
+    {\bf Answer}: $\mathbf{r}_1=\frac{kq_1}{a^2(13)^{3/2}}(3\ihat + 2\jhat)$
+    \else
+    \\[3cm]
+    \begin{tikzpicture}
+    \draw[step=1,black,thin] (0,0) grid (8,8)
+    \end{tikzpicture}
+    \fi
+    \end{itemize}
+\end{tcolorbox}
+
 == Basic Calculation ==
 
 \(q\) is located at \((x,y,z) = (0,0,1)\); \(Q\) is located \((x,y,z) = (0,1,0)\).  The force of \(q\) on \(Q\) is \(\mathbf{F}_{qQ} = \frac{qQ}{4\pi\epsilon_0}(a\hat{\mathbf{x}} + b\hat{\mathbf{y}} + c\hat{\mathbf{z}})\).  What are \(a\), \(b\), and \(c\)?  What is \(F\) (or \(|\mathbf{F}|\))?
