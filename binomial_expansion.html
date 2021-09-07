@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>binomial_expansion</title>
     <link id="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%220.9em%22 font-size=%22100%22>📖</text></svg>">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.12/dist/katex.min.css" />
     <style>
         body { background-color: white; }
         #toc { font-size: 85%; width: 14em; position: fixed; min-height: 95%; max-height: 95%; overflow: hidden auto; padding-left: 0.75em; padding-right: 1em; margin-right: 1em; font-family: "Open Sans"; }
@@ -85,7 +85,7 @@
 
 
     <script>
-        function tocClick() {
+        function tocClickListen() {
             // No jQuery b/c also used in stand-alone HTML.
             hs = document.querySelectorAll('#toc > ol ol');
             for (var i = 0; i < hs.length; i++) {
@@ -110,9 +110,9 @@
             (document.readyState !== "loading" && 
               !document.documentElement.doScroll)
         ) {
-          tocClick();
+          tocClickListen();
         } else {
-          document.addEventListener("DOMContentLoaded", tocClick);
+          document.addEventListener("DOMContentLoaded", tocClickListen);
         }
     </script>
 
@@ -120,14 +120,14 @@
 
 <body style="display: flex;min-width: 50%;max-height:100%;">
 
-    <div id="toc" style="display: block;">
+    <div id="toc">
         <ol>
             <li><a number="1" href="#binomial-expansion-limit">Binomial Expansion Limit</a></li>
             <ol style="display: none;">
                 <li><a number="1.1" href="#example">Example</a></li>
                 <li><a number="1.2" href="#example">Example</a></li>
-                <li><a number="1.3" href="#problem">Problem</a></li>
-                <li><a number="1.4" href="#problem">Problem</a></li>
+                <li><a number="1.3" href="#problem" class="">Problem</a></li>
+                <li><a number="1.4" href="#problem" class="highlighted">Problem</a></li>
                 <li><a number="1.5" href="#problem">Problem</a></li>
             </ol>
         </ol>
@@ -1029,7 +1029,7 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="problem" number="1.3" class="hanchor" href="#problem"><span class="hnumber">1.3 </span> <span class="htext">Problem</span></a></h2>
+                <h2 class=""><a name="problem" number="1.3" class="hanchor" href="#problem"><span class="hnumber">1.3 </span> <span class="htext">Problem</span></a></h2>
 
             </div>
             <div class="block">
@@ -1094,11 +1094,11 @@ M834 80h400000v40h-400000z"></path>
         <div class="section">
 
             <div class="block">
-                <h2><a name="problem" number="1.4" class="hanchor" href="#problem"><span class="hnumber">1.4 </span> <span class="htext">Problem</span></a></h2>
+                <h2 class="highlighted"><a name="problem" number="1.4" class="hanchor" href="#problem"><span class="hnumber">1.4 </span> <span class="htext">Problem</span></a></h2>
 
             </div>
             <div class="block">
-                <p>The exact answer for the electric field in the <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                <p class="">The exact answer for the electric field in the <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                 <semantics>
                                     <mrow>
                                         <mi>y</mi>
@@ -1133,7 +1133,7 @@ M834 80h400000v40h-400000z"></path>
 
             </div>
             <div class="block">
-                <p><span len="160" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <p class=""><span len="160" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
                                     <semantics>
                                         <mrow>
                                             <mi mathvariant="bold">E</mi>
@@ -1234,7 +1234,7 @@ M834 80h400000v40h-400000z"></path>
 
             </div>
             <div class="block">
-                <p>to first order in <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                <p class="">Expand the term in square braces to first order in <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                 <semantics>
                                     <mrow>
                                         <mi>z</mi>
@@ -1274,6 +1274,41 @@ M834 80h400000v40h-400000z"></path>
 
             </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
         <div class="section">
 
@@ -1282,7 +1317,7 @@ M834 80h400000v40h-400000z"></path>
 
             </div>
             <div class="block">
-                <p class="">Find the equation for the electric field for two positive charges <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                <p>Find the equation for the electric field for two positive charges <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                 <semantics>
                                     <mrow>
                                         <mi>q</mi>
@@ -1319,7 +1354,6 @@ M834 80h400000v40h-400000z"></path>
                             </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span> at the origin.</p>
 
             </div>
-
 
         </div>
     </div>

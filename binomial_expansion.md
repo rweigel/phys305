@@ -75,7 +75,7 @@ The exact answer for the electric field in the $y=0$ plane due to a line of char
 
 $$\mathbf{E} = \frac{k\lambda}{z}\left[\left(-1+\frac{z}{\sqrt{z^2+L^2}}\right)\hat{\mathbf{x}} + \left(\frac{L}{\sqrt{z^2+L^2}}\right)\hat{\mathbf{z}}\right]$$
 
-to first order in $z$. Note that $\sqrt{z^2}=|z|$.
+Expand the term in square braces to first order in $z$. Note that $\sqrt{z^2}=|z|$.
 
 ## Problem
 
