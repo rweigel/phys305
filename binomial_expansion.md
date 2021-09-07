@@ -71,7 +71,15 @@ Approximate ${1}/{\sqrt{a + x}}$ using the binomial expansion to first order in 
 
 ## Problem
 
-The exact answer for the electric field in the $y=0$ plane due to a line of charge with charge density $\lambda$ between $\pm L$ on the $x$--axis is
+The electric field on the $z$--axis due to a line of charge $\lambda$ between $\pm L$ is
+
+$$\mathbf{E}=\frac{2k\lambda L}{z}\left[\frac{1}{\sqrt{z^2+L^2}}\right]\zhat$$
+
+Expand the term in square braces to first order in $z$. Note that $\sqrt{z^2}=|z|$.
+
+## Problem
+
+The exact answer for the electric field in the $y=0$ plane due to a line of charge with charge density $\lambda$ between $0$ and $L$ on the $x$--axis is
 
 $$\mathbf{E} = \frac{k\lambda}{z}\left[\left(-1+\frac{z}{\sqrt{z^2+L^2}}\right)\hat{\mathbf{x}} + \left(\frac{L}{\sqrt{z^2+L^2}}\right)\hat{\mathbf{z}}\right]$$
 
