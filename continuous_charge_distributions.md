@@ -4,11 +4,9 @@ Previously, you have calculated the electric field due to a collection of point 
 
 Suppose that you wanted to know the electric field created by a plastic rod that was positively charged by rubbing it against fabric. The number of charges that you would need to account for is on the order of $\gt 10^{20}$. If you could do one calculation per second, computing the electric field due to each of the charges would take longer than the time since the Big Bang.
 
-To allow for an answer in a finite amount of time, the approximation that charge is uniformly distributed along a line can be made. Consider 9 charges placed on a line as shown on the left-hand-side of the diagram below. To compute the electric field at the open circle, we would need to compute the electric field due to each of the 9 charges there. Graphically, we will make the approximation shown in the diagram. The 9 charges on the left are smeared out onto the line to form a continuous charge density.
+To allow for an answer in a finite amount of time, the approximation that charge is uniformly distributed along a line can be made. Consider 9 charges placed on a line as shown on the left-hand-side of the diagram below. To compute the electric field at the open circle, we would need to compute the electric field due to each of the 9 charges there. Instead, we will make the approximation that the charges on are smeared out onto the line to form a continuous charge density.
 
-\begin{center}
-\input{Continuous_Charge_Distributions/figures/Figure_2_1}
-\end{center}
+<img src="figures/Continuous-Charge-Distributions-1.svg"/>
 
 Mathematically, the we are converting a sum to an integral. The electric field at the open circle is
 
@@ -34,7 +32,7 @@ $$\begin{align*}
 \\=&\sum_{i=1}^Nkq\_i\frac{\hat{\textbf{\char"0509}}\_i}{\char"0509\_i^2}
 \\
 \\
-\simeq & \int kdq\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}
+\simeq & \int_{\mathcal{L}} k\lambda dl\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}
 \end{align*}
 $$
 

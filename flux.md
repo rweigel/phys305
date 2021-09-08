@@ -800,8 +800,6 @@ $\displaystyle\Phi_E=E_o\pi R^2$
 
 A related problem is to compute the flux through a full sphere. You can do this without calculation by drawing the electric field and using symmetry. At each point on the top of the sphere, there is a differential element with a positive flux that is equal and opposite to a differential element with a negative flux on the bottom part of the sphere. As a result, the answer is zero for a closed sphere.
 
-**FIGURE**
-
 Alternatively, from the field line/particle flow analogy, the net flow in must equal the net flow out, so the answer should be zero.
 
 ## Problem -- Flux Through a Disk
@@ -832,6 +830,8 @@ Although the electric field direction changes on the surface of the sphere, we d
 1\. $\displaystyle\Phi_E=E_{\perp}A = \left(\frac{kQ}{R^2}\right) (4\pi R^2)=4\pi k Q$
 
 2\. $\displaystyle\Phi_E=E_{\perp}A = \left(\frac{kQ}{(2R)^2}\right) \Big(4\pi (2R)^2\Big)=4\pi k Q$
+
+A key observation is that because the field decreases in proportion to $1/r^2$ and the area increases in proportion to $r^2$, the flux, which involves the product the the field and the area, is independent of the radius of the sphere. This is analogous to the case where there is a source that emits particles at the origin -- the density of particles decreases in proportion to $1/r^2$.
 
 ## Problem -- Flux Through a Sphere
 

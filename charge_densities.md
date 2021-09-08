@@ -9,83 +9,23 @@ Charges are quantized and so technically it does not make sense to discuss a con
 
 To create a discrete charge distribution, imagine smearing discrete charges along a line or on a surface.
 
-* A line of length $L$ with a charge $Q$ spread uniformly on it has a charge density of $\lambda=Q/L$ with units of $[\text{C}]/[\text{m}]$.  If nonuniform, $\lambda(l)$ or $\lambda(\mathbf{r})$ is used and $\lambda=dQ/dl$.
-* A surface with area $A$ and a charge $Q$ spread uniformly on it has a charge density of $\sigma=Q/A$ with units of $[\text{C}]/[\text{m}^2]$. If nonuniform, $\sigma(x,y)$ or $\sigma(\mathbf{r})$ is used and $\sigma=dQ/dA$.
-* A volume with volume $\tau$ and a charge $Q$ spread uniformly in it has a charge density of $\rho=Q/\tau$ with units of $[\text{C}]/[\text{m}^3]$. If nonuniform, $\rho(x,y,z)$ or $\rho(\mathbf{r})$ is used and $\rho=dQ/d\tau$.
+* A line of length $L$ with a charge $Q$ spread uniformly on it has a charge density of $\lambda=Q/L$ with units of $[\text{C}]/[\text{m}]$.  If nonuniform, the notation $\lambda(l)$ or $\lambda(\mathbf{r})$ is used and $\lambda=dQ/dl$ is the the density at a location where $dQ$ is in a length $dl$.
+* A surface with area $A$ and a charge $Q$ spread uniformly on it has a charge density of $\sigma=Q/A$ with units of $[\text{C}]/[\text{m}^2]$. If nonuniform, the notation $\sigma(x,y)$ or $\sigma(\mathbf{r})$ is used and $\sigma=dQ/dA$ is density at a location where $dQ$ is in an area $dA$.
+* A volume with volume $\tau$ and a charge $Q$ spread uniformly in it has a charge density of $\rho=Q/\tau$ with units of $[\text{C}]/[\text{m}^3]$. If nonuniform, the notation $\rho(x,y,z)$ or $\rho(\mathbf{r})$ is used and $\rho=dQ/d\tau$ at a location where $dQ$ is in a volume $d\tau$.
 
 # Linear Charge Density $\lambda$
 
-$\lambda$ is the charge per unit length. The total charge on a line of length $L$ is $Q=\lambda L$.
-
 ## Uniform
 
-### Example -- Computing $\lambda$
+$\lambda$ is the charge per unit length. The total charge on a line of length $L$ when $\lambda$ is uniform is $Q=\lambda L$.
 
-If the uniformly spaced point charges each with charge $q$ and shown by dots are smeared onto the line they are on, what is $\lambda$? 
+If the line is curved, integration may be needed to compute the length of the line using $L=\int_{\mathcal{L}}dl$.
 
-<img src="figures/Charge-Densities-1.svg"/>
-
-**Answer**: (a) $9q/L$ and (b) 5$q/\pi a$.
-
-### Problem -- Computing $\lambda$
-
-A 2-meter line of charge of has $-10$ Coulombs of charge spread uniformly on it.  
-
-1. Compute $\lambda$.
-2. How many electrons does this correspond to?
-3. What is the average spacing between the electrons on the line of charge?
-
-## Non--uniform
-
-<img src="figures/Charge-Densities-2.svg"/>
-
-When $\lambda$ varies along a line, it is related to the total charge according to
-
-$$dQ = \lambda(l) dl$$
-
-where $dl$ is a {\it generic} differential length and $l$ is a position on the line. Or, equivalently,
-
-$$\lambda = \frac{dQ}{dl}$$
-
-Integration of $\lambda(l)\,dl$ over the length of the line gives the total charge on a line.
-$$Q=\int_{\mathcal L} \lambda(l) dl$$
-
-In order to do an integration, this generic length must be written in terms of a coordinate system (e.g., Cartesian, cylindrical, spherical). For example, if the line of charge is along the $x$-axis, then $dl=dx$. If the line of charge is along the $y$-axis, then $dl=dy$. If the line of charge is a circle of radius $b$ in the $x$-$y$ plane centered on the origin, then $dl=ds$, where $ds$ is a differential length along a circle. (For a circle, we could write $dl$ in terms of $dx$ and $dy$, but this leads to a more complicated integral. Recall from integration problems in calculus that one usually uses a coordinate system that makes the integration easy.)
-
-
-### Example -- Non-uniform $\lambda$ on Straight Line
-
-A line of charge of length $L$ has a linearly increasing charge density, a charge density of zero on the left end, and a total charge $Q$.  Compute $\lambda(l)$.
-
-### Problem -- Computing Total Charge
-
-Along a line from $x=0$ to $x=a$, a total charge $Q$ is distributed non-uniformly such that $\lambda(x) = \alpha x^2$. What is the constant $\alpha$ in terms of $Q$ and $a$?
-
-%**Answer**: $dQ = \lambda(x)dx\Rightarrow Q = \int_L \lambda(x)dx\Rightarrow Q = \int_0^a \alpha x^2dx\Rightarrow \alpha=3Q/a^3$
-
-### Example -- Non-uniform $\lambda$ on Curved Line
-
-Charge is distributed on a half--circle of radius $R$ as shown in the following figure. The charge density is $\lambda(\phi)=\lambda_o\sin\phi$.
-
-Compute the total charge on the line.
-
-**Answer**
-
-**Check**: Before attempting to solve the problem, note that $\lambda$ is positive in the range $\phi=[0,\pi]$, so we expect a non--zero and positive net charge.
-
-**Approach I**
-
-Before doing integration, we need to write $dl$ in terms of a differential length using a coordinate system. Given that $\lambda$ was given in cylindrical coordinates, it makes sense to write $dl$ using cylindrical coordinates. From the following figure, $dl=Rd\phi$. (A useful way to check if you have written down the correct $dl$ is to integrate it -- if you get the length of the line, you likely have the correct $dl$.)
-
-$$Q = \int_{\mathcal{L}}\lambda(l) dl=\int_0^{\pi}\lambda_o\sin\phi Rd\phi=2\lambda_o R$$
-
-**Approach II**
-
-This problem was straighforward to solve using cylindrical coordinates. In the following, it is solved in cartesian coordinates. The technique used here can be used for arbitrary curves for which $dl$ is not simple.
-
-When the curve is not such that the differential element can be written in a simple form, the most general approach is to write all quantities in cartesian components. Although not needed for this problem, the technique can be used in the following problem.
+In order to do an integration, this generic length must be written in terms of a coordinate system (e.g., Cartesian, cylindrical, spherical). For example, if the line of charge is along the $x$-axis, then $dl=dx$. If the line of charge is along the $y$-axis, then $dl=dy$. If the line of charge is a circle of radius $b$ in the $x$-$y$ plane centered on the origin, then $dl=ds$, where $ds$ is a differential length along a circle. When $dl$ cannot be written by inspection, the following general procedure is needed.
 
 In the following diagram, a differential element of a curve is shown. To write this in Cartesian coordinates, a right triangle is used to relate $dx$, $dy$, and $dl$.
+
+<img src="figures/Charge-Density-Line-Differential.svg"/>
 
 $$(dl)^2 = (dx)^2 + (dy)^2\quad\Rightarrow\quad dl = \sqrt{(dx)^2 + (dy)^2}$$
 
@@ -98,6 +38,105 @@ $$dl=|dx|\sqrt{1 + \left(\frac{dy}{dx}\right)^2}$$
 If we integrate in the direction of increasing $x$, then $|dx|=dx$ and so 
 
 $$dl=dx\sqrt{1 + \left(\frac{dy}{dx}\right)^2}$$
+
+### Example -- Computing $\lambda$
+
+If the uniformly spaced point charges each with charge $q$ and shown by dots are smeared onto the line they are on, what is $\lambda$? 
+
+<img src="figures/Charge-Densities-1.svg"/>
+
+**Answer**: (a) $9q/L$ and (b) 5$q/\pi a$.
+
+### Problem -- Computing $\lambda$
+
+A 2-meter line has $-10$ Coulombs of charge spread uniformly on it.  
+
+1. Compute $\lambda$.
+2. How many electrons does this correspond to?
+3. What is the spacing between the electrons on the line of charge?
+
+### Example -- Computing $L$
+
+A parabola $y=x^2/b$ from $x=-b$ to $x=b$ has a uniform linear charge denstiy $\lambda_o$. Compute the total charge on the line. 
+
+%You will need to use an integral table or a program such as [Wolfram|Alpha](https://www.wolframalpha.com/examples/mathematics/calculus-and-analysis/) to solve the integral.
+
+**Answer**
+
+Using
+
+$dl=dx\sqrt{1 + \left(\frac{dy}{dx}\right)^2}$
+
+with $y=x^2/b$ gives
+
+$dl = dx\sqrt{1 + \left(2x/b\right)^2}$
+
+$\displaystyle L=\int_{\mathcal{L}}dl=\int_{-b}^bdx\sqrt{1 + \left(2x\right/b)^2}$
+
+Although this integral can be solved with a [trig substitution](https://ocw.mit.edu/courses/mathematics/18-01sc-single-variable-calculus-fall-2010/unit-4-techniques-of-integration/part-b-partial-fractions-integration-by-parts-arc-length-and-surface-area/session-78-computing-the-length-of-a-curve/MIT18_01SCF10_Ses78d.pdf), the use of [Wolfram|Alpha](https://www.wolframalpha.com/input/?i=integrate+sqrt%281%2B4x%5E2%2Fb%5E2%29+dx+from+-b+to+b) is acceptable on a Homework problem. (On exams, I am only interested in seeing that you set up the integral if the integral is non--trivial to evaluate.)
+
+### Problem
+
+A line $y=\sin(x/b)$ from $x=0$ to $x=b$ has a uniform linear charge density $\lambda_o$. Compute the total charge on the line.
+
+## Non--uniform
+
+<img src="figures/Charge-Density-Linear-Schematic.svg"/>
+
+When $\lambda$ varies along a line, it is related to the total charge according to
+
+$$dQ = \lambda(l) dl$$
+
+where $dl$ is a {\it generic} differential length and $l$ is a position on the line. Equivalently,
+
+$$\lambda(l) = \frac{dQ}{dl}$$
+
+Integration of $\lambda(l)dl$ over the length of the line gives the total charge on a line.
+$$Q=\int_{\mathcal L} \lambda(l) dl$$
+
+In order to do an integration, the generic length $l$ variable (and $dl$)  must be written in terms of a coordinate system (e.g., Cartesian, cylindrical, spherical).
+
+### Example -- Non-uniform $\lambda$ on Straight Line
+
+A line of charge of length $L$ has a linearly increasing charge density, a charge density of zero on the left end, and a total charge $Q$. Compute $\lambda(l)$ in terms of $Q$, $L$, where $l$ is the distance from the left end of the line.
+
+**Answer**
+
+Based on the problem statement, we can write $\lambda(l)=\lambda_ol$ where $l$ is the distance from the left end of the line. To find $\lambda_o$, use
+
+$\displaystyle Q=\int_0^L\lambda(l)dl=\lambda_o\frac{L^2}{2}\quad\Rightarrow\quad \lambda_o=2Q/L^2\quad \Rightarrow\quad\lambda(l)=(2Q/L^2)l$
+
+### Problem -- Non-uniform $\lambda$ on Straight Line
+
+Along a line from $x=0$ to $x=a$, a total charge $Q$ is distributed non-uniformly such that $\lambda(x) = \alpha x^2$. What is the constant $\alpha$ in terms of $Q$ and $a$?
+
+%**Answer**: $dQ = \lambda(x)dx\Rightarrow Q = \int_L \lambda(x)dx\Rightarrow Q = \int_0^a \alpha x^2dx\Rightarrow \alpha=3Q/a^3$
+
+## Problem -- Non-uniform $\lambda$ on Curved Line
+
+A parabola $y=x^2/b$ from $x=-b$ to $x=b$ has a non--uniform linear charge denstiy $\lambda(x)=\sqrt{1+4x^2/b^2}$. Compute the total charge on the line. 
+
+### Example -- Non-uniform $\lambda$ on Curved Line
+
+Charge is distributed on a half--circle of radius $R$ as shown in the following figure. The charge density is $\lambda(\phi)=\lambda_o\sin\phi$.
+
+Compute the total charge $Q$ on the line.
+
+**Answer**
+
+**Check**: Before attempting to solve the problem, note that $\lambda$ is positive in the range $\phi=[0,\pi]$, so we expect a non--zero and positive net charge $Q$.
+
+**Approach I**
+
+Before doing integration, we need to write $dl$ in terms of a differential length using a coordinate system. Given that $\lambda$ was given in cylindrical coordinates, it makes sense to write $dl$ using cylindrical coordinates. From the following figure, $dl=Rd\phi$. (A useful way to check if you have written down the correct $dl$ is to integrate it -- if you get the length of the line, you likely have the correct $dl$.)
+
+$$Q = \int_{\mathcal{L}}\lambda(l) dl=\int_0^{\pi}\lambda_o\sin\phi Rd\phi=2\lambda_o R$$
+
+**Approach II**
+
+This problem was straighforward to solve using cylindrical coordinates. In the following, it is solved in cartesian coordinates. The technique used here can be used for arbitrary curves for which $dl$ is not simple.
+
+When the curve is not such that the differential element can be written in a simple form, the most general approach is to write all quantities in cartesian components. Although not needed for this problem, the technique can be used in the following problem.
 
 For the given circle, $y=\sqrt{R^2-x^2}$, so $dy/dx=-x/\sqrt{R^2-x^2}$ and
 
@@ -113,9 +152,6 @@ Before integrating, we note that $y$ depends on the differential variable $x$, s
 
 $$Q = \int_{\mathcal{L}}\lambda(l) dl=\int_{-R}^{R}\lambda_o\frac{\sqrt{R^2-x^2}}{|R|}dx\frac{|R|}{\sqrt{R^2-x^2}}=\lambda_o\int_{-R}^{R}dx=2\lambda_oR$$
 
-### Problem -- Uniform $\lambda$ on Curved Line
-
-Along the curve $y=x^2/b$ from $x=0$ to $x=b$, the charge density $\lambda_o$ is constant. Compute the total charge on the line using Approach II demonstrated in the previous example. You will need to use an integral table or a program such as [Wolfram|Alpha](https://www.wolframalpha.com/examples/mathematics/calculus-and-analysis/) to solve the integral.
 
 # Surface Charge Density, $\sigma$
 
@@ -123,21 +159,22 @@ Along the curve $y=x^2/b$ from $x=0$ to $x=b$, the charge density $\lambda_o$ is
 
 $\sigma$ is the charge per unit length. The total charge on a surface is $Q=\lambda A$, where $A$ is the surface area.
 
-## Problem
+$$Q = \sigma\int_{\mathcal{A}} dA$$
+
+As with lines, to perform the integral, the differential written in terms of a generic differential area $d\mathcal{A}$ and must be expressed in a coordinate system. This is demonstrated in the following example.
+
+### Example
 
 A total charge $Q$ is uniformly distributed on a square that lies between $-2b\le x\le 2b$ and $-2b\le y\le 2b$.
 
 * Compute the charge density $\sigma$ on the square.
-* Verify that $\int_{\mathcal{S}}\sigma ds$, where $\mathcal{S}$ is surface on which there is charge, gives the expected answer.
+* Verify that $\sigma \int_{\mathcal{A}}dA$, where $\mathcal{A}$ is surface on which there is charge, gives the expected answer.
 
 ## Non--Uniform
 
-## Problem
+The relationship between the total charge and $\sigma$ when $\sigma$ varies over an area is
 
-A total charge $Q$ is uniformly distributed on disk of radius $b$ that lies in the $x$--$y$ plane and is centered on the origin.
-
-* Compute the charge density $\sigma$ on the square without integration.
-* Compute the charge density $\sigma$ on the square with integration.
+$$Q = \int_{\mathcal{A}}\sigma dA$$
 
 If $\sigma$ is uniform in the $L$ direction, $\sigma L = \lambda$. That is, the surface charge distribution can be described by linear charge distribution. To demonstrate this visually, consider the charge distribution shown below. The amount of charge in the thin rectangle can be written as $\lambda(x)dx$ or $\sigma(x)dxl_y$. As a result, $\lambda(x)=\sigma(x)l_y$. 
 
@@ -149,15 +186,37 @@ $$Q=\int_{x}\int_{y} \sigma(x) dx dy = l_y\int_{x}\sigma(x)dx=\int_{x}\lambda(x)
 
 From this it follows that $\sigma(x)l_y = \lambda(x)$.
 
+### Example -- Computing $Q$
+
+A total charge $Q$ has a charge distribution of $\sigma = \sigma_o x^2/b$ on a square that lies between $-b\le x\le b$ and $-b\le y\le b$.
+
+Compute the total charge on the square.
+
+**Answer**
+
+Assume the square is in the $x$--$y$ plane and is centered on the origin. A differential area in cartesian coordinates in the $x$--$y$ plane is $dA=dxdy$.
+
+$$Q = \int_{\mathcal{A}}\sigma dA=\int_{-b}^b\int_{-b}^b\sigma(x,y) dxdy=\int_{-b}^b\int_{-b}^b\sigma_o \frac{x^2}{b} dxdy$$
+
+A variation on this problem is when the charge density is given in cylindrical coordinates as $\lambda = \lambda_o s^2/b$. In this case, prior to integration we would need to express $\lambda$ in cartesian coordinates: $\lambda(x,y) = \lambda_o (x^2+y^2)/b$.
+
+### Problem -- Computing $Q$
+
+A total charge $Q$ is uniformly distributed on disk of radius $b$ that lies in the $x$--$y$ plane and is centered on the origin.
+
+* Compute the charge density $\sigma$ on the square without integration.
+* Compute the charge density $\sigma$ on the square with integration.
+
+### Example -- Relating $\sigma$ to $\lambda$
+
+Lines of charge of length $L$ and charge density $\lambda$ are placed side-by-side to form a sheet of charge of width $w$.  Compute $\sigma$.
+
 ### Problem --  Relating $\sigma$ to $\lambda$
 
 A $l_x\times l_y$ in the region $x=[0,l_x]$ and $y=[0,l_y]$ has a density $\sigma(x)=\sigma_ox^2/l_x^2$.
 
 Show that the charge can be computed by integrating $\sigma(x)$ over the area or $\lambda(x)=\sigma(x)l_y$ over the line from $x=0$ to $x=l_x$.
 
-### Example -- Relating $\sigma$ to $\lambda$
-
-Lines of charge of length $L$ and charge density $\lambda$ are placed side-by-side to form a sheet of charge of width $w$.  Compute $\sigma$.
 
 # Volume Charge Density, $\rho$
 
@@ -210,7 +269,7 @@ A total of $+3Q$ is uniformly distributed a line of length $L$. The blue Gaussia
 
 1. Find the charge density on the line.
 
-2. Find the amount of charge enclosed by the Gaussian cylinder when it has radii of $r=l/100$, $r=l/2$, $r=l$, and $r=2l$. The enclosed charge should be in terms of one or more of $\epsilon_o$, numbers, and the parameters given ($Q$, $L$, $l$).
+2. Find the amount of charge enclosed by the Gaussian cylinder when it has radii of $r=l/100$, $r=l/2$, $r=l$, and $r=2l$.
 
 3. Plot the four values of enclosed charge calculated above versus the radius of the Gaussian cylinder. 
 
@@ -218,7 +277,7 @@ A total of $+3Q$ is uniformly distributed a line of length $L$. The blue Gaussia
 
 **Answer**:
 
-1. Because the charge is uniformly distributed on the line, the the charge density is simply the total charge divided by the length: $\lambda={3Q}/{L}$.
+1\. Because the charge is uniformly distributed on the line, the the charge density is simply the total charge divided by the length: $\lambda={3Q}/{L}$.
 
 2\. The dashed line in the figure is the part of the line inside of the Gaussian cylinder. The length of the dashed line is $l$. The charge enclosed for all four cases is $Q_{encl}=\lambda l=3Q{l}/{L}$. In retrospect, one could have obtained this equation without considering the charge density - the charge enclosed is the total charge $\times$ the ratio $l/L$. 
 
@@ -234,7 +293,7 @@ Check: As $l\rightarrow 0$, we expect from the diagram that the amount of charge
 
 ## Problem -- Hollow Cylinder
 
-An insulating and hollow cylinder of radius $R$ and length $L$ has a charge of $+3Q$ distributed \emph{on its curved surface}. The blue Gaussian cylinder shown has a length $l$ and radius $r$ and has the same center line as the charged cylinder.
+An hollow cylinder of radius $R$ and length $L$ has a charge of $+3Q$ distributed _on its curved surface_. The blue Gaussian cylinder shown has a length $l$ and radius $r$ and has the same center line as the charged cylinder.
 
 <img src="figures/Cylindrical_Shell_and_Gaussian_Cylinder.png" width="50%"/>
 
@@ -262,7 +321,7 @@ An insulating and hollow cylinder of radius $R$ and length $L$ has a charge of $
 
 %4\. The enclosed charge is zero for $r<R$, so $Q_{\encl}(r)=0$.
 
-5\. The enclosed charge is constant for $r>R$, so, $Q_{encl}(r)=3Q{l}/{L}=const$.
+%5\. The enclosed charge is constant for $r>R$, so, $Q_{encl}(r)=3Q{l}/{L}=const$.
 
 ## Example -- Solid cylinder
 
@@ -344,20 +403,19 @@ An sphere of radius $R$ has a charge of $+3Q$ distributed uniformly _throughout_
 
 A square sheet with side length $L$ has a charge of $+3Q$ distributed uniformly on it. The blue Gaussian cylinder has a height $h$ and radius $r$ and half of it is above the sheet.
 
-The question should have asked for the charge enclosed for . 
 
-<img src="figures/Plane_and_Gaussian_Cylinder.png"/>
-\draw[step=0.4cm,gray,very thin] (0,0) grid (6.4,2.4)
+<img src="figures/Plane_and_Gaussian_Cylinder.png" width="100%"/>
+%\draw[step=0.4cm,gray,very thin] (0,0) grid (6.4,2.4)
 
 1\. Find the charge density on the sheet.
 
-2\. Find the amount of charge enclosed in Gaussian cylinder of radii $r=0, $r=L/8$, $r=L/4$, and $r=L/2$.
+2\. Find the amount of charge enclosed in Gaussian cylinder of radii $r=0$, $r=L/8$, $r=L/4$, and $r=L/2$.
 
 3\. Plot the four values of enclosed charge calculated above versus the radius $r$ of the Gaussian cylinder.
 
 4\. Find an equation that relates $Q_{encl}$ and $r$ for $r\le L/2$. Plot this equation on the graph above.
 
-**Answer**:
+%**Answer**:
 
 %1\. $\sigma=3Q/L^2$
 

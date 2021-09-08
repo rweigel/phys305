@@ -6,7 +6,7 @@ $$(x+y)^m = \sum_{k=0}^m {m \choose k}x^{m-k}y^k$$
 
 When $x=1$, it simplifies to
 
-$$(1+y)^m = \sum_{k=0}^m {n \choose k}y^k$$
+$$(1+y)^m = \sum_{k=0}^m {m \choose k}y^k$$
 
 Written as a power series, it is
 
@@ -14,7 +14,7 @@ $$(1+y)^m = 1 + my + m(m-1)y^2 + ...$$
 
 From this, it follows that
 
-$$\frac{1}{(1+y)^n} = 1 + my + m(m-1)y^2 + ...$$
+$$\frac{1}{(1+y)^n} = 1 - ny + n(n-1)y^2 + ...$$
 
 (This equation can also be derived using the Taylor series expansion around $y=0$.)
 

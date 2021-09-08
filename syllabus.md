@@ -48,6 +48,10 @@
 * Return graded HW #1 and solutions; discuss common errors
 * [HW #2](hw2.html) due at 3:00 pm
 
+## Thursday, October 14th
+
+* Mid-term exam during class time. Location TBD.
+
 # Topics Covered and Catalog Description
 
 This course covers the topics in Chapters 1-7 of the [textbook](#textbook).
