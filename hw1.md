@@ -31,8 +31,14 @@ $$f = \frac{1}{|\mathbf{r}-\mathbf{r}'|^2}$$
 1. $\displaystyle f = \frac{1}{(x-x')^2+(y-y')^2+(z-z')^2}$
 2. There are serveral ways of doing this. One is to use the law of cosines. The most straight-forward way is to use $|\mathbf{r}-\mathbf{r}'|^2=(\mathbf{r}-\mathbf{r}')\bfcdot (\mathbf{r}-\mathbf{r}')$ with $\mathbf{r}=x\xhat + y\yhat + z\zhat$ and $\mathbf{r}'=x'\xhat + y'\yhat + z'\zhat$.
 3. $\displaystyle -\frac{\phantom{|}\mathbf{r}-\mathbf{r}'\phantom{|^3}}{|\mathbf{r}-\mathbf{r}'|^3}$
-4. 
-   a. Use $\displaystyle \frac{\hat{\textbf{\char"0509}}}{\char"0509}=\frac{\phantom{|}\mathbf{r}-\mathbf{r}'\phantom{|}}{|\mathbf{r}-\mathbf{r}'|}$. b. $\displaystyle \frac{(x-x')\xhat+(y-y')\yhat+(z-z')\zhat}{\left[(x-x')^2+(y-y')^2+(z-z')^2\right]^{3/2}}$
+4. &nbsp;
+ 
+   a. Substitute $\char"0509=|\mathbf{r}-\mathbf{r}'|$ and $\displaystyle {\hat{\textbf{\char"0509}}}=\frac{\phantom{|}\mathbf{r}-\mathbf{r}'\phantom{|}}{|\mathbf{r}-\mathbf{r}'|}$ into $\displaystyle \frac{\hat{\textbf{\char"0509}}\phantom{^2}}{\char"0509^2}$
+
+   b. Use $\mathbf{r}=x\xhat+y\yhat+z\zhat$ and $\mathbf{r}'=x'\xhat+y'\yhat+z'\zhat$ to get
+
+      $\displaystyle \frac{\hat{\textbf{\char"0509}}}{\char"0509^2} = \frac{(x-x')\xhat+(y-y')\yhat+(z-z')\zhat}{\left[(x-x')^2+(y-y')^2+(z-z')^2\right]^{3/2}}$
+
 # Tangent Vectors
 
 An object is moved along the path $y=x^2$ from $x=0$ to $x=x_o$ when there is an external force of $\mathbf{F}=-mg\yhat$.
@@ -43,7 +49,7 @@ An object is moved along the path $y=x^2$ from $x=0$ to $x=x_o$ when there is an
 
 3\. (Extra credit) Compute $\int_{\mathcal{L}}\mathbf{F}\cdot d\mathbf{l}$ where $\mathcal{L}$ is the path along $y=x^2$ from $x=0$ to $x=x_o$.
 
-**Partial Answer**
+**Answer**
 
 For 1. and 2., The problem statement does indicate if the answer should be a vector or scalar. I accepted either.
  
@@ -53,7 +59,7 @@ $\displaystyle \mathbf{\hat{t}}=\frac{\xhat + 2x\yhat}{\sqrt{1+4x^2}}$
 
 $\displaystyle F_{\parallel} = \mathbf{F}\bfcdot \mathbf{\hat{t}} = -\frac{2x}{\sqrt{1+4x^2}}$
 
-This is a scalar b/c of dot product. It is the component of force in the direction of chosen $\mathbf{\hat{t}}$. The negative is there because the component is the opposite direction of the chosen $\mathbf{\hat{t}}$.
+This is a scalar b/c of dot product. It is the component of force in the direction of chosen $\mathbf{\hat{t}}$. The negative is there because the component of $\mathbf{F}$ is in the opposite direction of the chosen $\mathbf{\hat{t}}$.
 
 $\mathbf{F}_{\parallel} = F_\parallel \mathbf{\hat{t}}$
 
@@ -63,11 +69,13 @@ $\displaystyle \mathbf{\hat{n}}=\frac{-2x\xhat+\yhat}{\sqrt{1+4x^2}}$
 
 $\displaystyle F_{\perp} = \mathbf{F}\bfcdot \mathbf{\hat{n}}=\frac{-mg}{\sqrt{1+4x^2}}$
 
-This is a scalar b/c of dot product. It is the component of force in the direction of chosen $\mathbf{\hat{n}}$. The negative is there because the component is the opposite direction of the chosen $\mathbf{\hat{n}}$.
+This is a scalar b/c of dot product. It is the component of force in the direction of chosen $\mathbf{\hat{n}}$. The negative is there because the component of $\mathbf{F}$component of $\mathbf{F}$ is the opposite direction of the chosen $\mathbf{\hat{n}}$.
 
 $\mathbf{F}_{\perp} = F_\perp \mathbf{\hat{n}}$
 
 Could also compute $\mathbf{F}_\perp$ using $\mathbf{F}_\perp = \mathbf{F}-\mathbf{F}_\parallel$.
+
+3\. The problem asks to integrate along the line. For the path given, $dl = dx\sqrt{1+2x^2}$ and  $d\mathbf{l}=\mathbf{\hat{t}}dl$, so $\mathbf{F}\bfcdot d\mathbf{l} = -mgdx$. The integral is then $\int_{0}^{x_o}(-2mgxdx)=-mgx_o^2$. The integral corresponds to the work done moving the object a height $h=x_o^2$. The easier way to solve this is to to note that $\mathbf{F}$ is a conservative force and simply write $mgh$ and then plug in $h=x_o^2$. Ideally I would have given the equation as $y=x^2/x_o$ so $h$ would not look like it is the square of a distance. Technically the problem statement is still correct because impicitly $x_o$ is dimensionless.
 
 # Normal Vectors
 
@@ -85,7 +93,7 @@ A plane has corners at $(x,y,z)=(0,0,0)$, $(x,y,z)=(1,0,0)$, $(x,y,z)=(0,1,1)$, 
 
 $\mathbf{\hat{n}}=(-\yhat + \zhat)/\sqrt{2}$; this can be computed using the diagram or by using the $\mathbf{u}\times \mathbf{v}$ method.
 
-$F_\perp = \mathbf{F}\bfcdot \mathbf{\hat{n}}$ and $\mathbf{F}_\perp=F_\perp\mathbf{\hat{n}}$
+$F_\perp = \mathbf{F}\bfcdot \mathbf{\hat{n}}=-F_y+F_z$ and $\mathbf{F}_\perp=F_\perp\mathbf{\hat{n}}=(-F_y+F_z)(-\yhat + \zhat)/\sqrt{2}$. Ideally you drew $\mathbf{F}$ and $\mathbf{\hat{n}}$ on the diagram for 2. to make sure that the direction of $\mathbf{F}_\perp$ made sense by plugging in, say, $F_y=F_z=1$ and $F_y=0$ and $F_z=1$. 
 
 # Notation and Vector Fields
 
@@ -99,16 +107,24 @@ where $\textbf{\char"0509}\_+=\mathbf{r}-\mathbf{r\_+}$, $\textbf{\char"0509}\_-
 
 Find $\mathbf{F}$ in cartesian coordinates with cartesian unit vectors in terms of the constants given at
 
+% TODO: Change to (2x_o, 0) and (0, 2x_o)
+
 1\. $(x,y)=(2,0)$
 
 2\. $(x,y)=(0,2)$
 
 It may help to solve this by using the techniques from Physics 260 first. This is a straightforward problem that his written in the notation used by Griffiths.
 
-**Partial Answer**
+**Answer**
 
 $\displaystyle\mathbf{F}(x,y) = kqQ\left[\frac{(x-x_o)\xhat+y\yhat}{\left[(x-x_o)^2+y^2\right]^{3/2}}-\frac
 {(x+x_o)\xhat+y\yhat}{\left[(x+x_o)^2+y^2\right]^{3/2}}\right]$
+
+1\. $\displaystyle\mathbf{F}(x,y) = kqQ\left[\frac{2-x_o}{(2-x_o)^3}-\frac
+{2+x_o}{(2+x_o)^3}\right]\xhat$
+
+2\. $\displaystyle\mathbf{F}(x,y) = kqQ\left[\frac{-x_o\xhat+2\yhat}{\left[x_o^2+2^2\right]^{3/2}}-\frac
+{x_o\xhat+2\yhat}{\left[x_o^2+2^2\right]^{3/2}}\right] = -kqQ2x_o\left[\frac{1}{\left[x_o^2+2^2\right]^{3/2}}\right]\xhat$
 
 # Field Lines and Equipotentials
 
@@ -118,4 +134,7 @@ $\displaystyle\mathbf{F}(x,y) = kqQ\left[\frac{(x-x_o)\xhat+y\yhat}{\left[(x-x_o
 
 <img src="figures/Field_Lines_3.svg" width=100%/>
 
+1\.
+
+2\. As noted in class, this is not a conservative field and so it does not make sense to draw equipotentials. I meant to ask you to draw lines that are always perpendicular to the field lines. This vector field is not conservative because the integral $\int_{\mathcal{L}}\mathbf{A}\bfcdot d\mathbf{l}$ is not the same for all paths that have the same starting and ending points. For example, if $\mathcal{L}_1$ is a single circle with a radius of $1$, the integral is $2\pi$. If $\mathcal{L}_2$ is $\mathcal{L}_1$ repeated twice, the integral is $4\pi$.
 

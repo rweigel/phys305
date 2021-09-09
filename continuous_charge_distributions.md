@@ -431,7 +431,7 @@ Check the exact answer found previously for the electric field on the $z$–axis
 
 ## Line of Charge on $x$--axis
 
-A line of charge with a uniform charge density of $\lambda_o$ extends from $0$ to $L$ on the $x$-axis, where $L>0$.
+A line of charge with a uniform charge density of $\lambda_o$ extends from $0$ to $L$ on the $x$-axis, wh
 
 Follow and show the steps given in the notes and find $\mathbf{E}$ on the $y$--axis in terms of one or more of $k,\lambda_o,L,y$ and cartesian unit vectors.
 
