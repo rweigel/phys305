@@ -45,12 +45,20 @@
 * Answer questions on [HW #2](hw2.html) topics ([Flux](flux.html), [Divergence](divergence.html), [Binomial Expansion](binomial_expansion.html), and [Symmetry](symmetry.html))
 
 ## Thursday, September 9nd 
-* Return graded HW #1 and solutions; discuss common errors
+* Return graded HW #1 and post solutions (will do later in day ... I am a few hours behind); discuss common errors
 * [HW #2](hw2.html) due at 3:00 pm
+* Assign [HW #3](hw3.html) covering Coulomb's Law, Electric Field, Superposition, Discrete Charge Distributions, [Charge Densities](charge_densities.html), and [Continuous Charge Distributions](continuous_charge_distributions.html).
+
+## Tuesday, September 14th
+* Answer questions on [HW #3](hw3.html) topics.
+
+## Thursday, September 16th 
+* Return graded [HW #2](hw2.html) and solutions; discuss common errors
+* [HW #3](hw3.html) due at 3:00 pm
 
 ## Thursday, October 14th
 
-* Mid-term exam during class time. Location TBD.
+* Mid-term exam during class time. Location TBD. Closed book and note. Will provide a list of equations that you need to know.
 
 # Topics Covered and Catalog Description
 

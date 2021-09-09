@@ -4,158 +4,163 @@ Previously, you have calculated the electric field due to a collection of point 
 
 Suppose that you wanted to know the electric field created by a plastic rod that was positively charged by rubbing it against fabric. The number of charges that you would need to account for is on the order of $\gt 10^{20}$. If you could do one calculation per second, computing the electric field due to each of the charges would take longer than the time since the Big Bang.
 
-To allow for an answer in a finite amount of time, the approximation that charge is uniformly distributed along a line can be made. Consider 9 charges placed on a line as shown on the left-hand-side of the diagram below. To compute the electric field at the open circle, we would need to compute the electric field due to each of the 9 charges there. Instead, we will make the approximation that the charges on are smeared out onto the line to form a continuous charge density.
+To allow for an answer in a finite amount of time, the approximation that charge is uniformly distributed along a line can be made. Consider $N=9$ charges placed on a line as shown on the left-hand side of the diagram below. To compute the electric field at the open circle, we would need to compute the electric field due to each of the nine charges there. Instead, we will make the approximation that the charges are smeared out onto the line to form a continuous charge density.
 
 <img src="figures/Continuous-Charge-Distributions-1.svg"/>
 
-Mathematically, the we are converting a sum to an integral. The electric field at the open circle is
-
-$$\begin{align*}
-\mathbf{E}=&kq\_1\frac{\hat{\mathbf{r}}\_1}{r\_1^2}+kq\_2\frac{\hat{\mathbf{r}}\_2}{r\_2^2}+...+kq\_N\frac{\hat{\mathbf{r}}\_N}{r\_N^2}
-\end{align*}
-$$
-
-Using the notation of Griffiths, $\mathbf{r}$ is the (single) position of the point of interest and $\mathbf{r}'$ is the position of a charge, so
-
-$$\textbf{\char"0509}\_i=\mathbf{r}-\mathbf{r}_i'$$
-
-where 
-this is
+Mathematically, we are converting a sum to an integral. The electric field at the open circle is
 
 $$
 \mathbf{E}=
  kq\_1\frac{\hat{\textbf{\char"0509}}\_1}{\char"0509\_1^2}
 +kq\_2\frac{\hat{\textbf{\char"0509}}\_2}{\char"0509\_2^2}
-+...\mathbf{E}=+kq\_9\frac{\hat{\textbf{\char"0509}}\_9}{\char"0509\_N^2}
++...+kq\_N\frac{\hat{\textbf{\char"0509}}\_N}{\char"0509\_N^2}
 $$
 
-As a sum this is
+In the notation of Griffiths, $\mathbf{r}$ is the position of the point of interest, and $\mathbf{r}'$ is the position of a charge, so
+
+$$\textbf{\char"0509}\_i=\mathbf{r}-\mathbf{r}_i'$$
+
+<img src="figures/Continuous-Charge-Distributions-2.svg"/>
+
+As a sum, this is
 
 $$
 \mathbf{E}=\sum_{i=1}^Nkq\_i\frac{\hat{\textbf{\char"0509}}\_i}{\char"0509\_i^2}
 $$
 
-Replacing $q_i$ with $d q_i=\lambda \Delta l$ and taking the limit as $\Delta l\rightarrow 0$ gives
+Smearing the $q_i$ to give a continuous charge density $\lambda(l)$  over all differential elements $l$ allows us to write
 
 $$
-\mathbf{E}\simeq \int_{\mathcal{L}} k\lambda dl\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}
+\mathbf{E}\simeq \int_{\mathcal{L}} k\lambda(l) dl\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}
 $$
 
-where $\mathcal{L}$ is the line. The integral approximation accuracy increases with $N$.
+where $\mathcal{L}$ is the line. The accuracy of the integral approximation increases with $N$.
 
-The arguments given above do not depend on the fact that the charges are on a line, and so the $\mathcal{L}$ can be dropped and $\lambda dl$ can be replaced with $dq$. In addition, by convention, the approxmation symbol is replaced with an equality, giving
+The arguments given above do not depend on the fact that the charges are on a line, and so the $\mathcal{L}$ can be dropped, and $\lambda(l) dl$ can be replaced with $dq$. In addition, by convention, the approximation symbol is replaced with an equality symbol, giving
 
 $$\boxed{\mathbf{E}=\int k\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}dq}$$
 
-The advantage of using the integral approximation is that to get an answer, we only need to solve an integral -- we do not need to compute electric field contribution for each point charge and then do a vector sum.
+where $dq$ represents a differential charge on a diffential line, area, or volume element.
 
-To emphasize the fact that the result of the integration depends on the unprimed variable $\mathbf{r}$, and that the result of integration should not have any primed variables, we sometimes write
+The advantage of using the integral approximation is that to get an answer; we only need to solve an integral -- we do not need to compute electric field contribution for each point charge and then do a vector sum.
+
+To emphasize the fact that the result of the integration depends on the unprimed variable $\mathbf{r}$, and that the result of integration should not have any primed variables, we sometimes explicitly include the dependence of $\mathbf{E}$ on $\mathbf{r}$:
 
 $$\mathbf{E}(\mathbf{r})=\int k\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}dq$$
-
-To simplify notation, we often write the integrand as
-
-$$d\mathbf{E}=k\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}dq$$
-
-which corresponds to the electric field due to a differential charge $dq$.
 
 In the case where $\mathbf{r}$ was written with cartesian coordinates, this would be
 
 $$\mathbf{E}(x,y,z)=\int k\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}dq$$
 
-Note that $dq$ depends on the primed coordinate and so for clarity it would be better written as $dq'$, $dq(\mathbf{r'})$ or $dq(x',y',z')$. When integrating, the $x$, $y$, and $z$ that appear in ${\hat{\textbf{\char"0509}}}/{\char"0509^2}$ should be treated as constants because they do not depend on the dummy integration variable. As an example, consider the following integral
+> $dq$ depends on primed coordinates and so for clarity it would be better written as $dq'$, $dq(\mathbf{r'})$ or $dq(x',y',z')$. However, this is not the convention.
+>
+> When integrating, the $x$, $y$, and $z$ (or unprimed cylindrical or spherical coordinates) that appear in ${\hat{\textbf{\char"0509}}}/{\char"0509^2}$ should be treated as constants during integration because they do not depend on the primed dummy integration variable. As an example, consider the integral
+>
+> $\displaystyle f(x) = \int_{a}^b\frac{1}{x'-x}dx'$
+>
+> The result of integration will not depend on $x'$ because $x'$ is "integrated over". The result of the integration
+>
+> $\displaystyle f(x) = \ln(b-x) - \ln(a-x)$
+>
+> does not depend on $x'$.
 
-$\displaystyle f(x) = \int_{a}^b\frac{1}{x'-x}dx'$
 
-Here the result of integration will depend on $x$ and not $x'$ because it is "integrated over". The result of the integration is
+To simplify notation, we often use the definition
 
-$\displaystyle f(x) = \ln(x-b) - \ln(x-a)$
+$$d\mathbf{E}\equiv k\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}dq$$
 
-and it does not depend on $x'$.
+for the integrand, which corresponds to the electric field at $\mathbf{r}$ due to a differential charge $dq$ at $\mathbf{r}'$.
 
 # Steps
 
-Introductory physics textbooks often give examples on finding the electric field due to a continuous charge distribution for which there is a short-cut solution (especially for a ring or disk of charge). However, most continuous charge distribution problems do not have a short-cut solution. Griffiths gives only one example on computing the electric field using a general method.
+Introductory physics textbooks often give examples of finding the electric field due to a continuous charge distribution for which there is a short-cut solution (e.g., a ring or disk of charge). However, most continuous charge distribution problems do not have a short-cut solution. Griffiths gives only one example (Example 2.2) on computing the electric field using a general method.
 
-In this section, I provide steps that can used to find the electric field for an arbitrary continuous charge distribution. Part of the method of solution shown here will be needed later when computing dipole approximations; the steps for computing the electric potential due to a continuous charge distribution and the magnetic field due to a current system will be similar (in the case of currents, the Biot-Savart equation is used instead of Coulomb's Law).
+In this section, I provide steps that can be used to find the electric field for an arbitrary continuous charge distribution using Example 2.2 as an example for the steps. Part of the method of solution shown here will be needed later when computing dipole approximations; the steps for computing the electric potential, $V$, due to a continuous charge distribution and the magnetic field, $\mathbf{B}$, due to a current system will also be similar (in the case of currents, the Biot-Savart equation is used instead of Coulomb's Law).
 
-## Predicting Answer in Limits
+## Identifying Answer Features
 
-Based on the problem statement and diagram, write down features that you expect your solution to have. For example,
+Based on the problem statement and diagram, write down features that you expect your solution to have. These statements should have the form
 
-* "For large $z$, solution should approach that for case where all charge on line/sheet, etc. is at the origin."
-* "For small $z$, solution should approach that for an infinite sheet of charge."
-* "The computed electric field should be pointing is $+x$ and $+z$ direction or the computed electric field should have only a $z$-component."
+* "For large $z$, the solution should approach that for the case where all charge on line/sheet, etc. is at the origin."
+* "For small $z$, the solution should approach that for an infinite sheet of charge."
+* "The computed electric field should have only a $z$-component."
 
-Such statements will be used to check your final answer and also intermediate steps.
+Such statements can be used to check your final answer and also intermediate steps.
 
 ### Example
 
-A line of charge from $x=-L$ to $x=L$ with a uniform charge density $\lambda_o$. We can make several statements about the electric field on the $y$ axis.
+A line of charge from $x=-L$ to $x=L$ with a uniform charge density $\lambda_o$. We can make several statements about the electric field $\mathbf{E}$ on the $y$--axis.
 
-1. $\mathbf{E}$ should only have a $y$--component due to cancellation symmetry. 
-2. For $y\gg L$ (far away from the line), one expects an answer that approaches the answer for a problem where all of the charges on the line are placed at the origin. In this case, the basic form of Coulomb's Law for electric fields can be used to find the answer in terms of the parameters given $E_y=kQ/y^2=k(2\lambda_oL)/y^2$ and $\mathbf{E}$ is in the $\yhat$ direction for $y\gt 0$ and in the $-\yhat$ direction for $y\lt 0$.
+1. $\mathbf{E}(y)$ should only have a $y$--component due to cancellation symmetry. 
+2. For $y\gg L$ (far away from the line), one expects an answer that approaches the answer for a problem where all of the charges on the line are placed at the origin. In this case, the basic form of Coulomb's Law for the electric field due to a charge at the origin can be used to find the answer in terms of the parameters given: $|\mathbf{E}=kQ/y^2|=k(2\lambda_oL)/y^2$ and $\mathbf{E}$ is in the $\yhat$ direction for $y\gt 0$ and in the $-\yhat$ direction for $y\lt 0$.
 3. For $y\ll L$, one expects an answer that approaches the answer for an infinite line of charge (an ant placed near the origin will conclude that the charges extend to infinity in both directions). In this case, one can look up the equation for the electric field due to an infinite line of charge (or use Gauss' Law to find it).
 
-## Finding $dl$, $da$, or $d\tau$
+### Problem
 
-The differential charge $dq$ must be written in terms of a coordinate system.
+A circular ring of radius $R$ in the $x$--$y$ plane and centered on the origin has a charge density $\lambda_o$.
+
+Write at least two predictions about the electric field on the $z$--axis due to the ring.
+
+## Finding $dl$, $dA$, or $d\tau$
+
+The differential charge $dq$ must be written in terms of a coordinate system prior to integration. 
 
 * For charges on a line, $dq=\lambda dl$
-* For charges on a surface, $dq=\sigma da$
+* For charges on a surface, $dq=\sigma dA$
 * For charges in a volume, $dq=\rho d\tau$
 
-In this step, $dl$, $da$, or $d\tau$ is written in terms of a coordinate system (usually cartesian, cylindrical, or spherical). The choice of coordinate system depends on the problem; usually, the coordinate system that is "best" will be somewhat obvious ("best" is used in the sense that it makes the math easiest).
+In this step, the general differentials $dl$, $dA$, or $d\tau$ are written in terms of a coordinate system (usually cartesian, cylindrical, or spherical). The choice of coordinate system depends on the problem; usually, the coordinate system that is "best" will be somewhat obvious ("best" is used in the sense that it makes the integration easiest).
 
-Note that when writen with a coordinate variable (e.g., $dx'$ instead of a generic variable (e.g., $dl$), the differential element is written with a prime. The reason is that the position of the charges that cause the electric field is by convention written with a prime and we want to integrate over the position of the charges. Ideally, we would use $dq'$, $dl'$, $d\sigma'$, and $d\tau'$ to emphasize this, but this is not the convention.
+Note that when writen with a coordinate variable (e.g., $dx'$ instead of the generic variable $dl$), the differential element is written with a prime. The reason is that the position of the charges that cause the electric field is by convention written with a prime, and we want to integrate over the position of the charges. Ideally, we would use $dq'$, $dl'$, $d\sigma'$, and $d\tau'$ to emphasize this, but this is not the convention.
 
 ### Example -- Constant Line of Charge
 
-For a line of charge with charge density $\lambda$ over $-L\le x\le L$, find $dq$.
+For a line of charge with charge density $\lambda_o$ over $-L\le x\le L$, find $dq$ in cartesian coordinates.
 
 **Answer**
 
 <img src="figures/Continuous_Charge_Distributions_1a.svg"/>
 
-If the differential charges lie on the $x$--axis, then $dl = dx'$. So the electric field due to $dq$ can now be written by replacing $dq$ with $\lambda dx'$. If $\lambda$ depends on $x'$, we should write $dq=\lambda(x')dx'$ to emphasize the fact that the charge on a differential element depends on its position.
+If the differential charges lie on the $x$--axis, then $dl = dx'$. So the electric field due to $dq$ can now be written by replacing $dq$ with $\lambda_o dx'$. If $\lambda$ depends on $x'$, we should write $dq=\lambda(x')dx'$ to emphasize the fact that the charge on a differential element depends on $x'$.
 
 ### Example -- Variable Line of Charge
 
-Find $dq$ for
+Find $dq$ for charges with a uniform density $\lambda_o$
 
 1. a differential charge on the line $y=x$ and
 2. a differential charge on the curve $y=x^2/b$, where $b$ is a constant.
 
 **Answer**
 
-From [Charge Densities](charge_densities.html)
+From [Charge Densities](charge_densities.html),
 
 $\displaystyle dl=dx\sqrt{1+\left(\frac{dy}{dx}\right)^2}$
 
-1\. $\displaystyle dx\sqrt{1+x^2}$
+1\. $\displaystyle \lambda dl=\lambda_odx\sqrt{2}$ (That $dl$ is $dx$ inflated by $\sqrt{2}$ should be clear from the diagram used to derive the relationship between $dl$ and $dx$.) Prior to use in integration we will need to replace $dx$ with $dx'$.
 
-2\. $\displaystyle dq=\lambda dl=\lambda dx\sqrt{1+\left(\frac{2x}{b}\right)^2}$
+2\. $\displaystyle dq=\lambda dl=\lambda_o dx\sqrt{1+\left(\frac{2x}{b}\right)^2}$. Prior to use in integration we will need to replace $dx$ with $dx'$ and $x$ with $x'$.
 
 ### Problem
 
-Write an equation for $dq$ in spherical coordinates for a differential charge on 
+Write an equation for $dq$ in spherical coordinates for a uniform charge $\lambda_o$ on
 
-1. a circle centered on the origin and in the $x$--$y$ plane
-2. a circle centered on the origin and in the $y$--$z$ plane
+1. a circle of radius $R$ centered on the origin and in the $x$--$y$ plane; and
+2. the same circle when shifted along the $z$--axis by $z_o$.
 
-## Write out $\mathbf{r}$, $\mathbf{r}'$, and ${\hat{\textbf{\char"0509}}}/{\char"0509^2}$
+## Find ${\hat{\textbf{\char"0509}}}/{\char"0509^2}$
 
 First, write the full definition of $\mathbf{r}$ and $\mathbf{r}'$ using cartesian unit vectors.
 
-The point where we want to compute the field is $\mathbf{r}=x\hat{\mathbf{x}}+y\hat{\mathbf{y}}+z\hat{\mathbf{z}}$
+The point where we want to compute the field is $\mathbf{r}=x\hat{\mathbf{x}}+y\hat{\mathbf{y}}+z\hat{\mathbf{z}}$.
 
-The position of a charge that contributes to the field at $\mathbf{r}$ is $\mathbf{r}'=x'\hat{\mathbf{x}}+y'\hat{\mathbf{y}}+z'\hat{\mathbf{z}}$
+The position of a differential charge that contributes to the field at $\mathbf{r}$ is $\mathbf{r}'=x'\hat{\mathbf{x}}+y'\hat{\mathbf{y}}+z'\hat{\mathbf{z}}$.
 
-Next, simplify $\mathbf{r}$ and $\mathbf{r}'$ based on the problem statement. For example if the problem is to compute the electric field on the $y$--axis, then then $x=z=0$. If all charges are on the $x$--axis, then $y'=z'=0$.
+Both $\mathbf{r}$ and $\mathbf{r}'$ can be written in any coordinate system, but in general cartesian unit vectors should be used.
 
-Finally, insert the reduced $\mathbf{r}$ and $\mathbf{r}'$ in
+Next, simplify $\mathbf{r}$ and $\mathbf{r}'$ based on the problem statement. For example, if the problem is to compute the electric field on the $y$--axis, then $x=z=0$. If all charges are on the $x$--axis, then $y'=z'=0$.
 
-$\displaystyle\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}=\frac{\textbf{\char"0509}}{\char"0509^3}=\frac{\mathbf{r}-\mathbf{r}'}{|\mathbf{r}-\mathbf{r}'|^3}$
+Finally, insert the reduced $\mathbf{r}$ and $\mathbf{r}'$ into $\displaystyle\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}=\frac{\textbf{\char"0509}}{\char"0509^3}=\frac{\mathbf{r}-\mathbf{r}'}{|\mathbf{r}-\mathbf{r}'|^3}$
 
 %$$\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}=\frac{\textbf{\char"0509}}{\char"0509^3}=\frac{\mathbf{r}-\mathbf{r}'}{|\mathbf{r}-\mathbf{r}'|^3}=\frac{(x-x')\xhat + (y-y')\yhat + (z-z')\zhat}{\Big[\sqrt{(x-x')^2 + (y-y')^2 + (z-z')}\Big]^3}$$
 
@@ -183,11 +188,11 @@ $$\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}=\frac{\textbf{\char"0509}}{\cha
 
 **Common Errors**
 
-The most common error is not having a primed variable in the euqation for ${\hat{\textbf{\char"0509}}}/{\char"0509^2}$. In the next step, suggestions are given that will allow you to catch this type of error.
+1\. Not having a primed variable in the equation for ${\hat{\textbf{\char"0509}}}/{\char"0509^2}$. In the next step, suggestions are given that will allow you to catch this type of error.
 
-Another common error is a miscalculation of the magnitude, which is
+2\. Miscalculation of the magnitude, which is
 
-$$\char"0509=|y\hat{\mathbf{y}}-x'\hat{\mathbf{x}}|=\sqrt{y^2+(-x')^2}$$
+$$\char"0509=|y\hat{\mathbf{y}}-x'\hat{\mathbf{x}}|=\sqrt{y^2+x'^2}$$
 
 If this does not make sense, make sure to review [Vectors](#vectors.html) and the following. In general, $\{\textbf{\char"0509}}$ will have the form
 
@@ -199,7 +204,7 @@ $$\char"0509=\big|A\hat{\mathbf{x}}+B\hat{\mathbf{y}}+C\hat{\mathbf{z}}\big|=\sq
 
 where $A, B,$ and $C$ depend on the problem. In the example given here, $A=-x'$ and $C=z$.
 
-Another common error is in the calculation of $\mathbf{r}-\mathbf{r}'$ -- the negative sign applies to all of the components of $\mathbf{r}'$.
+3\. Wrong signs in the calculation of $\mathbf{r}-\mathbf{r}'$ -- the negative sign applies to all of the components of $\mathbf{r}'$.
 
 For example, if
 
@@ -221,8 +226,25 @@ This correct version simplifies to
 
 $$\mathbf{r}-\mathbf{r}'=(x-x')\hat{\mathbf{x}}+(y-y')\hat{\mathbf{y}}+(z-z')\hat{\mathbf{z}}$$
 
-----
+### Example
 
+Write an equation for ${\hat{\textbf{\char"0509}}}/{\char"0509^2}$ in cylindrical coordinates with cartesian unit vectors for a point of interest on the $z$--axis for charges on a circle of radius $R$ centered on the origin and in the $x$–$y$ plane.
+
+**Answer**:
+
+$\mathbf{r}=z\zhat$, $\mathbf{r}'=R\cos\phi'\xhat + R\sin\phi'\yhat$ (draw a diagram to check this!)
+
+$\displaystyle \frac{\hat{\textbf{\char"0509}}}{\char"0509^2}= \frac{z\hat{\mathbf{z}}-R\cos(\phi')\hat{\mathbf{x}}-R\sin(\phi')\hat{\mathbf{y}}}{(z^2+R^2)^{3/2}}$
+
+Note that I have used $\phi'$ instead of $\phi$ in this equation and $d\phi$ for the differential. Because there is no $\phi$ in $\mathbf{r}$, I could use $\phi$. However, it is better to use $\phi'$ so there will not be confusion for a problem where there is an $\phi$ in $\mathbf{r}$.
+
+### Problem
+
+Write an equation for ${\hat{\textbf{\char"0509}}}/{\char"0509^2}$ in spherical coordinates with cartesian unit vectors for a point of interest on the $z$--axis and charges on
+
+1. a circle of radius $R$ centered on the origin and in the $x$--$y$ plane; and
+2. the same circle when shifted along the $z$--axis by $z_o$.
+ 
 ## Checking $d\mathbf{E}$
 
 Recall that the integral to be solved is
@@ -233,27 +255,37 @@ and the notation for the integrand of
 
 $$d\mathbf{E}=k\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}dq$$
 
-At this point, you have ${\hat{\textbf{\char"0509}}}/{\char"0509^2}$ and $dq$ in terms of coordinate system variables. The integrand $d\mathbf{E}$ is the electric field at any point $\mathbf{r}$ due to a charge $dq$ at $\mathbf{r}'$.
+At this point, you have ${\hat{\textbf{\char"0509}}}/{\char"0509^2}$ and $dq$ in terms of coordinate system variables. (Don't forget to write the coordinates in $dq$ with primes.) The integrand $d\mathbf{E}$ is the electric field at any point $\mathbf{r}$ due to a charge $dq$ at $\mathbf{r}'$.
 
 To check $d\mathbf{E}$, plug in a few values of $(x,y,z)$ and $(x',y',z')$ and verify that the resulting $d\mathbf{E}$ is consistent the expected result.
 
 ### Example -- Line of Charge
 
-For a line of charge with charge density $\lambda$ over $-L\le x\le L$ and for a point on the $y$--axis,
+For a line of charge with charge density $\lambda_o$ over $-L\le x\le L$ and for a point on the $y$--axis, $dq=\lambda_o dx'$ and
 
-$$d\mathbf{E}=\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}kdq$$
+$$d\mathbf{E}=\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}k\lambda_o dx'$$
 
 Provide three checks of this equation.
 
 **Answer**:
 
-To check $d\mathbf{E}$, plugging in $x'=-L/2$, $x'=0$, and $x'=L/2$ and verify that the direction is as expected for $y\gt 0$. In the following diagram, a vector for the numerator of $d\mathbf{E}$ is shown. These vectors point in the direction expected if there is a charge on their tails.
+1\. Plug in $x'=-L/2$, $x'=0$, and $x'=L/2$ and verify that the direction is as expected for $y\gt 0$. In the following diagram, a vector for the numerator of $d\mathbf{E}$ is shown. These vectors point in the direction expected if there is a charge at their tails. If we scaled the vectors draw by the denominator in $d\mathbf{R}$, the vector in the center will be shorter, which is expected because the $dq$ at its tail is closer to the point of interest.
 
 <img src="figures/Continuous_Charge_Distributions_1c.svg"/>
 
 The above could be repeated by plugging in values of $y=-L$, in which case all of the vectors should point downwards.
 
-Another check is for large $y$. We expect at $y$ increases, $d\mathbf{E}$ should have a smaller and smaller $\xhat$ component. This statement is consistent with the equation for $d\mathbf{E}$ because for fixed $x'$, the $y\yhat$ term becomes is much larger than the $x'\xhat$ term as $y$ increases.
+2\. We expect that as $y$ increases, $d\mathbf{E}$ the angle with respect to the $y$--axis should decrease. This statement is consistent with the equation for $d\mathbf{E}$ because for fixed $x'$, the $y\yhat$ term becomes much larger than the $x'\xhat$ term as $y$ increases.
+
+3\. For $x'=0$, we expect $d\mathbf{E}$ to be that for a point charge $dq$ at the origin. Plugging in $x'=0$ gives $d\mathbf{E}=kdq\yhat/(y|y|)$. This has the expected magnitude and direction for $y\gt 0$ and $y\lt 0$.
+
+### Problem
+
+For a point of interest on the $z$--axis and due to a uniform charge density of $\lambda_o$ on a circle of radius $R$ centered on the origin and in the $x$–$y$ plane, $dq=Rd\phi'$ and ${\hat{\textbf{\char"0509}}}/{\char"0509^2}$ and so
+
+$\displaystyle d\mathbf{E} = k\lambda_o Rd\phi'\frac{z\hat{\mathbf{z}}-R\cos(\phi')\hat{\mathbf{x}}-R\sin(\phi')\hat{\mathbf{y}}}{(z^2+R^2)^{3/2}}$
+
+Provide at least two checks of this equation. Include a diagram.
 
 ## Simplifying $d\mathbf{E}$ using Symmetry Arguments
 
@@ -261,120 +293,120 @@ The most frequent type of symmetry will be cancelation symmetry, where pairs of 
 
 ### Example -- Constant $\lambda$
 
-For a line of charge with constant charge density $\lambda$ over $-L\le x\le L$ and for a point on the $y$--axis,
+For a line of charge with constant charge density $\lambda_o$ over $-L\le x\le L$ and for a point on the $y$--axis,
 
-$$d\mathbf{E}=\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}kdq=\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}k\lambda dx'$$
+$$d\mathbf{E}=\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}k\lambda_o dx'$$
 
 Identify symmetries that can be used to simplify the problem.
 
 **Answer**
 
-Vectors for $d\mathbf{E}$ and $dE_x$ are shown for to points on the line that are equidistant from the origin in the following figure. The quantity of differential charges for both cases is equal to $\lambda dx'$.
+Vectors for $d\mathbf{E}$ and $dE_x$ are shown for to points on the line that are equidistant from the origin in the following figure. The quantity of differential charge for both cases is equal to $\lambda_o dx'$.
 
 <img src="figures/Continuous_Charge_Distributions_1d.svg"/>
 
-From this, we conclude that the horizontal component of the $\mathbf{E}$ will end up to be zero after integration.
+Because the horizontal components cancel, we conclude that the horizontal component of the $\mathbf{E}$ will end up to be zero after integration.
 
-A mathematical way of showing this is to note that $dE_x(x')=-dE_x(-x')$ and so summation of $dE_x$ over $\pm L$ will result in exact cancellation of $dE_x$.
+A mathematical way of stating this is $dE_x(x')=-dE_x(-x')$, so integration of $dE_x$ over $\pm L$ will be zero.
 
-(If $\lambda(x')$ is not constant, for example it is $\lambda(x')=\lambda_oe^{x'/L}$, then differential charges on the left side of the line have less charge and so there are no cancelling pairs as was the case for the previous example. For example, the left--most $dq$ is $\lambda_oe^{-1}dx'$ and the right--most  $dq$ is $\lambda_oe^{1}dx'$.)
+(If $\lambda(x')$ is not constant, for example it is $\lambda(x')=\lambda_oe^{x'/L}$, then differential charges on the left side of the line have less charge and so there are no cancelling pairs as was the case for the previous example. In this case, the left--most $dq$ is $\lambda_oe^{-1}dx'$ and the right--most  $dq$ is $\lambda_oe^{1}dx'$.)
 
-### Example -- Disk
+### Problem -- Ring of Charge
 
-For a disk of charge that is in the $x$--$y$ plane, centered on the origin, with radius $R$, and with constant charge density $\lambda$ point on the $y$--axis,
+$d\mathbf{E}$ for a point of interest on the $z$--axis and due to a uniform charge density $\lambda_o$ on a circle centered on the origin and in the $x$–$y$ plane is
 
-$$d\mathbf{E}=..$$
+$\displaystyle d\mathbf{E} = k\lambda_o d\phi'\frac{z\hat{\mathbf{z}}-R\cos(\phi')\hat{\mathbf{x}}-R\sin(\phi')\hat{\mathbf{y}}}{(z^2+R^2)^{3/2}}$
+
+Simplify this equation using a symmetry argument. Include a diagram.
 
 ## Integrating $d\mathbf{E}$
 
 There are two possibilities:
-1. The integral can be solved "exactly", which informally means standard methods can be used to do the integration, e.g., using trig substitutions, an integral table, or entering the integral into Mathematica or WolframAlpha. The technical term is a "closed-form" solution. An example of an integral with a closed-form solution is $\int_0^{\pi} \sin (ku) du = (\cos (k\pi) - 1)/k$.
-2. The solution of the integral is an infinite series. An example is the elliptic integral of the first kind:
+1. The integral can be solved "exactly", which informally means standard methods can be used to do the integration, e.g., using trig substitutions, an integral table, or entering the integral into Mathematica or WolframAlpha. The technical term is a "closed--form" solution. An example of an integral with a closed--form solution is $\int_0^{\pi} \sin (ku) du = (\cos (k\pi) - 1)/k$.
+2. The solution of the integral can only be expressed as an infinite series. An example is the elliptic integral of the first kind:
 
    $\int_0^{\pi/2}du/\sqrt{1+k^2\sin^2u}=(\pi/2)\big(1+k^2(1/2)^2+k^4((1\cdot 2)/(3\cdot 4))^2+...\big)$.
    
-   We will actually encounter such integrals later in the semester - they also appear in classical mechanics.
+   We will encounter such integrals later in the semester -- they also appear in classical mechanics.
 
-   In these cases, one must convert the integrand to a polynomial using a Taylor Series expansion. This will be covered in detail later in the semester when electric and magnetic dipoles are covered. The basic procedure is to re-write the integrand as an infinite series, e.g.,
+   In these cases, one can convert the integrand to a polynomial using a Taylor Series expansion prior to integration. This will be covered in detail later in the semester when electric and magnetic dipoles are covered. The basic procedure is to re-write the integrand as an infinite series, e.g.,
 
    $$\int f(x')dx' = \int \left(\frac{b_1}{x'}+\frac{b_2}{x'^2} + ... + c_0 + c_1x' + c_2x'^2 + ...\right)dx'$$
 
-where the constants $b_1, b_2, ..., c_0, c_1, ...$ are determined using the Taylor Series expansion formula (or related method for expanding a function). Written in this way, the integral only involves the integration of polynomials. There are subtleties to this method -- one needs to ensure that the series is converging and sometimes several approximations to $f(x')$ are needed, one for locations near the charge distribution and one at far locations.
+where the constants $b_1, b_2, ..., c_0, c_1, ...$ are determined using the Taylor Series expansion formula (or related method for expanding a function). Written in this way, the integral only involves the integration of polynomials. There are subtleties to this method -- one needs to ensure that the series is converging; sometimes, several approximations to $f(x')$ are needed, one for locations near the charge distribution and one at far locations. These issues will be considered in detail later in the semester.
 
 ### Example -- Integral can be solved exactly
 
-For a line of charge with charge density $\lambda$ over $-L\le x\le L$, find $\mathbf{E}(y)$, the electric field at a point on the $y$--axis.
+For a line of charge with uniform charge density $\lambda_o$ over $-L\le x\le L$, find $\mathbf{E}(y)$, the electric field at a point on the $y$--axis.
+
+**Answer**:
 
 Previously it was found that
 
-$$d\mathbf{E}=\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}kdq=\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}k\lambda dx'$$
+$\displaystyle d\mathbf{E}=\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}k\lambda_o dx'$
 
 so
 
-$\displaystyle \mathbf{E}=\int_{-L}^{L}=\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}k\lambda dx'=k\lambda\yhat\int_{-L}^{L} dx'\frac{y}{\Big[\sqrt{x'^2+y^2}\Big]^3}dq-k\lambda\yhat\int_{-L}^{L} dx'\frac{x'}{\Big[\sqrt{x'^2+y^2}\Big]^3}kdq$
+$\displaystyle \mathbf{E}=\int_{-L}^{L}\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}k\lambda_o dx'q$
 
-Where the constant and cartesian unit vectors have been factored out because they do not depend on the dummy integration variable $x'$.
+$\displaystyle \phantom{\mathbf{E}}=k\lambda_oy\yhat\int_{-L}^{L} dx'\frac{1}{\Big[\sqrt{x'^2+y^2}\Big]^3}-k\lambda\yhat\int_{-L}^{L} dx'\frac{x'}{\Big[\sqrt{x'^2+y^2}\Big]^3}$
+
+The constants, cartesian unit vectors, and $y$ have been factored out of the integral because they do not depend on the dummy integration variable $x'$.
 
 Based on arguments given earlier, the second integral will be zero. This leaves
 
-$\displaystyle \mathbf{E}(y)=k\lambda\yhat\int_{-L}^{L} dx'\frac{y}{\Big[\sqrt{x'^2+y^2}\Big]^3}dq$
+$\displaystyle \mathbf{E}(y)=k\lambda_oy\yhat\int_{-L}^{L} dx'\frac{1}{\Big[\sqrt{x'^2+y^2}\Big]^3}$
 
-On exams, you will only be asked to set up the integral and it will be assumed that you can either do the integral or look it up. For the curious, the integration is given here.
+(On exams, you will only be asked to set up the integral.) The integral can be evaluated using a trig substitution, and the result is
 
-The integral part of the right-hand-side is $E_y$
+$\displaystyle \mathbf{E}(y)=k\frac{2L\lambda_o}{y\sqrt{L^2 + y^2}}\yhat$
 
-$
-\displaystyle E_y = k\lambda\int_{-L}^{L}\frac{ydx'}{(x'^2 + y^2)^{3/2}}
-$
-
-The integral can be evaluated using a trig substitution and the result is
+Because $2L\lambda_o$ is the total charge on the line, the answer can also be written in terms of the total charge on the line, $Q$, as
 
 $
-\displaystyle E_y = k\frac{2L\lambda}{y\sqrt{L^2 + y^2}}
+\displaystyle E_y = k\frac{Q}{y\sqrt{L^2 + y^2}}
 $
-
-so
-
-$\displaystyle \mathbf{E}(y)=k\frac{2L\lambda}{y\sqrt{L^2 + y^2}}\yhat$
-
-Note that $2a\lambda$ is the total charge on the line, so the answer can also be written in terms of the total charge on the line, $Q$, as
-
-$$
-E_y = k\frac{Q}{y\sqrt{L^2 + y^2}}
-$$
 
 Suppose that we were not able to integrate
 
-$\displaystyle \mathbf{E}(y)=k\lambda\yhat\int_{-L}^{L} dx'\frac{y}{\Big[\sqrt{x'^2+y^2}\Big]^3}dx'$
+$\displaystyle \mathbf{E}(y)=k\lambda_o\yhat\int_{-L}^{L} dx'\frac{y}{\Big[\sqrt{x'^2+y^2}\Big]^3}dx'$
 
-We could find an approxmation that applies when $y\gg L$. First, factor out $y$ from the square root and also from the integral (it does not depend on $x'$)
+To demonstrate the method that applies when we there is not a closed--form solution to the integral, here we will expand the integrand assuming that $y\gg L$ and $y>0$. First, factor out $y$ from the square root and also from the integral (it does not depend on $x'$)
 
-$\displaystyle \mathbf{E}(y)=\frac{k\lambda}{y^2}\yhat\int_{-L}^{L} dx'\frac{1}{\Big[\sqrt{1+\left(\frac{x'}{y}\right)^2}\Big]^3}$
+$\displaystyle \mathbf{E}(y)=\frac{k\lambda_o}{y^2}\yhat\int_{-L}^{L} dx'\frac{1}{\Big[\sqrt{1+\left(\frac{x'}{y}\right)^2}\Big]^3}$
 
-The integrand has the form $1/(1+\delta)^n$, where $n=3/2$ and $\delta = x'/y$. We can thus write
+The integrand has the form $1/(1+\delta)^n$, where $n=3/2$ and $\delta = x'/y$. The maximum value of $\delta$ is $L/y$, which is small based on assumtion. We can thus write
 
-$\displaystyle \mathbf{E}(y)= \frac{k\lambda}{y^2}\yhat\int_{-L}^{L} dx'\left(1-\frac{3}{2}\frac{x'^2}{y^2} + ...\right)$
+$\displaystyle \mathbf{E}(y)= \frac{k\lambda_o}{y^2}\yhat\int_{-L}^{L} dx'\left(1-\frac{3}{2}\frac{x'^2}{y^2} + ...\right)$
 
 Integrating the first two terms gives
 
-$\displaystyle \mathbf{E}(y)\simeq \frac{k\lambda}{y^2}\yhat\left(2L - \frac{1}{2}\frac{(L)^3}{y^2}\right)=\frac{2k\lambda L}{y^2}\yhat\left(1-\frac{1}{2}\frac{L^2}{y^2}\right)$
+$\displaystyle \mathbf{E}(y)\simeq \frac{k\lambda_o}{y^2}\yhat\left(2L - \frac{L^3}{y^2}\right)=\frac{2k\lambda_o L}{y^2}\yhat\left(1-\frac{L^2}{y^2}\right)$
 
-If only the first term in parenthesis is kept, the result is the same as that for a charge $2k\lambda L$ at the origin, which was a prediction made prior to solving the problem
+If only the first term in parenthesis is kept, the result is the same as that for a charge $2k\lambda_o L$ at the origin, which was a prediction made prior to solving the problem. Does it make sense physically that the "correction" to the term that corresponds to all of the charges at the origin is negative and the same for positive and negative $y$?
 
+### Problem
+
+The electric field on the $z$--axis due to a uniform charge density $\lambda_o$ on a circle of radius $R$ centered on the origin and in the $x$–$y$ plane is
+
+$\displaystyle \mathbf{E}(z) = \int_0^{2\pi}k\lambda_o d\phi'\frac{z\hat{\mathbf{z}}}{(z^2+R^2)^{3/2}}$
+
+Find an exact solution to this integral.
+ 
 ## Checking Answer
 
 The final step is to check the predictions made prior to starting the problem.
 
 ### Example
 
-For a line of charge with charge density $\lambda$ over $-L\le x\le L$, find $\mathbf{E}(y)$, the electric field at a point on the $y$--axis is
+For a line of charge with uniform charge density $\lambda_o$ over $-L\le x\le L$, $\mathbf{E}(y)$, the electric field at a point on the $y$--axis is
 
-$\displaystyle \mathbf{E}(y)=k\frac{2L\lambda}{y\sqrt{L^2 + y^2}}\yhat$
+$\displaystyle \mathbf{E}(y)=k\frac{2L\lambda_o}{y\sqrt{L^2 + y^2}}\yhat$
 
-Check the predictions made about the answer of
+Check the predictions made previously about the answer, which were
 
 1. $\mathbf{E}(y)$ should only have a $y$--component due to cancellation symmetry. 
-2. For $y\gg L$ (far away from the line), one expects an answer that approaches the answer for a problem where all of the charges on the line are placed at the origin. In this case, the basic form of Coulomb's Law for electric fields can be used to find the answer in terms of the parameters given $E_y=kQ/y^2=k(2\lambda_oL)/y^2$ and $\mathbf{E}$ is in the $\yhat$ direction for $y\gt 0$ and in the $-\yhat$ direction for $y\lt 0$.
+2. For $y\gg L$ (far away from the line), one expects an answer that approaches the answer for a problem where all of the charges on the line are placed at the origin. In this case, the basic form of Coulomb's Law for electric fields can be used to find the answer in terms of the parameters given $|\mathbf{E}|=kQ/y^2=k(2\lambda_oL)/y^2$ and $\mathbf{E}$ is in the $\yhat$ direction for $y\gt 0$ and in the $-\yhat$ direction for $y\lt 0$.
 3. For $y\ll L$, one expects an answer that approaches the answer for an infinite line of charge (an ant placed near the origin will conclude that the charges extend to infinity in both directions). In this case, one can look up the equation for the electric field due to an infinite line of charge (or use Gauss' Law to find it).
 
 **Answer**:
@@ -382,720 +414,34 @@ Check the predictions made about the answer of
 1. This is clearly true.
 2. To address $y\gg L$, we can factor out $y$ from the square root to arrive at
 
-   $\displaystyle E_y=\frac{2k\lambda L}{y|y|}\frac{1}{\sqrt{1+\left(\frac{L}{y}\right)^2}}$
+   $\displaystyle \mathbf{E}(y)=\frac{2k\lambda L}{y|y|}\frac{1}{\sqrt{1+\left(\frac{L}{y}\right)^2}}\yhat$
    
-  When $y\gg L$, the square root term is nearly unity. And the result is $E_y=2k\lambda L/y^2$ when $y\gt 0$ and $E_y=-2k\lambda L/y^2$ when $y\lt 0$.
+  When $y\gg L$, the square root term is nearly unity. And the result is $ \mathbf{E}(y)=2k\lambda_o L\yhat/y^2$ when $y\gt 0$ and $ \mathbf{E}(y)=-2k\lambda_o L\yhat/y^2$ when $y\lt 0$.
 3. To address $y\ll L$, we can first factor out $L$ from the square root to arrive at
  
-   $\displaystyle E_y=\frac{2k\lambda }{y}\frac{1}{\sqrt{1+\left(\frac{y}{L}\right)^2}}$
+   $\displaystyle \mathbf{E}(y)=\frac{2k\lambda_o }{y}\frac{1}{\sqrt{1+\left(\frac{y}{L}\right)^2}}\yhat$
 
-  When $y\ll L$, the square root term is nearly unity, leaving $E_y=2k\lambda/y$. The electric field for a line of charge is usually given in cylindrical coordinates as $\mathbf{E}=2k\lambda\hat{\mathbf{s}}/s$. On the $y$--axis, $s=y$ and $\hat{\mathbf{s}}=\yhat$ and so the prediction is correct.
+  When $y\ll L$, the square root term is nearly unity, leaving $E_y=2k\lambda_o\yhat/y$. The electric field for a line of charge is usually given in cylindrical coordinates as $\mathbf{E}=2k\lambda_o\hat{\mathbf{s}}/s$. When $y>0$, $s=y$ and $\hat{\mathbf{s}}=\yhat$; when $y<0$, $s=-y$ and $\hat{\mathbf{s}}=-\yhat$ and so the prediction is correct.
   
+### Problem
+
+Check the exact answer found previously for the electric field on the $z$–axis due to a uniform charge density $\lambda_o$ on a circle of radius $R$ centered on the origin and in the $x$–$y$ plane.
+
 # Problems
 
-## Line of Charge
+## Line of Charge on $x$--axis
 
-A line of charge with charge density of $\lambda$ extends from $-L$ to $L$ on the $x$-axis, where $L>0$.
+A line of charge with a uniform charge density of $\lambda_o$ extends from $0$ to $L$ on the $x$-axis, where $L>0$.
 
-Follow the steps given above and find $\mathbf{E}(y)$ in terms of $k,\lambda,L,x,y,z$ and cartesian unit vectors.
+Follow and show the steps given in the notes and find $\mathbf{E}$ on the $y$--axis in terms of one or more of $k,\lambda_o,L,y$ and cartesian unit vectors.
 
-**Answer**
+## Line of Charge at Angle to $x$--axis
 
-* For $z>>L$ expect to get $\mathbf{E} = \hat{z}k\lambda L/z^2$, where $\lambda L$ is total charge on line.
-* $E_z$ should be half that for a line that extends from $-L$ to $L$
-* As $z$ increases, ratio of $E_x/E_z$ should decrease.
-* As $z$ decreases, ratio of $E_x/E_z$ should increase.
-* As $z$ approaches zero, $E$ should become infinite (eventually sitting on top of a charge).
-* As $\lambda$ approaches zero, $E_x$ and $E_y$ should approach zero.
+A line of charge in the $x$-$y$ plane has a charge density of $\lambda_o$, passes through the origin, is at an angle of $\phi$ with the $x$-axis, and extends from $x=-b$ to $x=b$.
 
-$$\mathbf{E}= -k\lambda \int_0^L\frac{xdx}{(x^2+z^2)^{3/2}}\hat{\mathbf{x}} + k\lambda z\int_0^L\frac{dx}{(x^2+z^2)^{3/2}}\hat{\mathbf{z}}$$
+<img src="figures/Continuous-Charge-Densities-Tilted-Line.svg"/>
 
-$$\mathbf{E} = \frac{k\lambda}{z}\left[\left(-1+\frac{z}{\sqrt{z^2+L^2}}\right)\hat{\mathbf{x}} + \left(\frac{L}{\sqrt{z^2+L^2}}\right)\hat{\mathbf{z}}\right]$$
+Find $\mathbf{E}$ on the $y$--axis using two methods:
 
-## Line of Charge
-
-A line of charge with charge density of $\lambda$ extends from $-L$ to $-l$ on the $x$-axis; A second line of charge with charge density of $\lambda$ extends from $l$ to $L$ on the $x$-axis; $L>0$ and $l>0$.
-
-1. Sketch electric field lines
-2. Find $\mathbf{E}$ on the $z$-axis in terms of constants times a single integral
-3. Find $V$ on the $z$-axis in terms of constants times a single integral
-4. At the origin, what is expected for $\mathbf{E}$?
-5. When $l\simeq L$ and $z>>L$, what is expected for $\mathbf{E}$ on the $z$-axis, and why?
-6. When $L>> l$ and $z>>l$, what is expected for $\mathbf{E}$ on the $z$-axis, and why?
-
-All final equations should be expressed in terms of $k,\lambda,l,L,x,y,z$ and cartesian unit vectors.
-
-**Answers to 2.,4.-6.**
-
-$$
-\begin{align}
-\mathbf{E} = &-k\lambda \int_l^L\frac{xdx}{(z^2+x^2)^{3/2}}\hat{\mathbf{x}} + k\lambda z\int_l^L\frac{dx}{(z^2+x^2)^{3/2}}\hat{\mathbf{z}}\\
-& +k\lambda \int_{-l}^{-L}\frac{xdx}{(z^2+x^2)^{3/2}}\hat{\mathbf{x}} + k\lambda z\int_{-l}^{-L}\frac{dx}{(z^2+x^2)^{3/2}}\hat{\mathbf{z}}
-\end{align}
-$$
-
-Note that the $\hat{\mathbf{x}}$ terms are expected to cancel based on the symmetry argument given below. (This was not asked for, but if you want to show this mathematically, change the variable in the second $\hat{\mathbf{x}}$ integral using the substitution $u=-x$).
-
-4. The electric field should be zero. Each charge at a position $x$ has a charge at a position $-x$ that creates an equal an opposite electric field at the origin.
-
-5. $l\simeq L$ means the two lines of charge "look" like point charges at $\pm L$. Because $z>>L$, it also looks like the two point charges overlap at the origin. I expect the electric field to be proportional to $\hat{\mathbf{z}}/z^2$. 
-  (If you wanted to go further, you could write that the charge at the origin would be $2(L-l)\lambda$, so the electric field would be $2k(L-l)\lambda\hat{\mathbf{z}}/z^2$.)
-
-6. In this case, the gap of $2l$ between the lines of charge is not visible. So the solution should be the same as that for an infinite line of charge (which you should be able to compute using Gauss' Law). 
-
-## Line of Charge at Angle
-
-A line of charge in the $x$-$y$ plane has a charge density of $\lambda$ and is at an angle of $\alpha$ with the x-axis (positive angle towards $+y$ axis) and extends from $x=0$ to $x=a$.
-
-1. What is the expected direction of $\mathbf{E}(y)$ for $y > 0$?
-2. For $y \gg a$, what should $\mathbf{E}(y)$ approach?
-3. Find and integral that must be solved to find $\mathbf{E}(y)$. See note in Step 4 about integrals with primed variables that don't have a corresponding primed differential variable.
-
-**Answer**
-
-==== Step 0 ====
-
-1. For $y > 0$, the expected direction of $\mathbf{E}(y)$ is in the $-x$ and $+y$ direction. As $y$ increases, $\mathbf{E}(y)$ should have a $y$-component that becomes larger than the $-x$ component because as $y$ increases, the line of charge appears more and more similar to a point charge at the origin.
-2. For $y \gg a$, the line of charge appears as a point charge of magnitude $q'=2L\lambda$ at the origin, for which $\mathbf{E}(y)=\hat{\mathbf{y}}kq'/y^2$. The length of the line needs to written in terms of the paramters given ($a$ and $\alpha$). Using $\cos\alpha=a/L$ gives $L=a/\cos\alpha$ and $\mathbf{E}(y)=\hat{\mathbf{y}}k(2a\lambda/\cos\alpha)/y^2$. Use a diagram to show this.
-3. See the following steps.
-
-==== Step 1 ====
-
-This is a line of charge, so the general relationship is $dq'=\lambda dl'$.
-
-In general, a differential element parallel to a line in the $x-y$ plane can be written as
-
-$$d\mathbf{l}' = dx'\hat{\mathbf{x}} + dy'\hat{\mathbf{y}}$$
-
-the magnitude of $d\mathbf{l}'$ is
-
-$$dl' = \sqrt{(dx')^2+(dy')^2}$$
-
-factoring out $dx'$ gives a formula that may be familiar from a calculus course in which the the length of a curve is computed:
-
-$$dl' = dx'\sqrt{1+\left(\frac{dy'}{dx'}\right)^2}$$
-
-In this problem, we are not explicitly given $dy'/dx'$, but it can be derived by noting from a diagram that $\tan\alpha = y'/x'$ so that
-
-$$y' = x'\tan\alpha$$
-
-and so $dy'/dx' = \tan\alpha$. Substitution gives
-
-$$dl' = dx'\sqrt{1+\left(\frac{dy'}{dx'}\right)^2}=dx'\sqrt{1+\tan^2\alpha}$$
-
-and finally an equation for $dq'$
-
-$$dq'=\lambda dl'= dx'\sqrt{1+\tan^2\alpha}$$
-
-==== Step 2 ====
-
-In general,
-
-$$\mathbf{r}=x\hat{\mathbf{x}}+y\hat{\mathbf{y}}+z\hat{\mathbf{z}}$$
-
-$$\mathbf{r}'=x'\hat{\mathbf{x}}+y'\hat{\mathbf{y}}+z'\hat{\mathbf{z}}$$
-
-for this problem, we only want to know $\mathbf{r}$ for points on the $y$-axis, so $x=0$ and $z=0$ leaving
-
-$$\mathbf{r}=y\hat{\mathbf{y}}$$
-
-the line of charge is in the $x$-$y$ plane, so $z'$ is always zero, leaving
-
-$$\mathbf{r}'=x'\hat{\mathbf{x}}+y'\hat{\mathbf{y}}$$
-
-==== Step 3 ====
-
-Write 
-
-$$\mathbf{E}_{dq'}(x,y,z) = \frac{dq'}{4\pi\epsilon_0}\frac{\mathbf{r}-\mathbf{r}'}{|\mathbf{r}-\mathbf{r}'|^3}$$
-
-replacing $dq'$ with the differential found in Step 1, $dq' = dx'\sqrt{1+\tan^2\alpha}$, and using the reduced versions of $\mathbf{r}$ and $\mathbf{r}'$ in Step 2. Noting that
-
-$$\mathbf{r}-\mathbf{r}'=y\hat{\mathbf{y}}-\big(x'\hat{\mathbf{x}}+y'\hat{\mathbf{y}}\big)$$
-
-which can be rewritten as
-
-$$\mathbf{r}-\mathbf{r}'=-x'\hat{\mathbf{x}}+(y-y')\hat{\mathbf{y}}$$
-
-The magnitude is
-
-$$|\mathbf{r}-\mathbf{r}'|=\sqrt{(-x')^2 + (y-y')^2}=\sqrt{x'^2 + (y-y')^2}$$
-
-and substitution gives
-
-$$\mathbf{E}_{dq'}(x,y,z) = \frac{dx'\sqrt{1+\tan^2\alpha}}{4\pi\epsilon_0}\frac{-x'\hat{\mathbf{x}}+(y-y')\hat{\mathbf{y}}}{\big(x'^2 + (y-y')^2\big)^{3/2}}$$
-
-==== Step 4 ====
-
-The final step is to integrate this equation from $x'=0$ to $x'=a$:
-
-$$\mathbf{E}(y)_{\mbox{all }dq'} = \int_0^{a}\frac{dx'\sqrt{1+\tan^2\alpha}}{4\pi\epsilon_0}\frac{-x'\hat{\mathbf{x}}+(y-y')\hat{\mathbf{y}}}{\big(x'^2 + (y-y')^2\big)^{3/2}}$$
-
-In Step 1, $dl'$ was found in terms of $dx'$, so all of the primed variables need to be written in terms of $x'$. Using $y'=x'\tan\alpha$ gives an equation that is ready for integration
-
-$$\mathbf{E}(y)_{\mbox{all }dq'} = \int_0^{a}\frac{dx'\sqrt{1+\tan^2\alpha}}{4\pi\epsilon_0}\frac{-x'\hat{\mathbf{x}}+(y-x'\tan\alpha)\hat{\mathbf{y}}}{\big(x'^2 + (y-x'\tan\alpha)^2\big)^{3/2}}$$
-
-To solve this, if desired, start by factoring out the constant terms and write the equation in terms of three integrals with $y$ treated as a constant with respect to the integration.
-
-==== Step 5 ====
-
-Two checks were already made.
-
-If the integral was performed, we could use the answer from Griffiths Example 2.2 to compare the answer from this problem for a special value of $y$: the $y$-value where a line drawn from the center of, and perpendicular to, the line of charge crosses the $y$-axis.
-
-## Line of Charge at Angle
-
-A line of charge with a charge density of $\lambda$ lies along the line $z=m x$, where $m$ is a constant, and extends from $x=-a$ to $x=a$. 
-
-1. What is the expected (general) direction of $\mathbf{E}(z)$? How is this direction expected to change as $z$ increases?
-2. For $z >> a$, what should $\mathbf{E}(z)$ approach? (Give exact equation in terms of the parameters and coordinate system given in the problem.)
-3. For $z << a$, what should $\mathbf{E}(z)$ approach? (Give exact equation in terms of the parameters and coordinate system given in the problem.)
-3. Find an integral that must be solved to find $\mathbf{E}(z)$. See the [[F19/Notes#Continuous_Charge_Distributions|note in Step 4]] about integrals with primed variables that don't have a corresponding primed differential variable.
-
-**Answer**
-
-This problem is similar to a problem in [[F19/Notes#Continuous_Charge_Distributions|sample problems for continuous charge distributions in the notes]]. The difference is that in the sample problem
-
-1. the line was at an angle $\alpha$ in the $x-y$ plane
-2. the points of interest were along the $y$-axis
-
-and in this problem 
-
-3. the line follows the equation $z=mx$ so that the length of the line is $2\sqrt{a^2+(am)^2}=2a\sqrt{1+m^2}$
-4. the points of interest are along the $z$-axis
-
-Instead of the relationship $y'=x'\tan\alpha$, the relationship is $z'=mx'$. So anywhere $\tan\alpha$ appears in the sample problem, it can be replaced with $m$ and any $y$, $y'$, and $\hat{\mathbf{y}}$ can be replaced with $z$, $z'$, and $\hat{\mathbf{z}}$, respectively. The final answer is
-
-$$\mathbf{E}(z) = \int_{-a}^{a}\frac{dx'\sqrt{1+m^2}}{4\pi\epsilon_0}\frac{-x'\hat{\mathbf{x}}+(z-mx')\hat{\mathbf{z}}}{\big(x'^2 + (z-mx')^2\big)^{3/2}}$$
-
-For question #2., at $z\gg a$, the answer of "0" is technically correct, but the problem statement asks for an equation in terms of the parameters given in the problem. Examples of this were given in class, in example 2.2 of Griffiths, and in the notes. The answer I was looking for is $\mathbf{E}(z)=\hat{\mathbf{y}}kq'/y^2$, where $q'=\lambda L = \lambda 2\sqrt{a^2+(am)^2}=\lambda 2a\sqrt{1+m^2}$. So that in terms of the parameters given in the problem statement, 
-
-$$\mathbf{E}(z)=\frac{k\lambda 2a\sqrt{1+m^2}}{y^2}\hat{\mathbf{y}}$$
-
-For question #3., at $z\ll a$, the point is just above the center of the line and the system "looks" like an infinite line of charge, so the infinite line of charge equation applies. The electric field at this point will be perpendicular to the line. If $s$ is the perpendicular distance from the center of the line, then $\mathbf{E}(s)=(1/2\pi\epsilon_o)\hat{\mathbf{s}}/s$. Some students used this equation with $z$ instead of $s$. 
-
-To get an exact equation in terms of the parameters and coordinate system of the problem, one needs to write $\hat{\mathbf{s}}$ and $s$ in terms of parameters and the coordinate system given in the problem of $x$, $z$, and $m$: $\mathbf{s}=-z(-\hat{\mathbf{x}}+\hat{\mathbf{z}}/m)$. I gave full credit if it was recognized that at $z\ll a$, the field should be perpendicular to the line. Some students said the field would be zero because these points are on the line - this is not correct - $z\ll a$ means just above the infinitely thin line; only $z = 0$ would be exactly on the line.
-
-
-## Line of Charge with Parabolic Shape
-
-A line of charge with a charge density of $\lambda$ has a parabolic shape of $z=x^2$ and extends from $x=-a$ to $x=a$. 
-
-1. What is the expected direction of $\mathbf{E}(z)$?
-2. For $z >> a$, what should $\mathbf{E}(z)$ approach? (Give exact equation in terms of the parameters and coordinate system given in the problem.)
-3. Find an integral that must be solved to find $\mathbf{E}(z)$. See the [[F19/Notes#Continuous_Charge_Distributions|note in Step 4]] about integrals with primed variables that don't have a corresponding primed differential variable.
-
-**Answer**
-
-1. For $z>0$, expect $\mathbf{E}$ to be in $+\hat{\mathbf{z}}$ direction (I gave full credit for this answer, but some correctly noted that there may be a point for small enough z where it is actually in $-\hat{\mathbf{z}}$ direction). For $z>0$, expect $\mathbf{E}$ to be in $-\hat{\mathbf{z}}$ direction. The on the z-axis, the electric field has no component in the $\hat{\mathbf{x}}$ direction because a charge at position $x=x_o$ produces an electric field with a component in the $-\hat{\mathbf{x}}$ direction that is canceled by that from a charge at $x=-x_o$. The electric field component in the $z$-direction for both of these charges are in the $+z$ direction. (Draw this.)
-
-2. When $z>>a$, the distance from all $dq's$ to the point of interest at $z$ is approximately $z$ and so Coulomb's Law for a charge $Q$ at the origin applies: $E=kQ'/z^2$, where $Q'$ is the total charge on the line. $Q'$ needs to be written in terms of the parameters of the problem - it is $Q' = \lambda L$ where $L$ is the length of the line that will depend on $a$. Computing the length of the line requires integration and I gave full credit is this was recognized but $L$ was not calculated. The general formula for the length of a line that follows a path $\mathcal{P}$ is
-
-$$L = \int_{\mathcal{P}} dl$$
-
-The integration requires writing $dl$ and the limits of integration in terms of a coordinate system.
-
-The general formula for a differential element in cartesian coordinates is
-
-$$d\mathbf{l} = dx\hat{\mathbf{x}} + dz\hat{\mathbf{z}}$$
-
-which has a magnitude
-
-$$dl = \sqrt{(dx)^2+(dz)^2}$$
-
-factoring out $dx$ gives a formula that may be familiar from path integration in a calculus course 
-
-$$dl = dx\sqrt{1+\left(\frac{dz}{dx}\right)^2}$$
-
-so the length of the differential element depends on the slope of the line $dz/dx$. For this particular problem, the line follows the path $\mathcal{P}$ according to the equation $z=x^2$, so $dz/dx = 2x$. Substitution gives
-
-$$dl = dx\sqrt{1+4x^2}$$
-
-This $dl$ can now be used to perform the integration of the general equation
-
-$$L = \int_{\mathcal{P}} dl = \int_{-a}^{a}dx\sqrt{1+4x^2}$$
-
-The integral can be perfomed using a $x=(\tan u)/2$ substitution and appears in many references - the key that I am looking in solutions is the recognition that computing the total charge in terms of the parameters given requires integration and the set-up of the integral.
-
-3. 
-
-Step 1
-
-$dl$ was already computed previously and so
-
-$$dq'=\lambda dl'= dx'\sqrt{1+4x'^2}$$
-
-where primes are used following the convention that position variables associated with charges are primed.
-
-Step 2
-
-In general,
-
-$$\mathbf{r}=x\hat{\mathbf{x}}+y\hat{\mathbf{y}}+z\hat{\mathbf{z}}$$
-
-$$\mathbf{r}'=x'\hat{\mathbf{x}}+y'\hat{\mathbf{y}}+z'\hat{\mathbf{z}}$$
-
-for this problem, we only want to know $\mathbf{r}$ for points on the $z$-axis, so $x=0$ and $y=0$ leaving
-
-$$\mathbf{r}=z\hat{\mathbf{z}}$$
-
-the line of charge is in the $x$-$z$ plane, so $y'$ is always zero, leaving
-
-$$\mathbf{r}'=x'\hat{\mathbf{x}}+z'\hat{\mathbf{z}}$$
-
-Step 3.
-
-Write 
-
-$$\mathbf{E}_{dq'}(x,y,z) = \frac{dq'}{4\pi\epsilon_0}\frac{\mathbf{r}-\mathbf{r}'}{|\mathbf{r}-\mathbf{r}'|^3}$$
-
-replacing $dq'$ with the differential found in Step 1, $dq' = \lambda dx'\sqrt{1+4x'^2}$, and using the reduced versions of $\mathbf{r}$ and $\mathbf{r}'$ in Step 2. Noting that
-
-$$\mathbf{r}-\mathbf{r}'=z\hat{\mathbf{z}}-\big(x'\hat{\mathbf{x}}+z'\hat{\mathbf{z}}\big)$$
-
-which can be rewritten as
-
-$$\mathbf{r}-\mathbf{r}'=-x'\hat{\mathbf{x}}+(z-z')\hat{\mathbf{z}}$$
-
-The magnitude is
-
-$$|\mathbf{r}-\mathbf{r}'|=\sqrt{(-x')^2 + (z-z')^2}=\sqrt{x'^2 + (z-z')^2}$$
-
-and substitution gives
-
-$$\mathbf{E}_{dq'}(x,y,z) = \frac{\lambda dx'\sqrt{1+4x'^2}}{4\pi\epsilon_0}\frac{-x'\hat{\mathbf{x}}+(z-z')\hat{\mathbf{z}}}{\big(x'^2 + (z-z')^2\big)^{3/2}}$$
-
-Step 4.
-
-The last step is to integrate from $x'=-a$ to $x'=a$ and to replace $z'$, which depends on the integration variable $x'$, using $z'=x'^2$.
-
-$$\mathbf{E}_{\mbox{all }dq's}(x,y,z) = \int_{-a}^{a}\frac{\lambda dx'\sqrt{1+4x'^2}}{4\pi\epsilon_0}\frac{-x'\hat{\mathbf{x}}+(z-x'^2)\hat{\mathbf{z}}}{\big(x'^2 + (z-x'^2)^2\big)^{3/2}}$$
-
-Previously, it was claimed that the $\hat{\mathbf{x}}$-component should be zero and so it is expected that the $\hat{\mathbf{x}}$ integral is zero. That the integral is zero can be seen by noting that that the function
-
-$$f(x') = \frac{x'\sqrt{1+4x'^2}}{\big(x'^2 + (z-x'^2)^2\big)^{3/2}}$$ 
-
-satisfies $f(x')=-f(x')$ so that $f$ is an "odd" function, which integrate to zero over a range from $x'=-a$ to $x'=+a$. You may want to demonstrate this by plotting this function. (The argument here is similar to the argument that the integral of $f(x)=x^3$ is zero - the integral of $f(x)$ for $x<0$ is equal and opposite to the integral for $x>0$ so that the integral over a range $x=-a$ to $x=+a$ is zero.
-
-
-## Ring of Charge
-
-A ring of charge with charge density of $\lambda$ has a radius $a$, is centered at the origin, and lies in the $x-y$ plane.
-
-1. Find $V$ on the $z$-axis
-2. Find $\mathbf{E}$ on the $z$-axis
-3. When on the $z$-axis and for $z<<a$, what is expected for $\mathbf{E}$, and why?
-4. When $z>>a$, what is expected for $\mathbf{E}$ on the $z$-axis, and why?
-
-All final equations should be expressed in terms of $k,\lambda,a$ using any coordinate system.
-
-## Ring of Charge
-
-Write your answer on a blank sheet of paper of printer paper. 
-
-A ring of charge with charge density of $\lambda$ has a radius $a$, is centered at the origin, and lies in the $x-y$ plane.
-
-1. When $z<<a$, what is expected for $\mathbf{E}$ (magnitude and direction) on the $z$-axis, and why<sup>*</sup>?
-2. When $z>>a$, what is expected for $\mathbf{E}$ (magnitude and direction) on the $z$-axis, and why<sup>*</sup>?
-3. Find $V$ on the $z$-axis (that is, find $V(z)$). 
-4. Find $\mathbf{E}$ on the $z$-axis (that is, find $\mathbf{E}(z)$). 
-
-<sup>*</sup>That is, without doing any integration, what do you expect the answer to be like in these limits. I gave many examples of this in class. 
-
-All final equations should be expressed in terms of $k$ or $\epsilon_0,\lambda$, and $a$ using any coordinate system.
-
-[[Image:ring_of_charge.png|400px]]
-
-**Answer**
-
-1\. Expect $\mathbf{E}=0$ at the origin. One can find a $dq$ on one side of the ring that has a $dq$ on the other side of the ring that produces an electric field equal in magnitude and opposite in direction at the origin. A tiny distance above the origin, the electric field lines are nearly horizontal, so the $z$ component should be nearly zero. So an acceptable answer is that the $z$ component gets close to zero.
-
-2\. Field should be that of a charge $q=2\pi a\lambda$ at the origin, so
-
-$$\mathbf{E} = \frac{1}{4\pi\epsilon_0}\frac{q}{z^2}\hat{\mathbf{z}} = \frac{1}{4\pi\epsilon_0}\frac{2\pi a\lambda}{z^2}\hat{\mathbf{z}} = \frac{1}{2\epsilon_0}\frac{a\lambda}{z^2}\hat{\mathbf{z}}=\frac{2k\pi a\lambda}{z^2}\hat{\mathbf{z}}$$
-
-The equation from part 4. gives this result if $z>>a$.
-
-3\. A clever way of solving this without doing any integration is to note that the work required to move a charge along the $z$-axis against the force due to the ring is the same as if all of the charge, $2\pi a\lambda$ were concentrated at say $x=a$ or $y=a$ because the distance from a $dq$ on the ring to a point on the $z-$axis is the same for all charges on the ring. In this case, the distance of the point charge to a point along the z-axis is $|\mathbf{r}-\mathbf{r}'|=(a^2+z^2)^{1/2}$. So
-
-$$V=\frac{kq}{|\mathbf{r}-\mathbf{r}'|} = \frac{k 2\pi a\lambda}{(a^2+z^2)^{1/2}}=\frac{\lambda a }{2\epsilon_0}\frac{1}{(a^2+z^2)^{1/2}}$$
-
-The regular method of solution is to start with the general equation for electric potential due to a point charge
-$$V = \frac{q}{4\pi\epsilon_0}\frac{1}{|\mathbf{r}-\mathbf{r}'|}$$
-
-In terms of a differential charge, this is
-$$dV = \frac{dq}{4\pi\epsilon_0}\frac{1}{|\mathbf{r}-\mathbf{r}'|}$$
-
-From the given geometry, the point of interest is
-   
-$$\mathbf{r} = z\hat{\mathbf{z}}$$
-
-and the location of the charge acting on the point of interest is
-
-$$\mathbf{r}' = a\cos(\phi)\hat{\mathbf{x}}+a\sin(\phi)\hat{\mathbf{y}}$$
-
-so
-
-$$dV = \frac{dq}{4\pi\epsilon_0}\frac{1}{(a^2+z^2)^{1/2}}$$
-
-We want to integrate, so need to write $dq$ in terms of coordinates. On the ring, a small piece has a length of $a d\phi$, so
-
-$dq=\lambda a d\phi$$
-
-where $\phi$ is the polar coordinate angle. This gives
-
-$$V = \int_0^{2\pi}\frac{\lambda a d\phi}{4\pi\epsilon_0}\frac{1}{(a^2+z^2)^{1/2}}$$
-
-factoring out everything that does not depend on $\phi$ gives
-
-$$V = \frac{\lambda a }{4\pi\epsilon_0}\frac{1}{(a^2+z^2)^{1/2}}\int_0^{2\pi}d\phi$$
-
-so the final answer is
-
-$$V = \frac{\lambda a }{2\epsilon_0}\frac{1}{(a^2+z^2)^{1/2}}=\frac{2k\pi\lambda a}{(a^2+z^2)^{1/2}}$$
-
-'''4. Find $\mathbf{E}$ on the $z$-axis (that is, find $\mathbf{E}(z)$)'''
-
-The easy way to get the answer is to use
-
-$$\mathbf{E}=-\nabla V=-\hat{\mathbf{z}}\partial V/\partial z =-\hat{\mathbf{z}}\frac{\partial}{\partial z}\frac{\lambda a }{2\epsilon_0}\frac{1}{(a^2+z^2)^{1/2}}$$
-
-Giving the final answer of
-$$\mathbf{E}=\frac{\lambda a}{2\epsilon_0}\frac{z\hat{\mathbf{z}}}{(z^2+a^2)^{3/2}}=2k\pi\lambda a\frac{z\hat{\mathbf{z}}}{(z^2+a^2)^{3/2}}$$
-
-Long answer:
-
-General definition of electric field due to a point charge from Coulomb's Law
-$$\mathbf{E} = \frac{q}{4\pi\epsilon_0}\frac{1}{|\mathbf{r}-\mathbf{r}'|^2}\frac{\mathbf{r}-\mathbf{r}'}{|\mathbf{r}-\mathbf{r}'|}$$
-
-In terms of a differential charge, this is
-$$\mbox{(1)  }d\mathbf{E} = \frac{dq}{4\pi\epsilon_0}\frac{1}{|\mathbf{r}-\mathbf{r}'|^2}\frac{\mathbf{r}-\mathbf{r}'}{|\mathbf{r}-\mathbf{r}'|}$$
-
-From the given geometry, the point of interest is
-$$\mathbf{r} = z\hat{\mathbf{z}}$$
-and the location of the charge acting on the point of interest is
-$$\mathbf{r}' = a\cos(\phi)\hat{\mathbf{x}}+a\sin(\phi)\hat{\mathbf{y}}$$
-
-Subtituting into (1) gives
-$$d\mathbf{E}= \frac{dq}{4\pi\epsilon_0}\frac{z\hat{\mathbf{z}}-a\cos(\phi)\hat{\mathbf{x}}-a\sin(\phi)\hat{\mathbf{y}}}{(z^2+a^2)^{3/2}}$$
-
-We want to integrate, so need to write $dq$ in terms of coordinates. On the ring, a small piece has a length of $a d\phi$, so
-$$dq=\lambda a d\phi$$
-
-where $\phi$ is the polar coordinate angle. This gives
-$$\mathbf{E} = \int_0^{2\pi}\frac{\lambda d\phi}{4\pi\epsilon_0}\frac{z\hat{\mathbf{z}}-a\cos(\phi)\hat{\mathbf{x}}-a\sin(\phi)\hat{\mathbf{y}}}{(z^2+a^2)^{3/2}}$$
-
-Based on the symmetry argument that we can always find another $dq$ that exactly cancels the horizontal component of a given $dq$, we expect the $\hat{\mathbf{x}}$ and $\hat{\mathbf{y}}$ terms to be zero, so we can drop them. Or we can notice that after factoring out everything that does not depend on $\phi$, the integrals for the $\hat{\mathbf{x}}$ and $\hat{\mathbf{y}}$ terms are $\cos\phi\,d\phi$ and $\sin\phi\,d\phi$ from $0$ to $2\pi$, which are both zero.
-
-Keeping only the $\hat{\mathbf{z}}$ term and factoring out everything that does not depend on $\phi$ gives
-$$\mathbf{E} =\frac{\lambda a}{4\pi\epsilon_0}\frac{z\hat{\mathbf{z}}}{(z^2+a^2)^{3/2}} \int_0^{2\pi}d\phi$$
-
-Final answer:
-$$\mathbf{E} = \frac{\lambda}{2\epsilon_0}\frac{az}{(z^2+a^2)^{3/2}}\hat{\mathbf{z}}$$
-
-To check your answer to part 1., factor out $a$ from the square root to get 
-
-$$\mathbf{E} = \frac{\lambda}{2\epsilon_0}\frac{az}{a^3(1+a^2/z^2)^{3/2}}\hat{\mathbf{z}} = \frac{\lambda}{2a\epsilon_0}\frac{z}{a}\hat{\mathbf{z}}$$
-
-When $z/a \ll 1$, $\mathbf{E} \simeq 0\hat{\mathbf{z}}$.
-
-## Ring of Charge
-
-A ring of charge with charge density of $\lambda$ has a radius $a$, is centered at the origin, and lies in the $x-y$ plane.
-
-1\. Find $V$ in the $x-y$ plane in terms of a constant times one or more integrals.
-2\. Find $\mathbf{E}$ in the $x-y$ plane in terms of a constants and integrals.
-3\. At $x^2+y^2=0$ and $z=0$, what is expected for $\mathbf{E}$, and why?
-4\. When $x^2+y^2\simeq a^2$ and $z=0$, what is expected for $\mathbf{E}$, and why?
-5\. When $x^2+y^2>>a^2$ and $z=0$, what is expected for $\mathbf{E}$, and why?
-
-All final equations should be expressed in terms of $k,\lambda,a$ using any coordinate system.
-
-## Half Ring of Charge
-
-A half ring of charge with charge density of $\lambda$ has a radius $a$, is centered at the origin, lies in the $x-y$ plane, and has its endpoints at $y=\pm a$.
-
-1. Find $V$ at the origin.
-2. Find $\mathbf{E}$ at the origin.
-3. At the origin, what is expected for $\mathbf{E}$, and why?
-4. When $x^2+y^2>>a^2$, what is expected for $\mathbf{E}$, and why?
-
-All final equations should be expressed in terms of $k$ or $\epsilon_0,\lambda$, and $a$ using any coordinate system.
-
-## Half Ring of Charge
-
-A half ring of charge with charge density of $\lambda$ has a radius $a$, is centered at the origin, lies in the $x-y$ plane, and has its endpoints at $y=\pm a$.
-
-1\. Find $V$ along the $x$-axis in terms of a constant times one or more integrals.
-2\. Find $\mathbf{E}$ along the $x$-axis in terms of a constants and integrals.
-
-All final equations should be expressed in terms of $k$ or $\epsilon_0,\lambda$, and $a$ using any coordinate system.
-
-## Disk of Charge
-
-A disk of charge with charge density of $\sigma$ has a radius $a$, is centered at the origin, and lies in the $x-y$ plane.
-
-1. Sketch electric field lines
-2. Find $V$ on the $z$-axis in terms of constants times a single integral.
-3. Find $\mathbf{E}$ on the $z$-axis in terms of constants times one or more integrals.
-4. On the $z$-axis and for $z<<a$, what is expected for $\mathbf{E}$, and why?
-5. On the $z$-axis and for $z>>a$, what is expected for $\mathbf{E}$, and why?
-6. It does not technically make sense to ask "on the $z$-axis and for large $z$, what is expected for $\mathbf{E}$?". Why?
-
-All final equations should be expressed in terms of $k$ or $\epsilon_0,\sigma$, and $a$ using any coordinate system.
-
-**Answers to 3.-6.**
-
-3\. There are three general ways to do this:
-
-1\. Starting from the basic formula for the electric field due to a charge $dq$ and summing contributions from $dq$s at all locations on the disk. This will involve a double integral.
-2\. Integrating over contributions from rings of charge. This will involve a single integral over contributions of rings of different sizes and knowledge of the electric field due to a ring of charge.
-3\. Computing $V$ first and using $\mathbf{E}=-\nabla V$.
-
-I'll follow method 1. and I'll note that one of the formulas found as the solution is developed is the same one you would get if you started with 2. Method 3. would be useful if I asked you to solve the integral, which I am not going to do on an exam. (But there is a trick that I have not showed you that you could use on the exam where you can write $V$ in terms of an integral and then differentiate it. If you want to know about this, ask me in person).
-
-General definition of electric field due to a point charge from Coulomb's Law
-$$\mathbf{E} = \frac{q}{4\pi\epsilon_0}\frac{1}{|\mathbf{r}-\mathbf{r}'|^2}\frac{\mathbf{r}-\mathbf{r}'}{|\mathbf{r}-\mathbf{r}'|}$$
-
-In terms of a differential charge, this is
-$$\mbox{(1)  }d\mathbf{E} = \frac{dq}{4\pi\epsilon_0}\frac{1}{|\mathbf{r}-\mathbf{r}'|^2}\frac{\mathbf{r}-\mathbf{r}'}{|\mathbf{r}-\mathbf{r}'|}$$
-
-From the given geometry, the point of interest is
-$$\mathbf{r} = z\hat{\mathbf{z}}$$
-and the location of the charge acting on the point of interest is
-$$\mathbf{r}' = \rho\cos(\phi)\hat{\mathbf{x}}+\rho\sin(\phi)\hat{\mathbf{y}}$$
-Note that $\rho$ is used in this equation to make $\mathbf{r}'$ depend on the radial distance of the charge $dq$. In the ring problem, $a$ is used instead of $r$.
-
-Subtituting into (1) gives
-$$d\mathbf{E}= \frac{dq}{4\pi\epsilon_0}\frac{z\hat{\mathbf{z}}-\rho\cos(\phi)\hat{\mathbf{x}}-\rho\cos(\phi)\hat{\mathbf{y}}}{(z^2+\rho^2)^{3/2}}$$
-
-We want to integrate, so need to write $dq$ in terms of coordinates. On the disk, a small patch has an area of $(\rho d\phi)(d\rho)$, so
-$$dq=\sigma (\rho d\phi)(d\rho)$$
-
-where $\rho$ and $\phi$ are polar coordinates. This gives
-$$\mathbf{E} = \int_0^{2\pi}\int_0^a \frac{\sigma \rho d\phi d\rho}{4\pi\epsilon_0}\frac{z\hat{\mathbf{z}}-\rho\cos(\phi)\hat{\mathbf{x}}-\rho\cos(\phi)\hat{\mathbf{y}}}{(z^2+\rho^2)^{3/2}}$$
-
-Based on the symmetry argument that we can always find another $dq$ that exactly cancels the horizontal component of a given $dq$, we expect the $\hat{\mathbf{x}}$ and $\hat{\mathbf{y}}$ terms to be zero, so we can drop them. Or we can notice that after factoring out everything that does not depend on $\phi$, the integrals for the $\hat{\mathbf{x}}$ and $\hat{\mathbf{y}}$ terms are $\cos\phi\,d\phi$ and $\sin\phi\,d\phi$ from $0$ to $2\pi$, which are both zero. Note that if a 1/2 disk was given, the integral limits would be from $0$ to $\pi$, and one of the integrals would not be zero.
-
-$$\mbox{(2)  }\mathbf{E} = \int_0^{2\pi}\int_0^a \frac{\sigma \rho d\phi d\rho}{4\pi\epsilon_0}\frac{z\hat{\mathbf{z}}}{(z^2+\rho^2)^{3/2}}$$
-
-Equation (2) is an acceptable answer for this problem. Equation (2) is the equation that you would get if you integrated the contributions from rings of various radii. 
-
-If you have other problems to work on, do them first before reading the following.
-
-----
-
-In the following, I'll fill in the steps required in order to verify that the result of (2) matches the predictions for $z<<a$ and $z>>a$, which is not something that would be asked on an exam. On an exam, you should be able to recognize that for $z<<a$, the final answer should be the same as that for a sheet of charge and for $z>>a$, the final answer should be the same as if all of the charge on the disk was concentrated at the origin. Part of the motivation of identifying how the solution should behave in limiting cases is that a lot can go wrong while developing the solution. These limits give you a way to check your final answer.
-
-Factoring out the constants in (2) gives
-$$\mathbf{E} = \frac{\sigma z\hat{\mathbf{z}}}{4\pi\epsilon_0} \int_0^{2\pi}\int_0^a \frac{\rho d\phi d\rho}{(z^2+\rho^2)^{3/2}}$$
-
-Nothing in the integrand depends on $\phi$, so the $\phi$ integral redues to $2\pi$
-$$\mathbf{E} = \frac{2\pi\sigma z\hat{\mathbf{z}}}{4\pi\epsilon_0} \int_0^a \frac{\rho d\rho}{(z^2+\rho^2)^{3/2}}$$
-
-The result of the integration gives the final answer (to integrate, use a substitution of $u^2=\rho^2+z^2$ and remember that $\sqrt{z^2}=|z|$).
-$$\mbox{(3)  }\mathbf{E} = \frac{\sigma z}{2\epsilon_0} \left(\frac{1}{|z|}-\frac{1}{\sqrt{a^2+z^2}}\right)\hat{\mathbf{z}}$$
-
-For $z<<a$, only the first term in parenthesis is large
-$$\mathbf{E} = \frac{\sigma}{2\epsilon_0}\frac{z}{|z|}\hat{\mathbf{z}}$$
-
-Notice how the $\frac{z}{|z|}$ term tells use the direction of the electric field. When $z>0$, this term is $+1$. When $z<0$, this term is $-1$.
-
-For $z>>a$, we need to do a bit more work on the second term in parentheses in (3). Factor out a $z$ from the square root to get
-$$\mathbf{E} = \frac{\sigma z}{2\epsilon_0} \left(\frac{1}{|z|}-\frac{1}{|z|\sqrt{1+a^2/z^2}}\right)\hat{\mathbf{z}}$$
-
-Because $a/z << 1$, we can use the binomial expansion to get
-$$\mathbf{E} \simeq \frac{\sigma z}{2\epsilon_0} \left[\frac{1}{|z|}-\frac{1}{|z|}\left(1-\frac{a^2}{2z^2}\right)\right]\hat{\mathbf{z}}$$
-
-Simplifying gives
-$$\mathbf{E} \simeq \frac{\sigma}{2\epsilon_0} \frac{a^2}{2z^2}\frac{z}{|z|}\hat{\mathbf{z}}$$
-
-To show that in this limit the result is the same as if all of the charge was at the origin, we need to compute the charge on the disk, which is
-$$q=\sigma\pi a^2$$
-
-Subtituing for $\sigma$ gives
-$$\mathbf{E} \simeq \frac{\sigma}{2\epsilon_0} \frac{a^2}{2z^2}\frac{z}{|z|}\hat{\mathbf{z}}$$
-
-Simplifying gives
-$$\mathbf{E} \simeq \frac{q}{4\pi\epsilon_0} \frac{1}{z^2}\frac{z}{|z|}\hat{\mathbf{z}}$$
-
-4\. At points close to the center of the disk and just above and below it the disk "looks" like an infinite sheet. So we expect the solution to be the same as an infinite sheet of charge, for which $\mathbf{E}=\sigma\hat{\mathbf{z}}/(2\epsilon_0)$.
-
-5\. On the $z$-axis and for $z>>a$, what is expected for $\mathbf{E}$, and why?
-
-Very far away from the disk (with respect to $a$, of course), the disk "looks" like a small point charge at the origin. The total charge on the disk is $q=\sigma\pi a^2$, so one expects $\mathbf{E}=kq\hat{\mathbf{z}}/z^2=k\sigma\pi a^2\hat{\mathbf{z}}/z^2$.
-
-6\. It does not technically make sense to ask "on the $z$-axis and for large $z$, what is expected for $\mathbf{E}$?". Why?
-
-An ant's "large" $z$, say 12 inches, could be the same $z$ as what a whale would call a "small" $z$. This is why one always writes equations that indicate what "large" is relative to, e.g., $z>>a$.
-
-## Cylinder of Charge
-
-A hollow cylinder of radius $a$ has its axis along the $z$-axis, extends from $z=0$ to $z=-L$, and has a surface charge of $\sigma_0$.
-
-1. If $L<<a$, what is expected for $\mathbf{E}$ at $z=0$?
-2. At $z=-L/2$, what is expected for $\mathbf{E}$?
-3. Find $V(z)$
-4. Find $\mathbf{E}(z)$
-## Disk of Charge
-
-A disk of charge with a charge density of $\sigma$ has a radius $a$, is centered at the origin, and lies in the $x-y$ plane. 
-
-1. What is the expected direction of $\mathbf{E}(z)$ for $z>0$ and for $z < 0$?
-2. For $z >> a$, what should $\mathbf{E}(z)$ approach? (Give exact equation in terms of the parameters and coordinate system given in the problem.)
-3. For $z << a$, what should $\mathbf{E}(z)$ approach? (Give exact equation in terms of the parameters and coordinate system given in the problem.)
-4. Find the integral for $\mathbf{E}(z)$, solve it, and verify that the solution satisfies your answers to 1. , 2., and 3. Solve this problem using [[F19/Notes#Continuous_Charge_Distributions|the steps in the notes]]. There is a simplification for this problem that is given in textbook solutions (similar to the ring of charge problem) - do not use this simplification. Eventually, I'll ask you for the electric field at points off of the $z$-axis, and this simplification won't work.
-
-**Answer**
-
-1. $\mathbf{E}(z)$ should be in $+\hat{\mathbf{z}}$ direction for $z>0$ and in $-\hat{\mathbf{z}}$ direction for $z>0$.
-
-2. For $z>>a$, looks like a point charge at the origin with electric field magnitude of $E=kq/z^2$ with a direction given by the answer to 1. In terms of the parameters given in the problem, $q=\pi a^2 \sigma$, so $E=(\sigma a^2/4\epsilon_o)/z^2$.
-
-3. For $z<<a$, looks like an infinite sheet of charge, for which $E=\sigma/2\epsilon_o$ and direction given by the answer to 1.
-
-4. The set-up for this part is similar to the ring of charge.
-
-In the ring of charge, the charges were on a small line segment with $dl' = ads'd\phi'$ so that $dq'=\lambda dl'$
-
-In this problem, the charges are on a patch of area with $dA=s'ds'd\phi'$.
-
-In the ring of charge, $\mathbf{r}'=a\cos\phi\hat{\mathbf{x}}+a\sin\phi\hat{\mathbf{y}}$.
-
-In this problem, the distance to the $dq'$s is not fixed at $a$, but rather depends on $s$ according to $\mathbf{r}'=s'\cos\phi'\hat{\mathbf{x}}+s'\sin\phi'\hat{\mathbf{y}}$.
-
-After some algebra, you should get
-
-$$\mathbf{E}(z) = \frac{\sigma z\hat{\mathbf{z}}}{4\pi\epsilon_0} \int_0^{2\pi}\int_0^a \frac{s' d\phi' ds'}{(z^2+s'^2)^{3/2}}$$
-
-Nothing in the integrand depends on $\phi'$, so the $\phi'$ integral reduces to $2\pi$
-
-$$\mathbf{E}(z) = \frac{2\pi\sigma z\hat{\mathbf{z}}}{4\pi\epsilon_0} \int_0^a \frac{s' ds'}{(z^2+s'^2)^{3/2}}$$
-
-The result of the integration gives the final answer (to integrate, use a substitution of $u^2=s'^2+z^2$ and remember that $\sqrt{z^2}=|z|$).
-
-$$\mbox{(1)}\qquad\mathbf{E}(z) = \frac{\sigma z}{2\epsilon_0} \left(\frac{1}{|z|}-\frac{1}{\sqrt{a^2+z^2}}\right)\hat{\mathbf{z}}$$
-
-I gave full credit if you were able to get this equation.
-
-The point of questions 1.-3. was to provide a check to your math for part 4. These checks were not asked for but are given below.
-
-For $z<<a$, only the first term in parenthesis is large
-
-$$\mathbf{E} = \frac{\sigma}{2\epsilon_0}\frac{z}{|z|}\hat{\mathbf{z}}$$
-
-Notice how the $\frac{z}{|z|}$ term tells use the direction of the electric field. When $z>0$, this term is $+1$. When $z<0$, this term is $-1$. Also note how this matches the answer to question 3.
-
-For $z>>a$, we need to do a bit more work on the second term in parentheses in (1). Factor out a $z$ from the square root to get
-
-$$\mathbf{E} = \frac{\sigma z}{2\epsilon_0} \left(\frac{1}{|z|}-\frac{1}{|z|\sqrt{1+a^2/z^2}}\right)\hat{\mathbf{z}}$$
-
-Because $a/z << 1$, we can use the binomial expansion to get
-
-$$\mathbf{E} \simeq \frac{\sigma z}{2\epsilon_0} \left[\frac{1}{|z|}-\frac{1}{|z|}\left(1-\frac{a^2}{2z^2}\right)\right]\hat{\mathbf{z}}$$
-
-Simplifying gives
-
-$$\mathbf{E} \simeq \frac{\sigma}{2\epsilon_0} \frac{a^2}{2z^2}\frac{z}{|z|}\hat{\mathbf{z}}$$
-
-which matches the prediction from 2.
-
-## Shell of Charge
-
-A shell centered at the origin and having a radius of $a$ has a charge $Q$ uniformly spread over it.
-
-Although $\mathbf{E}$ and $V$ can be computed using Gauss' Law, answer the first two problems using the method used for computing the electric potential and electric field that you would use for the previous charged disk problem.
-
-1\. Find $V$ on the $z$-axis in terms of constants times a single integral.
-2\. Find $\mathbf{E}$ on the $z$-axis in terms of constants and optionally times one or more integrals.
-3\. At the origin, what is expected for $\mathbf{E}$, and why?
-4\. On the $z$-axis and for $z\lesssim a$, what is expected for $\mathbf{E}$, and why?
-5\. On the $z$-axis and for $z\gtrsim a$, what is expected for $\mathbf{E}$, and why?
-6\. On the $z$-axis and for $z>> a$, what is expected for $\mathbf{E}$, and why?
-7\. If this question was modified to ask you for answers along the $x$ or $y$ axis, how would your answers change?
-
-All final equations should be expressed in terms of $k$ or $\epsilon_0,Q$, and $a$ using any coordinate system.
-
-## Square of Charge
-
-A square non-conducting sheet of charge with side length $w$ has a uniform charge density of $\sigma_o$, lies in the $x-y$ plane, and is centered on the origin.
-
-1\. Find an integral or integrals that must be evaluated to find $\mathbf{E}(z)$, the electric field on the $z$-axis.
-2\. Evaluate the integral or integrals and show that for $z/w\ll 1$, $\mathbf{E}(z)$ reduces to the equation for an infinite non-conducting sheet of charge.
-
-**Solution**
-
-There are several ways to solve this problem. On can first find the field for a line of charge with a charge density of $\lambda$ and length $w$ that lies on the $x$-axis and is centered on the origin - the result is (see Griffiths 4th Edition example 2.2):
-
-$$\mathbf{E}(z)=\frac{k\lambda w}{z\sqrt{z^2+w^2/4}}\hat{\mathbf{z}}$$
-
-Then integrate the field due to differential lines of charges. One needs to account for the fact that the $z$ in this equation will not be the same as the $z$ in this problem. If the differential lines of charge are in the $x$-$y$ plane and lie on the line $x=x'$, then replace the $z$ with $z^2+x'^2$ and use $\lambda = \sigma_odx'$, You can check your answer for this approach by using the result of the following approach after integration with respect to $x'$. 
-
-$$\mathbf{E}_{dq'}(x,y,z) = \frac{dq'}{4\pi\epsilon_0}\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}$$
-
-A second approach requires two integrations. Start with
-
-$$\mathbf{E}_{dq'}(x,y,z) = \frac{dq'}{4\pi\epsilon_0}\frac{\hat{\textbf{\char"0509}}}{{\char"0509}^2}$$
-
-which expands to
-
-$$\mathbf{E}_{dq'}(x,y,z) =\frac{dq'}{4\pi\epsilon_0}\frac{\mathbf{r}-\mathbf{r}'}{|\mathbf{r}-\mathbf{r}'|^3}$$
-
-(A third approach is to find the potential $\Psi_{dq'}(x,y,z) = dq'/(4\pi\epsilon_0{\char"0509})$ and then use $\mathbf{E}=-\nabla \Psi$.)
-
-and the general definitions
-
-$$\mathbf{r}=x\hat{\mathbf{x}}+y\hat{\mathbf{y}}+z\hat{\mathbf{z}}$$
-
-$$\mathbf{r}'=x'\hat{\mathbf{x}}+y'\hat{\mathbf{y}}+z'\hat{\mathbf{z}}$$
-
-In this problem, $z'=0$ because all charges are in the $x-y$ plane. Using $dq' = \sigma_odx'dy'$, gives
-
-$$\mathbf{E}(x,y,z) = \int_{-w/2}^{w/2}\int_{-w/2}^{w/2}\frac{ \sigma_odx'dy'}{4\pi\epsilon_0}\frac{(x-x')\hat{\mathbf{x}}+(y-y')\hat{\mathbf{y}}+z\hat{\mathbf{z}}}{\big((x-x')^2+(y-y')^2+z^2\big)^{3/2}}$$
-
-$\mathbf{E}(z)$ is obtained by setting $x=y=0$:
-
-$$\mathbf{E}(z) = \int_{-w/2}^{w/2}\int_{-w/2}^{w/2}\frac{ \sigma_odx'dy'}{4\pi\epsilon_0}\frac{-x'\hat{\mathbf{x}}+-y'\hat{\mathbf{y}}+z\hat{\mathbf{z}}}{\big(x'^2+y'^2+z^2\big)^{3/2}}$$
-
-The $\hat{\mathbf{x}}$ and $\hat{\mathbf{y}}$ integrals are zero because their integrands are odd functions. Many students argued they are zero "by symmetry". The word "symmetry" is too general because there are many types of symmetry. It is better to state what kind of symmetry: consider differential charges at $(x,y)$ and $(-x,-y)$ - their horizontal electric fields exactly cancel (ideally provide a diagram). The sheet of charge can be constructed by placing charges with canceling horizontal components and so the horizontal electric field is zero.
-
-To simplify the integration for the $\hat{\mathbf{y}}$ term, define
-
-$$I = \int_{-w/2}^{w/2}dy'\int_{-w/2}^{w/2}\frac{dx'}{(x'^2+a^2)^{3/2}}$$
-
-where $a^2\equiv y'^2+z^2$ and then $E_z(z)=k\sigma_ozI$. This integral can be looked up or found using Mathematica or Wolfram Alpha. Some students reported "computation time exceeded" with Wolfram Alpha. This was probably caused by entering the double integral instead of doing a single integral at a time.
-
-Integration with respect to $x'$ gives
-
-$$I= \int\_{-w/2}^{w/2}dy'\frac{x'}{a^2(x'^2+a^2)^{1/2}}\Bigg|\_{-w/2}^{w/2}=\int\_{-w/2}^{w/2}dy'\frac{w}{a^2(a^2+w^2/4)^{1/2}}$$
-
-Using the earlier definition $a^2\equiv y'^2+z^2$ and a new definition $b^2\equiv z^2+w^2/4$ gives
-
-$$I=\int_{-w/2}^{w/2}\frac{wdy'}{(y'^2+z^2)\sqrt{y'^2+b^2}}$$
-
-This integral can be looked up and the result is (using $\tan^{-1}(u)=-\tan^{-1}(u)$)
-
-$$I=\frac{4}{z}\tan^{-1}\left[\frac{w^2}{4z}\frac{1}{\sqrt{z^2+w^2/2}}\right]$$
-
-The final result, using $E_z(z)=k\sigma_ozI$ defined earlier, is 
-
-$$E_z(z)=\frac{\sigma_o}{\pi \epsilon_o}\tan^{-1}\left[\frac{w^2}{4z}\frac{1}{\sqrt{z^2+w^2/2}}\right]$$
-
-For $z\ll w$, the argument to the inverse tangent is
-
-$$\frac{w^2}{4z}\frac{1}{\sqrt{z^2+w^2/2}}\simeq \frac{w}{z}\frac{\sqrt{2}}{4}$$
-
-so for $z \gt 0$ and $z\ll w$
-
-$$E_z(z)\rightarrow\frac{\sigma_o}{\pi\epsilon_o}\tan^{-1}(+\infty) = \frac{\sigma_o}{2\epsilon_o}$$
-
-For $z \lt 0$ and $z\ll w$
-
-$$E_z(z)\rightarrow\frac{\sigma_o}{\pi\epsilon_o}\tan^{-1}(-\infty) = -\frac{\sigma_o}{2\epsilon_o}$$
-
-and so the solution matches that for an infinite sheet of charge. Another problem one could ask is to show that for $z\gg w$, $E_z\rightarrow k\sigma_ow^2/z^2$ (far away, the sheet of charge appears as a charge $\sigma_ow^2$ at the origin). To show this, one would need to Taylor series expand the argument of the inverse tangent for small $w/z$.
-
-## Quarter circle
-
-Compute $\mathbf{E}$ at the center of quarter circle.
-
+1\. By following the steps in the notes.
+2\. Transforming the equation for $\mathbf{E}(y)$ given in the notes for a line of charge on the $x$--axis between $x=-L$ and $x=L$ to coordinate system rotated by $\alpha$ about the $z$--axis.

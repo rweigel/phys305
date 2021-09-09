@@ -26,6 +26,13 @@ $$f = \frac{1}{|\mathbf{r}-\mathbf{r}'|^2}$$
 
     b. Write $\hat{\textbf{\char"0509}}/{\char"0509^2}$ in cartesian coordinates with cartesian unit vectors.
 
+**Answer**
+
+1. $\displaystyle f = \frac{1}{(x-x')^2+(y-y')^2+(z-z')^2}$
+2. There are serveral ways of doing this. One is to use the law of cosines. The most straight-forward way is to use $|\mathbf{r}-\mathbf{r}'|^2=(\mathbf{r}-\mathbf{r}')\bfcdot (\mathbf{r}-\mathbf{r}')$ with $\mathbf{r}=x\xhat + y\yhat + z\zhat$ and $\mathbf{r}'=x'\xhat + y'\yhat + z'\zhat$.
+3. $\displaystyle -\frac{\phantom{|}\mathbf{r}-\mathbf{r}'\phantom{|^3}}{|\mathbf{r}-\mathbf{r}'|^3}$
+4. 
+   a. Use $\displaystyle \frac{\hat{\textbf{\char"0509}}}{\char"0509}=\frac{\phantom{|}\mathbf{r}-\mathbf{r}'\phantom{|}}{|\mathbf{r}-\mathbf{r}'|}$. b. $\displaystyle \frac{(x-x')\xhat+(y-y')\yhat+(z-z')\zhat}{\left[(x-x')^2+(y-y')^2+(z-z')^2\right]^{3/2}}$
 # Tangent Vectors
 
 An object is moved along the path $y=x^2$ from $x=0$ to $x=x_o$ when there is an external force of $\mathbf{F}=-mg\yhat$.
@@ -35,6 +42,32 @@ An object is moved along the path $y=x^2$ from $x=0$ to $x=x_o$ when there is an
 2\. Compute the force perpendicular to the path at $x_o/2$ and $x_o$.
 
 3\. (Extra credit) Compute $\int_{\mathcal{L}}\mathbf{F}\cdot d\mathbf{l}$ where $\mathcal{L}$ is the path along $y=x^2$ from $x=0$ to $x=x_o$.
+
+**Partial Answer**
+
+For 1. and 2., The problem statement does indicate if the answer should be a vector or scalar. I accepted either.
+ 
+1\.
+
+$\displaystyle \mathbf{\hat{t}}=\frac{\xhat + 2x\yhat}{\sqrt{1+4x^2}}$
+
+$\displaystyle F_{\parallel} = \mathbf{F}\bfcdot \mathbf{\hat{t}} = -\frac{2x}{\sqrt{1+4x^2}}$
+
+This is a scalar b/c of dot product. It is the component of force in the direction of chosen $\mathbf{\hat{t}}$. The negative is there because the component is the opposite direction of the chosen $\mathbf{\hat{t}}$.
+
+$\mathbf{F}_{\parallel} = F_\parallel \mathbf{\hat{t}}$
+
+2\.
+
+$\displaystyle \mathbf{\hat{n}}=\frac{-2x\xhat+\yhat}{\sqrt{1+4x^2}}$
+
+$\displaystyle F_{\perp} = \mathbf{F}\bfcdot \mathbf{\hat{n}}=\frac{-mg}{\sqrt{1+4x^2}}$
+
+This is a scalar b/c of dot product. It is the component of force in the direction of chosen $\mathbf{\hat{n}}$. The negative is there because the component is the opposite direction of the chosen $\mathbf{\hat{n}}$.
+
+$\mathbf{F}_{\perp} = F_\perp \mathbf{\hat{n}}$
+
+Could also compute $\mathbf{F}_\perp$ using $\mathbf{F}_\perp = \mathbf{F}-\mathbf{F}_\parallel$.
 
 # Normal Vectors
 
@@ -47,6 +80,12 @@ A plane has corners at $(x,y,z)=(0,0,0)$, $(x,y,z)=(1,0,0)$, $(x,y,z)=(0,1,1)$, 
 3\. Find a vector normal to the plane that has a positive $z$--component.
 
 4\. There is a force acting on the plane of $\mathbf{F}=F_x\xhat+F_y\yhat+F_z\zhat$. Find the component of force perpendicular to the plane.
+
+**Partial Answer**
+
+$\mathbf{\hat{n}}=(-\yhat + \zhat)/\sqrt{2}$; this can be computed using the diagram or by using the $\mathbf{u}\times \mathbf{v}$ method.
+
+$F_\perp = \mathbf{F}\bfcdot \mathbf{\hat{n}}$ and $\mathbf{F}_\perp=F_\perp\mathbf{\hat{n}}$
 
 # Notation and Vector Fields
 
@@ -65,6 +104,11 @@ Find $\mathbf{F}$ in cartesian coordinates with cartesian unit vectors in terms 
 2\. $(x,y)=(0,2)$
 
 It may help to solve this by using the techniques from Physics 260 first. This is a straightforward problem that his written in the notation used by Griffiths.
+
+**Partial Answer**
+
+$\displaystyle\mathbf{F}(x,y) = kqQ\left[\frac{(x-x_o)\xhat+y\yhat}{\left[(x-x_o)^2+y^2\right]^{3/2}}-\frac
+{(x+x_o)\xhat+y\yhat}{\left[(x+x_o)^2+y^2\right]^{3/2}}\right]$
 
 # Field Lines and Equipotentials
 
