@@ -47,14 +47,15 @@
 ## Thursday, September 9nd 
 * Return graded HW #1 and post solutions (will do later in day ... I am a few hours behind); discuss common errors
 * [HW #2](hw2.html) due at 3:00 pm
-* Assign [HW #3](hw3.html) covering Coulomb's Law, Electric Field, Superposition, Discrete Charge Distributions, [Charge Densities](charge_densities.html), and [Continuous Charge Distributions](continuous_charge_distributions.html).
+* Cover Coulomb's Law, Electric Field, Superposition, Discrete Charge Distributions, [Charge Densities](charge_densities.html), and [Continuous Charge Distributions](continuous_charge_distributions.html).
+* HW #3 will be posted at about 3 pm.
 
 ## Tuesday, September 14th
-* Answer questions on [HW #3](hw3.html) topics.
+* Answer questions on HW #3 topics.
 
 ## Thursday, September 16th 
 * Return graded [HW #2](hw2.html) and solutions; discuss common errors
-* [HW #3](hw3.html) due at 3:00 pm
+* HW #3 due at 3:00 pm
 
 ## Thursday, October 14th
 
