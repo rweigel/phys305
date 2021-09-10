@@ -73,7 +73,7 @@ $$f = \frac{1}{|\mathbf{r}-\mathbf{r}'|^2}$$
   
    because the denominator in each term is $|\mathbf{r}-\mathbf{r}'|^3$. This can also be written as $-\mathbf{\hat{r}}/r^2$
 
-   Now that you've done this the hard way to practice notation, I'll tell you the easier way. Use $\boldsymbol{\nabla}t$ in spherical coordinates (see second--to--last page of Griffiths). Only the $\mathbf{\hat{r}}$ term is non--zero when $t=t(r)$ and so $\boldsymbol{\nabla}t(r)=\mathbf{\hat{r}}\partial t/\partial r=-\mathbf{\hat{r}}/r^2$. We were actually given $t=t(\char"0509)$, so we must evaluate $\boldsymbol{\nabla}t(\char"0509)=\hat{\textbf{\char"0509}}\partial t/\partial \char"0509=-{\hat{\textbf{\char"0509}}\phantom{^2}}/{\char"0509^2}$.
+   %Now that you've done this the hard way to practice notation, I'll tell you the easier way. Use $\boldsymbol{\nabla}t$ in spherical coordinates (see second--to--last page of Griffiths). Only the $\mathbf{\hat{r}}$ term is non--zero when $t=t(r)$ and so $\boldsymbol{\nabla}t(r)=\mathbf{\hat{r}}\partial t/\partial r=-\mathbf{\hat{r}}/r^2$. We were actually given $t=t(\char"0509)$, so we must evaluate $\boldsymbol{\nabla}t(\char"0509)=\hat{\textbf{\char"0509}}\partial t/\partial \char"0509=-{\hat{\textbf{\char"0509}}\phantom{^2}}/{\char"0509^2}$.
 
 4. &nbsp;
  
@@ -145,6 +145,8 @@ A plane has corners at $(x,y,z)=(0,0,0)$, $(x,y,z)=(1,0,0)$, $(x,y,z)=(0,1,1)$, 
 
 # Notation and Vector Fields
 
+% TODO: Change to find field at position on x--axis (x,y)=(x, 0) and a position on the y--axis (x,y) = (0, y) and put charge at x=\pm x'.
+
 A positive charge $q$ is placed at $(x,y)=(x_o,0)$ and a negative charge $-q$ at $(x,y)=(-x_o,0)$.
 
 The force on a charge $Q$ due to $q$ and $-q$ is
@@ -155,7 +157,6 @@ where $\textbf{\char"0509}\_+=\mathbf{r}-\mathbf{r\_+}$, $\textbf{\char"0509}\_-
 
 Find $\mathbf{F}$ in cartesian coordinates with cartesian unit vectors in terms of the constants given at
 
-% TODO: Change to (2x_o, 0) and (0, 2x_o)
 
 1\. $(x,y)=(2,0)$
 
