@@ -29,8 +29,43 @@ $$f = \frac{1}{|\mathbf{r}-\mathbf{r}'|^2}$$
 **Answer**
 
 1. $\displaystyle f = \frac{1}{(x-x')^2+(y-y')^2+(z-z')^2}$
-2. There are serveral ways of doing this. One is to use the law of cosines. The most straight-forward way is to use $|\mathbf{r}-\mathbf{r}'|^2=(\mathbf{r}-\mathbf{r}')\bfcdot (\mathbf{r}-\mathbf{r}')$ with $\mathbf{r}=x\xhat + y\yhat + z\zhat$ and $\mathbf{r}'=x'\xhat + y'\yhat + z'\zhat$.
-3. $\displaystyle -\frac{\phantom{|}\mathbf{r}-\mathbf{r}'\phantom{|^3}}{|\mathbf{r}-\mathbf{r}'|^3}$
+2. There are several ways of doing this.
+
+   1. Use the law of cosines. If $\varphi$ is the angle between two lines of length $r$ and $r'$ with both having an endpoint at the origing, then from the law of cosines, 
+    $C^2=r^2 + r'^2 - 2rr'\cos\varphi$.
+
+    From the definition of the dot product, $2rr'\cos\varphi=2\mathbf{r}\bfcdot \mathbf{r}'$, giving 
+    
+    $C^2=r^2+r'^2-2\mathbf{r}\bfcdot \mathbf{r}'$.
+    
+    In this equation $C^2 = |\mathbf{r}-\mathbf{r}'|^2$ from vector addition, so finally
+    
+    $|\mathbf{r}-\mathbf{r}'|^2=r^2+r'^2-2\mathbf{r}\bfcdot \mathbf{r}'$
+
+   2. Use $|\mathbf{r}-\mathbf{r}'|^2=(\mathbf{r}-\mathbf{r}')\bfcdot (\mathbf{r}-\mathbf{r}')$ with $\mathbf{r}=x\xhat + y\yhat + z\zhat$ and $\mathbf{r}'=x'\xhat + y'\yhat + z'\zhat$. This gives
+
+      $x^2+y^2+z^2 + x'^2+y'^2+z'^2 - 2(xx' + yy' + zz') = r^2+r'^2-2\mathbf{r}\bfcdot\mathbf{r}'$
+
+   3. Use $|\mathbf{r}-\mathbf{r}'|^2=(\mathbf{r}-\mathbf{r}')\bfcdot (\mathbf{r}-\mathbf{r}')$. This expands to $ \mathbf{r}\bfcdot\mathbf{r}-2\mathbf{r}\bfcdot\mathbf{r}'+\mathbf{r}'\bfcdot\mathbf{r}'=r^2+r'^2-2\mathbf{r}\bfcdot\mathbf{r}'$. You can get the correct answer using sloppy notation and this method. Some students wrote that the dot product gives $r^2+r'^2-2rr'$ and then replaced $2rr'$ with $2\mathbf{r}\bfcdot\mathbf{r}'$, which is not valid.
+    
+
+3. &nbsp;
+
+   Let $\displaystyle g = \frac{1}{|\mathbf{r}-\mathbf{r}'|} =\left[(x-x')^2+(y-y')^2+(z-z')^2\right]^{-1/2}$
+
+   $\displaystyle \xhat\frac{\partial g}{\partial x} =\xhat\frac{\partial}{\partial x} \left[(x-x')^2+(y-y')^2+(z-z')^2\right]^{-1/2}= -\frac{(x-x')}{\left[(x-x')^2+(y-y')^2+(z-z')^2\right]^{3/2}}\xhat$
+   
+   $\displaystyle \yhat\frac{\partial g}{\partial y} = -\frac{(y-y')}{\left[(x-x')^2+(y-y')^2+(z-z')^2\right]^{3/2}}\yhat$
+   
+   $\displaystyle \zhat\frac{\partial g}{\partial z} = -\frac{(z-z')}{\left[(x-x')^2+(y-y')^2+(z-z')^2\right]^{3/2}}\zhat$
+
+   The sum of the above three terms is an acceptable answer but note that it simplifies to
+
+   $\boldsymbol{\nabla}\left(\frac{1}{|\mathbf{r}-\mathbf{r}'|}\right)=\displaystyle -\frac{\phantom{|}\mathbf{r}-\mathbf{r}'\phantom{|^3}}{|\mathbf{r}-\mathbf{r}'|^3}$
+   
+   because the denominator in each term is $|\mathbf{r}-\mathbf{r}'|^3$
+
+
 4. &nbsp;
  
    a. Substitute $\char"0509=|\mathbf{r}-\mathbf{r}'|$ and $\displaystyle {\hat{\textbf{\char"0509}}}=\frac{\phantom{|}\mathbf{r}-\mathbf{r}'\phantom{|}}{|\mathbf{r}-\mathbf{r}'|}$ into $\displaystyle \frac{\hat{\textbf{\char"0509}}\phantom{^2}}{\char"0509^2}$
@@ -57,11 +92,13 @@ For 1. and 2., The problem statement does indicate if the answer should be a vec
 
 $\displaystyle \mathbf{\hat{t}}=\frac{\xhat + 2x\yhat}{\sqrt{1+4x^2}}$
 
-$\displaystyle F_{\parallel} = \mathbf{F}\bfcdot \mathbf{\hat{t}} = -\frac{2x}{\sqrt{1+4x^2}}$
+$\displaystyle F_{\parallel} = \mathbf{F}\bfcdot \mathbf{\hat{t}} = (-mg\yhat)\bfcdot \frac{\xhat + 2x\yhat}{\sqrt{1+4x^2}}= -\frac{2mgx}{\sqrt{1+4x^2}}$
 
 This is a scalar b/c of dot product. It is the component of force in the direction of chosen $\mathbf{\hat{t}}$. The negative is there because the component of $\mathbf{F}$ is in the opposite direction of the chosen $\mathbf{\hat{t}}$.
 
-$\mathbf{F}_{\parallel} = F_\parallel \mathbf{\hat{t}}$
+$\displaystyle \mathbf{F}_{\parallel} = F_\parallel \mathbf{\hat{t}}= -\frac{2mgx}{\sqrt{1+4x^2}}\frac{\xhat + 2x\yhat}{\sqrt{1+4x^2}}=-\frac{2mgx}{1+4x^2}(\xhat + 2x\yhat)$
+
+For $x>0$, the direction of this vector is down and to the left, as expected.
 
 2\.
 
@@ -71,7 +108,9 @@ $\displaystyle F_{\perp} = \mathbf{F}\bfcdot \mathbf{\hat{n}}=\frac{-mg}{\sqrt{1
 
 This is a scalar b/c of dot product. It is the component of force in the direction of chosen $\mathbf{\hat{n}}$. The negative is there because the component of $\mathbf{F}$component of $\mathbf{F}$ is the opposite direction of the chosen $\mathbf{\hat{n}}$.
 
-$\mathbf{F}_{\perp} = F_\perp \mathbf{\hat{n}}$
+$\displaystyle \mathbf{F}_{\perp} = F_\perp \mathbf{\hat{n}}=\frac{mg}{1+4x^2}(2x\xhat-\yhat)$
+
+For $x>0$, the direction of this vector is to the right and down, as expected.
 
 Could also compute $\mathbf{F}_\perp$ using $\mathbf{F}_\perp = \mathbf{F}-\mathbf{F}_\parallel$.
 
@@ -91,9 +130,9 @@ A plane has corners at $(x,y,z)=(0,0,0)$, $(x,y,z)=(1,0,0)$, $(x,y,z)=(0,1,1)$, 
 
 **Partial Answer**
 
-$\mathbf{\hat{n}}=(-\yhat + \zhat)/\sqrt{2}$; this can be computed using the diagram or by using the $\mathbf{u}\times \mathbf{v}$ method.
+3\. $\mathbf{\hat{n}}=(-\yhat + \zhat)/\sqrt{2}$; this can be computed using the diagram or by using the $\mathbf{u}\times \mathbf{v}$ method.
 
-$F_\perp = \mathbf{F}\bfcdot \mathbf{\hat{n}}=-F_y+F_z$ and $\mathbf{F}_\perp=F_\perp\mathbf{\hat{n}}=(-F_y+F_z)(-\yhat + \zhat)/\sqrt{2}$. Ideally you drew $\mathbf{F}$ and $\mathbf{\hat{n}}$ on the diagram for 2. to make sure that the direction of $\mathbf{F}_\perp$ made sense by plugging in, say, $F_y=F_z=1$ and $F_y=0$ and $F_z=1$. 
+4\. $F_\perp = \mathbf{F}\bfcdot \mathbf{\hat{n}}=-F_y+F_z$ and $\mathbf{F}_\perp=F_\perp\mathbf{\hat{n}}=(-F_y+F_z)(-\yhat + \zhat)/\sqrt{2}$. Ideally you drew $\mathbf{F}$ and $\mathbf{\hat{n}}$ on the diagram for 2. to make sure that the direction of $\mathbf{F}_\perp$ made sense by plugging in, say, $F_y=F_z=1$ and $F_y=0$ and $F_z=1$. 
 
 # Notation and Vector Fields
 
@@ -120,8 +159,9 @@ It may help to solve this by using the techniques from Physics 260 first. This i
 $\displaystyle\mathbf{F}(x,y) = kqQ\left[\frac{(x-x_o)\xhat+y\yhat}{\left[(x-x_o)^2+y^2\right]^{3/2}}-\frac
 {(x+x_o)\xhat+y\yhat}{\left[(x+x_o)^2+y^2\right]^{3/2}}\right]$
 
-1\. $\displaystyle\mathbf{F}(x,y) = kqQ\left[\frac{2-x_o}{(2-x_o)^3}-\frac
-{2+x_o}{(2+x_o)^3}\right]\xhat$
+1\. $\displaystyle\mathbf{F}(x,y) = kqQ\left[\frac{2-x_o}{|2-x_o|^3}-\frac
+{2+x_o}{|2+x_o|^3}\right]\xhat=kqQ\left[\frac{1}{(2-x_o)^2}-\frac
+{1}{(2+x_o)^2}\right]\xhat$
 
 2\. $\displaystyle\mathbf{F}(x,y) = kqQ\left[\frac{-x_o\xhat+2\yhat}{\left[x_o^2+2^2\right]^{3/2}}-\frac
 {x_o\xhat+2\yhat}{\left[x_o^2+2^2\right]^{3/2}}\right] = -kqQ2x_o\left[\frac{1}{\left[x_o^2+2^2\right]^{3/2}}\right]\xhat$
@@ -134,7 +174,7 @@ $\displaystyle\mathbf{F}(x,y) = kqQ\left[\frac{(x-x_o)\xhat+y\yhat}{\left[(x-x_o
 
 <img src="figures/Field_Lines_3.svg" width=100%/>
 
-1\.
+1\. Field lines are circles.
 
-2\. As noted in class, this is not a conservative field and so it does not make sense to draw equipotentials. I meant to ask you to draw lines that are always perpendicular to the field lines. This vector field is not conservative because the integral $\int_{\mathcal{L}}\mathbf{A}\bfcdot d\mathbf{l}$ is not the same for all paths that have the same starting and ending points. For example, if $\mathcal{L}_1$ is a single circle with a radius of $1$, the integral is $2\pi$. If $\mathcal{L}_2$ is $\mathcal{L}_1$ repeated twice, the integral is $4\pi$.
+2\. "Equipotentials" are radial lines that intersect the origin. As noted in class, this is not a conservative field and so it does not make sense to draw equipotentials. I meant to ask you to draw lines that are always perpendicular to the field lines. This vector field is not conservative because the integral $\int_{\mathcal{L}}\mathbf{A}\bfcdot d\mathbf{l}$ is not the same for all paths that have the same starting and ending points. For example, if $\mathcal{L}_1$ is a single circle with a radius of $1$, the integral is $2\pi$. If $\mathcal{L}_2$ is $\mathcal{L}_1$ repeated twice, the integral is $4\pi$.
 
