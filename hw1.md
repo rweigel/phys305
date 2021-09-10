@@ -31,7 +31,7 @@ $$f = \frac{1}{|\mathbf{r}-\mathbf{r}'|^2}$$
 1. $\displaystyle f = \frac{1}{(x-x')^2+(y-y')^2+(z-z')^2}$
 2. There are several ways of doing this.
 
-   1. Use the law of cosines. If $\varphi$ is the angle between two lines of length $r$ and $r'$ with both having an endpoint at the origing, then from the law of cosines, 
+   1. Use the law of cosines. If $\varphi$ is the angle between two lines of length $r$ and $r'$ with both having an endpoint at the origin, then from the law of cosines, 
     $C^2=r^2 + r'^2 - 2rr'\cos\varphi$.
 
     From the definition of the dot product, $2rr'\cos\varphi=2\mathbf{r}\bfcdot \mathbf{r}'$, giving 
@@ -53,18 +53,27 @@ $$f = \frac{1}{|\mathbf{r}-\mathbf{r}'|^2}$$
 
    Let $\displaystyle g = \frac{1}{|\mathbf{r}-\mathbf{r}'|} =\left[(x-x')^2+(y-y')^2+(z-z')^2\right]^{-1/2}$
 
-   $\displaystyle \xhat\frac{\partial g}{\partial x} =\xhat\frac{\partial}{\partial x} \left[(x-x')^2+(y-y')^2+(z-z')^2\right]^{-1/2}= -\frac{(x-x')}{\left[(x-x')^2+(y-y')^2+(z-z')^2\right]^{3/2}}\xhat$
+   $\displaystyle \xhat\frac{\partial g}{\partial x} =\xhat\frac{\partial}{\partial x} \left[(x-x')^2+(y-y')^2+(z-z')^2\right]^{-1/2}$
+
+   Using the chain rule, this is
    
+   $\displaystyle \phantom{ \xhat\frac{\partial g}{\partial x}} = \frac{-\frac{1}{2}2(x-x')}{\left[(x-x')^2+(y-y')^2+(z-z')^2\right]^{3/2}}\xhat$
+
+   $\displaystyle \phantom{ \xhat\frac{\partial g}{\partial x}} = -\frac{(x-x')}{\left[(x-x')^2+(y-y')^2+(z-z')^2\right]^{3/2}}\xhat$
+
+   Other terms have the same denominator with variables and unit vector in numerator changed.
+
    $\displaystyle \yhat\frac{\partial g}{\partial y} = -\frac{(y-y')}{\left[(x-x')^2+(y-y')^2+(z-z')^2\right]^{3/2}}\yhat$
-   
+  
    $\displaystyle \zhat\frac{\partial g}{\partial z} = -\frac{(z-z')}{\left[(x-x')^2+(y-y')^2+(z-z')^2\right]^{3/2}}\zhat$
 
    The sum of the above three terms is an acceptable answer but note that it simplifies to
 
-   $\boldsymbol{\nabla}\left(\frac{1}{|\mathbf{r}-\mathbf{r}'|}\right)=\displaystyle -\frac{\phantom{|}\mathbf{r}-\mathbf{r}'\phantom{|^3}}{|\mathbf{r}-\mathbf{r}'|^3}$
-   
-   because the denominator in each term is $|\mathbf{r}-\mathbf{r}'|^3$
+   $\boldsymbol{\nabla}\left(\frac{1}{|\mathbf{r}-\mathbf{r}'|}\right)=\displaystyle -\frac{\phantom{|}\mathbf{r}-\mathbf{r}'\phantom{|^3}}{|\mathbf{r}-\mathbf{r}'|^3}=-\frac{\hat{\textbf{\char"0509}}\phantom{^2}}{\char"0509^2}$
+  
+   because the denominator in each term is $|\mathbf{r}-\mathbf{r}'|^3$. This can also be written as $-\mathbf{\hat{r}}/r^2$
 
+   Now that you've done this the hard way to practice notation, I'll tell you the easier way. Use $\boldsymbol{\nabla}t$ in spherical coordinates (see second--to--last page of Griffiths). Only the $\mathbf{\hat{r}}$ term is non--zero when $t=t(r)$ and so $\boldsymbol{\nabla}t(r)=\mathbf{\hat{r}}\partial t/\partial r=-\mathbf{\hat{r}}/r^2$. We were actually given $t=t(\char"0509)$, so we must evaluate $\boldsymbol{\nabla}t(\char"0509)=\hat{\textbf{\char"0509}}\partial t/\partial \char"0509=-{\hat{\textbf{\char"0509}}\phantom{^2}}/{\char"0509^2}$.
 
 4. &nbsp;
  
@@ -94,7 +103,7 @@ $\displaystyle \mathbf{\hat{t}}=\frac{\xhat + 2x\yhat}{\sqrt{1+4x^2}}$
 
 $\displaystyle F_{\parallel} = \mathbf{F}\bfcdot \mathbf{\hat{t}} = (-mg\yhat)\bfcdot \frac{\xhat + 2x\yhat}{\sqrt{1+4x^2}}= -\frac{2mgx}{\sqrt{1+4x^2}}$
 
-This is a scalar b/c of dot product. It is the component of force in the direction of chosen $\mathbf{\hat{t}}$. The negative is there because the component of $\mathbf{F}$ is in the opposite direction of the chosen $\mathbf{\hat{t}}$.
+This is a scalar b/c of the dot product. It is the component of force in the direction of chosen $\mathbf{\hat{t}}$. The negative is there because the component of $\mathbf{F}$ is in the opposite direction of the chosen $\mathbf{\hat{t}}$.
 
 $\displaystyle \mathbf{F}_{\parallel} = F_\parallel \mathbf{\hat{t}}= -\frac{2mgx}{\sqrt{1+4x^2}}\frac{\xhat + 2x\yhat}{\sqrt{1+4x^2}}=-\frac{2mgx}{1+4x^2}(\xhat + 2x\yhat)$
 
@@ -106,7 +115,7 @@ $\displaystyle \mathbf{\hat{n}}=\frac{-2x\xhat+\yhat}{\sqrt{1+4x^2}}$
 
 $\displaystyle F_{\perp} = \mathbf{F}\bfcdot \mathbf{\hat{n}}=\frac{-mg}{\sqrt{1+4x^2}}$
 
-This is a scalar b/c of dot product. It is the component of force in the direction of chosen $\mathbf{\hat{n}}$. The negative is there because the component of $\mathbf{F}$component of $\mathbf{F}$ is the opposite direction of the chosen $\mathbf{\hat{n}}$.
+This is a scalar b/c of the dot product. It is the component of force in the direction of chosen $\mathbf{\hat{n}}$. The negative is there because the component of $\mathbf{F}$component of $\mathbf{F}$ is the opposite direction of the chosen $\mathbf{\hat{n}}$.
 
 $\displaystyle \mathbf{F}_{\perp} = F_\perp \mathbf{\hat{n}}=\frac{mg}{1+4x^2}(2x\xhat-\yhat)$
 
@@ -114,7 +123,7 @@ For $x>0$, the direction of this vector is to the right and down, as expected.
 
 Could also compute $\mathbf{F}_\perp$ using $\mathbf{F}_\perp = \mathbf{F}-\mathbf{F}_\parallel$.
 
-3\. The problem asks to integrate along the line. For the path given, $dl = dx\sqrt{1+2x^2}$ and  $d\mathbf{l}=\mathbf{\hat{t}}dl$, so $\mathbf{F}\bfcdot d\mathbf{l} = -mgdx$. The integral is then $\int_{0}^{x_o}(-2mgxdx)=-mgx_o^2$. The integral corresponds to the work done moving the object a height $h=x_o^2$. The easier way to solve this is to to note that $\mathbf{F}$ is a conservative force and simply write $mgh$ and then plug in $h=x_o^2$. Ideally I would have given the equation as $y=x^2/x_o$ so $h$ would not look like it is the square of a distance. Technically the problem statement is still correct because impicitly $x_o$ is dimensionless.
+3\. The problem asks to integrate along the line. For the path given, $dl = dx\sqrt{1+2x^2}$ and  $d\mathbf{l}=\mathbf{\hat{t}}dl$, so $\mathbf{F}\bfcdot d\mathbf{l} = -mgdx$. The integral is then $\int_{0}^{x_o}(-2mgxdx)=-mgx_o^2$. The integral corresponds to the work done moving the object a height $h=x_o^2$. The easier way to solve this is to to note that $\mathbf{F}$ is a conservative force and simply write $mgh$ and then plug in $h=x_o^2$. (Ideally I would have given the equation as $y=x^2/x_o$ so $h$ would not look like it is the square of a distance. Technically the problem statement is still correct because impicitly $x_o$ is dimensionless.)1.2.3.
 
 # Normal Vectors
 
@@ -152,7 +161,7 @@ Find $\mathbf{F}$ in cartesian coordinates with cartesian unit vectors in terms 
 
 2\. $(x,y)=(0,2)$
 
-It may help to solve this by using the techniques from Physics 260 first. This is a straightforward problem that his written in the notation used by Griffiths.
+It may help to solve this by using the techniques from Physics 260 first. This is a straightforward problem that is written in the notation used by Griffiths.
 
 **Answer**
 
