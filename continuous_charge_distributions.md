@@ -349,7 +349,7 @@ so
 
 $\displaystyle \mathbf{E}=\int_{-L}^{L}\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}k\lambda_o dx'q$
 
-$\displaystyle \phantom{\mathbf{E}}=k\lambda_oy\yhat\int_{-L}^{L} dx'\frac{1}{\Big[\sqrt{x'^2+y^2}\Big]^3}-k\lambda\yhat\int_{-L}^{L} dx'\frac{x'}{\Big[\sqrt{x'^2+y^2}\Big]^3}$
+$\displaystyle \phantom{\mathbf{E}}=k\lambda_oy\yhat\int_{-L}^{L} dx'\frac{1}{\Big[\sqrt{x'^2+y^2}\Big]^3}-k\lambda_o\xhat\int_{-L}^{L} dx'\frac{x'}{\Big[\sqrt{x'^2+y^2}\Big]^3}$
 
 The constants, cartesian unit vectors, and $y$ have been factored out of the integral because they do not depend on the dummy integration variable $x'$.
 

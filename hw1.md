@@ -28,6 +28,8 @@ $$f = \frac{1}{|\mathbf{r}-\mathbf{r}'|^2}$$
 
 **Answer**
 
+A common issue was that students dropped the vector symbols. For example, instead of writing $2\vec{r}\bfcdot\vec{r}'$, they wrote $2r\bfcdot r'$. In the second equation, the dot could be interpreted as a multiplication symbol. If this is the case, then both equations yield a scalar, but the answer will not always be the same. If the dot is interpreted as indicating a dot product, then $2r\bfcdot r'$ does not make sense because the dot product always involves two vectors.
+
 1. $\displaystyle f = \frac{1}{(x-x')^2+(y-y')^2+(z-z')^2}$
 2. There are several ways of doing this.
 
@@ -95,7 +97,7 @@ An object is moved along the path $y=x^2$ from $x=0$ to $x=x_o$ when there is an
 
 **Answer**
 
-For 1. and 2., The problem statement does indicate if the answer should be a vector or scalar. I accepted either.
+For 1. and 2., The problem statement does indicate if the answer should be a vector or scalar. I accepted either. (By convention, it is a vector.)
  
 1\.
 
@@ -141,7 +143,9 @@ A plane has corners at $(x,y,z)=(0,0,0)$, $(x,y,z)=(1,0,0)$, $(x,y,z)=(0,1,1)$, 
 
 3\. $\mathbf{\hat{n}}=(-\yhat + \zhat)/\sqrt{2}$; this can be computed using the diagram or by using the $\mathbf{u}\times \mathbf{v}$ method.
 
-4\. $F_\perp = \mathbf{F}\bfcdot \mathbf{\hat{n}}=-F_y+F_z$ and $\mathbf{F}_\perp=F_\perp\mathbf{\hat{n}}=(-F_y+F_z)(-\yhat + \zhat)/\sqrt{2}$. Ideally you drew $\mathbf{F}$ and $\mathbf{\hat{n}}$ on the diagram for 2. to make sure that the direction of $\mathbf{F}_\perp$ made sense by plugging in, say, $F_y=F_z=1$ and $F_y=0$ and $F_z=1$. 
+4\. $F_\perp = \mathbf{F}\bfcdot \mathbf{\hat{n}}=-F_y+F_z$ and $\mathbf{F}_\perp=F_\perp\mathbf{\hat{n}}=(-F_y+F_z)(-\yhat + \zhat)/\sqrt{2}$. I accepted either answer because the question does not specify if it wants a scalar or vector for the force. (By convention, it is a vector.). Ideally you drew $\mathbf{F}$ and $\mathbf{\hat{n}}$ on the diagram for 2. to make sure that the direction of $\mathbf{F}_\perp$ made sense by plugging in, say, $F_y=F_z=1$ and $F_y=0$ and $F_z=1$. 
+
+   A common error was to write $\mathbf{F}\bfcdot \mathbf{\hat{n}}=-F_y\yhat+F_z\zhat$. This does not make sense because a dot product should result in a scalar.
 
 # Notation and Vector Fields
 
