@@ -6,12 +6,12 @@
 
 A point charge \(+q\) is at the origin.  
 
-# Compute how much work it would take to move a \(+Q\) charge from (x,y,z) = (0,0,a) to (0,b,0) along an arbitrary path. <span style="background-color:yellow">+2 for correct work.</span> 
-# Justify any equations that you use. <span style="background-color:yellow">+2 for correct justification.</span>
+1. Compute how much work it would take to move a \(+Q\) charge from (x,y,z) = (0,0,a) to (0,b,0) along an arbitrary path. <span style="background-color:yellow">+2 for correct work.</span> 
+2. Justify any equations that you use. <span style="background-color:yellow">+2 for correct justification.</span>
 
 <div style="background-color:#E8E8E8">
-# The work required to move a charge \(Q\) in the field created by a charge \(q\) is \(W = Q(V_f-V_i) = kQq(1/r_f - 1/r_i)\), where \(r_f\) and \(r_i\) are the final and initialy distances between the charges.  So \(W = kQq(1/b - 1/a)\).  If \(b<a\), \(W > 0\) as would be expected (positive work is required to move \(Q\) closer to \(q\)).
-# I was looking for anything indicating that you understood that the change in energy of a charge due to a change in its position in the field of another charge was independent of path. (The problem statement notes that you need to compute the work along an arbitrary path). I also accepted: \(\nabla \times \mathbf{E} = 0\), \(\oint \mathbf{E}\cdot d\mathbf{l}=0\), or \(\mathbf{E}=\nabla V\) as a justification, but really additional explanation is needed to justify why these equations imply path independence.  For more rigor, see 2.2.4 and 2.3.1 of Griffiths.
+1. The work required to move a charge \(Q\) in the field created by a charge \(q\) is \(W = Q(V_f-V_i) = kQq(1/r_f - 1/r_i)\), where \(r_f\) and \(r_i\) are the final and initialy distances between the charges.  So \(W = kQq(1/b - 1/a)\).  If \(b<a\), \(W > 0\) as would be expected (positive work is required to move \(Q\) closer to \(q\)).
+2. I was looking for anything indicating that you understood that the change in energy of a charge due to a change in its position in the field of another charge was independent of path. (The problem statement notes that you need to compute the work along an arbitrary path). I also accepted: \(\nabla \times \mathbf{E} = 0\), \(\oint \mathbf{E}\cdot d\mathbf{l}=0\), or \(\mathbf{E}=\nabla V\) as a justification, but really additional explanation is needed to justify why these equations imply path independence.  For more rigor, see 2.2.4 and 2.3.1 of Griffiths.
 </div>
 
 === Computing Electric Potential ===
@@ -332,6 +332,157 @@ This answer matches the answer for an identical question in problem 2.1.2 of thi
 \end{enumerate}
 \end{tcolorbox}
 
+# $\mathbf{E} = -\boldsymbol{\nabla}V$
+
+Recall that the gradient of a scalar field $f$ gives a vector field. That is, we can associate a vector field $\mathbf{U}$ with a scalar field by performing the operation
+
+$$\mathbf{U}=\boldsymbol{\nabla}f$$
+
+For $f$ in cartesian coordinates, we would compute $\mathbf{U}$ using
+
+$$\mathbf{U}= \boldsymbol{\nabla}f(x,y,z)=\frac{\partial f}{\partial x}\xhat+\frac{\partial f}{\partial y}\yhat+\frac{\partial f}{\partial z}\zhat$$
+
+and for $f$ in cylindrical or spherical coordinates, the equations are given on the second--to last page of Griffiths. 
+
+For example, in [HW #1](hw1.html), you showed that 
+$\boldsymbol{\nabla}\left(\frac{1}{|\mathbf{r}-\mathbf{r}'|}\right)=\displaystyle -\frac{\phantom{|}\mathbf{r}-\mathbf{r}'\phantom{|^3}}{|\mathbf{r}-\mathbf{r}'|^3}$ by first writing $f=1/|\mathbf{r}-\mathbf{r}'|$ in cartesian coordinates.
+
+The operation $\boldsymbol{\nabla}f$ results in a vector and involves an operation on a scalar function $f$; the equation is read as "the gradient of $f$". In contrast, the operation $\boldsymbol{\nabla}\bfcdot \mathbf{U}$ results in a scalar function and involves an operation on a vector function $\mathbf{U}$. See also the [caution in the notes on divergence]( http://localhost:9000/divergence.html#-boldsymbol-nabla-bfcdot-mathbf-u).
+
+**Question**: It is simple to compute a vector function $\mathbf{U}$ given a scalar function $f$ using $\boldsymbol{\nabla}f$. Can we reverse this process -- that is, given a vector function $\mathbf{U}$, can we find a scalar function $f$?
+
+The answer is yes, provided that $\boldsymbol{\nabla} \times \mathbf{U} = 0$. The proof of this is given in ... of Griffiths; it requires the Fundamental Theorem of Gradients and Stoke's theorem, both of which will be covered later in the semester. At this point, we will only cover the result, which is
+
+$$f(\mathbf{r}) = f(\mathbf{a}) + \int_\mathbf{a}^\mathbf{\mathbf{r}}\mathbf{U}\bfcdot d\mathbf{l}$$
+
+where the line integral can be taken over any path from $\mathbf{a}$ to $\mathbf{r}$.
+
+The statement $f(\mathbf{r})$ is short--hand for $f(x,y,z)$; the justification is that the vector $\mathbf{r}=x\xhat + y\yhat +z\zhat$ ends at the point in space $(x,y,z)$. Vectors in limits of integration are not common -- in the integral above, the upper limit of $\mathbf{r}$ means that the line integrated over ends at $(x,y,z)$ and the lower limit $\mathbf{a}$ means the line integrated over starts at the point $(a_x,a_y,a_z)$.
+
+In E&M, we use $\mathbf{E}=-\mathbf{U}$ and $V$ for $f$.
+
+In this notation, given $V$, we can compute $\mathbf{E}$ using
+
+$$\mathbf{E}=-\boldsymbol{\nabla}V$$
+
+and given $\mathbf{E}$, we can compute $V$ using
+
+$$V(\mathbf{r}) = V(\mathbf{a}) - \int_\mathbf{a}^\mathbf{\mathbf{r}}\mathbf{E}\bfcdot d\mathbf{l}$$
+
+## Example
+
+Suppose $V=kq/r$.
+
+1. Compute $\mathbf{E}$.
+2. Use this computed $\mathbf{E}$ and $\displaystyle V(\mathbf{r}) = V(\mathbf{a}) - \int_\mathbf{a}^\mathbf{\mathbf{r}}\mathbf{E}\bfcdot d\mathbf{l}$ to compute $V$.
+
+For the path, use a straight line between $\mathbf{a}=(R\xhat + R\yhat)/\sqrt{2}$ to $\mathbf{r}=2(R\xhat + R\yhat)/\sqrt{2}$ 
+
+**Answer**:
+
+1\.
+
+From Griffiths, for $f$ in cartesian coordinates,
+
+$$\boldsymbol{\nabla}f(x,y,z)=\frac{\partial f}{\partial x}\xhat+\frac{\partial f}{\partial y}\yhat+\frac{\partial f}{\partial z}\zhat$$
+
+We could use this equation by re-writing $V$ as $kq/\sqrt{x^2+y^2+z^2}$. Alternatively, we can use
+
+$$\boldsymbol{\nabla} f(r,\theta,\phi) = {\partial f \over \partial r}\hat{\mathbf r}+ {1 \over r}{\partial f \over \partial \theta}\hat{\boldsymbol \theta}+ {1 \over r\sin\theta}{\partial f \over \partial \phi}\hat{\boldsymbol \phi}$$
+
+$$\mathbf{E}=-\boldsymbol{\nabla} V=-\left({\partial V \over \partial r}\hat{\mathbf r}+ {1 \over r}{\partial V \over \partial \theta}\hat{\boldsymbol \theta}+ {1 \over r\sin\theta}{\partial V \over \partial \phi}\hat{\boldsymbol \phi}\right)$$
+
+The last two terms are zero because $V$ does not depend on $\theta$ or $\phi$. This leaves
+
+$$\mathbf{E}=-{\partial (\frac{kq}{r}) \over \partial r}\hat{\mathbf r} = \frac{kq}{r^2}\hat{\mathbf r}$$
+
+2\.
+
+We need to evaluate 
+$\displaystyle V(\mathbf{r}) = V(\mathbf{a}) - \int_\mathbf{a}^{\mathbf{r}}\mathbf{E}\bfcdot d\mathbf{l}$
+
+The integral will be straight--forward to compute if we write $d\mathbf{l}$ in spherical coordinates, which is $d\mathbf{l}=dr\hat{\mathbf r}$ along a radial line.
+
+$\displaystyle V(\mathbf{r})=V(\mathbf{a})- \int_a^{r}\frac{kq}{r^2}\hat{\mathbf r}\bfcdot dr\hat{\mathbf r}=V(\mathbf{a})-\int_a^{r}\frac{kq}{r^2}dr=V(\mathbf{a})-\left[-\frac{kq}{r}\right]_a^r=V(\mathbf{a})+\frac{kq}{r}-\frac{kq}{a}$
+
+In summary,
+
+$\displaystyle V(\mathbf{r})=V(\mathbf{a})+\frac{kq}{r}-\frac{kq}{a}$
+
+The first and last terms on the right--hand side are constants. As a result, we have found
+
+$\displaystyle V(\mathbf{r})=const + \frac{kq}{r}$
+
+which is equal to the $V$ that we started with only if $const=0$. This constant cannot be determined unless we are told the functional form of $V$ and also $V$ at some reference point. That is, given $\mathbf{E}$, we cannot uniquely compute $V$ unless we are also told $V$ at some position in space.
+
+For example, if the problem statement was $V=kq/r$ and $V(\infty)=0$, then we can conclude $const=0$. We also could have been told that $V(a)=0$, in which case $const=-kq/a$.
+
+Physically, the reason is that a value of potential at a point is not useful -- we must know the potential at a reference point in order to determine how much work is required to move an object from the reference point to a given point.
+
+Another way explaining this is to consider a similar problem: if $F=df/dx$, show that $\int_a^x F(x')dx'$ gives $f$. If $f=x^2$, then $F=2x$ and $\int_a^x F(x') dx'= x^2 - f(a)$. We can't show that $\int Fdx$ gives $f$ unless we are told that $f(a)$ is zero.
+
+Although it does not make sense to say $V=kq/r$ without also giving the potential at a reference point, we do it anyway. The convention is that if a potential at a reference point is not given, then the reference point is infinity and the reference potential is zero. That is, instead of stating "$V=kq/r$ with $V(\infty)=0$", we simply state "$V=kq/r$".
+
+## Example
+
+Compute $V(\mathbf{b})-V(\mathbf{a})$ using $V(\mathbf{b}) = V(\mathbf{a}) - \int_\mathbf{a}^\mathbf{\mathbf{b}}\mathbf{E}\bfcdot d\mathbf{l}$ and
+
+1. Path 1
+2. Path 2
+
+Show and justify all steps in your calculation.
+
+**Answer**:
+
+We expect the answers to be the same because the line integral of $\mathbf{E}$ applies to arbitrary paths.
+
+
+# $V$ for a point charge
+
+For a point charge at the origin, $\mathbf{E}=kq/r^2$ and the calculation of 
+
+$$V(\mathbf{r}) = V(\mathbf{a}) - \int_\mathbf{a}^\mathbf{\mathbf{r}}\mathbf{E}\bfcdot d\mathbf{l}$$
+
+was given in an example in the previous section and the result was
+
+$$V(\mathbf{r}) = const + \frac{kq}{r}$$
+
+By convention, for point charges at any location, we always assume that $V(\infty)=0$, so $const=0$ and
+
+$$V(r) = \frac{kq}{r}$$
+
+For a point charge not at the origin, the potential depends on the radial distance $\char"0509$ from the point charge to the point of interest: 
+
+$$V(\textbf{\char"0509}) = \frac{kq}{\char"0509}$$
+
+where $\textbf{\char"0509}=\mathbf{r}-\mathbf{r}'$, $\mathbf{r}$ is a vector from the origin to the point of interest and $\mathbf{r}'$ is a vector from the origin to the point charge. By convention, we usually omit the functional dependence in $V$. Or, we write the functional dependence as $V(\mathbf{r})$ because $\mathbf{r}'$ is usually fixed or given and we care about how $V$ varies relative to the origin as opposed to the location of the charge. Thus, we usually write
+
+$$\boxed{V(\mathbf{r}) = \frac{kq}{|\mathbf{r}-\mathbf{r}'|}}$$
+
+Recall that the electric field due to a point charge at $\mathbf{r}'$ is
+
+$$\mathbf{E}(\mathbf{r})=kq\frac{\phantom{|}\mathbf{r}-\mathbf{r}'\phantom{|^3}}{|\mathbf{r}-\mathbf{r}'|^3}$$
+
+You have already shown that these two equations satisfy $\mathbf{E}=-\boldsymbol{\nabla}V$ in [HW #1](hw1.html), where you showed that 
+$\boldsymbol{\nabla}\left(\frac{1}{|\mathbf{r}-\mathbf{r}'|}\right)=\displaystyle -\frac{\phantom{|}\mathbf{r}-\mathbf{r}'\phantom{|^3}}{|\mathbf{r}-\mathbf{r}'|^3}$.
+
+## Example
+
+A point $q$ is at $(x,y,z)=(R,R,R)/\sqrt{3}$. Compute $V(x,y,z)$.
+
+**Answer**
+
+$\mathbf{r}=x\xhat + y\yhat + z\zhat$
+
+$\mathbf{r}'=R\xhat + R\yhat + R\zhat$
+
+$\displaystyle V(\mathbf{r}) = \frac{kq}{\char"0509}= \frac{kq}{|\mathbf{r}-\mathbf{r}'|}=kq\frac{1}{\sqrt{(x-R)^2+(y-R)^2+(z-R)^2}}$
+
+## Problem
+
+A point $q$ charge is at $(x,y,z)=(b,0,0)$. A point charge $q$ is at $(x,y,z)=(-b,0,0)$. Compute $V$ and then use $\mathbf{E}=-\boldsymbol{\nabla}V$ to compute $\mathbf{E}$.
+
+
 # $U$ and $V$ for  of a Group of Charges
 
 Previously, differences in electric potential energy, $\Delta U$, and electric potential, $\Delta V$, were considered. Only differences in $U$ and $V$ are meaningful. However, in E&M, we often discuss $U$ and $V$; in this case, these quantities are relative to the respective quantities for a charge at infinity, in which case $U$ and $V$ are zero. That is, instead of discussing $\Delta U$ in the equation $\Delta U = U(x) - U_{\infty}$, we discuss $U(x)$, which is equal to $\Delta U$ because $U_{\infty}$ is zero.
@@ -419,5 +570,5 @@ In the previous section, the potential energy associated with a charge $q_0$ was
 
 ## Problem
 
-# $V(b)-V(a)=-\int_a^b \mathbf{E}\cdot d\mathbf{l}$ and $\mathbf{E} = -\boldsymbol{\nabla}V$
+
 
