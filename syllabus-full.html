@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>syllabus-full</title>
     <link id="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%220.9em%22 font-size=%22100%22>📖</text></svg>">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.12/dist/katex.min.css" />
     <style>
         body { background-color: white; }
         #toc { font-size: 85%; width: 14em; position: fixed; min-height: 95%; max-height: 95%; overflow: hidden auto; padding-left: 0.75em; padding-right: 1em; margin-right: 1em; font-family: "Open Sans"; }
@@ -82,14 +82,12 @@
         body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
         #toc > ol ol { display: none; }
         body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
-        #toc > ol ol { display: none; }
-        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
         
     </style>
 
 
     <script>
-        function tocClick() {
+        function tocClickListen() {
             // No jQuery b/c also used in stand-alone HTML.
             hs = document.querySelectorAll('#toc > ol ol');
             for (var i = 0; i < hs.length; i++) {
@@ -114,9 +112,9 @@
             (document.readyState !== "loading" && 
               !document.documentElement.doScroll)
         ) {
-          tocClick();
+          tocClickListen();
         } else {
-          document.addEventListener("DOMContentLoaded", tocClick);
+          document.addEventListener("DOMContentLoaded", tocClickListen);
         }
     </script>
 
@@ -128,10 +126,10 @@
         <ol>
             <li><a number="1" href="#topics">Topics</a></li>
             <li><a number="2" href="#class-schedule">Class Schedule</a></li>
-            <ol>
+            <ol style="display: none;">
                 <li><a number="2.1" href="#thursday-september-9th">Thursday, September 9th</a></li>
                 <li><a number="2.2" href="#tuesday-september-14th">Tuesday, September 14th</a></li>
-                <li><a number="2.3" href="#thursday-september-16th">Thursday, September 16th</a></li>
+                <li><a number="2.3" href="#thursday-september-16th" class="highlighted">Thursday, September 16th</a></li>
                 <li><a number="2.4" href="#tuesday-september-21st">Tuesday, September 21st</a></li>
                 <li><a number="2.5" href="#thursday-september-23rd">Thursday, September 23rd</a></li>
                 <li><a number="2.6" href="#tuesday-september-28th">Tuesday, September 28th</a></li>
@@ -459,19 +457,19 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="thursday-september-16th" number="2.3" class="hanchor" href="#thursday-september-16th"><span class="hnumber">2.3 </span> <span class="htext">Thursday, September 16th</span></a></h2>
+                <h2 class="highlighted"><a name="thursday-september-16th" number="2.3" class="hanchor" href="#thursday-september-16th"><span class="hnumber">2.3 </span> <span class="htext">Thursday, September 16th</span></a></h2>
 
             </div>
             <div class="block">
-                <ul>
-                    <li>
+                <ul class="">
+                    <li class="">
                         <div class="block">
                             <p>HW #3 due.</p>
                         </div>
                     </li>
-                    <li>
+                    <li class="">
                         <div class="block">
-                            <p>Assign HW #4 covering Gradients, Equipotentials, Electrostatic Potential, and Electrostatic Work and Energy</p>
+                            <p>Assign HW #4 covering Gauss’s Law, Gradients, Curls, Equipotentials, Electrostatic Potential, and Electrostatic Work and Energy</p>
                         </div>
                     </li>
                 </ul>

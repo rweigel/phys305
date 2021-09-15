@@ -57,7 +57,7 @@
 ## Thursday, September 16th
 
 * HW #3 due.
-* Assign HW #4 covering Gradients, Equipotentials, Electrostatic Potential, and Electrostatic Work and Energy
+* Assign HW #4 covering Gauss's Law, Gradients, Curls, Equipotentials, Electrostatic Potential, and Electrostatic Work and Energy
 
 ## Tuesday, September 21st
 

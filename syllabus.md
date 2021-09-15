@@ -16,25 +16,25 @@
 
 ## Tuesday, August 24th
 
-* [Class Video](https://gmu.zoom.us/rec/share/p1sgQwH8YagGQ89O5z2SU1u7OoEpi3NloJpBqgfBGelTdyBYpxGCdmB4Rzal-zei.yqEFeRi4WRIu_O3P)
+* [Class Video](https://gmu.zoom.us/rec/share/p1sgQwH8YagGQ89O5z2SU1u7OoEpi3NloJpBqgfBGelTdyBYpxGCdmB4Rzal-zei.yqEFeRi4WRIu_O3P) (password in Discord under #recordings)
 * Introductions
 * Discuss syllabus
 * Review [Vectors](vectors.html)
 
 ## Thursday, August 26th 
 
-* [Class Video](https://gmu.zoom.us/rec/share/qT-AzI9EFL8CS0Rs1O3srT2hp0pboc7Fv4H2978rVn9nOop1vwEi5e2yM1YHnX0f.NiC4ps_UgetKuDUu)
+* [Class Video](https://gmu.zoom.us/rec/share/qT-AzI9EFL8CS0Rs1O3srT2hp0pboc7Fv4H2978rVn9nOop1vwEi5e2yM1YHnX0f.NiC4ps_UgetKuDUu) (password in Discord under #recordings)
 * Assign [HW 1](hw1.html) covering [Vectors](vectors.html), [Vector Fields](vector_fields.html), [Field Lines](field_lines.html), and  [Equipotentials](equipotentials.html).
 * Discuss [HW 1](hw1.html) topics
 
 ## Tuesday, August 31st
 
-* [Class Video](https://gmu.zoom.us/rec/share/O6qDLFN8Wl47ZoCYZzgroRAWkU5zbjcmGG5BPkpLKE5ASmfQZL9v3nNcgKiSEBMY.ZQc6TOQg1aVKVwXW)
+* [Class Video](https://gmu.zoom.us/rec/share/O6qDLFN8Wl47ZoCYZzgroRAWkU5zbjcmGG5BPkpLKE5ASmfQZL9v3nNcgKiSEBMY.ZQc6TOQg1aVKVwXW) (password in Discord under #recordings)
 * Answer questions on [HW 1](hw1.html) topics
  
 ## Thursday, September 2nd 
 
-* [Class Video](https://gmu.zoom.us/rec/share/xQ4IgtNx9iCAcol7-LxtGbVEb2QFs1sM_KSEuzyI2ORynxZTSuOwwfXzIcIFi-pi.mIiZfgL9-H599tUe)
+* [Class Video](https://gmu.zoom.us/rec/share/xQ4IgtNx9iCAcol7-LxtGbVEb2QFs1sM_KSEuzyI2ORynxZTSuOwwfXzIcIFi-pi.mIiZfgL9-H599tUe) (password in Discord under #recordings)
 * [HW #1](hw1.html) due at 3:00 pm; I will be available after class for last--minute questions
 * Discuss questions asked about HW #1 topics
 * Assign [HW #2](hw2.html) covering [Flux](flux.html), [Divergence](divergence.html), [Binomial Expansion](binomial_expansion.html), and [Symmetry](symmetry.html).
@@ -42,19 +42,23 @@
 * Cover [HW #2](hw2.html) topics
 
 ## Tuesday, September 7th 
+* [Class Video](https://gmu.zoom.us/rec/share/NLJGv6lmwCdbkCfVSQHDNcOFaGv_KpEZ0w5uuPi2kt6hEpz_DOL6ocdQvnKtfNDy.uLvp9kPNP7EwGyQN) (password in Discord under #recordings)
 * Answer questions on [HW #2](hw2.html) topics ([Flux](flux.html), [Divergence](divergence.html), [Binomial Expansion](binomial_expansion.html), and [Symmetry](symmetry.html))
 
 ## Thursday, September 9nd 
+* [Class Video](https://gmu.zoom.us/rec/share/Xs5uXw81s2zt9E_qfbh1dbaY8MNo0dT-5nd53UmZetfno_Qkzfga8c7SzT6ESCaV.wnvsAqt68tX3vNWe) (password in Discord under #recordings)
 * Return graded HW #1 and post solutions (will do later in day ... I am a few hours behind); discuss common errors
 * [HW #2](hw2.html) due at 3:00 pm
 * Cover Coulomb's Law, Electric Field, Superposition, Discrete Charge Distributions, [Charge Densities](charge_densities.html), and [Continuous Charge Distributions](continuous_charge_distributions.html).
 * [HW #3](hw3.html) will be posted at about 3 pm.
 
 ## Tuesday, September 14th
+* [Class Video](https://gmu.zoom.us/rec/share/wDEldmZO8k5C2KIOHE0BEzI3JvDPEnfTAl-ruVuOmiJTTRZdbzAZzcL8bQKfSyYn.SsFh6tAlqfolVGo2) (password in Discord under #recordings)
+* Comments on common errors on [HW #2](hw2.html)
 * Answer questions on [HW #3](hw3.html) topics.
 
 ## Thursday, September 16th 
-* Return graded [HW #2](hw2.html) and solutions; discuss common errors
+* Return graded [HW #2](hw2.html) and post solutions; discuss common errors
 * [HW #3](hw3.html) due at 3:00 pm
 
 ## Thursday, October 14th

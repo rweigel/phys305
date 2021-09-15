@@ -329,7 +329,7 @@ There are two possibilities:
    
    We will encounter such integrals later in the semester -- they also appear in classical mechanics.
 
-   In these cases, one can convert the integrand to a polynomial using a Taylor Series expansion prior to integration. This will be covered in detail later in the semester when electric and magnetic dipoles are covered. The basic procedure is to re-write the integrand as an infinite series, e.g.,
+   In these cases, one can convert the integrand to a polynomial using a Taylor Series or related expansion prior to integration. This will be covered in detail later in the semester when electric and magnetic dipoles are covered. The basic procedure is to re-write the integrand as an infinite series, e.g.,
 
    $$\int f(x')dx' = \int \left(\frac{b_1}{x'}+\frac{b_2}{x'^2} + ... + c_0 + c_1x' + c_2x'^2 + ...\right)dx'$$
 

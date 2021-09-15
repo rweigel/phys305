@@ -1,6 +1,6 @@
 Due on Thursday, September 16th at 3:00 pm.
 
-Send your solutions to the email address rweigel+phys305@gmu.edu as a scanned PDF. Use a file name of `Yourlastname_PHYS305_HW3.pdf` (one file only please). Capitalize the first letter in your last name and use caps and underscores as indicated.
+Send your solutions to the email address rweigel+phys305@gmu.edu as a scanned PDF. Use a file name of `Yourlastname_PHYS305_HW3.pdf` (one file only please). Capitalize the first letter in your last name and use caps and underscores as indicated. **Include your name on the first sheet**.
 
 # Discrete Charge Distributions
 
