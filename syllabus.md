@@ -59,7 +59,8 @@
 
 ## Thursday, September 16th 
 
-* I have started returning graded [HW #2](hw2.html) and will post solutions on the same page as the problems later today.
+* [Class Video](https://gmu.zoom.us/rec/share/dEhAu-OAButYrJJADVm0aiYqkgtZmwzfauLepoQCyeVIa43lTNECblqEf5s83LjO.oy0IrgiXGQLxFu_E) (password in Discord under #recordings)
+* I have started returning graded [HW #2](hw2.html); if you have not received an email from me, expect one by the end of the day. Solutions are on [the same page]((hw2.html) as the problems.
 * [HW #3](hw3.html) due at 3:00 pm
 * Cover [Gauss's Law](gauss_law.html) and [Electrostatic Potential](electrostatic_potential.html).
 * HW #4 will be posted after class.

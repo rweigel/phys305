@@ -289,6 +289,92 @@ $\displaystyle \mathbf{E}_C(s) \simeq \left(\frac{B_1}{s} + \frac{B_2}{s^2} + \f
 
 A large non--conducting sheet has a uniform charge density $\sigma_o$. Find $\mathbf{E}$ using Gauss's law.
 
+## Problem -- Sheet of Charge
+
+In the following image, four Gaussian surfaces are shown. The non-conducting plane has a uniform charge density of $\sigma$ and is infinite in extent.
+
+<img src="figures/Gaussian_Surfaces_Plane2.png" width="500px"/>
+
+1. Write down Gauss' Law in integral form.
+2. Which of the surfaces cannot be used with Gauss' Law to find an equation for the electric field above/below the plane? Justify your answers.
+3. Which of the surfaces can be used with Gauss' Law to find an equation for the electric field above/below the plane? Use Gauss' Law to find the electric field for these surfaces. Justify all steps.
+
+**Answer**:
+
+%In grading 2.-3., I looked for all of the justifications that appeared to be related to those that are given in my solution, in particular
+
+%2. Why the electric field is perpendicular to the plane
+%3. Why III and IV cannot be used to find \(E\) (because we don't know that \(\mathbf{E}\cdot d\mathbf{a}\) on the surface is such that \(E\) can be factored out of the integral).
+%4. Acknowledgement that computing the flux for I and II requires computing a closed surface integral and so integration on all sides (6 surfaces for cube, 3 surfaces for cylinder).
+
+%For 3., one needs to arrive at \(E=\sigma/2\epsilon_o\) and there needs to be a statement that the direction is perpendicular to and away from the plane. 
+
+%Here I'll give a mathematical treatment as an alternative to the more visual way method I used in class and that is used in introductory textbooks. (Either approach is acceptable.)
+
+1\.
+
+$$\oint_{S} \mathbf{E}\cdot d\mathbf{a} = \frac{Q_{enc}}{\epsilon_o}$$
+
+where $Q_{enc}$ is the total charge enclosed by closed surface $S$. The subscript $S$ is optional.
+
+For parts 2. and 3., assume the plane of charge is in the $x-y$ plane and the Gaussian surface is centered at the origin and is small. For any charge at point $(x_o,y_o)$, there is a charge at $(-x_o,-y_o)$ that creates an electric field at the origin that cancels the electric field due to the charge at $(x_o,y_o)$. So we can conclude the electric field must be perpendicular to the plane. Based on a diagram of the electric field vectors due to charges at $(x_o,y_o)$ and $(-x_o,-y_o)$ at a location above and below the origin, we conclude that the electric field will be in the $+z$ direction above the plane and in the $-z$ direction below the plane.
+
+2\. 
+
+III and IV cannot be used. We know the direction of $\mathbf{E}$ and that it can only (possibly) depend on $z$ based on the above arguments. So we can write $\mathbf{E}=E(z)\hat{\mathbf{z}}$ and
+
+$$\oint_SE(z)\hat{\mathbf{z}}\cdot d\mathbf{a} = \frac{Q_{enc}}{\epsilon_o}$$
+
+Because $E(z)$ is not known to be constant on the curved surfaces of III and IV, we cannot factor it out of the integral over these surfaces. (In the case of III, on the caps of the cylinder, we can do the integral because the dot product of $\mathbf{E}$ and $d\mathbf{a}$ is zero on those surfaces so the integral is zero.) 
+
+Using surfaces I and II, we'll find that $E$ does not depend on $z$ (but its direction depends on $z$ from the argument given earlier).
+
+3\. 
+
+I and II
+
+For I and II, the closed surface is made up of a top, bottom, and side surface(s) (for I, there is only one side surface).
+
+$$\oint_{S} \mathbf{E}\cdot d\mathbf{a} = \int_{top} \mathbf{E}\cdot d\mathbf{a} + \int_{bottom} \mathbf{E}\cdot d\mathbf{a} + \int_{side(s)} \mathbf{E}\cdot d\mathbf{a}$$
+
+Because we have argued that the electric field is perpendicular to the plane, the dot product in the integral for the side surface(s) will be zero because the side surface normals are parallel to the plane.
+
+Because the normals of a Gaussian surface point outward from the volume it encloses, the top/bottom surfaces have a normal direction of $\pm \hat{\mathbf{z}}$. We have argued that above/below the plane, $\mathbf{E}$ is in the $\pm \hat{\mathbf{z}}$ direction.
+
+For the top surfaces of I and II, $d\mathbf{a}=da\hat{\mathbf{n}}=da\hat{\mathbf{z}}$ and $\mathbf{E}=E(z) \hat{\mathbf{z}}$.
+
+For the bottom surfaces of I and II, $d\mathbf{a}=da\hat{\mathbf{n}}=-da\hat{\mathbf{z}}$ and $\mathbf{E}=-E(z) \hat{\mathbf{z}}$.
+
+For both I and II
+
+$$\int_{top} \mathbf{E}\cdot d\mathbf{a} = \int_{top} E(z)\hat{\mathbf{z}}\cdot\hat{\mathbf{z}}da$$
+
+$$\int_{bottom} \mathbf{E}\cdot d\mathbf{a} = \int_{bottom} E(z)(-\hat{\mathbf{z}})\cdot(-\hat{\mathbf{z}})da$$
+
+In both cases, the integral is over a surface that does not vary with $z$, so $E(z)$ can be factored out the integral, giving
+
+$$\int_{top} \mathbf{E}\cdot d\mathbf{a} + \int_{bottom} \mathbf{E}\cdot d\mathbf{a} = 2E(z)A$$
+
+where $A$ is the area of the top (or bottom) surface. The charge enclosed for both cases is $Q_{enc}=\sigma A$.
+
+Therefore, in both cases, we arrive at an electric field magnitude
+
+$$E(z)=\frac{\sigma}{2\epsilon_o}$$
+
+The RHS does not depend on $z$, so we can write
+
+$$E=\frac{\sigma}{2\epsilon_o}$$
+
+The direction of the electric field is recovered from the earlier statement that it is perpendicular to the plane and points away. Thus, in vector notation
+
+$$\mathbf{E}=\frac{\sigma}{2\epsilon_o}\hat{\mathbf{z}}\quad z>0$$
+
+$$\mathbf{E}=-\frac{\sigma}{2\epsilon_o}\hat{\mathbf{z}}\quad z<0$$
+
+As an aside, these two expressions can be combined into one using $z/|z|$ to get the correct sign.
+
+$$\mathbf{E}=\frac{\sigma}{2\epsilon_o}\frac{z}{|z|}\hat{\mathbf{z}}$$
+
 # Using -- Charges on a Conductor
 
 In problems where we are given a charge denstity that is placed on a non--conductor, we can use the Coulomb's law integral to directly find the electric field. For example, if we are told charges are distributed on a square with $\sigma(x,y)$, we can directly evaluate the integral
