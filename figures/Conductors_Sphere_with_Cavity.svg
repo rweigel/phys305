@@ -1,0 +1,11 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="662" height="151" style="
+        width:662px;
+        height:151px;
+        background: transparent;
+        fill: none;
+">
+        
+        
+        <svg xmlns="http://www.w3.org/2000/svg" class="role-diagram-draw-area"><g class="shapes-region" style="stroke: black; fill: none;"><g class="composite-shape"><path class="real" d=" M46.2,71 C46.2,57.86 56.86,47.2 70,47.2 C83.14,47.2 93.8,57.86 93.8,71 C93.8,84.14 83.14,94.8 70,94.8 C56.86,94.8 46.2,84.14 46.2,71 M10.5,71 C10.5,38.14 37.14,11.5 70,11.5 C102.86,11.5 129.5,38.14 129.5,71 C129.5,103.86 102.86,130.5 70,130.5 C37.14,130.5 10.5,103.86 10.5,71" style="stroke-width: 1; stroke: rgb(0, 0, 0); fill: rgb(215, 215, 215); fill-opacity: 1; fill-rule: evenodd;"/></g><g class="composite-shape"><path class="real" d=" M66.5,71 C66.5,69.07 68.07,67.5 70,67.5 C71.93,67.5 73.5,69.07 73.5,71 C73.5,72.93 71.93,74.5 70,74.5 C68.07,74.5 66.5,72.93 66.5,71 Z" style="stroke-width: 1; stroke: rgb(0, 0, 0); fill: rgb(0, 0, 0); fill-opacity: 1;"/></g><g/></g><g/><g/><g/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="660" height="149" style="width:660px;height:149px;font-family:Asana-Math, Asana;background:transparent;"><g><g><g><g transform="matrix(1,0,0,1,73,80.00000610351563)"><path transform="matrix(0.0119,0,0,-0.0119,0,0)" d="M385 458C342 475 313 482 284 482C209 482 121 394 103 374C63 327 24 181 24 78C24 19 36 -11 60 -11C82 -11 101 -3 133 19C180 51 259 121 308 209L232 -205C227 -229 217 -249 205 -262L214 -276C245 -268 276 -262 300 -259C304 -205 310 -150 319 -100L405 356C416 417 422 443 432 474L418 480ZM118 59C104 59 96 80 96 113C96 209 139 359 181 409C193 424 222 433 254 433C282 433 303 427 351 406L330 311C301 174 160 59 118 59Z" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="8" fill="rgb(0,0,0)" fill-opacity="1"></path></g></g></g></g></svg>
+</svg>

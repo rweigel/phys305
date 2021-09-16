@@ -58,8 +58,11 @@
 * Answer questions on [HW #3](hw3.html) topics.
 
 ## Thursday, September 16th 
-* Return graded [HW #2](hw2.html) and post solutions; discuss common errors
+
+* I have started returning graded [HW #2](hw2.html) and will post solutions on the same page as the problems later today.
 * [HW #3](hw3.html) due at 3:00 pm
+* Cover [Gauss's Law](gauss_law.html) and [Electrostatic Potential](electrostatic_potential.html).
+* HW #4 will be posted after class.
 
 ## Thursday, October 14th
 

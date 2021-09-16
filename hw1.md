@@ -173,11 +173,10 @@ It may help to solve this by using the techniques from Physics 260 first. This i
 $\displaystyle\mathbf{F}(x,y) = kqQ\left[\frac{(x-x_o)\xhat+y\yhat}{\left[(x-x_o)^2+y^2\right]^{3/2}}-\frac
 {(x+x_o)\xhat+y\yhat}{\left[(x+x_o)^2+y^2\right]^{3/2}}\right]$
 
-1\. $\displaystyle\mathbf{F}(x,y) = kqQ\left[\frac{2-x_o}{|2-x_o|^3}-\frac
-{2+x_o}{|2+x_o|^3}\right]\xhat=kqQ\left[\frac{1}{(2-x_o)^2}-\frac
-{1}{(2+x_o)^2}\right]\xhat$
+1\. $\displaystyle\mathbf{F} = kqQ\left[\frac{2-x_o}{|2-x_o|^3}-\frac
+{2+x_o}{|2+x_o|^3}\right]\xhat$ (In an earlier version of the solutions, had simplified this as $kqQ\left[\frac{1}{(2-x_o)^2}-\frac{1}{(2+x_o)^2}\right]\xhat$, but this simplification is only applicable for $x_o \lt 2$; the problem statement should have had the positions to find the field at of $(2x_o,0)$ and $(0, 2x_o)$, in which case the cancellation is allowed).
 
-2\. $\displaystyle\mathbf{F}(x,y) = kqQ\left[\frac{-x_o\xhat+2\yhat}{\left[x_o^2+2^2\right]^{3/2}}-\frac
+2\. $\displaystyle\mathbf{F} = kqQ\left[\frac{-x_o\xhat+2\yhat}{\left[x_o^2+2^2\right]^{3/2}}-\frac
 {x_o\xhat+2\yhat}{\left[x_o^2+2^2\right]^{3/2}}\right] = -kqQ2x_o\left[\frac{1}{\left[x_o^2+2^2\right]^{3/2}}\right]\xhat$
 
 # Field Lines and Equipotentials

@@ -17,7 +17,7 @@ This equation is also known as Gauss's law in integral form.
 
 1. A point charge $q$ is placed outside of a spherical shell.  What is the electric flux through its surface due to the point charge?
 2. A point charge is placed at the center of a spherical shell. What is the electric flux through the shell's surface due to the point charge?
-3. A point charge is placed just inside of a spherical shell.
+3. A point charge is placed just inside a spherical shell.
    1. What is the electric flux through the shell's surface?
    2. Is the electric field magnitude constant on the surface of the shell?
 
@@ -27,10 +27,10 @@ Justify your answers.
 %1. Zero.  
 %2. $q/\epsilon_0$%
 
-%   The answer for 1. and 2. follow from Gauss' Law in integral form: $\Phi_E = \oint \mathbf{E}\cdot d\mathbf{A} = Q_{encl}/\epsilon_0$. In both cases $q$ is the total charge inside of the surface on which we want to know the electric flux, $\Phi_E$. The integral would be difficult to compute for 2.
+%   The answer for 1. and 2. follow from Gauss' Law in integral form: $\Phi_E = \oint \mathbf{E}\cdot d\mathbf{A} = Q_{encl}/\epsilon_0$. In both cases, $q$ is the total charge inside of the surface on which we want to know the electric flux, $\Phi_E$. The integral would be difficult to compute for 2.
 %3. &nbsp;
 %   1. $q/\epsilon_0$. We can think of flux as proportional to the number of field lines that pass through a surface.  Lines going in provide negative flux, lines out positive.  If you draw field lines due to a point charge through a closed surface that does not enclose the point charge, all of the point charge's field lines going into the surface must exit.
-%   2. Note that is cases 1. and 3., Gauss' Law would not be useful in computing the electric field. Gauss' Law is useful for computing the electric field when it is constant or zero on a Gaussian surface and its angle with respect to the surface normal is constant, in which case it can be factored out of the integral.
+%   2. Note that in cases 1. and 3., Gauss' Law would not be useful for computing the electric field. Gauss' Law is useful for computing the electric field when it is constant or zero on a Gaussian surface, and its angle with respect to the surface normal is constant, in which case it can be factored out of the integral.
 
 ## Differential Form
 
@@ -38,19 +38,19 @@ Gauss's law in differential form relates the divergence of the vector field $\ma
 
 $$\boxed{\boldsymbol{\nabla}\bfcdot \mathbf{E} = \frac{\rho}{\epsilon_o}}$$
 
-It is important to remember that $\mathbf{E}$ and $\rho$ in general depends on position, which can be emphasized by writing $\mathbf{E}$ and $\rho$ with argument of $x,y,z$ or, more generally, $\mathbf{r}$, so that there is no reference to a coordinate system:
+It is important to remember that both $\mathbf{E}$ and $\rho$ in general depend on position, which can be emphasized by writing $\mathbf{E}$ and $\rho$ with argument of $x,y,z$ or, more generally, $\mathbf{r}$, so that there is no reference to a coordinate system:
 
-$$\boxed{\boldsymbol{\nabla}\bfcdot \mathbf{E}(\mathbf{r}) = \frac{\rho(\mathbf{r})}{\epsilon_o}}$$
+$${\boldsymbol{\nabla}\bfcdot \mathbf{E}(\mathbf{r}) = \frac{\rho(\mathbf{r})}{\epsilon_o}}$$
 
 Gauss's law in integral form states that one can find the charge density at any point in space by computing the divergence of $\mathbf{E}$ at that point.
 
-## Derivation
+### Derivation
 
 Starting with Gauss's law
 
 $$\oint \mathbf{E}\cdot d\mathbf{A} = \frac{Q_{encl}}{\epsilon_0}$$
 
-re--write $Q_{enc}$ in terms of an integral over the volume enclosed by the closed surface associated with the flux. This gives
+rewrite $Q_{enc}$ in terms of an integral over the volume enclosed by the closed surface associated with the flux. This gives
 
 $$\oint \mathbf{E}\cdot d\mathbf{A} = \frac{1}{\epsilon_0}\int \rho d\tau$$
 
@@ -58,19 +58,17 @@ From the [divergence theorem](divergence.html), the left--hand side can be writt
 
 $$\int(\boldsymbol{\nabla}\bfcdot \mathbf{E}) d\tau = \frac{1}{\epsilon_0}\int \rho d\tau$$
 
-or
+This can be written as
 
 $$\int \left(\boldsymbol{\nabla}\bfcdot\mathbf{E} - \frac{\rho}{\epsilon_0} \right)d\tau = 0$$
 
-This equation applies to an arbitrary volume. Suppose there is a volume for which the integrand is positive in a sub--volume. The integral can be zero if the contribution to the integral for the rest of the volume is opposite in value. However, because the volume is arbitrary, the integral must also apply to the sub--volume. As a result, we conclude that the integrand must always be zero. Another way of looking at this is to consider an arbitrary infinitesimal volume $\Delta \tau$. As $\Delta \tau \rightarrow 0$, the equation approaches $\left(\boldsymbol{\nabla}\bfcdot\mathbf{E} - {\rho}/{\epsilon_0} \right)\Delta \tau=0$. To be true, for all $\Delta \tau$, $\boldsymbol{\nabla}\bfcdot\mathbf{E} = {\rho}/{\epsilon_0}$ is required.
-
-### Example
+This equation applies to an arbitrary volume. Suppose there is a volume for which the integrand is positive in a subvolume. The integral can be zero if the contribution to the integral for the rest of the volume is opposite in value. However, because the volume is arbitrary, the integral must also apply to the subvolume. As a result, we conclude that the integrand must always be zero. Another way of looking at this is to consider an arbitrary infinitesimal volume $\Delta \tau$. As $\Delta \tau \rightarrow 0$, the equation approaches $\left(\boldsymbol{\nabla}\bfcdot\mathbf{E} - {\rho}/{\epsilon_0} \right)\Delta \tau=0$. To be true, for all $\Delta \tau$, $\boldsymbol{\nabla}\bfcdot\mathbf{E} = {\rho}/{\epsilon_0}$ is required.
 
 # Partial Proof of Gauss's Law in Integral Form
 
-In this section, we only consider a the start and end of the proof of Gauss's law in integral form. It is not important for you to be able to derive the part of the proof that was omitted. However, you should have a general understanding of the approach needed for the omitted part of the derivation based on the discussion given in the [notes on Flux](flux.html).
+In this section, we only consider the start and end of the proof of Gauss's law in integral form. It is not important for you to be able to derive the part of the proof that was omitted. However, you should have a general understanding of the approach needed for the omitted part of the derivation based on the discussion given in the [notes on Flux](flux.html).
 
-Consider a charge $q_{origin}$ at the origin and a Gaussian surface of a spherical shell of radius $R$ centered on the origin. By direct substitution, we can show that
+Consider a charge $q_{origin}$ at the origin and a Gaussian surface of a spherical shell of radius $R$ centered on the origin. Gauss's law is then
 
 $$\Phi_E = \oint_{SS}\mathbf{E}\cdot d\mathbf{A}=\frac{q_{origin}}{\epsilon_o}$$
 
@@ -84,6 +82,13 @@ For this surface, $d\mathbf{A}=R^2\sin\theta d\theta d\phi \mathbf{\hat{r}}$ and
 \end{aligned}
 
 Where $k=1/4\pi\epsilon_o$ was used in the last step.
+## Problem
+
+In another universe, the electric field created by a charge $q$ at the origin is found to be $\mathbf{E} = k'q\hat{\mathbf{r}}/r^3$, where $k'$ is a constant with appropriate units.
+
+Is Gauss's law valid in this universe?
+
+----
 
 At this point, we have not proven the general equation, only a special case. To complete the proof, we would proceed by
 
@@ -91,11 +96,11 @@ At this point, we have not proven the general equation, only a special case. To 
 2. Considering a charge outside of a spherical surface.
 3. Considering the previous two cases for an arbitrary surface.
 
-To do this, one could apply arguments for Approach II used in the [notes on Flux](flux.html#through-a-closed-line). (One would need to generalize these arguments to apply through a closed surface instead of a closed line.)
+To do this, one could apply arguments for Approach II used in the [notes on Flux](flux.html#through-a-closed-line). (One would need to generalize these arguments to apply to a closed surface instead of a closed line.)
 
 Once the proof is complete for a single point charge inside an arbitrary closed surface and outside of an arbitrary closed surface, there is one final step of generalization to an arbitrary number of charges. This step only requires the use of superposition.
 
-Assuming that we have shown that the electric field $\mathbf{E}_{1i}$ due a single point charge $q_{1i}$ inside of an arbitrary closed surface satisfies the relationship
+Assuming that we have shown that the electric field $\mathbf{E}\_{1i}$ due a single point charge $q_{1i}$ inside of an arbitrary closed surface satisfies the relationship
 
 $$\oint \mathbf{E}\_{q_{1i}}\cdot d\mathbf{A} = \frac{q_{1i}}{\epsilon_0}$$
 
@@ -107,13 +112,13 @@ These two equations can be combined to be
 
 $$\oint \mathbf{E}\_{q_{1i}}\cdot d\mathbf{A} + \oint \mathbf{E}\_{q_{2i}}\cdot d\mathbf{A} = \frac{q_{1i}}{\epsilon_0} + \frac{q\_{2i}}{\epsilon_0}$$
 
-By superposition, the total electric field is $\mathbf{E}\_i=\mathbf{E}\_{q\_{1i}}+\mathbf{E}\_{q\_{2i}}$. As a result, it follows that
+By superposition, the total electric field is $\mathbf{E}\_I=\mathbf{E}\_{q\_{1i}}+\mathbf{E}\_{q\_{2i}}$. As a result, it follows that
 
-$$\oint \mathbf{E}\_i\cdot d\mathbf{A} = \frac{q_{1i}+q_{2i}}{\epsilon_0}$$
+$$\oint \mathbf{E}\_I\cdot d\mathbf{A} = \frac{q_{1i}+q_{2i}}{\epsilon_0}$$
 
 This argument can be repeated for an arbitrary of number of charges inside of a volume, giving
 
-$$\oint \mathbf{E}\_i\cdot d\mathbf{A} = \frac{q_{1i}+q_{2i}+...}{\epsilon_0}$$
+$$\oint \mathbf{E}\_I\cdot d\mathbf{A} = \frac{q_{1i}+q_{2i}+...}{\epsilon_0}$$
 
 To finish the proof, assume that we have shown that for a single point charge $q_{1o}$ outside of a closed surface that
 
@@ -123,29 +128,23 @@ This applies to another charge outside of the same closed surface
 
 $$\oint \mathbf{E}\_{q\_{2o}}\cdot d\mathbf{A} = 0$$
 
-So by superposition, the electric field $\mathbf{E}\_o=\mathbf{E}\_{1o}+\mathbf{E}\_{2o}$ due to all charges outside of the surface is
+So by superposition, the electric field $\mathbf{E}\_O=\mathbf{E}\_{1o}+\mathbf{E}\_{2o}$ due to all charges outside of the surface is
 
-$$\oint \mathbf{E}_o\cdot d\mathbf{A} = 0$$
+$$\oint \mathbf{E}_O\cdot d\mathbf{A} = 0$$
 
 Finally, combine the two equations
 
-$$\oint \mathbf{E}\_i\cdot d\mathbf{A} = \frac{q_{1i}+q_{2i}+...}{\epsilon_0}$$
+$$\oint \mathbf{E}\_I\cdot d\mathbf{A} = \frac{q_{1i}+q_{2i}+...}{\epsilon_0}$$
 
-$$\oint \mathbf{E}\_o\cdot d\mathbf{A} = \frac{q_{1i}+q_{2i}+...}{\epsilon_0}$$
+$$\oint \mathbf{E}\_O\cdot d\mathbf{A} = \frac{q_{1i}+q_{2i}+...}{\epsilon_0}$$
 
 to give
 
-$$\oint \mathbf{E}\_i\cdot d\mathbf{A} + \oint \mathbf{E}\_o\cdot d\mathbf{A} = \frac{Q_i}{\epsilon_o}$$
+$$\oint \mathbf{E}\_I\cdot d\mathbf{A} + \oint \mathbf{E}\_O\cdot d\mathbf{A} = \frac{Q_i}{\epsilon_o}$$
 
-Finally, we can use superposition to state that the total electric field, $\mathbf{E}$, is the sum of the electric field due to charges inside with the electric field due to charges outside the sphere. That is, $\mathbf{E}=\mathbf{E}_i+\mathbf{E}_o$. As a result
+Finally, we can use superposition to state that the total electric field, $\mathbf{E}$, is the sum of the electric field due to charges inside with the electric field due to charges outside the sphere. That is, $\mathbf{E}=\mathbf{E}_I+\mathbf{E}_O$. As a result
 
 $$\oint \mathbf{E}\cdot d\mathbf{A} = \frac{q_{1i}+q_{2i}+...}{\epsilon_0}=\frac{Q_{encl}}{\epsilon_o}$$
-
-## Problem
-
-In another universe, the electric field created by a charge $q$ at the origin is found to be $\mathbf{E} = k'q\hat{\mathbf{r}}/r^3$, where $k'$ is a constant with appropriate units.
-
-Is Gauss's law valid in this universe?
 
 # Using -- Charges on an Insulator
 
@@ -164,10 +163,10 @@ $$\displaystyle \mathbf{E}=\int  \frac{\hat{\textbf{\char"0509}}}{\char"0509^2}\
 \displaystyle \mathbf{E}=\int  \frac{\hat{\textbf{\char"0509}}}{\char"0509^2}\rho d\tau
 $$
 
-for charges on a line, on a surface, or in a volume, repectively.
+for charges on a line, on a surface, or in a volume, respectively.
 
 
-In general, the Coulomb's law can always be used to compute $\mathbf{E}$ if the charge density is known. However, there are a certain class of problems for which using Gauss's law is much easier than using Coulomb's law: 
+In general, Coulomb's law can always be used to compute $\mathbf{E}$ if the charge density is known. However, there is a certain class of problems for which using Gauss's law is much easier than using Coulomb's law.
 
 > When a symmetry argument can be made for why
 >
@@ -187,29 +186,31 @@ The location and charge distributions for which symmetry + Gauss's law can be us
 * just outside of _any_ conductor, even if the charge density is not uniform on the surface (we will use Gauss's law to show that all of the charge on a conductor must be on its surface); and
 * at any point inside a conductor with _any_ shape and any surface charge density.
 
-Gauss' Law is also useful when one can find a surface on which the electric field is always zero -- in this case, one can conclude the amount of charge inside the surface is zero. Finally, Gauss' Law is useful if you are given the electric field on a surface and want to calculate the amount of charge enclosed.
+Gauss' law is also useful when one can find a surface on which the electric field is always zero -- in this case, one can conclude the amount of charge inside the surface is zero. Finally, Gauss' Law is useful if you are given the electric field on a surface and want to calculate the amount of charge enclosed.
 
-There are two equally important steps to using Gauss's law
+There are three equally important steps to using Gauss's law
 
 1. The symmetry argument
 2. Computing $\Phi_E$
 3. Computing $Q_{encl}$
 
-Because there are only a few problems for which Gauss's law can be used, the symmetry argument is often forgotten. In the following, I emphasize the symmetry argument and provide an explicit justification for each of the calculations made in the three steps above. On homeworks and exams, I am interested in knowing that you understood the justifications for the steps. It is quite easy to get the correct answer without really understanding the justifications and just writing the first and last step.
+Because there are only a few problems for which Gauss's law can be used, the symmetry argument is often forgotten. In the following, I emphasize the symmetry argument and provide an explicit justification for each of the calculations made in the three steps above. On homeworks and exams, I am interested in knowing that you understood the justifications for the steps. It is quite easy to get the correct answer for Gauss's law problems without really understanding the justifications and just writing one or two unjustified equations that are consistent with the answer.
 
 ## Common Error
 
 A common usage error is to draw a Gaussian surface that has no net charge inside of it and conclude that the electric field is zero on the surface. Without any other information, if the net charge inside a surface is zero, you can only conclude the electric flux, $\Phi_E$ is zero.
 
-To see the flaw in this argument, consider ...
-
 ## Example -- Long Line of Charge
 
-In a previous homework, the electric field due to a long line of charge was considered. An argument was made for why the field only has a vertical component on the $z$--axis.
+In a previous homework, the electric field due to a long line of charge was considered. An argument was made for why the field only has a vertical component on a line centered on and perpendicular to the charged line.
 
-Consider a Gaussian cylinder as shown. The electric field vectors at a few points on the Gaussian surface are also shown. It would seem that this Gaussian surface does not satisfy the constraint of "$|\mathbf{E}|$ is constant or zero on all surfaces and the angle between $\mathbf{E}$ and $d\mathbf{A}$ is constant on a surface".
+Consider a Gaussian cylinder as shown on the left of the following figure.
 
-However, consider what happens when we make the line very long (or equivalently, srink the Gaussian surface). The field lines in the region of the Gaussian surface become more and more vertical. Based on this, we can state that the electric field must have the form
+<img src="figures/Gauss_Law_Line_of_Charge.svg"/>
+
+The electric field vectors at a few points on the Gaussian surface are also shown on the right, which is a side view of the image on the left. It would seem that this Gaussian surface does not satisfy the constraint of "$|\mathbf{E}|$ is constant or zero on all surfaces, and the angle between $\mathbf{E}$ and $d\mathbf{A}$ is constant on a surface".
+
+However, consider what happens when we make the line very long (or equivalently, shrink the Gaussian surface). The field lines in the region of the Gaussian surface become more and more vertical. Based on this, we can state that the electric field must have the form
 
 $\mathbf{E}=E_s(s)\hat{\mathbf{s}}$
 
@@ -217,54 +218,54 @@ in the region of the Gaussian cylinder. Thus, symmetry has told us that although
 
 $\mathbf{E}(s,\phi,z)=E_s(s,\phi,z)\hat{\mathbf{s}}+E_\phi(s,\phi,z)\boldsymbol{\hat{\phi}}+E_z(s,\phi,z)\zhat$
 
-For this particular problem, we know that the answer will only have an $\hat{\mathbf{s}}$ component and will depend only on $s$.
+At this point, we only know that $\mathbf{E}$ will only have an $\hat{\mathbf{s}}$ component and can only possibly depend only on $s$.
 
 $\mathbf{E}(s)=E_s(s)\hat{\mathbf{s}}$
 
+The next step is to do the surface integral, which can be split into three parts: 
 
-The next step is to do the surface integral. There are three surfaces that must be addressed.
+$\displaystyle \oint \mathbf{E}\cdot d\mathbf{A} = \int_{\text{Right cap}} \mkern-36mu\mathbf{E}\bfcdot d\mathbf{A} + \int_{\text{Left cap}}\mkern-30mu\mathbf{E}\bfcdot d\mathbf{A} + \int_{\text{Curved surface}}\mkern-60mu\mathbf{E}\bfcdot d\mathbf{A}$
 
-$$\oint \mathbf{E}\cdot d\mathbf{A} = \int_{\text{Right cap}} \mkern-36mu\mathbf{E}\bfcdot d\mathbf{A} + \int_{\text{Left cap}}\mkern-30mu\mathbf{E}\bfcdot d\mathbf{A} + \int_{\text{Curved surface}}\mkern-60mu\mathbf{E}\bfcdot d\mathbf{A}$$
-
+On each surface, $d\mathbf{A}$ is different.
 
 1. Right cap, for which $d\mathbf{A}=s'ds'd\phi\hat{\mathbf{z}}$
-2. Left cap, for which $d\mathbf{A}=s'ds'd\phi\hat{\mathbf{z}}$
+2. Left cap, for which $d\mathbf{A}=-s'ds'd\phi\hat{\mathbf{z}}$
 3. Curved surface, for which $d\mathbf{A}=sd\phi dz\hat{\mathbf{s}}$
 
-The dot products are
+The dot products $\mathbf{E}\cdot d\mathbf{A}$ for each integrals are
 1. Right cap: $E_s(s)\hat{\mathbf{s}}\bfcdot (s'ds'd\phi\hat{\mathbf{z}})=0$ because $\hat{\mathbf{s}}$ is perpendicular to $\zhat$.
 2. Left cap: $E_s(s)\hat{\mathbf{s}}\bfcdot (-s'ds'd\phi\hat{\mathbf{z}})=0$ because $\hat{\mathbf{s}}$ is perpendicular to $\zhat$.
 3. Curved surface: $E_s(s)\hat{\mathbf{s}}\bfcdot sd\phi dz\hat{\mathbf{s}}=E_s(s) s d\phi dz$
 
 As argued above, the integrand for the first two integrals are zero, so we are left with
 
-$$\oint\mathbf{E}\cdot d\mathbf{A} = \int_{\text{Curved surface}}\mkern-60mu\mathbf{E}\bfcdot d\mathbf{A}$$
+$\displaystyle \oint\mathbf{E}\cdot d\mathbf{A} = \int_{\text{Curv surface}}\mkern-60mu\mathbf{E}\bfcdot d\mathbf{A}$
 
 The electric field is constant on the curved surface, so integration is not needed. The area of the curved surface is $2\pi s h$ and so
 
-$$\int_{\text{Curved surface}}\mkern-60mu\mathbf{E}\bfcdot d\mathbf{A}=E_s(s)2\pi s h$$
+$\displaystyle\int_{\text{Curved surface}}\mkern-60mu\mathbf{E}\bfcdot d\mathbf{A}=E_s(s)2\pi s h$
 
 The charge enclosed in the cylinder is
 
-$$Q_{encl}=\lambda_o h$$
+$Q_{encl}=\lambda_o h$
 
 Using Gauss's law, we can equate the flux the curved surface and $Q_{encl}/\epsilon_o$:
 
-$$E_s(s)2\pi s h = \frac{\lambda_o h}{\epsilon_o}$$
+$\displaystyle E_s(s)2\pi s h = \frac{\lambda_o h}{\epsilon_o}$
 
 And so
 
-$$E_s(s) = \frac{\lambda_o}{2\pi\epsilon_o}\frac{1}{s}$$
+$\displaystyle E_s(s) = \frac{\lambda_o}{2\pi\epsilon_o}\frac{1}{s}$
 
 We are not done. The problem asked for $\mathbf{E}$. Using symmetry arguments, we concluded that $\mathbf{E}$ must have the form
 
-$$\mathbf{E}(s)=E_s(s)\hat{\mathbf{s}}$$
+$\displaystyle \mathbf{E}(s)=E_s(s)\hat{\mathbf{s}}$
 
 So combining the symmetry argument equation with the result of Gauss's law gives
 
-$$\mathbf{E}(s) = \frac{\lambda_o}{2\pi\epsilon_o}\frac{\hat{\mathbf{s}}}{s}$$
+$\displaystyle\mathbf{E}(s) = \frac{\lambda_o}{2\pi\epsilon_o}\frac{\hat{\mathbf{s}}}{s}$
 
-To be technically correct, we should also state that this result is valid only in the limit that the length of the line approaches infinity, or equivalently, at points that are a radial distance from the center that approaches zero.
+To be technically correct, we should also state that this result is valid only in the limit that the length of the line approaches infinity, or equivalently, at locations near the center of a finite line of charge at a radial distance from the center that approaches zero.
 
 ## Problem -- Comparison of Gauss's law Result with Exact
 
@@ -283,19 +284,25 @@ $\displaystyle \mathbf{E}_C(s)=k\frac{2L\lambda_o}{s\sqrt{L^2 + s^2}}\hat{\mathb
 $\displaystyle \mathbf{E}_C(s) \simeq \left(\frac{B_1}{s} + \frac{B_2}{s^2} + \frac{B_3}{s^3}\right)\hat{\mathbf{s}}$
 
    and find the non--zero constants in terms of $\epsilon_o$, $\lambda_o$, and $L$.
+   
+## Problem -- Sheet of Charge
+
+A large non--conducting sheet has a uniform charge density $\sigma_o$. Find $\mathbf{E}$ using Gauss's law.
 
 # Using -- Charges on a Conductor
 
-In problems where we are given a charge denstity that is placed on a non--conductor, we can use an integral form of Coulomb's to directly find the electric field.
+In problems where we are given a charge denstity that is placed on a non--conductor, we can use the Coulomb's law integral to directly find the electric field. For example, if we are told charges are distributed on a square with $\sigma(x,y)$, we can directly evaluate the integral
 
-In the case of conductors, all we typically know is that a certain amout of charge has been placed on it. If the conductor is not a perfect sphere, we don't know how the charge distributes on the conductor's surface.
+$$\displaystyle \mathbf{E}=\int  \frac{\hat{\textbf{\char"0509}}}{\char"0509^2}\sigma dA$$
 
-However, Gauss's law can be used to give us some information.
+In the case of conductors, all we typically know is that a certain amount of charge has been placed on it. If the conductor is not a perfect sphere, we don't know how the charge distributes on the conductor's surface and so we don't know $\sigma$. If we don't know $\sigma$, we can't evaluate the integral.
 
-Prior to using Gauss's law, we need to know (see 2.5.1 of Griffiths) the properties of conductors:
+However, Gauss's law can be used to give us some information about $\mathbf{E}$.
+
+Prior to using Gauss's law to determine this additional information, we need to know the properties of conductors (see 2.5.1 of Griffiths and make sure that you understand the justifications for each of the following):
 
 1. $\mathbf{E}=0$ inside a conductor.
-2. $\rho=0$ inside a conductor. This means that all charges must reside on the surface of a conductor.
+2. All charges must reside on the surface of a conductor.
 3. The electric field is perpendicular to the surface of a conductor.
 
 Suppose a net charge $Q$ is placed on a conductor of arbitrary shape. We can make three statements about the electric field.
@@ -304,13 +311,17 @@ Suppose a net charge $Q$ is placed on a conductor of arbitrary shape. We can mak
 2. Inside the field is zero due because it is a conductor.
 4. The electric field is perpendicular to the surface because it is a conductor.
 
-There is one more statement about the electric field that we can make using Gauss's law. Consider a small Gaussian cylinder as shown in the following diagram. There is an unknown surface charge density of $\sigma$ inside of the cylinder, but it is not known. The charge inside of the cylinder is thus $\sigma \pi s^2$. Gauss's law is
+There is one more statement about the electric field that we can make using Gauss's law. Consider a small Gaussian cylinder as shown in the following diagram. The cylinder is oriented so that the centerline is perpendicular to the surface and half of the cylinder is inside the conductor.
+
+<img src="figures/Conductor-Arbitrary-Shape.svg"/>
+
+The surface charge density $\sigma$ on the conductor is not known. If the cylinder radius is small, the charge inside of the cylinder is $\sigma \pi s^2$ and integration of $\sigma$ is not needed. Gauss's law then reads
 
 $$\oint \mathbf{E}\cdot d\mathbf{A} = \int_{\text{Right cap}} \mkern-36mu\mathbf{E}\bfcdot d\mathbf{A} + \int_{\text{Left cap}}\mkern-30mu\mathbf{E}\bfcdot d\mathbf{A} + \int_{\text{Curved surface}}\mkern-60mu\mathbf{E}\bfcdot d\mathbf{A}=\frac{Q_{encl}}{\epsilon_o}=\frac{\sigma \pi s^2}{\epsilon_o}$$
 
-The field on the left cap is zero because it is inside of the conductor and so the second integral is zero. The field on the curved surface is perpendicular to the curved surface's normal, so the integrand of the third integral is zero.
+The field on the left cap is zero because it is inside of the conductor and so the second integral is zero. The field just outside of the curved surface and outside of the conductor is perpendicular to the surface because it is the surface of the conductor, so the integrand of the third integral is zero. (Said another way, the normal vector for the curved surface is perpendicular to the electric field just outside of the conductor).
 
-The field on the right cap will be perpendicular to the surface and so we can write $E_z\hat{\mathbf{z}}$, where $E_z$ is unknown. The flux through the right cap is thus $E_z\pi s^2$. Thus,
+The field on the right cap will be perpendicular to its surface, so $E_z\hat{\mathbf{z}}$, where $E_z$ is unknown. If the cylinder is small, the integral for the flux through the right cap is the product of the field and the area, $E_z\pi s^2$ because the field is nearly constant on cap. Thus,
 
 $$E_z\pi s^2 = \frac{\sigma \pi s^2}{\epsilon_o}$$
 
@@ -318,20 +329,47 @@ and so
 
 $$E_z = \frac{\sigma}{\epsilon_o}$$
 
-In more general terms, the additional statement is that we can make about the electric field due to charges on a conductor is
+Based on this, and in more general terms, the additional statement is that we can make about the electric field due to charges on a conductor is
 
 4. $\displaystyle E_\perp = \frac{\sigma}{\epsilon_o}$, where in general $\sigma$ is not constant on the surface of the conductor.
 
-> * In general we will not know $\sigma$. Finding it will require the techniques covered in Chapter 3 of Griffiths. 
-> * This field is twice the magnitude of the field due to charges uniformly distributed on a sheet. The reason for this is considered in the following example.
+> * This is the magnitude of the field. The direction depends on the sign of $\sigma$. If $\sigma$ is positive, $\mathbf{E}$ points outwards from the volume of the conductor.
+> * In general, we will not know $\sigma$. Finding it will require the techniques covered in Chapter 3 of Griffiths. 
+> * This field is twice the magnitude of the field due to charges uniformly distributed on a non--conducting sheet. The reason for this is considered in the following example.
 
 ## Example
 
-A large conducting slab has a net charge of $Q$ placed on it.
+A large conducting slab of thickness $t$ and surface area $A$ has a net charge of $Q$ placed on it. A side view is shown below.
+
+<img src="figures/Conductors-Large-Slab-1a.svg"/>
 
 Find and plot the electric field for all $x$.
 
+**Answer**:
+
+When a net charge is placed on a conductor, the charges rearrange themselves such that the electric field inside it is zero. If half of the charges move to the right surface and the other half moves to the left, the charge distribution will appear as two sheets of charge, each with the same surface charge density of $\sigma$.
+
+The electric field to the right is the field due to the two sheets of charge: $(\sigma/2\epsilon_o+\sigma/2\epsilon_o)\xhat=\sigma/\epsilon_o\xhat$. The field to the left is $-(\sigma/2\epsilon_o+\sigma/2\epsilon_o)\xhat=\sigma/\epsilon_o\xhat$.
+
+This result is consistent with the claim that the field just outside of the conductor is $\sigma/\epsilon_o$. This field is twice that of a sheet of charge because the field just outside of the conductor is due to all charges -- the left and right face of the conductor both create an electric field.
+
+<img src="figures/Conductors-Large-Slab-1b.svg"/>
+
+A general feature of plots of this form is that when one passes through a surface (conducting or non--conducting) with a charge density $\sigma$, there is a jump in the electric field of $\sigma/\epsilon_o$.
+
+## Problem
+
+Repeat the previous example when there is an external electric field of $\mathbf{E}=E_o\xhat$.
+
+## Problem
+
+Repeat the previous problem when the slab has a net charge of $Q$.
+
 ## Example -- Charge Inside Conductor with a Cavity
+
+A charge $q$ is placed at the center of a spherical conductor of radius $2R$ with a spherical cavity of radius $R$.
+
+<img src="figures/Conductors_Sphere_with_Cavity.svg"/>
 
 Use Gauss' law to find equations for the electric field in the following three regions
 
@@ -341,995 +379,10 @@ Use Gauss' law to find equations for the electric field in the following three r
 
 and the surface charge density at $r=R$ and $r=2R$.
 
+Plot the electric field versus the distance from the charge.
+
+**Answer**: Covered in class.
+
 ## Problem -- Charge Inside Conductor with a Cavity
 
-Repeat the previous problem when a net charge of $3Q$ was placed on the conductor. 
-
-
-
-## Problem -- Large Sheet of Charge
-
-
-== Use ==
-
-== Mis-use ==
-
-== Problems ==
-
-=== Conceptual ===
-
-In another universe, the electric field created by a charge \(q\) is found to be \(\mathbf{E} = k'q/r^3\)
-
-where \(k'\) is a constant with appropriate units.  Which of the following are true in this universe?
-
-* Gauss' Law in integral form
-* Gauss' Law in differential form
-
-=== Use ===
-
-Consider a dipole. One can find the electric field everywhere using superposition.
-
-Can a single Gaussian surface be used to find the electric field everywhere?
-
-Can a single Gaussian surface be used to find the approximate electric field far away from the dipole? What approximation(s) is/are required?
-
-=== Use ===
-
-Consider an infinite line of charge with a uniform surface charge density. Explain why one can conclude that the electric field, if calculated, will point radially outward.
-
-
-=== Infinite Line of Charge ===
-
-In general, in cylindrical coordinates, the electric field has the form
-
-$$\mathbf{E}(s,\phi,z)=E_s(s,\phi,z)\hat{\mathbf{s}}+E_{\phi}(s,\phi,z)\hat{\boldsymbol{\phi}}+E_z(s,\phi,z)\hat{\mathbf{z}}$$
-
-where \(s\) is the radial coordinate in cylindrical coordinates.
-
-Consider an infinite line of charge with a uniform charge per unit length of \(\lambda_o\) on the \(z\)-axis. The typical approach to finding that the equation for the electric field is
-
-$$\mathbf{E}(s)=\frac{\lambda_o}{2\pi\epsilon_o}\frac{\hat{\mathbf{s}}}{s}$$
-
-is to use a cylindrical Gaussian surface and Gauss' law. When using Gauss' law, one must make arguments for why
-
-1. \(E_s\) does not depend on \(\phi\) and \(z\)
-
-2. \(E_z=0\)
-
-With these two justifications and Gauss' law, one arrives at only an equation for the radial component of the electric field, \(E_s\). To complete the solution, one also needs to provide an argument for why 
-
-3. \(E_{\phi}=0\).
-
-Derive the equation given above for the electric field using Gauss' law and explicitly state arguments for 1.-3.
-
-{| class="wikitable collapsible collapsed"
-! align="left" |&nbsp;Solution
-|-
-|
-I gave this problem because I have come to realize that students can use Gauss' law to find the electric field, but can't often answer conceptual questions about justifications for the steps needed to get the solution. The problem is that most textbooks don't emphasize the arguments or provide follow-up questions to test their understanding of the arguments and so students don't think too deeply about them.
-
-Understanding the reasoning for this problem is critical for understanding the boundary condition equations
-
-$$(\mathbf{E}_2-\mathbf{E}_1)\cdot \hat{\mathbf{n}} = \mathbf{E}_{2\perp}-\mathbf{E}_{1\perp} = \left[-\frac{\partial \Psi_2}{\partial n}+\frac{\partial \Psi_1}{\partial n}\right]_{n=0}=\frac{\sigma}{\epsilon_o}$$
-
-$$\mathbf{E}_{2\parallel}-\mathbf{E}_{2\parallel}=(\mathbf{E}_2-\mathbf{E}_1)\cdot \hat{\mathbf{t}}=0$$
-
-where \(n\) is the coordinate that is perpendicular to the boundary surface and outward to the volume enclosed by the boundary surface; \(t\) is any coordinate parallel to the surface.
-
-Several students used the solution for \(\mathbf{E}\) given for arguments 1.-3., but this is circular reasoning. The point of the problem is to justify all of the steps needed to get to the solution.
-
-I did not expect a solution with the level of detail in what follows. I generally looked for arguments or words that seemed close to something said below. I did not write extended comments on your solutions for statements that were wrong - you should be able to determine what was wrong by reading the following solution.
-
-1. \(E_s\) does not depend on \(z\) because the charge distribution does not change if we shift the origin of \(z\). Said another way, two people who solve this problem using a different location for \(z=0\) should get the same result. \(E_s\) does not depend on \(\phi\) because if we rotate the charge distribution around the \(z\)-axis by \(\phi\), the charge distribution does not change. Said another way, two people who solve the problem using a different \(\phi=0\) line perpendicular to the line of charge should get the same answer. The same argument can be used to argue that \(E_z\) and \(E_{\phi}\) do not depend on \(\phi\) and \(z\), but this is not needed because in 2. and 3. they are found to be zero.
-
-2. \(E_z=0\) - Assume the line extends from \(z=\pm L\). Adding the electric field due to a differential charge at \(z\) to that from a differential charge at \(-z\) gives an electric field that points in the \(\hat{\mathbf{s}}\) direction in the \(x-y\) plane. An infinite line of charge can be created by letting \(L\rightarrow\infty\). Or, for very small \(s\), in the \(x-y\) plane the line of charge appears infinite.
-
-3. \(E_{\phi}=0\) by the same argument as 2.
-
-'''Detailed solution using 1.-3. and Gauss' law'''
-
-$$\mathbf{E}(s,\phi,z)=E_s(s,\phi,z)\hat{\mathbf{s}}+E_{\phi}(s,\phi,z)\hat{\boldsymbol{\phi}}+E_z(s,\phi,z)\hat{\mathbf{z}}$$
-
-A Gaussian cylinder of radius \(s\) and a height \(h\) and centerline along the \(z\)-axis has three surfaces, with normals of \(\hat{\mathbf{z}}\) on the top cap, \(-\hat{\mathbf{z}}\) on the bottom cap, and \(\hat{\mathbf{s}}\) on the curved side.
-
-$$\oint \mathbf{E}\cdot \hat{\mathbf{n}}da = \int_{top\,cap} \mathbf{E}\cdot \hat{\mathbf{z}} da +  \int_{bottom\,cap} \mathbf{E}\cdot (-\hat{\mathbf{z}}) da + \int_{side}\mathbf{E}\cdot \hat{\mathbf{s}} da$$
-
-\(\mathbf{E}\cdot \hat{\mathbf{z}} = E_z(s,\phi,z)\) and we have argued that \(E_z=0\), so the first two integrals are zero.
-
-\(\mathbf{E}\cdot \hat{\mathbf{s}} = E_s(s,\phi,z)\), so the last integral is, using \(da=sdzd\phi\),
-
-$$\int_{side}\mathbf{E}\cdot \hat{\mathbf{s}} da = \int_{z=-h/2}^{h/2}\int_{\phi=0}^{2\pi} E_s(s,\phi,z) sdz\,d\phi$$
-
-Because \(E_s\) is independent of \(z\), we can write
-
-$$\int_{z=-h/2}^{h/2}\int_{\phi=0}^{2\pi} E_s(s,\phi,z) sdz\,d\phi=\int_{z=-h/2}^{h/2}\int_{\phi=0}^{2\pi} E_s(s,\phi) sdz\,d\phi=h\int_{\phi=0}^{2\pi} E_s(s,\phi) sd\phi$$
-
-Because \(E_s\) is independent of \(\phi\), we can write
-
-$$h\int_{\phi=0}^{2\pi} E_s(s,\phi) sd\phi=h\int_{\phi=0}^{2\pi} E_s(s) sd\phi$$
-
-Because \(s\) and \(\phi\) are orthogonal,
-
-$$h\int_{\phi=0}^{2\pi} E_s(s) sd\phi=hE_s(s) s\int_{\phi=0}^{2\pi} d\phi=hE_s(s) s2\pi$$
-
-Note that Gauss' law only gave us \(E_s\) - we had to argue why \(E_{\phi}\) and \(E_z\) were zero. In addition, in order to do the integration in Gauss' law, we needed to provide additional justification for why \(E_s\) could only depend on \(s\). So this Gauss' law problem had two separate components: 1. arguments that reduce and simplify the general solution
-
-$$\mathbf{E}(s,\phi,z)=E_s(s,\phi,z)\hat{\mathbf{s}}+E_{\phi}(s,\phi,z)\hat{\boldsymbol{\phi}}+E_z(s,\phi,z)\hat{\mathbf{z}}$$
-
-and then 2. evaluation of the integral in Gauss' law. I find that students that don't understand 1. are not able to articulate why a given Gaussian surface can't be used to find the electric field. For example, their answer to why a Gaussian sphere could not be used to find the electric field in this problem typically only involves an ambiguous statement about symmetry; "symmetry" is ambiguous because both a Gaussian sphere and a Gaussian cylinder have symmetry).
-|}
-
-=== Thin Cylinder of Charge ===
-
-Use Gauss' law and other arguments to find the electric field for an infinitely long cylinder of radius \(b\) with a charge per unit length of \(\lambda_o\) on its surface and its centerline along the \(z\)-axis. As in the previous problem, state all arguments needed to arrive at the final equation.
-
-{| class="wikitable collapsible collapsed"
-! align="left" |&nbsp;Solution
-|-
-|
-1. Same argument as the previous problem.
-
-2. Assume the cylinder is created by placing infinite lines of charge parallel to the \(z\)-axis on the surface of a cylinder. One can use a diagram to show that at an arbitrary point in space, either inside or outside of the cylinder, one can find two lines of charge which have an electric field that sums to give an electric field that points in the \(\hat{\mathbf{s}}\) direction.  A diagram should be given to show this.
-
-3. \(E_{\phi}=0\) by the same argument as 2.
-
-A common error is to note that Gauss' law with a Gaussian cylinder with radius less than \(b\) has no charge enclosed, so
-
-$$\oint \mathbf{E}\cdot d\mathbf{a} = 0 \Rightarrow \mathbf{E}=0$$
-
-inside the cylinder. The fact that the integral of a vector is zero does not imply the vector is zero. And without additional words, I can't tell if you understand that. The above claim is equivalent to the statement
-
-$$\int f(x)\,dx = 0 \Rightarrow f(x)=0$$
-
-A better solution is to state that from 1.-3., we know \(\mathbf{E}=E_s(s)\hat{\mathbf{s}}\). Using \(d\mathbf{a}=\mathbf{\hat{s}}sdz\,d\phi\) gives
-
-$$\oint \mathbf{E} \cdot d\mathbf{a} = 0 + 0 + \int_{side} \mathbf{E} \cdot d\mathbf{a} =  \int_{side} E_s(s)\hat{\mathbf{s}}\cdot \hat{\mathbf{s}}sd\phi=2\pi h s E_s(s)$$
-
-where the two zero terms are due to the fact that we have argued \(\mathbf{E}=E_s(s)\hat{\mathbf{s}}\) and so the dot product of this with the normal direction on the top and bottom caps is zero (see solution for the line of charge for full details).
-
-For \(s\lt b\), \(\oint \mathbf{E} \cdot d\mathbf{a}\) is zero, so for \(s\ne 0\), \(E_s(s)=0\). Gauss' law does not provide an answer for \(s=0\) because we get \(E_s=0/0\), but one can argue using pairs of lines of charge that the radial field must be zero for \(s=0\). It is interesting to note that there is a purely geometrical approach to showing that the radial field is zero inside the cylinder. It is similar to the approach Newton used to show that the net force inside of a shell of mass is zero (he did not use calculus!).
-
-To find \(E_s\) outside of the cylinder, use
-
-$$2\pi h s E_s(s) = \frac{Q_{encl}}{\epsilon_o} = \frac{\lambda_o h}{\epsilon_o}$$
-|}
-
-
-=== Use ===
-
-Consider an infinite plane of charge with a uniform surface charge density. Explain why one can conclude that the electric field, if calculated, will be perpendicular and away from to the plane.
-
-=== Use ===
-
-Consider an infinite line of charge with a uniform surface charge density. Which of the following Gaussian surfaces can be used to compute the electric field:
-
-1. A cylinder with its caps parallel to the line.
-2. A cylinder with its caps perpendicular to the line.
-3. A sphere
-4. A square box
-5. A rectangular box
-6. A plane perpendicular to the surface
-
-=== Use ===
-
-Consider an infinite plane with a uniform surface charge density. Which of the following Gaussian surfaces can be used to compute the electric field:
-
-1. A cylinder with its caps parallel to the surface.
-2. A cylinder with its caps perpendicular to the surface.
-3. A sphere
-4. A square box
-5. A rectangular box
-6. A plane perpendicular to the surface
-
-=== Use ===
-
-Consider an infinite plane with a uniform surface charge density. Set up the integral that needs to be solved to compute the electric flux through a sphere with half of its volume above the plane.
-
-=== Use ===
-
-Consider sphere with a surface charge density of \(\sigma_o\cos\theta\). Sketch the sphere and surface charges and indicate where the density is largest. Sketch the field lines.
-
-Can a sphereical Gaussian surface be used to find the electric field 
-1. inside the sphere?
-2. outside the sphere?
-
-=== Use ===
-
-Consider long tube with a square cross-section with a uniform surface charge density on its surfaces. Sketch the tube and surface charges.
-
-Can a Gaussian surface be used to find the electric field 
-1. inside the tube?
-2. outside the tube?
-
-=== Use ===
-
-A non-conducting spherical shell is covered with charge uniformly on its surface. It is then dented.
-
-<blockquote>"The electric field near the center of the shell is zero because a Gaussian sphere centered at the origin and fully inside of the shell will have zero enclosed charge."</blockquote>
-
-* True
-* False
-
-Justify your answer.
-
-{| class="wikitable collapsible collapsed"
-! align="left" |&nbsp;Answer
-|-
-|
-False. It is only the electric flux, \(\Phi_E\) through the Gaussian sphere that is zero, because 
-
-$$\Phi_E\equiv\oint \mathbf{E}\cdot d\mathbf{a} = Q_{Inside\,S}/\epsilon_0 = 0$$.
-
-But \(\mathbf{E}\) can't be pulled out of the integral so we can't say  \(\mathbf{E}=0\). All we can say is that if we were to compute the electric field by other means, integral would be zero. 
-|}
-
-To calculate the electric field near the center of the shell, Gauss' Law could be easily used
-* True
-* False
-
-Justify your answer.
-
-{| class="wikitable collapsible collapsed"
-! align="left" |&nbsp;Answer
-|-
-|
-Nope. Gauss' Law is generally only useful for computing \(\mathbf{E}\) when it can be pulled out of the integral. Here we don't have a symmetry argument that would allow this. To compute the electric field, you would need to do an integral like the ones done for continuous charge distributions. And it would be complicated.
-|}
-
-If the dent is inward (so sphere was punched from the outside), will the electric field at the origin be larger or smaller than that for the un-dented sphere?
-
-=== Derivation ===
-
-To compute the electric field for a point charge at the origin using the integral equation for Gauss' Law, the following steps are made
-
-$$\oint_S \mathbf{E}\cdot d\mathbf{a} = \int_S |\mathbf{E}|da = |\mathbf{E}|\int_S da = |\mathbf{E}|4\pi r^2$$
-
-Justify each step and explain all terms.  Provide a diagram.
-
-=== Use ===
-
-The electric field was measured at the locations in space shown. A table of the measurements is given in the table.
-
-\(\theta\) \(E_r\) (\E_\phi\)
-
-The measurements were repeated by rotating the half ring 360 degrees around the \(z\)-axis in increments of 10 degrees. It was found that the table did not change much, so data were not recorded.
-
-Estimate the charge enclosed in the sphere swept out by rotating the half ring 360 degrees.
-
-=== Derivation ===
-
-To compute the electric field due to an infinite line of charge using the integral equation for Gauss' Law, the following steps are made
-
-$$\oint_S \mathbf{E}\cdot d\mathbf{a} = \int_S |\mathbf{E}|da = |\mathbf{E}|\int_S da = |\mathbf{E}|2\pi r L$$
-
-\(Q_{Enclosed} = \lambda_o L\)
-
-Justify each step and explain all terms.  Provide a diagram.
-
-=== Derivation ===
-
-When a single point charge \(q\) is placed at the center of a spherical shell, the electric flux through the shell's surface, \(SS\), can be computed, using Coulomb's Law and the definition of electric flux, as
-
-$$\oint_{SS}\mathbf{E}\cdot d\mathbf{a}= \int_{\phi=0}^{2\pi}\int_{\theta=0}^{\pi}(kq/r^2)(r^2\sin\theta\,d\theta\,d\phi) = q_{At\,origin}/\epsilon_0$$
-
-Gauss' Law is 
-
-$$\oint_{Any\,S}\mathbf{E}\cdot d\mathbf{a} = Q_{Inside\,S}/\epsilon_0.$$
-
-Explain the arguments that allow for the generalization from \(SS\) to \(Any\,S\) and \(q_{At\,origin}\) to \(Q_{Inside\,S}\).
-
-{| class="wikitable collapsible collapsed"
-! align="left" |&nbsp;Answer
-|-
-|
-See also class notes and description given in Griffiths (3rd Edition) on page 68.
-
-We can think of flux as proportional to the number of field lines that pass through a surface (positive flux for exiting lines, negative flux for entering lines).  If the same number of field lines exit one closed surface also exit another closed surface, the flux through both surfaces is the same (and flux through both is positive since all lines exiting).
-
-1. Based on the above statement, charges outside of \(S\) or \(SS\) result in zero net flux (flux due to lines going in is equal to flux due to lines going out).  This explains the subscript "inside S" or "inside SS" on \(Q\).
-2. We can replace \(q_{At\,origin}\) with \(Q_{Inside\,S}\) by considering a spherical Gaussian surface that is (1) centered on an off-center charge and (2) has a radius small enough so it is fully enclosed by \(SS\).  The flux leaving the small Gaussian surface is \(q/\epsilon_0\) based on the given equation above.  Any flux leaving the small Gaussian surface leaves \(SS\).  So \(q\) can be anywhere inside of the outer shell and the flux through \(SS\) is the same as when \(q\) is at the origin. 
-3. We can apply argument 2. to each charge inside of \(SS\) and thus replace \(q_{Inside\,S}\) with \(Q_{Inside\,SS}\), where \(Q\) is the sum of all charges inside, provided superposition applies - the electric field (and flux into or out of \(SS\)) due to one charge does not change in the presence of other charges.
-
-Another argument:
-* If the surface was not spherical, then \(r\) would depend on \(\theta\) and \(\phi\).  But because of the cancellation of \(r\) in the integral, the integral does not depend on the shape of the surface.  This implies that we can replace \(SS\) with any \(S\) and the charge \(q\) can be at any location inside.
-
-In your solution I was looking for a direct response to two questions:
-1. Why can we replace \(SS\) with \(Any\,S\)?
-2. Why can we replace \(q_{At\,origin}\) with \(Q_{Inside\,S}\)?
-
-Many students made statements that were true, e.g., "superposition applies", but did not give specifics, e.g., when multiple charges are in the shell the electric field from one charge does not change and so neither does its flux through a small Gaussian surface surrounding it. On this quiz, I was fairly lenient on grading when vague statements were made; I assumed that you understood, but were not able to put your thoughts fully into words.  As time goes on, I will get less so. It is important for you to understand all aspects of the equations we use and why each step in certain derivations are allowed.
-|}
-
-=== Derivation ===
-
-A point charge \(q\) is at the origin.  To compute the electric flux through a spherical Gaussian surface \(SS\) of radius \(a\) that is centered at the origin, the following steps are made:
-
-\(\int_S \mathbf{E}\cdot d\mathbf{a} =  \int_{SS} |\mathbf{E}|da = |\mathbf{E}|\int_{SS} da = |\mathbf{E}|4\pi a^2 = 4\pi kq\)
-
-Provide a brief justification for each step after the first equation.
-
-{| class="wikitable collapsible collapsed"
-! align="left" |&nbsp;Answer
-|-
-|
-1. \(\int_S \mathbf{E}\cdot d\mathbf{a} =  \int_{SS} |\mathbf{E}|da\) - Electric field due to charge at origin is parallel to \(d\mathbf{a}\) on \(SS\).
-2. \(\int_{SS} |\mathbf{E}|da = |\mathbf{E}|\int_{SS} da\) - Electric field is constant on surface of \(SS\).
-3. \(|\mathbf{E}|\int_{SS} da = |\mathbf{E}|4\pi a^2\) - Surface area of a sphere of radius \(a\) is \(4\pi a^2\).
-4. \(|\mathbf{E}|4\pi a^2 = 4\pi kq\) - At distance \(a\) electric field is \(kq/a^2\) and \(k=1/(4\pi\epsilon_0)\).
-It is important to note that these steps only apply in special situations. In many problems, Gauss' Law can't be used to easily compute the electric field. The charge configurations where Gauss' Law can be used to compute \(E\) include a point charge, an infinite line or cylinder of charge, an infinite sheet of charge, a uniformly charged shell or sphere.  You should be able to derive the electric field for all of these charge configurations using Gauss' Law and also be able to justify each step as you did above.
-|}
-
-=== Infinite Line of Charge ===
-
-Write down the formal version of the integral equation for Gauss' Law and define all terms in the equation. Show how it can be used to compute the electric field for ...
-
-Justify all steps and use a diagram that defines any unit vector used in your equation for \(\mathbf{E}\). Draw a sketch of \(\mathbf{E}\) versus distance from the center of the axis.
-
-=== Infinite Lines of Charge ===
-
-Lines of charge are glued to the surface of a long tube.
-
-=== Near-Infinite Line of Charge ===
-
-=== Ring of Charge ===
-
-Consider a ring of charge and Gaussian cylinder with a very small height. 
-
-Use Gauss' Law to find the electric field for \(z\simeq=0\) for \(\rho < a\) and \(rho > a). Provide details that justify each step in your derivation.
-
-Compare your answer with that found using the continuous charge distribution method.
-
-=== Rings of Charge ===
-
-Consider an infinite stack of rings of charge.
-
-(Note this is the same question as the Infinite Lines of Charge problem.)
-
-=== Infinite Sheet of Charge ===
-
-Write down the formal version of the integral equation for Gauss' Law and define all terms in the equation. Show how it can be used to compute the electric field for ...
-
-Justify all steps and use a diagram that defines any unit vector used in your equation for \(\mathbf{E}\). Draw a sketch of \(\mathbf{E}\) versus distance from the center of the axis.
-
-=== Near-Infinite Sheet of Charge ===
-
-=== Infinite Sheets of Charge ===
-
-The electric field created by an individual sheet of charge is ...
-
-Consider two sheets of charge.
-
-1. Find the electric field between and outside using superposition of the fields of both sheets
-2. Use Gauss' Law with Gaussian surfaces as shown. Treat the electric field from each sheet individually as unknowns.
-
-=== Circular vs. Square Sheet of Charge ===
-
-
-# Introduction
-
-## Background
-
-In Chapter 22, your textbook has an excellent description of Gauss's law along with many useful figures. This tutorial was written with the assumption that you have read Sections 22.1-22.4. Many of the problems here are similar to those given in the text; they were written to ensure that you understood the very brief arguments and mathematical steps given. Quite often students think that they understand a problem because they understand a solution. However, you won't understand a problem at the level required for an exam question unless you can also solve the problem without looking at the solution.
-
-Last week's tutorial involved deriving the electric field for a continuous charge distribution. These derivations require careful set-up and integration of vector components of the field. This week we will show that it is much easier to get an answer for _some_ continuous charge distributions using Gauss's law. 
-
-Gauss's law is derived from Coulomb's law, so they are both equally valid. Coulomb's law can always be used to find the electric field due to a continuous charge distribution when the charge density is known. Gauss's law is only useful for computing the electric field for certain continuous charge distributions. The list includes:
-
-* near the center of a long and uniformly charged line,
-* near the center of a long and uniformly charged cylindrical shell,
-* at any location for a uniformly charged spherical shell, and
-* near the center of a large and uniformly charged sheet.
-
-Gauss's law can also be used to find the electric field due to a uniformly charged solid cylinder and a uniformly charged solid sphere because they can be created by nesting shells together and using a superposition argument.
-
-%The key reason that Gauss's law can be used to find the electric field in these cases is a surface can be imagined for which the electric field is perpendicular and has a constant magnitude (including a zero magnitude).
-
-Gauss’s law states that the total electric flux through any closed surface is proportional to the total charge inside the surface.
-
-The word "flux" means "flow". Before there was an understanding of electrical phenomena, Faraday and Maxwell would draw electric field lines and speak of "electricity" flowing along them in the same way that fluid flows along a streamline (if you put dye in a flowing fluid, you'll see the path of a streamline). In Chapter 22.2, there is a discussion of the flux of fluid through a rectangle. This type of fluid flow analogy was used by Faraday and Maxwell to understand electrical phenomena. As emphasised in the previous tutorial, **nothing flows along an electric field line**. A field line only tells you the direction of force on a positively charged particle placed on it.
-
-Somehow, even though the fluid flow analogy is wrong because there is nothing flowing along an electric field line, the analogy helped Faraday and Maxwell to get the right answers. 
-
-## The discovery of Gauss's law
-
-Here is what lead to Gauss discovering his law (maybe). See also Figure 22.1 in the textbook
-
-Imagine wrapping a small spherical shell of radius $r_{small}$ around a point charge $Q_{c}$ that is at the center of the shell. The electric field everywhere on the surface of the shell will be $kQ_c/r_{small}^2$ because all points on the shell are a distance of $r_{small}$ from the charge. For lack of a better word (or vanity) call this imaginary surface a Gaussian surface.
-
-Now multiply this field by the surface area of the shell, which is $4\pi r_{small}^2$:
-
-$$\left(\frac{kQ_c}{r_{small}^2}\right)4\pi r_{small}^2=\frac{Q_c}{\epsilon_o},$$
-
-
-Now imagine wrapping a large spherical shell of radius $r_{large}$ around the same point charge and multiply the area times the field on its surface:
-
-$$\left(\frac{kQ_c}{r_{large}^2}\right)4\pi r_{large}^2=\frac{Q_c}{\epsilon_o}$$
-
-In both cases, the radius of the shell cancels.
-
-**Gauss's Conclusion**: If somehow I could measure the electric field on a spherical shell, found it to be constant, and knew the radius of the shell, I could state how much charge is at the center of the shell. The radius of the spherical shell does not matter. In equation form, the expected experimental result is
-
-$$
-E_{ss}A_{ss} = \frac{Q_{center}}{\epsilon_o}
-$$
-\label{eqn:simple}
-
-where $ss$ means a spherical shell centered on a point charge $Q_{center}$. The product of an electric field and an area is called electric flux or $\Phi_E$ (that is a capital phi).
-
-Gauss's innovation is that he took this equation and asked what would happen if the surface was not spherical and the charge was not a single point charge. He showed that you could still figure out how much charge was enclosed. Gauss's law is
-
-$$
-\oint \mathbf{E}\cdot d\mathbf{A}=\frac{Q_{encl}}{\epsilon_o}\qquad\text{Gauss's law}
-$$
-\label{eqn:general}
-
-\include{Gauss/figures/Flux_Differential}
-
-
-We'll break down this equation later after a simpler version is used. In words, this equation means that if you measure the electric field perpendicular ($E_{\perp}$) to each small patch of area $dA$ on a closed surface, and sum the product of $E_{\perp}dA$  for each patch, you can assert that the amount of charge inside of the surface is proportional to this sum. As will be discussed, the quantity $E_{\perp}dA$ is equal to $\mathbf{E}\cdot d\mathbf{A}$. The circle on the integral sign means that the sum must be taken over a closed surface (if you put water inside of the surface, there would be no leaks).
-
-Gauss's law is a compact equation with many nuances. This tutorial will examine the calculation of the different components of it.  We'll use a slight generalization of Equation~\ref{eqn:simple} (or a simplification of Equation~\ref{eqn:general}) that does not require integration:
-
-$$
-EA = \frac{Q_{encl}}{\epsilon_o}
-$$
-\label{eqn:simple2}
-
-**Restriction**: \mathbf{E} is always perpendicular ($\perp$) to the closed surface, $A$ and the electric field, $E$, does not change over the surface, $A$. In addition, the electric field either always points either outwards or inwards from the surface the volume encloses.
-
-**Exception**: If $E$ is parallel to part of the surface, omit its area from $A$.
-
-**If we can imagine a Gaussian surface on which the electric field is constant and always perpendicular or zero, Equation~\ref{eqn:simple2} can be used.** You may recall from the previous tutorials that there was an emphasis on the direction of the electric field. This is why -- if we can make an argument for why the electric field is perpendicular to a surface, we have the right to use Gauss's law in the form of Equation~\ref{eqn:simple2} to find the electric field.
-
-----
-
-In the following section, you are asked to review the difference between an insulator and a conductor.
-
-Section~\ref{section:using_gausss_law} involves the calculations required for using Equation~\ref{eqn:simple2} to find the electric field due to a charge distribution. Once you have mastered this, you'll be ready to learn how to use the general equation for Gauss's law (Equation~\ref{eqn:general}) in Section~\ref{section:computing_electric_flux}. (However, as noted earlier, Equation~\ref{eqn:general} is only useful for computing the electric field created by certain charge distributions. It turns out that for all of the charge distributions for which Equation~\ref{eqn:general} can be used to easily compute the electric field, Equation~\ref{eqn:simple2} applies.)
-
-Finally, in Section~\ref{gausss_law_and_conductors} Gauss's law is used to solve problems involving conductors.
-
-
-
-# Using Gauss's Law
-\label{section:using_gausss_law}
-
-In this section, only charge distributions for which Equation~\ref{eqn:simple2} applies are considered and all charges are on an insulator. Think of the charges on an insulator as glued so they can't move. 
-%In general, if charges are placed uniformly on or within a conductor, the charges will quickly redistribute on the conductor's surface. In this case, the charge density would not be constant, which would further complicate matters.
-
-The first part of using Gauss's law in the form of Equation~\ref{eqn:simple2} involves finding the amount of charge enclosed by a Gaussian surface. This is done in Section~3.1.
-
-The last two parts are (a) Justifying why the electric field satisfies the restriction on Equation~\ref{eqn:simple2} and (b) solving for $E$. This is done in Section~3.2.
-
-\clearpage
-
-## Finding enclosed charge
-
-\begin{tcolorbox}[enhanced,breakable,parbox=false,colframe=blue!50!blue,colback=white,height fill,title=Example: Line of charge]
-
-A total of $+3Q$ is uniformly distributed on an insulator that is a line of length $L$. The blue Gaussian cylinder shown has a length $l$, radius $r$, and the same center line as the insulator.
-
-\tcsidebyside{
-    \includegraphics[scale=0.3]{Gauss/figures/Line_and_Gaussian_Cylinder.png}
-}{
-\begin{tikzpicture}
-    \draw[step=0.4cm,gray,very thin] (0,0) grid (6.4,2.4)
-\end{tikzpicture}
-}
-
-1. Find the charge density on the line.
-
-2. Find the amount of charge enclosed by the Gaussian cylinder when it has radii of
-$r=/100$, $r=l/2$, $r=l$, and $r=2l$. The enclosed charge should be in terms of one or more of $\epsilon_o$, numbers, and the parameters given ($Q$, $L$, $l$).
-
-3. Plot the four values of enclosed charge calculated above versus the radius of the Gaussian cylinder. 
-
-4. Find an equation that relates $Q_{encl}$ to $r$. Plot this equation on the graph above.
-
-\vspace{-2em}
-\begin{center}\rule{2cm}{0.4pt}\end{center}
-\vspace{-1em}
-
-{\bf 1. Answer}: Because the charge is uniformly distributed on the line, the the charge density is simply the total charge divided by the length: $\lambda={3Q}/{L}$.
-
-{\bf 2. Answer}:  The dashed line in the figure is the part of the line inside of the Gaussian cylinder. The length of the dashed line is $l$. The charge enclosed for all four cases is $Q_{encl}=\lambda l=3Q{l}/{L}$. In retrospect, one could have obtained this equation without considering the charge density - the charge enclosed is the total charge $\times$ the ratio $l/L$. 
-
-The equation for the charge enclosed does not depend on the radius of the Gaussian cylinder. Visually, this is expected. If the radius of the cylinder increases, the length of the line inside of the cylinder does not change. 
-
-Check: As $l\rightarrow 0$, we expect from the diagram that the amount of charge enclosed should approach zero. This equation also says that as the ratio $l/L\rightarrow 0$, $Q_{encl}\rightarrow 0$. Does this make sense?
-
-{\bf 3. Answer:}
-
-\include{Gauss/figures/Line_and_Gaussian_Cylinder_Graph}
-
-{\bf 4. Answer}: As noted in the answer to part 2., the enclosed charge does not change as the radius of the Gaussian cylinder changes. So $Q_{encl}(r)=3Q{l}/{L}=const$, corresponding to the straight line on the graph.
-
-\end{tcolorbox}
-
-\clearpage
-
-\begin{tcolorbox}[enhanced,breakable,parbox=false,colframe=blue!50!blue,colback=white,height fill,title=Example: Hollow Cylinder]
-
-An insulating and hollow cylinder of radius $R$ and length $L$ has a charge of $+3Q$ distributed \emph{on its curved surface}. The blue Gaussian cylinder shown has a length $l$ and radius $r$ and has the same center line as the charged cylinder.
-
-\tcsidebyside{
-    \includegraphics[scale=0.13]{Gauss/figures/Cylindrical_Shell_and_Gaussian_Cylinder.png}
-}{
-\hspace{1cm}
-\begin{tikzpicture}
-    \draw[step=0.4cm,gray,very thin] (0,0) grid (6.4,2.4)
-\end{tikzpicture}
-}
-
-1. Find the charge density on the curved part of the insulating cylinder.
-
-2. Find the amount of charge enclosed in Gaussian cylinder of radii $r=0$, $r=R/2$, $r=2R$, and $r=4R$.
-
-3. Plot the four values of enclosed charge calculated above versus the radius of the Gaussian cylinder.
-
-4. Find an equation that relates $Q_{encl}$ and $r$ for $r<R$. Plot this equation on the graph above.
-
-5. Find an equation that relates $Q_{encl}$ and $r$ for $r>R$. Plot this equation on the graph above.
-
-\vspace{-2em}
-\begin{center}\rule{2cm}{0.4pt}\end{center}
-\vspace{-1em}
-
-{\bf 1. Answer}: The surface is an area, so the appropriate charge density will be a surface charge density, which has units of charge per length$^2$. The area of the curved surface is the circumference $\times L = 2\pi RL$. The charge is uniformly distributed, so the charge density is simply the total charge divided by the area: $\sigma={3Q}/{2\pi RL}$.
-
-{\bf 2. Answer}: Imagine that the blue Gaussian cylinder was fully inside of the hollow cylinder. There would be no charge inside of it. As a result, the charge enclosed for $r=0$ and $r=R/2$ is zero. Once the Gaussian cylinder's radius is larger than the hollow cylinder's radius, the total charge inside of the Gaussian cylinder does not change. To find the charge enclosed in this case, we need to find the area of the hollow cylinder enclosed. It is $2\pi R l$. The charge enclosed is the charge density computed in part 1. times this area: $Q_{encl}=\sigma (2\pi R l) = 3Q{l}/{L}$. In retrospect, one could have obtained this equation without considering the surface charge density - the charge enclosed is the total charge $\times$ the ratio $l/L$.
-
-Check: Visually, as the length of the Gaussian cylinder shrinks to zero, the enclosed charge should approach zero. The equation for $Q_{\encl}$ is consistent with this observation.
-
-{\bf 3. Answer}: 
-
-\include{Gauss/figures/Cylindrical_Shell_and_Gaussian_Cylinder_Graph}
-
-{\bf 4. Answer}: The enclosed charge is zero for $r<R$, so $Q_{\encl}(r)=0$.
-
-{\bf 5. Answer}: The enclosed charge is constant for $r>R$, so, $Q_{\encl}(r)=3Q{l}/{L}=const$.
-
-\end{tcolorbox}
-
-\clearpage
-
-\begin{tcolorbox}[enhanced,breakable,parbox=false,colframe=black!50!black,colback=white,height fill,title=Solid cylinder]
-
-A solid insulating cylinder of radius, $R$ and length, $L$ has a charge of $+3Q$ uniformly distributed within it. The Gaussian cylinder shown has the same center line as the insulating cylinder, length $l$, and radius $r$.
-
-\tcsidebyside{
-    \includegraphics[scale=0.27]{Gauss/figures/Solid_Cylinder_and_Gaussian_Cylinder.png}
-}{
-\hspace{1cm}
-\begin{tikzpicture}
-    \draw[step=0.4cm,gray,very thin] (0,0) grid (6.4,2.4)
-\end{tikzpicture}
-}
-
-1. Find the charge density in the insulating cylinder.
-\ifsolutions
-\\
-\\
-{\bf Answer:} The insulating cylinder is a volume. The volume of a cylinder is its cross-sectional area time its height, $\pi R^2 L$. The charge density is charge/volume, $\rho=3Q/(\pi R^2 L)$.
-\else
-\\[2cm]
-\fi
-
-2. Find the amount of charge enclosed in a Gaussian cylinder of radius $r=0$, $r=R/2$, $r=2R$, and $r=4R$.
-
-\ifsolutions
-{\bf Answer}: When $r<R$, the Gaussian cylinder is fully inside of the insulating cylinder. The charge in the Gaussian cylinder is the charge density of the insulating cylinder times the volume of the Gaussian cylinder: $Q_{encl}=\rho \pi r^2 l = 3Q(r^2/R^2)(l/L)$.
-
-For any $r\ge R$, the amount of charge inside the Gaussian cylinder does not change with $r$. The amount of charge depends on volume of insulator inside of the Gaussian cylinder, which is $\pi R^2 l$, so $Q_{encl}=\rho \pi R^2 l = 3Q(l/L)$. When $l=L$, $Q_{encl}=3Q$, which makes sense because all of the insulator is inside of the Gaussian cylinder.
-
-\else
-\\[2cm]
-\fi
-
-3. Plot the four values of enclosed charge  calculated above versus the radius of the Gaussian cylinder.
-
-\ifsolutions
-{\bf Answer}: For $r<R$, the curve will be a parabola because of the $r^2$. For $r>R$, curve will be a horizontal line that intersects with the parabola at $r=R$. For values outside of the cylinder, r $>$ R, the enclosed charge will be constant.
-
-\else
-\\[2cm]
-\fi
-
-4. Find an equation that relates $Q_{encl}$ and $r$ for $r<R$. Plot this equation on the graph above.
-
-\ifsolutions
-{\bf Answer}: As noted in part 2, the charge enclosed is $Q_{encl}=\rho \pi r^2 l = 3Q(r^2/R^2)(l/L)$. Because of the dependence on r$^2$ the curve is parabolic. 
-
-\else
-\\[2cm]
-\fi
-
-
-5. Find an equation that relates $Q_{encl}$ and $r$ for $r>R$. Plot this equation on the graph above.
-
-\ifsolutions
-{\bf Answer}: As noted in part 2, the charge enclosed is $Q_{encl}=3Q$ so it is constant. 
-
-\else
-\\[2cm]
-\fi
-
-\end{tcolorbox}
-
-\clearpage
-
-\begin{tcolorbox}[enhanced,breakable,parbox=false,colframe=black!50!black,colback=white,height fill,title=Spherical shell]
-
-An insulating sphere of radius $R$ has a charge of $+3Q$ distributed \emph{on its surface}. The cross-section of the sphere is shown along with a dashed line representing the surface of a Gaussian sphere, which has the same center as the charged sphere and a radius $r$.
-
-\tcsidebyside{
-    \input{Gauss/figures/Spherical_Shell_with_Gaussian_Sphere}
-}{
-\hspace{2cm}
-\begin{tikzpicture}
-    \draw[step=0.4cm,gray,very thin] (0,0) grid (6.4,2.4)
-\end{tikzpicture}
-}
-
-1. Find the surface charge density on the insulating sphere.
-
-\ifsolutions
-{\bf Answer}: $\sigma = 3Q/4\pi R^2$
-\else
-\\[2cm]
-\fi
-
-2. Find the amount of charge enclosed in Gaussian sphere of radii $r=0$, $r=R/2$, $r=2R$, and $r=4R$.
-
-\ifsolutions
-{\bf Answer}: When $r < R$, $Q_{encl}=0$. When $r\ge R$, $Q_{encl}=3Q$ because all of the charge is enclosed.
-\else
-\\[2cm]
-\fi
-
-3. Plot the four values of enclosed charge calculated above versus the radius of the Gaussian sphere.
-\\[2cm]
-
-4. Find an equation that relates $Q_{encl}$ and $r$ for $r<R$. Plot this equation on the graph above. \
-\ifsolutions
-
-{\bf Answer}: $Q_{encl}=0$
-\else
-\\[2cm]
-\fi
-
-5. Find an equation that relates $Q_{encl}$ and $r$ for $r>R$. Plot this equation on the graph above.\
-
-\ifsolutions
-{\bf Answer}: Plot should be a horizontal line between $r$ and $R$ at y = 0 and a horizontal line for $r\ge R$ at y = $3Q$.
-\else
-\\[2cm]
-\fi
-\end{tcolorbox}
-
-%\clearpage
-
-%\begin{tcolorbox}[enhanced,breakable,parbox=false,colframe=black!50!black,colback=white,height fill,title=Solid sphere]
-
-%An insulating sphere of radius $R$ has a charge of +3Q distributed uniformly \emph{throughout} it. The cross-section of the sphere is shown along with a dashed line representing the surface of a Gaussian sphere, which has the same center as the charged sphere and a radius $r$.
-
-%\tcsidebyside{
-%    \input{Gauss/figures/Solid_Sphere_with_Gaussian_Sphere}
-%}{
-%\hspace{2cm}
-%\begin{tikzpicture}
-%    \draw[step=0.4cm,gray,very thin] (0,0) grid (6.4,2.4)
-%\end{tikzpicture}
-%}
-
-%1. Find the charge density in the sphere.
-%\\[2cm]
-
-%2. Find the amount of charge enclosed in Gaussian sphere of radii $r=0$, $r=R/2$, $r=2R$, and $r=4R$.
-%\\[2cm]
-
-%3. Plot the four values of enclosed charge calculated above versus the radius of the Gaussian sphere.
-%\\[2cm]
-
-%4. Find an equation that relates $Q_{encl}$ and $r$ for $r<R$. Plot this equation on the graph above.
-%\\[2cm]
-
-%5. Find an equation that relates $Q_{encl}$ and $r$ for %$r>R$. Plot this equation on the graph above.
-
-%\end{tcolorbox}
-
-\clearpage
-
-\begin{tcolorbox}[enhanced,breakable,parbox=false,colframe=black!50!black,colback=white,height fill,title=Large sheet]
-
-An insulator in the form of a square sheet with side length $L$ has a charge of $+3Q$ distributed uniformly on it. The blue Gaussian cylinder has a height $h$ and radius $r$ and half of it is above the sheet.
-
-\tcsidebyside{
-    \includegraphics[scale=0.27]{Gauss/figures/Plane_and_Gaussian_Cylinder.png}
-}{
-\hspace{1cm}
-\begin{tikzpicture}
-    \draw[step=0.4cm,gray,very thin] (0,0) grid (6.4,2.4)
-\end{tikzpicture}
-}
-
-1. Find the charge density on the sheet.
-\ifsolutions
-{\bf Answer}: $\sigma=3Q/L^2$
-\else
-\\[2cm]
-\fi
-
-2. Find the amount of charge enclosed in Gaussian cylinder of radii $r=0$, $r=R/2$, $r=2R$, and $r=4R$.
-
-\ifsolutions
-{\bf Answer}: As noted in class, no $R$ was given in the problem statement. The question should have asked for the charge enclosed for $r=L/32$, $r=L/16$, $r=L/8$, $r=L/4$. We are not interested in larger $r$ because Gauss's law can't be used unless the Gaussian cylinder is small relative to the sheet. This is discussed in the large sheet solution in the next section.
-
-The amount of charge enclosed for $r<L$ is $Q_{encl}=\sigma \pi r^2 = 3Q r^2/L^2$.
-\else
-\\[2cm]
-\fi
-
-3. Plot the four values of enclosed charge calculated above versus the radius of the Gaussian cylinder.
-\\[2cm]
-
-4. Find an equation that relates $Q_{encl}$ and $r$ for $r<R$. Plot this equation on the graph above.
-\\[2cm]
-
-5. Find an equation that relates $Q_{encl}$ and $r$ for $r>R$. Plot this equation on the graph above.
-
-\ifsolutions
-{\bf Answer}: The line should be a parabola that passes through the origin.
-\else
-\\[2cm]
-\fi
-
-\end{tcolorbox}
-
-\newpage
-
-## Justifying Equation~\ref{eqn:simple2} and solving for $E$
-
-\begin{tcolorbox}[enhanced,breakable,parbox=false,colframe=blue!50!blue,colback=white,height fill,title=Line of charge]
-
-For the charged line in the previous section,
-
-1. Explain why the electric field satisfies the constraints of Equation~\ref{eqn:simple2}.
-
-2. In terms of $\lambda$, $\epsilon_o$, and $r$, what is the electric field at all distances from the line?
-
-\vspace{-2em}
-\begin{center}\rule{2cm}{0.6pt}\end{center}
-\vspace{-1em}
-
-{\bf Answer to 1.} In the Field Lines tutorial, the electric field lines associated with a line of charge were drawn. It was found that near the center of the line of charge, the field lines were near radial and that the field lines became straighter near the center as the length of the line of charge increased. A side view of the Gaussian cylinder and field lines near the center of a long charged line is shown below.
-\vspace{-0.5em}
-\input{Gauss/figures/Line_and_Gaussian_Cylinder_Field}
-
-Suppose the Gaussian cylinder is very small in both height and radius. The field lines that pass through it are near radial -- they are parallel to the end caps of the cylinder (perpendicular to the area vector for the caps) and perpendicular to the curved surface (parallel to the area vector for the cylinder). In addition, the electric field is not changing over the surface. As a result, the constraints on Equation~\ref{eqn:simple2} are satisfied. 
-
-{\bf Answer to 2.} Given our answer to 1., we can now use
-
-$EA={Q_{encl}}/{\epsilon_o}$
-
-The curved area of the Gaussian surface is $2\pi rl$. The end cap areas of $\pi r^2$ each are part of the surface area of the Gaussian cylinder are ignored because the field is parallel to the end caps. 
-
-The charge enclosed which was found previously is $3Ql/L$. 
-
-$E(2\pi rl)=\frac{3Ql/L}{\epsilon_o}\quad\Rightarrow\quad E = \frac{3Q}{2\pi\epsilon_o Lr}$
-
-Technically, this equation applies at the center of a finite-length charged line. If the line becomes ``infinite'', then the equation applies everywhere because the field lines are everywhere perpendicular to the line. This is the reason books often refer to the field of an infinite line of charge - it is a statement that the electric field lines are radially outward from the line everywhere.
-
-Using $\lambda=3Q/L$ found previously,
-
-$E = \frac{\lambda}{2\pi\epsilon_o}\frac{1}{r}$
-
-This is the magnitude of the electric field near the center of a long and uniformly charged line. The direction is radial, but the direction cannot be obtained from Gauss's law. Instead, it was obtained by drawing a sketch of the field lines based on consideration of individual charges and superposition arguments. 
-
-Once we were able to justify using Equation~\ref{eqn:simple2}, this result was obtained using only a few equations. In contrast, in the previous tutorial in which Coulomb's law was used, finding the solution required integration.
-
-\end{tcolorbox}
-
-\newpage
-
-\begin{tcolorbox}[enhanced,breakable,parbox=false,colframe=black!50!black,colback=white,height fill,title=Hollow cylinder]
-For the charged hollow cylinder in the previous section,
-
-1. Explain why the electric field satisfies the constraints of Equation~\ref{eqn:simple2}.
-
-\ifsolutions
-{\bf Answer}: The cylinder can be thought of as an arrangement of long lines of charge such that we can always find pairs of infinitely long charged lines that produce electric fields that sum to be perpendicular to the Gaussian surface. In addition, many pairs of long charged lines  will result in a uniformly charged cylindrical shell. As a result of these arguments, the net field due to the insulating cylinder will be perpendicular to the Gaussian surface and thus parallel to the area vector.
-
-Hint: Assume that the cylinder is infinitely long. A surface charge can be created by gluing infinitely long charged lines lengthwise on the surface of the charged cylinder. In the following figure, two such lines are shown with open circles along with the electric field that each creates at a point on the curved part of the Gaussian cylinder. (The lines 1 and 2 extend into the page.)
-
-In addition, the electric field is not changing over the surface. 
-
-\input{Gauss/figures/Cylindrical_Shell_and_Gaussian_Cylinder_Centerline_View}
-
-
-\else
-\fi
-
-2. What is the electric field at all distances from its center line?
-
-\ifsolutions
-{\bf Answer}: The electric field is perpendicular to the curved surface of the cylinder and parallel to its caps. So the area we need to account for is the area of the curved surface of the Gaussian cylinder, which is $2\pi r l$. This area does not change when the Gaussian cylinder radius $r$ is larger than the insulating cylinder radius $R$. Equation~\ref{eqn:simple2} is
-
-$$EA = \frac{Q_{encl}}{\epsilon_o}$$
-
-Plugging in the area gives
-
-$$E2\pi r l = \frac{Q_{encl}}{\epsilon_o}$$
-
-As found previously, the equation for $Q_{encl}$ changes at $r=R$
-
-$$Q_{encl}=\left\{
-\begin{array}{ll}
-      \displaystyle 0 & r < R \\
-      \displaystyle 3Q & r \ge R \\
-\end{array} 
-\right. $$
-
-so the equation that we need to solve with $E$ will also change at $r=R$:
-
-\[ 
-\begin{array}{ll}
-      \displaystyle E 2\pi r l = \frac{0}{\epsilon_o} & r < R \\\\
-      \displaystyle E 2\pi r l = \frac{3Q}{\epsilon_o} & r \ge R \\
-\end{array} 
-\]
-
-Solving for $E$ gives
-
-$$E=\left\{
-\begin{array}{ll}
-      0 & r < R \\\\
-      \displaystyle\frac{3Q}{2\pi l r\epsilon_o} & r \ge R \\
-\end{array}
-\right.
-$$
-
-Although the charge is distributed on an area, we can also identify a linear charge density as being the charge per unit length of the cylinder. This linear charge density is $\lambda = 3Q/l$. As a result, we can write
-
-$$E=\left\{
-\begin{array}{ll}
-      0 & r < R \\\\
-      \displaystyle\frac{\lambda}{2\pi r\epsilon_o} & r \ge R \\
-\end{array}
-\right.
-$$
-
-The interpretation of this last set of equations is that outside of the cylinder, the electric field is the same as the field would be if all of the charge on the cylinder was collapsed onto its center line. The reason is that the equation  $\lambda/2\pi r\epsilon_o$ is the same as that for a line of charge. This type of result also occurs with a uniformly charged spherical shell, a solid charged sphere, and a long solid cylinder (when the charge density only varies with radius). In these cases, the field outside the object is the same as if all of the charge was collapsed onto the center of the sphere or the center line of the cylinder. 
-
-\else
-\fi
-
-\end{tcolorbox}
-
-%\clearpage
-
-%\begin{tcolorbox}[enhanced,breakable,parbox=false,colframe=black!50!back,colback=white,height fill,title=Solid cylinder]
-
-%For the charged solid cylinder in the previous section,
-
-%1. Explain why the electric field satisfies the constraints of Equation~\ref{eqn:simple2}.
-
-%2. What is the electric field at all distances from its center line?
-
-%\begin{center}\rule{2cm}{0.4pt}\end{center}
-
-
-%\end{tcolorbox}
-
-\clearpage
-
-\begin{tcolorbox}[enhanced,breakable,parbox=false,colframe=black!50!black,colback=white,height fill,title=Spherical shell]
-
-For the charged spherical shell in the previous section,
-
-1. Explain why the electric field satisfies the constraints of Equation~\ref{eqn:simple2}.
-
-\ifsolutions
-{\bf Answer}: Similar to the hollow cylinder, we can always find pairs of charges on the surface of the sphere with electric fields that sum to be radial (try to draw this to convince yourself). These radial field lines will be parallel to the area vector for a region dA on the surface of the spherical Gaussian surface. In addition, the electric field is not changing over the surface. 
-\fi
-
-2. What is the electric field at all distances from its center?
-
-\ifsolutions
-{\bf Answer}: The area we need to account for is the area of the of the Gaussian sphere, which is $4\pi r^2$. This equation does not change when the Gaussian sphere radius $r$ is larger than the insulating sphere radius $R$. Equation~\ref{eqn:simple2} is $EA = \frac{Q_{encl}}{\epsilon_o}$. Plugging in the area gives:
-
-$$E 4\pi r^2 = \frac{Q_{encl}}{\epsilon_o}$$
-
-As found previously, the equation for $Q_{encl}$ changes at $r=R$:
-
-$$Q_{encl}=\left\{
-\begin{array}{ll}
-      \displaystyle 0 & r < R \\
-      \displaystyle 3Q & r \ge R \\
-\end{array} 
-\right. $$
-
-so the equation that we need to solve for $E$ using will also change at $r=R$:
-
-\[ 
-\begin{array}{ll}
-      \displaystyle E 4\pi r^2 = \frac{0}{\epsilon_o} & r < R \\\\
-      \displaystyle E 4\pi r^2 = \frac{3Q}{\epsilon_o} & r \ge R \\
-\end{array} 
-\]
-
-Solving for $E$ gives
-
-$$E=\left\{
-\begin{array}{ll}
-      0 & r < R \\\\
-      \displaystyle\frac{3Q}{4\pi \epsilon_o r^2} & r \ge R \\
-\end{array}
-\right.
-$$
-
-The interpretation of this last set of equations is that outside of the sphere, the electric field is the same as the field would be if all of the charge on the sphere was collapsed onto its center -- if there is a charge $3Q$ at the origin, the the field it creates is $3Q/4\pi \epsilon_o r^2$.
-
-(For those with a careful eye, if $r=0$, the we get $E=0/0$, which is indeterminate. Technically Gauss's law can't tell us the electric field at the origin. But we can argue that it is zero because for every charge on the shell there is another charge that exactly cancels its electric field at $r=0$.)
-\fi
-
-3. The equation for the electric field for a line of charge is valid near the center of a long uniformly charged line. Are there any restrictions on the equation that you found in your answer to part 2?
-
-\ifsolutions
-{\bf Answer}: There are no restrictions. The electric field due to the charges on the surface will always be perpendicular to the surface of the Gaussian sphere. If the size of the insulating sphere changes, the electric field will will still be perpendicular to the Gaussian sphere.
-\fi
-
-\ifsolutions
-\else
-\begin{center}\rule{2cm}{0.4pt}\end{center}
-\fi
-
-\end{tcolorbox}
-
-%\clearpage
-
-%\begin{tcolorbox}[enhanced,breakable,parbox=false,colframe=black!50!black,colback=white,height fill,title=Solid sphere]
-
-%For the charged solid sphere shell in the previous section,
-
-%1. Explain why the electric field satisfies the constraints of Equation~\ref{eqn:simple2}.
-
-%2. What is the electric field at all distances from its center?
-
-%\begin{center}\rule{2cm}{0.4pt}\end{center}
-
-%\end{tcolorbox}
-
-\clearpage
-
-\begin{tcolorbox}[enhanced,breakable,parbox=false,colframe=black!50!black,colback=white,height fill,title=Large sheet]
-
-For the charged sheet in the previous section,
-
-1. Explain why the electric field satisfies the constraints of Equation~\ref{eqn:simple2}.
-\ifsolutions
-
-{\bf Answer}: As was covered in class, near the center of a finite uniformly charged sheet, the electric field lines are nearly perpendicular to the sheet. As a result, our Gauss's law solution will be valid in this region. Often we say the sheet is ``infinitely large''. Of course, creating an infinitely large sheet is impossible; this statement means that the point of interest is near enough to the center of a finite sheet so that the equation for the electric found using Gauss's law applies (or that the field lines are perpendicular so that Gauss's law can be used to derive the electric field). In addition, the electric field is not changing over the surface. 
-
-We use similar logic for a line of charge. Near the center of a finite line of charge, the field lines are nearly perpendicular to the line, but near the ends the field lines are not perpendicular. So the statement ``infinite line of charge'' means that that the point of interest is near enough to the center of the line of charge that the simple equation for the electric field using Gauss's law applies.
-\fi
-
-2. What is the electric field at all distances from its center?
-
-\ifsolutions
-{\bf Answer}: The amount of charge enclosed was found to be $3Q \pi r^2/L^2$ as long as $r < L$. The area that applies is the area of the two caps of the cylinder, which is $A=2(\pi r^2)$. In addition, the electric field is not changing over the surface.  The electric field is parallel to the curved surface of the cylinder and thus perpendicular to the area vector so the dot product of the two is zero. As argued above, the equation $EA = Q_{encl}/\epsilon_o$ applies. Plugging in these values give:
-
-$$E = \frac{3Q}{2L^2\epsilon_o}$$
-
-This equation is most often written in terms of the charge density of the sheet, which is $3Q/L^2$. In this case,
-
-$$E = \frac{\sigma}{2\epsilon_o}$$
-
-\fi
-
-
-%\begin{center}\rule{2cm}{0.4pt}\end{center}
-
-
-\end{tcolorbox}
-
+Repeat the previous problem when the conductor has a net charge of $3Q$. 
