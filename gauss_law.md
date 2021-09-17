@@ -453,7 +453,7 @@ Repeat the previous problem when the slab has a net charge of $Q$.
 
 ## Example -- Charge Inside Conductor with a Cavity
 
-A charge $q$ is placed at the center of a spherical conductor of radius $2R$ with a spherical cavity of radius $R$.
+A charge $q$ is placed at the center of an uncharged spherical conductor of radius $2R$ with a spherical cavity of radius $R$.
 
 <img src="figures/Conductors_Sphere_with_Cavity.svg"/>
 
@@ -467,7 +467,29 @@ and the surface charge density at $r=R$ and $r=2R$.
 
 Plot the electric field versus the distance from the charge.
 
-**Answer**: Covered in class.
+**Answer**:
+
+A conductor will only have charges on its surface. There are two surfaces, one at $r=R$ and the other at $r=2R$. 
+
+Symmetry argument: (Important!) Any surface charge density must be uniform because the geometry appears the same with a rotation about any axis.
+
+A Gaussian sphere with radius $r\lt R$ will have an enclosed charge of $q$. If all of the charge on the conducting surface is uniform, the will create no electric field for $r \lt R$. Thus, for $r\lt R$, the field is only that due to the point charge and is $E_r=kq/r^2$.
+
+A Gaussian sphere with radius $R\lt r \lt 2R$ has zero electric field on its surface because the surface is inside of a conductor. Thus $\Phi_E=0=Q_{encl}/\epsilon_o$. $Q_{encl}=q + Q_{r=R}$, so $Q_{r=R}=-q$.
+
+If the conductor is uncharged, then by charge conservation, $+q$ must be on its outer surface, so $Q_{r=2R}=-q$.
+
+A Gaussian sphere with $r\gt 2R$ will have an electric field on it that is radial and uniform based on the symmetry argument. The flux is $4\pi r^2 E_r$. The enclosed charge is $q + Q_{r=R} + Q_{r=2R}=q$. Gauss's law thus gives $E_r = kq/r^2$ for $r\gt 2R$.
+
+In summary:
+
+1. $\mathbf{E}=kq\mathbf{\hat{r}}/r^2$ for $r\lt R$.
+2. $\mathbf{E}=0$ for $R \lt r \lt 2R$
+3. $\mathbf{E}=kq\mathbf{\hat{r}}/r^2$ for $r\gt 2R$.
+
+The plot shown has $E_r=kq/R^2$ when $r=R$ and $E_r=kq/(4R^2)$ when $r=2R$. If the conductor were not there, the curve would be $E_r=kq/r^2$; the presence of the conductor makes this curve zero in the range $R\lt r\lt 2R$.
+
+<img src="figures/Conductors_Sphere_with_Cavity_Plot.svg"/>
 
 ## Problem -- Charge Inside Conductor with a Cavity
 

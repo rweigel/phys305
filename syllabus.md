@@ -10,7 +10,7 @@
 * Office: 259 Planetary Hall
 * Course URL: http://rweigel.github.io/phys305/
 
-**Homeworks**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html)
+**Homeworks**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) |  | [4](hw4.html)
 
 # Class Schedule
 
@@ -63,7 +63,16 @@
 * I have started returning graded [HW #2](hw2.html); if you have not received an email from me, expect one by the end of the day. Solutions are on [the same page]((hw2.html) as the problems.
 * [HW #3](hw3.html) due at 3:00 pm
 * Cover [Gauss's Law](gauss_law.html) and [Electrostatic Potential](electrostatic_potential.html).
-* HW #4 will be posted after class.
+* [HW #4](hw4.html) posted after class.
+
+## Tuesday, September 21st
+
+* Answer questions on [HW #4](hw4.html) topics
+
+## Thursday, September 23rd 
+* [HW #4](hw4.html) due at 3pm.
+
+
 
 ## Thursday, October 14th
 
