@@ -297,6 +297,42 @@ Although it does not make sense to say "$V=kq/r$" without also giving the potent
 
 ## Example
 
+Plot $V(x)$ for [Example 4.1 in the Gauss's law notes](gauss_law.html). Assume $V(0)=0$.
+
+**Answer**
+
+The electric field plot from the solution is shown below.
+
+<img src="figures/Conductors-Large-Slab-1b.svg"/>
+
+The potential will not change between $-t/2 \le x \le t/2$ because the electric field is zero. 
+
+To get $V(x)$ for $x>t/2$, solve
+
+$\displaystyle V(x) = V(t/2) - \int_{t/2}^x E_x(x')dx'$
+
+Using $V(t/2)=0$ and $E_x = \sigma/\epsilon_o$ gives
+
+$\displaystyle V(x) = -\int_{t/2}^x \frac{\sigma}{\epsilon_o} dx'=-\frac{\sigma}{\epsilon_o}\left(x-\frac{t}{2}\right)\qquad\text{for } x\gt t/2$
+
+To get $V(x)$ for $x>t/2$, solve
+
+$\displaystyle V(x) = V(-t/2) - \int_{-t/2}^x E_x(x')dx'$
+
+Using $V(-t/2)=0$ and $E_x = -\sigma/\epsilon_o$ gives
+
+$\displaystyle V(x) = -\int_{-t/2}^x -\frac{\sigma}{\epsilon_o} dx'=\frac{\sigma}{\epsilon_o}\left(x+\frac{t}{2}\right)\qquad\text{for } x\lt t/2$
+
+It is quite easy to lose a negative sign when doing this computation. There are two ways to check your answer:
+
+1. $V(x)$ should be continuous
+2. $V(x)$ should decrease when you move in the direction of the electric field. Thus, I expect that as I move from $x=t/2$ to larger $x$, $V(x)$ should decrease. As I move from large negative $x$ towards the slab, I expect the potential to increase because I am moving against the electric field. (It may help to add field lines to the drawing above.)
+
+<img src="figures/Conductors-Large-Slab-1c.svg"/>
+
+
+## Example
+
 The electric field lines shown are for the field $\mathbf{E}= {kq\hat{\mathbf r}}/{r^2}$. Compute $V(\mathbf{r})$ using $V(\mathbf{r}) = V(\mathbf{a}) - \int_\mathbf{a}^\mathbf{\mathbf{b}}\mathbf{E}\bfcdot d\mathbf{l}$ and assuming $V(r=\infty)=0$ for
 
 1. Path 1
@@ -304,7 +340,7 @@ The electric field lines shown are for the field $\mathbf{E}= {kq\hat{\mathbf r}
 
 Show and justify all steps in your calculation.
 
-**Answer**:
+**Partial Answer**:
 
 We expect the answers to be the same because the line integral of $\mathbf{E}$ applies to arbitrary paths.
 
