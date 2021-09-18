@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>symmetry</title>
     <link id="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%220.9em%22 font-size=%22100%22>📖</text></svg>">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.12/dist/katex.min.css" />
     <style>
         body { background-color: white; }
         #toc { font-size: 85%; width: 14em; position: fixed; min-height: 95%; max-height: 95%; overflow: hidden auto; padding-left: 0.75em; padding-right: 1em; margin-right: 1em; font-family: "Open Sans"; }
@@ -82,12 +82,22 @@
         body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
         #toc > ol ol { display: none; }
         body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
         
     </style>
 
 
     <script>
-        function tocClick() {
+        function tocClickListen() {
             // No jQuery b/c also used in stand-alone HTML.
             hs = document.querySelectorAll('#toc > ol ol');
             for (var i = 0; i < hs.length; i++) {
@@ -112,9 +122,9 @@
             (document.readyState !== "loading" && 
               !document.documentElement.doScroll)
         ) {
-          tocClick();
+          tocClickListen();
         } else {
-          document.addEventListener("DOMContentLoaded", tocClick);
+          document.addEventListener("DOMContentLoaded", tocClickListen);
         }
     </script>
 
@@ -124,11 +134,11 @@
 
     <div id="toc">
         <ol>
-            <li><a number="1" href="#symmetry">Symmetry</a></li>
+            <li><a number="1" href="#symmetry" class="">Symmetry</a></li>
             <ol style="display: none;">
-                <li><a number="1.1" href="#example">Example</a></li>
+                <li><a number="1.1" href="#example" class="highlighted">Example</a></li>
                 <li><a number="1.2" href="#example">Example</a></li>
-                <li><a number="1.3" href="#problem" class="">Problem</a></li>
+                <li><a number="1.3" href="#problem">Problem</a></li>
             </ol>
         </ol>
     </div>
@@ -139,7 +149,7 @@
         <div class="section">
 
             <div class="block">
-                <h1><a name="symmetry" number="1" class="hanchor" href="#symmetry"><span class="hnumber">1 </span> <span class="htext">Symmetry</span></a></h1>
+                <h1 class=""><a name="symmetry" number="1" class="hanchor" href="#symmetry"><span class="hnumber">1 </span> <span class="htext">Symmetry</span></a></h1>
 
             </div>
             <div class="block">
@@ -147,13 +157,13 @@
 
             </div>
             <div class="block">
-                <ol>
-                    <li>
+                <ol class="">
+                    <li class="">
                         <div class="block">
-                            <p>Geometrical, in which we make statements about properties of the solution based on the arbitrariness of how the coordinate system was chosen.</p>
+                            <p>Geometrical, in which we make statements about properties of the solution based on the arbitrariness of how the coordinate system was chosen or based on the fact that the system looks the same under a rotation or translation.</p>
                         </div>
                     </li>
-                    <li>
+                    <li class="">
                         <div class="block">
                             <p>Cancellation, in which vector components cancel due to “matching pairs.”</p>
                         </div>
@@ -164,11 +174,11 @@
         <div class="section">
 
             <div class="block">
-                <h2><a name="example" number="1.1" class="hanchor" href="#example"><span class="hnumber">1.1 </span> <span class="htext">Example</span></a></h2>
+                <h2 class="highlighted"><a name="example" number="1.1" class="hanchor" href="#example"><span class="hnumber">1.1 </span> <span class="htext">Example</span></a></h2>
 
             </div>
             <div class="block">
-                <p>Identify (a) geometrical and (b) cancellation symmetries to make statements about the electric field in the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                <p class="">Identify (a) geometrical and (b) cancellation symmetries to make statements about the electric field in the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                 <semantics>
                                     <mrow>
                                         <mi>x</mi>
@@ -195,17 +205,17 @@
                             </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">±</span><span class="mord">1</span></span></span></span>.</p>
 
             </div>
-
             <div class="block inline-html">
 
-                <img src="figures/Symmetry-1a.svg" width="100%">
+                <img src="figures/Symmetry-1a.svg" width="100%" class="">
             </div>
+
             <div class="block">
-                <p><strong>Answer</strong>:</p>
+                <p class=""><strong>Answer</strong>:</p>
 
             </div>
             <div class="block">
-                <p>(a) The choice of direction of the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                <p class="">(a) The choice of direction of the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                 <semantics>
                                     <mrow>
                                         <mi>y</mi>
@@ -226,14 +236,7 @@
                                     </mrow>
                                     <annotation encoding="application/x-tex">y</annotation>
                                 </semantics>
-                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span>–axis. As a result, we can conclude that the vector field must be symmetric about the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                                <semantics>
-                                    <mrow>
-                                        <mi>y</mi>
-                                    </mrow>
-                                    <annotation encoding="application/x-tex">y</annotation>
-                                </semantics>
-                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span>–axis. The same argument applies to the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span>–axis except flipped up–side down. The reason is that configuration of the charges looks the same if the diagram was flipped. The same argument applies to the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                 <semantics>
                                     <mrow>
                                         <mi>x</mi>
@@ -268,6 +271,361 @@
                             </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7335400000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>), symmetry can be used to draw the vector field or field lines in the other three quadrants.</p>
 
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="block">
+                <p class="">An equivalent way of stating this is to note that if you rotated the system by <span len="11" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mn>18</mn>
+                                        <msup>
+                                            <mn>0</mn>
+                                            <mo>∘</mo>
+                                        </msup>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">180^\circ</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.674115em;vertical-align:0em;"></span><span class="mord">18</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.674115em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span></span></span></span> about the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>y</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">y</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span>–axis, the system will look the same. As a result, if you draw a vector for <span len="8" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                        <mo>&gt;</mo>
+                                        <mn>0</mn>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x&gt;0</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> as shown on the left in the figure below and then rotate your diagram by <span len="11" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mn>18</mn>
+                                        <msup>
+                                            <mn>0</mn>
+                                            <mo>∘</mo>
+                                        </msup>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">180^\circ</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.674115em;vertical-align:0em;"></span><span class="mord">18</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.674115em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span></span></span></span>, the vector on the rotated diagram (shown on the right) will be correct.</p>
+
+            </div>
+
+            <div class="block inline-html">
+
+                <img src="figures/Symmetry-1a2.svg" width="100%" class="">
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div class="block">
                 <p class="">(b) The electric field due to each point charge at an arbitrary point on the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                 <semantics>
@@ -315,6 +673,395 @@
 
             </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div class="block inline-html">
 
                 <img src="figures/Symmetry-1b.svg" width="100%">
@@ -327,7 +1074,7 @@
 
             </div>
             <div class="block">
-                <p class="">Identify at least one (a) geometrical and (b) cancellation symmetries that allow us to make statements about the electric field in the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                <p>Identify at least one (a) geometrical and (b) cancellation symmetries that allow us to make statements about the electric field in the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                 <semantics>
                                     <mrow>
                                         <mi>x</mi>
@@ -347,11 +1094,8 @@
 
             <div class="block inline-html">
 
-                <img src="figures/Symmetry-2a.svg" width="100%" class="">
+                <img src="figures/Symmetry-2a.svg" width="100%">
             </div>
-
-
-
             <div class="block">
                 <p><strong>Answer</strong>:</p>
 
@@ -411,11 +1155,11 @@
         <div class="section">
 
             <div class="block">
-                <h2 class=""><a name="problem" number="1.3" class="hanchor" href="#problem"><span class="hnumber">1.3 </span> <span class="htext">Problem</span></a></h2>
+                <h2><a name="problem" number="1.3" class="hanchor" href="#problem"><span class="hnumber">1.3 </span> <span class="htext">Problem</span></a></h2>
 
             </div>
             <div class="block">
-                <p class="">Identify at least one (a) geometrical and (b) cancellation symmetries to make statements about the electric field in the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                <p>Identify at least one (a) geometrical and (b) cancellation symmetries to make statements about the electric field in the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                 <semantics>
                                     <mrow>
                                         <mi>x</mi>
@@ -479,13 +1223,13 @@
 
             </div>
             <div class="block">
-                <p class="">Use a diagram to justify any statements made for (b).</p>
+                <p>Use a diagram to justify any statements made for (b).</p>
 
             </div>
 
             <div class="block inline-html">
 
-                <img src="figures/Symmetry-3a.svg" width="100%" class="">
+                <img src="figures/Symmetry-3a.svg" width="100%">
             </div>
         </div>
     </div>
