@@ -57,11 +57,30 @@ A solid cylinder of radius $R$ and length $L$ has a charge of $+3Q$ uniformly di
 
 2. Find an equation that relates $Q_{encl}$, the charge inside the Gaussian cylinder, and $s$. Draw a plot of $Q_{encl}$ vs $s$.
 
+**Answer**
+
+1. $\rho=Q/(\pi R^2 L)$; $Q = \lambda L$, so $\lambda = Q/L$
+2. &nbsp;
+
+   $s \le R$, $Q_{encl}=\rho \pi s^2 l=Q(s^2/R^2)(l/L)$
+   
+   $s\ge R$, $Q_{encl}=\rho\pi R^2 l = Q(l/L)$
+
+<img src="figures/Charge_Densities_Solid_Cylinder.svg"/>
+
 ## Solid Sphere
 
 A solid sphere of radius $R$ that is centered on the origin has a charge density of $\rho(r)=\rho_o r^2/R^2$.
 
 Compute and plot the charge enclosed in a Gaussian sphere centered on the origin versus the radius of the Gaussian sphere.
+
+**Answer**:
+
+$r\le R$: $\displaystyle Q_{encl}=\int \rho(r) d\tau=4\pi\int_0^r\rho_o(r'^2/R^2)r'^2dr'=\rho_o\frac{4\pi}{5}\frac{r^5}{R^2}$
+
+$r\ge R$: $\displaystyle Q_{encl}=\rho_o\frac{4\pi}{5}R^3$
+
+<img src="figures/Charge_Densities_Sphere.svg"/>
 
 # Continuous Charge Distributions I
 
