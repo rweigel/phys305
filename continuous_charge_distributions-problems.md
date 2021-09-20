@@ -43,13 +43,13 @@ Note that the $\hat{\mathbf{x}}$ terms are expected to cancel based on the symme
 
 6. In this case, the gap of $2l$ between the lines of charge is not visible. So the solution should be the same as that for an infinite line of charge (which you should be able to compute using Gauss' Law). 
 
-%**Answer**
+**Answer**
 
-%==== Step 0 ====
+1\.
 
-%1. For $y > 0$, the expected direction of $\mathbf{E}(y)$ is in the $-x$ and $+y$ direction. As $y$ increases, $\mathbf{E}(y)$ should have a $y$-component that becomes larger than the $-x$ component because as $y$ increases, the line of charge appears more and more similar to a point charge at the origin.
-%2. For $y \gg a$, the line of charge appears as a point charge of magnitude $q'=2L\lambda$ at the origin, for which $\mathbf{E}(y)=\hat{\mathbf{y}}kq'/y^2$. The length of the line needs to written in terms of the paramters given ($a$ and $\alpha$). Using $\cos\alpha=a/L$ gives $L=a/\cos\alpha$ and $\mathbf{E}(y)=\hat{\mathbf{y}}k(2a\lambda/\cos\alpha)/y^2$. Use a diagram to show this.
-%3. See the following steps.
+1. For $y \gt 0$, the expected direction of $\mathbf{E}(y)$ is in the $-x$ and $+y$ direction. As $y$ increases, $\mathbf{E}(y)$ should have a $y$-component that becomes larger than the $-x$ component because as $y$ increases, the line of charge appears more and more similar to a point charge at the origin.
+2. For $y \gg L$, the line of charge appears as a point charge of magnitude $q=2L\lambda$ at the origin, for which $\mathbf{E}(y)=\hat{\mathbf{y}}kq/y^2$. The length of the line needs to written in terms of the paramters given ($b$ and $\phi$). Using $\cos\phi=b/(L/2)$ where $L$ is the length of the line gives $L=2b/\cos\phi$ and $\mathbf{E}(y)=\hat{\mathbf{y}}k(2b\lambda/\cos\phi)/y^2$. 
+
 
 ==== Step 1 ====
 
