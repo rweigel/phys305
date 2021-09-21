@@ -67,6 +67,7 @@
 
 ## Tuesday, September 21st
 
+* [Class Video](https://gmu.zoom.us/rec/share/L3PlS7z5u8wfRdNhmQ--CT9ebpcTAXap4udR0zAFkRsL5v1lv8tpkdv8GvcUtW08.V08AvqC-UBWdNF4P) (password in Discord under #recordings)
 * Answer questions on [HW #4](hw4.html) topics
 
 ## Thursday, September 23rd 

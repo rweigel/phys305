@@ -14,7 +14,7 @@ The chapter on potential in your PHYS 260 textbook and Griffiths 2.3 and 2.4 are
 
 The potential energy of an object increases when you do a positive amount of work on it. For example, if you lift a mass from the floor, you increase its potential energy. The work done on an object _changes_ its potential energy, and this change is represented by $\Delta PE$.
 
-Mathematically, the work done by a force $\mathbf{F}$ in moving an object from position $a$ to position $b$ is
+Mathematically, the work done by a force $\mathbf{F}$ in moving an object from position $a$ to position $b$ along a line $l$ is
 
 $$
 W_{a\rightarrow b}=\int_a^b \mathbf{F}\cdot d\mathbf{l}
@@ -76,9 +76,9 @@ In the previous problem, a charge was moved in a region of space where the elect
 
 <img src="figures/Radial_Field.svg"/>
 
-There is a charge of $-6$\~C at the origin. Some electric field lines for this charge are shown. To simplify the math, use $k=9\cdot 10^9$~N$\cdot$m$^2$/C$^2$.
+There is a charge of $-6$\~C at the origin. Some electric field lines for this charge are shown. To simplify the math, use $k=9\cdot 10^9\text{ N}\cdot\text{m}^2/\text{C}^2$.
 
-1\. You move a charge of $+3$\~C from $A$ to $B$. (a) How much work did you do? (b) How much work was done by the electric field? (c) By how much has the potential energy of the moved charge changed?
+1\. You move a charge of $+3\text{ C}$ from $A$ to $B$. (a) How much work did you do? (b) How much work was done by the electric field? (c) By how much has the potential energy of the moved charge changed?
 
 %{\bf Answer}: According to equation 23.8, the work done by the field, labeled $W^E$ here, when a charge $q_0$ is moved from a distance $r_a$ from a charge $q$ to a distance $r_b$ is
 
@@ -209,7 +209,7 @@ For $f$ in cartesian coordinates, we would compute $\mathbf{U}$ using
 
 $$\mathbf{U}= \boldsymbol{\nabla}f(x,y,z)=\frac{\partial f}{\partial x}\xhat+\frac{\partial f}{\partial y}\yhat+\frac{\partial f}{\partial z}\zhat$$
 
-and for $f$ in cylindrical or spherical coordinates, the equations are given on the second--to last page of Griffiths. 
+and for $f$ in cylindrical or spherical coordinates, the equations for $\boldsymbol{\nabla}f$ are given on the second--to last page of Griffiths. 
 
 For example, in [HW #1](hw1.html), you showed that 
 $\boldsymbol{\nabla}\left(\frac{1}{|\mathbf{r}-\mathbf{r}'|}\right)=\displaystyle -\frac{\phantom{|}\mathbf{r}-\mathbf{r}'\phantom{|^3}}{|\mathbf{r}-\mathbf{r}'|^3}$ by first writing $f=1/|\mathbf{r}-\mathbf{r}'|$ in cartesian coordinates.
@@ -287,7 +287,7 @@ $\displaystyle V(\mathbf{r})=const + \frac{kq}{r}$
 
 which is equal to the $V$ that we started with only if $const=0$. This constant cannot be determined unless we are given $V$ at some reference point. That is, given $\mathbf{E}$, we cannot uniquely compute $V$ unless we are given $V$ at some position in space.
 
-Another way explaining this is to consider a similar problem: if $F=df/dx$, show that $\int_a^x F(x')dx'$ gives $f$. If $f=x^2$, then $F=2x$ and $\int_a^x F(x') dx'= x^2 - f(a)$. We can't show that $\int F(x')dx'$ gives $f$ unless we are told that $f(a)$ is zero.
+Another way explaining this is to consider a similar problem: if $F=df/dx$, show that $\int_a^x F(x')dx'$ gives $f$. If $f=x^2$, then $F=2x$ and $\int_a^x F(x') dx'= x^2 - f(a)$. We can't show that $\int F(x')dx'$ gives $f$ unless we are told that the constant from integration, $f(a)$, is zero.
 
 %For example, if the problem statement was $V=kq/r$ and $V(\infty)=0$, then we can conclude $const=0$. We also could have been told that $V(a)=0$, in which case $const=-kq/a$.
 
@@ -305,7 +305,7 @@ The electric field plot from the solution is shown below.
 
 <img src="figures/Conductors-Large-Slab-1b.svg"/>
 
-The potential will not change between $-t/2 \le x \le t/2$ because the electric field is zero. 
+The potential will not change between $-t/2 \le x \le t/2$ because the electric field is zero inside of a conductor. 
 
 To get $V(x)$ for $x>t/2$, solve
 
@@ -315,6 +315,8 @@ Using $V(t/2)=0$ and $E_x = \sigma/\epsilon_o$ gives
 
 $\displaystyle V(x) = -\int_{t/2}^x \frac{\sigma}{\epsilon_o} dx'=-\frac{\sigma}{\epsilon_o}\left(x-\frac{t}{2}\right)\qquad\text{for } x\gt t/2$
 
+**Check**: $V(t/2)$ should be zero and the potential should decrease as $x$ increases. 
+
 To get $V(x)$ for $x>t/2$, solve
 
 $\displaystyle V(x) = V(-t/2) - \int_{-t/2}^x E_x(x')dx'$
@@ -323,13 +325,14 @@ Using $V(-t/2)=0$ and $E_x = -\sigma/\epsilon_o$ gives
 
 $\displaystyle V(x) = -\int_{-t/2}^x -\frac{\sigma}{\epsilon_o} dx'=\frac{\sigma}{\epsilon_o}\left(x+\frac{t}{2}\right)\qquad\text{for } x\lt t/2$
 
+**Check**: $V(-t/2)$ should be zero and the potential should increase as $x$ increases. 
+
 It is quite easy to lose a negative sign when doing this computation. There are two ways to check your answer:
 
 1. $V(x)$ should be continuous
-2. $V(x)$ should decrease when you move in the direction of the electric field. Thus, I expect that as I move from $x=t/2$ to larger $x$, $V(x)$ should decrease. As I move from large negative $x$ towards the slab, I expect the potential to increase because I am moving against the electric field. (It may help to add field lines to the drawing above.)
+2. $V(x)$ should decrease when you move in the direction of the electric field. Thus, I expect that as I move from $x=t/2$ to larger $x$, $V(x)$ should decrease because the electric field is in the $+x$ direction. As I move from large negative $x$ towards the slab, I expect the potential to increase because I am moving against the electric field. (It may help to add field lines to the drawing above.)
 
 <img src="figures/Conductors-Large-Slab-1c.svg"/>
-
 
 ## Example
 
@@ -347,7 +350,7 @@ We expect the answers to be the same because the line integral of $\mathbf{E}$ a
 
 # $V$ for a point charge
 
-For a point charge at the origin, $\mathbf{E}=kq\hat{\mathbf r}/r^2$ and the calculation of 
+For a point charge at the origin, $\mathbf{E}=kq\hat{\mathbf r}/r^2$, the calculation of 
 
 $$V(\mathbf{r}) = V(\mathbf{a}) - \int_\mathbf{a}^\mathbf{\mathbf{r}}\mathbf{E}\bfcdot d\mathbf{l}$$
 
@@ -401,7 +404,7 @@ Using this convention, the electric potential energy of a charge $q_0$ at a posi
 
 $$PE=k\frac{q_0q_1}{\char"0509_{01}}$$
 
-In this formula, if the charges have opposite signs then $PE$ is negative; if they have the same sign then $PE$  is positive. Note that there is a sign associated with the potential energy but the direction of the vector that connects the charges does not matter; the equation for $PE$ only involves the values of the charges and the _magnitude_ of the separation distance between them. 
+In this formula, if the charges have opposite signs then $PE$ is negative; if they have the same sign then $PE$  is positive. Note that there is a sign associated with the potential energy but the direction of the vector that connects the charges does not matter; the equation for $PE$ only involves the values of the charges and the _magnitude_ of the separation distance $\char"0509_{01}$ between them. 
 
 Consider next the potential energy of charge $q_0$ when it is a distance $r_1$ from charge $q_1$ and a distance $r_2$ from charge $q_2$. Work is required to move $q_0$ in the field due to $q_1$ and also the field due to $q_2$. The total potential energy of $q_0$ is the sum of these works:
 
@@ -426,7 +429,7 @@ In this equation, we have dropped the subscript $0$ from the positions because i
 
 1\. What is the potential energy of the charge $q_0$ in the diagram shown? 
 
-**Answer**: $$PE = \frac{kq_oq_1}{r_1}+\frac{kq_oq_2}{r_2}+\frac{kq_oq_3}{r_3}$$
+**Answer**: $$PE = \frac{kq_oq_1}{\char"0509_{01}}+\frac{kq_oq_2}{\char"0509_{02}}+\frac{kq_oq_3}{\char"0509_{03}}$$
 
 This represents the amount of energy it would take to move charge $q_o$ from infinity to its position on the diagram.
 
@@ -434,7 +437,7 @@ This represents the amount of energy it would take to move charge $q_o$ from inf
 
 **Answer**
 
-Using $PE=V/q_o$, $\displaystyle V = \frac{kq_1}{r_1}+\frac{kq_2}{r_2}+\frac{kq_3}{r_3}$
+Using $PE=V/q_o$, $\displaystyle V = \frac{kq_1}{\char"0509_1}+\frac{kq_2}{\char"0509_2}+\frac{kq_3}{\char"0509_3}$
 
 That is, the potential at a given location is found from potential energy of a charge at that location by dividing by the charge's potential energy by the value of the charge. 
 
@@ -447,9 +450,6 @@ That is, the potential at a given location is found from potential energy of a c
 **Answer**: A potential is a value associated with a location in space, and an electric potential is created by charges at all locations in space.
 
 Potential energy is the energy associated with an object at a given location in space. The electric potential energy of a charge is the energy required to move it from a large distance away from all other charges to a given location in space. The electric potential energy of a charge $Q$ at a point in space is related to the electric potential at that point in space by $PE=QV$.
-
-## Problem
-
 
 # $W$ for a Group of Charges
 

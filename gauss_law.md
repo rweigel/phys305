@@ -439,11 +439,82 @@ If the slab is large and we are near it, the surface charge density will appear 
 
 The electric field to the right is the field due to the two sheets of charge: $(\sigma/2\epsilon_o+\sigma/2\epsilon_o)\xhat=\sigma/\epsilon_o\xhat$. The field to the left is $-(\sigma/2\epsilon_o+\sigma/2\epsilon_o)\xhat=\sigma/\epsilon_o\xhat$.
 
+The total charge on the conductor is the sum of the charges on both faces: $Q=Q_L+Q_R=\sigma A + \sigma A$, from which it follows that $\sigma = (Q/2)/A$ and $Q_L=Q_R=Q/2$. This means that half of the net charge is on the right face and the other half on the left face.
+
 This result is consistent with the claim that the field just outside of the conductor is $\sigma/\epsilon_o$. This field is twice that of a sheet of charge because the field just outside of the conductor is due to all charges -- the left and right face of the conductor both create an electric field.
 
 <img src="figures/Conductors-Large-Slab-1b.svg"/>
 
 A general feature of plots of this form is that when one passes through a surface (conducting or non--conducting) with a charge density $\sigma$, there is a jump in the electric field of $\sigma/\epsilon_o$.
+
+**Alternative Answer**
+
+The following procedure will work for more complicated problems than the one given.
+
+Assume unknown charge distributions $\sigma_L$ and $\sigma_R$ appear on the left and right faces of the conductor, respectively. Then, write the electric field in each of the three regions. This process is similar to that used in free-body diagrams. One assumes a direction of the force and if the magnitude computed from summing the forces in that direction is negative, the assumed direction was wrong. 
+
+The charges on each face constitute a sheet of charge and so the magnitude of their fields are $\sigma_L/2\epsilon_o$ and $\sigma_R/2\epsilon_o$. The direction of the field due to a sheet of charge changes direction as you pass through the sheet.
+
+The electric field due to each sheet in three regions, assuming the unknown charge densities are positive, is shown in the following figure.
+
+<img src="figures/Conductors-Large-Slab-1d.svg"/>
+
+The total charge on the conducting slab is $Q_L+Q_R=\sigma_LA+\sigma_RA=Q$.
+
+* For $-t/2 \lt x \lt t/2$,
+ 
+   Assuming $\sigma_L$ is postive, the left sheet produces a field in the $+\xhat$ direction. Assuming $\sigma_R$ is positive, the right sheet produces a field in the $-\xhat$ direction.
+
+   $\displaystyle E_x = +\frac{\sigma_L}{2\epsilon_o}-\frac{\sigma_R}{2\epsilon_o}$
+
+   Note that if $\sigma_L$ turns out to be negative, its contribution to the field in the $\xhat$ direction will be negative in this region. If $\sigma_R$ turns out to be negative, its contribution to the field in the $\xhat$ direction will be positive in this region. 
+
+   Because this region is conducting, the electric field must be zero. This gives
+
+   $\displaystyle 0 = +\frac{\sigma_L}{2\epsilon_o}-\frac{\sigma_R}{2\epsilon_o}\quad\Rightarrow\quad \sigma_L=\sigma_R$
+   
+   (If there were additional sheets of charge in the system or an external electric field, their contributions would be included in the above equation.)
+   
+   Plugging $\sigma_L=\sigma_R$ into $\sigma_LA+\sigma_RA=Q$ gives
+   
+   $2\sigma_RA=Q\quad\Rightarrow\quad \sigma_R=(Q/2)/A$ and $\sigma_L=(Q/2)/A$
+
+* For $x \lt t/2$,
+
+   Assuming both sheets have a positive surface charge density, both sheets create a field that points in the $-\xhat$ direction.
+
+   $\displaystyle E_x = -\frac{\sigma_L}{2\epsilon_o}-\frac{\sigma_R}{2\epsilon_o}$
+
+   (If there were additional sheets of charge in the system or an external electric field, their contributions would be included in the above equation.)
+ 
+   Using the charge densities found earlier,
+
+   $\displaystyle E_x = -\frac{Q/2A}{2\epsilon_o}-\frac{Q/2A}{2\epsilon_o}=-\frac{Q/A}{2\epsilon_o}$
+
+* For $x \gt t/2$,
+
+  Both sheets create a field that points in the $+\xhat$ direction.
+  
+   $\displaystyle E_x = +\frac{\sigma_L}{2\epsilon_o}+\frac{\sigma_R}{2\epsilon_o}$
+
+   (If there were additional sheets of charge in the system or an external electric field, their contributions would be included in the above equation.)
+ 
+   Using the charge densities found earlier,
+
+   $\displaystyle E_x = +\frac{Q/2A}{2\epsilon_o}+\frac{Q/2A}{2\epsilon_o}=+\frac{Q/A}{2\epsilon_o}$
+
+
+**Check:** In solving this problem, we used the fact that the magnitude of electric field due to charges uniformly distributed on a sheet is $\sigma/2\epsilon_o$. We also know from Gauss's law that just outside of a conductor, the electric field in the normal direction is $\sigma/\epsilon_o$ (this electric field does not have a factor of 2 because it is the field due to _all_ charges in the system, not just the charges on one face of the conductor). Based on this, just to the right of the right face, we expect $E_n=\sigma_R/\epsilon_o$. Because the normal for this face is in the $+\xhat$ direction, $E_n=E_x$.
+
+Plugging $E_n=E_x=\frac{Q/A}{2\epsilon_o}$ and $\sigma_R=(Q/2)/A$ into
+
+$\displaystyle E_x=\sigma_R/\epsilon_o$
+
+gives
+
+$\displaystyle\frac{Q/A}{2\epsilon_o}=[(Q/2)/A]\epsilon_o$
+
+and so the electric field just outside of the right face of the conductor is consistent with the claim that it should be $\sigma_R/\epsilon_o$.
 
 ## Problem
 
