@@ -520,10 +520,6 @@ and so the electric field just outside of the right face of the conductor is con
 
 Repeat the previous example when there is an external electric field of $\mathbf{E}=E_o\xhat$.
 
-## Problem
-
-Repeat the previous problem when the slab has a net charge of $Q$.
-
 ## Example -- Charge Inside Conductor with a Cavity
 
 A charge $q$ is placed at the center of an uncharged spherical conductor of radius $2R$ with a spherical cavity of radius $R$.
