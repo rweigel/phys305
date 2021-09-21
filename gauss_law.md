@@ -550,7 +550,7 @@ A Gaussian sphere with radius $r\lt R$ will have an enclosed charge of $q$. If a
 
 A Gaussian sphere with radius $R\lt r \lt 2R$ has zero electric field on its surface because the surface is inside of a conductor. Thus $\Phi_E=0=Q_{encl}/\epsilon_o$. $Q_{encl}=q + Q_{r=R}$, so $Q_{r=R}=-q$.
 
-If the conductor is uncharged, then by charge conservation, $+q$ must be on its outer surface, so $Q_{r=2R}=-q$.
+If the conductor is uncharged, then by charge conservation, $+q$ must be on its outer surface, so $Q_{r=2R}=+q$.
 
 A Gaussian sphere with $r\gt 2R$ will have an electric field on it that is radial and uniform based on the symmetry argument. The flux is $4\pi r^2 E_r$. The enclosed charge is $q + Q_{r=R} + Q_{r=2R}=q$. Gauss's law thus gives $E_r = kq/r^2$ for $r\gt 2R$.
 

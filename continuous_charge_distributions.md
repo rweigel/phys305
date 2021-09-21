@@ -341,7 +341,7 @@ For a line of charge with uniform charge density $\lambda_o$ over $-L\le x\le L$
 
 **Answer**:
 
-Previously it was found that
+Previously, it was found that
 
 $\displaystyle d\mathbf{E}=\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}k\lambda_o dx'$
 
