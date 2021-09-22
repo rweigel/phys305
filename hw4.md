@@ -14,7 +14,7 @@ Provide explicit justifications for the symmetry argument (described in [the not
 
 # Conducting Slab Between Charged Sheets
 
-A conducting slab is centered on the origin, has thickness $t$, surface area $A=w^2$, and has a net charge of $Q$. At $x=\pm 5t$ there are nonconducting sheets with uniform charge density $\pm \sigma_o$. The thickness $t$ of the slab is much smaller than $w$.
+A conducting slab is centered on the origin, has thickness $t$, surface area $A=w^2$, and has a net charge of $Q$. At $x=\pm 5t$ there are large nonconducting sheets with uniform charge density $\pm \sigma_o$. The thickness $t$ of the slab is much smaller than $w$.
 
 <img src="figures/Conductors-Slab-Between-Sheets.svg"/>
 

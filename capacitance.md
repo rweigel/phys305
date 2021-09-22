@@ -64,7 +64,7 @@ There are two general uses of capacitors, mechanical and electrical.
 
 To measure capacitance, place $-Q$ on one conductor and $+Q$ on the other and then measure the potential difference $\Delta V$ between the conductors. The capacitance is then $Q/|\Delta V|$. Alternatively, connect each initially uncharged conductor the terminals of a battery and then measure the amount of charge that appears on either one of the conductors. By conservation of charge, the amount of charge that appears on one conductor will be equal and opposite to what appears on the other.
 
-In general, computing capacitance requires solving a partial differential equation either analytically or numerically. The reason is that if we charge up a capacitor, we need to know the electric field that results, and this requires knowledge of how the charges are distributed on the two conductors that form the capacitor. Previously Coulomb's law was used to compute the electric field when the distribution of charges was known. In the general case, the distribution of charges is not known, and Coulomb's law cannot be used to find the electric field.
+In general, computing capacitance requires solving a partial differential equation either analytically or numerically. (Analytical methods are covered in Chapter 3 of Griffiths). The reason is that if we charge up a capacitor, we need to know the electric field that results, and this requires knowledge of how the charges are distributed on the two conductors that form the capacitor. Previously Coulomb's law was used to compute the electric field when the distribution of charges was known. In the general case, the distribution of charges is not known, and Coulomb's law cannot be used to find the electric field.
 
 However, there are a few capacitors for which a simple method can be used to compute the capacitance. These capacitors have a geometry such that a symmetry argument and Gauss's law can be used to determine the distribution of charges and the electric field between the two conductors that form the capacitor. In this case, we can find the potential difference by integrating the electric field from one conductor to the other to find the potential difference $\Delta V$. The capacitance is then $Q/|\Delta V|$.
 
@@ -625,8 +625,8 @@ The "self-capacitance" of a conductor is the capacitance computed when one condu
 == Calculating ==
 
 There are two general techniques for computing capacitance.
-# Assume charges of \(\pm Q\) on conductors, compute \(\mathbf{E}\) using Gauss' Law and then use \(V=-\int \mathbf{E}\cdot d\mathbf{l}\) to compute potential difference. If the geometry does not allow straightforward use of Gauss' Law, use
-# The boundary value method. Assume a potential difference between the conductors, solve Laplace's Equation to get the electric field between the conductors, and use the electric field to compute the surface charge density on the conductors. From the surface charge density, compute the total charge on one of the conductors.
+1. Assume charges of \(\pm Q\) on conductors, compute \(\mathbf{E}\) using Gauss' Law and then use \(V=-\int \mathbf{E}\cdot d\mathbf{l}\) to compute potential difference. If the geometry does not allow straightforward use of Gauss' Law, use
+2. The boundary value method. Assume a potential difference between the conductors, solve Laplace's Equation to get the electric field between the conductors, and use the electric field to compute the surface charge density on the conductors. From the surface charge density, compute the total charge on one of the conductors.
 
 Typically, definition of capacitance is given as
 
@@ -644,9 +644,9 @@ $$C=Q/(V_{+Q}-V_{-Q})$$
 
 where \(V_{+Q}\) is the surface that is positively charged.
 
-== Problems ==
+## Problems
 
-=== Capacitors in Series ===
+### Capacitors in Series
 
 When two capacitors are connected in series to a battery, each capacitor plate ends up with an equal amount of charge on it even if their capacitances differ.  Explain why this is.
 
@@ -657,38 +657,38 @@ When two capacitors are connected in series to a battery, each capacitor plate e
 Two capacitors in series look like this: <code>------| |----| |-------</code>, where the dashed lines are wires. Every charge removed from one of the outer plates ends up on the other outer plate (charges cannot jump the gap between capacitor plates). The inner plates are connected by a wire and so every charge that leaves one of the inner plates must end up on the other inner plate.
 |}
 
-=== Capacitors in Series ===
+### Capacitors in Series
 
 Two capacitors with surface areas \(A_1\) and \(A_2\) and separation distances of \(d_1\) and \(d_2\) are placed in series.
 
 What is the capacitance of the combined capacitors?  Treat the surfaces of the plates as infinite. Justify any equations used.
 
-=== Capacitors in Parallel ===
+### Capacitors in Parallel
 
 Two capacitors with surface areas \(A_1\) and \(A_2\) and separation distances of \(d_1\) and \(d_2\) are placed in parallel.
 
 What is the capacitance of the combined capacitors?  Treat the surfaces of the plates as infinite. Justify any equations used.
 
-=== Disconnecting Capacitors ===
+### Disconnecting Capacitors
 
 Suppose that a capacitor with capacitance \(C\) is connected to a battery with potential \(V_o\).  It is then disconnected (such that the plates remain fully charged) and connected to a battery with potential \(2V_o\).  In terms of \(V_o\) and \(C\), what is
-# the capacitance and
-# amount of charge on the capacitor when it is connected to the \(2V_o\) battery?
+1. the capacitance and
+2. amount of charge on the capacitor when it is connected to the \(2V_o\) battery?
 
 {| class="wikitable collapsible collapsed"
 ! align="left" |&nbsp;Answer
 |-
 |
-# \(C\). The capacitance does not change. It depends on the area and separation distance of the capacitor plates.
-# \(Q=C2V_o\). Note that the second battery needed to do less work to fully charge the capacitor than it would have if the capacitor was initially uncharged.
+1. \(C\). The capacitance does not change. It depends on the area and separation distance of the capacitor plates.
+2. \(Q=C2V_o\). Note that the second battery needed to do less work to fully charge the capacitor than it would have if the capacitor was initially uncharged.
 |}
 
-=== Plates ===
+### Plates
 
 Two large conducting plates of area \(A\) are separated by a distance \(d\). Assume \(d/\sqrt{A}\ll 1\). 
 
-# Estimate the capacitance
-# Explain what the approximation \(d/\sqrt{A}\ll 1\) allowed you to assume
+1. Estimate the capacitance
+2. Explain what the approximation \(d/\sqrt{A}\ll 1\) allowed you to assume
 
 {| class="wikitable collapsible collapsed"
 ! align="left" |&nbsp;Hing
@@ -697,51 +697,49 @@ Two large conducting plates of area \(A\) are separated by a distance \(d\). Ass
 \(C=\epsilon_o A/d\).
 |}
 
-=== Cylindrical ===
+### Cylindrical
 
 Two infinitely long conducting hollow cylinders of radius \(a\) and \(b\) (\(a<b\)) are oriented along the \(z\)-axis.
 
-# Compute their capacitance per unit length.
-# Show that when \((b-a)/a\) is small, the capacitance per unit length, \(C/l\) is the same as at of two infinite conducting plates with \(A=2\pi a l\).
+1. Compute their capacitance per unit length.
+2. Show that when \((b-a)/a\) is small, the capacitance per unit length, \(C/l\) is the same as at of two infinite conducting plates with \(A=2\pi a l\).
 
 {| class="wikitable collapsible collapsed"
 ! align="left" |&nbsp;Partial Answer
 |-
 |
-# \({C\over L} = {2\pi\epsilon_0 \over \ln(b/a)}\)
-# Define \(\delta=(b-a)/a\) and use \(\ln(1+\delta)\simeq \delta - \delta^2/2\) for \(\epsilon << 1\).
+1. \({C\over L} = {2\pi\epsilon_0 \over \ln(b/a)}\)
+2. Define \(\delta=(b-a)/a\) and use \(\ln(1+\delta)\simeq \delta - \delta^2/2\) for \(\epsilon << 1\).
 |}
 
-=== Spherical ===
+### Spherical
 
 Two hollow conducting spheres of radius \(a\) and \(b\) (\(a<b\)) are centered on the origin.
 
-# Compute their capacitance.
-# Compute the capacitance when \((b-a)/a << 1\) and compare with the capacitance of two parallel plates.
-# Compute the self-capacitance of a conducting sphere of radius \(a\)
+1. Compute their capacitance.
+2. Compute the capacitance when \((b-a)/a << 1\) and compare with the capacitance of two parallel plates.
+3. Compute the self-capacitance of a conducting sphere of radius \(a\)
 
 {| class="wikitable collapsible collapsed"
 ! align="left" |&nbsp;Partial Answer
 |-
 |
-# \(C={4\pi\epsilon_0\over\left({1\over a} - {1\over b}\right)}\)
-# When (\b\rightarrow\infty\), \(C\rightarrow 4\pi\epsilon_0a\)
-# Define \(\delta=(b-a)/a\) and use the Taylor series expansion
+1. \(C={4\pi\epsilon_0\over\left({1\over a} - {1\over b}\right)}\)
+2. When (\b\rightarrow\infty\), \(C\rightarrow 4\pi\epsilon_0a\)
+3. Define \(\delta=(b-a)/a\) and use the Taylor series expansion
 |}
 
-=== Grounded Capacitors ===
+### Grounded Capacitors
 
 https://physics.stackexchange.com/questions/189056/capacitance-of-spherical-capacitor-when-earthed
 
-=== Compound Capacitors ===
+### Compound Capacitors
 
 When computing the capacitance, the wires that connect the two conductors is neglected.
 
 Discuss how the capacitance will change when they are accounted for.
 
-
-
-== Dielectrics ==
+## Dielectrics
 
 The capacitance can be increased by placing a (non-conducting) dielectric material between the conductors that are being held at a potential difference.
 
@@ -767,21 +765,21 @@ Another way of looking at this is to reconnect the battery after the dielectric 
 
 A parallel plate capacitor with area \(A\) and separation distance \(d\) is charged to a potential difference \(\Delta V_o\) by a battery and then the battery is removed. Assume the positive direction to be to the right.
 
-# Calculate the electric field magnitude and direction between the plates.
-# Calculate the charge on the plates.
+1. Calculate the electric field magnitude and direction between the plates.
+2. Calculate the charge on the plates.
 
 A dielectric is then inserted, and an induced electric field of \(E_p=-\chi_eE_o\) appears in the dielectric, where \(\chi_e < 1\).
 
-# Does the amount of charge on the plates change when the capacitor is inserted?
-# Compute the potential difference between the plates.
-# Compute the capacitance.
+1. Does the amount of charge on the plates change when the capacitor is inserted?
+2. Compute the potential difference between the plates.
+3. Compute the capacitance.
 
 The battery with potential difference \(\Delta V_o\) is then reconnected.
 
 Compute the 
-# electric field that must exist between the plates.
-# electric field due to (1) the charges on the plates and (2) polarization
-# charge on the plates that are consistent with the computed electric field due to the charges
-# capacitance
-# amount of new charge that appeared on each plate
+1. electric field that must exist between the plates.
+2. electric field due to (1) the charges on the plates and (2) polarization
+3. charge on the plates that are consistent with the computed electric field due to the charges
+4. capacitance
+5. amount of new charge that appeared on each plate
 

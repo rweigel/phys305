@@ -74,10 +74,9 @@
 * [HW #4](hw4.html) due at 3pm.
 
 
-
 ## Thursday, October 14th
 
-* Mid-term exam during class time. Location TBD. Closed book and note. Will provide a list of equations that you need to know.
+* In-person mid-term exam during class time. Location TBD. Closed book and note. Will provide a list of equations that you need to know.
 
 # Topics Covered and Catalog Description
 
