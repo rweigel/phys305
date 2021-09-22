@@ -1,101 +1,184 @@
 # Boundary Value Problems
 
-Recall from mechanics that the equation for the position of a particle in a uniform gravitational field is.
+Many laws of physics are expressed as either ordinary differential equations or partial differential equations.
+
+Recall from mechanics that the equation for the position of a particle in a uniform gravitational field is given by the ordinary differential equation
 
 $$m\frac{d^2x}{dt^2}=-mg$$
 
-A function $x(t)$ that satisfies this equation has the form
+A general solution for $x(t)$ that satisfies this equation has the form
 
 $$x(t)=C_1+C_2t-gt^2/2$$
 
-where $C_1$ and $C_2$ are two constants. To use this equation to find $x(t)$ for a mass, the values of the two constants must be know. Usually these two constants are given based on the initial values of $x$ and $dx/dt$. For example, if $x(t=0)=0$ and $v(t=0)=0$, the $C_1=C_2=0$ and the trajectory of the mass is given by $x(t)=-gt^2/2$.
+where $C_1$ and $C_2$ are two constants.
 
-This type of problem is called an **initial value problem** -- given a differential equation for the position of the mass and it's initial values of $x$ and $v$, we arrive at a solution for $x$ for all $t$.
+To use this equation to find $x(t)$ for a mass, the values of the two constants must be known. Usually these two constants are given based on the initial values of $x$ and $dx/dt$. For example, if $x(t=0)=0$ and $v(t=0)=0$, then $C_1=C_2=0$ and the trajectory of the mass is given by $x(t)=-gt^2/2$.
 
-A **boundary value problem** involves first finding a solution to a partial differential equation with respect to position (instead of time). The solution will have two constants whose values are determined by the conditions at the boundary. For example,
+This type of problem is called an **initial value problem** -- given a differential equation for the position of the mass and it's initial values of $x$ and $v$, we arrive at a solution for $x$ for all $t$. Another example of an inital value problem is for the position $x$ of a mass on a spring. The differential equation for $x$ is $d^2x/dt^2-\omega_o^2x=0$. A general solution is $x(t)=C_1\sin(\omega_o t)+C_2\cos(\omega_o t)$.
+
+A **boundary value problem** involves first finding a general solution to a partial differential equation with respect to the position (instead of time). The solution will have constants whose values are determined by the conditions at the boundary. For example, in electrostatics
 
 $$\frac{\partial^2 V}{\partial x^2}=0$$
 
-is a partial differential equation for $V$. If we want to know $V(x)$, we need to find a solution to this equation. It is
+is a partial differential equation for $V$ for a system where the symmetry is such that the potential only depends on $x$. If we want to know $V(x)$, we need to know a general solution to this equation. It is
 
 $$V(x)=C_1 + C_2x$$
 
-The values for $C_1$ and $C_2$ are determined based on boundary conditions. For example, $V(x=0)=V_o$ and $V(x=L)=2V_o$.
+The values for $C_1$ and $C_2$ are determined based on boundary conditions. For example, $V(x=0)=0$ and $V(x=L)=V_o$.
 
+In this course, you will only be required to know how to derive the general solution for partial differential equations in 1--D. Derivations are given in the [1--D section](#1-d).
 
+For 2-- and 2--D partial differential equations, you will be given the general solution and asked to find the unknown constants given boundary value information.
 
-# Overview
+# Finding $V$
 
-There are generally two types of problems in electrostatics:
-1. given the locations of charges, compute the electric potential and electric field; and
+There are generally two types of problems involving $V$ in electrostatics:
+1. given the locations of charges, compute the electric potential and electric field at all locations in space; and
 2. given the electric potential at certain locations in space, compute the electric potential and electric field at all locations in space.
 
 ## Type 1
 
 For problems of type 1., we can compute $V$ using
 
-$$V(\mathbf{r})=\sum_{i=1}^{N} \frac{kq'\_{i}}{|\mathbf{r}-\mathbf{r}\_{i}'|}$$
+$$V(\mathbf{r})=\sum_{i=1}^{N} \frac{kq\_{i}}{|\mathbf{r}-\mathbf{r}\_{i}'|}$$
 
 for $N$ discrete charges, or the continuous approximation 
 
-$$V(\mathbf{r})=\int \frac{kdq'}{|\mathbf{r}-\mathbf{r}'|}$$
+$$V(\mathbf{r})=\int \frac{kdq}{|\mathbf{r}-\mathbf{r}'|}$$
 
 along with a given line, surface, or volume charge density ($\lambda(x'), \sigma(x',y')$, or $\rho(r')$, respectively).
 
-In many problems, we don't know the locations of the charges in the system. Consider the scenario shown in Figure X in which a point charge is brought near a neutral conducting wire.
+In many problems, we don't know the locations of the charges in the system. Consider the scenario shown in Figure X in which a net charge of $Q$ is placed on a conductor. The charges on the conductor will distribute themselves so that the electric field in the conductor is zero. In general, we don't know what the distribution will be -- we only know that whatever it is, it is such that the electric field is zero inside.
 
-$$V(\mathbf{r})= \frac{kq_0}{|\mathbf{r}-a\hat{\mathbf{z}}|}+\int_{-L}^{L} \frac{k\lambda(x')dx'}{|\mathbf{r}-x'\hat{\mathbf{x}}|}$$
+To compute the potential, we may be tempted to start with
 
-where $\mathbf{r}=x\hat{\mathbf{x}}+y\hat{\mathbf{y}}+y\hat{\mathbf{z}}$. The integration over $x'$ cannot be performed unless $\lambda(x')$ is known. A brute-force method of computing $\lambda(x')$ uses the fact that the $V$ must be constant for $-L\le 0\le L$ and far away, the potential should approach that of a point charge $q_0$ at the origin. One could guess $\lambda(x')$ until these conditions are satisfied.
+$$V(\mathbf{r})= \int_0^{2\pi}\int_0^R \frac{k\sigma(s')}{|\mathbf{r}-s'\hat{\mathbf{s}}|}s'ds'd\phi'$$
+
+which was the approach used to find the potential due to charges distributed on a disk with a given $\sigma(s)$. However, in this case, we don't know $\sigma(s)$ and so we are stuck. A brute-force method of computing $\sigma(s)$ uses the fact that the $V$ must be constant on the conductor -- one could guess $\sigma(s)$ until these conditions are satisfied.
+
+In summary, we can only use the integral formula for $V$ if the charge densities are known. In general, if we place a net charge on a conductor, we do not know how it will distribute on its surface.
 
 ## Type 2
 
 
-Problems of type 2. are called **boundary value problems** and are generally solved by seeking solutions to a partial differential equation called Poisson's Equation:
+Problems of type 2. are called **boundary value problems** and are generally solved by finding solutions to a partial differential equation called Poisson's equation:
 
-$$\nabla^2 V= -\rho/\epsilon_0$$
+$$\nabla^2 V= -\frac{\rho}{\epsilon_0}$$
 
-using a systematic approach to find a functional form for $V$ that satisfies both Poisson's Equation and has the correct values on the boundaries. In many problems, there is no net charge in the region enclosed by a boundary where $V$ is given. In this case, a functional form for $V$ that satisfies both Laplace's Equation 
+$\nabla^2$ is a new form of operator. It involves operation on a scalar function $f$ and results in a scalar function. In cartesian coordinates, 
 
-$$\nabla^2 V= 0$$
+$$\displaystyle \nabla^2f=\frac{\partial^2 f}{\partial x^2}+\frac{\partial^2 f}{\partial y^2}+\frac{\partial^2 f}{\partial z^2}$$
 
-and has the correct values on the boundaries. Poisson's Equation follows directly from inserting the definition of the electric potential $\mathbf{E}=-\nabla V$ into Gauss' Law in differential form $\nabla\cdot\mathbf{E}=\rho/\epsilon_0$ and the fact that $\nabla\cdot(-\nabla V)=-\nabla^2 V$.
+Threfore, Poisson's equation in cartesian coordinates is
 
-## Problems
+$$\frac{\partial^2 V}{\partial x^2}+\frac{\partial^2 V}{\partial y^2}+\frac{\partial^2 V}{\partial z^2}=-\frac{\rho}{\epsilon_0}$$
 
-### Poisson's Equation Derivation
+Similar to the divergence and gradient operators, the $\nabla^2$ operator (also called the Laplacian) has different forms for each coordinate system. 
 
-Show that 
+Laplace's equation is Poisson's equation with $\rho=0$:
 
-$$\nabla\bfcdot(-\nabla V)=-\nabla^2 V$$
+$$\nabla^2 V = 0$$
 
-using the definition of the divergence and gradient in cartesian coordinates.
+In cartesian coordinates, it is
 
-### Laplace's Equation
+$$\frac{\partial^2 V}{\partial x^2}+\frac{\partial^2 V}{\partial y^2}+\frac{\partial^2 V}{\partial z^2}=0$$
 
-Where does the equation $\nabla^2V = 0$ come from and when does it apply?
+## Deriving Poisson's Equation
 
-### Laplace's Equation
+Poisson's Equation, $\nabla^2 V= -{\rho}/{\epsilon_0}$, follows directly from inserting the definition of the electric potential $\mathbf{E}=-\nabla V$ into Gauss' Law in differential form $\nabla\bfcdot\mathbf{E}=\rho/\epsilon_0$.
 
-Given the potentials on the sides of a conducting cube, why is the solving Laplace's Equation used to find $V$ inside of the box instead of $V=\int kdq/|\mathbf{r}-\mathbf{r}'|$?
+Gauss's law in differential form is
+
+$$\nabla\bfcdot\mathbf{E}=\frac{\rho}{\epsilon_0}$$
+
+Using $\mathbf{E}=-\boldsymbol{\nabla}V$, this is
+
+$$\boldsymbol{\nabla}\bfcdot(-\boldsymbol{\nabla}V)=\frac{\rho}{\epsilon_0}$$
+
+To evaluate $\boldsymbol{\nabla}\bfcdot(-\boldsymbol{\nabla}V)$, first write $\boldsymbol{\nabla}V$ in cartesian
+
+$$\boldsymbol{\nabla}V=\xhat\frac{\partial V}{\partial x}+\yhat\frac{\partial V}{\partial y}+\zhat\frac{\partial V}{\partial z}$$
+
+Then
+
+$$\boldsymbol{\nabla}\bfcdot(-\boldsymbol{\nabla}V)=\boldsymbol{\nabla}\bfcdot\left(-\xhat\frac{\partial V}{\partial x}-\yhat\frac{\partial V}{\partial y}-\zhat\frac{\partial V}{\partial z}\right)$$
+
+Using
+
+$$\boldsymbol{\nabla}\bfcdot\mathbf{U}=\xhat\frac{\partial U_x}{\partial x}+\yhat\frac{\partial U_y}{\partial y}+\zhat\frac{\partial U_z}{\partial z}$$
+
+with $U_x=-\partial V/\partial x$, $U_y=-\partial V/\partial y$, $U_z=-\partial V/\partial z$ gives
+
+$$\boldsymbol{\nabla}\bfcdot\left(-\xhat\frac{\partial V}{\partial x}-\yhat\frac{\partial V}{\partial y}-\zhat\frac{\partial V}{\partial z}\right)=-\frac{\partial^2 V}{\partial x^2}-\frac{\partial^2 V}{\partial y^2}-\frac{\partial^2 V}{\partial z^2}$$
+
+and so 
+
+$$\boldsymbol{\nabla}\bfcdot(-\boldsymbol{\nabla}V)=-\frac{\partial^2 V}{\partial x^2}-\frac{\partial^2 V}{\partial y^2}-\frac{\partial^2 V}{\partial z^2}$$
+
+and
+
+$$-\frac{\partial^2 V}{\partial x^2}-\frac{\partial^2 V}{\partial y^2}-\frac{\partial^2 V}{\partial z^2}=\frac{\rho}{\epsilon_0}$$
+
+Moving the negative sign and using the definition of the Laplacian $\nabla^2$, gives Poisson's equation
+
+$$\nabla^2V=-\frac{\rho}{\epsilon_0}$$
+
+## Problem
+
+In the empty space between two infinite sheets of charge, the potenial is ...
 
 # 1-D
 
 ## Cartesian
 
-Laplace's Equation in 1-D cartesian coordinates is 
+Suppose that we connect a battery with potential difference $V_o$ to two large conducting plates. We want to know how $V$ varies between the plates.
+
+This problem can be solved using two approaches.
+1. By assuming the potential causes equal and opposite amount of charge to be uniformly distribute on the plates. This approach can only be used becasue we know (or assume) how the charges will distribute on the surfaces. If the plates were not large, we could not use this method.
+2. By using the boundary value method.
+ 
+### Charge Method
+
+
+Assume charges of $\pm Q$ appear on the plates when the battery is connected so that the surface charge densities are $\pm Q/A$ and use the method demonstrated in the [capacitance notes](capacitance.html) notes to find $V$.
+
+The electric field between the plates is $\mathbf{E}=-\sigma/\epsilon_o\xhat$. Using $V(x)=V(a)-\int_a^x\mathbf{E}\bfcdot d\mathbf{l}$ with $a=0$ and $d\mathbf{l}=dx'\xhat$
+
+$\displaystyle V(x)=V(0)-\int_0^x -\frac{\sigma}{\epsilon_o}dx'$
+
+Integration gives
+
+$\displaystyle V(x) = V(0)+\frac{\sigma}{\epsilon_o}x$
+
+We are not done because we we need to write $\sigma$ in terms of $V_o$. To compute $\sigma$, plug in $x=d$ to get
+
+$\displaystyle V(d)-V(0)=\frac{\sigma}{\epsilon_o}d$
+
+The difference in potential $V(d)-V(0)$ was given as $V_o$. Substitution gives
+
+$\displaystyle V_o=\frac{\sigma}{\epsilon_o}d\quad\Rightarrow\quad \sigma=\epsilon_o\frac{V_o}{d}$
+
+Plugging this $\sigma$ into $\displaystyle V(x) = V(0)+\frac{\sigma}{\epsilon_o}x$ gives
+
+$\displaystyle V(x)=V(0)+V_o\frac{x}{d}$
+
+### Laplace's Equation Method
+
+This problem may also be solved using Laplace's eqaation.
+
+Between the plates, there are no charges, so $\rho=0$ and laplace's equation applies. If the plates are large, then the potential will only vary in the $x$--direction, in which case Laplace's equation in cartesian components simplifies to:
 
 $$\nabla^2V = \frac{\partial^2 V}{\partial x^2} = 0$$
 
-which can be written as 
+This can be written as 
 
 $$\nabla^2V = \frac{d^2 V}{dx^2} = 0$$
 
 because $V$ only depends on $x$. This equation can be integrated twice to give
 
-$$V=ax+b$$
+$$V(x)=ax+b$$
 
-where $a$ and $b$ are constants. The interpretation of this equation is that in a configuration where it can be argued that potential only depends on $x$, the potential must increase or decrease linearly. A configuration that is approximately 1-dimensional is two large conducting plates separated by a distance $d$ and connected to a batter with potential $V_o$. The basic approach for solving boundary value problems is to start out with a general equation that satisfies Laplace's Equation and then constrain the free parameters using the boundary conditions. In this example, the two boundary conditions are
+where $a$ and $b$ are constants. The interpretation of this equation is that in a configuration where it can be argued that potential only depends on $x$, the potential must increase or decrease linearly. A configuration that is approximately 1-dimensional is two large conducting plates separated by a distance $d$ and connected to a batter with potential $V_o$. In this example, the two boundary conditions are
 
 1. $V(x=0)=0$
 2. $V(x=d)=V_o$
