@@ -72,6 +72,7 @@
 
 ## Thursday, September 23rd 
 
+* [Class Video](https://gmu.zoom.us/rec/share/LBXy-Hnb_cDp-bpWmXZzUlqiVjLx9CjIP4yq82Dl4MPe_RaugyxFFj6HDcmNwM5k.3R2ZQCfZhSGhTnLe)
 * Graded [HW #3](hw3.html) will be returned later today.
 * [HW #4](hw4.html) due at 3pm.
 * Introduce [Capacitance](capacitance.html) and [Boundary Value Problems](boundary_value_problems.html).

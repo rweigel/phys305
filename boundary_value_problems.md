@@ -311,7 +311,7 @@ For the example given, find $\mathbf{E}(s)$ between the cylinders using the char
 
 ### Problem
 
-Two concentric spherical shells of radius $a$ and $b$ (assume $b>a$) are at potential $V_o$ and $0$, respectively.
+Two conducting and concentric spherical shells with radius $a$ and $b$ (assume $b>a$) are at potential $V_o$ and $0$, respectively.
 
 1. Find $V(r)$ between the spheres using Laplace's equation method.
 2. Find $\mathbf{E}(r)$ between the spheres using the charge method.

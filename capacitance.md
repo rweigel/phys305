@@ -183,26 +183,29 @@ To help draw the plot, I've added a diagram showing the direction and magnitude 
 
 ## Problem
 
-Charge is uniformly distributed on two spherical conducting shells, the cross-section of which is shown. Both shells have a thickness of $t$. The inner shell has an outer radius of $a$. The outer shell has an inner radius of $b$.
+Charge is uniformly distributed on two concentric spherical conducting shells, the cross-section of which is shown. Both shells have a thickness of $t$. The inner shell has an outer radius of $a$. The outer shell has an inner radius of $b$.
 
 <img src="figures/Spherical.svg"/>
-%\input{Capacitance/figures/Spherical}
 
 1a. Use Gauss's law to show that there can be no charge on the inner surface of the inner conductor. 
 
-%{\bf Answer}: Consider a Gaussian sphere with the same center as the shells and a radius between \(a-t\) and \(a\) (i.e., inside the inner conductor). The electric field at any point on the Gaussian sphere will be zero because the surface is inside a conductor. From Gauss's law, it follows that the charge enclosed by the Gaussian sphere is zero. Because it is a conductor, the charges on the inner shell must be on either its inner surface or its outer surface; as a result, the total enclosed charge for this Gaussian sphere (which must be zero from Gauss's law) is the charge on the inner surface, so the charge on the inner surface must be zero. From this we can conclude that all of the $-Q$ on the inner shell resides on its outer surface. (You did a problem similar to this on another tutorial - the difference was that there was a point charge at the center of the shell; in that problem, there was charge on the inside surface of the shell.)
+1b. Use Gauss's law to show that the charge on the inner surface of the outer conductor is $+Q$. 
 
-1b. Use Gauss's law again to show that the charge on the inner surface of the outer conductor is $+Q$. 
+2\. What is the electric field in each of the 5 labeled regions? Region $1.$ is the empty volume inside of the inner conductor, region $2.$ is the volume of the inner conductor, region $3.$ is the empty volume between the conductors, region $4.$ is the volume of the outer conductor, and region $5.$ is the region outside of the outer conductor.
 
-%{\bf Answer}: A Gaussian sphere with the same center as the shells and a radius between \(b\) and \(b+t\) (i.e., inside the outer conductor) will have an electric field of zero everywhere on its surface. From Gauss's law, it follows that the charge enclosed by this surface is zero. We know that $-Q$ is enclosed by this surface -- this is the net charge on the inner shell. The other enclosed charge is the charge on the inner surface of the outer shell. The charge on this surface has to be $+Q$ for the net enclosed charge to be zero and for Gauss's law to be satisfied.
+3\. How much work will it take to move a charge $q_o$ from the outer surface of the inner shell to the inner surface of the outer shell? Said another way, what is the difference in potential energy, $PE_b-PE_a$, for this charge?
 
-1c. Show that there is no charge on the outer surface of the outer conductor.
+4\. What is the potential difference, $V_{b}-V_{a}$?
 
-%{\bf Answer}: In 1b., it was established that $+Q$ must be on the inner surface of the outer conductor. If the outer conductor has a net charge of $+Q$, then all of the charge is on the inner surface and the charge on the outer surface must be zero.
+5\. Write the capacitance in terms of $\epsilon_o$, $a$, and $b$.
 
-2\. What is the electric field in each of the 5 labeled regions? Region $1.$ is the empty volume inside of the inner conductor, region $2.$ is the volume of the inner conductor, region $3.$ is the empty volume between the conductors, region $4.$ is the volume of the outer conductor, and region $5.$ is the region outside of the outer conductor. (Hint: Use Gauss's law several times.)
+%1a. {\bf Answer}: Consider a Gaussian sphere with the same center as the shells and a radius between \(a-t\) and \(a\) (i.e., inside the inner conductor). The electric field at any point on the Gaussian sphere will be zero because the surface is inside a conductor. From Gauss's law, it follows that the charge enclosed by the Gaussian sphere is zero. Because it is a conductor, the charges on the inner shell must be on either its inner surface or its outer surface; as a result, the total enclosed charge for this Gaussian sphere (which must be zero from Gauss's law) is the charge on the inner surface, so the charge on the inner surface must be zero. From this we can conclude that all of the $-Q$ on the inner shell resides on its outer surface. (You did a problem similar to this on another tutorial - the difference was that there was a point charge at the center of the shell; in that problem, there was charge on the inside surface of the shell.)
 
-%{\bf Answer}: Regions 2. and 4. are inside of a conductor, so the electric field must be zero. To find the electric field in the other region, consider an equivalent problem. A charge of $-Q$ is uniformly distributed on the surface of a sphere of radius $a$ and a charge of $+Q$ is uniformly distributed on the surface of a sphere of radius $b$. 
+%1b. {\bf Answer}: A Gaussian sphere with the same center as the shells and a radius between \(b\) and \(b+t\) (i.e., inside the outer conductor) will have an electric field of zero everywhere on its surface. From Gauss's law, it follows that the charge enclosed by this surface is zero. We know that $-Q$ is enclosed by this surface -- this is the net charge on the inner shell. The other enclosed charge is the charge on the inner surface of the outer shell. The charge on this surface has to be $+Q$ for the net enclosed charge to be zero and for Gauss's law to be satisfied.
+
+%1c. {\bf Answer}: In 1b., it was established that $+Q$ must be on the inner surface of the outer conductor. If the outer conductor has a net charge of $+Q$, then all of the charge is on the inner surface and the charge on the outer surface must be zero.
+
+%2. {\bf Answer}: Regions 2. and 4. are inside of a conductor, so the electric field must be zero. To find the electric field in the other region, consider an equivalent problem. A charge of $-Q$ is uniformly distributed on the surface of a sphere of radius $a$ and a charge of $+Q$ is uniformly distributed on the surface of a sphere of radius $b$. 
 
 %In the previous tutorial, Gauss's law was used to show that (1) outside a uniformly charged spherical surface, the field is the same as if all of the charge was at the origin and (2) inside the surface, the field is zero. 
 
@@ -212,9 +215,7 @@ Charge is uniformly distributed on two spherical conducting shells, the cross-se
 
 %In Region 5., the field due to the inner shell is equal and opposite to the field due to the outer shell (the field is that of two equal and opposite charges at the origin). As a result, the field in Region 5. is zero.
 
-3\. How much work will it take to move a charge $q_o$ from the outer surface of the inner shell to the inner surface of the outer shell? Said another way, what is the difference in potential energy, $PE_b-PE_a$, for this charge?
-
-%{\bf Answer}: The electric field in region 3. is inwards with a magnitude of $kQ/r^2$. This is equivalent to the electric field due to $-Q$ at the origin. From the previous tutorial, the change in potential energy of a test charge $q_o$ when it is moved a radius of $a$ to $b$ when there is a charge $q$ at the origin is
+%4. {\bf Answer}: The electric field in region 3. is inwards with a magnitude of $kQ/r^2$. This is equivalent to the electric field due to $-Q$ at the origin. From the previous tutorial, the change in potential energy of a test charge $q_o$ when it is moved a radius of $a$ to $b$ when there is a charge $q$ at the origin is
 
 %$$U_b-U_a=kqq_o\left(\frac{1}{b}-\frac{1}{a}\right)$$
 
@@ -224,14 +225,10 @@ Charge is uniformly distributed on two spherical conducting shells, the cross-se
 
 %Note that moving a positive charge in this direction corresponds to an increase in its potential energy (this is equivalent to moving a positive charge away from a negative charge at the origin). This is consistent with the equation above, which is positive ($a<b$, so the term in parenthesis is negative making the right-hand side positive).
 
-4\. What is the potential difference, $V_{b}-V_{a}$?
-
-%{\bf Answer}:
+%5. {\bf Answer}:
 
 %$$V_{b}-V_{a} = \frac{U_{b}-U_{a}}{q_o} = -kQ\left(\frac{1}{b}-\frac{1}{a}\right)= kQ\left(\frac{1}{a}-\frac{1}{b}\right)$$
 
-5\. Write the capacitance in terms of $\epsilon_o$, $a$, and $b$.
-
-%{\bf Answer}:
+%5. {\bf Answer}:
 
 %$$C = \frac{Q}{|\Delta V|} = \frac{Q}{kQ(\frac{1}{a}-\frac{1}{b})}=\frac{1}{k}\frac{1}{\frac{1}{a}-\frac{1}{b}}=\frac{4\pi\epsilon_o}{\frac{1}{a}-\frac{1}{b}}$$
