@@ -2,13 +2,13 @@ See also 2.5.4 of Griffiths.
 
 # Introduction
 
-Capacitance is a property of any two isolated conductors; conductors are isolated when there can be no flow of charges betwee them. Capacitance is a quantity that can be used to answer any of these three questions.
+Capacitance is a property of any two isolated conductors; conductors are isolated when there can be no flow of charges between them. Capacitance is a quantity that can be used to answer any of these three questions.
 
 1. If I put $+Q$ on one of the conductors and $-Q$ on the other, what will be the difference in electric potential, $\Delta V$, between the conductors?
 2. If I put $+Q$ on one of the conductors and $-Q$ on the other, how much energy will it take to move a test charge $q_o$ from one conductor to the other?
-3. If I have a battery with an electric potential difference $\Delta V$ between its terminals and I connect each terminal to different conductors, how much charge will appear on the conducting surfaces? As will be discussed, due to charge conservation, an equal and opposite amount of charge will appear on the conductors.
+3. If I have a battery with an electric potential difference $\Delta V$ between its terminals and I connect each terminal to different conductors, how much charge will appear on the conducting surfaces?
 
-The reason that we can answer these questions is that the amount of positive charge $Q$ and potential difference $\Delta V$ are related by
+The reason that we can answer these questions is that the amount of charge $Q$ and potential difference $\Delta V$ are related by
 
 $$C=\frac{Q}{|\Delta V|}$$
 
@@ -16,7 +16,7 @@ where $C$ is called capacitance and represents a capacity to hold charge. Said a
 
 This italicized $C$ in $C=Q/|\Delta V|$ is different from an un-italicised C, which is the SI abbreviation for a Coulomb. (In E&M, we often run out of symbols and make confusing notation choices; another example is that electric potential is denoted by $V$ and the units of electric potential are V for Volts.)
 
-The SI units of capacitance are Coulombs/Volt; this ratio is defined to be a Farad (F).
+The SI unit of capacitance is Coulombs/Volt; this ratio is defined to be a Farad (F).
 
 By definition, capacitance is always a positive number.
 
@@ -24,7 +24,7 @@ Various different forms of the equation for capacitance are used, for example $C
 
 * In the equation $C={Q}/{V}$, it is implied that $V$ means the difference in potential between the positively charged conductor and the negatively charged conductor $V \equiv V_{+} - V_{-}$ (as opposed to $V \equiv V_{-} - V_{+}$). In this case, $V$ is positive.
 
-* In the equation $C={Q}/{\Delta V}$, it is implied that $\Delta V \equiv V_{+} - V_{-}$ (as opposed to $\Delta V \equiv V_{-} - V_{+}$). In this case, $V$ is positive.
+* In the equation $C={Q}/{\Delta V}$, it is implied that $\Delta V \equiv V_{+} - V_{-}$ (as opposed to $\Delta V \equiv V_{-} - V_{+}$). In this case, $\Delta V$ is positive.
 
 * In the equation $C={Q}/{|\Delta V|}$, the absolute value of the potential difference between the conductors is taken. The reason for this is that $V$ and $\Delta V$ alone is ambiguous -- they could mean $V_{+} - V_{-}$ or $V_{-}-V_{+}$. With the absolute value, it does not matter which is used -- the computed capacitance will be the same.
 
@@ -36,29 +36,33 @@ The only ingredients needed to form a capacitor are two isolated conductors. The
 <img src="figures/Capacitor_Examples.svg"/>
 %\end{center}
 
-The capacitance of two conductors depends on how far they are separated and their shape (physical dimensions). As an example, the capacitance of a parallel plate capacitor (b.) depends on the plate area and their separation distance $d$. The capacitance of concentric spherical conducting shells (d.) depends on the outer radius of the inner shell and the inner radius of the outer shell.
+The capacitance of two conductors depends on how far they are separated and their shape (physical dimensions). As an example, the capacitance of the parallel plate capacitor shown in (b.) depends on the plate area and the separation distance $d$. The capacitance of concentric spherical conducting shells shown in (d.) depends on the outer radius of the inner shell and the inner radius of the outer shell.
 
 <img src="figures/Capacitor_Examples.svg"/>
 
 # Capacitor Applications
 
-* Conversion of mechanical energy to electrical energy
+* Conversion of mechanical energy an electrical signal
 
-    In the diagram, when the key is pressed down the separation between the plates decreases and the voltmeter registers an increase in the voltage.
+    In the following diagram, when the top charged plated is pressed down, the separation between the plates decreases and the voltmeter registers an increase in the voltage. One can use this configuration to create keys on a computer keyboard (but there are many complications -- for example each keypress will result in a small loss of charge).
+    
+    <img src="figures/Capacitor_Example_Keypress.svg"/>
 
 * Conversion of electrical energy to mechanical
 
-    If you change the separation distance between the conductors that form a capacitor, the capacitance will change. If the charge on the conductors is constant, $C={Q}/{|\Delta V|}$ implies that there will be change in potential.
+    When a capacitor is connected to a battery, the two oppositely charged sides attract each other, and the force of attraction increases as $V$ increases. If a spring is placed between the capacitor plates, it will compress when $V$ is increased. As a result, energy from the battery is converted into mechanical energy -- the spring can be removed in its compressed state and be used to lift a mass.
 
+    <img src="figures/Capacitor_Example_Spring.svg"/>
+    
 * Conversion of electrical energy to thermal energy
 
    Suppose that you charge a capacitor using a battery. If you disconnect the battery, you will have energy stored in the capacitor.
 
-   If you later connect a resistor between two charged surfaces, current will flow and the wire will heat up. In this case, the electrical energy has been converted into thermal energy (and thermal energy involves the motion of particles).
+   If you later connect a resistor between two charged surfaces, current will flow and the wire will heat up. In this case, the electrical energy has been converted into thermal energy (and thermal energy involves the motion of particles, so this is also a form of electrical to mechanical energy conversion).
 
 * Modifying the amplitude of a waveform
 
-  When a voltage source that generates a time--varying potential of $A\sin\omega t$ that is connected to a resistor and a capacitor, the voltage amplitude across the capacitor is $A$ reduced by a factor that depends on $\omega$.
+  When a voltage source that generates a time--varying potential of $V_o\sin\omega t$ that is connected to a resistor and a capacitor, the voltage amplitude across the capacitor is $V_o$ reduced by a factor that depends on $\omega$.
 
 # Calculating Capacitance
 

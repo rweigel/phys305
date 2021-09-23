@@ -102,7 +102,7 @@
  
 ## Thursday, October 14th
 
-* Mid-term exam during class time. Location TBD. Closed book and note. Will provide a list of equations that you need to know.
+* Mid-term exam during class time in Innovation Hall, room 131. Closed book and note. I will provide a list of equations that you need to know.
 
 # Topics Covered and Catalog Description
 
