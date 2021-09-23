@@ -71,12 +71,38 @@
 * Answer questions on [HW #4](hw4.html) topics
 
 ## Thursday, September 23rd 
+
+* Graded [HW #3](hw3.html) will be returned later today.
 * [HW #4](hw4.html) due at 3pm.
+* Introduce [Capacitance](capacitance.html) and [Boundary Value Problems](boundary_value_problems.html).
+* Assign [HW #5](hw5.html)
 
+## Tuesday, September 28th 
 
+* Answer questions on [HW #5](hw5.html) topics.
+
+## Thursday, September 30th
+
+* [HW #5](hw5.html) due at 3pm.
+* Assign HW #6 covering 2--D boundary value problems.
+
+## Tuesday, October 5th
+
+* Answer questions on HW #6 topics
+
+## Thursday, October 7th
+
+* HW #6 due.
+* Post mid--term review problems
+
+## Tuesday, October 12th
+
+* No class (Monday classes/labs meet Tuesday. Tuesday classes do not meet this week.)
+* Review session in evening. Will also be available during regular class time.
+ 
 ## Thursday, October 14th
 
-* In-person mid-term exam during class time. Location TBD. Closed book and note. Will provide a list of equations that you need to know.
+* Mid-term exam during class time. Location TBD. Closed book and note. Will provide a list of equations that you need to know.
 
 # Topics Covered and Catalog Description
 
@@ -190,7 +216,7 @@ Other links:
 [Important Dates from Registrar](https://registrar.gmu.edu/calendars/fall_2021/#dates)
 
 No class:
-* Tuesday, October 15th (Monday classes/labs meet Tuesday. Tuesday classes do not meet this week)
+* Tuesday, October 12th (Monday classes/labs meet Tuesday. Tuesday classes do not meet this week)
 * Thursday, November 28th (Thanksgiving)
 
 Final Exam: Thursday, December 12th 10:30 am - 1:15 pm ([Final Exam Schedule](https://registrar.gmu.edu/wp-content/uploads/Fall-2021-Final-Exam-Schedule.pdf)). Location and deliver method TBD.

@@ -1,3 +1,14 @@
+Three infinite conducting plates are oriented so that their normals are parallel to the $x$-axis. Plate 0 is is in the $x=0$ plane and is at potential $V_0=0$, Plate 1 is in the  $x=d$ plane and is at potential $V_1=V_b$, and Plate 2 is in the $x=2d$ plane and is at potential $V_2=2V_b$.
+
+1. Plot the electric potential from $x=-d$ to $x=3d$. Add appropriate axis labels that depend on  $V_b$, $d$, and $\epsilon_0$.
+2. Plot the electric field from $x=-d$ to $x=3d$. Add appropriate axis labels.
+3. Find the surface charge density on the both sides of each plate in terms of $V_b$ and $d$:
+   1. $\sigma_{0Left}$
+   2. $\sigma_{0Right}$ 
+   3. $\sigma_{1Left}$
+   4. $\sigma_{1Right}$ 
+   5. $\sigma_{2Left}$
+   6. $\sigma_{2Right}$
 
 
 == Use ==

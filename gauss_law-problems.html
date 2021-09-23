@@ -130,7 +130,7 @@
             <li><a number="2" href="#using-gauss-s-law">Using Gauss’s Law</a></li>
             <ol style="display: none;">
                 <li><a number="2.1" href="#finding-enclosed-charge">Finding enclosed charge</a></li>
-                <li><a number="2.2" href="#justifying-equation-ref-eqn-simple2-and-solving-for-e" class="highlighted">Justifying Equation~\ref{eqn:simple2} and solving for <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                <li><a number="2.2" href="#justifying-equation-ref-eqn-simple2-and-solving-for-e">Justifying Equation~\ref{eqn:simple2} and solving for <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                     <semantics>
                                         <mrow>
                                             <mi>E</mi>
@@ -144,7 +144,348 @@
     <div id="display">
         <div class="section">
             <div class="block">
-                <p>== Use ==</p>
+                <p class="">Three infinite conducting plates are oriented so that their normals are parallel to the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span>-axis. Plate 0 is is in the <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                        <mo>=</mo>
+                                        <mn>0</mn>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x=0</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> plane and is at potential <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mi>V</mi>
+                                            <mn>0</mn>
+                                        </msub>
+                                        <mo>=</mo>
+                                        <mn>0</mn>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">V_0=0</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>, Plate 1 is in the <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                        <mo>=</mo>
+                                        <mi>d</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x=d</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">d</span></span></span></span> plane and is at potential <span len="9" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mi>V</mi>
+                                            <mn>1</mn>
+                                        </msub>
+                                        <mo>=</mo>
+                                        <msub>
+                                            <mi>V</mi>
+                                            <mi>b</mi>
+                                        </msub>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">V_1=V_b</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, and Plate 2 is in the <span len="6" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                        <mo>=</mo>
+                                        <mn>2</mn>
+                                        <mi>d</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x=2d</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord mathnormal">d</span></span></span></span> plane and is at potential <span len="10" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mi>V</mi>
+                                            <mn>2</mn>
+                                        </msub>
+                                        <mo>=</mo>
+                                        <mn>2</mn>
+                                        <msub>
+                                            <mi>V</mi>
+                                            <mi>b</mi>
+                                        </msub>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">V_2=2V_b</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord">2</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.</p>
+
+            </div>
+            <div class="block">
+                <ol class="">
+                    <li class="">
+                        <div class="block">
+                            <p>Plot the electric potential from <span len="6" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>x</mi>
+                                                    <mo>=</mo>
+                                                    <mo>−</mo>
+                                                    <mi>d</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">x=-d</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord mathnormal">d</span></span></span></span> to <span len="6" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>x</mi>
+                                                    <mo>=</mo>
+                                                    <mn>3</mn>
+                                                    <mi>d</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">x=3d</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord mathnormal">d</span></span></span></span>. Add appropriate axis labels that depend on <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>V</mi>
+                                                        <mi>b</mi>
+                                                    </msub>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">V_b</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>d</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">d</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">d</span></span></span></span>, and <span len="12" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>ϵ</mi>
+                                                        <mn>0</mn>
+                                                    </msub>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\epsilon_0</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.</p>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="block">
+                            <p>Plot the electric field from <span len="6" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>x</mi>
+                                                    <mo>=</mo>
+                                                    <mo>−</mo>
+                                                    <mi>d</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">x=-d</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord mathnormal">d</span></span></span></span> to <span len="6" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>x</mi>
+                                                    <mo>=</mo>
+                                                    <mn>3</mn>
+                                                    <mi>d</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">x=3d</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord mathnormal">d</span></span></span></span>. Add appropriate axis labels.</p>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="block">
+                            <div class="block">
+                                <p>Find the surface charge density on the both sides of each plate in terms of <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                <semantics>
+                                                    <mrow>
+                                                        <msub>
+                                                            <mi>V</mi>
+                                                            <mi>b</mi>
+                                                        </msub>
+                                                    </mrow>
+                                                    <annotation encoding="application/x-tex">V_b</annotation>
+                                                </semantics>
+                                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> and <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                <semantics>
+                                                    <mrow>
+                                                        <mi>d</mi>
+                                                    </mrow>
+                                                    <annotation encoding="application/x-tex">d</annotation>
+                                                </semantics>
+                                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">d</span></span></span></span>:</p>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <ol class="">
+                                <li class="">
+                                    <div class="block">
+                                        <p><span len="16" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                        <semantics>
+                                                            <mrow>
+                                                                <msub>
+                                                                    <mi>σ</mi>
+                                                                    <mrow>
+                                                                        <mn>0</mn>
+                                                                        <mi>L</mi>
+                                                                        <mi>e</mi>
+                                                                        <mi>f</mi>
+                                                                        <mi>t</mi>
+                                                                    </mrow>
+                                                                </msub>
+                                                            </mrow>
+                                                            <annotation encoding="application/x-tex">\sigma_{0Left}</annotation>
+                                                        </semantics>
+                                                    </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span><span class="mord mathnormal mtight">L</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span></p>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <div class="block">
+                                        <p><span len="17" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                        <semantics>
+                                                            <mrow>
+                                                                <msub>
+                                                                    <mi>σ</mi>
+                                                                    <mrow>
+                                                                        <mn>0</mn>
+                                                                        <mi>R</mi>
+                                                                        <mi>i</mi>
+                                                                        <mi>g</mi>
+                                                                        <mi>h</mi>
+                                                                        <mi>t</mi>
+                                                                    </mrow>
+                                                                </msub>
+                                                            </mrow>
+                                                            <annotation encoding="application/x-tex">\sigma_{0Right}</annotation>
+                                                        </semantics>
+                                                    </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span><span class="mord mathnormal mtight" style="margin-right:0.00773em;">R</span><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span><span class="mord mathnormal mtight">h</span><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> </p>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <div class="block">
+                                        <p><span len="16" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                        <semantics>
+                                                            <mrow>
+                                                                <msub>
+                                                                    <mi>σ</mi>
+                                                                    <mrow>
+                                                                        <mn>1</mn>
+                                                                        <mi>L</mi>
+                                                                        <mi>e</mi>
+                                                                        <mi>f</mi>
+                                                                        <mi>t</mi>
+                                                                    </mrow>
+                                                                </msub>
+                                                            </mrow>
+                                                            <annotation encoding="application/x-tex">\sigma_{1Left}</annotation>
+                                                        </semantics>
+                                                    </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mathnormal mtight">L</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span></p>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <div class="block">
+                                        <p><span len="17" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                        <semantics>
+                                                            <mrow>
+                                                                <msub>
+                                                                    <mi>σ</mi>
+                                                                    <mrow>
+                                                                        <mn>1</mn>
+                                                                        <mi>R</mi>
+                                                                        <mi>i</mi>
+                                                                        <mi>g</mi>
+                                                                        <mi>h</mi>
+                                                                        <mi>t</mi>
+                                                                    </mrow>
+                                                                </msub>
+                                                            </mrow>
+                                                            <annotation encoding="application/x-tex">\sigma_{1Right}</annotation>
+                                                        </semantics>
+                                                    </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mathnormal mtight" style="margin-right:0.00773em;">R</span><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span><span class="mord mathnormal mtight">h</span><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> </p>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <div class="block">
+                                        <p><span len="16" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                        <semantics>
+                                                            <mrow>
+                                                                <msub>
+                                                                    <mi>σ</mi>
+                                                                    <mrow>
+                                                                        <mn>2</mn>
+                                                                        <mi>L</mi>
+                                                                        <mi>e</mi>
+                                                                        <mi>f</mi>
+                                                                        <mi>t</mi>
+                                                                    </mrow>
+                                                                </msub>
+                                                            </mrow>
+                                                            <annotation encoding="application/x-tex">\sigma_{2Left}</annotation>
+                                                        </semantics>
+                                                    </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathnormal mtight">L</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span></p>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <div class="block">
+                                        <p><span len="17" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                        <semantics>
+                                                            <mrow>
+                                                                <msub>
+                                                                    <mi>σ</mi>
+                                                                    <mrow>
+                                                                        <mn>2</mn>
+                                                                        <mi>R</mi>
+                                                                        <mi>i</mi>
+                                                                        <mi>g</mi>
+                                                                        <mi>h</mi>
+                                                                        <mi>t</mi>
+                                                                    </mrow>
+                                                                </msub>
+                                                            </mrow>
+                                                            <annotation encoding="application/x-tex">\sigma_{2Right}</annotation>
+                                                        </semantics>
+                                                    </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathnormal mtight" style="margin-right:0.00773em;">R</span><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span><span class="mord mathnormal mtight">h</span><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span></p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="block">
+                <p class="">== Use ==</p>
+
+            </div>
+            <div class="block">
+                <p class="">== Mis-use ==</p>
+
+            </div>
+            <div class="block">
+                <p class="">== Problems ==</p>
+
+            </div>
+            <div class="block">
+                <p class="">=== Conceptual ===</p>
+
+            </div>
+            <div class="block">
+                <p class="">In another universe, the electric field created by a charge (q) is found to be (\mathbf{E} = k’q/r^3)</p>
+
+            </div>
+
+            <div class="block">
+                <p class="">== Use ==</p>
 
             </div>
             <div class="block">
@@ -160,7 +501,7 @@
 
             </div>
             <div class="block">
-                <p>In another universe, the electric field created by a charge (q) is found to be (\mathbf{E} = k’q/r^3)</p>
+                <p class="">In another universe, the electric field created by a charge (q) is found to be (\mathbf{E} = k’q/r^3)</p>
 
             </div>
             <div class="block">
@@ -4781,7 +5122,7 @@
         <div class="section">
 
             <div class="block">
-                <h2 class="highlighted"><a name="justifying-equation-ref-eqn-simple2-and-solving-for-e" number="2.2" class="hanchor" href="#justifying-equation-ref-eqn-simple2-and-solving-for-e"><span class="hnumber">2.2 </span> <span class="htext">Justifying Equation~\ref{eqn:simple2} and solving for <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                <h2><a name="justifying-equation-ref-eqn-simple2-and-solving-for-e" number="2.2" class="hanchor" href="#justifying-equation-ref-eqn-simple2-and-solving-for-e"><span class="hnumber">2.2 </span> <span class="htext">Justifying Equation~\ref{eqn:simple2} and solving for <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                         <semantics>
                                             <mrow>
                                                 <mi>E</mi>
@@ -5867,7 +6208,7 @@
 %\begin{center}\rule{2cm}{0.4pt}\end{center}
 -->
             <div class="block">
-                <p class="">\end{tcolorbox}</p>
+                <p>\end{tcolorbox}</p>
 
             </div>
 

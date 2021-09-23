@@ -1,3 +1,5 @@
+See also 2.5.4 of Griffiths.
+
 # Introduction
 
 Capacitance is a property of any two isolated conductors; conductors are isolated when there can be no flow of charges betwee them. Capacitance is a quantity that can be used to answer any of these three questions.
@@ -36,11 +38,9 @@ The only ingredients needed to form a capacitor are two isolated conductors. The
 
 The capacitance of two conductors depends on how far they are separated and their shape (physical dimensions). As an example, the capacitance of a parallel plate capacitor (b.) depends on the plate area and their separation distance $d$. The capacitance of concentric spherical conducting shells (d.) depends on the outer radius of the inner shell and the inner radius of the outer shell.
 
+<img src="figures/Capacitor_Examples.svg"/>
+
 # Capacitor Applications
-
-There are two general uses of capacitors, mechanical and electrical.
-
-## Mechanical
 
 * Conversion of mechanical energy to electrical energy
 
@@ -50,25 +50,25 @@ There are two general uses of capacitors, mechanical and electrical.
 
     If you change the separation distance between the conductors that form a capacitor, the capacitance will change. If the charge on the conductors is constant, $C={Q}/{|\Delta V|}$ implies that there will be change in potential.
 
-## Electrical
-
 * Conversion of electrical energy to thermal energy
 
-    Suppose that you charge a capacitor using a battery. If you disconnect the battery, you will have energy stored in the capacitor.
+   Suppose that you charge a capacitor using a battery. If you disconnect the battery, you will have energy stored in the capacitor.
 
-    If you later connect a resistor between two charged surfaces, current will flow and the wire will heat up. In this case, the electrical energy has been converted into thermal energy (and thermal energy involves the motion of particles).
+   If you later connect a resistor between two charged surfaces, current will flow and the wire will heat up. In this case, the electrical energy has been converted into thermal energy (and thermal energy involves the motion of particles).
 
-* Modifying the characteristic of a waveform
+* Modifying the amplitude of a waveform
+
+  When a voltage source that generates a time--varying potential of $A\sin\omega t$ that is connected to a resistor and a capacitor, the voltage amplitude across the capacitor is $A$ reduced by a factor that depends on $\omega$.
 
 # Calculating Capacitance
 
-To measure capacitance, place $-Q$ on one conductor and $+Q$ on the other and then measure the potential difference $\Delta V$ between the conductors. The capacitance is then $Q/|\Delta V|$. Alternatively, connect each initially uncharged conductor the terminals of a battery and then measure the amount of charge that appears on either one of the conductors. By conservation of charge, the amount of charge that appears on one conductor will be equal and opposite to what appears on the other.
+To measure capacitance, place $-Q$ on one conductor and $+Q$ on the other and then measure the potential difference $\Delta V$ between the conductors. The capacitance is then $Q/|\Delta V|$. Alternatively, connect each initially uncharged conductor to the terminals of a battery and then measure the amount of charge that appears on either one of the conductors. By conservation of charge, the amount of charge that appears on one conductor will be equal and opposite to what appears on the other.
 
-In general, computing capacitance requires solving a partial differential equation either analytically or numerically. (Analytical methods are covered in Chapter 3 of Griffiths). The reason is that if we charge up a capacitor, we need to know the electric field that results, and this requires knowledge of how the charges are distributed on the two conductors that form the capacitor. Previously Coulomb's law was used to compute the electric field when the distribution of charges was known. In the general case, the distribution of charges is not known, and Coulomb's law cannot be used to find the electric field.
+In general, computing capacitance requires solving a partial differential equation either analytically or numerically. (Analytical methods are covered in Chapter 3 of Griffiths). The reason is that if we charge up a capacitor, we need to know the electric field that results, and this requires knowledge of how the charges are distributed on the two conductors that form the capacitor. Previously Coulomb's law was used to compute the electric field when the distribution of charges was known. In general, when a net charge is placed on a conductor, their distribution will not be not known, and Coulomb's law cannot be used to find the electric field.
 
-However, there are a few capacitors for which a simple method can be used to compute the capacitance. These capacitors have a geometry such that a symmetry argument and Gauss's law can be used to determine the distribution of charges and the electric field between the two conductors that form the capacitor. In this case, we can find the potential difference by integrating the electric field from one conductor to the other to find the potential difference $\Delta V$. The capacitance is then $Q/|\Delta V|$.
+However, there are a few capacitors for which a simple method can be used to compute the capacitance. These capacitors have a geometry such that a symmetry argument and Gauss's law can be used to determine the electric field between the two conductors that form the capacitor. In this case, we can find the potential difference by integrating the electric field from one conductor to the other to find the potential difference $\Delta V$. The capacitance is then $Q/|\Delta V|$.
 
-In the Gauss's law tutorial, the electric field was found for certain types of charge distributions such as charges uniformly distributed on a plane, a cylindrical shell, and a spherical shell. In this tutorial, we'll use Gauss's law to find the electric field between conductors that have these shapes. The electric field will then be used to compute the potential difference between the conductors and this potential difference will be used to compute the capacitance.
+Gauss's law can be used to find the electric field for certain types of charge distributions such as charges uniformly distributed on a large plane, a long cylindrical shell, and a spherical shell. If these objects are conductors, we can argue that a net charge placed on them will be uniformly distributed on their surface and so Gauss's law can be used to find the electric field.
 
 The general technique for computing capacitance when Gauss's law applies is:
 
@@ -89,91 +89,95 @@ The general technique for computing capacitance when Gauss's law applies is:
 
 ## Example
 
-\begin{tcolorbox}[enhanced,breakable,parbox=false,colframe=blue!50!blue,colback=white,title=Example 2.1,height fill]
-
-An equal and opposite amount of charge is placed on two conducting and parallel plates as shown on the left. On the right, a side view of the plates is shown. The area of the plates, $A=lw$, is much larger than shown such that the width, $w$, and height, $h$, are both much larger than the separation distance, $d$.
+An equal and opposite amount of charge is placed on two large, conducting, and parallel plates as shown on the left. On the right, a side view of the plates is shown. The area of the plates is $A=w^2$ and $w\gg d$ (this constraint allows us to assume that the charge distribution will be approximately uniform).
 
 <img src="figures/Parallel_Plates_Example.svg"/>
 %\input{Capacitance/figures/Parallel_Plates_Example}
 
-1\. How will the charges distribute on each of the plates? That is, how much charge is on each of the four faces of area $A=lw$? Assume that no charge appears on the other (narrow) faces of the plates, which have a much smaller area.
+1\. How will the charges distribute on each of the plates? That is, how much charge is on each of the four faces of area $A=w^2$? Assume that no charge appears on the other (narrow) faces of the plates, which have a much smaller area.
 
-2\. What is the electric field in each region - outside of the plates, inside the conductors, and between the plates? (Hint: Use the equation for the field outside of a large and uniformly charged sheet and account for the field due to the charges on the surface of each plate.)
+2\. What is the electric field in the five regions?
 
-3a. How much work would it take to move a charge $q_o$ from the left plate to the right plate (i.e., the distance $d$ shown)? Said another way, what is the difference in electric potential energy, $U_r-U_l$, between the right and left plate?
+%3a. How much work would it take to move a charge $q_o$ from the left plate to the right plate (i.e., the distance $d$ shown)? Said another way, what is the difference in electric potential energy, $U_r-U_l$, between the right and left plate?
 
-3b. How much work does it take to move a charge $q_o$ from the outer face of a plate to the inner face of the same plate? (Hint: What is the electric field inside of the plates?)
+%3b. How much work does it take to move a charge $q_o$ from the outer face of a plate to the inner face of the same plate? (Hint: What is the electric field inside of the plates?)
 
-4a. What is the electric potential difference, $V_{r}-V_{l}$, between the left and right plate?
+3a. What is the electric potential difference, $V(d)-V(0)$, between the left and right plate?
 
-4b. What is the difference in electric potential between the inner and outer faces of one of the plates?
+3b. What is the difference in electric potential between the inner and outer faces of one of the plates?
 
-5a. Write the capacitance in terms of $\epsilon_o$, $A$, and $d$.
+4a. Write the capacitance in terms of $\epsilon_o$, $A$, and $d$.
 
-5b. Explain why the thickness of the plates does not appear in the equation for capacitance.
+4b. Explain why the thickness of the plates does not appear in the equation for capacitance.
 
-6\. Plot $E(x)$ and $V(x)$. Use $V(0)=0$.
+5\. Plot $E(x)$ and $V(x)$. Use $V(0)=0$.
 
 ----
 
-%\vspace{-1.5em}
-%\begin{center}\rule{2cm}{0.4pt}\end{center}
-%\vspace{-1em}
+**Answer**
 
-**Answers**
+1\. All of the negative charges will spread themselves out over the right face of the left plate. All of the positive charges will spread themselves out over the left face of the right plate. This configuration produces zero electric field inside both conductors as expected by Gauss's Law. Any other configuration of charges will lead to a non-zero electric field inside the conductors.
 
-1\. How will the charges distribute on each of the plates? That is, how much charge is on each of the four faces of area $A=lw$? Assume that no charge appears on the other (narrow) faces of the plate, which have a much smaller area.
-
-All of the negative charges will spread themselves out over the right face of the left plate. All of the positive charges will spread themselves out over the left face of the right plate. This configuration produces zero electric field inside both conductors as expected by Gauss's Law. Any other configuration of charges will lead to a non-zero electric field inside the conductors.
-
-2\. What is the electric field in each of the regions (Hint: Use the equation for the field outside of a large and uniformly charged sheet and account for the field due to the charges on the surface of each plate.)?
+The right face will have a charge density of $\sigma=Q/A$ and the left face will have $-Q/A=-\sigma$.
 
 <img src="figures/Parallel_Plates_Example_Answer.svg"/>
 %\input{Capacitance/figures/Parallel_Plates_Example_Answer}
 
-Each of the inner faces looks like a large and infinitely thin sheet of charge. The electric field of a sheet of charge has a magnitude of $\sigma/2\epsilon_o$. You can show this using Gauss's Law. The direction of the electric field due to the charges on each plate for each region is shown in the diagram. In all regions except for 3., the total field is zero, so $\mathbf{E}_1=\mathbf{E}_2=\mathbf{E}_4=\mathbf{E}_5=0$. The total electric field between the plates is to the left and is twice the field from a single large sheet of charge:
+2\. Each of the inner faces looks like a large sheet of charge. The electric field due to a sheet of charge has a magnitude of $\sigma/2\epsilon_o$. (You can show this using Gauss's Law.) The direction of the electric field due to the charges on each plate for each region is shown in the diagram. In all regions except for 3., the total field is zero, so $\mathbf{E}_1=\mathbf{E}_2=\mathbf{E}_4=\mathbf{E}_5=0$. The total electric field between the plates is to the left and is twice the field from a single large sheet of charge:
 
-$$\mathbf{E}_3=-2\frac{\sigma}{2\epsilon_0}\ihat=-\frac{Q}{A\epsilon_o}\ihat$$
+$\displaystyle\mathbf{E}_3=-\frac{\sigma}{2\epsilon_0}\xhat-\frac{\sigma}{2\epsilon_0}\xhat=-\frac{\sigma}{\epsilon_0}\xhat=-\frac{Q}{A\epsilon_o}\xhat$
 
-3a. How much work would it take to move a charge $q_o$ from the left plate to the right plate (i.e., the distance $d$ shown)? Said another way, what is the difference in electric potential energy, $U_r-U_l$, between the right and left plate?
+%3a. How much work would it take to move a charge $q_o$ from the left plate to the right plate (i.e., the distance $d$ shown)? Said another way, what is the difference in electric potential energy, $U_r-U_l$, between the right and left plate?
 
-From the previous tutorial, the work required to move a charge in a constant electric field is $W=\pm |\mathbf{F}|L$. The magnitude of the force on a test charge between the plates is $q_oE$. The force on the test charge is to the left and so it will take positive work to move it to the right. The work is then:
+%From the previous tutorial, the work required to move a charge in a constant electric field is $W=\pm |\mathbf{F}|L$. The magnitude of the force on a test charge between the plates is $q_oE$. The force on the test charge is to the left and so it will take positive work to move it to the right. The work is then:
 
-$$W=+q_oEd=\frac{q_oQd}{A\epsilon_o}$$
+%$$W=+q_oEd=\frac{q_oQd}{A\epsilon_o}$$
 
-The change in potential energy due to this move is the same as the work required for the move.
+%The change in potential energy due to this move is the same as the work required for the move.
 
-$$U_r-U_l=\frac{q_oQd}{A\epsilon_o}$$
+%$$U_r-U_l=\frac{q_oQd}{A\epsilon_o}$$
 
-3b. How much work does it take to move a charge $q_o$ from the outer face of a plate to the inner face of the same plate? (Hint: What is the electric field inside of the plates?)
+%3b. How much work does it take to move a charge $q_o$ from the outer face of a plate to the inner face of the same plate? (Hint: What is the electric field inside of the plates?)
 
-The electric field inside of the conductors is zero, so no work is required to move a charge inside of it.
+%The electric field inside of the conductors is zero, so no work is required to move a charge inside of it.
 
-4a. What is the electric potential difference, $V_{r}-V_{l}$, between the left and right plate?
+3a. What is the electric potential difference, $V(d)-V(0)$, between the left and right plate?
 
-$$\Delta V = \frac{\Delta U}{q_o} = \frac{Qd}{A\epsilon_o}$$
+To compute $V$ in the middle region, start with
 
-4b. What is the difference in electric potential between the inner and outer faces of one of the plates?
+$\displaystyle V(x)=V(0) - \int_0^x \mathbf{E}\bfcdot d\mathbf{l}$ 
 
-Zero. If it takes no work to move a charge $q_o$ inside of the conductor, the change in potential energy, $\Delta U$ is zero and the change in potential $\Delta U/q_o$ associated with this movement is zero. 
+With $d\mathbf{l}=dx'\xhat$ and $\mathbf{E}=-(Q/A\epsilon_o)\xhat$, this is
 
-5\. Write the capacitance in terms of $\epsilon_o$, $A$, and $d$.
+$\displaystyle V(x)= V(0) - \int_0^x -(Q/A\epsilon_o)dx'$
 
-$$\Delta V = \frac{\Delta U}{q_o} = \frac{Qd}{A\epsilon_o}$$
+Integration gives $\displaystyle V(x)-V(0)=\frac{Q}{A\epsilon_o}x$.
 
-$$C=\frac{Q}{|\Delta V|} = \frac{A\epsilon_o}{d}$$
+This potential increases with $x$, which is expected from the diagram -- the electric field is in the opposite direction of movement when moving in the direction of increasing $x$ in region 3.
 
-As expected, the capacitor only depends on the geometry of the conductors (via the area $A$ in this case) and the separation distance $d$.
+Plugging in $x=d$ gives
 
-6\. Plot $E(x)$ and $V(x)$. Use $V(0)=0$.
+$\displaystyle V(d)-V(0)=\frac{Q}{A\epsilon_o}d$.
 
-%\end{tcolorbox}
+3b. What is the difference in electric potential between the inner and outer faces of one of the plates?
 
-\newpage
+Zero because the electric field is zero inside of the plates. Although the potential difference is zero, the potential inside of the plates may be non--zero. For example, if $V(0)=0$, the potential of the right plate, $V(d)$, is $\frac{Q}{A\epsilon_o}d$.
+
+4\. Write the capacitance in terms of $\epsilon_o$, $A$, and $d$.
+
+The potential difference found in 3a is $\displaystyle\Delta V = \frac{Qd}{A\epsilon_o}$. Plugging this into the equation for capacitance gives
+
+$\displaystyle C=\frac{Q}{|\Delta V|} = \frac{A\epsilon_o}{d}$.
+
+As expected, the capacitance only depends on the geometry of the conductors (via the area $A$ in this case) and the separation distance $d$.
+
+5\. Plot $E(x)$ and $V(x)$. Use $V(0)=0$.
+
+To help draw the plot, I've added a diagram showing the direction and magnitude of the electric field in all regions. 
+
+<img src="figures/Parallel_Plates_Example_Answer_Plot.svg"/>
 
 ## Problem
-
-\begin{tcolorbox}[enhanced,breakable,parbox=false,colframe=black!50!black,colback=white,title=Problem 2.1,height fill]
 
 Charge is uniformly distributed on two spherical conducting shells, the cross-section of which is shown. Both shells have a thickness of $t$. The inner shell has an outer radius of $a$. The outer shell has an inner radius of $b$.
 
@@ -182,604 +186,48 @@ Charge is uniformly distributed on two spherical conducting shells, the cross-se
 
 1a. Use Gauss's law to show that there can be no charge on the inner surface of the inner conductor. 
 
-\ifsolutions
-{\bf Answer}: Consider a Gaussian sphere with the same center as the shells and a radius between \(a-t\) and \(a\) (i.e., inside the inner conductor). The electric field at any point on the Gaussian sphere will be zero because the surface is inside a conductor. From Gauss's law, it follows that the charge enclosed by the Gaussian sphere is zero. Because it is a conductor, the charges on the inner shell must be on either its inner surface or its outer surface; as a result, the total enclosed charge for this Gaussian sphere (which must be zero from Gauss's law) is the charge on the inner surface, so the charge on the inner surface must be zero. From this we can conclude that all of the $-Q$ on the inner shell resides on its outer surface. (You did a problem similar to this on another tutorial - the difference was that there was a point charge at the center of the shell; in that problem, there was charge on the inside surface of the shell.)
-\else
-\vspace{1.2cm}
-\fi
+%{\bf Answer}: Consider a Gaussian sphere with the same center as the shells and a radius between \(a-t\) and \(a\) (i.e., inside the inner conductor). The electric field at any point on the Gaussian sphere will be zero because the surface is inside a conductor. From Gauss's law, it follows that the charge enclosed by the Gaussian sphere is zero. Because it is a conductor, the charges on the inner shell must be on either its inner surface or its outer surface; as a result, the total enclosed charge for this Gaussian sphere (which must be zero from Gauss's law) is the charge on the inner surface, so the charge on the inner surface must be zero. From this we can conclude that all of the $-Q$ on the inner shell resides on its outer surface. (You did a problem similar to this on another tutorial - the difference was that there was a point charge at the center of the shell; in that problem, there was charge on the inside surface of the shell.)
 
 1b. Use Gauss's law again to show that the charge on the inner surface of the outer conductor is $+Q$. 
 
-\ifsolutions
-{\bf Answer}: A Gaussian sphere with the same center as the shells and a radius between \(b\) and \(b+t\) (i.e., inside the outer conductor) will have an electric field of zero everywhere on its surface. From Gauss's law, it follows that the charge enclosed by this surface is zero. We know that $-Q$ is enclosed by this surface -- this is the net charge on the inner shell. The other enclosed charge is the charge on the inner surface of the outer shell. The charge on this surface has to be $+Q$ for the net enclosed charge to be zero and for Gauss's law to be satisfied.
-\else
-\vspace{1.2cm}
-\fi
+%{\bf Answer}: A Gaussian sphere with the same center as the shells and a radius between \(b\) and \(b+t\) (i.e., inside the outer conductor) will have an electric field of zero everywhere on its surface. From Gauss's law, it follows that the charge enclosed by this surface is zero. We know that $-Q$ is enclosed by this surface -- this is the net charge on the inner shell. The other enclosed charge is the charge on the inner surface of the outer shell. The charge on this surface has to be $+Q$ for the net enclosed charge to be zero and for Gauss's law to be satisfied.
 
 1c. Show that there is no charge on the outer surface of the outer conductor.
 
-\ifsolutions
-{\bf Answer}: In 1b., it was established that $+Q$ must be on the inner surface of the outer conductor. If the outer conductor has a net charge of $+Q$, then all of the charge is on the inner surface and the charge on the outer surface must be zero.
-\else
-\vspace{1.2cm}
-\fi
+%{\bf Answer}: In 1b., it was established that $+Q$ must be on the inner surface of the outer conductor. If the outer conductor has a net charge of $+Q$, then all of the charge is on the inner surface and the charge on the outer surface must be zero.
 
-2. What is the electric field in each of the 5 labeled regions? Region $1.$ is the empty volume inside of the inner conductor, region $2.$ is the volume of the inner conductor, region $3.$ is the empty volume between the conductors, region $4.$ is the volume of the outer conductor, and region $5.$ is the region outside of the outer conductor. (Hint: Use Gauss's law several times.)
+2\. What is the electric field in each of the 5 labeled regions? Region $1.$ is the empty volume inside of the inner conductor, region $2.$ is the volume of the inner conductor, region $3.$ is the empty volume between the conductors, region $4.$ is the volume of the outer conductor, and region $5.$ is the region outside of the outer conductor. (Hint: Use Gauss's law several times.)
 
-\ifsolutions
-{\bf Answer}: Regions 2. and 4. are inside of a conductor, so the electric field must be zero. To find the electric field in the other region, consider an equivalent problem. A charge of $-Q$ is uniformly distributed on the surface of a sphere of radius $a$ and a charge of $+Q$ is uniformly distributed on the surface of a sphere of radius $b$. 
+%{\bf Answer}: Regions 2. and 4. are inside of a conductor, so the electric field must be zero. To find the electric field in the other region, consider an equivalent problem. A charge of $-Q$ is uniformly distributed on the surface of a sphere of radius $a$ and a charge of $+Q$ is uniformly distributed on the surface of a sphere of radius $b$. 
 
-In the previous tutorial, Gauss's law was used to show that (1) outside a uniformly charged spherical surface, the field is the same as if all of the charge was at the origin and (2) inside the surface, the field is zero. 
+%In the previous tutorial, Gauss's law was used to show that (1) outside a uniformly charged spherical surface, the field is the same as if all of the charge was at the origin and (2) inside the surface, the field is zero. 
 
-Based on (2), we can conclude that the field in Region 1. is zero. 
+%Based on (2), we can conclude that the field in Region 1. is zero. 
 
-Region 3. is inside of the outer shell, so the field due to the charges on the outer shell is zero because of (2). In Region 3., the field due to the -Q charge on the inner shell is inwards with a magnitude of $kQ/r^2$, which follows from (1). 
+%Region 3. is inside of the outer shell, so the field due to the charges on the outer shell is zero because of (2). In Region 3., the field due to the -Q charge on the inner shell is inwards with a magnitude of $kQ/r^2$, which follows from (1). 
 
-In Region 5., the field due to the inner shell is equal and opposite to the field due to the outer shell (the field is that of two equal and opposite charges at the origin). As a result, the field in Region 5. is zero.
-\else
-\vspace{1.7cm}
-\fi
+%In Region 5., the field due to the inner shell is equal and opposite to the field due to the outer shell (the field is that of two equal and opposite charges at the origin). As a result, the field in Region 5. is zero.
 
-3. How much work will it take to move a charge $q_o$ from the outer surface of the inner shell to the inner surface of the outer shell? Said another way, what is the difference in electric potential, $U_b-U_a$?
+3\. How much work will it take to move a charge $q_o$ from the outer surface of the inner shell to the inner surface of the outer shell? Said another way, what is the difference in potential energy, $PE_b-PE_a$, for this charge?
 
-\ifsolutions
-{\bf Answer}: The electric field in region 3. is inwards with a magnitude of $kQ/r^2$. This is equivalent to the electric field due to $-Q$ at the origin. From the previous tutorial, the change in potential energy of a test charge $q_o$ when it is moved a radius of $a$ to $b$ when there is a charge $q$ at the origin is
+%{\bf Answer}: The electric field in region 3. is inwards with a magnitude of $kQ/r^2$. This is equivalent to the electric field due to $-Q$ at the origin. From the previous tutorial, the change in potential energy of a test charge $q_o$ when it is moved a radius of $a$ to $b$ when there is a charge $q$ at the origin is
 
-$$U_b-U_a=kqq_o\left(\frac{1}{b}-\frac{1}{a}\right)$$
+%$$U_b-U_a=kqq_o\left(\frac{1}{b}-\frac{1}{a}\right)$$
 
-In this problem, the charge at the origin is $-Q$, so
+%In this problem, the charge at the origin is $-Q$, so
 
-$$U_b-U_a=-kQq_o\left(\frac{1}{b}-\frac{1}{a}\right)$$
+%$$U_b-U_a=-kQq_o\left(\frac{1}{b}-\frac{1}{a}\right)$$
 
-Note that moving a positive charge in this direction corresponds to an increase in its potential energy (this is equivalent to moving a positive charge away from a negative charge at the origin). This is consistent with the equation above, which is positive ($a<b$, so the term in parenthesis is negative making the right-hand side positive).
-\else
-\vspace{1.2cm}
-\fi
+%Note that moving a positive charge in this direction corresponds to an increase in its potential energy (this is equivalent to moving a positive charge away from a negative charge at the origin). This is consistent with the equation above, which is positive ($a<b$, so the term in parenthesis is negative making the right-hand side positive).
 
-4. What is the potential difference, $V_{b}-V_{a}$?
+4\. What is the potential difference, $V_{b}-V_{a}$?
 
-\ifsolutions
-{\bf Answer}:
+%{\bf Answer}:
 
-$$V_{b}-V_{a} = \frac{U_{b}-U_{a}}{q_o} = -kQ\left(\frac{1}{b}-\frac{1}{a}\right)= kQ\left(\frac{1}{a}-\frac{1}{b}\right)$$
-\else
-\vspace{1.2cm}
-\fi
+%$$V_{b}-V_{a} = \frac{U_{b}-U_{a}}{q_o} = -kQ\left(\frac{1}{b}-\frac{1}{a}\right)= kQ\left(\frac{1}{a}-\frac{1}{b}\right)$$
 
-5. Write the capacitance in terms of $\epsilon_o$, $a$, and $b$.
+5\. Write the capacitance in terms of $\epsilon_o$, $a$, and $b$.
 
-\ifsolutions
-{\bf Answer}:
+%{\bf Answer}:
 
-$$C = \frac{Q}{|\Delta V|} = \frac{Q}{kQ(\frac{1}{a}-\frac{1}{b})}=\frac{1}{k}\frac{1}{\frac{1}{a}-\frac{1}{b}}=\frac{4\pi\epsilon_o}{\frac{1}{a}-\frac{1}{b}}$$
-\else
-\fi
-\end{tcolorbox}
-
-# Combinations of Capacitors
-
-In this section, justifications are given for the equations
-
-$$\frac{1}{C_{eq}} = \frac{1}{C_1}+\frac{1}{C_2}\quad\quad \text{capacitors in series}$$
-
-and
-
-$$C_{eq}=C_1+C_2\quad\quad\text{capacitors in parallel}$$
-
-used to compute the equivalent capacitance for capacitors.
-
-
-## Capacitors in Series
-
-So far we have only considered single capacitors. Here we consider two capacitors which are comprised of a total of four conductors. If two of the conductors are touching or connected via a wire as shown in the diagram, the capacitors are considered to be in series. The touching capacitors can be made to touch either by physically touching the conductors or by connecting them with a conducting wire which has the same effect.
-
-\begin{tcolorbox}[enhanced,breakable,parbox=false,colframe=blue!50!blue,colback=white,title=Example 3.1,height fill]
-
-Four conducting plates are configured as shown. The surface area of the two plates on the left is $A_1$ and the area for the two plates on the right is $A_2$.
-
-All of the conductors initially have a net charge of zero, and then charges are placed on the two outer conducting plates as shown in the diagram.
-
-<img src="figures/Series_Parallel_Plates.svg"/>
-
-1. In order for the electric field to be zero inside of the inner two conductors, what charges need to be spread over the surfaces of the two inner plates? (There are a total of four surfaces -- two with area $A_1$ and two with area $A_2$)?
-
-{\bf Answer:} The charges will distribute as shown in the following diagram. The net charge on the inner two conductors is zero -- because of conservation of charge you cannot have a net charge if you have not placed any charge on those plates. In response to the electric field that forms when charges are placed on the outer two conductors, the charges move to make the net electric field inside of all of the conductors zero. 
-
-<img src="figures/Series_Parallel_Plates_Answer.svg"/>
-
-2. What is the electric field in all of the regions of space?
-
-{\bf Answer:} If you look at the superposition of the electric fields from the positive and negative plates for each conductor (remember that for a sheet the field is not dependent on distance), they will cancel outside of the conductors as described in Example 2.1. In the configuration shown, the electric field outside of the region spanned by $d_1$ is zero due to the charges on the left two conductors; the charges on the right two conductors create a zero electric field outside of the region spanned by $d_2$.
-
-In the region spanned by $d_1$, the electric field is due to only to the surfaces labeled 1. and 2. As described in Example 2.1, this field is $\mathbf{E}=-(Q/\epsilon_o A) \ihat$. 
-
-Similarly, the electric field in the region spanned by $d_2$ is $\mathbf{E}=-(Q/\epsilon_o A ) \ihat$ and is only due to the charges on surfaces 3. and 4. In all other regions, the electric field is zero.
-
-3. How much work is required to move a charge $q_o$ from surface 1. to surface 4.?
-
-{\bf Answer:} To move from surface 1. to 2. takes $W=+q_oEd={q_oQd_1}/{A_1\epsilon_o}$ (draw the field lines and make sure that the $+$ makes sense). To move from surface 2. to 3. takes no work because the electric field is zero inside of a conductor. To move from surface 3. to 4. takes $W=+q_oEd={q_oQd_2}/{A_2\epsilon_o}$. The total work is:
-
-$$W=\frac{q_oQd_1}{A_1\epsilon_o}+\frac{q_oQd_2}{A_2\epsilon_o}$$
-
-4. What is the difference in potential energy of the charge $q_o$ between surface 1. and 4.?
-
-{\bf Answer:} The difference in potential energy is the same as the amount of work required to move a charge from surface 1. to 4:
-
-$$U_4-U_1=\frac{q_oQd_1}{A_1\epsilon_o}+\frac{q_oQd_2}{A_2\epsilon_o}$$
-
-5. What is the difference in potential between surface 1. and 4.?
-
-{\bf Answer:} $$V_4-V_1=\frac{U_4-U_1}{q_o}=\frac{Qd_1}{A_1\epsilon_o}+\frac{Qd_2}{A_2\epsilon_o}$$
-
-6. The capacitance of this configuration is the amount of charge placed on the outer surfaces divided by the potential difference between the outer surfaces. What is this capacitance?
-
-{\bf Answer:} 
-
-$$C = \frac{Q}{|V_4-V_1|} = \frac{Q}{\frac{Qd_1}{A_1\epsilon_o}+\frac{Qd_2}{A_2\epsilon_o}}=\frac{1}{\frac{d_1}{A_1\epsilon_o}+\frac{d_2}{A_2\epsilon_o}}$$
-
-We have derived the formula for how capacitors add in series. To see this, invert the previous formula
-
-$$\frac{1}{C} = \frac{d_1}{A_1\epsilon_o}+\frac{d_2}{A_2\epsilon_o} = \frac{1}{C_1}+\frac{1}{C_2}$$ 
-
-where $C_1={A_1\epsilon_o}/{d_1}$ and $C_2={A_1\epsilon_o}/{d_1}$.
-
-
-\end{tcolorbox}
-
-\newpage
-
-### Problem
-
-\begin{tcolorbox}[enhanced,breakable,parbox=false,colframe=black!50!black,colback=white,title=Problem 3.1,height fill]
-
-The cross-section of three conducting shells is shown in the following diagram. All shells have a thickness $t$. The inner shell has an outer radius of $a$. The middle shell has an outer radius of $b$. The outer shell has an inner radius of $c$.
-
-All of the shells are initially uncharged. A charge of $-Q$ is placed on the inner shell and a charge of $+Q$ is placed on the outer shell.
-
-%\input{Capacitance/figures/Spherical_Series}
-<img src="figures/Spherical_Series.svg"/>
-
-1. In order for the electric field to be zero inside all of the conductors, how will the charges distribute on the six conducting surfaces (each shell has an inner and outer surface)?
-
-\ifsolutions
-{\bf Answer}:
-
-Inner-most shell: Inner surface has no charge; Outer surface has $-Q$.
-
-Middle shell: Inner surface has $+Q$; Outer surface has $-Q$.
-
-Outer shell: Inner surface has $+Q$; Outer surface has zero.
-\else
-\vspace{2cm}
-\fi
-
-2. What will the electric field be in each of the 7 regions shown?
-
-\ifsolutions
-{\bf Answer}:
-
-$\mathbf{E}=0$ in Regions 2., 4., and 6. (inside conductor).
-
-$\mathbf{E}=-kQ\hat{\mathbf{r}}/r^2$ in Region 3. 
-
-$\mathbf{E}=-kQ\hat{\mathbf{r}}/r^2$ in Region 5. 
-
-$\mathbf{E}=0$ in Region 7.
-\else
-\vspace{2cm}
-\fi
-
-3. What is the difference in potential $V_c-V_a$?
-
-\ifsolutions
-{\bf Answer}:
-
-There is a change in potential when going from a radius of $a$ to a radius of $b-t$ of $V_{b-t}-V_a$. Moving from $b-t$ to $b$, there is no change in potential (a conductor is an equipotential). There is a change in potential in going from $b$ to $c$ of $V_c-V_b$.
-
-$$V_c-V_a=(V_c-V_b) + (V_{b-t}-V_a)$$
-
-In Regions 3. and 5. the electric field is the same as if a charge $-Q$ was at the origin.
-
-$$V_c-V_b=-kQ\left(\frac{1}{c}-\frac{1}{b}\right)$$
-
-$$V_{b-t}-V_a=-kQ\left(\frac{1}{b-t}-\frac{1}{a}\right)$$
-
-$$V_c-V_a=(V_c-V_b) + (V_{b-t}-V_a)=-kQ\left(\frac{1}{c}-\frac{1}{b}\right)-kQ\left(\frac{1}{b-t}-\frac{1}{a}\right)$$
-\else
-\vspace{2cm}
-\fi
-
-4. What is the capacitance of this configuration?
-
-\ifsolutions
-{\bf Answer}:
-
-$$C=\frac{Q}{|\Delta V|} = \frac{4\pi\epsilon_o}{\left(\frac{1}{b}-\frac{1}{c}\right)+\left(\frac{1}{a}-\frac{1}{b-t}\right)}$$
-
-Notice that this answer is what you would get if you added the capacitance of two capacitors in series -- one capacitor has an inner shell at $a$ and an outer shell at $b-t$. Another capacitor has an inner shell at $b$ and an outer shell at $c$. The equivalent capacitance for two capacitors in series is found using the sum of the inverses:
-
-$$\frac{1}{C_{eq}} = \frac{1}{C_{inner}} + \frac{1}{C_{outer}}$$
-
-From earlier, the capacitance of two shells is
-
-$$C=\frac{4\pi\epsilon_o}{\frac{1}{r_i}-\frac{1}{r_o}}$$
-
-where $r_o$ and $r_i$ are the inner and outer radius, respectively. Thus,
-
-$$C_{outer} = \frac{4\pi\epsilon_o}{\frac{1}{b}-\frac{1}{c}}$$
-
-$$C_{inner} = \frac{4\pi\epsilon_o}{\frac{1}{a}-\frac{1}{b-t}}$$
-
-Plugging these two equations into ${1}/{C_{eq}} = {1}/{C_{inner}} + {1}/{C_{outer}}$ and solving for $C_{eq}$ will give the same answer stated at the start of the answer to this problem.
-\else
-\vspace{2cm}
-\fi
-
-\end{tcolorbox}
-
-## Capacitors in Parallel
-
-Capacitors are said to be in parallel when each conductor in a single capacitor touches directly, or via a wire, another conductor on another capacitor.
-
-### Example
-
-In the following diagram, two parallel plate capacitors are connected by a wire as shown. The conductors are initially uncharged and then $-Q$ is placed on the lower-right conductor and $+Q$ is placed on the upper-right conductor.
-
-<img src="figures/Parallel_Parallel_Plates.svg"/>
-
-As in the previous example, all of the charges will spread out over the inside faces of the plates. In this case, the charge $Q$ will be split and some charge will appear on the inner face of the upper left conductor ($1u$) and the rest on the inner face on the top right conductor ($2u$). In equation form, this statement is
-
-$$Q=q_{1u}+q_{2u}$$
-
-It can be shown from Gauss's law that $q_{1l} = -q_{1u}$ and $q_{2u} = -q_{2u}$.
-
-Because the two conductors on the top are at the same potential and the two conductors on the bottom are at the same potential (why?), the potential differences between the upper and lower plates of the capacitors must be the same: 
-
-$$\Delta V_1=\Delta V_2$$
-
-For the full system:
-
-$$Q = C \Delta V$$
-
-For each of the capacitors, $C_1 = q_1/\Delta V_1$ and $C_2 = q_2/\Delta V_2$. These can be re-written as $q_1 = C_1 \Delta V_1$ and $q_2 = C_2 \Delta V_2$. Plugging these equations into $Q = q_1 + q_2$ gives
-
-$$C\Delta V = Q = q_1 + q_2 = C_1 \Delta V_1 + C_2 \Delta V_2$$
-
-Because $\Delta V=\Delta V_1=\Delta V_2$, we conclude that the net capacitance of this configuration is
-
-$$C = C_1 + C_2$$
-
-which is expected because the capacitors are connected in parallel.
-
-\newpage
-
-### Problem
-
-\includegraphics[scale=0.3]{Capacitance/Q24.17_fig.png}
-
-1a. Which of the plates in the $C_1$, $C_2$, $C_3$ group are at the same potential? How do those potentials relate to the potentials $V_a$ and $V_d$?
-
-\ifsolutions
-{\bf Answer}: The left plate of $C_1$ is at the same potential as the left plate of $C_3$. These plates have a potential of $V_a$. The right plate of $C_2$ is at the same potential as the right plate of $C_3$. These plates have a potential of $V_d$.
-\else
-\vspace{1.7 cm}
-\fi
-
-2. What is the charge on the right-hand plate of $C_1$ relative to the left-hand plate of $C_2$? Why?
-
-\ifsolutions
-{\bf Answer}: They are equal and opposite. If the capacitors were initially uncharged and a battery is connected to $a$ and $d$, charge will appear on both of the surfaces mentioned; by conservation of charge, the sum of the charges on both surfaces must be zero, so the charge on each surface must be equal and opposite.
-\else
-\vspace{1.7 cm}
-\fi
-
-3. Which of the capacitors in this network are in series and which are in parallel? Explain how you know. 
-\ifsolutions
-
-%In the following diagram, the reduction steps used in this paragraph are shown. In the first step, capacitor $C_4$ was moved to make the circuit look a bit more familiar.
-
-%\begin{center}
-%\includegraphics[width=0.75\textwidth]{Capacitance/figures/Problem_4_1_Solution.jpg}
-%\end{center}
-
-{\bf Answer}: $C_1$ and $C_2$ are in series. They are connected and the charge on their surfaces are equal in magnitude. 
-
-There are no other {\it individual} capacitors that are in series or parallel. However, if the capacitors $C_1$ and $C_2$ are replaced with a capacitor having capacitance $C_{12}$ found using 
-
-$1/C_{12}=1/C_1+1/C_2,$
-
-then $C_{12}$ is in parallel with $C_3$. The combination of $C_{12}$ and $C_3$ is equivalent to a capacitor $C_{123}$ with a capacitance computed by adding $C_{12}$ and $C_{3}$ in parallel: 
-
-$C_{123} = C_{12} + C_{3}.$
-
-The capacitor $C_{123}$ is in series with $C_{4}$. Thus, 
-
-$1/C_{1234}=1/C_{123}+1/C_4.$
-
-\else
-\vspace {1.7cm}
-\fi
-
-4. If each of the capacitors has the same capacitance, $C = 4.00~\mu$F, and  $V_a$ - $V_b = +28.0$ V, what is the potential across each of the capacitors? Justify your answers. 
-
-\ifsolutions
-{\bf Answer}: 
-
-Using $C_1=C_2=C_3=C_4=C$, the equations from the answer to question 3. give
-
-1/C_{12}=1/C_1+1/C_2\quad\Rightarrow\quad C_{12}=\frac{C}{2}$
-
-$C_{123} = C_{12} + C_{3}=\frac{C}{2}+C\quad\Rightarrow\quad C_{123}=\frac{3}{2}C$
-
-$1/C_{1234}=1/C_{123}+1/C_4=\frac{1}{\frac{3}{2}C}+\frac{1}{C}\quad\Rightarrow\quad C_{1234}=\frac{3}{5}C$
-
-The charge on the surfaces of the equivalent capacitor is found using:
-
-%$Q_{1234} = C_{1234}(V_d-V_a)$
-$Q_{1234} = C_{1234}(V_b-V_a) = (3/5)(4\muF) \times (28V) = 67.2 \muC$
-    
-This is the charge on capacitor 4 so:
-
-$V_4 = Q_{1234}/C_4 = 67.2 \muC/4\muF = 16.8$V
-
-The voltage drop across $V_{123}$ is 28V - 16.8V = 11.2V. Since capacitor 3 is in parallel with capacitors 1 and 2, $V_3 = 11.2$V which is also the potential across $C_{12}$. 
-
-$C_{12} = C/2 = Q_{12}/V_{123} \Rightarrow Q_{12} = 22.4 \muC$
-
-$V_1 = V_2 = Q_{12}/C = 5.6$V
-%This equation has two unknowns, the charge and the potential difference.
-
-
-%In the last diagram below of the figure above, the capacitor $C_{1234}$ is split back into $C_{123}$ and $C_4$ in series. Because they are in series, the magnitude of the charge on each surface is still $Q_{1234}$. The given potential difference applies to the capacitor on the left, $C_{123}$: 
-
-%$V_b-V_a=Q_{1234}/C_{123}$
-
-%Solving for $Q_{1234}$ gives
-
-%$Q_{1234}=(V_b-V_a)C_{123} = 28\left(\frac{3}{5}C\right)$
-
-%This value of $Q_{1234}$ can be used to find $V_d-V_b$ using 
-
-%$Q_{1234} = C_{4}(V_d-V_b)$
-
-%Solving for $V_d-V_b$ gives
-
-%$V_d-V_b=\frac{Q_{1234}}{C_{4}}=\frac{28\left(\frac{3}{5}C\right)}{C}= 28\left(\frac{3}{5}\right)~\mbox{V}$
-
-%which is the potential across $C_4$. This equation along with the given $V_b-V_a$ can be used to answer the following question.
-
-%The potential across $C_3$ is $V_b-V_a$, which was given.
-
-%The potential across $C_{12}$ is also $V_b-V_a$. The potential across $C_1$ added to the potential across $C_2$ must be equal to $V_b-V_a$. To find these potentials, we first need to find the charge on $C_{12}$.
-
-%$Q_{12}=C_{12}(V_b-V_a)=\frac{C}{2}28$
-
-%$Q_{12}$ can be used to compute the potential across each of $C_1$ and $C_2$. Both capacitors will have a charge of $Q_{12}$ on them because they are in series.
-
-%$V_1=Q_{12}/C_1=(\frac{C}{2}28)/C=14~\mbox{V}$
-
-%$V_2=Q_{12}/C_2=14~\mbox{V}$
-
-%The fact that $V_1=V_2$ is expected because $C_1=C_2$.
-
-%The potential across $C_3$ is $V_b-V_a$, which was given.
-
-%$V_3=V_b-V_a=28~\mbox{V}$
-
-%The potential across $C_4$ is $V_d-V_b$, which was found earlier:
-
-%$V_4=V_d-V_b=\frac{Q_{1234}}{C_{4}}=28\frac{3}{5}~\mbox{V}$
-
-%The fact that the potential across the three capacitors on the left is larger than that across $C_4$ is consistent with the fact that the equivalent capacitance of the three capacitors on the left, $C_{123}=3C/2$, is larger than that of $C_4=C$.
-\else
-\vspace {1.7cm}
-\fi
-
-5. What is $V_d$ - $V_a$? What is $V_b - V_d$? Explain. 
-
-%$$V_d-V_a = (V_d-V_b) + (V_b-V_a)=V_3+V_4=28\left(\frac{3}{5}+1\right)=28\frac{8}{5}~\mbox{V}$$
-
-$V_d-V_a = V_{123} = 11.2$V as shown above.
-
-$V_b - V_d = V_4 = 16.8$V as shown above.
-
-%The first term in parenthesis was computed in part 4. The second term was given as $28$~V. This equation states that the potential across the capacitors between $a$ and $b$ added to the potential across $C_4$ is the total potential difference across the capacitor network.
-
-## Assumptions for $C_{eq}$ Formulas
-
-It is important to note that these equations assume that the electric field created by the charges on $C_1$ do not affect the distribution of charges on $C_2$. If this is not the case, there will be additional "cross-coupling" term in the equations for $C_{eq}$. To see why additional term are needed in the equations, consider the following two capacitors separated by small and large disances.
-
-In the case on the left, the electric field created by the charges on $C_1$ is small at the location of $C_2$. As a result, the assumption that the charge distribution on $C_2$ is still valid. In the case on the left, the charges on $C_1$ cause the charges on $C_2$ to no longer be uniforimly distributed, and vice-versa. As a result, the assumptions used to compute $C_1$ and $C_2$ are no longer valid. In order to compute the capacitance for this case, one would need to compute six capacitances, one for each pair of conductors. Using $u$ for the upper and $l$ for the lower plates, the pairs are
-
-1. $C_{1u}$ and $C_{1l}$
-2. $C_{2u}$ and $C_{2l}$
-3. $C_{1u}$ and $C_{2u}$
-4. $C_{1u}$ and $C_{2l}$
-4. $C_{1l}$ and $C_{2u}$
-6. $C_{1l}$ and $C_{2l}$
-
-In general, capacitance decreases with the separation distance between conductors. As the distance between $C_1$ and $C_2$ increases, the extra capacitances 3.-6. decrease.
-
-In the following, as in most circuit applications considered at the introductory level, we will assume that the capacitors are far enough apart that the two formulas for $C_{eq}$ given above apply.
-
-= Capacitors =
-
-See also
-* Khan Academy [https://www.youtube.com/watch?v=rkntp3_cZl4 Overview]
-* Section 5.1-5.2 of [http://web.mit.edu/viz/EM/visualizations/coursenotes/modules/guide05.pdf]
-
-== Overview ==
-
-When two conductors are held at a potential difference, an amount of charge \(\pm Q\) will appear on their surfaces. The capacity of the conductors is defined as the ratio of the amount of charge that appears given the potential difference:
-
-$$C=Q/|\Delta V|$$
-
-It can be thought of in terms of an efficiency - how much charge you get out given a potential difference input.
-
-The capacitance depends on the geometry of the system and has units of \(\epsilon_o\) times a length scale.
-
-The "self-capacitance" of a conductor is the capacitance computed when one conductor is an infinite distance away (and assumed to be a sphere with infinite radius).
-
-== Series and parallel ==
-
-== Calculating ==
-
-There are two general techniques for computing capacitance.
-1. Assume charges of \(\pm Q\) on conductors, compute \(\mathbf{E}\) using Gauss' Law and then use \(V=-\int \mathbf{E}\cdot d\mathbf{l}\) to compute potential difference. If the geometry does not allow straightforward use of Gauss' Law, use
-2. The boundary value method. Assume a potential difference between the conductors, solve Laplace's Equation to get the electric field between the conductors, and use the electric field to compute the surface charge density on the conductors. From the surface charge density, compute the total charge on one of the conductors.
-
-Typically, definition of capacitance is given as
-
-$$C=Q/V$$
-
-where \(V\) is understood to be a potential difference. Using this equation often leads to a nonsensical negative capacitance depending on how the potential difference is computed (\V_1-V_2\) or \(V_2-V_1\).
-
-$$C=Q/|\Delta V|$$
-
-is a better formula as it ensures \(C\) will never be negative. For the capacitance between two conductors, this equation will give a positive capacitance independent of the sign of the potential difference.
-
-A better definition, which will be needed when more than two conductors are involved, is
-
-$$C=Q/(V_{+Q}-V_{-Q})$$
-
-where \(V_{+Q}\) is the surface that is positively charged.
-
-## Problems
-
-### Capacitors in Series
-
-When two capacitors are connected in series to a battery, each capacitor plate ends up with an equal amount of charge on it even if their capacitances differ.  Explain why this is.
-
-{| class="wikitable collapsible collapsed"
-! align="left" |&nbsp;Answer
-|-
-|
-Two capacitors in series look like this: <code>------| |----| |-------</code>, where the dashed lines are wires. Every charge removed from one of the outer plates ends up on the other outer plate (charges cannot jump the gap between capacitor plates). The inner plates are connected by a wire and so every charge that leaves one of the inner plates must end up on the other inner plate.
-|}
-
-### Capacitors in Series
-
-Two capacitors with surface areas \(A_1\) and \(A_2\) and separation distances of \(d_1\) and \(d_2\) are placed in series.
-
-What is the capacitance of the combined capacitors?  Treat the surfaces of the plates as infinite. Justify any equations used.
-
-### Capacitors in Parallel
-
-Two capacitors with surface areas \(A_1\) and \(A_2\) and separation distances of \(d_1\) and \(d_2\) are placed in parallel.
-
-What is the capacitance of the combined capacitors?  Treat the surfaces of the plates as infinite. Justify any equations used.
-
-### Disconnecting Capacitors
-
-Suppose that a capacitor with capacitance \(C\) is connected to a battery with potential \(V_o\).  It is then disconnected (such that the plates remain fully charged) and connected to a battery with potential \(2V_o\).  In terms of \(V_o\) and \(C\), what is
-1. the capacitance and
-2. amount of charge on the capacitor when it is connected to the \(2V_o\) battery?
-
-{| class="wikitable collapsible collapsed"
-! align="left" |&nbsp;Answer
-|-
-|
-1. \(C\). The capacitance does not change. It depends on the area and separation distance of the capacitor plates.
-2. \(Q=C2V_o\). Note that the second battery needed to do less work to fully charge the capacitor than it would have if the capacitor was initially uncharged.
-|}
-
-### Plates
-
-Two large conducting plates of area \(A\) are separated by a distance \(d\). Assume \(d/\sqrt{A}\ll 1\). 
-
-1. Estimate the capacitance
-2. Explain what the approximation \(d/\sqrt{A}\ll 1\) allowed you to assume
-
-{| class="wikitable collapsible collapsed"
-! align="left" |&nbsp;Hing
-|-
-|
-\(C=\epsilon_o A/d\).
-|}
-
-### Cylindrical
-
-Two infinitely long conducting hollow cylinders of radius \(a\) and \(b\) (\(a<b\)) are oriented along the \(z\)-axis.
-
-1. Compute their capacitance per unit length.
-2. Show that when \((b-a)/a\) is small, the capacitance per unit length, \(C/l\) is the same as at of two infinite conducting plates with \(A=2\pi a l\).
-
-{| class="wikitable collapsible collapsed"
-! align="left" |&nbsp;Partial Answer
-|-
-|
-1. \({C\over L} = {2\pi\epsilon_0 \over \ln(b/a)}\)
-2. Define \(\delta=(b-a)/a\) and use \(\ln(1+\delta)\simeq \delta - \delta^2/2\) for \(\epsilon << 1\).
-|}
-
-### Spherical
-
-Two hollow conducting spheres of radius \(a\) and \(b\) (\(a<b\)) are centered on the origin.
-
-1. Compute their capacitance.
-2. Compute the capacitance when \((b-a)/a << 1\) and compare with the capacitance of two parallel plates.
-3. Compute the self-capacitance of a conducting sphere of radius \(a\)
-
-{| class="wikitable collapsible collapsed"
-! align="left" |&nbsp;Partial Answer
-|-
-|
-1. \(C={4\pi\epsilon_0\over\left({1\over a} - {1\over b}\right)}\)
-2. When (\b\rightarrow\infty\), \(C\rightarrow 4\pi\epsilon_0a\)
-3. Define \(\delta=(b-a)/a\) and use the Taylor series expansion
-|}
-
-### Grounded Capacitors
-
-https://physics.stackexchange.com/questions/189056/capacitance-of-spherical-capacitor-when-earthed
-
-### Compound Capacitors
-
-When computing the capacitance, the wires that connect the two conductors is neglected.
-
-Discuss how the capacitance will change when they are accounted for.
-
-## Dielectrics
-
-The capacitance can be increased by placing a (non-conducting) dielectric material between the conductors that are being held at a potential difference.
-
-In response to the external electric field, a dielectric's charges reconfigure in a way that reduces the electric field between the conductors. As a result, the total electric field between the conducting surfaces is reduced.  Consider two conducting plates charged to \(\pm Q_o\) by a battery with a potential difference \(\Delta V_{o}\). The capacitance is
-
-$$C_o=Q_o/\Delta V_o$$
-
-and the relationship of \(\Delta V_o\) to the electric field is
-
-$$\Delta V_{o}=-\int\mathbf{E}_o\cdot d\mathbf{l}$$
-
-When the dielectric is inserted, the new electric field between the plates, \(\mathbf{E}_d\) is smaller than \(\mathbf{E}_o\) due to the polarization electric field, \(\mathbf{E}_p\). As a result, the potential difference between the plates with the dielectric inserted, \(V_d\), is now
-
-$$\Delta V_{d}=-\int\mathbf{E}_{d}\cdot d\mathbf{l}$$
-
-where \(\mathbf{E}_d=\mathbf{E}_o-\mathbf{E}_p\).
-
-In the formula \(C_d=Q_o\Delta V_{d}\), the denominator is smaller and the charge is the same. The result is an increased value of capacitance over \(C_o\).
-
-Another way of looking at this is to reconnect the battery after the dielectric is inserted. This forces the potential difference between the plates to be as it was originally, \(\Delta V_{o}\), which requires the electric field to be as it was originally, \(\mathbf{E_o}\). New charges must appear on the conducting plates in order to increase the electric field over the decrease from \(\mathbf{E}_o\) to \(\mathbf{E}_o-\mathbf{E}_p\) that was caused by the polarization electric field in the dielectric. In the formula \(C_d=Q_d\Delta V_o\), the numerator is larger while the denominator is \(\Delta V_o\). The result is an increased value of capacitance over \(C_o\). In this way of thinking about the problem, the new charges appear to cancel out the opposing electric field of the dielectric.
-
-'''Example'''
-
-A parallel plate capacitor with area \(A\) and separation distance \(d\) is charged to a potential difference \(\Delta V_o\) by a battery and then the battery is removed. Assume the positive direction to be to the right.
-
-1. Calculate the electric field magnitude and direction between the plates.
-2. Calculate the charge on the plates.
-
-A dielectric is then inserted, and an induced electric field of \(E_p=-\chi_eE_o\) appears in the dielectric, where \(\chi_e < 1\).
-
-1. Does the amount of charge on the plates change when the capacitor is inserted?
-2. Compute the potential difference between the plates.
-3. Compute the capacitance.
-
-The battery with potential difference \(\Delta V_o\) is then reconnected.
-
-Compute the 
-1. electric field that must exist between the plates.
-2. electric field due to (1) the charges on the plates and (2) polarization
-3. charge on the plates that are consistent with the computed electric field due to the charges
-4. capacitance
-5. amount of new charge that appeared on each plate
-
+%$$C = \frac{Q}{|\Delta V|} = \frac{Q}{kQ(\frac{1}{a}-\frac{1}{b})}=\frac{1}{k}\frac{1}{\frac{1}{a}-\frac{1}{b}}=\frac{4\pi\epsilon_o}{\frac{1}{a}-\frac{1}{b}}$$
