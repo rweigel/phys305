@@ -2,6 +2,8 @@ Due on Thursday, September 30th at 3:00 pm.
 
 Send your solutions to the email address rweigel+phys305@gmu.edu as a scanned PDF. Use a file name of `Yourlastname_PHYS305_HW5.pdf` (one file only, please). Capitalize the first letter in your last name and use caps and underscores as indicated. **Include your name on the first sheet**.
 
+This homework covers [Capacitance](capacitance.html) and [Boundary Value Problems](boundary_value_problems.html). See also the sections of Griffiths referenced in these notes.
+
 # Spherical Capacitor
 
 Charge is uniformly distributed on two concentric spherical conducting shells, the cross-section of which is shown. Both shells have a thickness of $t$. The inner shell has an outer radius of $a$. The outer shell has an inner radius of $b$.
