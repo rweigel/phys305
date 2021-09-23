@@ -10,7 +10,7 @@
 * Office: 259 Planetary Hall
 * Course URL: http://rweigel.github.io/phys305/
 
-**Homeworks**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) | [4](hw4.html)
+**Homeworks**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) | [4](hw4.html) | [5](hw5.html)
 
 # Class Schedule
 
