@@ -435,6 +435,31 @@ A line of charge with a uniform charge density of $\lambda_o$ extends from $0$ t
 
 Follow and show the steps given in the notes and find $\mathbf{E}$ on the $y$--axis in terms of one or more of $k,\lambda_o,L,y$ and cartesian unit vectors.
 
+**Answer**:
+
+**Step 1** (Expected answer features)
+
+1. $x$--component should always be negative; $y$ component should be $+\yhat$ for $y \gt 0$ and $-\yhat$ for $y \lt 0$.
+2. For $y\gg L$, $\mathbf{E}\rightarrow \pm kQ\yhat/y^2$.
+3. As $y\rightarrow 0$, $|E_y|/|E_x|\rightarrow 0$.
+
+**Steps 2. -- 4.** are the same as example given in notes for a line of charge on the $x$--axis.
+
+$\displaystyle d\mathbf{E}=\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}k\lambda_o dx'$
+
+In this problem, the limits of integration are different: they extend from $x=0$ to $x=L$. We need to evaluate
+
+$\displaystyle \mathbf{E}=\int_{0}^{L}\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}k\lambda_o dx'q$
+
+This can be written as two integrals:
+
+$\displaystyle \phantom{\mathbf{E}}=k\lambda_oy\yhat\int_{0}^{L} dx'\frac{1}{\Big[\sqrt{x'^2+y^2}\Big]^3}-k\lambda_o\xhat\int_{0}^{L} dx'\frac{x'}{\Big[\sqrt{x'^2+y^2}\Big]^3}$
+
+
+Using WolframAlpha ([first integral](https://www.wolframalpha.com/input/?i=integrate+1%2F%28x%5E2%2By%5E2%29%5E%283%2F2%29+dx+from+0+to+L); [second integral](https://www.wolframalpha.com/input/?i=integrate+x%2F%28x%5E2%2By%5E2%29%5E%283%2F2%29+dx+from+0+to+L)),
+
+$\displaystyle \mathbf{E}=-k\lambda_o\xhat\left(\frac{1}{|y|}-\frac{1}{\sqrt{L^2 + y^2}}\right)+k\lambda_oy\yhat\left(\frac{L}{y^2 \sqrt{L^2 + y^2}}\right)$
+
 ## Line of Charge at Angle to $x$--axis
 
 A line of charge in the $x$-$y$ plane has a charge density of $\lambda_o$, passes through the origin, is at an angle of $\phi$ with the $x$-axis, and extends from $x=-b$ to $x=b$.

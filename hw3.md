@@ -17,7 +17,7 @@ Two point charges $q$ are located at $x=\pm b$.
 **Answer**
 
 1. Two ways of getting the answer are
-   1. Write the field due to each charge in the regions $x\lt -b$, $-b\lt x\lt b$, and $x>b$ and manually insert the correct sign. For example, in the region $-b\lt x\lt b$, the charge at $+b$ has a field that points to the left, so $\mathbf{E}\_{+b}=-kq\xhat/(b-x)^2$; the charge at $-b$ has a field that points to the right, so $\mathbf{E}\_{-b}=+kq\xhat/(b-x)^2$.
+   1. Write the field due to each charge in the regions $x\lt -b$, $-b\lt x\lt b$, and $x>b$ and manually insert the correct sign. For example, in the region $-b\lt x\lt b$, the charge at $+b$ has a field that points to the left, so $\mathbf{E}\_{+b}=-kq\xhat/(b-x)^2$; the charge at $-b$ has a field that points to the right, so $\mathbf{E}\_{-b}=+kq\xhat/(b-x)^2$. Many students only wrote the equation for $\mathbf{E}$ in one region, but the problem asked for $\mathbf{E}(x)$, which implies for all $x$.
 
    2. Use $\displaystyle kq\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}=kq\frac{\mathbf{r}-\mathbf{r}'}{|\mathbf{r}-\mathbf{r}'|^3}$ with $\mathbf{r}'=\pm b\xhat$ and $\mathbf{r}=b\xhat$.
 
@@ -59,12 +59,14 @@ A solid cylinder of radius $R$ and length $L$ has a charge of $+3Q$ uniformly di
 
 **Answer**
 
-1. $\rho=Q/(\pi R^2 L)$; $Q = \lambda L$, so $\lambda = Q/L$
+_Note: An earlier version of this solution had $Q$ in place of $3Q$._
+
+1. $\rho=3Q/(\pi R^2 L)$; $3Q = \lambda L$, so $\lambda = 3Q/L$
 2. &nbsp;
 
-   $s \le R$, $Q_{encl}=\rho \pi s^2 l=Q(s^2/R^2)(l/L)$
+   $s \le R$, $Q_{encl}=\rho \pi s^2 l=3Q(s^2/R^2)(l/L)$
    
-   $s\ge R$, $Q_{encl}=\rho\pi R^2 l = Q(l/L)$
+   $s\ge R$, $Q_{encl}=\rho\pi R^2 l = 3Q(l/L)$
 
 <img src="figures/Charge_Densities_Solid_Cylinder.svg"/>
 
@@ -90,28 +92,9 @@ Follow and show the steps given in the notes and find $\mathbf{E}$ on the $x$--a
 
 **Answer**
 
-**Step 1** (Expected answer features)
+_Note: An earlier version of this answer had the solution for $\mathbf{E}(y)$ instead of $\mathbf{E}(x)$ for $x>L$._
 
-1. $x$--component should always be negative; $y$ component should be $+\yhat$ for $y \gt 0$ and $-\yhat$ for $y \lt 0$.
-2. For $y\gg L$, $\mathbf{E}\rightarrow \pm kQ\yhat/y^2$.
-3. As $y\rightarrow 0$, $|E_y|/|E_x|\rightarrow 0$.
-
-**Steps 2. -- 4.** are the same as example given in notes for a line of charge on the $x$--axis.
-
-$\displaystyle d\mathbf{E}=\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}k\lambda_o dx'$
-
-In this problem, the limits of integration are different: they extend from $x=0$ to $x=L$. We need to evaluate
-
-$\displaystyle \mathbf{E}=\int_{0}^{L}\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}k\lambda_o dx'q$
-
-This can be written as two integrals:
-
-$\displaystyle \phantom{\mathbf{E}}=k\lambda_oy\yhat\int_{0}^{L} dx'\frac{1}{\Big[\sqrt{x'^2+y^2}\Big]^3}-k\lambda_o\xhat\int_{0}^{L} dx'\frac{x'}{\Big[\sqrt{x'^2+y^2}\Big]^3}$
-
-
-Using WolframAlpha ([first integral](https://www.wolframalpha.com/input/?i=integrate+1%2F%28x%5E2%2By%5E2%29%5E%283%2F2%29+dx+from+0+to+L); [second integral](https://www.wolframalpha.com/input/?i=integrate+x%2F%28x%5E2%2By%5E2%29%5E%283%2F2%29+dx+from+0+to+L)),
-
-$\displaystyle \mathbf{E}=-k\lambda_o\xhat\left(\frac{1}{|y|}-\frac{1}{\sqrt{L^2 + y^2}}\right)+k\lambda_oy\yhat\left(\frac{L}{y^2 \sqrt{L^2 + y^2}}\right)$
+**Answer**:
 
 # Continuous Charge Distributions II
 
@@ -120,6 +103,10 @@ A uniformly charged disk of radius $R$ with a total charge $Q$ is in the $x$--$y
 Follow and show the steps given in the notes and find $\mathbf{E}$ on the $z$--axis in terms of one or more of $k,Q,R,z$, and cartesian unit vectors.
 
 **Answer**:
+
+_Comments_:
+* This is an example commonly given in intro physics textbooks and it has a short--cut solution. Some students essentially gave a few equations from the example solution without justification. I asked you to follow the steps given in the notes because the method used in the example solutions won't help you on more complicated problems. So make sure that you know how to solve this problem using the steps in the notes.
+* Many students came up with an $\mathbf{E}$ that had the wrong sign. I took off points for this because the sign error would have been obvious if you had checked your answer to verify that $\mathbf{E}$ had a positive $z$ component when $z>0$.π
 
 1\. Identify Answer Features
 
