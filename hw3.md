@@ -78,6 +78,8 @@ Compute and plot the charge enclosed in a Gaussian sphere centered on the origin
 
 **Answer**:
 
+A common error was to write $Q_{encl}=\rho V$. This is only true if $\rho$ is constant within $V$. To avoid this type of error, always start by writing the general equation: $Q_{encl}=\int \rho d\tau$. (Do this for Gauss's law in integral form -- don't start with $\phi_E=EA$, start with $\phi_E=\oint \mathbf{E}\bfcdot d\mathbf{A}$.)
+
 $r\le R$: $\displaystyle Q_{encl}=\int \rho(r) d\tau=4\pi\int_0^r\rho_o(r'^2/R^2)r'^2dr'=\rho_o\frac{4\pi}{5}\frac{r^5}{R^2}$
 
 $r\ge R$: $\displaystyle Q_{encl}=\rho_o\frac{4\pi}{5}R^3$
@@ -95,6 +97,75 @@ Follow and show the steps given in the notes and find $\mathbf{E}$ on the $x$--a
 _Note: An earlier version of this answer had the solution for $\mathbf{E}(y)$ instead of $\mathbf{E}(x)$ for $x>L$._
 
 **Answer**:
+
+Students who had difficulty with this problem typically did not follow the steps outlined in the notes. The motivation for the steps is that they help students who have difficulty with these types of problems.
+
+The steps are
+1. Identify Answer Features
+2. Find $dl$, $dA$, or $d\tau$
+3. Find ${\hat{\textbf{\char"0509}}}/{\char"0509^2}$
+4. Check $d\mathbf{E}$
+5. Simplify $d\mathbf{E}$ using Symmetry Arguments
+6. Integrate $d\mathbf{E}$
+7. Check Answer
+
+1\. Identify Answer Features
+
+We are asked for the field on the $x$--axis. For $x\gg L$, the line of charge looks like a point charge near the origin, so we expect $E_x=+k\lambda_oL/x^2$. We also expect that as $x\rightarrow L$, the field should become large.
+
+2\. Find $dl$, $dA$, or $d\tau$
+
+The charges are distributed on a line, so we need $dl$. In this case, $dl=dx'$ because the charges are on the $x$--axis.
+
+3\. Find ${\hat{\textbf{\char"0509}}}/{\char"0509^2}$
+
+$\mathbf{r}=x\xhat$ and $\mathbf{r}'=x'\xhat$
+
+$\textbf{\char"0509}=(x-x')\xhat$ and $\char"0509=|\textbf{\char"0509}|=\sqrt{(x-x')^2}=|x-x'|$
+
+$\displaystyle\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}=\frac{(x-x')\phantom{^3}}{|x-x'|^3}\xhat$
+
+We are asked for the field for $x\gt L$. In this case, $x>x'$ (the point of interest is always to the right of a differential charge), so $|x-x'|=x-x'$ and we can write
+
+$\displaystyle\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}=\frac{(x-x')\phantom{^3}}{(x-x')^3}\xhat=\frac{1}{(x-x')^2}\xhat$
+
+4\. Check $d\mathbf{E}$
+
+$d\mathbf{E}=\displaystyle\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}dq$
+
+Where $dq=\lambda_odx'$ from step 2. and
+
+$\displaystyle\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}=\frac{1}{(x-x')^2}\xhat$
+
+from step 3. Thus,
+
+$\displaystyle d\mathbf{E}=\frac{\lambda_odx'}{(x-x')^2}\xhat$
+
+This $d\mathbf{E}$ corresponds to the equation one would write for a point charge $dq=\lambda_odx'$ at $x'$ at a location $x>x'$. If $x\gg x'$, the field becomes that for $dq$ at the origin, as expected.
+
+6\. Integrate $d\mathbf{E}$
+
+$\displaystyle\mathbf{E}=\int_{0}^L\frac{\lambda_odx'}{(x-x')^2}\xhat$
+
+$\xhat$ and $\lambda_o$ do not depend on $dx'$, so they can be factored out of the integral.
+
+$\displaystyle\mathbf{E}=\lambda_o\xhat\int_{0}^L\frac{dx'}{(x-x')^2}$
+
+Many students who did not follow the steps wrote an upper limit of $\infty$, possibly because they were basing their solution on a textbook solution for an infinite line of charge.
+
+Integration gives
+
+$\displaystyle\mathbf{E}=\lambda_o\xhat\left[-\frac{1}{x-x'}\right]_0^L=\lambda_o\xhat\left[-\frac{1}{x-L}+\frac{1}{x}\right]$
+
+Simplifying gives
+
+$\displaystyle\mathbf{E}=\frac{L\lambda_o}{x(x-L)}\xhat$
+
+7\. Check Answer
+
+When $x\gg L$, $E_x$ approaches $L\lambda/x^2$.
+
+As $x\rightarrow L$, $E_x$ becomes large.
 
 # Continuous Charge Distributions II
 
@@ -231,3 +302,89 @@ Find $\mathbf{E}$ on the $y$--axis using two two methods:
 Another slightly more difficult version of this problem is
 1. Find $\mathbf{E}(y)$
 2. Compute $\mathbf{E}(x,y)$ for a line of charge on the $x$--axis between $x=-L$ and $x=L$. Rotate the coordinate system by $\phi$ about the $z$--axis and show that this rotated field is consistent with your result from 1.
+
+**Partial Answer**:
+
+This is a line of charge, so the general relationship is $dq'=\lambda dl'$.
+
+In general, a differential element parallel to a line in the $x-y$ plane can be written as
+
+$d\mathbf{l}' = dx'\hat{\mathbf{x}} + dy'\hat{\mathbf{y}}$
+
+the magnitude of $d\mathbf{l}'$ is
+
+$dl' = \sqrt{(dx')^2+(dy')^2}$
+
+factoring out $dx'$ gives a formula that may be familiar from a calculus course in which the the length of a curve is computed:
+
+$dl' = dx'\sqrt{1+\left(\frac{dy'}{dx'}\right)^2}$
+
+In this problem, we are not explicitly given $dy'/dx'$, but it can be derived by noting from a diagram that $\tan\phi = y'/x'$ so that
+
+$y' = x'\tan\phi$
+
+and so $dy'/dx' = \tan\phi$. Substitution gives
+
+$dl' = dx'\sqrt{1+\left(\frac{dy'}{dx'}\right)^2}=dx'\sqrt{1+\tan^2\phi}$
+
+and finally an equation for $dq'$
+
+$dq'=\lambda dl'= dx'\sqrt{1+\tan^2\phi}$
+
+In general,
+
+$\mathbf{r}=x\hat{\mathbf{x}}+y\hat{\mathbf{y}}+z\hat{\mathbf{z}}$ and $\mathbf{r}'=x'\hat{\mathbf{x}}+y'\hat{\mathbf{y}}+z'\hat{\mathbf{z}}$
+
+For this problem, we only want to know $\mathbf{r}$ for points on the $y$-axis, so $x=0$ and $z=0$ leaving
+
+$\mathbf{r}=y\hat{\mathbf{y}}$
+
+the line of charge is in the $x$-$y$ plane, so $z'$ is always zero, leaving
+
+$\mathbf{r}'=x'\hat{\mathbf{x}}+y'\hat{\mathbf{y}}$
+
+Write 
+
+$\displaystyle d\mathbf{E} = \frac{dq'}{4\pi\epsilon_0}\frac{\mathbf{r}-\mathbf{r}'}{|\mathbf{r}-\mathbf{r}'|^3}$
+
+replacing $dq'$ with the differential found in Step 1, $dq' = dx'\sqrt{1+\tan^2\phi}$, and using the reduced versions of $\mathbf{r}$ and $\mathbf{r}'$ in Step 2. Noting that
+
+$\mathbf{r}-\mathbf{r}'=y\hat{\mathbf{y}}-\big(x'\hat{\mathbf{x}}+y'\hat{\mathbf{y}}\big)$
+
+which can be rewritten as
+
+$\mathbf{r}-\mathbf{r}'=-x'\hat{\mathbf{x}}+(y-y')\hat{\mathbf{y}}$
+
+The magnitude is
+
+$|\mathbf{r}-\mathbf{r}'|=\sqrt{(-x')^2 + (y-y')^2}=\sqrt{x'^2 + (y-y')^2}$
+
+and substitution gives
+
+$\displaystyle d\mathbf{E} = \frac{dx'\sqrt{1+\tan^2\phi}}{4\pi\epsilon_0}\frac{-x'\hat{\mathbf{x}}+(y-y')\hat{\mathbf{y}}}{\big(x'^2 + (y-y')^2\big)^{3/2}}$
+
+The final step is to integrate this equation from $x'=0$ to $x'=b$:
+
+$\displaystyle \mathbf{E}(y) = \int_0^{b}\frac{dx'\sqrt{1+\tan^2\phi}}{4\pi\epsilon_0}\frac{-x'\hat{\mathbf{x}}+(y-y')\hat{\mathbf{y}}}{\big(x'^2 + (y-y')^2\big)^{3/2}}$
+
+$dl'$ was found in terms of $dx'$, so all of the primed variables need to be written in terms of $x'$. Using $y'=x'\tan\phi$ gives an equation that is ready for integration
+
+$\displaystyle \mathbf{E}(y) = \int_0^{b}\frac{dx'\sqrt{1+\tan^2\phi}}{4\pi\epsilon_0}\frac{-x'\hat{\mathbf{x}}+(y-x'\tan\phi)\hat{\mathbf{y}}}{\big(x'^2 + (y-x'\tan\phi)^2\big)^{3/2}}$
+
+To solve this, start by factoring out the constant terms 
+
+$\displaystyle \mathbf{E}(y) =\frac{\sqrt{1+\tan^2\phi}}{4\pi\epsilon_0} \int_0^{b}\frac{-x'\hat{\mathbf{x}}+(y-x'\tan\phi)\hat{\mathbf{y}}}{\big(x'^2 + (y-x'\tan\phi)^2\big)^{3/2}}dx'$
+
+and write the equation in terms of two integrals with $y$ and $\phi$ treated as a constant with respect to the integration. In terms of these integrals, $\mathbf{E}$ is
+
+$\displaystyle \mathbf{E}(y) =\frac{\sqrt{1+\tan^2\phi}}{4\pi\epsilon_0} \big[{I_1\hat{\mathbf{x}}+(I_2+I_1\tan\phi)\hat{\mathbf{y}}}\big]$
+
+where
+
+$I_1=\displaystyle \int_0^{b}\frac{-x'}{\big(x'^2 + (y-x'\tan\phi)^2\big)^{3/2}}dx'$
+
+$I_2=\displaystyle \int_0^{b}\frac{y}{\big(x'^2 + (y-x'\tan\phi)^2\big)^{3/2}}dx'$
+
+As $y\rightarrow 0$, we expect the field to be perpendicular to the line and to be related to the field along a line perpendicular to it. One can use the equation for $\mathbf{E}(y)$ for a line of charge along the $x$--axis from $x \pm b$ and re--name $y$ as $y'$, with $y'$ the perpendicular distance from the rotated line. In this case, $y$ and $y'$ are related by $y=y'\cos\phi$.
+
+To finish the problem, integrate and let $y/b\rightarrow 0$. You should find that $\mathbf{E}$ becomes perpendicular to the line, and setting $y=y'\cos\phi$ should give a match to the equation for $\mathbf{E}(y')$.
