@@ -6,7 +6,7 @@ This homework covers [Capacitance](capacitance.html) and [Boundary Value Problem
 
 # Spherical Capacitor
 
-Charge is uniformly distributed on two concentric spherical conducting shells, the cross-section of which is shown. Both shells have a thickness of $t$. The inner shell has an outer radius of $a$. The outer shell has an inner radius of $b$.
+Charge is uniformly distributed on two concentric spherical conducting shells, the cross-section of which is shown. Both shells have a thickness of $t$. The inner shell has an outer radius of $a$ and net charge of $-Q$. The outer shell has an inner radius of $b$ and a net charge of $+Q$. 
 
 <img src="figures/Spherical.svg"/>
 
@@ -36,11 +36,14 @@ $$\nabla^2V = { {1 \over r^{2}}{\partial  \over \partial r}\left(r^{2}{\partial 
 
 $${ {1 \over r^{2}}{\partial  \over \partial r}\left(r^{2}{\partial V \over \partial r}\right)}=0$$
 
-in terms of $r$ and two unknown constants $a$ and $b$. Follow the steps given [in the notes](boundary_value_problems.html#cylindrical) for the cylindrical problem.
+in terms of $r$ and two unknown constants <strike>a and b</strike>. Follow the steps given [in the notes](boundary_value_problems.html#cylindrical) for the cylindrical problem.
 
 2\. Two concentric spherical conducting shells are connected to a battery such that the inner shell is at a potential of $0$ and the outer shell is at a potential of $V_o$. The inner shell has an outer radius of $a$. The outer shell has an inner radius of $b$. Use your equation from part 1. and these boundary conditions to find $V(r)$ between the conductors in terms of $V_o$, $a$, and $b$.
 
 3\. In section 2.5.3 of Griffiths, the equation for the electric field immediately outside of a conductor is stated to be $\mathbf{E}=(\sigma/\epsilon_o)\hat{\mathbf{n}}$. Use the potential $V(r)$ found in part 2. to find the electric field $\mathbf{E}(r)$ between $a$ and $b$ and then evaluate this electric field at $a$ and $b$. Use these electric fields to find the surface charge densities at $a$ and $b$.
+
+(Hint: To check your answer, use the capacitance equation fround in problem 1.4. to eliminate $V_o$ from the surface charge densities. You should find that the surface charge densities on the inner and outer conductors are $-Q/4\pi a^2$ and $Q/4\pi b^2$, respectively.)
+
 
 # 2--D Laplacian
 
