@@ -10,7 +10,7 @@
 * Office: 259 Planetary Hall
 * Course URL: http://rweigel.github.io/phys305/
 
-**Homeworks**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) | [4](hw4.html) | [5](hw5.html)
+**Homeworks**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) | [4](hw4.html) | [5](hw5.html) | [6](hw6.html)
 
 **Notes**
 * [Vectors](vectors.html)
@@ -103,17 +103,18 @@
 
 ## Thursday, September 30th
 
+* [Class Video](https://gmu.zoom.us/rec/share/5STbgJkpQbp0fd1gl7ZIQGgSq_0QMNJQkgbaEKxeasa3iaMHHen6XJzTqrZyiQxN.nkJjEfp9RgskV18e)
 * [HW #5](hw5.html) due at 3pm.
 * Comment on re--scheduling exam.
-* Assign HW #6 covering 2--D [Boundary Value Problems](boundary_value_problems.html).
+* Assign [HW #6](hw6.html) covering 2--D [Boundary Value Problems](boundary_value_problems.html).
 
 ## Tuesday, October 5th
 
-* Answer questions on HW #6 topics
+* Answer questions on [HW #6](hw6.html) topics
 
 ## Thursday, October 7th
 
-* HW #6 due.
+* [HW #6](hw6.html) due.
 * Post mid--term review problems
 
 ## Tuesday, October 12th
