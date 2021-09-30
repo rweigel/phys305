@@ -105,7 +105,7 @@
 
 ## Thursday, November 4th
 * HW #8 due.
-* Assign HW #9 covering Displacement Field $\mathbf{D}$, Gauss's Law for $\mathbf{D}, and Dielectrics.
+* Assign HW #9 covering Displacement Field $\mathbf{D}$, Gauss's Law for $\mathbf{D}$, and Dielectrics.
 
 ## Tuesday, November 9th
 

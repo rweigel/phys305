@@ -12,6 +12,22 @@
 
 **Homeworks**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) | [4](hw4.html) | [5](hw5.html)
 
+**Notes**
+* [Vectors](vectors.html)
+* [Vector Fields](vector_fields.html)
+* [Field Lines](field_lines.html)
+* [Equipotentials](equipotentials.html)
+* [Flux](flux.html)
+* [Divergence](divergence.html)
+* [Binomial Expansion](binomial_expansion.html)
+* [Symmetry](symmetry.html)
+* [Charge Densities](charge_densities.html)
+* [Continuous Charge Distributions](continuous_charge_distributions.html)
+* [Gauss's Law](gauss_law.html)
+* [Electrostatic Potential](electrostatic_potential.html)
+* [Capacitance](capacitance.html)
+* [Boundary Value Problems](boundary_value_problems.html)
+
 # Class Schedule
 
 ## Tuesday, August 24th
@@ -46,6 +62,7 @@
 * Answer questions on [HW #2](hw2.html) topics ([Flux](flux.html), [Divergence](divergence.html), [Binomial Expansion](binomial_expansion.html), and [Symmetry](symmetry.html))
 
 ## Thursday, September 9nd 
+
 * [Class Video](https://gmu.zoom.us/rec/share/Xs5uXw81s2zt9E_qfbh1dbaY8MNo0dT-5nd53UmZetfno_Qkzfga8c7SzT6ESCaV.wnvsAqt68tX3vNWe) (password in Discord under #recordings)
 * Return graded HW #1 and post solutions (will do later in day ... I am a few hours behind); discuss common errors
 * [HW #2](hw2.html) due at 3:00 pm
@@ -80,12 +97,15 @@
 
 ## Tuesday, September 28th 
 
+* [Class Video](https://gmu.zoom.us/rec/share/fDAC-NbqobSVP5USicspApEy690wwswM0L8FK0aihmqrcJtqcEM-mEK67neHbkoL.mMDXDwYfauIYjfZY)
+* Comments on [HW #4](hw4.html).
 * Answer questions on [HW #5](hw5.html) topics.
 
 ## Thursday, September 30th
 
 * [HW #5](hw5.html) due at 3pm.
-* Assign HW #6 covering 2--D boundary value problems.
+* Comment on re--scheduling exam.
+* Assign HW #6 covering 2--D [Boundary Value Problems](boundary_value_problems.html).
 
 ## Tuesday, October 5th
 
@@ -105,7 +125,7 @@
 
 * Mid-term exam during class time in Innovation Hall, room 131. Closed book and note. I will provide a list of equations that you need to know.
 
-# Topics Covered and Catalog Description
+# Topics
 
 This course covers the topics in Chapters 1-7 of the [textbook](#textbook).
 

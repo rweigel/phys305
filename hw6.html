@@ -1,0 +1,1003 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>hw6</title>
+    <link id="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%220.9em%22 font-size=%22100%22>📖</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.12/dist/katex.min.css" />
+    <style>
+        body { background-color: white; }
+        #toc { font-size: 85%; width: 14em; position: fixed; min-height: 95%; max-height: 95%; overflow: hidden auto; padding-left: 0.75em; padding-right: 1em; margin-right: 1em; font-family: "Open Sans"; }
+        #toc ol { list-style-type: decimal; padding-inline-start: 1em; }
+        #toc a { text-decoration: none; }
+        #display a { text-decoration: none black; text-underline-offset: 2px; }
+        #display { width: 100%; margin-left: 15em; max-height: 100%; min-height: 100%; overflow: hidden auto; padding-left: 1em; padding-right: 1em; border-left: 1px solid rgb(240, 240, 240); font-family: "Open Sans"; }
+        .title { text-align: center; font-size: 250%; font-weight: bold; color: black; margin-bottom: 0px; }
+        .subtitle { text-align: center; font-size: 150%; font-weight: bold; color: black; margin-top: 0.2em; }
+        .hanchor { text-decoration: none; color: inherit; }
+        h1 { color: darkblue; border-bottom: 2px solid darkblue; }
+        h2 { border-bottom: 1px solid black; }
+        h3 { border-bottom: 1px dotted black; }
+        h1, h2, h3, h4, h5, h6 { width: 100%; margin-block: 0.5em; }
+        #display .block ul { width: 100%; margin-left: 1em; padding-left: 1em; }
+        #display .block ol { width: 100%; margin-left: 1em; padding-left: 1em; }
+        code { width: 100%; background-color: rgba(0, 0, 0, 0.03); border-radius: 0px; font-size: 1.2em; white-space: pre-wrap; margin-top: 3px; margin-right: 3px; }
+        pre code { border-right: 1px solid black; }
+        code.language-Python { background-color: rgba(0, 0, 0, 0); font-size: 1.2em; }
+        pre { width: 100%; text-indent: 0.75em; padding-left: 0.5em; margin-left: 1em; white-space: pre-wrap; border-left: 3px solid black; background-color: rgba(0, 0, 0, 0.03); line-height: 1.5; overflow-x: clip; }
+        pre.language-Python { border-left: 5px solid blue; padding: 0.5em; margin-left: 1em; margin-right: 1em; line-height: 1.5; overflow-x: auto; }
+        .block { display: flex; }
+        .block.inline-html { display: block; }
+        .hr { width: 100%; height: 1px; display: block; margin: 0.5em; margin-block: 0.5em; border-top: 1px solid black; }
+        #display li > div { display: flex; }
+        p { width: 100%; display: block; margin-block: 0.5em; }
+        #display li { width: 100%; }
+        li .block p { width: 100%; display: block; margin-top: 0.5em; margin-bottom: 0.5em; }
+        li .block:first-of-type p { width: 100%; display: block; margin-top: 0em; margin-bottom: 0em; }
+        .section > .block ol ~ .line-number { display: none; }
+        .section > .block ul ~ .line-number { display: none; }
+        .section > .block pre ~ .line-number { display: none; }
+        .section > .block code ~ .line-number { }
+        pre .line-number { float: right; font-size: 8px; text-align: center; text-indent: 0px; }
+        .line-number { float: right; white-space: pre-wrap; font-size: 10%; }
+        p + .line-number { margin-block-start: 8px; }
+        .block > div.linenumber { margin-block-start: -0.5em; }
+        .blockquote + div.line-number { margin-top: 1rem; }
+        h1 + .line-number { margin-block-start: 20em; }
+        h2 + .line-number { margin-block-start: 15em; }
+        h3 + .line-number { margin-block-start: 15em; }
+        h4 + .line-number { margin-block-start: 15em; }
+        h5 + .line-number { margin-block-start: 15em; }
+        h6 + .line-number { margin-block-start: 15em; }
+        .blockquote { width: 100%; display: block; margin: 1em; border: 1px solid black; padding: 1em; border-radius: 0.5em; }
+        details > summary { font-weight: bold; }
+        details { padding-left: 0.5em; }
+        details[open] { border: 1px solid black; padding: 0em 0em 0em 0.5em; }
+        table { padding: 0px; }
+        table tr { border-top: 1px solid rgb(204, 204, 204); background-color: white; margin: 0px; padding: 0px; }
+        table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+        table tr th { font-weight: bold; border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+        table tr td { border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+        table tr th :first-child, table tr td :first-child { margin-top: 0px; }
+        table tr th :last-child, table tr td :last-child { margin-bottom: 0px; }
+        .katex { font-size: inherit !important; }
+        .katex-display { text-align: center; margin: 0.5em; font-size: 1.1em !important; }
+        @media print {
+          body, html { margin: 0in; color: rgb(0, 0, 0); height: auto; background-color: rgb(255, 255, 255); border: none; display: inline; }
+          h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+          h1, h2, h3, h4, h5, h6 { width: 100%; margin-block: 0.1em; }
+          h1 { font-size: 1.25em; border-bottom: 1px solid darkblue; }
+          h2 { font-size: 1.15em; border-bottom: 1px solid darkblue; }
+          h3 { font-size: 1.1em; }
+          h4, h5, h6 { font-size: 1.05em; }
+          p { margin-top: 0px; margin-bottom: 0.5em; }
+          .title { break-before: page; margin-top: 0px; }
+          #toc { display: none; font-size: 100%; margin: 0px; width: 100%; overflow-y: hidden; padding-left: 0px; padding-right: 0px; }
+          #display { margin-left: 0em; width: 100%; padding-left: 0px; padding-right: 0px; border: none; overflow-wrap: break-word; }
+          .katex { font: 1em / 1 KaTeX_Main, "Times New Roman", serif; white-space: nowrap; text-indent: 0px; text-rendering: auto; }
+          .katex-display { margin-top: 0px; }
+        }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        
+    </style>
+
+
+    <script>
+        function tocClickListen() {
+            // No jQuery b/c also used in stand-alone HTML.
+            hs = document.querySelectorAll('#toc > ol ol');
+            for (var i = 0; i < hs.length; i++) {
+              if (hs[i].previousElementSibling) {
+                var el = hs[i].previousElementSibling.firstElementChild;
+                if (el.length == 0) {
+                  continue;
+                }
+                el.addEventListener('click', event => {
+                  var ns = event.target.parentNode.nextElementSibling;
+                  if (ns.style.display === 'none') {
+        ns.style.display = 'block';
+                  } else {
+        ns.style.display = 'none';
+                  }
+                });
+              }
+            }
+          }
+        if (
+            document.readyState === "complete" ||
+            (document.readyState !== "loading" && 
+              !document.documentElement.doScroll)
+        ) {
+          tocClickListen();
+        } else {
+          document.addEventListener("DOMContentLoaded", tocClickListen);
+        }
+    </script>
+
+</head>
+
+<body style="display: flex;min-width: 50%;max-height:100%;">
+
+    <div id="toc" style="display: block;">
+        <ol>
+            <li><a number="1" href="#integrals">Integrals</a></li>
+            <li><a number="2" href="#-nbsp-2-d-boundary-value-problem">&nbsp;2-D Boundary Value Problem</a></li>
+            <li><a number="3" href="#-nbsp-2-d-boundary-value-problem">&nbsp;2-D Boundary Value Problem</a></li>
+            <li><a number="4" href="#extra-credit-1">Extra Credit 1.</a></li>
+            <li><a number="5" href="#extra-credit-2">Extra Credit 2.</a></li>
+            <li><a number="6" href="#extra-credit-3" class="highlighted">Extra Credit 3.</a></li>
+        </ol>
+    </div>
+    <div id="display">
+        <div class="section">
+            <div class="block">
+                <p>Due on Thursday, October 7th at 3:00 pm.</p>
+
+            </div>
+            <div class="block">
+                <p>Send your solutions to the email address <a href="mailto:rweigel+phys305@gmu.edu">rweigel+phys305@gmu.edu</a> as a scanned PDF. Use a file name of <code>Yourlastname_PHYS305_HW6.pdf</code> (one file only, please). Capitalize the first letter in your last name and use caps and underscores as indicated. <strong>Include your name on the first sheet</strong>.</p>
+
+            </div>
+            <div class="block">
+                <p>This homework covers <a href="boundary_value_problems.html">Boundary Value Problems</a>. See also the sections of Griffiths referenced in these notes.</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="integrals" number="1" class="hanchor" href="#integrals"><span class="hnumber">1 </span> <span class="htext">Integrals</span></a></h1>
+
+            </div>
+            <div class="block">
+                <ol>
+                    <li>
+                        <div class="block">
+                            <p>Show that <span len="43" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <msubsup>
+                                                            <mo>∫</mo>
+                                                            <mn>0</mn>
+                                                            <mi>π</mi>
+                                                        </msubsup>
+                                                        <mi>sin</mi>
+                                                        <mo>⁡</mo>
+                                                        <mn>2</mn>
+                                                        <mi>x</mi>
+                                                        <mi>sin</mi>
+                                                        <mo>⁡</mo>
+                                                        <mi>x</mi>
+                                                        <mi>d</mi>
+                                                        <mi>x</mi>
+                                                    </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\displaystyle\int_0^\pi \sin 2x \sin x dx</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.326242em;vertical-align:-0.9119499999999999em;"></span><span class="mop"><span class="mop op-symbol large-op" style="margin-right:0.44445em;position:relative;top:-0.0011249999999999316em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.414292em;"><span style="top:-1.7880500000000001em;margin-left:-0.44445em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span><span style="top:-3.8129000000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">π</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9119499999999999em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">x</span><span class="mord mathnormal">d</span><span class="mord mathnormal">x</span></span></span></span> = 0. (Note that without any calculation, this is expected from a plot of <span len="8" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>sin</mi>
+                                                    <mo>⁡</mo>
+                                                    <mi>x</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\sin x</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66786em;vertical-align:0em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">x</span></span></span></span> and <span len="9" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>sin</mi>
+                                                    <mo>⁡</mo>
+                                                    <mn>2</mn>
+                                                    <mi>x</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\sin 2x</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66786em;vertical-align:0em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mord mathnormal">x</span></span></span></span> and thinking about the area under the curve for their product.)</p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Show that <span len="45" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <msubsup>
+                                                            <mo>∫</mo>
+                                                            <mn>0</mn>
+                                                            <mi>π</mi>
+                                                        </msubsup>
+                                                        <mi>sin</mi>
+                                                        <mo>⁡</mo>
+                                                        <mi>n</mi>
+                                                        <mi>x</mi>
+                                                        <mi>sin</mi>
+                                                        <mo>⁡</mo>
+                                                        <mi>l</mi>
+                                                        <mi>x</mi>
+                                                        <mi>d</mi>
+                                                        <mi>x</mi>
+                                                    </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\displaystyle \int_0^\pi \sin nx \sin lx dx</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.326242em;vertical-align:-0.9119499999999999em;"></span><span class="mop"><span class="mop op-symbol large-op" style="margin-right:0.44445em;position:relative;top:-0.0011249999999999316em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.414292em;"><span style="top:-1.7880500000000001em;margin-left:-0.44445em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span><span style="top:-3.8129000000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">π</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9119499999999999em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">x</span><span class="mord mathnormal">d</span><span class="mord mathnormal">x</span></span></span></span> = 0 if <span len="8" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>l</mi>
+                                                    <mo mathvariant="normal">≠</mo>
+                                                    <mi>n</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">l\ne n</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mord"><span class="mrel"></span></span></span><span class="fix"></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> by explicitly evaluating the integral.</p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Compute <span len="38" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mstyle scriptlevel="0" displaystyle="true">
+                                                        <msubsup>
+                                                            <mo>∫</mo>
+                                                            <mn>0</mn>
+                                                            <mi>π</mi>
+                                                        </msubsup>
+                                                        <msup>
+                                                            <mrow>
+                                                                <mi>sin</mi>
+                                                                <mo>⁡</mo>
+                                                            </mrow>
+                                                            <mn>2</mn>
+                                                        </msup>
+                                                        <mi>n</mi>
+                                                        <mi>x</mi>
+                                                        <mi>d</mi>
+                                                        <mi>x</mi>
+                                                    </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\displaystyle\int_0^\pi \sin^2 nx dx</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.326242em;vertical-align:-0.9119499999999999em;"></span><span class="mop"><span class="mop op-symbol large-op" style="margin-right:0.44445em;position:relative;top:-0.0011249999999999316em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.414292em;"><span style="top:-1.7880500000000001em;margin-left:-0.44445em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span><span style="top:-3.8129000000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">π</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9119499999999999em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">sin</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.871868em;"><span style="top:-3.12076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">x</span><span class="mord mathnormal">d</span><span class="mord mathnormal">x</span></span></span></span> for</p>
+
+                        </div>
+                        <div class="block">
+                            <ol>
+                                <li>
+                                    <div class="block">
+                                        <p>any <span len="8" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                        <semantics>
+                                                            <mrow>
+                                                                <mi>n</mi>
+                                                                <mo mathvariant="normal">≠</mo>
+                                                                <mn>0</mn>
+                                                            </mrow>
+                                                            <annotation encoding="application/x-tex">n\ne 0</annotation>
+                                                        </semantics>
+                                                    </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mord"><span class="mrel"></span></span></span><span class="fix"></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> and</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="block">
+                                        <p>for integer <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                        <semantics>
+                                                            <mrow>
+                                                                <mi>n</mi>
+                                                            </mrow>
+                                                            <annotation encoding="application/x-tex">n</annotation>
+                                                        </semantics>
+                                                    </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>.</p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="-nbsp-2-d-boundary-value-problem" number="2" class="hanchor" href="#-nbsp-2-d-boundary-value-problem"><span class="hnumber">2 </span> <span class="htext">&nbsp;2-D Boundary Value Problem</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>In class, I started the problem of finding the potential <span len="8" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>V</mi>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">V(x,y)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span> inside of a long square duct with boundary conditions</p>
+
+            </div>
+            <div class="block">
+                <ol>
+                    <li>
+                        <div class="block">
+                            <p><span len="12" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>V</mi>
+                                                    <mo stretchy="false">(</mo>
+                                                    <mn>0</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo stretchy="false">)</mo>
+                                                    <mo>=</mo>
+                                                    <mn>0</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">V(0,y) = 0</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> (left)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><span len="12" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>V</mi>
+                                                    <mo stretchy="false">(</mo>
+                                                    <mi>a</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo stretchy="false">)</mo>
+                                                    <mo>=</mo>
+                                                    <mn>0</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">V(a,y) = 0</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> (right)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><span len="12" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>V</mi>
+                                                    <mo stretchy="false">(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mn>0</mn>
+                                                    <mo stretchy="false">)</mo>
+                                                    <mo>=</mo>
+                                                    <mn>0</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">V(x,0) = 0</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> (bottom)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><span len="14" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>V</mi>
+                                                    <mo stretchy="false">(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>a</mi>
+                                                    <mo stretchy="false">)</mo>
+                                                    <mo>=</mo>
+                                                    <msub>
+                                                        <mi>V</mi>
+                                                        <mi>o</mi>
+                                                    </msub>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">V(x,a) = V_o</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">a</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> (top)</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="block inline-html">
+
+                <img src="figures/Boundary_Value_Problems_2D_Square_Top.svg">
+            </div>
+            <div class="block">
+                <p>Finish this problem. That is, find the coefficients <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mi>C</mi>
+                                            <mi>n</mi>
+                                        </msub>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">C_n</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> in the equation</p>
+
+            </div>
+            <div class="block">
+                <p><span len="115" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mstyle scriptlevel="0" displaystyle="true">
+                                            <mi>V</mi>
+                                            <mo stretchy="false">(</mo>
+                                            <mi>x</mi>
+                                            <mo separator="true">,</mo>
+                                            <mi>y</mi>
+                                            <mo stretchy="false">)</mo>
+                                            <mo>=</mo>
+                                            <munderover>
+                                                <mo>∑</mo>
+                                                <mrow>
+                                                    <mi>n</mi>
+                                                    <mo>=</mo>
+                                                    <mn>0</mn>
+                                                </mrow>
+                                                <mi mathvariant="normal">∞</mi>
+                                            </munderover>
+                                            <msub>
+                                                <mi>C</mi>
+                                                <mi>n</mi>
+                                            </msub>
+                                            <mi>sin</mi>
+                                            <mo>⁡</mo>
+                                            <mrow>
+                                                <mo fence="true">(</mo>
+                                                <mfrac>
+                                                    <mrow>
+                                                        <mi>n</mi>
+                                                        <mi>π</mi>
+                                                    </mrow>
+                                                    <mi>a</mi>
+                                                </mfrac>
+                                                <mi>x</mi>
+                                                <mo fence="true">)</mo>
+                                            </mrow>
+                                            <mi>sinh</mi>
+                                            <mo>⁡</mo>
+                                            <mrow>
+                                                <mo fence="true">(</mo>
+                                                <mfrac>
+                                                    <mrow>
+                                                        <mi>n</mi>
+                                                        <mi>π</mi>
+                                                    </mrow>
+                                                    <mi>a</mi>
+                                                </mfrac>
+                                                <mi>y</mi>
+                                                <mo fence="true">)</mo>
+                                            </mrow>
+                                        </mstyle>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\displaystyle V(x,y)=\sum_{n=0}^\infty C_n \sin \left(\frac{n\pi}{a} x \right)\sinh \left(\frac{n\pi}{a} y\right)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.9185100000000004em;vertical-align:-1.267113em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.882887em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mrel mtight">=</span><span class="mord mtight">0</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">∞</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.267113em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size2">(</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.10756em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">a</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">nπ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal">x</span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size2">)</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sinh</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size2">(</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.10756em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">a</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">nπ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size2">)</span></span></span></span></span></span></p>
+
+            </div>
+            <div class="block">
+                <p>I recommend that you do the full problem, but you may start the problem by beginning with the equation that I ended with after addressing the third boundary condition.</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="-nbsp-2-d-boundary-value-problem" number="3" class="hanchor" href="#-nbsp-2-d-boundary-value-problem"><span class="hnumber">3 </span> <span class="htext">&nbsp;2-D Boundary Value Problem</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>Find the potential <span len="8" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>V</mi>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">V(x,y)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span> inside of a long rectangular duct, <span len="14" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mn>0</mn>
+                                        <mo>≤</mo>
+                                        <mi>x</mi>
+                                        <mo>≤</mo>
+                                        <mi>b</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">0 \le x\le b</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span>; <span len="14" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mn>0</mn>
+                                        <mo>≤</mo>
+                                        <mi>y</mi>
+                                        <mo>≤</mo>
+                                        <mi>a</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">0 \le y\le a</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8304100000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">a</span></span></span></span>, with boundary conditions</p>
+
+            </div>
+            <div class="block">
+                <ol>
+                    <li>
+                        <div class="block">
+                            <p><span len="14" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>V</mi>
+                                                    <mo stretchy="false">(</mo>
+                                                    <mn>0</mn>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo stretchy="false">)</mo>
+                                                    <mo>=</mo>
+                                                    <msub>
+                                                        <mi>V</mi>
+                                                        <mi>o</mi>
+                                                    </msub>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">V(0,y) = V_o</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> (left)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><span len="12" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>V</mi>
+                                                    <mo stretchy="false">(</mo>
+                                                    <mi>b</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>y</mi>
+                                                    <mo stretchy="false">)</mo>
+                                                    <mo>=</mo>
+                                                    <mn>0</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">V(b,y) = 0</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathnormal">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> (right)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><span len="12" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>V</mi>
+                                                    <mo stretchy="false">(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mn>0</mn>
+                                                    <mo stretchy="false">)</mo>
+                                                    <mo>=</mo>
+                                                    <mn>0</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">V(x,0) = 0</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> (bottom)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><span len="12" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>V</mi>
+                                                    <mo stretchy="false">(</mo>
+                                                    <mi>x</mi>
+                                                    <mo separator="true">,</mo>
+                                                    <mi>a</mi>
+                                                    <mo stretchy="false">)</mo>
+                                                    <mo>=</mo>
+                                                    <mn>0</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">V(x,a) = 0</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">a</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> (top)</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="block inline-html">
+
+                <img src="figures/Boundary_Value_Problems_2D_Left.svg">
+            </div>
+            <div class="block">
+                <p>Note that this is a rectangular duct, so your solution should have an <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>a</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">a</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">a</span></span></span></span> and <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>b</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">b</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span>.</p>
+
+            </div>
+            <div class="block">
+                <p>Do this by following the steps that I used in class, which are also in the notes.</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="extra-credit-1" number="4" class="hanchor" href="#extra-credit-1"><span class="hnumber">4 </span> <span class="htext">Extra Credit 1.</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>Show that your answer to the previous problem is consistent with the solution for Griffiths Example 3.3 in the limit that <span len="18" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>a</mi>
+                                        <mi mathvariant="normal">/</mi>
+                                        <mi>b</mi>
+                                        <mo>→</mo>
+                                        <mn>0</mn>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">a/b\rightarrow 0</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mord">/</span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="extra-credit-2" number="5" class="hanchor" href="#extra-credit-2"><span class="hnumber">5 </span> <span class="htext">Extra Credit 2.</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>In problem 2., you will find the <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mi>C</mi>
+                                            <mi>n</mi>
+                                        </msub>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">C_n</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>s in</p>
+
+            </div>
+            <div class="block">
+                <p><span len="115" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mstyle scriptlevel="0" displaystyle="true">
+                                            <mi>V</mi>
+                                            <mo stretchy="false">(</mo>
+                                            <mi>x</mi>
+                                            <mo separator="true">,</mo>
+                                            <mi>y</mi>
+                                            <mo stretchy="false">)</mo>
+                                            <mo>=</mo>
+                                            <munderover>
+                                                <mo>∑</mo>
+                                                <mrow>
+                                                    <mi>n</mi>
+                                                    <mo>=</mo>
+                                                    <mn>0</mn>
+                                                </mrow>
+                                                <mi mathvariant="normal">∞</mi>
+                                            </munderover>
+                                            <msub>
+                                                <mi>C</mi>
+                                                <mi>n</mi>
+                                            </msub>
+                                            <mi>sin</mi>
+                                            <mo>⁡</mo>
+                                            <mrow>
+                                                <mo fence="true">(</mo>
+                                                <mfrac>
+                                                    <mrow>
+                                                        <mi>n</mi>
+                                                        <mi>π</mi>
+                                                    </mrow>
+                                                    <mi>a</mi>
+                                                </mfrac>
+                                                <mi>x</mi>
+                                                <mo fence="true">)</mo>
+                                            </mrow>
+                                            <mi>sinh</mi>
+                                            <mo>⁡</mo>
+                                            <mrow>
+                                                <mo fence="true">(</mo>
+                                                <mfrac>
+                                                    <mrow>
+                                                        <mi>n</mi>
+                                                        <mi>π</mi>
+                                                    </mrow>
+                                                    <mi>a</mi>
+                                                </mfrac>
+                                                <mi>y</mi>
+                                                <mo fence="true">)</mo>
+                                            </mrow>
+                                        </mstyle>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\displaystyle V(x,y)=\sum_{n=0}^\infty C_n \sin \left(\frac{n\pi}{a} x \right)\sinh \left(\frac{n\pi}{a} y\right)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.9185100000000004em;vertical-align:-1.267113em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.882887em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mrel mtight">=</span><span class="mord mtight">0</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">∞</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.267113em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size2">(</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.10756em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">a</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">nπ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal">x</span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size2">)</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sinh</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size2">(</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.10756em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">a</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">nπ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size2">)</span></span></span></span></span></span></p>
+
+            </div>
+            <div class="block">
+                <p>Use this equation with the values of <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mi>C</mi>
+                                            <mi>n</mi>
+                                        </msub>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">C_n</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> found in your solution and plot <span len="8" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>V</mi>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>a</mi>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">V(x,a)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">a</span><span class="mclose">)</span></span></span></span> vs. <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span> in the range <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                        <mo>=</mo>
+                                        <mn>0</mn>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x=0</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> to <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                        <mo>=</mo>
+                                        <mi>a</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x=a</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">a</span></span></span></span>. Plot only the terms in the sum for <span len="9" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>n</mi>
+                                        <mo>≤</mo>
+                                        <mn>10</mn>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">n\le 10</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">10</span></span></span></span>.</p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1 class="highlighted"><a name="extra-credit-3" number="6" class="hanchor" href="#extra-credit-3"><span class="hnumber">6 </span> <span class="htext">Extra Credit 3.</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p class="">Use the equation for <span len="8" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>V</mi>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>y</mi>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">V(x,y)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span> found in problem 2. along with the equation that relates the electric field just outside of a conductor to <span len="8" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>σ</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\sigma</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span></span></span></span> to find the surface charge density on the conductor at a potential of <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mi>V</mi>
+                                            <mi>o</mi>
+                                        </msub>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">V_o</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>. Plot <span len="13" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>σ</mi>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>x</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>a</mi>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">\sigma(x,a)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">a</span><span class="mclose">)</span></span></span></span> vs. <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span> in the range <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                        <mo>=</mo>
+                                        <mn>0</mn>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x=0</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> to <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                        <mo>=</mo>
+                                        <mi>a</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x=a</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">a</span></span></span></span>. Plot only the terms in the sum for <span len="9" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>n</mi>
+                                        <mo>≤</mo>
+                                        <mn>10</mn>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">n\le 10</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">10</span></span></span></span>.</p>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

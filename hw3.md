@@ -387,4 +387,4 @@ $I_2=\displaystyle \int_0^{b}\frac{y}{\big(x'^2 + (y-x'\tan\phi)^2\big)^{3/2}}dx
 
 As $y\rightarrow 0$, we expect the field to be perpendicular to the line and to be related to the field along a line perpendicular to it. One can use the equation for $\mathbf{E}(y)$ for a line of charge along the $x$--axis from $x \pm b$ and re--name $y$ as $y'$, with $y'$ the perpendicular distance from the rotated line. In this case, $y$ and $y'$ are related by $y=y'\cos\phi$.
 
-To finish the problem, integrate and let $y/b\rightarrow 0$. You should find that $\mathbf{E}$ becomes perpendicular to the line, and setting $y=y'\cos\phi$ should give a match to the equation for $\mathbf{E}(y')$.
+To finish the problem, integrate and let $y/b\rightarrow 0$. You should find that $\mathbf{E}$ becomes perpendicular to the line as $y/b\rightarrow 0$. Setting $y=y'\cos\phi$ should give a match to the equation for $\mathbf{E}(y')$.

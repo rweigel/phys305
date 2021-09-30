@@ -22,6 +22,8 @@ Charge is uniformly distributed on two concentric spherical conducting shells, t
 
 4\. Write the capacitance in terms of $\epsilon_o$, $a$, and $b$.
 
+% In the future, remove Q from diagram as some thought it meant +Q was on outer part of outer shell.
+
 # 1-D Boundary Value Problem
 
 In spherical coordinates, the Laplacian is
@@ -44,6 +46,76 @@ in terms of $r$ and two unknown constants <strike>a and b</strike>. Follow the s
 
 (Hint: To check your answer, use the capacitance equation fround in problem 1.4. to eliminate $V_o$ from the surface charge densities. You should find that the surface charge densities on the inner and outer conductors are $-Q/4\pi a^2$ and $Q/4\pi b^2$, respectively.)
 
+**Answer**:
+
+1\. In spherical coordinates, the Laplacian is 
+
+$\displaystyle \nabla^2V={ {1 \over r^{2}}{\partial  \over \partial r} \left(r^{2}{\partial V \over \partial r}\right) + {1 \over r^{2} \sin \theta }{\partial  \over \partial \theta } \left(\sin \theta {\partial V \over \partial \theta }\right) + {1 \over r^{2} \sin ^{2}\theta }{\partial ^{2}V \over \partial \varphi ^{2}}}$
+
+ Because the system is invariant with rotation by $\phi$ and $\theta$, the potential must be independent of $\theta$ and $\phi$; as a result, the second two terms are zero. Therefore, we need to solve
+
+$\displaystyle \nabla^2V={1 \over r^{2}}{\partial \over \partial r} \left(r^{2}{\partial V \over \partial r}\right)=0$
+
+Becuase $V$ depends only on $r$, we can replace the partial derivative with the total derivative
+
+$\displaystyle \nabla^2V={1 \over r^{2}}{d \over d r} \left(r^{2}{d V \over d r}\right)=0$
+
+To solve the ODE, note that the following must hold
+
+$\displaystyle r^2{dV\over dr} = C_1$
+
+where $C_1$ is a constant.  Direct integration gives
+
+$\displaystyle V(r) = {C_1 \over r} + C_2$
+
+2\. The two unknowns are solved for by using the boundary conditions $V(a)=V_o$ and $V(b)=0$:
+
+$\displaystyle V(a) = 0 = {C_1 \over a} + C_2$
+
+$\displaystyle V(b) = V_o = {C_1 \over b} + C_2$
+
+Solving for $C_1$ and $C_2$ gives
+
+$\displaystyle C_1 = {V_o \over \left({1\over b}-{1\over a}\right)}$
+
+$\displaystyle C_2 = -{{V_o/a}\over{\left({1\over b}-{1\over a}\right)}}$
+
+and subsitution of these constants into $V(r) = {C_1 \over r} + C_2$ gives
+
+$\displaystyle V(r) = {V_o \over \left({1\over a}-{1\over b}\right)}{\left({1\over a}-{1\over r}\right)}$
+
+as a check of the algebraic steps, plug in $r=a$ and $r=b$ into this equation and verify that the boundary conditions used, $V(a)=V_o$ and $V(b)=0$, are satisfied.
+
+3\. The electric field can be found using $\mathbf{E}=-\nabla V$. In spherical coordinates, when $V$ depends only on $r$,
+
+$\displaystyle \boldsymbol{\nabla} V={\partial V \over \partial r} \hat{\mathbf{r}}$
+
+giving
+
+$\displaystyle \mathbf{E}=-{V_o \over \left({1\over a}-{1\over b}\right)}{1\over r^2}\hat{\mathbf{r}}$
+
+This field points outward radially inward as expected given the potential on the outer surface is higher than that on the inner surface.
+
+This field can be written in terms of $Q$ using $C=Q/V_o$ and the equation for capacitance found in problem 1.3:
+
+$\displaystyle C=\frac{4\pi\epsilon_o}{\frac{1}{a}-\frac{1}{b}}$
+
+This gives
+
+$\displaystyle \mathbf{E}=-\frac{Q}{4\pi\epsilon_o}{1 \over r^2}\hat{\mathbf{r}}$
+
+At $r=a$, 
+
+$\displaystyle \mathbf{E}(a)=-\frac{Q/4\pi a^2}{\epsilon_o}\hat{\mathbf{r}}$
+
+This is consistent with the formula $\mathbf{E}=(\sigma/\epsilon_o)\hat{\mathbf{n}}$ because at $r=a$, $\hat{\mathbf{n}}=\hat{\mathbf{r}}$ and $\sigma=-Q/4\pi a^2$.
+
+At $r=b$, 
+
+$\displaystyle \mathbf{E}(a)=-\frac{Q/4\pi b^2}{\epsilon_o}\hat{\mathbf{r}}$
+
+This is consistent with the formula $\mathbf{E}=(\sigma/\epsilon_o)\hat{\mathbf{n}}$ because at $r=b$, $\hat{\mathbf{n}}=-\hat{\mathbf{r}}$ and $\sigma=+Q/4\pi a^2$.
+
 
 # 2--D Laplacian
 
@@ -65,3 +137,59 @@ For arbitrary constants $A,B,C,D,$ and $m$ the following four equations satisfy 
 3\. Show that equation 2. is related to equation 4. Do this by labeling the constants in equation 4. with primes and finding the constants in equation 2. in terms of the primed constants.
 
 4\. Show that equation 1. can be derived from equation 2. by using Euler's identity $e^{iz}=\cos z+i\sin z$ and the definitions of the hyperbolic $\sin$ and $\cos$. Do this by labeling the constants in equation 2. with primes and finding the constants in equation 1. in terms of primed constants.
+
+**Answer**:
+
+2\. Form 3. with primed constants is
+
+$V(x,y) = \big(A'e^{m'x}+B'e^{-m'x})(C'\cos my+D'\sin m'y\big)$
+
+Using
+
+$\cosh mx=(1/2)(e^{mx}+e^{-mx})$ and $\sinh mx=(1/2)(e^{mx}-e^{-mx})$
+
+we can write
+
+$e^{m'x}=\cosh m'x+\sinh m'x$ and $e^{-m'x}=\cosh m'x-\sinh(m'x)$
+
+Inserting these into the equation for $V(x,y)$ gives
+
+$\displaystyle V(x,y) = \big((A'+B')\cosh m'x+(A'-B')\sinh m'x\big)(C'\cos my+D'\sin m'y\big)$
+
+and we conclude 
+
+$A=A'+B'$, $B=A'+B'$, $C=C'$, $D=D'$, and $m=m'$.
+
+3\.
+
+$A=A'$, $B=B'$, $C=C'+D'$, and $D=C'-D'$
+
+4\.
+
+Euler's identity is
+
+$e^{iz}=\cos z+i\sin z$
+
+Replacing $z$ with $-z$ gives
+
+$e^{-iz}=\cos (-z)+i\sin (-z) = \cos z - i\sin z$
+
+Adding the last two equations gives
+
+$\displaystyle \cos z = \frac{e^{iz}+e^{-iz}}{2}$
+
+Subtracting gives
+
+$\displaystyle \sin z = \frac{e^{iz}+e^{-iz}}{2i}$
+
+
+Form 1. is
+
+$V(x,y) = \big(A\cosh mx+B\sinh mx\big)\big(C\cos my+D\sin my\big)$ 
+
+Form 2. with primed constants is 
+
+$V(x,y) = \big(A'\cos m'x+B'\sin m'x)(C'\cosh m'y+D'\sinh m'y\big)$
+
+
+
