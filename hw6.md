@@ -8,7 +8,7 @@ This homework covers [Boundary Value Problems](boundary_value_problems.html). Se
 
 1. Show that $\displaystyle\int_0^\pi \sin 2x \sin x dx$ = 0. (Note that without any calculation, this is expected from a plot of $\sin x$ and $\sin 2x$ and thinking about the area under the curve for their product.)
 
-2. Show that $\displaystyle \int_0^\pi \sin nx \sin lx dx$ = 0 if $l\ne n$ by explicitly evaluating the integral.
+2. Show that $\displaystyle \int_0^\pi \sin nx \sin lx dx$ = 0 for integer $n$ and $l$ if $l\ne n$ by explicitly evaluating the integral.
 
 3. Compute $\displaystyle\int_0^\pi \sin^2 nx dx$ for
    1. any $n\ne 0$ and
