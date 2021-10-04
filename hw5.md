@@ -280,3 +280,9 @@ $V(x,y) = \big(A\cosh mx+B\sinh mx\big)\big(C\cos my+D\sin my\big)$
 we conclude
 
 $A=A'$, $B=-iB'$, $C=C'$, $D=-iD'$, and $m=im'$.
+
+or
+$A
+=A'$, $B=+iB'$, $C=C'$, $D=+iD'$, and $m=-im'$.
+
+

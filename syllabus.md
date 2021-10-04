@@ -111,18 +111,25 @@
 ## Tuesday, October 5th
 
 * Answer questions on [HW #6](hw6.html) topics
+* Discuss Midterm and Turkeybunion's question.
 
 ## Thursday, October 7th
 
 * [HW #6](hw6.html) due.
-* Post mid--term review problems
+* Assign HW #7 covering the method of images and multipole expansion.
 
 ## Tuesday, October 12th
 
+* Post mid--term review problems
 * No class (Monday classes/labs meet Tuesday. Tuesday classes do not meet this week.)
 * Review session in evening. Will also be available during regular class time.
- 
+
 ## Thursday, October 14th
+
+* HW #7 due
+* Mid-term review
+
+## Tuesday, October 19th
 
 * Mid-term exam during class time in Innovation Hall, room 131. Closed book and note. I will provide a list of equations that you need to know.
 
