@@ -24,7 +24,74 @@ Charge is uniformly distributed on two concentric spherical conducting shells, t
 
 % In the future, remove Q from diagram as some thought it meant +Q was on outer part of outer shell.
 
+**Answer**:
+
+A common error was assuming that $+Q$ was on the outer surface of the outer conductor because of the position of the label on the diagram. As will be shown, this is not possible.
+
+The system is invariant with respect to rotation about any axis. As a result, the charge density on any surface must be uniform and any field must be radial. Any electric field must also be invariant with respect to rotation about any axis.
+
+1a. A Gaussian sphere centered on the origin with a radius $a-t\lt r\lt a$ will have $E=0$ on its surface because its surface is inside a conductor. In this case, $\Phi_E=0$. Thus, $Q_{encl}=0$. All of the charges on the inner conductor must be on its surface, so $Q$ at $r=a-t$ must be zero. As a result, all of the net $-Q$ on the inner conductor must be on its outer surface.
+
+1b. A Gaussian sphere centered on the origin with radius $b \lt r\lt b+t$ will have no charge enclosed, so $\Phi_E=0$. Because the field is radial, the flux integral simplifies to $\Phi_E=E_r 4\pi r^2$. Thus, $\Phi_E=0$ implies that $E_r=0$ and so $Q_{encl}=0$. The total charge enclosed is the charge on the inner conductor and the charge on the inner surface of the outer is $Q_{encl}=0=-Q + q(r=b)$. From this it follows that the charge on the inner surface of the outer conductor is $+Q$.
+
+2.
+
+Region 1: A Gaussian sphere centered on the origin with radius $a-t \lt r\lt a$ will have no charge enclosed, so $\Phi_E=0$. Because the field is radial, the flux integral simplifies to $\Phi_E=E_r 4\pi r^2$. Thus, $\Phi_E=0$ implies that $E_r=0$.for $r\ne 0$. At $r=0$, $E_r$ must be zero because if it were non-zero, it would not be invariant with respect to rotation about any axis. From this it follows that $\mathbf{E}=0$.
+
+Region 2: Zero because inside a conductor.
+
+Region 3: Due to the symmetry argument, the flux integal similifies to $\Phi_E=E_r4\pi r^2$. The enclosed charge is $-Q$, so $E_r=-Q/4\pi \epsilon_o r^2$ and $\mathbf{E}=-Q\hat{\mathbf{r}}/4\pi \epsilon_o r^2$ because the symmetry argument tells use that $\mathbf{E}$ may only have a radial component.
+
+Region 4: Zero because inside a conductor.
+
+Region 5: $Q_{encl}=0$ and the flux integral simplifies to $E_r4\pi r^2$ due to the symmetry arguments. From this it follows that $E_r=0$ and $\mathbf{E}=0$.
+
+3.
+
+In general,
+
+$\displaystyle V(r)=V(a)-\int_a^r \mathbf{E}\bfcdot d\mathbf{l}$
+
+If we choose $d\mathbf{l}=dr'\hat{\mathbf{r}}$, then
+
+$\displaystyle V(r)=V(a)+\frac{Q}{4\pi}\int_a^r \frac{1}{r'^2}dr'$
+
+and
+
+$\displaystyle V(r)=V(a)+\frac{Q}{4\pi\epsilon_o}\left(\frac{1}{a}-\frac{1}{r}\right)$
+
+When $r=b$, we have
+
+$\displaystyle V(b)-V(a)=\frac{Q}{4\pi\epsilon_o}\left(\frac{1}{a}-\frac{1}{b}\right)$
+
+Note that $V(b)-V(a)$ is positive, which is expected because moving from $a$ to $b$ we are moving against the direction of $\mathbf{E}$.
+
+4.
+
+In this problem, we put a charge of $\pm Q$ on the capacitor surfaces and a potential difference of $V(b)-V(a)$ was the result. Thus,
+
+$\displaystyle C=\frac{Q}{V(b)-V(a)} = \frac{4\pi\epsilon_o}{\frac{1}{a}-\frac{1}{b}}$
+
+----
+
+In preparation for the next problem, note that using this equation, we can re--write
+
+$\displaystyle V(r)=V(a)+\frac{Q}{4\pi\epsilon_o}\left(\frac{1}{a}-\frac{1}{r}\right)$
+
+as
+
+$\displaystyle V(r)=V(a)+\frac{V(b)-V(a)}{\frac{1}{a}-\frac{1}{b}}\left(\frac{1}{a}-\frac{1}{r}\right)$
+
+As a check of the algebra, plugging in $r=a$ gives $V(a)$ and $r=b$ gives $V(b)$.
+
+If we choose to define $V(b)=V_o$ and $V(a)=0$, we have
+
+$\displaystyle V(r)=\frac{V_o}{\frac{1}{a}-\frac{1}{b}}\left(\frac{1}{a}-\frac{1}{r}\right)$
+
+which will be useful for checking the answer in the next problem.
+
 # 1-D Boundary Value Problem
+
 
 In spherical coordinates, the Laplacian is
 
@@ -84,7 +151,7 @@ and subsitution of these constants into $V(r) = {C_1 \over r} + C_2$ gives
 
 $\displaystyle V(r) = {V_o \over \left({1\over a}-{1\over b}\right)}{\left({1\over a}-{1\over r}\right)}$
 
-as a check of the algebraic steps, plug in $r=a$ and $r=b$ into this equation and verify that the boundary conditions used, $V(a)=V_o$ and $V(b)=0$, are satisfied.
+as a check of the algebraic steps, plug in $r=a$ and $r=b$ into this equation and verify that the boundary conditions used, $V(a)=V_o$ and $V(b)=0$, are satisfied. Also note that this is the same result obtained in problem 1.4.
 
 3\. The electric field can be found using $\mathbf{E}=-\nabla V$. In spherical coordinates, when $V$ depends only on $r$,
 
@@ -150,19 +217,31 @@ $\cosh mx=(1/2)(e^{mx}+e^{-mx})$ and $\sinh mx=(1/2)(e^{mx}-e^{-mx})$
 
 we can write
 
-$e^{m'x}=\cosh m'x+\sinh m'x$ and $e^{-m'x}=\cosh m'x-\sinh(m'x)$
+$e^{m'x}=\cosh m'x+\sinh m'x$ and $e^{-m'x}=\cosh m'x-\sinh m'x$
 
 Inserting these into the equation for $V(x,y)$ gives
 
-$\displaystyle V(x,y) = \big((A'+B')\cosh m'x+(A'-B')\sinh m'x\big)(C'\cos my+D'\sin m'y\big)$
+$\displaystyle V(x,y) = \Big((A'+B')\cosh m'x+(A'-B')\sinh m'x\Big)(C'\cos my+D'\sin m'y\big)$
 
-and we conclude 
+and based on comparison with
 
-$A=A'+B'$, $B=A'+B'$, $C=C'$, $D=D'$, and $m=m'$.
+$V(x,y) = \big(A\cosh mx+B\sinh mx\big)\big(C\cos my+D\sin my\big)$
+
+we conclude 
+
+$A=A'+B'$, $B=A'-B'$, $C=C'$, $D=D'$, and $m=m'$.
+
+As a check, if $A'=B'=1$ and $m'=1$, form 3. is
+
+$V(x,y) = \big(e^{x}+e^{-x})(C'\cos y+D'\sin y\big)=(2\cosh x)(C'\cos y+D'\sin y)$
+
+With $A'=B'=1$, $A=2$, and $B=0$, so form 1. is
+
+$V(x,y) = (2\cosh mx)(C\cos my+D\sin my)$
 
 3\.
 
-$A=A'$, $B=B'$, $C=C'+D'$, and $D=C'-D'$
+$A=A'$, $B=B'$, $C=C'+D'$, $D=C'-D'$, and $m=m'$.
 
 4\.
 
@@ -174,22 +253,30 @@ Replacing $z$ with $-z$ gives
 
 $e^{-iz}=\cos (-z)+i\sin (-z) = \cos z - i\sin z$
 
-Adding the last two equations gives
+Adding the last two equations gives $\displaystyle \cos z = \frac{e^{iz}+e^{-iz}}{2}$. Subtracting gives $\displaystyle \sin z = \frac{e^{iz}-e^{-iz}}{2i}$.
 
-$\displaystyle \cos z = \frac{e^{iz}+e^{-iz}}{2}$
+Comparison of
 
-Subtracting gives
+$\displaystyle \cos z = \frac{e^{iz}+e^{-iz}}{2}$ with $\displaystyle \cosh z=\frac{e^{z}+e^{-z}}{2}$ gives
 
-$\displaystyle \sin z = \frac{e^{iz}+e^{-iz}}{2i}$
+$\cos z=\cosh iz$ and $\cosh z=\cos (iz)$
 
+Comparison of $\displaystyle \sin z = \frac{e^{iz}-e^{-iz}}{2i}$ with $\displaystyle \sinh z=\frac{e^{z}-e^{-z}}{2}$ gives
 
-Form 1. is
-
-$V(x,y) = \big(A\cosh mx+B\sinh mx\big)\big(C\cos my+D\sin my\big)$ 
+$\sin z=-i\sinh i z$ and $\sinh z=-i\sin (iz)$.
 
 Form 2. with primed constants is 
 
 $V(x,y) = \big(A'\cos m'x+B'\sin m'x)(C'\cosh m'y+D'\sinh m'y\big)$
 
+Using the above identities, this can be written as
 
+$V(x,y) = \big(A'\cosh m'ix-iB'\sinh im'x\big)\big(C'\cos (im'y)-iD'\sin (im'y)\big)$
 
+From comparison with form 1.
+
+$V(x,y) = \big(A\cosh mx+B\sinh mx\big)\big(C\cos my+D\sin my\big)$
+
+we conclude
+
+$A=A'$, $B=-iB'$, $C=C'$, $D=-iD'$, and $m=im'$.
