@@ -10,17 +10,17 @@ $$(1+y)^m = \sum_{k=0}^m {m \choose k}y^k$$
 
 Written as a power series, it is
 
-$$(1+y)^m = 1 + my + m(m-1)y^2 + ...$$
+$$(1+y)^m = 1 + my + \frac{m(m-1)}{2}y^2 + ...$$
 
 From this, it follows that
 
-$$\frac{1}{(1+y)^n} = 1 - ny + n(n-1)y^2 + ...$$
+$$\frac{1}{(1+y)^n} = 1 - ny + \frac{n(n+1)}{2}y^2 + ...$$
 
 (This equation can also be derived using the Taylor series expansion around $y=0$.)
 
 In this course, we are going to use this expansion many times when $y$ is small. To emphasize this, $\delta$ will be used instead of $y$ as the variable. 
 
-$$\frac{1}{(1+\delta)^n} = 1 - n\delta + n(n-1)\delta^2+...$$
+$$\frac{1}{(1+\delta)^n} = 1 - n\delta + \frac{n(n+1)}{2}\delta^2+...$$
 
 
 The actual equation that you will use and should memorize is the truncated expansion to first order in $\delta$:

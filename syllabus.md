@@ -110,19 +110,21 @@
 
 ## Tuesday, October 5th
 
+* [Class Video](https://gmu.zoom.us/rec/share/XEaltG94BTuzli9QWHUz6-kxqNBM6FuJcigoDByiBvNYymOXNDOwd7mjB29hpy0J.SkqiZycdaVSGf4FV)
 * Answer questions on [HW #6](hw6.html) topics
 * Discuss Midterm and Turkeybunion's question.
 
 ## Thursday, October 7th
 
 * [HW #6](hw6.html) due.
-* Assign HW #7 covering the method of images and multipole expansion.
+* Assign HW #7 covering the method of images and multipole expansion. Notes and HW #7 will be posted later today.
 
 ## Tuesday, October 12th
 
 * Post mid--term review problems
 * No class (Monday classes/labs meet Tuesday. Tuesday classes do not meet this week.)
-* Review session in evening. Will also be available during regular class time.
+* Review session in evening.
+* Will also be available during regular class time and ad--hoc sessions on Zoom.
 
 ## Thursday, October 14th
 

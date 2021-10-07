@@ -14,6 +14,8 @@ Provide explicit justifications for the symmetry argument (described in [the not
 
 **Answer**:
 
+% Answer to part 1. copied to symmetry notes.
+
 This problem is given as an example in many textbooks. The motivation for asking for justifications is that I want you to show me that you understand the steps. It is easy to write a few equations and get the correct result without understanding much. I looked for evidence that you understood the steps based on correct justifications when grading.
 
 1\. A common error was a lack of justification for $\mathbf{E}=E_s(s)\hat{\mathbf{s}}$. More justification is needed than "because it is long" or "due to symmetry" because the reason is not obvious. Also, a diagram showing straight field lines is not a justification -- it _follows_ from a symmetry argument. As covered in the notes on symmetry, there are two types: Cancellation and geometrical. To use symmetry as an argument, you must provide an explanation and/or diagram.

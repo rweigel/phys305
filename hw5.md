@@ -36,7 +36,9 @@ The system is invariant with respect to rotation about any axis. As a result, th
 
 2.
 
-Region 1: A Gaussian sphere centered on the origin with radius $a-t \lt r\lt a$ will have no charge enclosed, so $\Phi_E=0$. Because the field is radial, the flux integral simplifies to $\Phi_E=E_r 4\pi r^2$. Thus, $\Phi_E=0$ implies that $E_r=0$.for $r\ne 0$. At $r=0$, $E_r$ must be zero because if it were non-zero, it would not be invariant with respect to rotation about any axis. From this it follows that $\mathbf{E}=0$.
+Region 1: A Gaussian sphere centered on the origin with radius $0 \lt r\lt a-t$ will have no charge enclosed, so $\Phi_E=0$. Because the field is radial, the flux integral simplifies to $\Phi_E=E_r 4\pi r^2$. Thus, $\Phi_E=0$ implies that $E_r=0$.for $r\ne 0$. At $r=0$, $E_r$ must be zero because if it were non-zero, it would not be invariant with respect to rotation about any axis. From this it follows that $\mathbf{E}=0$.
+
+A common error was to state that because no charge is enclosed, $\mathbf{E}$. This statement is not true in general. A Gaussian sphere with a point charge outside of it will have no charge enclosed, but $\mathbf{E}$ is not zero everywhere on the Gaussian surface.
 
 Region 2: Zero because inside a conductor.
 

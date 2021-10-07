@@ -122,6 +122,8 @@ Use a diagram to justify any statements made for (b).
 
 **Answer:**
 
+% Copied to notes
+
 (a) The charge distribution is symmetric about the $x$--axis, so the electric field vectors for a point at $y\gt 0$ will be the same as that for $y\lt 0$ except with the $E_y$ having the opposite sign. The charge distribution is symmetric about the $y$--axis, so the electric field vectors for a point at $x\gt 0$ will be the same as that for $x\lt 0$ except with the $E_x$ having the opposite sign. 
 
 (b) At a point on the $y$--axis the horizontal electric field created by a line at $+x$ will cancel that of a line at $-x$, so the field will only have a $y$--component.

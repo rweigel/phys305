@@ -32,6 +32,22 @@ Justify your answers.
 %   1. $q/\epsilon_0$. We can think of flux as proportional to the number of field lines that pass through a surface.  Lines going in provide negative flux, lines out positive.  If you draw field lines due to a point charge through a closed surface that does not enclose the point charge, all of the point charge's field lines going into the surface must exit.
 %   2. Note that in cases 1. and 3., Gauss' Law would not be useful for computing the electric field. Gauss' Law is useful for computing the electric field when it is constant or zero on a Gaussian surface, and its angle with respect to the surface normal is constant, in which case it can be factored out of the integral.
 
+### Problem
+
+If a Gaussian sphere is drawn such that there is no charge enclosed, does it follow that $\mathbf{E}=0$ on the surface of the sphere? Justify your answer.
+
+**Answer**
+
+No. All we can say is that $\oint \mathbf{E}\cdot d\mathbf{A}=0$. There are two ways for this to be true:
+1. $\mathbf{E}=0$ everwhere on the surface and
+2. $\mathbf{E}\cdot \hat{\mathbf{n}}$ varies over the surface in such a way that when summed over all differential areas, it is zero. 
+
+> A common error in Gauss's law problems is the claim that $Q_{encl}=0$ implies $\mathbf{E}=0$. This is not always true.
+
+### Problem
+
+A point charge is located at $z=b$. Consider a Gaussian sphere centered on the origin with a radius of $b/2$. The point charge is outside of the sphere, so $Q_{encl}=0$. Does it follow that $\mathbf{E}=0$ on the surface of the Gaussian sphere? If not, what can you say about $\mathbf{E}$ on the surface of the Gaussian sphere?
+
 ## Differential Form
 
 Gauss's law in differential form relates the divergence of the vector field $\mathbf{E}$ at anly location in space to the charge density, $\rho$, at that location:

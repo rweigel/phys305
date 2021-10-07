@@ -169,6 +169,8 @@ As $x\rightarrow L$, $E_x$ becomes large.
 
 # Continuous Charge Distributions II
 
+% Copied to notes
+
 A uniformly charged disk of radius $R$ with a total charge $Q$ is in the $x$--$y$ plane and centered on the origin.
 
 Follow and show the steps given in the notes and find $\mathbf{E}$ on the $z$--axis in terms of one or more of $k,Q,R,z$, and cartesian unit vectors.
@@ -245,7 +247,7 @@ $$\mathbf{E} = \int_0^{2\pi}\int_0^R \frac{\sigma s' d\phi' ds'}{4\pi\epsilon_0}
 Factoring out the constants gives
 $$\mathbf{E} = \frac{\sigma z\hat{\mathbf{z}}}{4\pi\epsilon_0} \int_0^{2\pi}\int_0^R \frac{s' d\phi' ds'}{(z^2+s'^2)^{3/2}}$$
 
-Nothing in the integrand depends on $\phi'$, so the $\phi'$ integral redues to $2\pi$
+Nothing in the integrand depends on $\phi'$, so the $\phi'$ integral reduces to $2\pi$
 $$\mathbf{E} = \frac{2\pi\sigma z\hat{\mathbf{z}}}{4\pi\epsilon_0} \int_0^R \frac{s' d\phi'}{(z^2+s'^2)^{3/2}}$$
 
 The result of the integration gives the final answer (to integrate, use a substitution of $u^2=s'^2+z^2$ and use $\sqrt{z^2}=|z|$).
@@ -284,6 +286,8 @@ Substituing for $\sigma$ gives
 $$\mathbf{E} \simeq \frac{Q}{4\pi\epsilon_0} \frac{1}{z^2}\frac{z}{|z|}\hat{\mathbf{z}}$$
 
 # Extra Credit
+
+% Copied to notes
 
 A line of charge in the $x$-$y$ plane has a uniform charge density of $\lambda_o$, passes through the origin, is at an angle of $\phi$ with the $x$-axis, and extends from $x=-b$ to $x=b$.
 

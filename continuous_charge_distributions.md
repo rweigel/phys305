@@ -429,7 +429,7 @@ Check the exact answer found previously for the electric field on the $z$–axis
 
 # Problems
 
-## Line of Charge on $x$--axis
+## Line of Charge
 
 A line of charge with a uniform charge density of $\lambda_o$ extends from $0$ to $L$ on the $x$-axis, wh
 
@@ -460,13 +460,238 @@ Using WolframAlpha ([first integral](https://www.wolframalpha.com/input/?i=integ
 
 $\displaystyle \mathbf{E}=-k\lambda_o\xhat\left(\frac{1}{|y|}-\frac{1}{\sqrt{L^2 + y^2}}\right)+k\lambda_oy\yhat\left(\frac{L}{y^2 \sqrt{L^2 + y^2}}\right)$
 
-## Line of Charge at Angle to $x$--axis
+## Line of Charge at Angle
 
-A line of charge in the $x$-$y$ plane has a charge density of $\lambda_o$, passes through the origin, is at an angle of $\phi$ with the $x$-axis, and extends from $x=-b$ to $x=b$.
+A line of charge in the $x$-$y$ plane has a uniform charge density of $\lambda_o$, passes through the origin, is at an angle of $\phi$ with the $x$-axis, and extends from $x=-b$ to $x=b$.
 
 <img src="figures/Continuous-Charge-Densities-Tilted-Line.svg"/>
 
-Find $\mathbf{E}$ on the $y$--axis using two methods:
+Find $\mathbf{E}$ on the $y$--axis using two two methods:
 
-1\. By following the steps in the notes.
-2\. Transforming the equation for $\mathbf{E}(y)$ given in the notes for a line of charge on the $x$--axis between $x=-L$ and $x=L$ to coordinate system rotated by $\alpha$ about the $z$--axis.
+1. Find $\mathbf{E}$ on the $y$--axis by following the steps in the notes. 
+2. Check your answer for small $y$ by transforming the equation for $\mathbf{E}(y)$ given in the notes for a line of charge on the $x$--axis between $x=-L$ and $x=L$ to coordinate system rotated by $\phi$ about the $z$--axis.
+
+**Partial Answer**:
+
+This is a line of charge, so the general relationship is $dq'=\lambda dl'$.
+
+In general, a differential element parallel to a line in the $x-y$ plane can be written as
+
+$d\mathbf{l}' = dx'\hat{\mathbf{x}} + dy'\hat{\mathbf{y}}$
+
+the magnitude of $d\mathbf{l}'$ is
+
+$dl' = \sqrt{(dx')^2+(dy')^2}$
+
+factoring out $dx'$ gives a formula that may be familiar from a calculus course in which the the length of a curve is computed:
+
+$dl' = dx'\sqrt{1+\left(\frac{dy'}{dx'}\right)^2}$
+
+In this problem, we are not explicitly given $dy'/dx'$, but it can be derived by noting from a diagram that $\tan\phi = y'/x'$ so that
+
+$y' = x'\tan\phi$
+
+and so $dy'/dx' = \tan\phi$. Substitution gives
+
+$dl' = dx'\sqrt{1+\left(\frac{dy'}{dx'}\right)^2}=dx'\sqrt{1+\tan^2\phi}$
+
+and finally an equation for $dq'$
+
+$dq'=\lambda dl'= dx'\sqrt{1+\tan^2\phi}$
+
+In general,
+
+$\mathbf{r}=x\hat{\mathbf{x}}+y\hat{\mathbf{y}}+z\hat{\mathbf{z}}$ and $\mathbf{r}'=x'\hat{\mathbf{x}}+y'\hat{\mathbf{y}}+z'\hat{\mathbf{z}}$
+
+For this problem, we only want to know $\mathbf{r}$ for points on the $y$-axis, so $x=0$ and $z=0$ leaving
+
+$\mathbf{r}=y\hat{\mathbf{y}}$
+
+the line of charge is in the $x$-$y$ plane, so $z'$ is always zero, leaving
+
+$\mathbf{r}'=x'\hat{\mathbf{x}}+y'\hat{\mathbf{y}}$
+
+Write 
+
+$\displaystyle d\mathbf{E} = \frac{dq'}{4\pi\epsilon_0}\frac{\mathbf{r}-\mathbf{r}'}{|\mathbf{r}-\mathbf{r}'|^3}$
+
+replacing $dq'$ with the differential found in Step 1, $dq' = dx'\sqrt{1+\tan^2\phi}$, and using the reduced versions of $\mathbf{r}$ and $\mathbf{r}'$ in Step 2. Noting that
+
+$\mathbf{r}-\mathbf{r}'=y\hat{\mathbf{y}}-\big(x'\hat{\mathbf{x}}+y'\hat{\mathbf{y}}\big)$
+
+which can be rewritten as
+
+$\mathbf{r}-\mathbf{r}'=-x'\hat{\mathbf{x}}+(y-y')\hat{\mathbf{y}}$
+
+The magnitude is
+
+$|\mathbf{r}-\mathbf{r}'|=\sqrt{(-x')^2 + (y-y')^2}=\sqrt{x'^2 + (y-y')^2}$
+
+and substitution gives
+
+$\displaystyle d\mathbf{E} = \frac{dx'\sqrt{1+\tan^2\phi}}{4\pi\epsilon_0}\frac{-x'\hat{\mathbf{x}}+(y-y')\hat{\mathbf{y}}}{\big(x'^2 + (y-y')^2\big)^{3/2}}$
+
+The final step is to integrate this equation from $x'=0$ to $x'=b$:
+
+$\displaystyle \mathbf{E}(y) = \int_0^{b}\frac{dx'\sqrt{1+\tan^2\phi}}{4\pi\epsilon_0}\frac{-x'\hat{\mathbf{x}}+(y-y')\hat{\mathbf{y}}}{\big(x'^2 + (y-y')^2\big)^{3/2}}$
+
+$dl'$ was found in terms of $dx'$, so all of the primed variables need to be written in terms of $x'$. Using $y'=x'\tan\phi$ gives an equation that is ready for integration
+
+$\displaystyle \mathbf{E}(y) = \int_0^{b}\frac{dx'\sqrt{1+\tan^2\phi}}{4\pi\epsilon_0}\frac{-x'\hat{\mathbf{x}}+(y-x'\tan\phi)\hat{\mathbf{y}}}{\big(x'^2 + (y-x'\tan\phi)^2\big)^{3/2}}$
+
+To solve this, start by factoring out the constant terms 
+
+$\displaystyle \mathbf{E}(y) =\frac{\sqrt{1+\tan^2\phi}}{4\pi\epsilon_0} \int_0^{b}\frac{-x'\hat{\mathbf{x}}+(y-x'\tan\phi)\hat{\mathbf{y}}}{\big(x'^2 + (y-x'\tan\phi)^2\big)^{3/2}}dx'$
+
+and write the equation in terms of two integrals with $y$ and $\phi$ treated as a constant with respect to the integration. In terms of these integrals, $\mathbf{E}$ is
+
+$\displaystyle \mathbf{E}(y) =\frac{\sqrt{1+\tan^2\phi}}{4\pi\epsilon_0} \big[{I_1\hat{\mathbf{x}}+(I_2+I_1\tan\phi)\hat{\mathbf{y}}}\big]$
+
+where
+
+$I_1=\displaystyle \int_0^{b}\frac{-x'}{\big(x'^2 + (y-x'\tan\phi)^2\big)^{3/2}}dx'$
+
+$I_2=\displaystyle \int_0^{b}\frac{y}{\big(x'^2 + (y-x'\tan\phi)^2\big)^{3/2}}dx'$
+
+As $y\rightarrow 0$, we expect the field to be perpendicular to the line and to be related to the field along a line perpendicular to it. One can use the equation for $\mathbf{E}(y)$ for a line of charge along the $x$--axis from $x \pm b$ and re--name $y$ as $y'$, with $y'$ the perpendicular distance from the rotated line. In this case, $y$ and $y'$ are related by $y=y'\cos\phi$.
+
+To finish the problem, integrate and let $y/b\rightarrow 0$. You should find that $\mathbf{E}$ becomes perpendicular to the line as $y/b\rightarrow 0$. Setting $y=y'\cos\phi$ should give a match to the equation for $\mathbf{E}(y')$.
+
+## Parabolic Line of Charge
+
+Charge is uniformly distributed along the line $y=x^2/b$ from $x=-b$ to $x=b$.
+
+Find an equation for $\mathbf{E}$ on the $y$--axis in terms of an integral with an integrand that depend only on $dx'$, $x'$, $y$, and $b$. You do not need to evaluate the integral.
+
+## Charge on Circle
+
+A uniformly charged circle of radius $R$ with a total charge $Q$ is in the $x$--$y$ plane and centered on the origin.
+
+Find an equation for $\mathbf{E}(x,y,z)$ (the field at any location in space) in terms of three integrals with integrands that depends onl on $d\phi'$, $\phi'$, $x$, $y$, and $z$, and $R$. You do not need to evaluate the integral.
+
+## Charge on Disk
+
+% Copied to notes
+
+A uniformly charged disk of radius $R$ with a total charge $Q$ is in the $x$--$y$ plane and centered on the origin.
+
+Follow and show the steps given in the notes and find $\mathbf{E}$ on the $z$--axis in terms of one or more of $k,Q,R,z$, and cartesian unit vectors.
+
+**Answer**:
+
+_Comments_:
+* This is an example commonly given in intro physics textbooks and it has a short--cut solution. Some students essentially gave a few equations from the example solution without justification. I asked you to follow the steps given in the notes because the method used in the example solutions won't help you on more complicated problems. So make sure that you know how to solve this problem using the steps in the notes.
+* Many students came up with an $\mathbf{E}$ that had the wrong sign. I took off points for this because the sign error would have been obvious if you had checked your answer to verify that $\mathbf{E}$ had a positive $z$ component when $z>0$.π
+
+1\. Identify Answer Features
+
+(a) We expect that for $z\ll R$, $\mathbf{E}$ to aproach that of an infinite sheet of charge, for which $|\mathbf{E}|=\sigma/2\epsilon_o$ is perpendicular to the sheet and points away from it. For this problem, this means $\mathbf{E}=\pm \zhat (Q/\pi R^2)/\sigma_o$ with the $+$ above the sheet ($z\gt 0$) and $-$ below the sheet ($z\lt 0$).
+
+(b) For $z\gg R$, we expect $\mathbf{E}=\pm kQ\zhat/z^2$ with the sign the same as that of $z$.
+
+2\. Find $dA$
+
+The differential charge can be written in cylindrical coordinates as $dq = \sigma s'ds'd\phi'$. 
+
+3\. Find ${\hat{\textbf{\char"0509}}}/{\char"0509^2}$
+
+<img src="figures/Continuous_Charge_Distributions_Disk-1a.svg"/>
+
+$\displaystyle \frac{\hat{\textbf{\char"0509}}}{\char"0509^2}=\frac{1}{|\mathbf{r}-\mathbf{r}'|^2}\frac{\mathbf{r}-\mathbf{r}'}{|\mathbf{r}-\mathbf{r}'|}$
+
+In general,
+
+$\displaystyle\mathbf{r} = x\xhat + y\yhat + z\zhat$
+
+The point of interest is constrained to be on the $z$--axis, for which $x=y=0$, so
+
+$\displaystyle\mathbf{r} = z\hat{\mathbf{z}}$
+
+In general,
+
+$\displaystyle\mathbf{r}' = x'\xhat + y'\yhat + z'\zhat$
+
+and the location of the charge acting on the point of interest has $z'=0$, and so
+
+$\displaystyle\mathbf{r}' = x'\xhat + y'\yhat$
+
+Given that $dA$ was written in cylindrical coordinates, we should write $\mathbf{r}'$ using the same coordinate system:
+
+$\displaystyle\mathbf{r}' = s'\cos(\phi')\hat{\mathbf{x}}+s'\sin(\phi')\hat{\mathbf{y}}$
+
+Note that $s'$ is used in this equation makes $\mathbf{r}'$ depend on the radial distance of the charge $dq$. In the ring problem, $R$ is used instead of $s'$.
+
+4\. Check $d\mathbf{E}$
+
+<img src="figures/Continuous_Charge_Distributions_Disk-1b.svg"/>
+
+$$d\mathbf{E}= \frac{dq}{4\pi\epsilon_0}\frac{-s'\cos(\phi')\hat{\mathbf{x}}-s'\sin(\phi')\hat{\mathbf{y}}+z\zhat}{(z^2+s'^2)^{3/2}}$$
+
+When $\phi'=0$, $d\mathbf{E}$ has a $-\xhat$ component and no $\yhat$ component. This is consistent with the following sketch. 
+
+If $z\gg s'$, then the $\zhat$ term dominates and is $1/z^2$, so a charge at any $s'$ produces a field at large $z$ that is near that if it were at the origin.
+
+5\. Simplifying $d\mathbf{E}$ using Symmetry Arguments
+
+We want to integrate, so need to write $dq$ in terms of coordinates. On the disk, a small patch has an area of $(s' d\phi')(ds')$, so
+$$dq=\sigma (s' d\phi')(ds')$$
+
+This gives
+
+$$\mathbf{E} = \int_0^{2\pi}\int_0^R \frac{\sigma s' d\phi'ds'}{4\pi\epsilon_0}\frac{-s'\cos(\phi')\hat{\mathbf{x}}-s'\sin(\phi')\hat{\mathbf{y}}+z\zhat}{(z^2+s'^2)^{3/2}}$$
+
+Based on the symmetry argument that we can always find another $dq$ that exactly cancels the horizontal component of a given $dq$, we expect the $\hat{\mathbf{x}}$ and $\hat{\mathbf{y}}$ terms to be zero, so we can drop them. Or we can notice that after factoring out everything that does not depend on $\phi$, the integrals for the $\hat{\mathbf{x}}$ and $\hat{\mathbf{y}}$ terms are $\cos\phi\,d\phi$ and $\sin\phi\,d\phi$ from $0$ to $2\pi$, which are both zero. Note that if a 1/2 disk was given, the integral limits would be from $0$ to $\pi$, and one of the integrals would not be zero.
+
+$$\mathbf{E} = \int_0^{2\pi}\int_0^R \frac{\sigma s' d\phi' ds'}{4\pi\epsilon_0}\frac{z\hat{\mathbf{z}}}{(z^2+s'^2)^{3/2}}$$
+
+6\. Integrating $d\mathbf{E}$
+
+Factoring out the constants gives
+$$\mathbf{E} = \frac{\sigma z\hat{\mathbf{z}}}{4\pi\epsilon_0} \int_0^{2\pi}\int_0^R \frac{s' d\phi' ds'}{(z^2+s'^2)^{3/2}}$$
+
+Nothing in the integrand depends on $\phi'$, so the $\phi'$ integral reduces to $2\pi$
+$$\mathbf{E} = \frac{2\pi\sigma z\hat{\mathbf{z}}}{4\pi\epsilon_0} \int_0^R \frac{s' d\phi'}{(z^2+s'^2)^{3/2}}$$
+
+The result of the integration gives the final answer (to integrate, use a substitution of $u^2=s'^2+z^2$ and use $\sqrt{z^2}=|z|$).
+
+$$\mathbf{E} = \frac{\sigma z}{2\epsilon_0} \left(\frac{1}{|z|}-\frac{1}{\sqrt{R^2+z^2}}\right)\hat{\mathbf{z}}$$
+
+7\. Checking Answer
+
+From step 1, we expect that
+
+(a) We expect that for $z\ll R$, $\mathbf{E}$ to aproach that of an infinite sheet of charge, for which $|\mathbf{E}|=\sigma/2\epsilon_o$ is perpendicular to the sheet and points away from it. For this problem, this means $\mathbf{E}=\pm \zhat (Q/\pi R^2)/\sigma_o$ with the $+$ above the sheet ($z\gt 0$) and $-$ below the sheet ($z\lt 0$).
+
+(b) For $z\gg R$, we expect $\mathbf{E}=\pm kQ\zhat/z^2$ with the sign the same as that of $z$.
+
+
+(a) For $z\ll R$, only the first term in parenthesis is large
+$$\mathbf{E} = \frac{\sigma}{2\epsilon_0}\frac{z}{|z|}\hat{\mathbf{z}}$$
+
+Notice how the ${z}/{|z|}$ term tells use the direction of the electric field. When $z>0$, this term is $+1$. When $z<0$, this term is $-1$.
+
+(b) For $z\gg R$, we need to do a bit more work on the second term in parentheses in (3). Factor out a $z$ from the square root to get
+$$\mathbf{E} = \frac{\sigma z}{2\epsilon_0} \left(\frac{1}{|z|}-\frac{1}{|z|\sqrt{1+R^2/z^2}}\right)\hat{\mathbf{z}}$$
+
+Because $R/z \ll 1$, we can use the binomial expansion to get
+$$\mathbf{E} \simeq \frac{\sigma z}{2\epsilon_0} \left[\frac{1}{|z|}-\frac{1}{|z|}\left(1-\frac{R^2}{2z^2}\right)\right]\hat{\mathbf{z}}$$
+
+Simplifying gives
+
+$$\mathbf{E} \simeq \frac{\sigma}{2\epsilon_0} \frac{R^2}{2z^2}\frac{z}{|z|}\hat{\mathbf{z}}$$
+
+To show that in this limit the result is the same as if all of the charge was at the origin, we need to compute the charge on the disk, which is
+$$Q=\sigma\pi R^2$$
+
+Substituing for $\sigma$ gives
+
+$$\mathbf{E} \simeq \frac{Q}{4\pi\epsilon_0} \frac{1}{z^2}\frac{z}{|z|}\hat{\mathbf{z}}$$
+
+
+## Charge on Cylinder
+
+Charge is uniformly distributed on a the curved surface of a cylinder of length $h$ and radius $R$. The cylinder is centered on the origin and aligned with the $z$--axis and the charge density is $\sigma_o$.
+
+<img src="figures/Continuous-Charge-Densities-Cylinder.svg"/>
+
+Find an equation for $\mathbf{E}$ on the $z$--axis in terms of an integral with an integrand that depends only on $dz'$, $z'$, $z$, and $R$. You do not need to evaluate the integral.
