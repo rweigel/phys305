@@ -8,11 +8,14 @@ which is a partial differential equation (PDE). However, for certain problems, $
 
 The list of basic problems that can be solved with the method of images includes
 
-1. $V$ for $z>0$ when a point charge is at $z=z'$ and the $x--y$ plane is grounded and conducting.
+1. $V$ for $z>0$ when a point charge is at $z=d$ and the $x--y$ plane is grounded and conducting and $d/R \ll 1$. The induced charge will be negative and largest near the origin.
 
+   <img src="figures/Method_of_Images_Plane.svg"/>
 2. $V$ inside/outside of a grounded and long conducting cylindrical shell when a uniform line of charge runs parallel to the centerline of the cylinder and is outside/inside of it.
 
-3. $V$ inside/outside of a grounded conducting spherical shell when a point charge is outside/inside of the shell.
+3. $V$ inside/outside of a grounded conducting spherical shell when a point charge is outside/inside of the shell. The induced charge will be negative and largest near the $q$. The radius of the sphere is not constrained. The pattern of induced charge for $q$ outside of the spherical shell is shown in the following figure.
+
+   <img src="figures/Method_of_Images_Sphere.svg"/>
 
 Given that there are only a few problems that can be solved by this method, and that the problems are highly idealized, it would seem that this method is not generally useful. However, it turns out that the solutions to these basic problems can be used to solve more complex problems. (These more complex problems are typically covered in a graduate--level E&M course.)
 
@@ -36,11 +39,11 @@ To determine the behavior as $r=\sqrt{x^2+y^2+z^2}\rightarrow \infty$, we can re
 
 $\displaystyle V(x,y,z)=\frac{kq}{r}\left[\frac{1}{\sqrt{1-2\frac{z'}{r}\cos\theta+\frac{z'^2}{r^2}}}-\frac{1}{\sqrt{1-2\frac{z'}{r}\cos\theta+\frac{z'^2}{r^2}}}\right]$
 
-Because $-1\le \cos\theta\le 1$, the square root terms approach $1$ as $z'/r\rightarrow \infty$ and so $V\rightarrow 0$.
+Because $-1\le \cos\theta\le 1$, the square root terms approach $1$ as $z'/r\rightarrow \infty$ and so $V\rightarrow 0$ in this limit.
 
 The potentials at of zero $z=0$ and $r\rightarrow \infty$ for this problem exactly match the boundary conditions given in the original problem.
 
-Due to uniqueness, we can claim that the solution for $V$ for $z\gt 0$ for the alternative problem is exactly the same as that for the original problem:
+Due to uniqueness of solutions to Poisson's equation, we can claim that the solution for $V$ for $z\gt 0$ for the alternative problem is exactly the same as that for the original problem:
 
 $\displaystyle V(x,y,z)=kq\left[\frac{1}{\sqrt{x^2+y^2+(z-z')^2}}-\frac{1}{\sqrt{x^2+y^2+(z-z')^2}}\right]$
 
@@ -52,18 +55,10 @@ where $\mathbf{E}$ in this equation is evaluated on the surface of a conductor. 
 
 ## Problem
 
-Compute $\sigma(x,y)$
+Compute $\sigma(s)$.
+
+**Answer**: See page 126 of Griffiths.
 
 ## Problem
 
-1. Write down the potential $V(x,y,z)$ due to a point charge $q_i$ at $z=z'_i$ and $q_o$ at $z=z'_o$ (assume $z'_o \gt z'_i$ for your diagram).
-
-2. Show that the choices of $q_i=-q_o(R/z_o)$ and $z_i=R^2/z'_o$ give $V(r=R)=0$. That is, with these choices for $q_i$ and $z'_i$, the potential on a sphere of radius $R$ is zero.
-
-Once you have found $V(x,y,z)$ due this charge configuration with the relationships chosen in part 2., you have solved another problem: The potential due to a point charge outside of a grounded conducting sphere.
-
-## Problem
-
-Write your answer for $V$ in the previous problem in spherical coordinates and then compute $\mathbf{E}(r, \theta)$ and then use $\mathbf{E}$ evaluated at $r=R$ to find $\sigma(\theta)$, the surface charge density induced on a grounded conducting sphere due to a point charge outside of the sphere at $z=z_2$.
-
-
+Sketch the electric field lines for $z\gt 0$.
