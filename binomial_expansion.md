@@ -23,7 +23,7 @@ In this course, we are going to use this expansion many times when $y$ is small.
 $$\frac{1}{(1+\delta)^n} = 1 - n\delta + \frac{n(n+1)}{2}\delta^2+...$$
 
 
-The actual equation that you will use and should memorize is the truncated expansion to first order in $\delta$:
+The actual equation that you will most often use and should memorize is the truncated expansion to first order in $\delta$:
 
 $$\boxed{\frac{1}{(1+\delta)^n} \simeq 1 - n\delta}$$
 

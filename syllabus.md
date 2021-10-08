@@ -10,7 +10,7 @@
 * Office: 259 Planetary Hall
 * Course URL: http://rweigel.github.io/phys305/
 
-**Homeworks**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) | [4](hw4.html) | [5](hw5.html) | [6](hw6.html)
+**Homeworks**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) | [4](hw4.html) | [5](hw5.html) | [6](hw6.html) | [7](hw7.html)
 
 **Notes**
 * [Vectors](vectors.html)
@@ -116,8 +116,9 @@
 
 ## Thursday, October 7th
 
+* [Class Video](https://gmu.zoom.us/rec/share/KBDm6YSwJu-RKwYEDQEUh01bVIOrvXyF4fP8twTn2uVgPk4vja5vxBbPAHCt9Pfd.3vGSB_o0zQ4ZpRYF)
 * [HW #6](hw6.html) due.
-* Assign HW #7 covering the method of images and multipole expansion. Notes and HW #7 will be posted later today.
+* Assign [HW #7](hw7.html) covering the method of images and multipole expansion
 
 ## Tuesday, October 12th
 
@@ -128,7 +129,7 @@
 
 ## Thursday, October 14th
 
-* HW #7 due
+* [HW #7](hw7.html)
 * Mid-term review
 
 ## Tuesday, October 19th
