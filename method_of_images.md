@@ -29,7 +29,7 @@ Due to the point charge, negative charges will be induced on the conducting plan
 
 **Alternative Problem**: Instead of solving this problem, consider a different problem: Point charges $\pm q$ at $z=\pm z'$. The negative charge at $-z'$ is called the image of $q$. The potential for this configuration is
 
-$\displaystyle V(x,y,z)=kq\left[\frac{1}{\sqrt{x^2+y^2+(z-z')^2}}-\frac{1}{\sqrt{x^2+y^2+(z-z')^2}}\right]$
+$\displaystyle V(x,y,z)=kq\left[\frac{1}{\sqrt{x^2+y^2+(z-z')^2}}-\frac{1}{\sqrt{x^2+y^2+(z+z')^2}}\right]$
 
 when $z=0$, we have
 
