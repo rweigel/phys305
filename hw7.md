@@ -2,7 +2,7 @@ Due on Thursday, October 14th at 3:00 pm.
 
 Send your solutions to the email address rweigel+phys305@gmu.edu as a scanned PDF. Use a file name of `Yourlastname_PHYS305_HW7.pdf` (one file only, please). Capitalize the first letter in your last name and use caps and underscores as indicated. **Include your name on the first sheet**.
 
-This homework covers the method of images and the monopole expansion. See also Griffiths 3.2 and 3.4.
+This homework covers the [method of images](method_of_images.html) and the monopole expansion. See also Griffiths 3.2 and 3.4.
 
 # Method of Images
 
