@@ -9,6 +9,7 @@ This homework involves topics covered in [Flux](flux.html), [Divergence](diverge
 **Comments on grading**: If I wrote in blue pen, it is a comment. If I wrote in red or circled something I wrote in red, it is something that I took points off for. Each problem was worth 5 points.
 
 # Particle Flux in Plane
+% Copied to notes
 
 1\. Explain why the flux through a closed line of arbitrary shape is also equal to the flux through a circle centered on the source when particles are emitted from a source with a uniform speed $v_s$ in a plane. 
 
@@ -31,6 +32,7 @@ This homework involves topics covered in [Flux](flux.html), [Divergence](diverge
 3. To prove that the flux is the same for both closed loops in 1. is the same, one would need to use [Approach II](http://localhost:9001/flux.md!#through-a-closed-line) in the notes on flux. The same approach will work in showing that the flux through the circle (or any closed loop shape) is zero when the source is outside of the closed loop.
 
 # $\Phi_E$ Through Cube Faces
+% Copied to notes
 
 Find the flux through each of the faces of the cube with side length $a$ when the electric field is at an angle of $60^\circ$ with respect to the $+z$-axis towards the $+x$-axis.
 
@@ -53,6 +55,7 @@ $\Phi_E^6=-E_oA\sin 60^\circ = -E_oa^2\sin 60^\circ$
 The total flux is zero, as expected using the flow analogy.
 
 # $\Phi_E$ Through a Half Cylinder
+% Copied to notes
 
 A cylindrical shell (like a toilet paper roll with caps added to ends) is sliced in half as shown on the left of the following figure; on the right, a view from the +$x$--axis is shown.
 
@@ -79,6 +82,7 @@ $\displaystyle \Phi_E=\int_{0}^R\int_0^{\pi} E_o\sin\phi Rdzd\phi = -E_oRh\cos\p
 This flux is expected because it is also the flux through the open rectangular area, which has an area of $2Rh$. The field does not change between this rectangular area and the curved surface, and so the flux through each must be the same.
 
 # Divergence Due to Solid Sphere of Charge
+% Copied to notes
 
 Outside of a solid sphere of radius $R$ with uniformly distributed charge $Q$, the field is
 
@@ -113,6 +117,7 @@ $\displaystyle\boldsymbol{\nabla}\cdot\mathbf{E}=kQ\frac{1}{r^2}\frac{\partial r
 The plot is a horizontal line of amplitude $\rho_o/\epsilon_o$ for $r\lt R$ and zero for $r \gt R$. (If I ask you to plot something, I expect to see a plot even if in the solutions I sometimes don't provide a plot.)
 
 # Symmetry
+% Copied to notes
 
 Identify at least one (a) geometrical and (b) cancellation symmetries to make statements about the electric field in the $x$--$y$ plane that results from infinite lines of charge that are parallel to the $z$--axis as shown in the following figure. The equation for the electric field due to a line of charge is $\mathbf{E}(s')=2k\lambda \mathbf{\hat{s}}'/s'$, where $s'$ is the perpendicular distance from the line as shown in the diagram.
 
@@ -122,13 +127,12 @@ Use a diagram to justify any statements made for (b).
 
 **Answer:**
 
-% Copied to notes
-
 (a) The charge distribution is symmetric about the $x$--axis, so the electric field vectors for a point at $y\gt 0$ will be the same as that for $y\lt 0$ except with the $E_y$ having the opposite sign. The charge distribution is symmetric about the $y$--axis, so the electric field vectors for a point at $x\gt 0$ will be the same as that for $x\lt 0$ except with the $E_x$ having the opposite sign. 
 
 (b) At a point on the $y$--axis the horizontal electric field created by a line at $+x$ will cancel that of a line at $-x$, so the field will only have a $y$--component.
 
 # Binomial Expansion
+% Copied to Notes
 
 Approximate ${1}/{\sqrt{a + x}}$ using the binomial expansion to first order in $x$. Check your answer by using plugging $a=1$ and $x=0.1$ into the given equation and your approximation. They should be close.
 

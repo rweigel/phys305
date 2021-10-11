@@ -34,7 +34,7 @@ There are two vector functions for each coordinate system that you should know t
 1. $\mathbf{U}=r\hat{\mathbf{r}}$ -- the divergence is constant for all $r$
 2. $\mathbf{U}=\hat{\mathbf{r}}/r^2$ -- the divergence is zero for all $r$ except as $r\rightarrow 0$ where it approaches infinity.
 
-### Example
+### Example -- $\text{div}(\mathbf{U})$ for $\mathbf{U}=U_x(x)\xhat$
 
 If $\mathbf{U}=U_x(x)\xhat$ 
 
@@ -88,7 +88,7 @@ In general, we will compute divergences using the formula $\boldsymbol{\nabla}\b
 >
 > $\displaystyle\boldsymbol{\nabla}\bfcdot\mathbf{U}=\frac{\partial U_x(x,y,z)}{\partial x}+\frac{\partial U_y(x,y,z)}{\partial y}+\frac{\partial U_z(x,y,z)}{\partial z}$
 
-### Example
+### Example -- $\mathbf{U}=U_o\xhat$
 
 If $\mathbf{U}=U_o\xhat$, compute $\text{div}(\mathbf{U})$ using $\boldsymbol{\nabla}\bfcdot\mathbf{U}$.
 
@@ -100,7 +100,7 @@ $\displaystyle\boldsymbol{\nabla}\bfcdot\mathbf{U}=\frac{\partial U_x(x,y,z)}{\p
 
 which is the same result found in the previous example using the definition of $\text{div}(\mathbf{U})$
 
-### Example
+### Example -- $\mathbf{U}=U_o\hat{\mathbf{s}}$
 
 If $\mathbf{U}=U_o\hat{\mathbf{s}}$, compute  $\text{div}(\mathbf{U})$ using $\boldsymbol{\nabla}\bfcdot\mathbf{U}$.
 
@@ -128,7 +128,7 @@ For $\mathbf{U}=U_o\hat{\mathbf{s}}$, $U_s=U_o$ and $U_\phi=U_z=0$ and so the la
 
 $\displaystyle\boldsymbol{\nabla}\cdot\mathbf{U}={1 \over s}{\partial \left( s U_s  \right) \over \partial s}=\frac{1}{s}\frac{\partial (sU_o)}{\partial s}=\frac{U_o}{s}=\frac{U_o}{(x^2+y^2)^{1/2}}$
 
-### Problem
+### $\mathbf{U}=U_o\hat{\mathbf{r}}$
 
 Sketch the vector field $\mathbf{U}=U_o\hat{\mathbf{r}}$ and then compute  $\text{div}(\mathbf{U})$ using $\boldsymbol{\nabla}\bfcdot\mathbf{U}$ in two ways:
 
@@ -136,7 +136,7 @@ Sketch the vector field $\mathbf{U}=U_o\hat{\mathbf{r}}$ and then compute  $\tex
 
 2\. using the equation for $\boldsymbol{\nabla}$ fully in spherical coordinates.
 
-### Example
+### Example -- Divergence of $\mathbf{E}$ Due to Solid Sphere of Charge
 
 Outside of a solid and long cylinder of radius $R$ with a uniform linear charge density of $\lambda$, the field is
 
@@ -178,7 +178,9 @@ $\boldsymbol{\nabla}\bfcdot\mathbf{U}=\frac{0}{0}$ if $r=0$.
 
 You may do this using any coordinate system.
 
-### Problem
+### Divergence of $\mathbf{E}$ Due to Solid Sphere of Charge
+
+% Copied to notes
 
 Outside of a solid sphere of radius $R$ with uniformly distributed charge $Q$, the field is
 
@@ -190,6 +192,28 @@ $\displaystyle\mathbf{E}(r)=kQ\frac{r}{R^3}\boldsymbol{\hat{r}}$
 
 Compute $\boldsymbol{\nabla}\bfcdot\mathbf{E}$ using any coordinate system and plot it versus $r$.
 
+**Answer**:
+
+In spherical coordinates
+
+$\displaystyle\boldsymbol{\nabla}\cdot\mathbf{E}={1 \over r^2}{\partial \left( r^2 E_r \right) \over \partial r} + {1 \over r\sin\theta}{\partial \over \partial \theta} \left(  E_\theta\sin\theta \right) + {1 \over r\sin\theta}{\partial E_\phi \over \partial \phi}$
+
+Here we have $E_\theta=E_\phi=0$ inside and outside of the sphere.
+
+Inside, $E_r=kQr/R^3$, so
+
+$\displaystyle\boldsymbol{\nabla}\cdot\mathbf{E}=\frac{kQ}{R^3}\frac{1}{r^2}\frac{\partial r^3}{\partial r}=\frac{3kQ}{R^3}$
+
+Using $k=1/4\pi\epsilon_o$, and $\rho_o=Q/(4/3)\pi R^3$, this can be written as 
+
+$\displaystyle\boldsymbol{\nabla}\cdot\mathbf{E}=\frac{\rho_o}{\epsilon_o}$
+
+Outside, $E_r=kQ/r^2$, so
+
+$\displaystyle\boldsymbol{\nabla}\cdot\mathbf{E}=kQ\frac{1}{r^2}\frac{\partial r^2 (1/r^2)}{\partial r}=kQ\frac{1}{r^2}\frac{\partial (1)}{\partial r}=0\text{ for } r\ne0$
+
+The plot is a horizontal line of amplitude $\rho_o/\epsilon_o$ for $r\lt R$ and zero for $r \gt R$. (If I ask you to plot something, I expect to see a plot even if in the solutions I sometimes don't provide a plot.)
+
 # The Divergence Theorem
 
 See also 1.3.4 of Griffiths.
@@ -200,7 +224,7 @@ $$\int_{\mathcal{V}} (\boldsymbol{\nabla}\bfcdot\mathbf{U}) d\tau=\oint_{\mathca
 
 This is a key vector calculus theorem that is used to derive Gauss's law. The interpretation is that if we add up all of the divergences within a volume $\mathcal{V}$, we will get the same result if we compute the flux through the closed surface $\mathcal{A}$ that encloses the volume.
 
-## Example
+## Example -- $\mathbf{U}=\hat{\mathbf{r}}$
 
 Sketch the vector field $\mathbf{U}=\hat{\mathbf{r}}$ and then verify the divergence theorem using for $\mathcal{V}$ a sphere of radius $R$ centered on the origin.
 
@@ -238,11 +262,13 @@ Therefore,
 
 $\displaystyle\int_{\mathcal{V}} (\boldsymbol{\nabla}\bfcdot\mathbf{U}) d\tau=4\pi R^2=\oint_{\mathcal A} \mathbf{U}\cdot d\mathbf{A}=4\pi R^2$
 
-## Problem
+## Problems
+
+### $\mathbf{U}=r\hat{\mathbf{r}}$
 
 Sketch the vector field $\mathbf{U}=r\hat{\mathbf{r}}$ and then verify the divergence theorem using for $\mathcal{V}$ a sphere of radius $R$ centered on the origin.
 
-## Problem
+### $\mathbf{E}$ Due to Solid Sphere of Charge
 
 Outside of a solid sphere of radius $R$ with uniformly distributed charge $Q$, the field is
 
@@ -257,8 +283,8 @@ Verify the divergence theorem using
 1. the volume $r\le R$ and
 2. the volume $r\ge R$ (note that this volume has two surfaces).
 
-## Problem 
+### Radial Field and Sphere not Centered on Origin
 
-Sketch the vector field  $\mathbf{U}=\hat{\mathbf{r}}/r^2$ and a sphere of radius $R$ centered on $z=2R$.
+Sketch the vector field $\mathbf{U}=\hat{\mathbf{r}}/r^2$ and a sphere of radius $R$ centered on $z=2R$.
 
 Then use the divergence theorem to find the flux $\Phi_U$ through the sphere. If you choose to evaluate a surface integral rather than a volume integral, keep in mind that the normal to this sphere is not simply $\hat{\mathbf{r}}$ because it is not centered on the origin.

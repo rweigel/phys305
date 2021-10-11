@@ -410,6 +410,33 @@ For a source emitting particles with uniform speed $v_s$ in all directions in a 
 
 All of the above statements that apply to flow in a plane rely on the fact that $\sigma v_s$ is inversely proportional to the distance $s$ from the source or sink. In the case of electric flux, the analog to a source or sink is the electric field due to a positive or negative infinite line of charge, which has an electric field that is uniform in all directions and is inversely proportional to the distance from the line.
 
+### Problems
+
+####
+
+% Copied to notes
+
+1\. Explain why the flux through a closed line of arbitrary shape is also equal to the flux through a circle centered on the source when particles are emitted from a source with a uniform speed $v_s$ in a plane. 
+
+<img src="figures/Flux-1D-7a.svg" width="100%"/>
+
+2\. Explain why the flux is zero through a circle that is outside a source that emits particles uniformly in all directions with a speed $v_s$ in a plane. 
+
+<img src="figures/Flux-1D-7b.svg" width="100%"/>
+
+3\. Does result 2\. hold for a source that is outside of a closed loop of arbitrary shape? Briefly justify your answer.
+
+**Answer**
+
+1. If we imagine each dot as a person in a line walking radially outwards, every time a person passes the circle, another person passes the outer curve. (Some students mentioned that there may be a delay between when a person passes the inner line and a person passes the outer line due to the gaps. One needs to imagine that the people are packed very closesly together so that if there is a delay, it is nearly zero. Alternatively, one can state that the long--term average of the number per second of people that pass the outer and inner lines will be the same.)
+
+  Several students attempted to provided advanced arguments that omitted key parts. In general, if a diagram was given to accompany their arguements, the flaw or missing part of their argument would have been clear. The more advanced argument requires the use of Approach II mentioned in the [Flux notes](flux.html#through-a-closed-line).
+
+2. Argument 1. applies here.
+
+3. To prove that the flux is the same for both closed loops in 1. is the same, one would need to use [Approach II](http://localhost:9001/flux.md!#through-a-closed-line) in the notes on flux. The same approach will work in showing that the flux through the circle (or any closed loop shape) is zero when the source is outside of the closed loop.
+
+
 ## Through an Area
 
 ### Through an Open Area
@@ -742,23 +769,25 @@ $\Phi_E^6=\mathbf{E}\cdot \hat{\mathbf{n}}_6A=E_o(\sin 30^\circ\jhat+\cos 30^\ci
 
 ## Problem - Flux Through a Cube III
 
-Find the flux through the faces of the cube with side length $a$ when the electric field is at an angle of $60^\circ$ to the $+z$-axis towards the $+x$-axis.
+Find the flux through each of the faces of the cube with side length $a$ when the electric field is at an angle of $60^\circ$ with respect to the $+z$-axis towards the $+x$-axis.
 
 <img src="figures/Flux-2D-E-Field-5a.svg"/>
 
-%{\bf Answer}:
+{\bf Answer}:
 
-%$\Phi_E^1=E_oA\sin 60^\circ = E_oa^2\sin 60^\circ$
+$\Phi_E^1=E_oA\sin 60^\circ = E_oa^2\sin 60^\circ$
 
-%$\Phi_E^2=0$
+$\Phi_E^2=0$
 
-%$\Phi_E^3=E_oA\cos 60^\circ = E_oa^2\cos 60^\circ$
+$\Phi_E^3=E_oA\cos 60^\circ = E_oa^2\cos 60^\circ$
 
-%$\Phi_E^4=-E_oA\cos 60^\circ = -E_oa^2\cos 60^\circ$
+$\Phi_E^4=-E_oA\cos 60^\circ = -E_oa^2\cos 60^\circ$
 
-%$\Phi_E^5=0$
+$\Phi_E^5=0$
 
-%$\Phi_E^6=-E_oA\sin 60^\circ = -E_oa^2\sin 60^\circ$
+$\Phi_E^6=-E_oA\sin 60^\circ = -E_oa^2\sin 60^\circ$
+
+The total flux is zero, as expected using the flow analogy.
 
 ## Example -- Flux Through a Dome
 
@@ -837,7 +866,7 @@ A key observation is that because the field decreases in proportion to $1/r^2$ a
 
 Repeat the previous problem by starting with $\Phi_E = \int_{\mathcal{A}} \mathbf{E}\cdot d\mathbf{A}$. Show and justify your steps at the level of detail given in previous examples.
 
-## Problem -- Flux Through a Half Cylinder
+# $\Phi_E$ Through a Half Cylinder
 
 A cylindrical shell (like a toilet paper roll with caps added to ends) is sliced in half as shown on the left of the following figure; on the right, a view from the +$x$--axis is shown.
 
@@ -848,4 +877,22 @@ If $\mathbf{E}=E_o\yhat$,
 1\. compute the magnitude of the electric flux through the surface using $\Phi_E = \int_{\mathcal{A}} \mathbf{E}\cdot d\mathbf{A}$. Justify all of your steps for the three integrals that must be evaluated (two caps and curved surface). Recall that a differential element of area on the curved surface of a cylinder of radius $R$ is $Rd\phi dz$ and a differential element on a disk is $sdsd\phi$; and
 
 2\. what is the magnitude of the electric flux through a full cylindrical shell with caps? Justify your answer if you answer without doing a calculation.
+
+**Answer**:
+
+$\Phi_E = \int_{\mathcal{A}} \mathbf{E}\cdot d\mathbf{A}$
+
+For the top, $\mathbf{\hat{n}}=\zhat$, so $d\mathbf{A}=\zhat dA$. As a result the integrand is zero becuase $\mathbf{E}\cdot d\mathbf{A}=E_o\yhat\bfcdot \zhat dA=0$.
+
+For the bottom, $\mathbf{\hat{n}}=-\zhat$, so $d\mathbf{A}=-\zhat dA$. As a result the integrand is zero becuase $\mathbf{E}\cdot d\mathbf{A}=E_o\yhat\bfcdot (-\zhat) dA=0$.
+
+For the curved surface, $\mathbf{\hat{n}}=\mathbf{\hat{s}}$. To do a dot product of this with $\yhat$, we either need to write $\mathbf{\hat{s}}$ in cartesian or $\yhat$ in cylindrical. Using $\mathbf{\hat{s}}=\cos\phi\xhat + \sin\phi\yhat$, gives the dot product $\mathbf{\hat{s}}\bfcdot \yhat=\sin\phi$. The integrand can be written as $\mathbf{E}\cdot d\mathbf{A}=E_o\yhat\bfcdot \mathbf{\hat{s}}dA=E_o\sin\phi dA$. Using $dA=Rdzd\phi$, we need to perform the integral
+
+$\displaystyle \Phi_E=\int_{0}^R\int_0^{\pi} E_o\sin\phi Rdzd\phi = -E_oRh\cos\phi\big|_0^\pi = -EoRh(\cos\pi-\cos 0) = 2E_ohR$
+
+This flux is expected because it is also the flux through the open rectangular area, which has an area of $2Rh$. The field does not change between this rectangular area and the curved surface, and so the flux through each must be the same.
+
+## Problem -- Flux through a Cube
+
+Find the flux through one of the faces of a cube that is centered on the origin due to an electric field of $\mathbf{E}=kq/r^2$. (It will be shown using Gauss's law that the answer is $q/6$. However, in this problem, do the integration.)
 

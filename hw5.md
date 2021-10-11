@@ -5,6 +5,7 @@ Send your solutions to the email address rweigel+phys305@gmu.edu as a scanned PD
 This homework covers [Capacitance](capacitance.html) and [Boundary Value Problems](boundary_value_problems.html). See also the sections of Griffiths referenced in these notes.
 
 # Spherical Capacitor
+% Copied to notes
 
 Charge is uniformly distributed on two concentric spherical conducting shells, the cross-section of which is shown. Both shells have a thickness of $t$. The inner shell has an outer radius of $a$ and net charge of $-Q$. The outer shell has an inner radius of $b$ and a net charge of $+Q$. 
 
@@ -93,7 +94,7 @@ $\displaystyle V(r)=\frac{V_o}{\frac{1}{a}-\frac{1}{b}}\left(\frac{1}{a}-\frac{1
 which will be useful for checking the answer in the next problem.
 
 # 1-D Boundary Value Problem
-
+% Copied to Notes
 
 In spherical coordinates, the Laplacian is
 
@@ -185,8 +186,8 @@ $\displaystyle \mathbf{E}(a)=-\frac{Q/4\pi b^2}{\epsilon_o}\hat{\mathbf{r}}$
 
 This is consistent with the formula $\mathbf{E}=(\sigma/\epsilon_o)\hat{\mathbf{n}}$ because at $r=b$, $\hat{\mathbf{n}}=-\hat{\mathbf{r}}$ and $\sigma=+Q/4\pi a^2$.
 
-
 # 2--D Laplacian
+% Copied to notes
 
 Laplace's equation in cartesian coordinates when $V=V(x,y)$ is
 

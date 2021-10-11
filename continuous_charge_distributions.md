@@ -431,6 +431,83 @@ Check the exact answer found previously for the electric field on the $z$–axis
 
 ## Line of Charge
 
+A line of charge with uniform charge density of $\lambda_o$ extends from $0$ to $L$ on the $x$-axis, where $L>0$.
+
+Follow and show the steps given in the notes and find $\mathbf{E}$ on the $x$--axis for $x>L$ in terms of one or more of $k,\lambda_o,L,x,$ and cartesian coordinates and unit vectors.
+
+**Answer**:
+
+Students who had difficulty with this problem typically did not follow the steps outlined in the notes. The motivation for the steps is that they help students who have difficulty with these types of problems.
+
+The steps are
+1. Identify Answer Features
+2. Find $dl$, $dA$, or $d\tau$
+3. Find ${\hat{\textbf{\char"0509}}}/{\char"0509^2}$
+4. Check $d\mathbf{E}$
+5. Simplify $d\mathbf{E}$ using Symmetry Arguments
+6. Integrate $d\mathbf{E}$
+7. Check Answer
+
+1\. Identify Answer Features
+
+We are asked for the field on the $x$--axis. For $x\gg L$, the line of charge looks like a point charge near the origin, so we expect $E_x=+k\lambda_oL/x^2$. We also expect that as $x\rightarrow L$, the field should become large.
+
+2\. Find $dl$, $dA$, or $d\tau$
+
+The charges are distributed on a line, so we need $dl$. In this case, $dl=dx'$ because the charges are on the $x$--axis.
+
+3\. Find ${\hat{\textbf{\char"0509}}}/{\char"0509^2}$
+
+$\mathbf{r}=x\xhat$ and $\mathbf{r}'=x'\xhat$
+
+$\textbf{\char"0509}=(x-x')\xhat$ and $\char"0509=|\textbf{\char"0509}|=\sqrt{(x-x')^2}=|x-x'|$
+
+$\displaystyle\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}=\frac{(x-x')\phantom{^3}}{|x-x'|^3}\xhat$
+
+We are asked for the field for $x\gt L$. In this case, $x>x'$ (the point of interest is always to the right of a differential charge), so $|x-x'|=x-x'$ and we can write
+
+$\displaystyle\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}=\frac{(x-x')\phantom{^3}}{(x-x')^3}\xhat=\frac{1}{(x-x')^2}\xhat$
+
+4\. Check $d\mathbf{E}$
+
+$d\mathbf{E}=\displaystyle\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}dq$
+
+Where $dq=\lambda_odx'$ from step 2. and
+
+$\displaystyle\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}=\frac{1}{(x-x')^2}\xhat$
+
+from step 3. Thus,
+
+$\displaystyle d\mathbf{E}=\frac{\lambda_odx'}{(x-x')^2}\xhat$
+
+This $d\mathbf{E}$ corresponds to the equation one would write for a point charge $dq=\lambda_odx'$ at $x'$ at a location $x>x'$. If $x\gg x'$, the field becomes that for $dq$ at the origin, as expected.
+
+6\. Integrate $d\mathbf{E}$
+
+$\displaystyle\mathbf{E}=\int_{0}^L\frac{\lambda_odx'}{(x-x')^2}\xhat$
+
+$\xhat$ and $\lambda_o$ do not depend on $dx'$, so they can be factored out of the integral.
+
+$\displaystyle\mathbf{E}=\lambda_o\xhat\int_{0}^L\frac{dx'}{(x-x')^2}$
+
+Many students who did not follow the steps wrote an upper limit of $\infty$, possibly because they were basing their solution on a textbook solution for an infinite line of charge.
+
+Integration gives
+
+$\displaystyle\mathbf{E}=\lambda_o\xhat\left[-\frac{1}{x-x'}\right]_0^L=\lambda_o\xhat\left[-\frac{1}{x-L}+\frac{1}{x}\right]$
+
+Simplifying gives
+
+$\displaystyle\mathbf{E}=\frac{L\lambda_o}{x(x-L)}\xhat$
+
+7\. Check Answer
+
+When $x\gg L$, $E_x$ approaches $L\lambda/x^2$.
+
+As $x\rightarrow L$, $E_x$ becomes large.
+
+## Line of Charge
+
 A line of charge with a uniform charge density of $\lambda_o$ extends from $0$ to $L$ on the $x$-axis, wh
 
 Follow and show the steps given in the notes and find $\mathbf{E}$ on the $y$--axis in terms of one or more of $k,\lambda_o,L,y$ and cartesian unit vectors.

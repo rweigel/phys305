@@ -28,6 +28,7 @@
 * [Capacitance](capacitance.html)
 * [Boundary Value Problems](boundary_value_problems.html)
 * [Method of Images](method_of_images.html)
+* [Monopole Expansion](monopole_expansion.html)
 
 # Class Schedule
 
@@ -119,7 +120,7 @@
 
 * [Class Video](https://gmu.zoom.us/rec/share/KBDm6YSwJu-RKwYEDQEUh01bVIOrvXyF4fP8twTn2uVgPk4vja5vxBbPAHCt9Pfd.3vGSB_o0zQ4ZpRYF)
 * [HW #6](hw6.html) due.
-* Assign [HW #7](hw7.html) covering the method of images and multipole expansion. 
+* Assign [HW #7](hw7.html) covering the [method of images](method_of_images.html) and the [monopole expansion](monopole_expansion.html). 
 
 ## Tuesday, October 12th
 

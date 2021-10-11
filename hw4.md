@@ -3,6 +3,7 @@ Due on Thursday, September 23rd at 3:00 pm.
 Send your solutions to the email address rweigel+phys305@gmu.edu as a scanned PDF. Use a file name of `Yourlastname_PHYS305_HW4.pdf` (one file only, please). Capitalize the first letter in your last name and use caps and underscores as indicated. **Include your name on the first sheet**.
 
 # Gauss's law
+% Copied to notes
 
 1\. Use Gauss's law to find the electric field near the center (from $s=0$ to $s=3R$) of a long solid nonconducting cylinder  of length $L$, radius $R$, and uniform charge density $\rho_o$. Assume $L\gg R$.
 
@@ -74,6 +75,7 @@ $\displaystyle\mathbf{E}(s)=\frac{\rho_o R^2}{2\epsilon_o}\frac{\hat{\mathbf{s}}
 <img src="figures/Gauss_Law_Long_Solid_Cylinder_Plot.svg"/>
 
 # Conducting Slab Between Charged Sheets
+% Copied to notes
 
 A conducting slab is centered on the origin, has thickness $t$, surface area $A=w^2$, and has a net charge of $Q$. At $x=\pm 5t$ there are large nonconducting sheets with uniform charge density $\pm \sigma_o$. The thickness $t$ of the slab is much smaller than $w$.
 
@@ -168,6 +170,7 @@ The final plot is shown in the following figure. It was assumed that $Q/A=4\sigm
 <img src="figures/Conductors-Slab-Between-Sheets-Solution.svg"/>
 
 # Conducting Sphere with a Cavity
+% Copied to notes
 
 The following figure shows the cross--section of a spherical conductor of radius $2R$ with a spherical cavity of radius $R$, both of which are centered on the origin. There is a nonconducting spherical shell that is also centered on the origin, has a $3q$ uniformly distributed on its surface, and a radius $3R$. At the origin, there is a charge $q$.
 
@@ -235,6 +238,7 @@ $\displaystyle V(r)=kq\left(\frac{1}{2R}+\frac{1}{r}\right)$
 <img src="figures/Conductors_Sphere_with_Cavity_with_Shell_Solution.svg"/>
 
 # Work Required to Assemble Charges
+% Copied to notes
 
 For the following charge distribution, compute 
 

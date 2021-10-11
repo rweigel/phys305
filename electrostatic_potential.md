@@ -462,6 +462,8 @@ Another consideration is the energy required to create a charge distribution. Th
 * $qV(\mathbf{r})$ is the work required to move $q$ to $\mathbf{r}$ against the electric field due to all of the other charges. The other charges have been "preassembled" 
 * $W$ is the work required to assemble a charge distribution.
 
+## Example -- Charges on $x$--Axis
+
 To compute $W$, for the following charge distribution, we need to compute the energy required to move each charge from infinity to their final position.
 
 <img src="figures/Electric_Potential_3_Charges_in_Line.svg"/>
@@ -480,15 +482,38 @@ $$W=k\frac{q_1q_2}{{\char"0509}\_{12}} + k\frac{q_1q_3}{{\char"0509}\_{13}} + k\
 
 where $\mathbf{r}\_1=-b\xhat$, $\mathbf{r}\_2=0$, and $\mathbf{r}\_3=b\xhat$ and ${\char"0509}\_{12}=|\mathbf{r}\_1-\mathbf{r}\_2|$, ${\char"0509}\_{13}=|\mathbf{r}\_1-\mathbf{r}\_3|$, and ${\char"0509}\_{23}=|\mathbf{r}\_2-\mathbf{r}\_3|$
 
-## Problem
+## Problem -- Charges at Corners of Triangle
 
-Given the following charge distribution
+For the following charge distribution, compute 
+
+1. the electric potential at the origin, 
+2. the electric potential at any position $x,y$, and
+2. the work required to assemble the charge distribution.
 
 <img src="figures/Electric_Potential_3_Charges_on_Triangle.svg"/>
 
-compute
+**Answer**
 
-1. the work required to create the charge distribution,
-2. $V$ at the origin, and
-3. $V$ at the position of $q_3$ if it was not there.
+1\. A common error was having a term in $V$ that was $kq_1/(-b)$. The denominator of potential is a length, so it must be positive. Also, many student wrote an answer for part 2. that was correct but when $x=y=0$ was plugged in, they did not get the same equation they wrote for part 1.
 
+1\. and 2\.
+
+$V(\mathbf{r})=k \sum_{i=1}^3 {\frac{q_i}{\char"0509_i}}$
+
+$\char"0509_1=|\mathbf{r}-\mathbf{r}_1'|=|x\xhat+y\yhat-(-b)\xhat|=\sqrt{(x+b)^2+y^2}$
+
+$\char"0509_2=|\mathbf{r}-\mathbf{r}_2'|=|x\xhat+y\yhat-b\xhat|=\sqrt{(x-b)^2+y^2}$
+
+$\char"0509_3=|\mathbf{r}-\mathbf{r}_3'|=|x\xhat+y\yhat-b\yhat|=\sqrt{x^2+(y-b)^2}$
+
+So the answer to 2. is
+
+$\displaystyle V(x,y)=k\left(\frac{q_1}{\sqrt{(x+b)^2+y^2}}+\frac{q_2}{\sqrt{(x-b)^2+y^2}}+\frac{q_3}{\sqrt{x^2+(y-b)^2}}\right)$
+
+Plugging in $x=y=0$ gives the answer to 1. 
+
+$\displaystyle V(x,y)=k\left(\frac{q_1}{b}+\frac{q_2}{b}+\frac{q_3}{b}\right)$
+
+3\. 
+
+$\displaystyle W=\frac{kq_1q_2}{\sqrt{2}b}+\frac{kq_1q_3}{2b} + \frac{kq_2q_3}{\sqrt{2}b}$

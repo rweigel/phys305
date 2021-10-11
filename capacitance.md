@@ -91,7 +91,7 @@ The general technique for computing capacitance when Gauss's law applies is:
 
 \newpage
 
-## Example
+## Example -- Parallel Plates
 
 An equal and opposite amount of charge is placed on two large, conducting, and parallel plates as shown on the left. On the right, a side view of the plates is shown. The area of the plates is $A=w^2$ and $w\gg d$ (this constraint allows us to assume that the charge distribution will be approximately uniform).
 
@@ -181,9 +181,9 @@ To help draw the plot, I've added a diagram showing the direction and magnitude 
 
 <img src="figures/Parallel_Plates_Example_Answer_Plot.svg"/>
 
-## Problem
+## Problem -- Spherical Capacitor
 
-Charge is uniformly distributed on two concentric spherical conducting shells, the cross-section of which is shown. Both shells have a thickness of $t$. The inner shell has an outer radius of $a$. The outer shell has an inner radius of $b$.
+Charge is uniformly distributed on two concentric spherical conducting shells, the cross-section of which is shown. Both shells have a thickness of $t$. The inner shell has an outer radius of $a$ and net charge of $-Q$. The outer shell has an inner radius of $b$ and a net charge of $+Q$. 
 
 <img src="figures/Spherical.svg"/>
 
@@ -193,11 +193,99 @@ Charge is uniformly distributed on two concentric spherical conducting shells, t
 
 2\. What is the electric field in each of the 5 labeled regions? Region $1.$ is the empty volume inside of the inner conductor, region $2.$ is the volume of the inner conductor, region $3.$ is the empty volume between the conductors, region $4.$ is the volume of the outer conductor, and region $5.$ is the region outside of the outer conductor.
 
-3\. How much work will it take to move a charge $q_o$ from the outer surface of the inner shell to the inner surface of the outer shell? Said another way, what is the difference in potential energy, $PE_b-PE_a$, for this charge?
+%3\. How much work will it take to move a charge $q_o$ from the outer surface of the inner shell to the inner surface of the outer shell? Said another way, what is the difference in potential energy, $PE_b-PE_a$, for this charge?
 
-4\. What is the potential difference, $V_{b}-V_{a}$?
+3\. What is the potential difference, $V(b)-V(a)$?
 
-5\. Write the capacitance in terms of $\epsilon_o$, $a$, and $b$.
+4\. Write the capacitance in terms of $\epsilon_o$, $a$, and $b$.
+
+% In the future, remove Q from diagram as some thought it meant +Q was on outer part of outer shell.
+
+**Answer**:
+
+A common error was assuming that $+Q$ was on the outer surface of the outer conductor because of the position of the label on the diagram. As will be shown, this is not possible.
+
+The system is invariant with respect to rotation about any axis. As a result, the charge density on any surface must be uniform and any field must be radial. Any electric field must also be invariant with respect to rotation about any axis.
+
+1a. A Gaussian sphere centered on the origin with a radius $a-t\lt r\lt a$ will have $E=0$ on its surface because its surface is inside a conductor. In this case, $\Phi_E=0$. Thus, $Q_{encl}=0$. All of the charges on the inner conductor must be on its surface, so $Q$ at $r=a-t$ must be zero. As a result, all of the net $-Q$ on the inner conductor must be on its outer surface.
+
+1b. A Gaussian sphere centered on the origin with radius $b \lt r\lt b+t$ will have no charge enclosed, so $\Phi_E=0$. Because the field is radial, the flux integral simplifies to $\Phi_E=E_r 4\pi r^2$. Thus, $\Phi_E=0$ implies that $E_r=0$ and so $Q_{encl}=0$. The total charge enclosed is the charge on the inner conductor and the charge on the inner surface of the outer is $Q_{encl}=0=-Q + q(r=b)$. From this it follows that the charge on the inner surface of the outer conductor is $+Q$.
+
+2.
+
+Region 1: A Gaussian sphere centered on the origin with radius $0 \lt r\lt a-t$ will have no charge enclosed, so $\Phi_E=0$. Because the field is radial, the flux integral simplifies to $\Phi_E=E_r 4\pi r^2$. Thus, $\Phi_E=0$ implies that $E_r=0$.for $r\ne 0$. At $r=0$, $E_r$ must be zero because if it were non-zero, it would not be invariant with respect to rotation about any axis. From this it follows that $\mathbf{E}=0$.
+
+A common error was to state that because no charge is enclosed, $\mathbf{E}$. This statement is not true in general. A Gaussian sphere with a point charge outside of it will have no charge enclosed, but $\mathbf{E}$ is not zero everywhere on the Gaussian surface.
+
+Region 2: Zero because inside a conductor.
+
+Region 3: Due to the symmetry argument, the flux integal similifies to $\Phi_E=E_r4\pi r^2$. The enclosed charge is $-Q$, so $E_r=-Q/4\pi \epsilon_o r^2$ and $\mathbf{E}=-Q\hat{\mathbf{r}}/4\pi \epsilon_o r^2$ because the symmetry argument tells use that $\mathbf{E}$ may only have a radial component.
+
+Region 4: Zero because inside a conductor.
+
+Region 5: $Q_{encl}=0$ and the flux integral simplifies to $E_r4\pi r^2$ due to the symmetry arguments. From this it follows that $E_r=0$ and $\mathbf{E}=0$.
+
+3.
+
+In general,
+
+$\displaystyle V(r)=V(a)-\int_a^r \mathbf{E}\bfcdot d\mathbf{l}$
+
+If we choose $d\mathbf{l}=dr'\hat{\mathbf{r}}$, then
+
+$\displaystyle V(r)=V(a)+\frac{Q}{4\pi}\int_a^r \frac{1}{r'^2}dr'$
+
+and
+
+$\displaystyle V(r)=V(a)+\frac{Q}{4\pi\epsilon_o}\left(\frac{1}{a}-\frac{1}{r}\right)$
+
+When $r=b$, we have
+
+$\displaystyle V(b)-V(a)=\frac{Q}{4\pi\epsilon_o}\left(\frac{1}{a}-\frac{1}{b}\right)$
+
+Note that $V(b)-V(a)$ is positive, which is expected because moving from $a$ to $b$ we are moving against the direction of $\mathbf{E}$.
+
+4.
+
+In this problem, we put a charge of $\pm Q$ on the capacitor surfaces and a potential difference of $V(b)-V(a)$ was the result. Thus,
+
+$\displaystyle C=\frac{Q}{V(b)-V(a)} = \frac{4\pi\epsilon_o}{\frac{1}{a}-\frac{1}{b}}$
+
+----
+
+In preparation for the next problem, note that using this equation, we can re--write
+
+$\displaystyle V(r)=V(a)+\frac{Q}{4\pi\epsilon_o}\left(\frac{1}{a}-\frac{1}{r}\right)$
+
+as
+
+$\displaystyle V(r)=V(a)+\frac{V(b)-V(a)}{\frac{1}{a}-\frac{1}{b}}\left(\frac{1}{a}-\frac{1}{r}\right)$
+
+As a check of the algebra, plugging in $r=a$ gives $V(a)$ and $r=b$ gives $V(b)$.
+
+If we choose to define $V(b)=V_o$ and $V(a)=0$, we have
+
+$\displaystyle V(r)=\frac{V_o}{\frac{1}{a}-\frac{1}{b}}\left(\frac{1}{a}-\frac{1}{r}\right)$
+
+which will be useful for checking the answer in the next problem.
+
+%## Problem
+
+%Charge is uniformly distributed on two concentric spherical conducting shells, the cross-section of which is shown. Both shells have a thickness of $t$. The inner shell has an outer radius of $a$. The outer shell has an inner radius of $b$.
+
+%<img src="figures/Spherical.svg"/>
+
+%1a. Use Gauss's law to show that there can be no charge on the inner surface of the inner conductor. 
+
+%1b. Use Gauss's law to show that the charge on the inner surface of the outer conductor is $+Q$. 
+
+%2\. What is the electric field in each of the 5 labeled regions? Region $1.$ is the empty volume inside of the inner conductor, region $2.$ is the volume of the inner conductor, region $3.$ is the empty volume between the conductors, region $4.$ is the volume of the outer conductor, and region $5.$ is the region outside of the outer conductor.
+
+%3\. How much work will it take to move a charge $q_o$ from the outer surface of the inner shell to the inner surface of the outer shell? Said another way, what is the difference in potential energy, $PE_b-PE_a$, for this charge?
+
+%4\. What is the potential difference, $V_{b}-V_{a}$?
+
+%5\. Write the capacitance in terms of $\epsilon_o$, $a$, and $b$.
 
 %1a. {\bf Answer}: Consider a Gaussian sphere with the same center as the shells and a radius between \(a-t\) and \(a\) (i.e., inside the inner conductor). The electric field at any point on the Gaussian sphere will be zero because the surface is inside a conductor. From Gauss's law, it follows that the charge enclosed by the Gaussian sphere is zero. Because it is a conductor, the charges on the inner shell must be on either its inner surface or its outer surface; as a result, the total enclosed charge for this Gaussian sphere (which must be zero from Gauss's law) is the charge on the inner surface, so the charge on the inner surface must be zero. From this we can conclude that all of the $-Q$ on the inner shell resides on its outer surface. (You did a problem similar to this on another tutorial - the difference was that there was a point charge at the center of the shell; in that problem, there was charge on the inside surface of the shell.)
 

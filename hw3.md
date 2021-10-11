@@ -3,6 +3,7 @@ Due on Thursday, September 16th at 3:00 pm.
 Send your solutions to the email address rweigel+phys305@gmu.edu as a scanned PDF. Use a file name of `Yourlastname_PHYS305_HW3.pdf` (one file only please). Capitalize the first letter in your last name and use caps and underscores as indicated. **Include your name on the first sheet**.
 
 # Discrete Charge Distributions
+% Copied to notes
 
 Two point charges $q$ are located at $x=\pm b$.
 
@@ -48,6 +49,7 @@ Two point charges $q$ are located at $x=\pm b$.
 # Charge Densities
 
 ## Solid cylinder
+% Copied to notes
 
 A solid cylinder of radius $R$ and length $L$ has a charge of $+3Q$ uniformly distributed within it. The blue Gaussian cylinder shown has the same center line as the solid cylinder, length $l$, and radius $s$.
 
@@ -71,6 +73,7 @@ _Note: An earlier version of this solution had $Q$ in place of $3Q$._
 <img src="figures/Charge_Densities_Solid_Cylinder.svg"/>
 
 ## Solid Sphere
+% Copied to notes
 
 A solid sphere of radius $R$ that is centered on the origin has a charge density of $\rho(r)=\rho_o r^2/R^2$.
 
@@ -87,6 +90,7 @@ $r\ge R$: $\displaystyle Q_{encl}=\rho_o\frac{4\pi}{5}R^3$
 <img src="figures/Charge_Densities_Sphere.svg"/>
 
 # Continuous Charge Distributions I
+% Copied to notes
 
 A line of charge with uniform charge density of $\lambda_o$ extends from $0$ to $L$ on the $x$-axis, where $L>0$.
 
@@ -168,7 +172,6 @@ When $x\gg L$, $E_x$ approaches $L\lambda/x^2$.
 As $x\rightarrow L$, $E_x$ becomes large.
 
 # Continuous Charge Distributions II
-
 % Copied to notes
 
 A uniformly charged disk of radius $R$ with a total charge $Q$ is in the $x$--$y$ plane and centered on the origin.
@@ -286,7 +289,6 @@ Substituing for $\sigma$ gives
 $$\mathbf{E} \simeq \frac{Q}{4\pi\epsilon_0} \frac{1}{z^2}\frac{z}{|z|}\hat{\mathbf{z}}$$
 
 # Extra Credit
-
 % Copied to notes
 
 A line of charge in the $x$-$y$ plane has a uniform charge density of $\lambda_o$, passes through the origin, is at an angle of $\phi$ with the $x$-axis, and extends from $x=-b$ to $x=b$.

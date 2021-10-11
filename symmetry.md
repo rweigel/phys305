@@ -53,6 +53,8 @@ Use symmetry arguments to explain why the electric field due to an infinitely lo
 
 If the charge density depends on the perpendicular distance from the centerline of the cylinder, does your answer change?
 
+% See gauss_law.html#problem-long-cylinder for symmetry answer
+
 ## Problem -- Infinite Lines of Charge I.
 
 Identify at least one (a) geometrical and (b) cancellation symmetries to make statements about the electric field in the $x$--$y$ plane that results from infinite lines of charge that are parallel to the $z$--axis as shown in the following figure. The equation for the electric field due to a line of charge is $\mathbf{E}(s')=2k\lambda \mathbf{\hat{s}}'/s'$, where $s'$ is the perpendicular distance from the line as shown in the diagram.

@@ -344,6 +344,28 @@ A solid cylinder of radius $R$ and length $L$ has a charge of $+3Q$ uniformly di
 
 %5\. As noted in part 2, the charge enclosed is $Q_{encl}=3Q$ so it is constant. 
 
+## Problem -- Solid Cylinder
+
+A solid cylinder of radius $R$ and length $L$ has a charge of $+3Q$ uniformly distributed within it. The blue Gaussian cylinder shown has the same center line as the solid cylinder, length $l$, and radius $s$.
+
+<img src="figures/Solid_Cylinder_and_Gaussian_Cylinder.png" width="50%"/>
+
+1. Find the volume charge density of the charged cylinder and its charge per unit length.
+
+2. Find an equation that relates $Q_{encl}$, the charge inside the Gaussian cylinder, and $s$. Draw a plot of $Q_{encl}$ vs $s$.
+
+**Answer**
+
+_Note: An earlier version of this solution had $Q$ in place of $3Q$._
+
+1. $\rho=3Q/(\pi R^2 L)$; $3Q = \lambda L$, so $\lambda = 3Q/L$
+2. &nbsp;
+
+   $s \le R$, $Q_{encl}=\rho \pi s^2 l=3Q(s^2/R^2)(l/L)$
+   
+   $s\ge R$, $Q_{encl}=\rho\pi R^2 l = 3Q(l/L)$
+
+<img src="figures/Charge_Densities_Solid_Cylinder.svg"/>
 ## Problem -- Spherical shell
 
 A sphere of radius $R$ has a charge of $+3Q$ distributed _on its surface_.
@@ -376,6 +398,22 @@ A sphere of radius $R$ has a charge of $+3Q$ distributed uniformly _throughout_ 
 1. Find the charge density of the sphere.
 
 2. Find an equation that relates $Q_{encl}$ and $r$ for a Gaussian sphere of radius $r$ with the same center as the charge sphere. Plot $Q_{encl}$ vs $r$.
+
+## Problem -- Solid sphere
+
+A solid sphere of radius $R$ that is centered on the origin has a charge density of $\rho(r)=\rho_o r^2/R^2$.
+
+Compute and plot the charge enclosed in a Gaussian sphere centered on the origin versus the radius of the Gaussian sphere.
+
+**Answer**:
+
+A common error was to write $Q_{encl}=\rho V$. This is only true if $\rho$ is constant within $V$. To avoid this type of error, always start by writing the general equation: $Q_{encl}=\int \rho d\tau$. (Do this for Gauss's law in integral form -- don't start with $\phi_E=EA$, start with $\phi_E=\oint \mathbf{E}\bfcdot d\mathbf{A}$.)
+
+$r\le R$: $\displaystyle Q_{encl}=\int \rho(r) d\tau=4\pi\int_0^r\rho_o(r'^2/R^2)r'^2dr'=\rho_o\frac{4\pi}{5}\frac{r^5}{R^2}$
+
+$r\ge R$: $\displaystyle Q_{encl}=\rho_o\frac{4\pi}{5}R^3$
+
+<img src="figures/Charge_Densities_Sphere.svg"/>
 
 ## Problem -- Sheet
 
