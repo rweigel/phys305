@@ -1,10 +1,10 @@
 # Introduction
 
-Given the locations of a collection of point charges, one can always find the exact potential by summing the potential due to each point charge. For a single point charge $q$ at $\mathbf{r}'$, the potential at any location in space is
+For a single point charge $q$ at $\mathbf{r}'$, the potential at any location in space is
 
 $$V(\mathbf{r})=k{\frac{q}{\char"0509}}=\frac{q}{|\mathbf{r}-\mathbf{r}'|}$$
 
-Often we are interested in an approximation of this potential at points that are far away from any of the point charges.
+Often we are interested in an approximation of this potential at points that are far away.
 
 Previously, the [binomial expansion](binomial_expansion.html) was used to find the electric field for point charges along an axis and only at locations on the same axis. The same approximation procedure that is used for the electric field may be used for potential. (In general, it is often easier to start with finding the scalar $V$ and then using it to find the vector $\mathbf{E}$.)
 
@@ -40,7 +40,7 @@ Definining
 
 $$\displaystyle \delta = - 2\frac{z'}{r}\cos\theta + \frac{z'^2}{r^2}$$
 
-this is
+gives
 
 $$V=\frac{kq}{r}\frac{1}{\sqrt{1 +\delta}}$$
 
@@ -58,17 +58,17 @@ $$V=\frac{kq}{r}\left[1+\frac{d}{r}\cos\theta + \left(\frac{d}{r}\right)^2\left(
 
 where the $...$ terms are proportional to $(d/r)^3$, $(d/r)^4$, .... When only the term proportional to $(d/r)^2$ is kept, the result is referred to as "$V$ to second order in $d/r$". Equivalently, one can say that this is $V$ to third order in $1/r$ (after multiplying through by $1/r$, the highest power of $1/r$ is $1/r^3$) .
 
-### Problem -- Point Charge on $y$--axis
+## Problem -- Point Charge on $y$--axis
 
-Suppose $\mathbf{r}'=y'\yhat$, find and equation for $V(r,\theta,\phi)$ to second order in $d/r$. 
+If $\mathbf{r}'=y'\yhat$, find an equation for $V(r,\theta,\phi)$ to second order in $d/r$. 
 
-Check your answer by plugging in $\theta=\pi/2$ and $\phi=\pi/2$ so that $r=y$. For $y\gg y'$, does your equation match the expected potential from approximating $V(y)=kq/|y-y'|$?
+Check your answer by plugging in $\theta=\pi/2$ and $\phi=\pi/2$ so that $r=y$. For $y\gg y'$, does your equation match the expected potential from approximating $V(y)=kq/|y-y'|$ for $y\gg y'$?
 
-### Problem -- Dipole
+## Problem -- Dipole
 
-If $\pm q$ is at $z=\pm d$, find the potential to first order in $d/r$.
+If $\pm q$ are at $z=\pm d$, find the potential to first order in $d/r$.
 
-Use $V$ to compute $\mathbf{E}$ in the $x--y$ plane. Is the direction of $\mathbf{E}$ as expected?
+Use $V$ to compute $\mathbf{E}$ in the $x--y$ plane. Is $\mathbf{E}$ in expected direction?
 
 # Generalization 2
 
@@ -78,19 +78,19 @@ $$\cos\alpha = \frac{\mathbf{r}\bfcdot\mathbf{r}'}{|\mathbf{r}||\mathbf{r}'|}=\f
 
 <img src="figures/Monopole_Expansion_II.svg"/>
 
-To derive an expansion for this configuration, the same steps used in Generalization I can be used, except with the replacement of $z'$ with $r'$ and $\theta$ with $\alpha$. With this replacement, we have
+To derive an expansion for this configuration, the same steps used in Generalization I can be used but with the replacement of $z'$ with $r'$ and $\theta$ with $\alpha$. With this replacement, we have
 
 $$V=\frac{kq}{r}\left[1+\frac{r'}{r}\cos\alpha + \left(\frac{r'}{r}\right)^2\left(\frac{3\cos^2\alpha-1}{2}\right)+ ...\right]$$
 
-The angle--dependent terms that multiply the powers of $r'/r$ are related to [the Legendre polynomials](https://en.wikipedia.org/wiki/Legendre_polynomials). These polynomials also appear in the solution to Laplace's equation in spherical coordinates. Labeling these terms as $P_0$, $P_1$, ..., gives
+The angle--dependent terms that are multiplied by the powers of $r'/r$ are related to [the Legendre polynomials](https://en.wikipedia.org/wiki/Legendre_polynomials). These polynomials also appear in the solution to Laplace's equation in spherical coordinates. Labeling these terms as $P_0$, $P_1$, ..., and including their functional dependence on $\cos\alpha$ gives
 
-$$V=\frac{kq}{r}\left[P_0+\frac{r'}{r}P_1 + \left(\frac{r'}{r}\right)^2P_2+ ...\right]$$
+$$V=\frac{kq}{r}\left[P_0(\cos\alpha)+\frac{r'}{r}P_1(\cos\alpha) + \left(\frac{r'}{r}\right)^2P_2(\cos\alpha) + ...\right]$$
 
 Or, more generally,
 
 $$V = \frac{kq}{r}\sum_{n=0}^\infty\left(\frac{r'}{r}\right)^nP_n(\cos\alpha)$$
 
-where the first three terms are $P_0=1$, $P_1=\cos\alpha$, $P_2=(3\cos^2\alpha-1)/2$. Two write these terms as Legendre poloynomials, use the definition $u=\cos\alpha$ so that $P_0=1$, $P_1=u$, and $P_2=(3u^2-1)/2$.
+where the first three terms are $P_0=1$, $P_1=\cos\alpha$, $P_2=(3\cos^2\alpha-1)/2$. To write these terms as Legendre poloynomials, use the definition $u=\cos\alpha$ so that $P_0=1$, $P_1=u$, and $P_2=(3u^2-1)/2$.
 
 ## Example
 
@@ -130,11 +130,11 @@ Factoring out $z$
 
 $\displaystyle V(z)=\frac{kq}{z}\frac{1}{1-\frac{d}{z}}$
 
-The [binomial expansion](binomial_expansion.html) to third order in $\delta$ is
+The [binomial expansion](binomial_expansion.html) to third order in $\Delta$ is
 
 $\displaystyle \frac{1}{(1+\Delta)^n} = 1 - n\Delta + \frac{n(n+1)}{2!}\Delta^2+\frac{n(n+1)(n+2)}{3!}\Delta^3 + ...$
 
-With $n=1$ and $\Delta = d/z$, this is
+With $n=1$ and $\Delta = d/z$, we conclude
 
 $\displaystyle V(z)=\frac{kq}{z}\left[1+\frac{d}{z}+\left(\frac{d}{z}\right)^2+\left(\frac{d}{z}\right)^3+...\right]$
 

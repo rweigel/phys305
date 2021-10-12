@@ -124,15 +124,14 @@
 
 ## Tuesday, October 12th
 
-* Post mid--term review problems
+* Post [mid--term review study guide](midterm.html).
 * No class (Monday classes/labs meet Tuesday. Tuesday classes do not meet this week.)
-* Review session in evening.
 * Will also be available during regular class time and ad--hoc sessions on Zoom.
 
 ## Thursday, October 14th
 
-* [HW #7](hw7.html)
-* Mid-term review
+* [HW #7](hw7.html) due at 3 pm.
+* Mid-term review. See the [mid--term review study guide](midterm.html).
 
 ## Tuesday, October 19th
 

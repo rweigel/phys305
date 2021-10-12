@@ -429,7 +429,7 @@ Check the exact answer found previously for the electric field on the $z$–axis
 
 # Problems
 
-## Line of Charge
+## $\mathbf{E}(x)$ for Line of Charge on $x$--axis
 
 A line of charge with uniform charge density of $\lambda_o$ extends from $0$ to $L$ on the $x$-axis, where $L>0$.
 
@@ -506,13 +506,13 @@ When $x\gg L$, $E_x$ approaches $L\lambda/x^2$.
 
 As $x\rightarrow L$, $E_x$ becomes large.
 
-## Line of Charge
+## $\mathbf{E}(y)$ for Line of Charge on $x$--axis
 
 A line of charge with a uniform charge density of $\lambda_o$ extends from $0$ to $L$ on the $x$-axis, wh
 
 Follow and show the steps given in the notes and find $\mathbf{E}$ on the $y$--axis in terms of one or more of $k,\lambda_o,L,y$ and cartesian unit vectors.
 
-**Answer**:
+**Partial Answer**:
 
 **Step 1** (Expected answer features)
 
@@ -520,22 +520,26 @@ Follow and show the steps given in the notes and find $\mathbf{E}$ on the $y$--a
 2. For $y\gg L$, $\mathbf{E}\rightarrow \pm kQ\yhat/y^2$.
 3. As $y\rightarrow 0$, $|E_y|/|E_x|\rightarrow 0$.
 
-**Steps 2. -- 4.** are the same as example given in notes for a line of charge on the $x$--axis.
+**Steps 2. -- 4.** are the same as [example given above](#steps) for $\mathbf{E}(y)$ due to a line of charge on the $x$--axis.
 
-$\displaystyle d\mathbf{E}=\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}k\lambda_o dx'$
+$\displaystyle d\mathbf{E}(y)=\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}k\lambda_o dx'$
 
 In this problem, the limits of integration are different: they extend from $x=0$ to $x=L$. We need to evaluate
 
-$\displaystyle \mathbf{E}=\int_{0}^{L}\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}k\lambda_o dx'q$
+$\displaystyle \mathbf{E}(y)=\int_{0}^{L}\frac{y\yhat-x'\xhat}{\Big[\sqrt{x'^2+y^2}\Big]^3}k\lambda_o dx'$
 
 This can be written as two integrals:
 
-$\displaystyle \phantom{\mathbf{E}}=k\lambda_oy\yhat\int_{0}^{L} dx'\frac{1}{\Big[\sqrt{x'^2+y^2}\Big]^3}-k\lambda_o\xhat\int_{0}^{L} dx'\frac{x'}{\Big[\sqrt{x'^2+y^2}\Big]^3}$
+$\displaystyle \mathbf{E}(y)=k\lambda_oy\yhat\int_{0}^{L} dx'\frac{1}{\Big[\sqrt{x'^2+y^2}\Big]^3}-k\lambda_o\xhat\int_{0}^{L} dx'\frac{x'}{\Big[\sqrt{x'^2+y^2}\Big]^3}$
 
 
 Using WolframAlpha ([first integral](https://www.wolframalpha.com/input/?i=integrate+1%2F%28x%5E2%2By%5E2%29%5E%283%2F2%29+dx+from+0+to+L); [second integral](https://www.wolframalpha.com/input/?i=integrate+x%2F%28x%5E2%2By%5E2%29%5E%283%2F2%29+dx+from+0+to+L)),
 
-$\displaystyle \mathbf{E}=-k\lambda_o\xhat\left(\frac{1}{|y|}-\frac{1}{\sqrt{L^2 + y^2}}\right)+k\lambda_oy\yhat\left(\frac{L}{y^2 \sqrt{L^2 + y^2}}\right)$
+$\displaystyle \mathbf{E}(y)=-k\lambda_o\xhat\left(\frac{1}{|y|}-\frac{1}{\sqrt{L^2 + y^2}}\right)+k\lambda_oy\yhat\left(\frac{L}{y^2 \sqrt{L^2 + y^2}}\right)$
+
+## $\mathbf{E}$ for Shifted Line of Charge
+
+Repeat the previous two problems when the line of charge is shifted in the $y$--direction by $b$.
 
 ## Line of Charge at Angle
 
@@ -644,7 +648,7 @@ Find an equation for $\mathbf{E}$ on the $y$--axis in terms of an integral with 
 
 A uniformly charged circle of radius $R$ with a total charge $Q$ is in the $x$--$y$ plane and centered on the origin.
 
-Find an equation for $\mathbf{E}(x,y,z)$ (the field at any location in space) in terms of three integrals with integrands that depends onl on $d\phi'$, $\phi'$, $x$, $y$, and $z$, and $R$. You do not need to evaluate the integral.
+Find an equation for $\mathbf{E}(x,y,z)$ (the field at any location in space) in terms of three integrals with integrands that depend only on $d\phi'$, $\phi'$, $x$, $y$, and $z$, and $R$. You do not need to evaluate the integral.
 
 ## Charge on Disk
 

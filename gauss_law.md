@@ -216,6 +216,28 @@ Because there are only a few problems for which Gauss's law can be used, the sym
 
 A common usage error is to draw a Gaussian surface that has no net charge inside of it and conclude that the electric field is zero on the surface. Without any other information, if the net charge inside a surface is zero, you can only conclude the electric flux, $\Phi_E$ is zero.
 
+## Problem -- Field Due to Point Charge
+
+To compute the electric flux for a point charge at the origin using the integral equation for Gauss' Law, the following steps are made
+
+$$\oint \mathbf{E}\cdot d\mathbf{A} = \oint |\mathbf{E}|dA = |\mathbf{E}|\oint dA = |\mathbf{E}|4\pi r^2$$
+
+Justify each step and explain all terms.  Provide a diagram.
+
+**Answer**
+
+1. Assuming that the Gaussian surface is the surface of a sphere of radius $r$ centered on the origin, $\oint \mathbf{E}\cdot d\mathbf{A} =  \oint |\mathbf{E}|dA$ because $\mathbf{E}$ and $d\mathbf{A}$ are parallel on the Gaussian surface. This will only be true of the Gaussian sphere is centered on the charge.
+2. $\oint |\mathbf{E}|dA = |\mathbf{E}|\oint dA$ because $|\mathbf{E}|$ is constant on the Gaussian surface.
+3. $|\mathbf{E}|\oint dA = |\mathbf{E}|4\pi r^2$ - The surface area of a sphere of radius $r$ $4\pi r^2$.
+
+## Problem -- General Equation
+
+Is the following a valid equation for Gauss's law?
+
+$$\int \mathbf{E}\cdot d\mathbf{A} = \frac{Q_{encl}}{\epsilon_0}$$
+
+Justify your answer.
+
 ## Example -- Long Line of Charge
 
 In a previous homework, the electric field due to a long line of charge was considered. An argument was made for why the field only has a vertical component on a line centered on and perpendicular to the charged line.
@@ -460,6 +482,59 @@ $$\mathbf{E}=-\frac{\sigma}{2\epsilon_o}\hat{\mathbf{z}}\quad z<0$$
 As an aside, these two expressions can be combined into one using $z/|z|$ to get the correct sign.
 
 $$\mathbf{E}=\frac{\sigma}{2\epsilon_o}\frac{z}{|z|}\hat{\mathbf{z}}$$
+
+## Problem -- Line of Charge
+
+Which of the following object's surfaces can be used to compute the electric field for an infinitely long line of charge? Assume the line passes through the center of the objects. Object IV is a sphere.
+
+<img src="figures/Gauss_Law_Options_Line_of_Charge.svg"/>
+
+## Problem -- Sphere with $\sigma(\theta)$
+
+Consider sphere centered on the origin with a surface charge density of $\sigma_o\cos\theta$. Sketch the sphere and surface charges and indicate where the density is largest. Sketch field lines.
+
+Can a spherical Gaussian surface be used to find the electric field 
+1. inside the sphere?
+2. outside the sphere?
+
+## Problem -- Long Duct
+
+Consider long duct with a square cross-section with a uniform surface charge density on its surfaces. Sketch the tube and surface charges.
+
+Can a Gaussian surface be used to find the electric field 
+1. inside the tube?
+2. outside the tube?
+
+## Dented Sphere
+
+A non-conducting spherical shell is covered with charge uniformly on its surface. It is then dented.
+
+1. The electric field near the center of the shell is zero because a Gaussian sphere centered at the origin and fully inside of the shell will have zero enclosed charge.
+   * True
+   * False
+
+    Justify your answer.
+
+%**Answer**
+
+%False. It is only the electric flux, \(\Phi_E\) through the Gaussian sphere that is zero, because 
+
+%$$\Phi_E\equiv\oint \mathbf{E}\cdot d\mathbf{a} = Q_{Inside\,S}/\epsilon_0 = 0$$.
+
+%But $\mathbf{E}$ can't be pulled out of the integral so we can't say  $\mathbf{E}=0$. All we can say is that if we were to compute the electric field by other means, integral would be zero. 
+
+2. To calculate the electric field near the center of the shell, Gauss' Law could be easily used
+    * True
+    * False
+
+    Justify your answer.
+
+%**Answer**
+
+%Nope. Gauss' Law is generally only useful for computing \(\mathbf{E}\) when it can be pulled out of the integral. Here we don't have a symmetry argument that would allow this. To compute the electric field, you would need to do an integral like the ones done for continuous charge distributions. And it would be complicated.
+
+3. If the dent is inward (so sphere was punched from the outside), will the electric field at the origin be larger or smaller than that for the un-dented sphere? Justify your answer.
+
 
 # Using -- Charges on a Conductor
 

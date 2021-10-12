@@ -158,97 +158,6 @@ $$2\pi h s E_s(s) = \frac{Q_{encl}}{\epsilon_o} = \frac{\lambda_o h}{\epsilon_o}
 
 === Use ===
 
-Consider an infinite plane of charge with a uniform surface charge density. Explain why one can conclude that the electric field, if calculated, will be perpendicular and away from to the plane.
-
-=== Use ===
-
-Consider an infinite line of charge with a uniform surface charge density. Which of the following Gaussian surfaces can be used to compute the electric field:
-
-1. A cylinder with its caps parallel to the line.
-2. A cylinder with its caps perpendicular to the line.
-3. A sphere
-4. A square box
-5. A rectangular box
-6. A plane perpendicular to the surface
-
-=== Use ===
-
-Consider an infinite plane with a uniform surface charge density. Which of the following Gaussian surfaces can be used to compute the electric field:
-
-1. A cylinder with its caps parallel to the surface.
-2. A cylinder with its caps perpendicular to the surface.
-3. A sphere
-4. A square box
-5. A rectangular box
-6. A plane perpendicular to the surface
-
-=== Use ===
-
-Consider an infinite plane with a uniform surface charge density. Set up the integral that needs to be solved to compute the electric flux through a sphere with half of its volume above the plane.
-
-=== Use ===
-
-Consider sphere with a surface charge density of \(\sigma_o\cos\theta\). Sketch the sphere and surface charges and indicate where the density is largest. Sketch the field lines.
-
-Can a sphereical Gaussian surface be used to find the electric field 
-1. inside the sphere?
-2. outside the sphere?
-
-=== Use ===
-
-Consider long tube with a square cross-section with a uniform surface charge density on its surfaces. Sketch the tube and surface charges.
-
-Can a Gaussian surface be used to find the electric field 
-1. inside the tube?
-2. outside the tube?
-
-=== Use ===
-
-A non-conducting spherical shell is covered with charge uniformly on its surface. It is then dented.
-
-<blockquote>"The electric field near the center of the shell is zero because a Gaussian sphere centered at the origin and fully inside of the shell will have zero enclosed charge."</blockquote>
-
-* True
-* False
-
-Justify your answer.
-
-{| class="wikitable collapsible collapsed"
-! align="left" |&nbsp;Answer
-|-
-|
-False. It is only the electric flux, \(\Phi_E\) through the Gaussian sphere that is zero, because 
-
-$$\Phi_E\equiv\oint \mathbf{E}\cdot d\mathbf{a} = Q_{Inside\,S}/\epsilon_0 = 0$$.
-
-But \(\mathbf{E}\) can't be pulled out of the integral so we can't say  \(\mathbf{E}=0\). All we can say is that if we were to compute the electric field by other means, integral would be zero. 
-|}
-
-To calculate the electric field near the center of the shell, Gauss' Law could be easily used
-* True
-* False
-
-Justify your answer.
-
-{| class="wikitable collapsible collapsed"
-! align="left" |&nbsp;Answer
-|-
-|
-Nope. Gauss' Law is generally only useful for computing \(\mathbf{E}\) when it can be pulled out of the integral. Here we don't have a symmetry argument that would allow this. To compute the electric field, you would need to do an integral like the ones done for continuous charge distributions. And it would be complicated.
-|}
-
-If the dent is inward (so sphere was punched from the outside), will the electric field at the origin be larger or smaller than that for the un-dented sphere?
-
-=== Derivation ===
-
-To compute the electric field for a point charge at the origin using the integral equation for Gauss' Law, the following steps are made
-
-$$\oint_S \mathbf{E}\cdot d\mathbf{a} = \int_S |\mathbf{E}|da = |\mathbf{E}|\int_S da = |\mathbf{E}|4\pi r^2$$
-
-Justify each step and explain all terms.  Provide a diagram.
-
-=== Use ===
-
 The electric field was measured at the locations in space shown. A table of the measurements is given in the table.
 
 \(\theta\) \(E_r\) (\E_\phi\)
@@ -301,24 +210,7 @@ In your solution I was looking for a direct response to two questions:
 Many students made statements that were true, e.g., "superposition applies", but did not give specifics, e.g., when multiple charges are in the shell the electric field from one charge does not change and so neither does its flux through a small Gaussian surface surrounding it. On this quiz, I was fairly lenient on grading when vague statements were made; I assumed that you understood, but were not able to put your thoughts fully into words.  As time goes on, I will get less so. It is important for you to understand all aspects of the equations we use and why each step in certain derivations are allowed.
 |}
 
-=== Derivation ===
 
-A point charge \(q\) is at the origin.  To compute the electric flux through a spherical Gaussian surface \(SS\) of radius \(a\) that is centered at the origin, the following steps are made:
-
-\(\int_S \mathbf{E}\cdot d\mathbf{a} =  \int_{SS} |\mathbf{E}|da = |\mathbf{E}|\int_{SS} da = |\mathbf{E}|4\pi a^2 = 4\pi kq\)
-
-Provide a brief justification for each step after the first equation.
-
-{| class="wikitable collapsible collapsed"
-! align="left" |&nbsp;Answer
-|-
-|
-1. \(\int_S \mathbf{E}\cdot d\mathbf{a} =  \int_{SS} |\mathbf{E}|da\) - Electric field due to charge at origin is parallel to \(d\mathbf{a}\) on \(SS\).
-2. \(\int_{SS} |\mathbf{E}|da = |\mathbf{E}|\int_{SS} da\) - Electric field is constant on surface of \(SS\).
-3. \(|\mathbf{E}|\int_{SS} da = |\mathbf{E}|4\pi a^2\) - Surface area of a sphere of radius \(a\) is \(4\pi a^2\).
-4. \(|\mathbf{E}|4\pi a^2 = 4\pi kq\) - At distance \(a\) electric field is \(kq/a^2\) and \(k=1/(4\pi\epsilon_0)\).
-It is important to note that these steps only apply in special situations. In many problems, Gauss' Law can't be used to easily compute the electric field. The charge configurations where Gauss' Law can be used to compute \(E\) include a point charge, an infinite line or cylinder of charge, an infinite sheet of charge, a uniformly charged shell or sphere.  You should be able to derive the electric field for all of these charge configurations using Gauss' Law and also be able to justify each step as you did above.
-|}
 
 === Infinite Line of Charge ===
 
