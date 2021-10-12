@@ -161,7 +161,7 @@ This problem can be solved using two approaches.
 ### Charge Method
 
 
-Assume charges of $\pm Q$ appear on the plates when the battery is connected so that the surface charge densities are $\pm Q/A$ and use the method demonstrated in the [capacitance notes](capacitance.html) notes to find $V$.
+Assume charges of $\pm Q$ appear on the plates when the battery is connected so that the surface charge densities are $\pm Q/A$ and use the method demonstrated in the [capacitance notes](capacitance.html) notes to find $V(x)$.
 
 The electric field between the plates is $\mathbf{E}=-\sigma/\epsilon_o\xhat$. Using $V(x)=V(a)-\int_a^x\mathbf{E}\bfcdot d\mathbf{l}$ with $a=0$ and $d\mathbf{l}=dx'\xhat$
 
@@ -201,7 +201,7 @@ $\displaystyle V(x)=ax+b$
 
 where $a$ and $b$ are constants. You can verify that $V = ax+b$ satisfies $\partial^2 V/\partial x^2 = 0$ by differentiating it twice with respect to $x$.
 
-The interpretation of this equation is that in a configuration where it can be argued that potential only depends on $x$, the potential must increase or decrease linearly. In this example, the two boundary conditions are
+The interpretation of this equation is that in a configuration where it can be argued that potential only depends on $x$, the potential must increase or decrease linearly or be constant. In this example, the two boundary conditions are
 
 1. $V(x=0)=0$
 2. $V(x=d)=V_o$
@@ -216,26 +216,34 @@ so the solution is
 
 $\displaystyle V(x) = \frac{V_o}{d}x$
 
-This is the same result found using the charge method if we set $V(0)=0$ in the charge method equation to be consistent with what was used in Laplace's equation method.
+This is the same result found using the charge method, $V(x)=V(0)+V_o\frac{x}{d}$, if we set $V(0)=0$ to be consistent with what was used in Laplace's equation method.
 
 After developing a solution to Laplace's equation, one should always verify that the solution matches the boundary conditions, in this case by plugging in the coordinates of the boundary:
 
-1. $V(x) = \frac{V_o}{d}x \Rightarrow V(0)=0$ so the solution matches the $x=0$ boundary condition
-2. $V(x) = \frac{V_o}{d}x \Rightarrow V(d)=V_o$ so the solution matches the $x=d$ boundary condition
+1. $\displaystyle V(x) = \frac{V_o}{d}x \Rightarrow V(0)=0$ so the solution matches the $x=0$ boundary condition
 
-1-D examples are simple. As will be seen when 2- and 3-D problems are considered, typically, one cannot find a single equation that satisfies all boundary conditions by following this method; a function can be found that satisfies some but not all of the boundary conditions. To fully solve the problem, one has to rely on the so-called "Fourier Trick" to find a solution. This method is described in the section on 2-D Cartesian.
+
+2. $\displaystyle V(x) = \frac{V_o}{d}x \Rightarrow V(d)=V_o$ so the solution matches the $x=d$ boundary condition
+
+1-D examples are simple. As will be seen when 2- and 3-D problems are considered, typically, one cannot find a single equation that satisfies all boundary conditions by following this method; a function can be found that satisfies some but not all of the boundary conditions. To fully solve the problem, one has to rely on the so-called "Fourier Trick" to find a solution. This method is described in [2-D Cartesian](#2-d-cartesian).
 
 ### Problems
 
+#### Computing $\sigma$
+
+In section 2.5.3 of Griffiths, the equation for the electric field immediately outside of a conductor is stated to be $\mathbf{E}=(\sigma/\epsilon_o)\hat{\mathbf{n}}$.
+
+Find the surface charge densities on each plate by computing $\mathbf{E}$ using $\mathbf{E}=-\boldsymbol{\nabla} V$.
+
 #### Checking Solution
 
-A student came up with the following equation for the potential between the plates: $V(x)/V_o = e^{\tan^{-1}(x+1/2)} + x^3 - 1/\sqrt{x^2-1} + \tanh(1/\sqrt{e^x}+4\pi)$.  Without doing a calculation, we know this is wrong or the expression simplifies to $V(x)=V_ox/d$. Why?
+A student came up with the following equation for the potential between the plates: $V(x) = V_o(\tan^{-1}(x/d+1/2) + (x/d)^3)$.  Without doing a calculation, we know this is wrong or the expression simplifies to $V(x)=V_ox/d$. Why?
 
 %4. You have computed $V$ that satisfied Laplace's Equation and the boundary conditions. This solution is unique. Some students noted that the cubic term would not be zero after differentiating it twice and so the potential would not satisfy Laplace's Equation. But, this term could have been canceled by another term that appeared after taking the second derivative. The point of this problem was to make sure that you understood the uniqueness theorem, which is import for image problems.
 
 ## Cylindrical
 
-Two long conducting cylinders of radius $a$ and $b$ are configured as shown in the following figure.
+Two long and concentric conducting cylinders of radius $a$ and $b$ are configured as shown in the following figure.
 
 <img src="figures/Boundar_Value_Problems_Cylinder.svg"/>
 
@@ -303,7 +311,11 @@ $$\mathbf{E}={V_o \over \ln(b/a)}{1 \over s}\hat{\mathbf{s}}$$
 
 This field points from $a$ to $b$ (in $+\hat{\mathbf{s}}$ direction) as expected because the potential on the inner surface is higher than that on the outer surface.
 
-### Problem
+### Computing $\sigma$
+
+Find the surface charge densities on the cylinders.
+
+### Computing $\mathbf{E}$ using Charge Method
 
 For the example given, find $\mathbf{E}(s)$ between the cylinders using the charge method.
 
@@ -317,17 +329,15 @@ If $V=V(r)$, then this reduces to
 
 $$\nabla^2V = { {1 \over r^{2}}{\partial  \over \partial r}\left(r^{2}{\partial V \over \partial r}\right)}$$
 
-1\. Find $V(r)$ that satisfies
+### Example
 
-$${ {1 \over r^{2}}{\partial  \over \partial r}\left(r^{2}{\partial V \over \partial r}\right)}=0$$
-
-in terms of $r$ and two unknown constants <strike>a and b</strike>. Follow the steps given [in the notes](boundary_value_problems.html#cylindrical) for the cylindrical problem.
+1\. Find $V(r)$ that satisfies $\displaystyle { {1 \over r^{2}}{\partial  \over \partial r}\left(r^{2}{\partial V \over \partial r}\right)}=0$ in terms of $r$ and two unknown constants.
 
 2\. Two concentric spherical conducting shells are connected to a battery such that the inner shell is at a potential of $0$ and the outer shell is at a potential of $V_o$. The inner shell has an outer radius of $a$. The outer shell has an inner radius of $b$. Use your equation from part 1. and these boundary conditions to find $V(r)$ between the conductors in terms of $V_o$, $a$, and $b$.
 
-3\. In section 2.5.3 of Griffiths, the equation for the electric field immediately outside of a conductor is stated to be $\mathbf{E}=(\sigma/\epsilon_o)\hat{\mathbf{n}}$. Use the potential $V(r)$ found in part 2. to find the electric field $\mathbf{E}(r)$ between $a$ and $b$ and then evaluate this electric field at $a$ and $b$. Use these electric fields to find the surface charge densities at $a$ and $b$.
+3\. In section 2.5.3 of Griffiths, the equation for the electric field immediately outside of a conductor is stated to be $\mathbf{E}=(\sigma/\epsilon_o)\hat{\mathbf{n}}$. Use the potential $V(r)$ found in part 2. to find the electric field $\mathbf{E}(r)$ between $a$ and $b$ and then evaluate this electric field at $a$ and $b$ to find the surface charge densities at $a$ and $b$.
 
-(Hint: To check your answer, use the capacitance equation fround in problem 1.4. to eliminate $V_o$ from the surface charge densities. You should find that the surface charge densities on the inner and outer conductors are $-Q/4\pi a^2$ and $Q/4\pi b^2$, respectively.)
+4\. Use equation for capacitance for this configuration (see  [capacitance](capacitance.html)) to eliminate $V_o$ from the surface charge densities. You should find that the surface charge densities on the inner and outer conductors are $-Q/4\pi a^2$ and $Q/4\pi b^2$, respectively.
 
 **Answer**:
 
@@ -379,26 +389,31 @@ $\displaystyle \mathbf{E}=-{V_o \over \left({1\over a}-{1\over b}\right)}{1\over
 
 This field points outward radially inward as expected given the potential on the outer surface is higher than that on the inner surface.
 
-This field can be written in terms of $Q$ using $C=Q/V_o$ and the equation for capacitance found in problem 1.3:
+Evaluated at $a$, 
+
+$\displaystyle \mathbf{E}(a)=-{V_o \over \left({1\over a}-{1\over b}\right)}{1\over a^2}\hat{\mathbf{r}}$
+
+At $r=a$, $\hat{\mathbf{n}}=\hat{\mathbf{r}}$, so $\displaystyle \sigma_a = -{V_o \over \left({1\over a}-{1\over b}\right)}{1\over a^2}$
+
+Evaluated at $b$, 
+
+$\displaystyle \mathbf{E}(b)=-{V_o \over \left({1\over a}-{1\over b}\right)}{1\over b^2}\hat{\mathbf{r}}$
+
+At $r=b$, $\hat{\mathbf{n}}=-\hat{\mathbf{r}}$, so $\displaystyle \sigma_b = +{V_o \over \left({1\over a}-{1\over b}\right)}{1\over b^2}$
+
+4\.
+
+Using $V_o=Q/C$ and the equation for capacitance for this configuration derived in [capacitance](capacitance.html):
 
 $\displaystyle C=\frac{4\pi\epsilon_o}{\frac{1}{a}-\frac{1}{b}}$
 
-This gives
+Substitution of $V_o=Q/C$ into
 
-$\displaystyle \mathbf{E}=-\frac{Q}{4\pi\epsilon_o}{1 \over r^2}\hat{\mathbf{r}}$
+$\displaystyle \sigma_a = -{V_o \over \left({1\over a}-{1\over b}\right)}{1\over a^2}$ and $\displaystyle \sigma_b ={V_o \over \left({1\over a}-{1\over b}\right)}{1\over b^2}$
 
-At $r=a$, 
+gives
 
-$\displaystyle \mathbf{E}(a)=-\frac{Q/4\pi a^2}{\epsilon_o}\hat{\mathbf{r}}$
-
-This is consistent with the formula $\mathbf{E}=(\sigma/\epsilon_o)\hat{\mathbf{n}}$ because at $r=a$, $\hat{\mathbf{n}}=\hat{\mathbf{r}}$ and $\sigma=-Q/4\pi a^2$.
-
-At $r=b$, 
-
-$\displaystyle \mathbf{E}(a)=-\frac{Q/4\pi b^2}{\epsilon_o}\hat{\mathbf{r}}$
-
-This is consistent with the formula $\mathbf{E}=(\sigma/\epsilon_o)\hat{\mathbf{n}}$ because at $r=b$, $\hat{\mathbf{n}}=-\hat{\mathbf{r}}$ and $\sigma=+Q/4\pi a^2$.
-
+$\displaystyle \sigma_a =-\frac{Q}{4\pi a^2}$ and $\displaystyle \sigma_b =+\frac{Q}{4\pi b^2}$
 
 # 2--D Cartesian
 

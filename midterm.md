@@ -1,3 +1,5 @@
+**Study Guide**
+
 The midterm exam will have three problems.
 
 For additional problems to practice on, I suggest the problems in the notes linked to below and examples and in--chapter problems in Griffiths related to the topics mentioned below.
