@@ -106,7 +106,7 @@ In this case, $\mathbf{r}'=d\zhat$ and $r'=d$, so
 
 $\displaystyle \cos\alpha =\frac{\mathbf{r}\bfcdot\mathbf{r}'}{rr'}=\frac{zd}{rd}=\frac{z}{r}$
 
-from which we conclude that $\alpha=\theta$, as expected. To third order in $d/r$, 
+from which we conclude, as expected from a diagram, that $\alpha=\theta$ (because in spherical coordinates, $\cos\theta = z/r$). To third order in $d/r$, 
 
 $\displaystyle V=\frac{kq}{r}\left[P_0+\frac{d}{r}P_1 + \left(\frac{d}{r}\right)^2P_2+ \left(\frac{d}{r}\right)^3P_3\right]$
 
