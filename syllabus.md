@@ -124,6 +124,7 @@
 
 ## Tuesday, October 12th
 
+* [Class Video](https://gmu.zoom.us/rec/share/2i6-p1GGfJYI-buCLxxeAlhXheRt0l0iNuZyoACZTd8kX406fnyo4fEe9I9ihJQ.8Apt6BVkkLe0RZtN)
 * Post [mid--term review study guide](midterm.html).
 * No class (Monday classes/labs meet Tuesday. Tuesday classes do not meet this week.)
 * Will also be available during regular class time and ad--hoc sessions on Zoom.
@@ -132,6 +133,8 @@
 
 * [HW #7](hw7.html) due at 3 pm.
 * Mid-term review. See the [mid--term review study guide](midterm.html).
+* Will return graded [HW #6](hw6.html) later today. Solutions have been posted.
+* Will post solutions to [HW #7](hw7.html) later today.
 
 ## Tuesday, October 19th
 

@@ -598,7 +598,7 @@ When a net charge is placed on a conductor, the charges rearrange themselves suc
 
 If the slab is large and we are near it, the surface charge density will appear uniform.
 
-The electric field to the right is the field due to the two sheets of charge: $(\sigma/2\epsilon_o+\sigma/2\epsilon_o)\xhat=\sigma/\epsilon_o\xhat$. The field to the left is $-(\sigma/2\epsilon_o+\sigma/2\epsilon_o)\xhat=\sigma/\epsilon_o\xhat$.
+The electric field to the right is the field due to the charges on the two faces: $(\sigma/2\epsilon_o+\sigma/2\epsilon_o)\xhat=\sigma/\epsilon_o\xhat$. The field to the left is $-(\sigma/2\epsilon_o+\sigma/2\epsilon_o)\xhat=\sigma/\epsilon_o\xhat$.
 
 The total charge on the conductor is the sum of the charges on both faces: $Q=Q_L+Q_R=\sigma A + \sigma A$, from which it follows that $\sigma = (Q/2)/A$ and $Q_L=Q_R=Q/2$. This means that half of the net charge is on the right face and the other half on the left face.
 

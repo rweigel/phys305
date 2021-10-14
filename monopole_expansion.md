@@ -114,7 +114,7 @@ where the first three terms given earlier are $P_0=1$, $P_1=\cos\theta$, $P_2=(3
 
 $\displaystyle V=\frac{kq}{r}\left[1+\frac{d}{r}\cos\theta + \frac{1}{2}\left(\frac{d}{r}\right)^2(3\cos^2\theta-1)+ \frac{1}{2}\left(\frac{d}{r}\right)^3(5\cos^3\theta-3\cos\theta)\right]$
 
-As a check of this answer, we can set $\theta=0$ and $r=z$ in the above to get
+As a check of this answer, we can set $\theta=0$ (corresponding to a point on the $+z$--axis) so that $r=z$ in the above to get
 
 $\displaystyle V=\frac{kq}{z}\left[1+\frac{d}{z}+ \left(\frac{d}{z}\right)^2+ \left(\frac{d}{z}\right)^3\right]$
 
