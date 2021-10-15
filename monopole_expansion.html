@@ -96,6 +96,8 @@
         body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
         #toc > ol ol { display: none; }
         body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
         
     </style>
 
@@ -136,10 +138,10 @@
 
 <body style="display: flex;min-width: 50%;max-height:100%;">
 
-    <div id="toc">
+    <div id="toc" style="display: block;">
         <ol>
             <li><a number="1" href="#introduction">Introduction</a></li>
-            <li><a number="2" href="#generalization-1">Generalization 1</a></li>
+            <li><a number="2" href="#generalization-1" class="highlighted">Generalization 1</a></li>
             <ol style="display: none;">
                 <li><a number="2.1" href="#problem-point-charge-on-y-axis">Problem – Point Charge on <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                     <semantics>
@@ -154,7 +156,7 @@
             <li><a number="3" href="#generalization-2">Generalization 2</a></li>
             <ol style="display: none;">
                 <li><a number="3.1" href="#example">Example</a></li>
-                <li><a number="3.2" href="#problem" class="highlighted">Problem</a></li>
+                <li><a number="3.2" href="#problem" class="">Problem</a></li>
             </ol>
         </ol>
     </div>
@@ -279,7 +281,7 @@
         <div class="section">
 
             <div class="block">
-                <h1><a name="generalization-1" number="2" class="hanchor" href="#generalization-1"><span class="hnumber">2 </span> <span class="htext">Generalization 1</span></a></h1>
+                <h1 class="highlighted"><a name="generalization-1" number="2" class="hanchor" href="#generalization-1"><span class="hnumber">2 </span> <span class="htext">Generalization 1</span></a></h1>
 
             </div>
             <div class="block inline-html">
@@ -310,7 +312,7 @@
 
             </div>
             <div class="block">
-                <p><span len="42" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <p class=""><span len="42" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
                                     <semantics>
                                         <mrow>
                                             <mi>V</mi>
@@ -364,7 +366,7 @@ M1001 80h400000v40h-400000z"></path>
 
             </div>
             <div class="block">
-                <p>Expanding the square gives</p>
+                <p class="">Expanding the square gives</p>
 
             </div>
             <div class="block">
@@ -555,21 +557,25 @@ M1001 80h400000v40h-400000z"></path>
 
             </div>
             <div class="block">
-                <p>Using <span len="15" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                <p class="">Using <span len="15" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                 <semantics>
                                     <mrow>
-                                        <mi>r</mi>
-                                        <mo>=</mo>
                                         <mi>z</mi>
+                                        <mo>=</mo>
+                                        <mi>r</mi>
                                         <mi>cos</mi>
                                         <mo>⁡</mo>
                                         <mi>θ</mi>
                                     </mrow>
-                                    <annotation encoding="application/x-tex">r=z\cos\theta</annotation>
+                                    <annotation encoding="application/x-tex">z=r\cos\theta</annotation>
                                 </semantics>
-                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span>, this is</p>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span>, this is</p>
 
             </div>
+
+
+
+
             <div class="block">
                 <p><span len="81" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
                                     <semantics>
@@ -957,7 +963,7 @@ M834 80h400000v40h-400000z"></path>
 
             </div>
             <div class="block">
-                <p>where the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                <p class="">where the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                 <semantics>
                                     <mrow>
                                         <mo>…</mo>
@@ -2701,15 +2707,15 @@ M834 80h400000v40h-400000z"></path>
         <div class="section">
 
             <div class="block">
-                <h2 class="highlighted"><a name="problem" number="3.2" class="hanchor" href="#problem"><span class="hnumber">3.2 </span> <span class="htext">Problem</span></a></h2>
+                <h2 class=""><a name="problem" number="3.2" class="hanchor" href="#problem"><span class="hnumber">3.2 </span> <span class="htext">Problem</span></a></h2>
 
             </div>
             <div class="block">
-                <p class="">Use</p>
+                <p>Use</p>
 
             </div>
             <div class="block">
-                <p class=""><span len="91" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                <p><span len="91" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                 <semantics>
                                     <mrow>
                                         <mstyle scriptlevel="0" displaystyle="true">
@@ -2762,7 +2768,7 @@ M834 80h400000v40h-400000z"></path>
 
             </div>
             <div class="block">
-                <p class="">to find the potential due to a point charge at <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                <p>to find the potential due to a point charge at <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                 <semantics>
                                     <mrow>
                                         <mi>z</mi>
@@ -2825,7 +2831,7 @@ M834 80h400000v40h-400000z"></path>
 
             </div>
             <div class="block">
-                <p>for <span len="9" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                <p class="">for <span len="9" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                 <semantics>
                                     <mrow>
                                         <mi>z</mi>

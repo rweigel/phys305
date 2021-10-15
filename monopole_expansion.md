@@ -31,7 +31,7 @@ Factoring out $r=\sqrt{x^2+y^2+z^2}$ and using the fact that $r$ is positive by 
 
 $$V=\frac{kq}{r}\frac{1}{\sqrt{1 - 2\frac{z}{r}\frac{z'}{r} + \frac{z'^2}{r^2}}}$$
 
-Using $r=z\cos\theta$, this is
+Using $z=r\cos\theta$, this is
 
 $$V=\frac{kq}{r}\frac{1}{\sqrt{1 - 2\frac{z'}{r}\cos\theta + \frac{z'^2}{r^2}}}$$
 
