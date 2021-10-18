@@ -14,11 +14,38 @@ This homework covers the [method of images](method_of_images.html) and the [mono
 
 3. **Extra Credit**: A point charge at $z=z_o$ is outside of a grounded conducting sphere that is centered on the origin and has a radius of $R$. Use your answer for $V(x,y,z)$ from 2. to find the surface charge density on the conducting sphere, which should depend only on $\theta$.
 
+**Answer**
+
+1\.
+
+$\displaystyle V(x,y,z)=\frac{kq_o}{\sqrt{x^2+y^2+(z-z_o)^2}}+\frac{kq_i}{\sqrt{x^2+y^2+(z-z_i)^2}}$
+
+or
+
+$\displaystyle V(x,y,z)=\frac{kq_o}{\sqrt{x^2+y^2+z^2-2zz_o+z_o^2}}+\frac{kq_i}{\sqrt{x^2+y^2+z^2-2zz_i+z_i^2}}$
+
+2\.
+
+At $r=R$, $x^2+y^2+z^2=R^2$, so
+
+$\displaystyle V(r=R)=\frac{kq_o}{\sqrt{R^2-2zz_o+z_o^2}}+\frac{kq_i}{\sqrt{R^2-2zz_i+z_i^2}}$
+
+Substitution of $q_i=-q_o(R/z_o)$ and $z_i=R^2/z_o$ gives
+
+$\displaystyle V(r=R)=\frac{kq_o}{\sqrt{R^2-2zz_o+z_o^2}}-\frac{kq_oR/z_o}{\sqrt{R^2-2zR^2/z_o+(R^2/z_o)^2}}$
+
+The second term can be re--written by absorbing $z_o/R$ into the square root:
+
+$\displaystyle \frac{kq_o}{\frac{z_o}{R}\sqrt{R^2-2zR^2/z_o+(R^2/z_o)^2}}=\displaystyle \frac{kq_o}{\sqrt{(\frac{z_o}{R})^2(R^2-2zR^2/z_o+(R^2/z_o)^2})}=\frac{kq_o}{\sqrt{z_o^2-2zz_o+R^2}}$
+
+And so $V(R)=0$.
+
 # Monopole Expansion
 
 For a point charge $q$ at $z=d$,
 
 1. Find the exact equation for $V(z)$, the potential on the $z$ axis.
+
 2. Use the [binomial expansion](binomial_expansion.html) and the assumption that $z\gg d$ to find a formula for $V(z)$ in the form
 
    $\displaystyle V(z) \simeq \frac{kq}{z}\left(1+\frac{A_1}{z} + \frac{A_2}{z^2}\right)$
@@ -35,6 +62,14 @@ For a point charge $q$ at $z=d$,
    $\displaystyle V = \frac{kq}{\char"0509} = \frac{kq}{r}\sum_{n=0}^\infty\left(\frac{r'}{r}\right)^nP_n(\cos\alpha)$
    
    Show that this formula applied to the problem of finding $V(z)$ due to a point charge $q$ at $z=d$ gives the same result for $A_1$ and $A_2$ as found in part 2. of this problem.
+
+**Answer**
+
+1\. $\displaystyle V(z)=\frac{kq}{|z-d|}$
+
+2\. $A_1=d$ and $A_2=d^2$. See [Example 3.1](monopole_expansion.html).
+
+3\. See [Example 3.1](monopole_expansion.html).
 
 # Extra Credit
 

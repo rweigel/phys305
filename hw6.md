@@ -48,7 +48,11 @@ I recommend that you do the full problem, but you may start the problem by begin
 
 **Answer**
 
-$\displaystyle V(x,y)=\frac{4V_o}{\pi}\sum_{n=1,3,...}^\infty \sin(n\pi x/a)\frac{\sinh(n\pi y/a)}{\sinh(n\pi)}$
+$C_n=4V_o/(n\pi\sinh n\pi)$ for $n=1,3,...$
+
+$C_n=0$ for $n=2,4,...$
+
+$\displaystyle V(x,y)=\frac{4V_o}{\pi}\sum_{n=1,3,...}^\infty \sin(n\pi x/a)\frac{\sinh(n\pi y/a)}{n\sinh(n\pi)}$
 
 # &nbsp;2-D Boundary Value Problem
 
@@ -67,11 +71,11 @@ Do this by following the steps that I used in class, which are also in the notes
 
 **Answer**
 
-$\displaystyle V(x,y)=\frac{4V_o}{\pi}\sum_{n=1,3,...}^\infty\left(\cosh(n\pi x/a)-\frac{\sinh(n\pi x/a)}{\tanh(n\pi b/a)}\right)\sin(n\pi y/a)$
+$\displaystyle V(x,y)=\frac{4V_o}{\pi}\sum_{n=1,3,...}^\infty\frac{1}{n}\left(\cosh(n\pi x/a)-\frac{\sinh(n\pi x/a)}{\tanh(n\pi b/a)}\right)\sin(n\pi y/a)$
 
 This can be simplified to
 
-$\displaystyle V(x,y)=\frac{4V_o}{\pi}\sum_{n=1,3,...}^\infty\left(\frac{\sinh[n\pi (b-x)/a]}{\sinh(n\pi b/a)}\right)\sin(n\pi y/a)$
+$\displaystyle V(x,y)=\frac{4V_o}{\pi}\sum_{n=1,3,...}^\infty\left(\frac{\sinh[n\pi (b-x)/a]}{n\sinh(n\pi b/a)}\right)\sin(n\pi y/a)$
 
 _Short--cut solution_
 
