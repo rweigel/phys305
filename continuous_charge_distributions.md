@@ -771,7 +771,7 @@ $$\mathbf{E} \simeq \frac{Q}{4\pi\epsilon_0} \frac{1}{z^2}\frac{z}{|z|}\hat{\mat
 
 ## Charge on Cylinder
 
-Charge is uniformly distributed on a the curved surface of a cylinder of length $h$ and radius $R$. The cylinder is centered on the origin and aligned with the $z$--axis and the charge density is $\sigma_o$.
+Charge is uniformly distributed on the curved surface of a cylinder of length $h$ and radius $R$. The cylinder is centered on the origin, and aligned with the $z$--axis, and has a charge density of $\sigma_o$.
 
 <img src="figures/Continuous-Charge-Densities-Cylinder.svg"/>
 
