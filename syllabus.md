@@ -140,7 +140,7 @@
 
 * [Mid-term exam](midterm.html) during class time in Innovation Hall, room 131. Closed book and note. I will provide a list of equations that you need to know.
 
-# Thursday, October 21st
+## Thursday, October 21st
 
 * Cover Dipoles (3.4 of Griffiths), Polarization (4.1 of Griffiths), and Bound Charge Densities (4.2 of Griffiths).
 * HW #8 will cover above topics and be posted later today.
