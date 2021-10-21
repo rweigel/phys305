@@ -10,7 +10,7 @@
 * Office: 259 Planetary Hall
 * Course URL: http://rweigel.github.io/phys305/
 
-**Homeworks**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) | [4](hw4.html) | [5](hw5.html) | [6](hw6.html) | [7](hw7.html)
+**Homeworks and Exams**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) | [4](hw4.html) | [5](hw5.html) | [6](hw6.html) | [7](hw7.html) | [Midterm](midterm.html)
 
 **Notes**
 * [Vectors](vectors.html)
@@ -138,7 +138,17 @@
 
 ## Tuesday, October 19th
 
-* Mid-term exam during class time in Innovation Hall, room 131. Closed book and note. I will provide a list of equations that you need to know.
+* [Mid-term exam](midterm.html) during class time in Innovation Hall, room 131. Closed book and note. I will provide a list of equations that you need to know.
+
+# Thursday, October 21st
+
+* Cover Dipoles (3.4 of Griffiths), Polarization (4.1 of Griffiths), and Bound Charge Densities (4.2 of Griffiths).
+* HW #8 will cover above topics and be posted later today.
+* I have not finished grading HW #7. It should be done by the weekend.
+* You should have received your graded midterm today by email.
+* Discuss [Mid-term exam](midterm.html)
+
+<img src="figures/grades.png" width="300px"/>
 
 # Topics
 
