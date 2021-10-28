@@ -1,5 +1,7 @@
 # Topics
 
+1. [$\sqrt{x^2}$](sqrt_x^2.html)
+1. [Piecewise Functions](piecewise_functions.html)
 1. [Vectors](vectors.html)
 1. [Vector Fields](vector_fields.html)
 1. [Field Lines](field_lines.html)

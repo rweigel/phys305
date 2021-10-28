@@ -131,6 +131,7 @@
 
 ## Thursday, October 14th
 
+* [Class Video](https://gmu.zoom.us/rec/share/2i6-p1GGfJYI-buCLxxeAlhXheRt0l0iNuZyoACZTd8kX406fnyo4fEe9I9ihJQ.8Apt6BVkkLe0RZtN)
 * [HW #7](hw7.html) due at 3 pm.
 * Mid-term review. See the [mid--term review study guide](midterm.html).
 * Will return graded [HW #6](hw6.html) later today. Solutions have been posted.
@@ -142,6 +143,7 @@
 
 ## Thursday, October 21st
 
+* [Class Video](https://gmu.zoom.us/rec/share/kGfw5XBjEDhVmK6Pn_kgX79dJxSNTnPwZurq4TNMbl8-AHMEeUXiQrLfT1DWXoD8.6rFDVXYUb-K6lm2r)
 * Cover Dipoles (3.4 of Griffiths), Polarization (4.1 of Griffiths), and Bound Charge Densities (4.2 of Griffiths).
 * [HW #8](hw8.html) will cover above topics and be posted later today.
 * I have not finished grading HW #7. It should be done by the weekend.
@@ -149,6 +151,19 @@
 * Discuss [Mid-term exam](midterm.html)
 
 <img src="figures/grades.png" width="300px"/>
+
+## Tuesday, October 26th
+
+* [Class Video](https://gmu.zoom.us/rec/share/k5e2n-nZvp_4zrRKGe7O8PdWpDQlqKBBx4zhHltvyr2xvzNI05Y9OpcpeUwBKywv.8kITOZmBa6QNht_x)
+* [HW #8](hw8.html) due at 3 pm.
+* Will return HW #7 on Thursday. Sorry for the delay!
+* Answer questions on [HW #8](hw8.html) topics
+
+## Thursday, October 28th
+
+* [Class Video](https://gmu.zoom.us/rec/share/fycKC35n1Wx56wr4L7Kln4oSS_p2ztXG29JIMWNgZKoNcPUzBJiV1EXKndRD5w.QHK4KxDiU-JhhIap)
+* Computing Bound Charge Densities (4.2 of Griffiths) and resulting field. Introduction to induced polarization in linear dielectrics (4.4 of Griffiths).
+* Assign [HW #9](hw9.html) covering above topics.
 
 # Topics
 
