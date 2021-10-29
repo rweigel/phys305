@@ -10,7 +10,7 @@
 * Office: 259 Planetary Hall
 * Course URL: http://rweigel.github.io/phys305/
 
-**Homeworks and Exams**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) | [4](hw4.html) | [5](hw5.html) | [6](hw6.html) | [7](hw7.html) | [Midterm](midterm.html) | [8](hw8.html)
+**Homeworks and Exams**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) | [4](hw4.html) | [5](hw5.html) | [6](hw6.html) | [7](hw7.html) | [Midterm](midterm.html) | [8](hw8.html) | [9](hw9.html)
 
 **Notes**
 * [Vectors](vectors.html)

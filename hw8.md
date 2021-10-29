@@ -2,7 +2,7 @@ Due on Thursday, October 28th at 3:00 pm.
 
 Send your solutions to the email address rweigel+phys305@gmu.edu as a scanned PDF. Use a file name of `Yourlastname_PHYS305_HW8.pdf` (one file only, please). Capitalize the first letter in your last name and use caps and underscores as indicated. **Include your name on the first sheet**.
 
-The [monopole expansion](monopole_expansion.html) (Griffiths 3.4) and polarization (Griffiths 4.1--4.2).
+The is HW covers [monopole expansion](monopole_expansion.html) (Griffiths 3.4) and polarization (Griffiths 4.1--4.2).
 
 # Perfect Dipole on $x$--axis
 
