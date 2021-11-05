@@ -49,93 +49,30 @@
 
 # Class Schedule
 
-## Thursday, September 9th
-
-* HW #2 due.
-* Assign HW #3 covering Coulomb's Law, Electric Field, Superposition, Discrete Charge Distributions, Charge Densities, and Continuous Charge Distributions.
-
-## Tuesday, September 14th
-
-## Thursday, September 16th
-
-* HW #3 due.
-* Assign HW #4 covering Gauss's Law, Gradients, Curls, Equipotentials, Electrostatic Potential, and Electrostatic Work and Energy
-
-## Tuesday, September 21st
-
-## Thursday, September 23rd
-
-* HW #4 due.
-* Brief summary of progress and review of HW problems.
-* Assign HW #5 covering Capacitors, Laplace's Equation in 1--D, and Laplace's Equation in 2-D
-
-## Tuesday, September 28th
-
-## Thursday, September 30th
-
-* HW #5 due.
-* Assign HW #6 covering Laplace's Equation 2--D.
-
-## Tuesday, October 5th
-
-## Thursday, October 7th
-* HW #6 due.
-* Post review problems
-
-## Tuesday, October 12th
-
-* No class
-* Review session in evening
-
-## Thursday, October 14th
-
-* Mid-term exam during class time. Location TBD.
-
-## Tuesday, October 19th
-* Go over Mid--term
-
-## Thursday, October 21st
-* Assign HW #7 covering the Method of Images and Dipole Expansion
-
-## Tuesday, October 26th
-
 ## Thursday, October 28th
-* HW #7 due.
-* Assign HW #8 covering Polarization, Dipole Torque, and Bound Charge Densities
-
-## Tuesday, November 2nd
+* HW #8 due.
+* HW #9 on Computing Bound Charge Densities (4.2 of Griffiths) and resulting field. Introduction to induced polarization in linear dielectrics (4.4 of Griffiths).
 
 ## Thursday, November 4th
-* HW #8 due.
-* Assign HW #9 covering Displacement Field $\mathbf{D}$, Gauss's Law for $\mathbf{D}$, and Dielectrics.
-
-## Tuesday, November 9th
+* HW #9 due.
+* Assign HW #10 covering Displacement Field $\mathbf{D}$, Gauss's Law for $\mathbf{D}$, and Dielectrics, Current Densities, the Lorentz Force Law, and the Biot-Savart Law
 
 ## Thursday, November 11th
-* HW #9 due
-* Assign HW #10 covering Current Densities, the Lorentz Force Law, and the Biot-Savart Law
-
-## Tuesday, November 16th
+* HW #10 due
+* Assign HW #11 covering the divergence and curl of $\mathbf{B}$, and Ampere's Law
 
 ## Thursday, November 18th
-* HW #10 due
-* Assign HW #11 covering the divergence and curl of $\mathbf{B}$
-
-## Tuesday, November 23rd
 * HW #11 due
-* Assign HW #12 covering Ampere's Law, Magnetic Vector Potential, and Magnetization.
+* Assign HW #12 covering Magnetic Vector Potential, Magnetization, Bound Current Densities, the Auxiliary Field $\mathbf{H}$, and Ampere's Law for $\mathbf{H}$
 
 ## Thursday, November 25th
-
 * No class
 
 ## Tuesday, November 30th
-* HW #12 due
-* Assign HW #13 covering Bound Current Densities, the Auxiliary Field $\mathbf{H}$, and Ampere's Law for $\mathbf{H}$
 
 ## Thursday, December 2nd
 * Last class
-* HW #13 due
+* HW #12 due
 * Post final review problems
 
 ## Thursday, December 9th

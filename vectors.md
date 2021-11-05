@@ -685,7 +685,29 @@ Use the equation for $\mathbf{\hat{n}}$ to find a normal vector for the surface 
 
 # Cross Products
 
-The cross products for cartesian unit vectors are
+The motivation for the cross product notation is that we often find equations of the form $AB\sin\theta$ where $A$ and $B$ are the magnitudes of vector $\mathbf{A}$ and $\mathbf{B}$, respectively, and $\sin\theta$ is the angle between the two vectors with $\theta =0$ along $\mathbf{A}$. Associated with the scalar $AB\sin\theta$ is a direction that is perpendicular to the plane that both $\mathbf{A}$ and $\mathbf{B}$ lie in. Calling the normal vector $\hat{\mathbf{n}}$, we are often interested in the quantity
+
+$$AB\sin\theta\hat{\mathbf{n}}$$
+
+Using a diagram to compute the angle between two arbitrarily oriented vectors is difficult, as is finding $\hat{\mathbf{n}}$. It can be shown that the answer is
+
+$$AB\sin\theta\hat{\mathbf{n}}= (A_yB_z - A_zB_y)\hat{\mathbf{i}} + (A_zB_x - A_xBz)\hat{\mathbf{j}} + (A_xB_y - A_yB_x)\hat{\mathbf{k}}$$
+
+In general, instead of writing $AB\sin\theta\hat{\mathbf{n}}$, we use the definition
+
+$$\mathbf{A}\times \mathbf{B}\equiv AB\sin\theta\hat{\mathbf{n}}$$
+
+so that
+
+$$\mathbf{A}\times \mathbf{B} = (A_yB_z - A_zB_y)\hat{\mathbf{i}} + (A_zB_x - A_xBz)\hat{\mathbf{j}} + (A_xB_y - A_yB_x)\hat{\mathbf{k}}$$
+
+A mneomic for this equation is to evaluate the determinant of
+
+Alternatively, one can compute the nine cross products that result from evaluating
+
+$$\mathbf{A}\times \mathbf{B} = (A_x\hat{\mathbf{i}} + A_y\hat{\mathbf{j}} + A_z\hat{\mathbf{k}})\times (B_x\hat{\mathbf{i}} + B_y\hat{\mathbf{j}} + B_z\hat{\mathbf{k}})$$
+
+along with the cross products for the cartesian unit vectors, which are
 
 \begin{aligned}
 \hat{\mathbf{x}}\times\hat{\mathbf{x}} & = 0  & \hat{\mathbf{y}}\times\hat{\mathbf{y}} & = 0  & \hat{\mathbf{z}}\times\hat{\mathbf{z}} & = 0  \\
@@ -693,7 +715,11 @@ The cross products for cartesian unit vectors are
 \hat{\mathbf{y}}\times\hat{\mathbf{x}} & = -\hat{\mathbf{z}} & \hat{\mathbf{z}}\times\hat{\mathbf{y}} & = -\hat{\mathbf{x}} & \hat{\mathbf{x}}\times\hat{\mathbf{z}} & = -\hat{\mathbf{y}} \\
 \end{aligned}
 
-These can be derived either by using the right-hand rule or a mnemonic (memory) aid for remembering this table. If you do the cross product of two consecutive unit vectors in the order indicated by the arrows in the circle shown in the following figure, the result is the remaining unit vector (the second row in the table).
+For problems where $\mathbf{A}$ has one term and $\mathbf{B}$ has two or one terms, it is easier to use this method. For example ...
+
+These cross products of unit vectors all follow from the definition $\mathbf{A}\times \mathbf{B}=AB\sin\theta\hat{\mathbf{n}}$. For example, if $\mathbf{A}=\xhat$ and $\mathbf{B}=\xhat$, then the angle between them is zero, so $\sin \theta=0$ and finaly $\xhat\times\xhat=0$.
+
+They can be derived either by using the right-hand rule or a mnemonic (memory) aid for remembering this table. If you do the cross product of two consecutive unit vectors in the order indicated by the arrows in the circle shown in the following figure, the result is the remaining unit vector (the second row in the table).
 
 If you do the cross product of two unit vectors in reverse order, the result is the remaining unit vector with a negative sign (the third row in the table).
 

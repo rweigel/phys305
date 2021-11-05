@@ -165,6 +165,20 @@
 * Computing Bound Charge Densities (4.2 of Griffiths) and resulting field. Introduction to induced polarization in linear dielectrics (4.4 of Griffiths).
 * Assign [HW #9](hw9.html) covering above topics.
 
+## Tuesday, November 2nd
+
+* [HW #9](hw9.html) discussion
+
+ 
+## Thursday, November 4th
+
+* [Class Video](https://gmu.zoom.us/rec/share/ZZySfZ86dahPkI6fX21l8wWnVKiWkolaV1Gz25zqlMonuVwe9NyttnCbtGWIu8sC.KpA1dG7mjI2J9VjL)
+* Lorentz force Law and Biot--Savart law
+* Assign [HW #10](hw10.html)
+
+## Tuesday, November 9th
+* Discuss [HW #10](hw10.html)
+
 # Topics
 
 This course covers the topics in Chapters 1-7 of the [textbook](#textbook).
