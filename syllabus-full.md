@@ -49,14 +49,6 @@
 
 # Class Schedule
 
-## Thursday, October 28th
-* HW #8 due.
-* HW #9 on Computing Bound Charge Densities (4.2 of Griffiths) and resulting field. Introduction to induced polarization in linear dielectrics (4.4 of Griffiths).
-
-## Thursday, November 4th
-* HW #9 due.
-* Assign HW #10 covering Displacement Field $\mathbf{D}$, Gauss's Law for $\mathbf{D}$, and Dielectrics, Current Densities, the Lorentz Force Law, and the Biot-Savart Law
-
 ## Thursday, November 11th
 * HW #10 due
 * Assign HW #11 covering the divergence and curl of $\mathbf{B}$, and Ampere's Law

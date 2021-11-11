@@ -18,7 +18,7 @@ $$\boldsymbol{\nabla}\cdot(\boldsymbol{\nabla}f) = \nabla^2f={1 \over \rho}{\par
 
 ## Spherical
 
-$$\nabla f = {\partial f \over \partial r}\hat{\mathbf r}+ {1 \over r}{\partial f \over \partial \theta}\hat{\boldsymbol \theta}+ {1 \over r\sin\theta}{\partial f \over \partial \phi}\hat{\boldsymbol \phi}$$
+$$\mathbf{\nabla} f = {\partial f \over \partial r}\hat{\mathbf r}+ {1 \over r}{\partial f \over \partial \theta}\hat{\boldsymbol \theta}+ {1 \over r\sin\theta}{\partial f \over \partial \phi}\hat{\boldsymbol \phi}$$
 
 $$\boldsymbol{\nabla}\cdot\mathbf{A}={1 \over r^2}{\partial \left( r^2 A_r \right) \over \partial r} + {1 \over r\sin\theta}{\partial \over \partial \theta} \left(  A_\theta\sin\theta \right) + {1 \over r\sin\theta}{\partial A_\phi \over \partial \phi}$$
 

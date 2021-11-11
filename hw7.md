@@ -40,6 +40,22 @@ $\displaystyle \frac{kq_o}{\frac{z_o}{R}\sqrt{R^2-2zR^2/z_o+(R^2/z_o)^2}}=\displ
 
 And so $V(R)=0$.
 
+3\.
+
+First, write $V$ in spherical coordinates using $z=r\cos\theta$ in
+
+$\displaystyle V(r,\theta)=\frac{kq_o}{\sqrt{r^2-2zz_o+z_o^2}}+\frac{kq_i}{\sqrt{r^2-2zz_i+z_i^2}}$
+
+Then, compute $\mathbf{E}(r,\theta)=-\mathbf{\nabla}V(r,\theta)$ using the gradient operator ($\mathbf{\nabla}$) in spherical coordinates. (A common error was not converting $z$ to spherical and treating it as a constant when computing the partials of $r$ and $\theta$.)
+
+Then, use $\sigma(\theta)=\epsilon_o \mathbf{E}(R,\theta)\cdot\hat{\mathbf{n}}$ where $\hat{\mathbf{n}}=\hat{\mathbf{r}}$ for this problem.
+
+Finally, use $q_i=-q_o(R/z_o)$ and $z_i=R^2/z_o$. The final result is
+
+$\displaystyle \sigma(\theta) = kq_ou\frac{u^2-1}{\left(1+u^2-2u\cos\theta\right)^{3/2}}$
+
+where $u\equiv R/z_o$. Note that because $u\lt 1$, $\sigma \lt 0$, as expected because the point charge draws negative charges towards it. As $u\rightarrow 0$, corresponding to $q_o$ far from the sphere, $\sigma$ approaches zero -- no negative charges are pulled from the ground onto the sphere because the field due to $q_o$ is near zero on the sphere.
+
 # Monopole Expansion
 
 For a point charge $q$ at $z=d$,

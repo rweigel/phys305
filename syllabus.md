@@ -177,6 +177,7 @@
 * Assign [HW #10](hw10.html)
 
 ## Tuesday, November 9th
+* [Class Video](https://gmu.zoom.us/rec/share/dMbfD_UiEAB0C1IsVOvcNNRvFe4x6ftlAArmOZ8BAG5LOUKAn9aPOOZM_MQ818fg.O5Fjfbnd3OhaaTLm)
 * Discuss [HW #10](hw10.html)
 
 # Topics
