@@ -1,0 +1,1338 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>equations</title>
+    <link id="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%220.9em%22 font-size=%22100%22>📖</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.12/dist/katex.min.css" />
+    <style>
+        body { background-color: white; }
+        #toc { font-size: 85%; width: 14em; position: fixed; min-height: 95%; max-height: 95%; overflow: hidden auto; padding-left: 0.75em; padding-right: 1em; margin-right: 1em; font-family: "Open Sans"; }
+        #toc ol { list-style-type: decimal; padding-inline-start: 1em; }
+        #toc a { text-decoration: none; }
+        #display a { text-decoration: none black; text-underline-offset: 2px; }
+        #display { width: 100%; margin-left: 15em; max-height: 100%; min-height: 100%; overflow: hidden auto; padding-left: 1em; padding-right: 1em; border-left: 1px solid rgb(240, 240, 240); font-family: "Open Sans"; }
+        .title { text-align: center; font-size: 250%; font-weight: bold; color: black; margin-bottom: 0px; }
+        .subtitle { text-align: center; font-size: 150%; font-weight: bold; color: black; margin-top: 0.2em; }
+        .hanchor { text-decoration: none; color: inherit; }
+        h1 { color: darkblue; border-bottom: 2px solid darkblue; }
+        h2 { border-bottom: 1px solid black; }
+        h3 { border-bottom: 1px dotted black; }
+        h1, h2, h3, h4, h5, h6 { width: 100%; margin-block: 0.5em; }
+        #display .block ul { width: 100%; margin-left: 1em; padding-left: 1em; }
+        #display .block ol { width: 100%; margin-left: 1em; padding-left: 1em; }
+        code { width: 100%; background-color: rgba(0, 0, 0, 0.03); border-radius: 0px; font-size: 1.2em; white-space: pre-wrap; margin-top: 3px; margin-right: 3px; }
+        pre code { border-right: 1px solid black; }
+        code.language-Python { background-color: rgba(0, 0, 0, 0); font-size: 1.2em; }
+        pre { width: 100%; text-indent: 0.75em; padding-left: 0.5em; margin-left: 1em; white-space: pre-wrap; border-left: 3px solid black; background-color: rgba(0, 0, 0, 0.03); line-height: 1.5; overflow-x: clip; }
+        pre.language-Python { border-left: 5px solid blue; padding: 0.5em; margin-left: 1em; margin-right: 1em; line-height: 1.5; overflow-x: auto; }
+        .block { display: flex; }
+        .block.inline-html { display: block; }
+        .hr { width: 100%; height: 1px; display: block; margin: 0.5em; margin-block: 0.5em; border-top: 1px solid black; }
+        #display li > div { display: flex; }
+        p { width: 100%; display: block; margin-block: 0.5em; }
+        #display li { width: 100%; }
+        li .block p { width: 100%; display: block; margin-top: 0.5em; margin-bottom: 0.5em; }
+        li .block:first-of-type p { width: 100%; display: block; margin-top: 0em; margin-bottom: 0em; }
+        .section > .block ol ~ .line-number { display: none; }
+        .section > .block ul ~ .line-number { display: none; }
+        .section > .block pre ~ .line-number { display: none; }
+        .section > .block code ~ .line-number { }
+        pre .line-number { float: right; font-size: 8px; text-align: center; text-indent: 0px; }
+        .line-number { float: right; white-space: pre-wrap; font-size: 10%; }
+        p + .line-number { margin-block-start: 8px; }
+        .block > div.linenumber { margin-block-start: -0.5em; }
+        .blockquote + div.line-number { margin-top: 1rem; }
+        h1 + .line-number { margin-block-start: 20em; }
+        h2 + .line-number { margin-block-start: 15em; }
+        h3 + .line-number { margin-block-start: 15em; }
+        h4 + .line-number { margin-block-start: 15em; }
+        h5 + .line-number { margin-block-start: 15em; }
+        h6 + .line-number { margin-block-start: 15em; }
+        .blockquote { width: 100%; display: block; margin: 1em; border: 1px solid black; padding: 1em; border-radius: 0.5em; }
+        details > summary { font-weight: bold; }
+        details { padding-left: 0.5em; }
+        details[open] { border: 1px solid black; padding: 0em 0em 0em 0.5em; }
+        table { padding: 0px; }
+        table tr { border-top: 1px solid rgb(204, 204, 204); background-color: white; margin: 0px; padding: 0px; }
+        table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+        table tr th { font-weight: bold; border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+        table tr td { border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+        table tr th :first-child, table tr td :first-child { margin-top: 0px; }
+        table tr th :last-child, table tr td :last-child { margin-bottom: 0px; }
+        .katex { font-size: inherit !important; }
+        .katex-display { text-align: center; margin: 0.5em; font-size: 1.1em !important; }
+        @media print {
+          body, html { margin: 0in; color: rgb(0, 0, 0); height: auto; background-color: rgb(255, 255, 255); border: none; display: inline; }
+          h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+          h1, h2, h3, h4, h5, h6 { width: 100%; margin-block: 0.1em; }
+          h1 { font-size: 1.25em; border-bottom: 1px solid darkblue; }
+          h2 { font-size: 1.15em; border-bottom: 1px solid darkblue; }
+          h3 { font-size: 1.1em; }
+          h4, h5, h6 { font-size: 1.05em; }
+          p { margin-top: 0px; margin-bottom: 0.5em; }
+          .title { break-before: page; margin-top: 0px; }
+          #toc { display: none; font-size: 100%; margin: 0px; width: 100%; overflow-y: hidden; padding-left: 0px; padding-right: 0px; }
+          #display { margin-left: 0em; width: 100%; padding-left: 0px; padding-right: 0px; border: none; overflow-wrap: break-word; }
+          .katex { font: 1em / 1 KaTeX_Main, "Times New Roman", serif; white-space: nowrap; text-indent: 0px; text-rendering: auto; }
+          .katex-display { margin-top: 0px; }
+        }
+        #toc > ol ol { display: none; }
+        body { background-image: url("https://rweigel.github.io/biedit/img/paper.png"); }
+        
+    </style>
+
+
+    <script>
+        function tocClickListen() {
+            // No jQuery b/c also used in stand-alone HTML.
+            hs = document.querySelectorAll('#toc > ol ol');
+            for (var i = 0; i < hs.length; i++) {
+              if (hs[i].previousElementSibling) {
+                var el = hs[i].previousElementSibling.firstElementChild;
+                if (el.length == 0) {
+                  continue;
+                }
+                el.addEventListener('click', event => {
+                  var ns = event.target.parentNode.nextElementSibling;
+                  if (ns.style.display === 'none') {
+        ns.style.display = 'block';
+                  } else {
+        ns.style.display = 'none';
+                  }
+                });
+              }
+            }
+          }
+        if (
+            document.readyState === "complete" ||
+            (document.readyState !== "loading" && 
+              !document.documentElement.doScroll)
+        ) {
+          tocClickListen();
+        } else {
+          document.addEventListener("DOMContentLoaded", tocClickListen);
+        }
+    </script>
+
+</head>
+
+<body style="display: flex;min-width: 50%;max-height:100%;">
+
+    <div id="toc">
+        <ol>
+            <li><a number="1" href="#equations">Equations</a></li>
+            <ol style="display: none;">
+                <li><a number="1.1" href="#cylindrical">Cylindrical</a></li>
+                <li><a number="1.2" href="#spherical" class="highlighted">Spherical</a></li>
+            </ol>
+            <li><a number="2" href="#equations-you-should-know">Equations you should know</a></li>
+            <ol style="display: none;">
+                <li><a number="2.1" href="#undergraduate">Undergraduate</a></li>
+                <li><a number="2.2" href="#graduate">Graduate</a></li>
+            </ol>
+        </ol>
+    </div>
+    <div id="display">
+        <div class="section">
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="equations" number="1" class="hanchor" href="#equations"><span class="hnumber">1 </span> <span class="htext">Equations</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="cylindrical" number="1.1" class="hanchor" href="#cylindrical"><span class="hnumber">1.1 </span> <span class="htext">Cylindrical</span></a></h2>
+
+            </div>
+            <div class="block">
+                <p>Gradient for scalar function <span len="25" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>f</mi>
+                                        <mo>=</mo>
+                                        <mi>f</mi>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>ρ</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>θ</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>ϕ</mi>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">f = f(\rho,\theta,\phi)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">ρ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">ϕ</span><span class="mclose">)</span></span></span></span>
+                    <span len="185" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <semantics>
+                                        <mrow>
+                                            <mi mathvariant="normal">∇</mi>
+                                            <mi>f</mi>
+                                            <mo>=</mo>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mi>f</mi>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mi>ρ</mi>
+                                                </mrow>
+                                            </mfrac>
+                                            <mover accent="true">
+                                                <mi mathvariant="bold-italic">ρ</mi>
+                                                <mo>^</mo>
+                                            </mover>
+                                            <mo>+</mo>
+                                            <mfrac>
+                                                <mn>1</mn>
+                                                <mi>ρ</mi>
+                                            </mfrac>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mi>f</mi>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mi>ϕ</mi>
+                                                </mrow>
+                                            </mfrac>
+                                            <mover accent="true">
+                                                <mi mathvariant="bold-italic">ϕ</mi>
+                                                <mo>^</mo>
+                                            </mover>
+                                            <mo>+</mo>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mi>f</mi>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mi>z</mi>
+                                                </mrow>
+                                            </mfrac>
+                                            <mover accent="true">
+                                                <mi mathvariant="bold">z</mi>
+                                                <mo>^</mo>
+                                            </mover>
+                                        </mrow>
+                                        <annotation encoding="application/x-tex">\nabla f = {\partial f \over \partial \rho}\hat{\boldsymbol \rho}+ {1 \over \rho}{\partial f \over \partial \phi}\hat{\boldsymbol \phi}+ {\partial f \over \partial z}\hat{\mathbf z}</annotation>
+                                    </semantics>
+                                </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord">∇</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.25188em;vertical-align:-0.8804400000000001em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714399999999998em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">ρ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord boldsymbol">ρ</span></span></span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.25188em;vertical-align:-0.8804400000000001em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">ρ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714399999999998em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">ϕ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9578799999999998em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord boldsymbol">ϕ</span></span></span></span><span style="top:-3.26344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.0574399999999997em;vertical-align:-0.686em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714399999999998em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span></span>
+                </p>
+
+            </div>
+            <div class="block">
+                <p>Divergence for vector function expressed as <span len="170" style="border:1px solid red">$\mathbf{A}=A_{\rho}(\rho, \theta, \phi)\hat\boldsymbol{\rho} + A_{\theta}(\rho, \theta, \phi)\hat\boldsymbol{\theta} + A_{\phi}(\rho, \theta, \phi)\hat\boldsymbol{\phi}$</span> <span style="color:red">KaTeX parse error: Unexpected end of input in a macro argument, expected '}' at position 44: …heta, \phi)\hat\̲b̲o̲l̲d̲s̲y̲m̲b̲o̲l̲{\rho} + A_{\th…</span></p>
+
+            </div>
+            <div class="block">
+                <p><span len="195" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <semantics>
+                                        <mrow>
+                                            <mi mathvariant="bold">∇</mi>
+                                            <mo>⋅</mo>
+                                            <mi mathvariant="bold">A</mi>
+                                            <mo>=</mo>
+                                            <mfrac>
+                                                <mn>1</mn>
+                                                <mi>ρ</mi>
+                                            </mfrac>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mrow>
+                                                        <mo fence="true">(</mo>
+                                                        <mi>ρ</mi>
+                                                        <msub>
+                                                            <mi>A</mi>
+                                                            <mi>ρ</mi>
+                                                        </msub>
+                                                        <mo fence="true">)</mo>
+                                                    </mrow>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mi>ρ</mi>
+                                                </mrow>
+                                            </mfrac>
+                                            <mo>+</mo>
+                                            <mfrac>
+                                                <mn>1</mn>
+                                                <mi>ρ</mi>
+                                            </mfrac>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <msub>
+                                                        <mi>A</mi>
+                                                        <mi>ϕ</mi>
+                                                    </msub>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mi>ϕ</mi>
+                                                </mrow>
+                                            </mfrac>
+                                            <mo>+</mo>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <msub>
+                                                        <mi>A</mi>
+                                                        <mi>z</mi>
+                                                    </msub>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mi>z</mi>
+                                                </mrow>
+                                            </mfrac>
+                                        </mrow>
+                                        <annotation encoding="application/x-tex">\boldsymbol{\nabla}\cdot\mathbf{A}={1 \over \rho}{\partial \left( \rho A_\rho \right) \over \partial \rho}+{1 \over \rho}{\partial A_\phi \over \partial \phi}+{\partial A_z \over \partial z}</annotation>
+                                    </semantics>
+                                </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord mathbf">∇</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord mathbf">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.30744em;vertical-align:-0.8804400000000001em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">ρ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">ρ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathnormal">ρ</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">ρ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.25188em;vertical-align:-0.8804400000000001em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">ρ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">ϕ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">ϕ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.05744em;vertical-align:-0.686em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></span></p>
+
+            </div>
+            <div class="block">
+                <p>Curl for vector function expressed as <span len="170" style="border:1px solid red">$\mathbf{A}=A_{\rho}(\rho, \theta, \phi)\hat\boldsymbol{\rho} + A_{\theta}(\rho, \theta, \phi)\hat\boldsymbol{\theta} + A_{\phi}(\rho, \theta, \phi)\hat\boldsymbol{\phi}$</span> <span style="color:red">KaTeX parse error: Unexpected end of input in a macro argument, expected '}' at position 44: …heta, \phi)\hat\̲b̲o̲l̲d̲s̲y̲m̲b̲o̲l̲{\rho} + A_{\th…</span></p>
+
+            </div>
+            <div class="block">
+                <p><span len="469" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <semantics>
+                                        <mrow>
+                                            <mi mathvariant="bold">∇</mi>
+                                            <mo>×</mo>
+                                            <mi mathvariant="bold">A</mi>
+                                            <mo>=</mo>
+                                            <mrow>
+                                                <mo fence="true">(</mo>
+                                                <mfrac>
+                                                    <mn>1</mn>
+                                                    <mi>ρ</mi>
+                                                </mfrac>
+                                                <mfrac>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <msub>
+                                                            <mi>A</mi>
+                                                            <mi>z</mi>
+                                                        </msub>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <mi>ϕ</mi>
+                                                    </mrow>
+                                                </mfrac>
+                                                <mo>−</mo>
+                                                <mfrac>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <msub>
+                                                            <mi>A</mi>
+                                                            <mi>ϕ</mi>
+                                                        </msub>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <mi>z</mi>
+                                                    </mrow>
+                                                </mfrac>
+                                                <mo fence="true">)</mo>
+                                            </mrow>
+                                            <mover accent="true">
+                                                <mi mathvariant="bold-italic">ρ</mi>
+                                                <mo>^</mo>
+                                            </mover>
+                                            <mo>+</mo>
+                                            <mrow>
+                                                <mo fence="true">(</mo>
+                                                <mfrac>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <msub>
+                                                            <mi>A</mi>
+                                                            <mi>ρ</mi>
+                                                        </msub>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <mi>z</mi>
+                                                    </mrow>
+                                                </mfrac>
+                                                <mo>−</mo>
+                                                <mfrac>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <msub>
+                                                            <mi>A</mi>
+                                                            <mi>z</mi>
+                                                        </msub>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <mi>ρ</mi>
+                                                    </mrow>
+                                                </mfrac>
+                                                <mo fence="true">)</mo>
+                                            </mrow>
+                                            <mover accent="true">
+                                                <mi mathvariant="bold-italic">ϕ</mi>
+                                                <mo>^</mo>
+                                            </mover>
+                                            <mo>+</mo>
+                                            <mfrac>
+                                                <mn>1</mn>
+                                                <mi>ρ</mi>
+                                            </mfrac>
+                                            <mrow>
+                                                <mo fence="true">(</mo>
+                                                <mfrac>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <mrow>
+                                                            <mo fence="true">(</mo>
+                                                            <mi>ρ</mi>
+                                                            <msub>
+                                                                <mi>A</mi>
+                                                                <mi>ϕ</mi>
+                                                            </msub>
+                                                            <mo fence="true">)</mo>
+                                                        </mrow>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <mi>ρ</mi>
+                                                    </mrow>
+                                                </mfrac>
+                                                <mo>−</mo>
+                                                <mfrac>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <msub>
+                                                            <mi>A</mi>
+                                                            <mi>ρ</mi>
+                                                        </msub>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <mi>ϕ</mi>
+                                                    </mrow>
+                                                </mfrac>
+                                                <mo fence="true">)</mo>
+                                            </mrow>
+                                            <mover accent="true">
+                                                <mi mathvariant="bold">z</mi>
+                                                <mo>^</mo>
+                                            </mover>
+                                        </mrow>
+                                        <annotation encoding="application/x-tex">\boldsymbol{\nabla}\times \mathbf{A} = \left({\frac {1}{\rho }}{\frac {\partial A_{z}}{\partial \phi }}-{\frac {\partial A_{\phi }}{\partial z}}\right) {\hat {\boldsymbol {\rho }}}+\left({\frac {\partial A_{\rho }}{\partial z}}-{\frac {\partial A_{z}}{\partial \rho }}\right) {\hat {\boldsymbol {\phi }}}+{\frac {1}{\rho }}\left({\frac {\partial \left(\rho A_{\phi }\right)}{\partial \rho }}-{\frac {\partial A_{\rho }}{\partial \phi }}\right) {\hat {\mathbf {z} }}</annotation>
+                                    </semantics>
+                                </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76944em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord"><span class="mord mathbf">∇</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord mathbf">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">ρ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">ϕ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">ϕ</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord boldsymbol">ρ</span></span></span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">ρ</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">ρ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9578799999999998em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord boldsymbol">ϕ</span></span></span></span><span style="top:-3.26344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">ρ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">ρ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathnormal">ρ</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">ϕ</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">ϕ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">ρ</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+            </div>
+            <div class="block">
+                <p>Laplacian for scalar function <span len="25" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>f</mi>
+                                        <mo>=</mo>
+                                        <mi>f</mi>
+                                        <mo stretchy="false">(</mo>
+                                        <mi>ρ</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>θ</mi>
+                                        <mo separator="true">,</mo>
+                                        <mi>ϕ</mi>
+                                        <mo stretchy="false">)</mo>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">f = f(\rho,\theta,\phi)</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">ρ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">ϕ</span><span class="mclose">)</span></span></span></span>
+                    <span len="247" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <semantics>
+                                        <mrow>
+                                            <mi mathvariant="bold">∇</mi>
+                                            <mo>⋅</mo>
+                                            <mo stretchy="false">(</mo>
+                                            <mi mathvariant="bold">∇</mi>
+                                            <mi>f</mi>
+                                            <mo stretchy="false">)</mo>
+                                            <mo>=</mo>
+                                            <msup>
+                                                <mi mathvariant="normal">∇</mi>
+                                                <mn>2</mn>
+                                            </msup>
+                                            <mi>f</mi>
+                                            <mo>=</mo>
+                                            <mfrac>
+                                                <mn>1</mn>
+                                                <mi>ρ</mi>
+                                            </mfrac>
+                                            <mfrac>
+                                                <mi mathvariant="normal">∂</mi>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mi>ρ</mi>
+                                                </mrow>
+                                            </mfrac>
+                                            <mrow>
+                                                <mo fence="true">(</mo>
+                                                <mi>ρ</mi>
+                                                <mfrac>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <mi>f</mi>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <mi>ρ</mi>
+                                                    </mrow>
+                                                </mfrac>
+                                                <mo fence="true">)</mo>
+                                            </mrow>
+                                            <mo>+</mo>
+                                            <mfrac>
+                                                <mn>1</mn>
+                                                <msup>
+                                                    <mi>ρ</mi>
+                                                    <mn>2</mn>
+                                                </msup>
+                                            </mfrac>
+                                            <mfrac>
+                                                <mrow>
+                                                    <msup>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <mn>2</mn>
+                                                    </msup>
+                                                    <mi>f</mi>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <msup>
+                                                        <mi>ϕ</mi>
+                                                        <mn>2</mn>
+                                                    </msup>
+                                                </mrow>
+                                            </mfrac>
+                                            <mo>+</mo>
+                                            <mfrac>
+                                                <mrow>
+                                                    <msup>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <mn>2</mn>
+                                                    </msup>
+                                                    <mi>f</mi>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <msup>
+                                                        <mi>z</mi>
+                                                        <mn>2</mn>
+                                                    </msup>
+                                                </mrow>
+                                            </mfrac>
+                                        </mrow>
+                                        <annotation encoding="application/x-tex">\boldsymbol{\nabla}\cdot(\boldsymbol{\nabla}f) = \nabla^2f={1 \over \rho}{\partial \over \partial \rho}\left(\rho {\partial f \over \partial \rho}\right) + {1 \over \rho^2}{\partial^2 f \over \partial \phi^2}+ {\partial^2 f \over \partial z^2}</annotation>
+                                    </semantics>
+                                </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord mathbf">∇</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord"><span class="mord mathbf">∇</span></span></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.0585479999999998em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord">∇</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">ρ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">ρ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord mathnormal">ρ</span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714399999999998em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">ρ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.371548em;vertical-align:-0.8804400000000001em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">ρ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.491108em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord"><span class="mord mathnormal">ϕ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.177108em;vertical-align:-0.686em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.491108em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></span>
+                </p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2 class="highlighted"><a name="spherical" number="1.2" class="hanchor" href="#spherical"><span class="hnumber">1.2 </span> <span class="htext">Spherical</span></a></h2>
+
+            </div>
+            <div class="block">
+                <p class=""><span len="216" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <semantics>
+                                        <mrow>
+                                            <mi mathvariant="bold">∇</mi>
+                                            <mi>f</mi>
+                                            <mo>=</mo>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mi>f</mi>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mi>r</mi>
+                                                </mrow>
+                                            </mfrac>
+                                            <mover accent="true">
+                                                <mi mathvariant="bold">r</mi>
+                                                <mo>^</mo>
+                                            </mover>
+                                            <mo>+</mo>
+                                            <mfrac>
+                                                <mn>1</mn>
+                                                <mi>r</mi>
+                                            </mfrac>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mi>f</mi>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mi>θ</mi>
+                                                </mrow>
+                                            </mfrac>
+                                            <mover accent="true">
+                                                <mi mathvariant="bold-italic">θ</mi>
+                                                <mo>^</mo>
+                                            </mover>
+                                            <mo>+</mo>
+                                            <mfrac>
+                                                <mn>1</mn>
+                                                <mrow>
+                                                    <mi>r</mi>
+                                                    <mi>sin</mi>
+                                                    <mo>⁡</mo>
+                                                    <mi>θ</mi>
+                                                </mrow>
+                                            </mfrac>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mi>f</mi>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mi>ϕ</mi>
+                                                </mrow>
+                                            </mfrac>
+                                            <mover accent="true">
+                                                <mi mathvariant="bold-italic">ϕ</mi>
+                                                <mo>^</mo>
+                                            </mover>
+                                        </mrow>
+                                        <annotation encoding="application/x-tex">\mathbf{\nabla} f = {\partial f \over \partial r}\hat{\mathbf r}+ {1 \over r}{\partial f \over \partial \theta}\hat{\boldsymbol \theta}+ {1 \over r\sin\theta}{\partial f \over \partial \phi}\hat{\boldsymbol \phi}</annotation>
+                                    </semantics>
+                                </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathbf">∇</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.0574399999999997em;vertical-align:-0.686em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714399999999998em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">r</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.0574399999999997em;vertical-align:-0.686em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714399999999998em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9578799999999998em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord boldsymbol" style="margin-right:0.03194em;">θ</span></span></span></span><span style="top:-3.26344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.25188em;vertical-align:-0.8804400000000001em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714399999999998em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">ϕ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9578799999999998em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord boldsymbol">ϕ</span></span></span></span><span style="top:-3.26344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span></span></span></p>
+
+            </div>
+
+
+
+
+
+
+
+
+
+            <div class="block">
+                <p><span len="254" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <semantics>
+                                        <mrow>
+                                            <mi mathvariant="bold">∇</mi>
+                                            <mo>⋅</mo>
+                                            <mi mathvariant="bold">A</mi>
+                                            <mo>=</mo>
+                                            <mfrac>
+                                                <mn>1</mn>
+                                                <msup>
+                                                    <mi>r</mi>
+                                                    <mn>2</mn>
+                                                </msup>
+                                            </mfrac>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mrow>
+                                                        <mo fence="true">(</mo>
+                                                        <msup>
+                                                            <mi>r</mi>
+                                                            <mn>2</mn>
+                                                        </msup>
+                                                        <msub>
+                                                            <mi>A</mi>
+                                                            <mi>r</mi>
+                                                        </msub>
+                                                        <mo fence="true">)</mo>
+                                                    </mrow>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mi>r</mi>
+                                                </mrow>
+                                            </mfrac>
+                                            <mo>+</mo>
+                                            <mfrac>
+                                                <mn>1</mn>
+                                                <mrow>
+                                                    <mi>r</mi>
+                                                    <mi>sin</mi>
+                                                    <mo>⁡</mo>
+                                                    <mi>θ</mi>
+                                                </mrow>
+                                            </mfrac>
+                                            <mfrac>
+                                                <mi mathvariant="normal">∂</mi>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mi>θ</mi>
+                                                </mrow>
+                                            </mfrac>
+                                            <mrow>
+                                                <mo fence="true">(</mo>
+                                                <msub>
+                                                    <mi>A</mi>
+                                                    <mi>θ</mi>
+                                                </msub>
+                                                <mi>sin</mi>
+                                                <mo>⁡</mo>
+                                                <mi>θ</mi>
+                                                <mo fence="true">)</mo>
+                                            </mrow>
+                                            <mo>+</mo>
+                                            <mfrac>
+                                                <mn>1</mn>
+                                                <mrow>
+                                                    <mi>r</mi>
+                                                    <mi>sin</mi>
+                                                    <mo>⁡</mo>
+                                                    <mi>θ</mi>
+                                                </mrow>
+                                            </mfrac>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <msub>
+                                                        <mi>A</mi>
+                                                        <mi>ϕ</mi>
+                                                    </msub>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mi>ϕ</mi>
+                                                </mrow>
+                                            </mfrac>
+                                        </mrow>
+                                        <annotation encoding="application/x-tex">\boldsymbol{\nabla}\cdot\mathbf{A}={1 \over r^2}{\partial \left( r^2 A_r \right) \over \partial r} + {1 \over r\sin\theta}{\partial \over \partial \theta} \left( A_\theta\sin\theta \right) + {1 \over r\sin\theta}{\partial A_\phi \over \partial \phi}</annotation>
+                                    </semantics>
+                                </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord mathbf">∇</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord mathbf">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.27601em;vertical-align:-0.686em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.59001em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.7400100000000003em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.05744em;vertical-align:-0.686em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.25188em;vertical-align:-0.8804400000000001em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">ϕ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">ϕ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></span></p>
+
+            </div>
+            <div class="block">
+                <p><span len="557" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <semantics>
+                                        <mrow>
+                                            <mi mathvariant="bold">∇</mi>
+                                            <mo>×</mo>
+                                            <mi mathvariant="bold">A</mi>
+                                            <mo>=</mo>
+                                            <mfrac>
+                                                <mn>1</mn>
+                                                <mrow>
+                                                    <mi>r</mi>
+                                                    <mi>sin</mi>
+                                                    <mo>⁡</mo>
+                                                    <mi>θ</mi>
+                                                </mrow>
+                                            </mfrac>
+                                            <mrow>
+                                                <mo fence="true">(</mo>
+                                                <mfrac>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <mi>θ</mi>
+                                                    </mrow>
+                                                </mfrac>
+                                                <mrow>
+                                                    <mo fence="true">(</mo>
+                                                    <msub>
+                                                        <mi>A</mi>
+                                                        <mi>ϕ</mi>
+                                                    </msub>
+                                                    <mi>sin</mi>
+                                                    <mo>⁡</mo>
+                                                    <mi>θ</mi>
+                                                    <mo fence="true">)</mo>
+                                                </mrow>
+                                                <mo>−</mo>
+                                                <mfrac>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <msub>
+                                                            <mi>A</mi>
+                                                            <mi>θ</mi>
+                                                        </msub>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <mi>ϕ</mi>
+                                                    </mrow>
+                                                </mfrac>
+                                                <mo fence="true">)</mo>
+                                            </mrow>
+                                            <mover accent="true">
+                                                <mi mathvariant="bold">r</mi>
+                                                <mo>^</mo>
+                                            </mover>
+                                            <mo>+</mo>
+                                            <mfrac>
+                                                <mn>1</mn>
+                                                <mi>r</mi>
+                                            </mfrac>
+                                            <mrow>
+                                                <mo fence="true">(</mo>
+                                                <mfrac>
+                                                    <mn>1</mn>
+                                                    <mrow>
+                                                        <mi>sin</mi>
+                                                        <mo>⁡</mo>
+                                                        <mi>θ</mi>
+                                                    </mrow>
+                                                </mfrac>
+                                                <mfrac>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <msub>
+                                                            <mi>A</mi>
+                                                            <mi>r</mi>
+                                                        </msub>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <mi>ϕ</mi>
+                                                    </mrow>
+                                                </mfrac>
+                                                <mo>−</mo>
+                                                <mfrac>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <mi>r</mi>
+                                                    </mrow>
+                                                </mfrac>
+                                                <mrow>
+                                                    <mo fence="true">(</mo>
+                                                    <mi>r</mi>
+                                                    <msub>
+                                                        <mi>A</mi>
+                                                        <mi>ϕ</mi>
+                                                    </msub>
+                                                    <mo fence="true">)</mo>
+                                                </mrow>
+                                                <mo fence="true">)</mo>
+                                            </mrow>
+                                            <mover accent="true">
+                                                <mi mathvariant="bold-italic">θ</mi>
+                                                <mo>^</mo>
+                                            </mover>
+                                            <mo>+</mo>
+                                            <mfrac>
+                                                <mn>1</mn>
+                                                <mi>r</mi>
+                                            </mfrac>
+                                            <mrow>
+                                                <mo fence="true">(</mo>
+                                                <mfrac>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <mi>r</mi>
+                                                    </mrow>
+                                                </mfrac>
+                                                <mrow>
+                                                    <mo fence="true">(</mo>
+                                                    <mi>r</mi>
+                                                    <msub>
+                                                        <mi>A</mi>
+                                                        <mi>θ</mi>
+                                                    </msub>
+                                                    <mo fence="true">)</mo>
+                                                </mrow>
+                                                <mo>−</mo>
+                                                <mfrac>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <msub>
+                                                            <mi>A</mi>
+                                                            <mi>r</mi>
+                                                        </msub>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <mi>θ</mi>
+                                                    </mrow>
+                                                </mfrac>
+                                                <mo fence="true">)</mo>
+                                            </mrow>
+                                            <mover accent="true">
+                                                <mi mathvariant="bold-italic">ϕ</mi>
+                                                <mo>^</mo>
+                                            </mover>
+                                        </mrow>
+                                        <annotation encoding="application/x-tex">\boldsymbol{\nabla}\times \mathbf{A} = {\frac {1}{r\sin \theta }}\left({\frac {\partial }{\partial \theta }}\left(A_{\phi }\sin \theta \right)-{\frac {\partial A_{\theta }}{\partial \phi }}\right) {\hat {\mathbf {r} }}+{\frac {1}{r}}\left({\frac {1}{\sin \theta }}{\frac {\partial A_{r}}{\partial \phi }}-{\frac {\partial }{\partial r}}\left(rA_{\phi }\right)\right) {\hat {\boldsymbol {\theta }}}+{\frac {1}{r}}\left({\frac {\partial }{\partial r}}\left(rA_{\theta }\right)-{\frac {\partial A_{r}}{\partial \theta }}\right) {\hat {\boldsymbol {\phi }}}</annotation>
+                                    </semantics>
+                                </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76944em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord"><span class="mord mathbf">∇</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord mathbf">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">ϕ</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">ϕ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">r</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">ϕ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">ϕ</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9578799999999998em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord boldsymbol" style="margin-right:0.03194em;">θ</span></span></span></span><span style="top:-3.26344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9578799999999998em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord boldsymbol">ϕ</span></span></span></span><span style="top:-3.26344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+
+            </div>
+            <div class="block">
+                <p><span len="302" class="katex-display"><span class="katex katex-display" style="display: block"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <semantics>
+                                        <mrow>
+                                            <msup>
+                                                <mi mathvariant="normal">∇</mi>
+                                                <mn>2</mn>
+                                            </msup>
+                                            <mi>f</mi>
+                                            <mo>=</mo>
+                                            <mrow>
+                                                <mfrac>
+                                                    <mn>1</mn>
+                                                    <msup>
+                                                        <mi>r</mi>
+                                                        <mn>2</mn>
+                                                    </msup>
+                                                </mfrac>
+                                                <mfrac>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <mi>r</mi>
+                                                    </mrow>
+                                                </mfrac>
+                                                <mrow>
+                                                    <mo fence="true">(</mo>
+                                                    <msup>
+                                                        <mi>r</mi>
+                                                        <mn>2</mn>
+                                                    </msup>
+                                                    <mfrac>
+                                                        <mrow>
+                                                            <mi mathvariant="normal">∂</mi>
+                                                            <mi>f</mi>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mi mathvariant="normal">∂</mi>
+                                                            <mi>r</mi>
+                                                        </mrow>
+                                                    </mfrac>
+                                                    <mo fence="true">)</mo>
+                                                </mrow>
+                                                <mo>+</mo>
+                                                <mfrac>
+                                                    <mn>1</mn>
+                                                    <mrow>
+                                                        <msup>
+                                                            <mi>r</mi>
+                                                            <mn>2</mn>
+                                                        </msup>
+                                                        <mi>sin</mi>
+                                                        <mo>⁡</mo>
+                                                        <mi>θ</mi>
+                                                    </mrow>
+                                                </mfrac>
+                                                <mfrac>
+                                                    <mi mathvariant="normal">∂</mi>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <mi>θ</mi>
+                                                    </mrow>
+                                                </mfrac>
+                                                <mrow>
+                                                    <mo fence="true">(</mo>
+                                                    <mi>sin</mi>
+                                                    <mo>⁡</mo>
+                                                    <mi>θ</mi>
+                                                    <mfrac>
+                                                        <mrow>
+                                                            <mi mathvariant="normal">∂</mi>
+                                                            <mi>f</mi>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mi mathvariant="normal">∂</mi>
+                                                            <mi>θ</mi>
+                                                        </mrow>
+                                                    </mfrac>
+                                                    <mo fence="true">)</mo>
+                                                </mrow>
+                                                <mo>+</mo>
+                                                <mfrac>
+                                                    <mn>1</mn>
+                                                    <mrow>
+                                                        <msup>
+                                                            <mi>r</mi>
+                                                            <mn>2</mn>
+                                                        </msup>
+                                                        <msup>
+                                                            <mrow>
+                                                                <mi>sin</mi>
+                                                                <mo>⁡</mo>
+                                                            </mrow>
+                                                            <mn>2</mn>
+                                                        </msup>
+                                                        <mi>θ</mi>
+                                                    </mrow>
+                                                </mfrac>
+                                                <mfrac>
+                                                    <mrow>
+                                                        <msup>
+                                                            <mi mathvariant="normal">∂</mi>
+                                                            <mn>2</mn>
+                                                        </msup>
+                                                        <mi>f</mi>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mi mathvariant="normal">∂</mi>
+                                                        <msup>
+                                                            <mi>ϕ</mi>
+                                                            <mn>2</mn>
+                                                        </msup>
+                                                    </mrow>
+                                                </mfrac>
+                                            </mrow>
+                                        </mrow>
+                                        <annotation encoding="application/x-tex">\nabla^2f={ {1 \over r^{2}}{\partial \over \partial r}\left(r^{2}{\partial f \over \partial r}\right)+{1 \over r^{2}\sin \theta }{\partial \over \partial \theta }\left(\sin \theta {\partial f \over \partial \theta }\right)+{1 \over r^{2}\sin ^{2}\theta }{\partial ^{2}f \over \partial \phi ^{2}}}</annotation>
+                                    </semantics>
+                                </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0585479999999998em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord">∇</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.441138em;vertical-align:-0.95003em;"></span><span class="mord"><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714399999999998em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714399999999998em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.2381320000000002em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">sin</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.871868em;"><span style="top:-3.12076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.761868em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.491108em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord"><span class="mord mathnormal">ϕ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></span></span></p>
+
+            </div>
+
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="equations-you-should-know" number="2" class="hanchor" href="#equations-you-should-know"><span class="hnumber">2 </span> <span class="htext">Equations you should know</span></a></h1>
+
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="undergraduate" number="2.1" class="hanchor" href="#undergraduate"><span class="hnumber">2.1 </span> <span class="htext">Undergraduate</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ol>
+                    <li>
+                        <div class="block">
+                            <p>Gradient, divergence, and Laplacian; how to quickly derive the curl.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>An example problem where gradient, divergence, curl, Laplacian is used in cartesian, cylindrical, and spherical.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <div class="block">
+                                <p><span len="14" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                <semantics>
+                                                    <mrow>
+                                                        <mo stretchy="false">(</mo>
+                                                        <mn>1</mn>
+                                                        <mo>+</mo>
+                                                        <mi>δ</mi>
+                                                        <msup>
+                                                            <mo stretchy="false">)</mo>
+                                                            <mi>n</mi>
+                                                        </msup>
+                                                    </mrow>
+                                                    <annotation encoding="application/x-tex">(1+\delta)^n</annotation>
+                                                </semantics>
+                                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span> for small <span len="8" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                <semantics>
+                                                    <mrow>
+                                                        <mi>δ</mi>
+                                                    </mrow>
+                                                    <annotation encoding="application/x-tex">\delta</annotation>
+                                                </semantics>
+                                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span></span></span></span>; same for <span len="15" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                <semantics>
+                                                    <mrow>
+                                                        <mi>ln</mi>
+                                                        <mo>⁡</mo>
+                                                        <mo stretchy="false">(</mo>
+                                                        <mn>1</mn>
+                                                        <mo>+</mo>
+                                                        <mi>δ</mi>
+                                                        <mo stretchy="false">)</mo>
+                                                    </mrow>
+                                                    <annotation encoding="application/x-tex">\ln(1+\delta)</annotation>
+                                                </semantics>
+                                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span><span class="mclose">)</span></span></span></span>, <span len="14" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                <semantics>
+                                                    <mrow>
+                                                        <mi>sin</mi>
+                                                        <mo>⁡</mo>
+                                                        <mo stretchy="false">(</mo>
+                                                        <mi>δ</mi>
+                                                        <mo stretchy="false">)</mo>
+                                                    </mrow>
+                                                    <annotation encoding="application/x-tex">\sin(\delta)</annotation>
+                                                </semantics>
+                                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span><span class="mclose">)</span></span></span></span>, <span len="14" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                <semantics>
+                                                    <mrow>
+                                                        <mi>cos</mi>
+                                                        <mo>⁡</mo>
+                                                        <mo stretchy="false">(</mo>
+                                                        <mi>δ</mi>
+                                                        <mo stretchy="false">)</mo>
+                                                    </mrow>
+                                                    <annotation encoding="application/x-tex">\cos(\delta)</annotation>
+                                                </semantics>
+                                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span><span class="mclose">)</span></span></span></span>, <span len="12" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                <semantics>
+                                                    <mrow>
+                                                        <msup>
+                                                            <mi>e</mi>
+                                                            <mi>δ</mi>
+                                                        </msup>
+                                                    </mrow>
+                                                    <annotation encoding="application/x-tex">e^{\delta}</annotation>
+                                                </semantics>
+                                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03785em;">δ</span></span></span></span></span></span></span></span></span></span></span></span> (all can be derived using a Taylor series; a plot can help - e.g., <span len="12" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                <semantics>
+                                                    <mrow>
+                                                        <mi>cos</mi>
+                                                        <mo>⁡</mo>
+                                                        <mi>δ</mi>
+                                                    </mrow>
+                                                    <annotation encoding="application/x-tex">\cos\delta</annotation>
+                                                </semantics>
+                                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span></span></span></span> near <span len="10" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                <semantics>
+                                                    <mrow>
+                                                        <mi>δ</mi>
+                                                        <mo>=</mo>
+                                                        <mn>0</mn>
+                                                    </mrow>
+                                                    <annotation encoding="application/x-tex">\delta=0</annotation>
+                                                </semantics>
+                                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> appears to be a concave-down parabola):</p>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <ol>
+                                <li>
+                                    <div class="block">
+                                        <p><span len="33" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                        <semantics>
+                                                            <mrow>
+                                                                <mo stretchy="false">(</mo>
+                                                                <mn>1</mn>
+                                                                <mo>+</mo>
+                                                                <mi>δ</mi>
+                                                                <msup>
+                                                                    <mo stretchy="false">)</mo>
+                                                                    <mi>n</mi>
+                                                                </msup>
+                                                                <mo>≃</mo>
+                                                                <mn>1</mn>
+                                                                <mo>+</mo>
+                                                                <mi>n</mi>
+                                                                <mi>δ</mi>
+                                                            </mrow>
+                                                            <annotation encoding="application/x-tex">(1+\delta)^n \simeq 1 + n\delta</annotation>
+                                                        </semantics>
+                                                    </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≃</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span></span></span></span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="block">
+                                        <p><span len="29" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                        <semantics>
+                                                            <mrow>
+                                                                <mi>ln</mi>
+                                                                <mo>⁡</mo>
+                                                                <mo stretchy="false">(</mo>
+                                                                <mn>1</mn>
+                                                                <mo>+</mo>
+                                                                <mi>δ</mi>
+                                                                <mo stretchy="false">)</mo>
+                                                                <mo>≃</mo>
+                                                                <mi>δ</mi>
+                                                            </mrow>
+                                                            <annotation encoding="application/x-tex">\ln(1+\delta) \simeq \delta</annotation>
+                                                        </semantics>
+                                                    </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≃</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span></span></span></span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="block">
+                                        <p><span len="34" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                        <semantics>
+                                                            <mrow>
+                                                                <mi>cos</mi>
+                                                                <mo>⁡</mo>
+                                                                <mi>δ</mi>
+                                                                <mo>≃</mo>
+                                                                <mn>1</mn>
+                                                                <mo>−</mo>
+                                                                <msup>
+                                                                    <mi>δ</mi>
+                                                                    <mn>2</mn>
+                                                                </msup>
+                                                                <mi mathvariant="normal">/</mi>
+                                                                <mn>2</mn>
+                                                            </mrow>
+                                                            <annotation encoding="application/x-tex">\cos\delta \simeq 1 - \delta^2/2</annotation>
+                                                        </semantics>
+                                                    </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≃</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord">/2</span></span></span></span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="block">
+                                        <p><span len="26" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                        <semantics>
+                                                            <mrow>
+                                                                <mi>sin</mi>
+                                                                <mo>⁡</mo>
+                                                                <mi>δ</mi>
+                                                                <mo>≃</mo>
+                                                                <mi>δ</mi>
+                                                            </mrow>
+                                                            <annotation encoding="application/x-tex">\sin\delta \simeq \delta</annotation>
+                                                        </semantics>
+                                                    </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≃</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span></span></span></span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="block">
+                                        <p><span len="28" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                        <semantics>
+                                                            <mrow>
+                                                                <msup>
+                                                                    <mi>e</mi>
+                                                                    <mi>δ</mi>
+                                                                </msup>
+                                                                <mo>≃</mo>
+                                                                <mn>1</mn>
+                                                                <mo>+</mo>
+                                                                <mi>δ</mi>
+                                                            </mrow>
+                                                            <annotation encoding="application/x-tex">e^\delta \simeq 1 + \delta</annotation>
+                                                        </semantics>
+                                                    </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03785em;">δ</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≃</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span></span></span></span></p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p><span len="38" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <msup>
+                                                        <mi>e</mi>
+                                                        <mrow>
+                                                            <mi>i</mi>
+                                                            <mi>θ</mi>
+                                                        </mrow>
+                                                    </msup>
+                                                    <mo>=</mo>
+                                                    <mi>cos</mi>
+                                                    <mo>⁡</mo>
+                                                    <mi>θ</mi>
+                                                    <mo>+</mo>
+                                                    <mi>i</mi>
+                                                    <mi>sin</mi>
+                                                    <mo>⁡</mo>
+                                                    <mi>θ</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">e^{i\theta}=\cos\theta + i\sin\theta</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Field near surface of conductor is <span len="20" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>σ</mi>
+                                                    <mi mathvariant="normal">/</mi>
+                                                    <mn>2</mn>
+                                                    <msub>
+                                                        <mi>ϵ</mi>
+                                                        <mn>0</mn>
+                                                    </msub>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\sigma/2\epsilon_0</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="mord">/2</span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>; Field near center of and near surface of sheet of charge is <span len="19" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>σ</mi>
+                                                    <mi mathvariant="normal">/</mi>
+                                                    <msub>
+                                                        <mi>ϵ</mi>
+                                                        <mn>0</mn>
+                                                    </msub>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\sigma/\epsilon_0</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="mord">/</span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>. Why these differ (conductor equation accounts for <em>all</em> charges, including those on conductor; sheet equation accounts only for charges on sheet).</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h2><a name="graduate" number="2.2" class="hanchor" href="#graduate"><span class="hnumber">2.2 </span> <span class="htext">Graduate</span></a></h2>
+
+            </div>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="block">
+                            <p>((1+\delta)^n) to first order in (\delta); same for (\ln(1+\delta)), (\sin(\delta)), (\cos(\delta)), (e^{\delta})</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>(e^{i\theta}=\cos\theta + i\sin\theta) and how to get formulas from (\sinh x) and (\cosh x) from it. How to derive trig identities using it.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Radial component of (\nabla^2f) in cylindrical and spherical (can reason out by using know problem solution as guide)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Radial component of (\boldsymbol{\nabla}\boldsymbol{\cdot}\mathbf{A})</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Divergence theorem (can reason out by using know problem solution as guide)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Stokes theorem (can reason out by using know problem solution as guide)</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

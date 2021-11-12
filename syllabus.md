@@ -180,6 +180,39 @@
 * [Class Video](https://gmu.zoom.us/rec/share/dMbfD_UiEAB0C1IsVOvcNNRvFe4x6ftlAArmOZ8BAG5LOUKAn9aPOOZM_MQ818fg.O5Fjfbnd3OhaaTLm)
 * Discuss [HW #10](hw10.html)
 
+## Thursday, November 11th
+* [Class Video](https://gmu.zoom.us/rec/share/HHHBlyANQPcYHMsLqsHrXNzYsdK_1gzWyEvTYntrVt8nb2GSx2TQIrkhxc0qfsfX.RuakjL7i9v_5egy4)
+* Cover divergence and curl of $\mathbf{B}$ and Ampere's law
+* [HW #9](hw9.html) will be returned later today
+* [HW #10](hw10.html) due at 3 pm
+* HW #11 will be posted later today
+
+## Tuesday, November 16th
+* Discuss HW #11
+
+## Thursday, November 18th
+* HW #11 due
+* Assign HW #12 covering Magnetic Vector Potential, Magnetization, Bound Current Densities, the Auxiliary Field $\mathbf{H}$, and Ampere's Law for $\mathbf{H}$
+
+## Tuesday, November 23rd
+* Discuss HW #12
+
+## Thursday, November 25th
+* No class
+
+## Tuesday, November 30th
+* Discuss HW #12
+
+## Thursday, December 2nd
+* Last class
+* HW #12 due
+* Final review
+* Post final review problems
+
+## Thursday, December 12th
+
+* Final Exam from 10:30 am - 1:15 pm. Location TBD.
+
 # Topics
 
 This course covers the topics in Chapters 1-7 of the [textbook](#textbook).
@@ -295,7 +328,7 @@ No class:
 * Tuesday, October 12th (Monday classes/labs meet Tuesday. Tuesday classes do not meet this week)
 * Thursday, November 28th (Thanksgiving)
 
-Final Exam: Thursday, December 12th 10:30 am - 1:15 pm ([Final Exam Schedule](https://registrar.gmu.edu/wp-content/uploads/Fall-2021-Final-Exam-Schedule.pdf)). Location and deliver method TBD.
+Final Exam: Thursday, December 12th 10:30 am - 1:15 pm ([Final Exam Schedule](https://registrar.gmu.edu/wp-content/uploads/Fall-2021-Final-Exam-Schedule.pdf)). Location and delivery method TBD.
 
 Last class: Thursday, December 5th
 
