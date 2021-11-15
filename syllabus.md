@@ -10,7 +10,7 @@
 * Office: 259 Planetary Hall
 * Course URL: http://rweigel.github.io/phys305/
 
-**Homeworks and Exams**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) | [4](hw4.html) | [5](hw5.html) | [6](hw6.html) | [7](hw7.html) | [Midterm](midterm.html) | [8](hw8.html) | [9](hw9.html) | [10](hw10.html)
+**Homeworks and Exams**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) | [4](hw4.html) | [5](hw5.html) | [6](hw6.html) | [7](hw7.html) | [Midterm](midterm.html) | [8](hw8.html) | [9](hw9.html) | [10](hw10.html) | [11](hw11.html)
 
 **Notes**
 * [Vectors](vectors.html)
@@ -188,10 +188,10 @@
 * HW #11 will be posted later today
 
 ## Tuesday, November 16th
-* Discuss HW #11
+* Discuss [HW #11](hw11.html)
 
 ## Thursday, November 18th
-* HW #11 due
+* [HW #11](hw11.html) due
 * Assign HW #12 covering Magnetic Vector Potential, Magnetization, Bound Current Densities, the Auxiliary Field $\mathbf{H}$, and Ampere's Law for $\mathbf{H}$
 
 ## Tuesday, November 23rd
