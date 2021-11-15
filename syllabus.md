@@ -185,7 +185,7 @@
 * Cover divergence and curl of $\mathbf{B}$ and Ampere's law
 * [HW #9](hw9.html) will be returned later today
 * [HW #10](hw10.html) due at 3 pm
-* HW #11 will be posted later today
+* [HW #11](hw11.html) posted later today
 
 ## Tuesday, November 16th
 * Discuss [HW #11](hw11.html)
