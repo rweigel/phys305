@@ -188,6 +188,7 @@
 * [HW #11](hw11.html) posted later today
 
 ## Tuesday, November 16th
+* [Class Recording](https://gmu.zoom.us/rec/share/xjckbHA4ZSYhMYZuaM6uX5MjuJZs0lGAbV9vs5bRo-fSbflp3RAoE6GCkJabrzL9.bpUmGau1T1Ym24hE)
 * Discuss [HW #11](hw11.html)
 
 ## Thursday, November 18th
