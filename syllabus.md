@@ -10,7 +10,7 @@
 * Office: 259 Planetary Hall
 * Course URL: http://rweigel.github.io/phys305/
 
-**Homeworks and Exams**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) | [4](hw4.html) | [5](hw5.html) | [6](hw6.html) | [7](hw7.html) | [Midterm](midterm.html) | [8](hw8.html) | [9](hw9.html) | [10](hw10.html) | [11](hw11.html)
+**Homeworks and Exams**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) | [4](hw4.html) | [5](hw5.html) | [6](hw6.html) | [7](hw7.html) | [Midterm](midterm.html) | [8](hw8.html) | [9](hw9.html) | [10](hw10.html) | [11](hw11.html) | [12](hw12.html)
 
 **Notes**
 * [Vectors](vectors.html)
@@ -29,6 +29,8 @@
 * [Boundary Value Problems](boundary_value_problems.html)
 * [Method of Images](method_of_images.html)
 * [Monopole Expansion](monopole_expansion.html)
+
+* [Vector Potential](vector_potential.html)
 
 # Class Schedule
 
@@ -192,25 +194,29 @@
 * Discuss [HW #11](hw11.html)
 
 ## Thursday, November 18th
+
+* [Class Video](https://gmu.zoom.us/rec/share/Zm-xH-qxByEgjxNcaCNQETzvksO0Cl7OQ_EoERI57U3x150VjCnBpP589oDUCkLF.emBu1fF9ZZTQHhS7)
 * [HW #11](hw11.html) due
-* Assign HW #12 covering Magnetic Vector Potential, Magnetization, Bound Current Densities, the Auxiliary Field $\mathbf{H}$, and Ampere's Law for $\mathbf{H}$
+* Discuss [Magnetic Vector Potential](vector_potential.html)
+* Assign [HW #12](hw12.html) covering [Magnetic Vector Potential](vector_potential.html), Magnetization, Bound Current Densities, the Auxiliary Field $\mathbf{H}$, and Ampere's Law for $\mathbf{H}$
 
 ## Tuesday, November 23rd
-* Discuss HW #12
+* Discuss [HW #12](hw12.html)
+* Discuss Magnetization, Bound Current Densities, the Auxiliary Field $\mathbf{H}$, and Ampere's Law for $\mathbf{H}$
 
 ## Thursday, November 25th
 * No class
 
 ## Tuesday, November 30th
-* Discuss HW #12
+* Discuss [HW #12](hw12.html)
 
 ## Thursday, December 2nd
 * Last class
-* HW #12 due
+* [HW #12](hw12.html) due
 * Final review
 * Post final review problems
 
-## Thursday, December 12th
+## Thursday, December 9th
 
 * Final Exam from 10:30 am - 1:15 pm. Location TBD.
 
@@ -329,7 +335,7 @@ No class:
 * Tuesday, October 12th (Monday classes/labs meet Tuesday. Tuesday classes do not meet this week)
 * Thursday, November 28th (Thanksgiving)
 
-Final Exam: Thursday, December 12th 10:30 am - 1:15 pm ([Final Exam Schedule](https://registrar.gmu.edu/wp-content/uploads/Fall-2021-Final-Exam-Schedule.pdf)). Location and delivery method TBD.
+Final Exam: Thursday, December 9th 10:30 am - 1:15 pm ([Final Exam Schedule](https://registrar.gmu.edu/wp-content/uploads/Fall-2021-Final-Exam-Schedule.pdf)). Location and delivery method TBD.
 
 Last class: Thursday, December 5th
 
