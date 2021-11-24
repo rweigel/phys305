@@ -81,7 +81,7 @@ $\mathbf{K}_b=\mathbf{M}\times \hat{\mathbf{n}}=M_o\xhat\times (-\zhat)=+M_o\yha
 
 As discussed in class, there is a $\mathbf{K}_b$ on two other surfaces, but they are far enough away from the origin that they will create a field that is small in comparison to the top and bottom surfaces.
 
-The bound volume current density is $\mathbf{J}_b= -\boldsymbol{\nabla}\times\mathbf{M}=0$. Note that if $\mathbf{M}$ has componenents that are constant _in cartesian coordinates_, we can conclude $\boldsymbol{\nabla}\times\mathbf{M}=0$. This is only true in general for $\mathbf{M}$ in cartesian coordinates. In the following example, $\mathbf{M}$ has components in cylindrical components that are constants. However, $\boldsymbol{\nabla}\times\mathbf{M}\ne 0$.
+The bound volume current density is $\mathbf{J}_b= \boldsymbol{\nabla}\times\mathbf{M}=0$. Note that if $\mathbf{M}$ has componenents that are constant _in cartesian coordinates_, we can conclude $\boldsymbol{\nabla}\times\mathbf{M}=0$. This is only true in general for $\mathbf{M}$ in cartesian coordinates. In the following example, $\mathbf{M}$ has components in cylindrical components that are constants. However, $\boldsymbol{\nabla}\times\mathbf{M}\ne 0$.
 
 The equivalent system is an infinite sheet of current at $z=t/2$ with a current of density $K_b=M_o$ flowing in the $-\yhat$ direction and an infinite sheet of current at $z=-t/2$ with a current of density $K_b=M_o$ flowing in the $+\yhat$ direction.
 
@@ -110,25 +110,25 @@ If the cylinder is long, then in the $x$--$y$ plane, the field due to the bound 
 
 $\mathbf{B}\_{K\_{b}} = 0$ for $s\lt R$
 
-$\displaystyle\mathbf{B}\_{K\_{b}} = \frac{\mu_oM_oR}{s}\hat{\boldsymbol{\phi}}$ for $s\ge R$.
+$\displaystyle\mathbf{B}\_{K\_{b}} = -\frac{\mu_oM_oR}{s}\hat{\boldsymbol{\phi}}$ for $s\ge R$.
 
 ----
 
-$\displaystyle\mathbf{J}_b=-\boldsymbol{\nabla}\times\mathbf{M}=-\frac{M_o}{s}\zhat$.
+$\displaystyle\mathbf{J}_b=\boldsymbol{\nabla}\times\mathbf{M}=\frac{M_o}{s}\zhat$.
 
 This corresponds to current flowing within the cylinder upwards.
 
 From Ampere's law and a diagram, you should be able to show that the field due to $\mathbf{J}_b$ is 
 
-$\mathbf{B}\_{J\_{b}}=-\mu_oM_o\hat{\boldsymbol{\phi}}$ for $s\le R$
+$\mathbf{B}\_{J\_{b}}=\mu_oM_o\hat{\boldsymbol{\phi}}$ for $s\le R$
 
-$\displaystyle\mathbf{B}\_{J\_{b}}=-\frac{\mu_oM_oR}{s}\hat{\boldsymbol{\phi}}$ for $s\ge R$.
+$\displaystyle\mathbf{B}\_{J\_{b}}=\frac{\mu_oM_oR}{s}\hat{\boldsymbol{\phi}}$ for $s\ge R$.
 
 ----
 
 The total magnetic field is that due to $\mathbf{K}_b$ and $\mathbf{J}_b$.
 
-$\mathbf{B}=-\mu_oM_o\hat{\boldsymbol{\phi}}$ for $s\le R$
+$\mathbf{B}=\mu_oM_o\hat{\boldsymbol{\phi}}$ for $s\le R$
 
 $\mathbf{B}=0$ for $s\ge R$
 
