@@ -10,13 +10,30 @@ $$\boldsymbol{\nabla}\times \mathbf{A} = \left(\frac{\partial A_z }{\partial y} 
 Gradient for scalar function $f = f(\rho,\theta,\phi)$
 $$\nabla f = {\partial f \over \partial \rho}\hat{\boldsymbol \rho}+ {1 \over \rho}{\partial f \over \partial \phi}\hat{\boldsymbol \phi}+ {\partial f \over \partial z}\hat{\mathbf z}$$
 
-Divergence for vector function expressed as $\mathbf{A}=A_{\rho}(\rho, \theta, \phi)\hat\boldsymbol{\rho} + A_{\theta}(\rho, \theta, \phi)\hat\boldsymbol{\theta} + A_{\phi}(\rho, \theta, \phi)\hat\boldsymbol{\phi}$
+Divergence for vector function expressed as 
 
 $$\boldsymbol{\nabla}\cdot\mathbf{A}={1 \over \rho}{\partial \left( \rho A_\rho  \right) \over \partial \rho}+{1 \over \rho}{\partial A_\phi \over \partial \phi}+{\partial A_z \over \partial z}$$
 
-Curl for vector function expressed as $\mathbf{A}=A_{\rho}(\rho, \theta, \phi)\hat\boldsymbol{\rho} + A_{\theta}(\rho, \theta, \phi)\hat\boldsymbol{\theta} + A_{\phi}(\rho, \theta, \phi)\hat\boldsymbol{\phi}$
+$$\boldsymbol{\nabla}\cdot\mathbf{A}={1 \over s}{\partial \left( s A_s  \right) \over \partial s}+{1 \over s}{\partial A_\phi \over \partial \phi}+{\partial A_z \over \partial z}$$
+
+Curl for vector function expressed as 
 
 $$\boldsymbol{\nabla}\times \mathbf{A} = \left({\frac {1}{\rho }}{\frac {\partial A_{z}}{\partial \phi }}-{\frac {\partial A_{\phi }}{\partial z}}\right) {\hat {\boldsymbol {\rho }}}+\left({\frac {\partial A_{\rho }}{\partial z}}-{\frac {\partial A_{z}}{\partial \rho }}\right) {\hat {\boldsymbol {\phi }}}+{\frac {1}{\rho }}\left({\frac {\partial \left(\rho A_{\phi }\right)}{\partial \rho }}-{\frac {\partial A_{\rho }}{\partial \phi }}\right) {\hat {\mathbf {z} }}$$
+
+$$\boldsymbol{\nabla}\times \mathbf{A} = 
+\left({\frac {1}{s }}{\frac {\partial A_{z}}{\partial \phi }}-{\frac {\partial A_{\phi }}{\partial z}}\right) {\hat {\boldsymbol {s }}}
++
+\left({\frac {\partial A_{s}}{\partial z}}-{\frac {\partial A_{z}}{\partial s}}\right) {\hat {\boldsymbol {\phi }}}
++
+{\frac {1}{s}}\left({\frac {\partial \left(s A_{\phi }\right)}{\partial s}}-{\frac {\partial A_{s}}{\partial \phi }}\right) {\hat {\mathbf {z} }}$$
+
+
+$$\boldsymbol{\nabla}\times \mathbf{B} = 
+\left({\frac {1}{s }}{\frac {\partial B_{z}}{\partial \phi }}-{\frac {\partial B_{\phi }}{\partial z}}\right) {\hat {\boldsymbol {s }}}
++
+\left({\frac {\partial B_{s}}{\partial z}}-{\frac {\partial B_{z}}{\partial s}}\right) {\hat {\boldsymbol {\phi }}}
++
+{\frac {1}{s}}\left({\frac {\partial \left(s B_{\phi }\right)}{\partial s}}-{\frac {\partial B_{s}}{\partial \phi }}\right) {\hat {\mathbf {z} }}$$
 
 Laplacian for scalar function $f = f(\rho,\theta,\phi)$
 $$\boldsymbol{\nabla}\cdot(\boldsymbol{\nabla}f) = \nabla^2f={1 \over \rho}{\partial \over \partial \rho}\left(\rho {\partial f \over \partial \rho}\right) + {1 \over \rho^2}{\partial^2 f \over \partial \phi^2}+ {\partial^2 f \over \partial z^2}$$

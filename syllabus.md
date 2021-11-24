@@ -31,6 +31,10 @@
 * [Monopole Expansion](monopole_expansion.html)
 
 * [Vector Potential](vector_potential.html)
+* [Magnetic Dipoles](magnetic_dipoles.html)
+* [Magnetization](magnetization.html)
+* [Continuous Magnetic Dipole Distributions](continuous_magnetic_dipole_distributions.html)
+* [Induced Magnetization](induced_magnetization.html)
 
 # Class Schedule
 
@@ -190,7 +194,7 @@
 * [HW #11](hw11.html) posted later today
 
 ## Tuesday, November 16th
-* [Class Recording](https://gmu.zoom.us/rec/share/xjckbHA4ZSYhMYZuaM6uX5MjuJZs0lGAbV9vs5bRo-fSbflp3RAoE6GCkJabrzL9.bpUmGau1T1Ym24hE)
+* [Class Video](https://gmu.zoom.us/rec/share/xjckbHA4ZSYhMYZuaM6uX5MjuJZs0lGAbV9vs5bRo-fSbflp3RAoE6GCkJabrzL9.bpUmGau1T1Ym24hE)
 * Discuss [HW #11](hw11.html)
 
 ## Thursday, November 18th
@@ -201,8 +205,9 @@
 * Assign [HW #12](hw12.html) covering [Magnetic Vector Potential](vector_potential.html), Magnetization, Bound Current Densities, the Auxiliary Field $\mathbf{H}$, and Ampere's Law for $\mathbf{H}$
 
 ## Tuesday, November 23rd
+* [Class Video](https://gmu.zoom.us/rec/share/ZDczLup1iryB7h9ckD63vh75jPHuI7uApaKVyJcJpTy3YKnWV9OmPBHfkAcagyvd.NGrBsa5fVv4cd5Qp)
 * Discuss [HW #12](hw12.html)
-* Discuss Magnetization, Bound Current Densities, the Auxiliary Field $\mathbf{H}$, and Ampere's Law for $\mathbf{H}$
+* Discuss Magnetization, Bound Current Densities, and Induced Magnetization
 
 ## Thursday, November 25th
 * No class

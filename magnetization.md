@@ -1,0 +1,12 @@
+
+# Introduction
+
+Recall that atoms in a material have an intrinsic dipole moment, which can be conceptualized by thinking of each atom as corresponding to a tiny loop of current. Each of these tiny loops creates a magnetic field. On average, the orientation of the loops is random and so the average field is zero when one averages over a volume of, say 10-100 atoms. So on a macroscopic scale, say 1 mole ($\sim 10^{23}$ atoms), the net field is certainly zero. 
+
+We did problems in which we computed the torque on a single loop of current when exposed to an external magnetic field (sometimes we gave the current system that created the external magnetic field, such as another current loop, but what created the external field does not matter). What we found in those problems is that a current loop would tend to rotate so that its field would be in the same direction as the external magnetic field.
+
+When the many current loops in an object are exposed to an external field, each loop will tend to rotate so their field is more in the direction of the external field (in a paramagnet; the opposite is true in a diamagnet). Adding up the field of $10^{23}$ current loops to find the net magnetic field is not feasible. But turns out that there is an easier way to compute the field due to the $10^{23}$ current loops. An object which has non-randomly oriented tiny current loops can be characterized by a magnetization vector $\mathbf{M}$. If this vector is known, we can compute so-called "bound currents" which produce the same magnetic field as the field due to $10^{23}$ tiny current loops. Because $\mathbf{M}$ allows one to do much fewer than $10^{23}$ calculations to find the magnetic field, it is traditional to pronounce the $\mathbf{M}$ as "Mmmmmm".
+
+In summary, you can think of a magnetized object as having many tiny current loops that are not randomly aligned. To compute the magnetic field it creates, you find an equivalent "bound current object" with current flowing on its surface and within its body that creates the same magnetic field.
+
+You can conceptualize how an object is magnetized by thinking about placing an object in a large external magnetic field and then freezing the tiny current loops so they can't go back to a random orientation when the external field is removed.

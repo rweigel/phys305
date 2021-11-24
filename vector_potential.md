@@ -1,31 +1,31 @@
 
 # Introduction
 
-For electrostatic fields, we found from Coulomb's law that there is a scalar function such that $\mathbf{E}=-\boldsymbol{\nabla}V$. For charge distributions that are finite in extent (e.g., not an infinite line or plane of plane), we can compute $\mathbf{E}$ by first computing
+For electrostatic fields, we found from Coulomb's law that there is a scalar function such that $\mathbf{E}=-\boldsymbol{\nabla}V$. For charge distributions that are finite in extent (e.g., not an infinite line or plane), we can compute $\mathbf{E}$ by first computing
 
 $$\displaystyle V(\mathbf{r})=\frac{1}{4\pi\epsilon_o}\left(\int \frac{\rho(\mathbf{r}')}{\char"0509}d\tau' + \int \frac{\sigma(\mathbf{r}')}{\char"0509}dA' + \int \frac{\lambda(\mathbf{r}')}{\char"0509}dl'\right)$$
 
-and then using $\mathbf{E}=-\boldsymbol{\nabla}V$. (In most problems, only one of the charge densities in the above equation was not zero; the equation above is the most general equation.) Given that the integrands are scalars, it is often easier to use this approach rather than computing $\mathbf{E}$ directly using Coulomb's Law:
+and then use $\mathbf{E}=-\boldsymbol{\nabla}V$. (In most problems, only one of the charge densities in the above equation was not zero; the equation above is the most general equation.) Given that the integrands are scalars, it is often easier to use this approach rather than computing $\mathbf{E}$ directly using Coulomb's Law:
 
 $$\displaystyle \mathbf{E}(\mathbf{r})=\frac{1}{4\pi\epsilon_o}\left(\int \frac{\hat{\textbf{\char"0509}}\phantom{^2}}{\char"0509^2}\rho(\mathbf{r}')d\tau' + \int \frac{\hat{\textbf{\char"0509}}\phantom{^2}}{\char"0509^2}\sigma(\mathbf{r}')dA' + \int \frac{\hat{\textbf{\char"0509}}\phantom{^2}}{\char"0509^2}\lambda(\mathbf{r}')dl'\right)$$
 
-The reason that we can find $V$ for which $\mathbf{E}=-\boldsymbol{\nabla}V$ is because electrostatic fields (field due to static charges) have the property that $\boldsymbol{\nabla}\times \mathbf{E}=0$.
+The reason that we can find $V$ for which $\mathbf{E}=-\boldsymbol{\nabla}V$ is electrostatic fields (field due to non--moving charges) have the property that $\boldsymbol{\nabla}\times \mathbf{E}=0$.
 
 We can always compute $\mathbf{B}$ using the Biot--Savart law:
 
 $$\displaystyle \mathbf{B}(\mathbf{r})=\frac{\mu_o}{4\pi}\left(\int d\mathbf{l}'\times\frac{\hat{\textbf{\char"0509}}\phantom{^2}}{\char"0509^2}J(\mathbf{r}')d\tau' + \int d\mathbf{l}'\times\frac{\hat{\textbf{\char"0509}}\phantom{^2}}{\char"0509^2}K(\mathbf{r}')dA' + \int d\mathbf{l}'\times\frac{\hat{\textbf{\char"0509}}\phantom{^2}}{\char"0509^2}I(\mathbf{r}')dl'\right)$$
 
-I've written the integrands in a slightly different way so that it looks more like the integrants for $\mathbf{E}$. 
+(I've written the integrands in a slightly different way so that it looks more like the integrands for $\mathbf{E}$.)
 
-From the Biot--Savart law, it can be shown that  $\boldsymbol{\nabla}\times \mathbf{B}=\mu_o\mathbf{J}$. Because $\boldsymbol{\nabla}\times \mathbf{B}\ne 0$ in general, we cannot in general find a scalar function $V_m$ such that $\mathbf{B}=-\nabla V_m$. ($V_m$ has some use. We use it when solving boundary value problems in current--free regions and also [when fitting measurements](https://www.ngdc.noaa.gov/IAGA/vmod/igrf.html) from current--free regions.)
+From the Biot--Savart law, it can be shown that  $\boldsymbol{\nabla}\times \mathbf{B}=\mu_o\mathbf{J}$. Because $\boldsymbol{\nabla}\times \mathbf{B}\ne 0$, we cannot in general find a scalar function $V_m$ such that $\mathbf{B}=-\nabla V_m$. ($V_m$ has some use; it can be used for solving boundary value problems in current--free regions and also [when fitting measurements](https://www.ngdc.noaa.gov/IAGA/vmod/igrf.html) from current--free regions.)
 
 However, we can find a vector function $\mathbf{A}$ for which $\mathbf{B}=\boldsymbol{\nabla}\times \mathbf{A}$. This vector is called the "vector potential," and it applies to magnetic fields only.
 
-A natural question is why we introduce this vector potential (see also [15-4 in the Feynman Lectures on Physics](https://www.feynmanlectures.caltech.edu/II_15.html)). One of the reasons that $V$ is useful is that it is a scalar, and so instead of discussing the vector function $\mathbf{E}$, we can discuss the scalar function $V$. In addition, $V$ has a physical interpretation and use -- for example, it can be used to find the work required to assemble a charge distribution. The vector potential $\mathbf{A}$ does not have these two advantages. There are, however, several uses for $\mathbf{A}$. One is that the equations finding it looks similar to that for $V$:
+A natural question is why we introduce this vector potential (see also [15-4 in the Feynman Lectures on Physics](https://www.feynmanlectures.caltech.edu/II_15.html)). One of the reasons that $V$ is useful is that it is a scalar, and so instead of discussing the vector function $\mathbf{E}$, we can discuss the scalar function $V$. Also, $V$ has a physical interpretation and use -- for example, it can be used to find the work required to assemble a charge distribution. Neither of these is true for the vector potential $\mathbf{A}$. There are, however, several uses for $\mathbf{A}$. One is that the equations for finding it look similar to that for $V$:
 
 $$\displaystyle \mathbf{A}(\mathbf{r})=\frac{\mu_o}{4\pi}\left(\int \frac{\mathbf{J}(\mathbf{r}')}{\char"0509}d\tau' + \int \frac{\mathbf{K}(\mathbf{r}')}{\char"0509}da' + \int \frac{\mathbf{I}(\mathbf{r}')}{\char"0509}dl'\right).$$
 
-As a result, some of the techniques used in computing $V$ can be used in computing $\mathbf{A}$. In addition, some of the integrals found for $V$ can be re--used when they appear in integrals required to compute $\mathbf{A}$. Recall that the expansion of $1/\char"0509$ was used to find the multipole expansion of $V$ in Chapter 3.4 of Griffiths (so as to avoid having to do integration to find $V$ at points for which $r>r'$). The integrals for $\mathbf{A}$ have a $1/\char"0509$, and so we can use the multipole expansion to find an equation for $\mathbf{A}$  that allows us to avoid having to do integration to find $\mathbf{A}$ (and also $\mathbf{B}$, because it can be computed from $\mathbf{A}$).
+As a result, some of the techniques used in computing $V$ can be used in computing $\mathbf{A}$. In addition, some of the integrals found for $V$ can be re--used when they appear in integrals required to compute $\mathbf{A}$. Recall that the expansion of $1/\char"0509$ was used to find the multipole expansion of $V$ in Chapter 3.4 of Griffiths (so as to avoid having to integrate to find $V$ at points for which $r>r'$). The integrals for $\mathbf{A}$ have a $1/\char"0509$, and so we can use the multipole expansion to find an equation for $\mathbf{A}$  that allows us to avoid having to integrate to find $\mathbf{A}$ (and also $\mathbf{B}$ because it can be computed from $\mathbf{A}$).
 
 A second reason that $\mathbf{A}$ is useful is that we can write $\nabla^2\mathbf{A}=-\mu_o\mathbf{J}$, which is the analog to the Poisson equation $\nabla^2V=-\rho/\epsilon_o$. Sometimes we can use the boundary value techniques for solving Poisson's equation for solving $\nabla^2\mathbf{A}=-\mu_o\mathbf{J}$ (which is actually three equations, each which have the form of Poisson's equation: $\nabla^2A_x=-\mu_oJ_x$, $\nabla^2A_y=-\mu_oJ_y$, $\nabla^2A_z=-\mu_oJ_z$.)
 
@@ -77,7 +77,7 @@ Evaluation gives
 
 $\mathbf{B}=\displaystyle\boldsymbol{\nabla}\times \mathbf{A} = \frac{\alpha}{r^3}\left(2\cos\theta{\hat {\mathbf {r} }}+\sin\theta\hat{\boldsymbol{\theta}}\right)$
 
-This $\mathbf{B}$ has the same form as a [magnetic dipole](magnetic_dipoles.html) in spherical coordinates and unit vectors; we can conclude that this vector potential is that for a magnetic dipole for which the current system is a small loop centered on the origin in the $x$--$y$ plane.
+This $\mathbf{B}$ has the same form as a [magnetic dipole](magnetic_dipoles.html) in spherical coordinates and unit vectors; we can conclude that this vector potential is that for a magnetic dipole for which the current system is a small loop of area $A$ centered on the origin in the $x$--$y$ plane if $\alpha = \mu_oIA/4\pi$.
 
 ## Problem --  $\mathbf{A}\sim \hat{\boldsymbol{\phi}}$
 
@@ -104,7 +104,7 @@ There are two general types of problems related to computing $\mathbf{A}$
 
 If $\mathbf{B}$ is known, we can sometimes (a.) find $\mathbf{A}$ by guessing what $\mathbf{A}$ will give $\mathbf{B}=\boldsymbol{\nabla}\times \mathbf{A}$, (b.) use $\mathbf{B}=\boldsymbol{\nabla}\times \mathbf{A}$, and (c.) and additional information, or using $\oint \mathbf{A}\bfcdot d\mathbf{l}=\int \mathbf{B}\bfcdot d\mathbf{l}$. As an example of (c.), see Example 5.12 of Griffiths.
 
-If $\mathbf{B}$ is not known, we can always use direct integration to find $\mathbf{A}$. Often the integral encountered will be one that was previously used to find $V$ using direct integration. Most generally, the integral will not have a closed--form solution, and we will write the integrant of $\mathbf{A}$ as a power series as was done in the monopole expansion.
+If $\mathbf{B}$ is not known, we can always use direct integration to find $\mathbf{A}$. Often the integral encountered will be one that was previously used to find $V$ using direct integration. Most generally, the integral will not have a closed--form solution, and we will write the integrant of $\mathbf{A}$ as a power series as was done in the monopole expansion for $V$.
 
 ## Example -- Infinitely Long and Straight Wire
 
@@ -120,7 +120,7 @@ Using $\displaystyle B_\phi = \frac{\mu_o}{2\pi}\frac{I}{s}$ gives
 
 $\displaystyle A_z(s)=A_z(s_o)-\frac{\mu_oI}{2\pi}\ln\frac{s}{s_o}$
 
-Suppose $\mathbf{B}$ was not known. We can solve for $\mathbf{A}$ by analogy. For a wire along the $z$ axis that is centered on the origin and has a length $L$, the vector potential is
+Suppose $\mathbf{B}$ was not known. We can solve for $\mathbf{A}$ by analogy. For a finite wire along the $z$ axis that is centered on the origin and has a length $L$, the vector potential is
 
 $\displaystyle \mathbf{A}=\int \frac{\mathbf{I}(\mathbf{r}')}{\char"0509}dl'$
 
@@ -128,7 +128,7 @@ Here, $dl'=dz'$ (the $dl'$ here is the differential length along the wire; in $\
 
 $\displaystyle A_z=\frac{\mu_o}{4\pi}\int_{-L/2}^{L/2} \frac{I}{\char"0509}dz'$
 
-We have encountered an integral like this before. If instead of a wire we have a uniformly charged line of charge density $\lambda$, then
+We have encountered an integral like this before. If, instead of a wire, we have a uniformly charged line of charge density $\lambda$, then
 
 $\displaystyle V=\frac{1}{4\pi\epsilon_o}\int_{-L/2}^{L/2}\frac{\lambda}{\char"0509}dz'$
 
@@ -154,8 +154,6 @@ set up the integral that must be solved to find $\mathbf{A}(x,y,z)$ due to a loo
 
 **Answer**
 
-$\mathbf{A} = \frac{\mu_o}{4\pi}\int \frac{\mathbf{I}dl'}{\char"0509}$
-
 $\mathbf{I}=I\hat{\boldsymbol{\phi}}$
 
 $dl'= bd\phi'$
@@ -164,7 +162,7 @@ $\mathbf{r}'=b\hat{\mathbf{s}}$
 
 $\mathbf{r}=x\hat{\mathbf{x}}+y\hat{\mathbf{y}}+z\hat{\mathbf{z}}$
 
-To do the integration, we need to convert non-cartesian unit vectors to cartesian unit vectors (as covered on an earlier homework problem).
+To do the integration, we need to convert non-cartesian unit vectors to cartesian unit vectors.
 
 $\mathbf{r}'=b\hat{\mathbf{s}}=b\cos\phi'\hat{\mathbf{x}}+b\sin\phi'\hat{\mathbf{y}}$
 
@@ -172,7 +170,7 @@ $\mathbf{I}=I(-\sin\phi'\hat{\mathbf{x}}+\cos\phi'\hat{\mathbf{y}})$
 
 $\char"0509=|\mathbf{r}-\mathbf{r}'|=\sqrt{(x-b\cos\phi')^2+(y-b\sin\phi')^2+z^2}$
 
-Using these results in
+Substitution of these three equations into
 
 $\displaystyle \mathbf{A} = \frac{\mu_o}{4\pi}\int \frac{\mathbf{I}dl'}{\char"0509}$
 
@@ -184,8 +182,6 @@ This equation would be the answer to a "set up the integral problem".
 
 
 ## Problem
-
-The integral in the previous example does not have a closed-form solution. If we assume that $r\gg a$, we can find an approximate solution.
 
 1\. Use the binomial expansion on $1/\sqrt{(x-b\cos\phi')^2+(y-b\sin\phi')^2+z^2}$ to show that to leading order in $1/r$
 
@@ -211,7 +207,7 @@ where $r^2=x^2+y^2+z^2$.
 
 %$\displaystyle\delta = -\frac{2bx}{r^2}\cos\phi'-\frac{2by}{r^2}\sin\phi'+\frac{b^2}{r^2}$
 
-%We need to provide an argument for why $\delta \ll 1$ when $r\gg b$, which corresponds to points far away from the current loop. Clearly $b^2/r^2$ is small for this limit. The first term can be written as
+%We need to provide an argument for why $\delta \ll 1$ when $r\gg b$, which corresponds to points far away from the current loop. Clearly, $b^2/r^2$ is small for this limit. The first term can be written as
 
 %$\displaystyle\frac{2bx}{r^2}\cos\phi'=2\frac{a}{r}\frac{x}{r}\cos\phi'$
 

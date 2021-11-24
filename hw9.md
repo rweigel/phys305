@@ -23,6 +23,7 @@ A long solid cylinder of radius $R$ has a polarization $\mathbf{P}=P_o\hat{\math
 2. Find $\mathbf{E}_b(s)$, which is the electric field due to the bound charge densities found in part 1. of this problem.
 
 **Answer**
+% Copied to notes
 
 1. $\sigma_b=P_o$ (at $s=R$). $\rho_b=-P_o/s$.
 2. Gauss's law with these charge densities gives $\mathbf{E}=-(P_o/\epsilon_o)\hat{\mathbf{s}}$ inside and $0$ outside. A common error was to not use integration to find $Q_{encl}$, which is required if $\rho$ is not constant. Using Gauss's law for dielectrics gives the same result and requires less calculation.
