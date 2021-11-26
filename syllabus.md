@@ -213,6 +213,7 @@
 * No class
 
 ## Tuesday, November 30th
+* Discuss [study guide](final.html)
 * Discuss [HW #12](hw12.html)
 
 ## Thursday, December 2nd
