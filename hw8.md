@@ -79,6 +79,8 @@ Note that an alternative approach to solving both 1. and 2. problem is to take t
 
 # Slab of Charge
 
+% Copied to notes
+
 In 4.2 of Griffiths, he models a polarized sphere by using two uniformly charged spheres with centers that are separated by a small distance $d$. One sphere has a postive charge and the other a negative charge. He then computes the electric field in the overlap region and in the region outside of both spheres where there is no overlap.
 
 In this problem, a polarized slab will be modeled by using two slabs of charge with uniform and opposite charge density that are displaced by a small distance $d$.

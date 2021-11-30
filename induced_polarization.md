@@ -1,38 +1,68 @@
-Due on Thursday, November 4th at 3:00 pm.
+# Introduction
 
-Send your solutions to the email address rweigel+phys305@gmu.edu as a scanned PDF. Use a file name of `Yourlastname_PHYS305_HW9.pdf` (one file only, please). Capitalize the first letter in your last name and use caps and underscores as indicated. **Include your name on the first sheet**.
+In [Continuous Electric Dipole Distributions](continuous_electric_dipole_distributions.html), the problem of finding the electric field due to an object that had a polarization $\mathbf{P}$ "frozen in" was considered.
 
-# Polarized Sphere
+The approach was to find the bound charge densities that result from this polarization. Then the electric field due to the bound charge densities was computed.
 
-% Copied to notes
+Consider an object that is unpolarized ($\mathbf{P}=0$), but is placed in an external electric field, $\mathbf{E}_{ext}$. In response to this electric field, atomic--sized dipoles will tend to form. Thes induced dipoles create an electric field, which called an induced electric field.
 
-A sphere of radius $R_o$ has a spherical cavity of radius $R_i$. The sphere and cavity are centered on the origin. The region $R_i\le r\le R_o$ has a polarization $\mathbf{P}=(P_or^2/R_i^2)\hat{\mathbf{r}}$.
+The total field is then
 
-1. Find $\sigma_b$ and $\rho_b$.
-2. Find $\mathbf{E}_b(r)$, which is the electric field due to the bound charge densities found in part 1. of this problem.
+$\mathbf{E}\_{total}=\mathbf{E}\_{external} + \mathbf{E}_{induced}$
+
+By convention, we drop the "total" subscript and abbreviate "external" as "ext". Given that the induced field is can be computed from bound charge densities, we can use $\mathbf{E}\_b$ in place of $\mathbf{E}\_{induced}$ to emphasize this point. In this notation, we have
+
+$\mathbf{E}=\mathbf{E}\_{ext} + \mathbf{E}_{b}$
+
+It is important to note that $\mathbf{E}_b$ depends on $\mathbf{E}$.
+
+Without additional information, it is not possible to compute $\mathbf{E}$ -- we need to know how much $\mathbf{P}$ is generated given $\mathbf{E}$. Once we have $\mathbf{P}$, we can compute the bound charge densities and then $\mathbf{E}_b$.
+
+For many materials, the relationship between $\mathbf{P}$ and $\mathbf{E}$ is linear:
+
+$\mathbf{P}=\epsilon_o\chi_e\mathbf{E}$
+
+where the constant $\chi_e$ is the **electric susceptibility**.
+
+A constant that often appears in induced polarization problems is $\epsilon_o(1+\chi_e)$, which is called **permittivity** or the **dielectric constant**:
+
+$\epsilon\equiv \epsilon_o(1+\chi_e)$
+
+## Example -- Infinite Slab
+
+An object with an electric susceptibility of $\chi_e$ is in the region $|z| \le t$. The object is infinite in extent in the $x$ and $y$ directions.
+
+There is an external electric field of $E_o\zhat$.
+
+Find $\mathbf{E}$
 
 **Answer**
 
-1. $\sigma_b=-P_o$ at $r=R_i$ and $\sigma_b=P_oR_o^2/R_i^2$ at $r=R_o$. $\rho_b=-4P_o r/R_i^2$.
+$\mathbf{E}=\mathbf{E}\_{ext} + \mathbf{E}_{b}$
 
-2. One can use Gauss's law with the above charge densities to find: $\mathbf{E}=0$ for $r\lt R_i$ and $r\gt R_o$ and $\mathbf{E}=-P_r(r)\hat{\mathbf{r}}/\epsilon_o$, where $P_r(r) = P_o r^2/R_i^2$. It is easier to use Gauss's law for dielectrics. Inside the sphere, there is no free charge, so $\oint\mathbf{D}\bfcdot d\mathbf{A}=0$. From symmetry arguments (what are they?), we can write $\mathbf{D}=D_r(r)\hat{\mathbf{r}}$ and so the integral reduces to $D_r 4\pi r^2=0 \Rightarrow D_r=0$ for all $r\gt 0$.  Using the definition of $\mathbf{D}=\epsilon_o\mathbf{E}+\mathbf{P}$ with $\mathbf{P}=0$ for $0\lt r\lt R_i$ and $r\gt R_o$ gives $\mathbf{E}=0$ in these regions. $E_r=0$ at $r=0$ from a symmetry argument (what is it?). Inside the sphere, $\mathbf{P}$ is non--zero and $D_r=0 \Rightarrow E_r + P_r/\epsilon_0\Rightarrow E_r=-P_r/\epsilon_o$ as before.
+$E_z = E_{ext\text{ z}} + E_{b\text{ z}}$
 
-# Polarized Cylinder
+$E_z = E_o + E_{b\text{ z}}$
 
-A long solid cylinder of radius $R$ has a polarization $\mathbf{P}=P_o\hat{\mathbf{s}}$. The cylinder is centered on the origin an aligned with the $z$--axis.
+At this point, $E_z$ and $E_{b\text{ z}}$ are unknown. We know that $E_{b\text{ z}}$ is related to $P_z$, which is in turn related to $E_z$.
 
-1. Find $\sigma_b$ and $\rho_b$.
-2. Find $\mathbf{E}_b(s)$, which is the electric field due to the bound charge densities found in part 1. of this problem.
+$P_z = \epsilon_o\chi_e E_z$. The bound surface densities are $\sigma_b=\pm P_z=\pm \epsilon_o\chi_e E_z$ on the top/bottom surfaces of the slab. $\rho_b=0$.
 
-**Answer**
-% Copied to notes
+As a result of $\sigma_b$, the $E_{b\text{ z}}=-P_z/\epsilon_o=-\chi_e E_z$ in the slab and $E_{b\text{ z}}=0$ outside of the slab.
 
-1. $\sigma_b=P_o$ (at $s=R$). $\rho_b=-P_o/s$.
-2. Gauss's law with these charge densities gives $\mathbf{E}=-(P_o/\epsilon_o)\hat{\mathbf{s}}$ inside and $0$ outside. A common error was to not use integration to find $Q_{encl}$, which is required if $\rho$ is not constant. Using Gauss's law for dielectrics gives the same result and requires less calculation.
+Thus, inside the slab
 
-# Induced Polarization
+$E_z = E_o + E_{b\text{ z}}=E_o-\chi_e E_z$
 
-% Copied to notes
+Solving for $E_z$ gives
+
+$\displaystyle E_z=\frac{E_o}{1+\chi_e}$
+
+Outside the slab, $E_z=E_o$.
+
+Inside the slab, the induced polarization opposes the external electric field and causes the field to be smaller. Outside the slab, the induced electric field has no effect.
+
+## Example -- Dielectric Around a Charged Sphere
 
 In Example 4.5 of Griffiths, he finds the total electric field when a dielectric (polarizable material) is wrapped around a spherical shell with a net charge. 
 
@@ -56,11 +86,15 @@ $\sigma_{bo}$ creates $\mathbf{E}\_{bo}$, which is zero for $r\lt b$ and $4\pi b
 
 The sum of the fields due to the three surface charge densities $\mathbf{E}\_{bi} + \mathbf{E}\_{bo} + \mathbf{E}\_Q$ gives $\mathbf{E}$ given in Example 4.5.
 
-# Extra Credit
+# Problems
 
-% Copied to notes
+## Dielectric Around a Charged Sphere
 
-Example 4.5 of Griffiths can be solved without using Gauss's law by using the approach that I used in class to find the electric field inside a dielectric slab when it is in an external electric field. The procedure is to start with
+Solve Example 4.5 of Griffiths can be solved without using Gauss's law for dielectrics.
+
+**Answer**
+
+The procedure is to start with
 
 $\mathbf{E}=\mathbf{E}_b + \mathbf{E}_Q$
 
