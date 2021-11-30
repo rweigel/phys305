@@ -1,6 +1,6 @@
 **Final Exam Study Guide**
 
-The final exam will have five problems. It is from 10:30 am - 1:15 pm on Thursday, December 9th, in a location to--be--determined.
+The final exam will have five problems. It is from 10:30 am - 1:15 pm on Thursday, December 9th, in Innovation Hall, room 131.
 
 Ideally, you would prepare by 
 

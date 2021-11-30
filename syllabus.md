@@ -10,7 +10,7 @@
 * Office: 259 Planetary Hall
 * Course URL: http://rweigel.github.io/phys305/
 
-**Homeworks and Exams**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) | [4](hw4.html) | [5](hw5.html) | [6](hw6.html) | [7](hw7.html) | [Midterm](midterm.html) | [8](hw8.html) | [9](hw9.html) | [10](hw10.html) | [11](hw11.html) | [12](hw12.html)
+**Homeworks and Exams**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) | [4](hw4.html) | [5](hw5.html) | [6](hw6.html) | [7](hw7.html) | [Midterm](midterm.html) | [8](hw8.html) | [9](hw9.html) | [10](hw10.html) | [11](hw11.html) | [12](hw12.html) | [Final](final.html)
 
 **Notes**
 * [Vectors](vectors.html)
@@ -35,6 +35,12 @@
 * [Magnetization](magnetization.html)
 * [Continuous Magnetic Dipole Distributions](continuous_magnetic_dipole_distributions.html)
 * [Induced Magnetization](induced_magnetization.html)
+
+%* [Polarization](polarization.html)
+%* [Continuous Electric Dipole Distributions](continuous_electric_dipole_distributions.html)
+%* [Polarized Objects](polarized_objects.html)
+%* [Induced Polarization](induced_polarization.html)
+%* [Magnetized Objects](magnetized_objects.html)
 
 # Class Schedule
 
@@ -213,6 +219,10 @@
 * No class
 
 ## Tuesday, November 30th
+
+* [Class Video](https://gmu.zoom.us/rec/share/KjXE9bfGa2Tgrcn1y4h7LGagIL-Tt7zKj-3v-cRT-BwjSMD31bgPsqg7d4YjmTOl.HeheorJiYh-0nUUW)
+* Course evaluations are open. Please submit!
+* Final exam room has been scheduled. It is Innovation Hall 131, which is the same room as the midterm. Day and time is Thursday, December 9th from 10:30 am to 1:15 pm.
 * Discuss [final exam study guide](final.html)
 * Discuss [HW #12](hw12.html)
 
@@ -224,7 +234,7 @@
 
 ## Thursday, December 9th
 
-* Final Exam from 10:30 am - 1:15 pm. Location TBD.
+* Final Exam from 10:30 am - 1:15 pm. Location: Innovation Hall 131 (same as midterm).
 
 # Topics
 

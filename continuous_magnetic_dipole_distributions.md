@@ -1,6 +1,6 @@
 # Introduction
 
-The vector potential due to a magnetic dipole centered on the origin is
+The vector potential due to a "perfect" magnetic dipole centered on the origin is
 
 $$\mathbf{A}(\mathbf{r})=\frac{\mu_o}{4\pi}\frac{\mathbf{m}\times \mathbf{\hat{r}}}{r^2}$$
 
@@ -57,7 +57,7 @@ $\mathbf{K}_b\equiv \mathbf{M}\times \hat{\mathbf{n}}$ (with $\mathbf{M}$ evalua
 
 and
 
-$\mathbf{J}_b\equiv -\boldsymbol{\nabla}\times\mathbf{P}$.
+$\mathbf{J}_b\equiv \boldsymbol{\nabla}\times\mathbf{M}$.
 
 We actually will not use this equation for $\mathbf{A}$. Instead, we note that for regular (non--bound) currents on a surface and within a volume, [the equation for $\mathbf{A}$](vector_potential.html) is
 

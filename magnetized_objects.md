@@ -1,0 +1,2 @@
+
+Move problems from continuous_magnetic_dipole_distributions here.
