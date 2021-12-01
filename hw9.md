@@ -4,6 +4,8 @@ Send your solutions to the email address rweigel+phys305@gmu.edu as a scanned PD
 
 # Polarized Sphere
 
+% Copied to notes
+
 A sphere of radius $R_o$ has a spherical cavity of radius $R_i$. The sphere and cavity are centered on the origin. The region $R_i\le r\le R_o$ has a polarization $\mathbf{P}=(P_or^2/R_i^2)\hat{\mathbf{r}}$.
 
 1. Find $\sigma_b$ and $\rho_b$.
@@ -23,11 +25,14 @@ A long solid cylinder of radius $R$ has a polarization $\mathbf{P}=P_o\hat{\math
 2. Find $\mathbf{E}_b(s)$, which is the electric field due to the bound charge densities found in part 1. of this problem.
 
 **Answer**
+% Copied to notes
 
 1. $\sigma_b=P_o$ (at $s=R$). $\rho_b=-P_o/s$.
 2. Gauss's law with these charge densities gives $\mathbf{E}=-(P_o/\epsilon_o)\hat{\mathbf{s}}$ inside and $0$ outside. A common error was to not use integration to find $Q_{encl}$, which is required if $\rho$ is not constant. Using Gauss's law for dielectrics gives the same result and requires less calculation.
 
 # Induced Polarization
+
+% Copied to notes
 
 In Example 4.5 of Griffiths, he finds the total electric field when a dielectric (polarizable material) is wrapped around a spherical shell with a net charge. 
 
@@ -52,6 +57,8 @@ $\sigma_{bo}$ creates $\mathbf{E}\_{bo}$, which is zero for $r\lt b$ and $4\pi b
 The sum of the fields due to the three surface charge densities $\mathbf{E}\_{bi} + \mathbf{E}\_{bo} + \mathbf{E}\_Q$ gives $\mathbf{E}$ given in Example 4.5.
 
 # Extra Credit
+
+% Copied to notes
 
 Example 4.5 of Griffiths can be solved without using Gauss's law by using the approach that I used in class to find the electric field inside a dielectric slab when it is in an external electric field. The procedure is to start with
 

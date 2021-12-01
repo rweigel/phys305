@@ -10,7 +10,7 @@
 * Office: 259 Planetary Hall
 * Course URL: http://rweigel.github.io/phys305/
 
-**Homeworks and Exams**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) | [4](hw4.html) | [5](hw5.html) | [6](hw6.html) | [7](hw7.html) | [Midterm](midterm.html) | [8](hw8.html) | [9](hw9.html) | [10](hw10.html)
+**Homeworks and Exams**: [1](hw1.html) | [2](hw2.html) | [3](hw3.html) | [4](hw4.html) | [5](hw5.html) | [6](hw6.html) | [7](hw7.html) | [Midterm](midterm.html) | [8](hw8.html) | [9](hw9.html) | [10](hw10.html) | [11](hw11.html) | [12](hw12.html) | [Final](final.html)
 
 **Notes**
 * [Vectors](vectors.html)
@@ -29,6 +29,17 @@
 * [Boundary Value Problems](boundary_value_problems.html)
 * [Method of Images](method_of_images.html)
 * [Monopole Expansion](monopole_expansion.html)
+* [Continuous Electric Dipole Distributions](continuous_electric_dipole_distributions.html)
+* [Induced Polarization](induced_polarization.html)
+* [Vector Potential](vector_potential.html)
+* [Magnetic Dipoles](magnetic_dipoles.html)
+* [Magnetization](magnetization.html)
+* [Continuous Magnetic Dipole Distributions](continuous_magnetic_dipole_distributions.html)
+* [Induced Magnetization](induced_magnetization.html)
+
+%* [Polarization](polarization.html)
+%* [Polarized Objects](polarized_objects.html)
+%* [Magnetized Objects](magnetized_objects.html)
 
 # Class Schedule
 
@@ -185,33 +196,44 @@
 * Cover divergence and curl of $\mathbf{B}$ and Ampere's law
 * [HW #9](hw9.html) will be returned later today
 * [HW #10](hw10.html) due at 3 pm
-* HW #11 will be posted later today
+* [HW #11](hw11.html) posted later today
 
 ## Tuesday, November 16th
-* Discuss HW #11
+* [Class Video](https://gmu.zoom.us/rec/share/xjckbHA4ZSYhMYZuaM6uX5MjuJZs0lGAbV9vs5bRo-fSbflp3RAoE6GCkJabrzL9.bpUmGau1T1Ym24hE)
+* Discuss [HW #11](hw11.html)
 
 ## Thursday, November 18th
-* HW #11 due
-* Assign HW #12 covering Magnetic Vector Potential, Magnetization, Bound Current Densities, the Auxiliary Field $\mathbf{H}$, and Ampere's Law for $\mathbf{H}$
+
+* [Class Video](https://gmu.zoom.us/rec/share/Zm-xH-qxByEgjxNcaCNQETzvksO0Cl7OQ_EoERI57U3x150VjCnBpP589oDUCkLF.emBu1fF9ZZTQHhS7)
+* [HW #11](hw11.html) due
+* Discuss [Magnetic Vector Potential](vector_potential.html)
+* Assign [HW #12](hw12.html) covering [Magnetic Vector Potential](vector_potential.html), Magnetization, Bound Current Densities, the Auxiliary Field $\mathbf{H}$, and Ampere's Law for $\mathbf{H}$
 
 ## Tuesday, November 23rd
-* Discuss HW #12
+* [Class Video](https://gmu.zoom.us/rec/share/ZDczLup1iryB7h9ckD63vh75jPHuI7uApaKVyJcJpTy3YKnWV9OmPBHfkAcagyvd.NGrBsa5fVv4cd5Qp)
+* Discuss [HW #12](hw12.html)
+* Discuss Magnetization, Bound Current Densities, and Induced Magnetization
 
 ## Thursday, November 25th
 * No class
 
 ## Tuesday, November 30th
-* Discuss HW #12
+
+* [Class Video](https://gmu.zoom.us/rec/share/KjXE9bfGa2Tgrcn1y4h7LGagIL-Tt7zKj-3v-cRT-BwjSMD31bgPsqg7d4YjmTOl.HeheorJiYh-0nUUW)
+* Course evaluations are open. Please submit!
+* Final exam room has been scheduled. It is Innovation Hall 131, which is the same room as the midterm. Day and time is Thursday, December 9th from 10:30 am to 1:15 pm.
+* Discuss [final exam study guide](final.html)
+* Discuss [HW #12](hw12.html)
 
 ## Thursday, December 2nd
 * Last class
-* HW #12 due
+* [HW #12](hw12.html) due
 * Final review
 * Post final review problems
 
-## Thursday, December 12th
+## Thursday, December 9th
 
-* Final Exam from 10:30 am - 1:15 pm. Location TBD.
+* Final Exam from 10:30 am - 1:15 pm. Location: Innovation Hall 131 (same as midterm).
 
 # Topics
 
@@ -328,7 +350,7 @@ No class:
 * Tuesday, October 12th (Monday classes/labs meet Tuesday. Tuesday classes do not meet this week)
 * Thursday, November 28th (Thanksgiving)
 
-Final Exam: Thursday, December 12th 10:30 am - 1:15 pm ([Final Exam Schedule](https://registrar.gmu.edu/wp-content/uploads/Fall-2021-Final-Exam-Schedule.pdf)). Location and delivery method TBD.
+Final Exam: Thursday, December 9th 10:30 am - 1:15 pm ([Final Exam Schedule](https://registrar.gmu.edu/wp-content/uploads/Fall-2021-Final-Exam-Schedule.pdf)). Location and delivery method TBD.
 
 Last class: Thursday, December 5th
 

@@ -64,11 +64,74 @@ If $\mathbf{r}'=y'\yhat$, find an equation for $V(r,\theta,\phi)$ to second orde
 
 Check your answer by plugging in $\theta=\pi/2$ and $\phi=\pi/2$ so that $r=y$. For $y\gg y'$, does your equation match the expected potential from approximating $V(y)=kq/|y-y'|$ for $y\gg y'$?
 
-## Problem -- Dipole
+## Problem -- Dipole on $z$--axis
 
 If $\pm q$ are at $z=\pm d$, find the potential to first order in $d/r$.
 
 Use $V$ to compute $\mathbf{E}$ in the $x--y$ plane. Is $\mathbf{E}$ in expected direction?
+
+# Problem -- Dipole on $x$--axis
+
+1\. Find $V(\mathbf{r})$ for charges $\pm q$ at $x=\pm d/2$ using the $n=0$ and $n=1$ terms of
+
+$\displaystyle V = \frac{kq}{\char"0509} = \frac{kq}{r}\sum_{n=0}^\infty\left(\frac{r'}{r}\right)^nP_n(\cos\alpha)$
+
+and also
+
+$\displaystyle V(\mathbf{r})=k\frac{\mathbf{p}\bfcdot\hat{\mathbf{r}}}{r^2}$
+
+2\. Find $\mathbf{E}$ with spherical coordinates and unit vectors using the $V(\mathbf{r})$ that you computed in part 1.
+
+**Answer**
+
+1\.
+
+$\displaystyle V\_+=\frac{kq}{r}\left[1+\frac{r'\_+}{r}\cos\alpha\_+ + ...\right]$
+
+$\displaystyle V\_-=\frac{kq}{r}\left[1+\frac{r'\_-}{r}\cos\alpha\_- + ...\right]$
+
+In this problem, $\alpha_+$, the angle between $\mathbf{r}$ and $\mathbf{r}'_+$ is not simply the polar angle $\theta$ in spherical coordinates. It can be computed from the definition of the dot product:
+
+$\displaystyle \cos\alpha\_+=\frac{\mathbf{r}\bfcdot\mathbf{r}'\_+}{r'
+_+ r}$
+
+Using $\mathbf{r}'\_+=(d/2)\xhat$ and $\mathbf{r}=x\xhat + y\yhat + z\zhat$ gives
+
+$\displaystyle \cos\alpha\_+=\frac{x}{r}$
+
+which can be written in spherical coordinates using $x=r\sin\theta\cos\phi$ (you should know this formula or be able to derive it from a diagram). Then,
+
+$\displaystyle \cos\alpha\_+=\sin\theta\cos\phi$
+
+Checks: For $\theta=0$ and $\phi=0$, this gives $\alpha\_+=0$ as expected. For $\theta=90^\circ$ and $\phi=0$, this gives $\alpha\_+=90^\circ$ as expected.
+
+Similar calculation (or using $\pi =\alpha\_+ + \alpha_\-$, which applies to this problem but not in general) gives
+
+$\displaystyle \cos\alpha\_-=-\sin\theta\cos\phi$
+
+Finally, using $V=V\_+ + V\_-$, we get
+
+$\displaystyle V = \frac{kqd}{r^2}\sin\theta\cos\phi$
+
+To compute the potential using
+
+$\displaystyle V(\mathbf{r})=k\frac{\mathbf{p}\bfcdot\hat{\mathbf{r}}}{r^2}$
+
+use $\mathbf{p}=q(\mathbf{r}'\_+-\mathbf{r}'\_-)=qd\xhat$ and $\hat{\mathbf{r}}=(x\xhat + y\yhat + z\zhat)/r$
+
+2\.
+
+Use
+
+$\displaystyle V(r,\theta) = \frac{kqd}{r^2}\sin\theta\cos\phi$ and $\mathbf{E}=-\mathbf{\nabla}V$ with $\mathbf{\nabla}$ in spherical coordinates. This requires evaluation of the partials in
+
+$\displaystyle \mathbf{E}(r,\theta)=-{\partial V \over \partial r}\hat{\mathbf r} - {1 \over r}{\partial V \over \partial \theta}\hat{\boldsymbol \theta} - {1 \over r\sin\theta}{\partial V \over \partial \phi}\hat{\boldsymbol \phi}$
+
+$\displaystyle \mathbf{E}(r,\theta) = \frac{kqd}{r^3}(2\sin\theta\cos\phi\hat{\mathbf{r}}-\cos\theta\cos\phi\hat{\boldsymbol{\theta}}+\sin\phi\hat{\boldsymbol{\phi}})$
+
+Checks: For $\phi=0$ and $\theta=\pi/2$, expect field to be in $+\hat{\mathbf{r}}$ direction. For $\phi=\pi/2$ and $\theta=\pi/2$, expect $+\hat{\boldsymbol{\phi}}$. For $\phi=\pi$ and $\theta=\pi/2$, expect $-\hat{\mathbf{r}}$.
+
+Note that an alternative approach to solving both 1. and 2. problem is to take the solution for the dipole along the $z$ axis and rotate the coordinate system around the $y$--axis.
 
 # Generalization 2
 

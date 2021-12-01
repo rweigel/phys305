@@ -1,4 +1,6 @@
 
+Compute E(s) for a line of charge along $\pm z$, then compute $V$ by integrating E. Compute V directly using $\int \lambda/|r-r'|$
+
 **Answer**
 
 * For $z>>L$ expect to get $\mathbf{E} = \hat{z}k\lambda L/z^2$, where $\lambda L$ is total charge on line.

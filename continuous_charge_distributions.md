@@ -53,6 +53,12 @@ In the case where $\mathbf{r}$ was written with cartesian coordinates, this woul
 
 $$\mathbf{E}(x,y,z)=\int k\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}dq$$
 
+To simplify notation, we often use the definition
+
+$$d\mathbf{E}\equiv k\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}dq$$
+
+for the integrand, which corresponds to the electric field at $\mathbf{r}$ due to a differential charge $dq$ at $\mathbf{r}'$.
+
 > $dq$ depends on primed coordinates and so for clarity it would be better written as $dq'$, $dq(\mathbf{r'})$ or $dq(x',y',z')$. However, this is not the convention.
 >
 > When integrating, the $x$, $y$, and $z$ (or unprimed cylindrical or spherical coordinates) that appear in ${\hat{\textbf{\char"0509}}}/{\char"0509^2}$ should be treated as constants during integration because they do not depend on the primed dummy integration variable. As an example, consider the integral
@@ -65,12 +71,33 @@ $$\mathbf{E}(x,y,z)=\int k\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}dq$$
 >
 > does not depend on $x'$.
 
+----
+More generally, starting with
 
-To simplify notation, we often use the definition
+$$
+\mathbf{E}=\frac{q}{4\pi\epsilon_o}\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}
+$$
 
-$$d\mathbf{E}\equiv k\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}dq$$
+replace $q$ with $dq$ so that we have a differential electric field due to do a differential charge
 
-for the integrand, which corresponds to the electric field at $\mathbf{r}$ due to a differential charge $dq$ at $\mathbf{r}'$.
+$$
+d\mathbf{E}=\frac{dq(\mathbf{r}')}{4\pi\epsilon_o}  \frac{\hat{\textbf{\char"0509}}}{\char"0509^2}
+$$
+
+Next make the assumption that a point charge is continuously distributed over a small volume. In this case $dq(\mathbf{r}')=\rho(\mathbf{r}') d\tau'$. The functional dependence of $dq$ has been added because the amount of charge in a given small volume may depend on the location of the small volume. Substitution of $dq(\mathbf{r}')=\rho(\mathbf{r}') d\tau'$ and integration gives
+
+$$
+\mathbf{E}= \frac{1}{4\pi\epsilon_o}\int \rho(\mathbf{r}')
+\frac{\hat{\textbf{\char"0509}}}{\char"0509^2}d\tau'
+$$
+
+An approximation ($\simeq$) sign was used to remind us that technically this equation is an approximation because we smeared point charges so that they are uniformly distributed in a volume. Usually, we replace the $\simeq$ with $=$ because for a large enough density, the result from integration is very nearly that from the exact expression
+
+$$
+\mathbf{E}\simeq \frac{1}{4\pi\epsilon_o}\sum_{i=1}^N q_i
+\frac{\hat{\textbf{\char"0509}}_i}{\char"0509_i^2}
+$$
+----
 
 # Steps
 
