@@ -29,7 +29,8 @@
 * [Boundary Value Problems](boundary_value_problems.html)
 * [Method of Images](method_of_images.html)
 * [Monopole Expansion](monopole_expansion.html)
-
+* [Continuous Electric Dipole Distributions](continuous_electric_dipole_distributions.html)
+* [Induced Polarization](induced_polarization.html)
 * [Vector Potential](vector_potential.html)
 * [Magnetic Dipoles](magnetic_dipoles.html)
 * [Magnetization](magnetization.html)
@@ -37,9 +38,7 @@
 * [Induced Magnetization](induced_magnetization.html)
 
 %* [Polarization](polarization.html)
-%* [Continuous Electric Dipole Distributions](continuous_electric_dipole_distributions.html)
 %* [Polarized Objects](polarized_objects.html)
-%* [Induced Polarization](induced_polarization.html)
 %* [Magnetized Objects](magnetized_objects.html)
 
 # Class Schedule

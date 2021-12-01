@@ -8,7 +8,7 @@ and the electric field is
 
 $$\mathbf{E}(\mathbf{r})=\frac{1}{4\pi\epsilon_o}\frac{1}{r^3}\left(3(\mathbf{p}\cdot\hat{\mathbf{r}})\hat{\mathbf{r}}-\mathbf{p}\right)$$
 
-(Griffiths defines a "pure" dipole on page 159; when $r$ is much greater than the separation distance between the charges, the field of the dipole is purely given by the $1/r^2$ term in the expansion of the potential due to the two charges.)
+(Griffiths defines a "pure" dipole on page 159; when $r/d\rightarrow \infty$, where $d$ is the separation distance between the charges, the field of the dipole approaches being purely due to the $1/r^2$ term in the expansion of the potential due to the two charges.)
 
 If the dipole is not at the origin, then we need to replace $r$ with $\char"0509$ and $\hat{\mathbf{r}}$ with $\hat{\textbf{\char"0509}}$. Then the electric potential and field at $\mathbf{r}$ due to an electric dipole with its center at $\mathbf{r}'$ is
 
@@ -42,9 +42,17 @@ A solid cylinder of radius $R$ and height $h$ is aligned with the $z$-axis, cent
 
 Compute the potential on the $z$--axis using $\displaystyle V=\frac{1}{4\pi\epsilon_o}\int\frac{\mathbf{P}\bfcdot\hat{\textbf{\char"0509}}}{\char"0509^2}d\tau'$.
 
-Show that the equation for potential is idential to the equation for potential for two disks centerd on $z=\pm h/2$ with $\sigma=\pm P_o$.
+Show that the result for $V(z)$ is idential to the equation for potential for two disks centerd on $z=\pm h/2$ with $\sigma=\pm P_o$.
 
-**Partial Answer**
+**Answer**
+
+$d\tau'=s'ds'd\phi'dz'$
+
+$\mathbf{r}=z\zhat$
+
+$\mathbf{r}'=s'\hat{\mathbf{s}}'+z'\zhat=x'\cos\phi'\xhat + y'\sin\phi'\yhat+ z'\zhat$
+
+Substitution and integration over $\phi'$ gives
 
 $\displaystyle V(z)=\frac{1}{4\pi\epsilon_o}2\pi P_o\int_0^Rs'ds'\int_{-h/2}^{h/2}\frac{z-z'}{\left(s'^2 + (z-z')^2\right)^{3/2}}dz'$
 
@@ -60,7 +68,7 @@ and
 
 $\displaystyle V(z)=\frac{1}{4\pi\epsilon_o}2\pi P_o\int_0^Rs'ds'\left[\frac{1}{\left(s'^2 + (z-h/2)^2\right)^{-1/2}}-\frac{1}{\left(s'^2 + (z+h/2)^2\right)^{-1/2}}\right]$
 
-These two integrals are the same as the integrals one would obtain for computing $V(z)$ for the two disks. In this case, the starting equation would be $V(z)=\int \sigma da'/\char"0509$. For both disks, $da'=s'ds'd\phi'$ and $\mathbf{r}=z\zhat$. For the top/bottom disk, $\mathbf{r}'=s\hat{\mathbf{s}}\pm(h/2)\zhat=x'\cos\phi'\xhat + y'\sin\phi'\yhat\pm(h/2)\zhat$ so $\char"0509=\sqrt{s'^2+(z\mp (h/2))^2}$.
+These two integrals are the same as the integrals one would obtain for computing $V(z)$ for the two disks. In this case, the starting equation would be $V(z)=\int \sigma da'/\char"0509$. For both disks, $da'=s'ds'd\phi'$ and $\mathbf{r}=z\zhat$. For the top/bottom disk, $\mathbf{r}'=s'\hat{\mathbf{s}}'\pm(h/2)\zhat=x'\cos\phi'\xhat + y'\sin\phi'\yhat\pm(h/2)\zhat$ so $\char"0509=\sqrt{s'^2+(z\mp (h/2))^2}$.
 
 # Alternative form of $V$
 
@@ -80,7 +88,7 @@ and
 
 $\rho_b\equiv -\boldsymbol{\nabla}\bfcdot\mathbf{P}$. 
 
-A partial proof is [given below](#Appendix).
+A partial proof is [given in the Appendix](#Appendix).
 
 Recall that for regular (non--bound) charges on a surface or in a volume, the equation for $V$ is
 
@@ -90,7 +98,7 @@ This has the same form as the new equation
 
 $$V(\mathbf{r})=\frac{1}{4\pi\epsilon_o}\left(\int_{\mathcal V} \frac{\rho_b}{\char"0509}d\tau'+\oint \frac{\sigma_b}{\char"0509}da'\right)$$
 
-The implication is that we can use the same techniques used to find $V$ or $\mathbf{E}$ created by a charge distribution $\sigma$ and/or $\rho$ for problems where we know $\sigma_b$ and $\rho_b$. If we encounter a problem where $\rho_b$ and $\sigma_b$ are the same as a problem solved previously involving $\rho$ and $\sigma$, we can use the previously found solution with the replacement of $\rho$ with $\rho_b$ and $\sigma$ with $\sigma_b$.
+The implication is that we can use the same techniques used to find $V$ or $\mathbf{E}$ created by charge densities $\sigma$ and $\rho$ for problems with $\sigma_b$ and $\rho_b$. If we encounter a problem where $\rho_b$ and $\sigma_b$ (1) are on the same surfaces and (2) have the same spatial dependence as $\rho$ and $\sigma$ in a problem solved previously, we can use the previous solution with the replacement of $\rho$ with $\rho_b$ and $\sigma$ with $\sigma_b$.
 
 ## Example
 
@@ -101,25 +109,25 @@ A solid cylinder of radius $R$ and height $h$ is aligned with the $z$-axis, cent
 
 **Answer**
 
-This problem was solved previously using the formula $V(\mathbf{r})=\frac{1}{4\pi\epsilon_o}\int\frac{\mathbf{P}\bfcdot\hat{\textbf{\char"0509}}}{\char"0509^2}d\tau'$. Here it is solved using the alternative form for $V$ that includes bound charge densities.
+This problem was solved earlier using the formula $V(\mathbf{r})=\frac{1}{4\pi\epsilon_o}\int\frac{\mathbf{P}\bfcdot\hat{\textbf{\char"0509}}}{\char"0509^2}d\tau'$. Here it is solved using the alternative form for $V$ that involves bound charge densities.
 
-$\rho_b=0$ can be shown by direct calculation using the divergence formula in either cartesian or cylindrical coordinates. On the top/bottom surfaces, $\sigma_b=\pm P_o$. On the side surface, $\sigma_b=0$. 
+$\rho_b=0$ can be shown by direct calculation using the divergence formula in either cartesian or cylindrical coordinates. On the top/bottom caps, $\sigma_b=\pm P_o$. On the side surface, $\sigma_b=0$. 
 
 To find the electric field, we could compute the potential using 
 
-$\displaystyle V(\mathbf{r})=\frac{1}{4\pi\epsilon_o}\oint \frac{\sigma}{\char"0509}da'$
+$\displaystyle V(\mathbf{r})=\frac{1}{4\pi\epsilon_o}\oint \frac{\sigma_b}{\char"0509}da'$
 
-and then compute $\mathbf{E}=-\boldsymbol{\nabla}V$. Or, we can simply use [the equation for the potential due to a uniformly charged disk](continuous_charge_distributions.html#charge-on-disk) 
+and then compute $\mathbf{E}=-\boldsymbol{\nabla}V$. Or, we can simply use [the equation for the electric field on the $z$--axis due to a uniformly charged disk](continuous_charge_distributions.html#charge-on-disk) 
 
 $\displaystyle \mathbf{E} = \frac{\sigma z}{2\epsilon_0} \left(\frac{1}{|z|}-\frac{1}{\sqrt{R^2+z^2}}\right)\hat{\mathbf{z}}$
 
-found previously. This equation is for a disk in the $x$--$y$ plane and centered on the origin. As a result, the field due to $\sigma_b$ on the top surface is this equation with the replacement of $\sigma$ with $P_o$ and $z$ with $z-h/2$. The field due to $\sigma_b$ on the bottom surface is this equation with the replacement of $\sigma$ with $-P_o$ and $z$ with $z+h/2$. The total field is the sum of these two fields.
+found previously. This equation is for a uniformly charged disk in the $x$--$y$ plane and centered on the origin. The field due to $\sigma_b$ on the top surface is this equation with the replacement of $\sigma$ with $P_o$ and $z$ with $z-h/2$. The field due to $\sigma_b$ on the bottom surface is this equation with the replacement of $\sigma$ with $-P_o$ and $z$ with $z+h/2$. The total field is the sum of these two fields.
 
 # Interpretation of Bound Surface Charges
 
 In 4.2 of Griffiths, he models a polarized sphere by using two uniformly charged spheres with centers that are separated by a small distance $d$. One sphere has a postive charge and the other a negative charge. He then computes the electric field in the overlap region and in the region outside of both spheres where there is no overlap.
 
-In this problem, a polarized slab will be modeled by using two slabs of charge with uniform and opposite charge density that are displaced by a small distance $d$.
+In this problem, a polarized slab will be modeled by using two slabs of charge with uniform and opposite charge density that are offset by a small distance $d$.
 
 1. Find $\mathbf{E}(y)$ for the slab with uniform charge density $\rho_o$ shown in the following figure. Assume that the slab is infinite in extent in the $\pm z$ and $\pm x$ directions so that Gauss's law can be used. (This slab can be thought of as being composed of thin sheets of charge stacked together and so an alternative to using Gauss's law is to sum the electric field due to sheets of charge.)
 
@@ -135,7 +143,7 @@ In this problem, a polarized slab will be modeled by using two slabs of charge w
 
 Details on how to solve this problem were given in class and so only a summary is given here.
 
-1\. Gauss's law can be used to find the field for $|y|\ge t/2$ (a cylinder centered on the origin or with its bottom cap at $y=0$ can both be used). This gives $E\_y=\pm \rho_o t/2\epsilon_o$, where the $+$ corresponds to above the slab. Inside the slab, we know $E=0$ at $y=0$ because the field due to the upper part of the slab cancels that due to the lower part. We also expect that inside the slab, $E\_y(y)$ field will increase linearly. From this, we can write $E\_y(y)=\rho_o y/\epsilon_o$. This equation gives zero at the origin and matches the outer field at $y=\pm t/2$. Alternatively, we can also use Gauss's law. For a cylinder centered on the origin and height $2y$, the charge enclosed is $\rho_o 2y$.
+1\. Gauss's law can be used to find the field for $|y|\ge t/2$ (a cylinder centered on the origin or with its bottom cap at $y=0$ can both be used). This gives $E\_y=\pm \rho_o t/2\epsilon_o$ above/below the slab. Inside the slab, we know $E_y=0$ at $y=0$ because the field due to the upper part of the slab cancels that due to the lower part. We also expect that inside the slab, $E\_y(y)$ field will increase linearly (why?). From this, we can write $E\_y(y)=\rho_o y/\epsilon_o$. This equation gives zero at the origin and matches the outer field at $y=\pm t/2$. Alternatively, we can also use Gauss's law. For a cylinder centered on the origin and height $2y$, the charge enclosed is $\rho_o 2y$.
 
 2\.
 
@@ -235,27 +243,21 @@ A sphere centered on the origin has a polarization of $\mathbf{P}=P_o\hat{\mathb
 3. Sketch the field lines inside and outside of the sphere.
 4. Repeat this problem assuming the sphere has an empty center out to a radius $a_o<a$.
 
-%**Answer**
+**Answer**
 
-%$\hat{\mathbf{n}}=\hat{\mathbf{r}}$
+$\hat{\mathbf{n}}=\hat{\mathbf{r}}$, so $\sigma_b=\mathbf{P}\cdot\hat{\mathbf{n}}=P_o\hat{\mathbf{z}}\cdot\hat{\mathbf{r}}$
 
-%$\sigma_b=\mathbf{P}\cdot\hat{\mathbf{n}}=P_o\hat{\mathbf{z}}\cdot\hat{\mathbf{r}}$
+$\hat{\mathbf{z}}\cdot\hat{\mathbf{r}}=\cos\theta$, which can be obtained from a diagram or by writing $\hat{\mathbf{r}}=\mathbf{r}/r=(x\xhat+y\yhat+z\zhat)/r$ and using $z=r\cos\theta$. Or, one can derive explicit formula for $\hat{\mathbf{z}}$ in spherical using a diagram: $\hat{\mathbf{z}}=\cos\theta\hat{\mathbf{r}}-\sin\theta\hat{\boldsymbol{\theta}}$.
 
-%Dot product is angle between the two unit vectors, which is $\cos\theta$ from a diagram.
+$\sigma_b=P_o\cos\theta$
 
-%Or one can derive explicit formula for $\hat{\mathbf{z}}$ in spherical using a diagram: $\hat{\mathbf{z}}=\cos\theta\hat{\mathbf{r}}-\sin\theta\hat{\boldsymbol{\theta}}$.
+$\rho_b=-\nabla\cdot\mathbf{P}=0$
 
-%So
+Bound charges on sphere are largest at the poles with the top pole being positively charged. Field lines are dipolar outside. Inside then are generally pointing downward (exact result is that they point straight down inside).
 
-%$\sigma_b=P_o\cos\theta$
+Integrating $\sigma_b$ over surface gives net bound charge of zero (as expected).
 
-%$\rho_b=-\nabla\cdot\mathbf{P}=0$
-
-%Bound charges on sphere are largest at the poles with the top pole being positively charged. Field lines are dipolar outside. Inside then are generally pointing downward (exact result is that they point straight down inside).
-
-%Integrating $\sigma_b$ over surface gives net bound charge of zero (as expected).
-
-%With hole in center, need to account for a new surface at $r=a_o$, which has $\hat{\mathbf{n}}=-\hat{\mathbf{r}}$.
+With hole in center, need to account for a new surface at $r=a_o$, which has $\hat{\mathbf{n}}=-\hat{\mathbf{r}}$.
 
 ## Long Polarized Cylinder with a Cavity with $\hat{\mathbf{s}}$
 

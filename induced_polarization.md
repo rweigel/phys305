@@ -46,7 +46,11 @@ $E_z = E_o + E_{b\text{ z}}$
 
 At this point, $E_z$ and $E_{b\text{ z}}$ are unknown. We know that $E_{b\text{ z}}$ is related to $P_z$, which is in turn related to $E_z$.
 
-$P_z = \epsilon_o\chi_e E_z$. The bound surface densities are $\sigma_b=\pm P_z=\pm \epsilon_o\chi_e E_z$ on the top/bottom surfaces of the slab. $\rho_b=0$.
+The bound surface densities are $\sigma_b=\pm P_z$ on the top/bottom surfaces of the slab. The polarization is related to $E_z$ by $P_z = \epsilon_o\chi_e E_z$, so $\sigma_b=\pm \epsilon_o\chi_e E_z$.
+
+$\rho_b=0$. This can be seen by taking the divergence of both sides of $\mathbf{E} = \mathbf{E}\_{ext} + \mathbf{E}_{b}$, which gives $\boldsymbol{\nabla}\bfcdot\mathbf{E} = 0 + \rho_b$. Using $\rho_b=-\epsilon_o\boldsymbol{\nabla}\bfcdot\mathbf{P}$ and $\mathbf{P}=\epsilon_o\chi_e\mathbf{E}$ results in $\rho_b=0$.
+
+% This need to be justified. See notes where rho_b is related to rho_f.
 
 As a result of $\sigma_b$, the $E_{b\text{ z}}=-P_z/\epsilon_o=-\chi_e E_z$ in the slab and $E_{b\text{ z}}=0$ outside of the slab.
 
@@ -76,7 +80,7 @@ where $\mathbf{E}_b$ is the field due to the bound surface charge densities on t
 
 **Answer**
 
-Use Gauss's law to find the electric field as a function of $r$ due to three surface charges: $\sigma_Q = Q/4\pi a^2$ on a sphere of radius $a$, $\sigma_{bi}=-\epsilon_o\chi_eQ/4\pi\epsilon a^2$ at $r=a$, and $\sigma_{bo}=\epsilon_o\chi_eQ/4\pi\epsilon a^2$ at $r=b$
+Use Gauss's law to find the electric field as a function of $r$ due to three surface charges: $\sigma_Q = Q/4\pi a^2$ on a sphere of radius $a$, $\sigma_{bi}=-\epsilon_o\chi_eQ/4\pi\epsilon a^2$ at $r=a$, and $\sigma_{bo}=\epsilon_o\chi_eQ/4\pi\epsilon b^2$ at $r=b$
 
 $\sigma_Q$ creates $\mathbf{E}_Q$, which is zero for $r\lt a$ and $Q/4\pi\epsilon_o r^2$ for $r\gt a$.
 
@@ -90,15 +94,9 @@ The sum of the fields due to the three surface charge densities $\mathbf{E}\_{bi
 
 ## Dielectric Around a Charged Sphere
 
-Solve Example 4.5 of Griffiths can be solved without using Gauss's law for dielectrics.
+Solve Example 4.5 of Griffiths without using Gauss's law for dielectrics (which is $\oint\mathbf{D}\bfcdot d\mathbf{A}=Q_{f\text{ }encl})$.
 
-**Answer**
-
-The procedure is to start with
-
-$\mathbf{E}=\mathbf{E}_b + \mathbf{E}_Q$
-
-and then find $\mathbf{E}_b$ by finding the surface charge densities on the inner and outer surface. These surface charge densities are $\sigma_b(R_i)=\mathbf{P}(R_i)\bfcdot\hat{\mathbf{n}}$ and $\sigma_b(R_o)=\mathbf{P}(R_o)\bfcdot\hat{\mathbf{n}}$. To find $\mathbf{E}_b$, use the relationship $\mathbf{P}=\epsilon_o\chi_e\mathbf{E}$.
+Start with $\mathbf{E}=\mathbf{E}_b + \mathbf{E}_Q$ and then find $\mathbf{E}_b$ by finding the surface charge densities on the inner and outer surface. These surface charge densities are $\sigma_b(R_i)=\mathbf{P}(R_i)\bfcdot\hat{\mathbf{n}}$ and $\sigma_b(R_o)=\mathbf{P}(R_o)\bfcdot\hat{\mathbf{n}}$. To find $\mathbf{E}_b$, use the relationship $\mathbf{P}=\epsilon_o\chi_e\mathbf{E}$.
 
 Once $\mathbf{E}_b$ is found, $\mathbf{E}=\mathbf{E}_b + \mathbf{E}_Q$ can be used to solve for $\mathbf{E}$.
 
@@ -106,21 +104,21 @@ Hint: Inside the dielectric, the equation for $\mathbf{E}$ should depend on $E_r
 
 **Answer**
 
-Inside the dielectric, the field is due to $\sigma_b(a)=-P(a)$ and the uniform charge on the conducting surface. The net field inside is then
+Inside the dielectric, the field is due to $\sigma_b(R_i)=-P(R_i)$ and the uniform charge on the conducting surface. The net field inside is then
 
-$\displaystyle E_r(r) = k\frac{Q}{r^2}+k\frac{\sigma_b(a)4\pi a^2}{r^2} = k\frac{Q}{r^2}-\frac{a^2}{r^2}P(a)$
+$\displaystyle E_r(r) = k\frac{Q}{r^2}+k\frac{\sigma_b(R_i)4\pi a^2}{r^2} = k\frac{Q}{r^2}-\frac{a^2}{r^2}P(R_i)$
 
-We don't know $P(a)$ yet. However, for a linear dielectric, the polarization $P_r$ is related $E_r$ by $P_r=\chi_eE_r$. Substitution gives
+We don't know $P(R_i)$ yet. However, for a linear dielectric, the polarization $P_r$ is related $E_r$ by $P_r=\chi_eE_r$. Substitution gives
 
-$\displaystyle E_r(r)=k\frac{Q}{r^2}-\frac{a^2}{r^2}\chi_e E_r(a)$
+$\displaystyle E_r(r)=k\frac{Q}{r^2}-\frac{R_i^2}{r^2}\chi_e E_r(R_i)$
 
-To finish the problem, set $r=a$, solve for $E_r(a)$, and then substitute the found value of $E_r(a)$ into the above equation.
+To finish the problem, set $r=R_i$, solve for $E_r(R_i)$, and then substitute the found value of $E_r(R_i)$ into the above equation.
 
-Setting $r=a$ gives
+Setting $r=R_i$ gives
 
-$\displaystyle E_r(a)=k\frac{Q}{a^2}-\chi_e E_r(a)\Rightarrow E_r(a)=\frac{kQ}{(1+\chi_e)a^2}$
+$\displaystyle E_r(R_i)=k\frac{Q}{R_i^2}-\chi_e E_r(R_i)\quad\Rightarrow\quad E_r(R_i)=\frac{kQ}{(1+\chi_e)R_i^2}$
 
-Substitution gives
+Substitution into the equation above for $E_r(r)$ gives
 
 $\displaystyle E_r(r)=k\frac{Q}{r^2}-\frac{a^2}{r^2}\chi_e \frac{kQ}{(1+\chi_e)a^2}$
 

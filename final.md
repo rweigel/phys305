@@ -43,6 +43,7 @@ At this point, having someone who knows how to solve a problem explain its solut
 
 The equations that you should understand and know without reference are
 
+* Differential lengths for a circle or an curve; differential areas for a cylinder's cap or side; differential area for a sphere; differential volume for a cylinder and sphere.
 * The general equation for Coulomb's Law for a point charge and charge densities;
 * The general equation for electric potential due to a point charge;
 * Gauss' Law in integral and differential form with an understanding of the meaning of all terms;
