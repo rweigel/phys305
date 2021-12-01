@@ -153,81 +153,103 @@ A long cylinder of radius $R$ has a magnetization of $\mathbf{M}=(M_os/R)\hat{\b
 A long cylinder of radius $R$ has a magnetization of $\mathbf{M}=(M_os^2/R^2)\hat{\boldsymbol{\phi}}$. The cylinder is centered on the origin and aligned with the $z$--axis.
 
 1. Find the bound currents
-2. Find $\mathbf{B}(s)$
+2. Find $\mathbf{B}_b(s)$
 
-%**Notes**
+**Notes**
 
-%To find the field of an object with a magnetization $\mathbf{M}$, we first compute the bound surface and volume currents
+To find the field of an object with a magnetization $\mathbf{M}$, we first compute the bound surface and volume currents
 
-%$\mathbf{K}_b=\mathbf{M}\times \hat{\mathbf{n}}$
+$\mathbf{K}_b=\mathbf{M}\times \hat{\mathbf{n}}$
 
-%$\mathbf{J}_b=\boldsymbol{\nabla}\times \mathbf{M}$
+$\mathbf{J}_b=\boldsymbol{\nabla}\times \mathbf{M}$
 
-%then we use standard techniques (either Biot-Savart or Ampere's Law) to find the field due to the bound currents (most of the bound current systems we encountered were such that Ampere's Law could be used).
+then we use standard techniques (either Biot-Savart or Ampere's Law) to find the field due to the bound currents (most of the bound current systems we encountered were such that Ampere's Law could be used).
 
-%We are given $\mathbf{M}=bs^2\hat{\boldsymbol{\phi}}$.
+We are given $\mathbf{M}=M_os^2/R^2\hat{\boldsymbol{\phi}}$, so $M_{s}=0$, $M_{\phi}=M_os^2/R^2$, $M_{z}=0$:
 
-%By definition, the normal direction on the surface of an object is perpendicular to the surface and has its head pointing away from the interior of the object. A cylinder has three surfaces. If the cylinder aligned with the $z$-axis
+By definition, the normal direction on the surface of an object is perpendicular to the surface and has its head pointing away from the interior of the object. A cylinder has three surfaces. If the cylinder aligned with the $z$-axis
 
-%1. the top cap has a normal pointing in the $\hat{\mathbf{z}}$-direction,
-%2. the bottom cap has a normal pointing in the -$\hat{\mathbf{z}}$-direction, and
-%3. the side has a normal pointing in the $\hat{\mathbf{\rho}}$-direction
+1. the top cap has a normal pointing in the $\hat{\mathbf{z}}$-direction,
+2. the bottom cap has a normal pointing in the -$\hat{\mathbf{z}}$-direction, and
+3. the side has a normal pointing in the $\hat{\mathbf{\rho}}$-direction
 
+To compute $\mathbf{J}_b$, we need to evaluate
 
-%In this problem, $\mathbf{M}$ is in cylindrical coordinates, $\mathbf{M}=bs^2\hat{\boldsymbol{\phi}}$, so $M_{s}=0$, $M_{\phi}=bs^2$, $M_{z}=0$:
+$\nabla\times \mathbf{M} = \left({\frac {1}{s }}{\frac {\partial M_{z}}{\partial \phi }}-{\frac {\partial M_{\phi }}{\partial z}}\right) {\hat {\boldsymbol {s }}}+\left({\frac {\partial M_{s }}{\partial z}}-{\frac {\partial M_{z}}{\partial s }}\right) {\hat {\boldsymbol {\phi }}}+{\frac {1}{s }}\left({\frac {\partial \left(s M_{\phi }\right)}{\partial s }}-{\frac {\partial M_{s }}{\partial \phi }}\right) {\hat {\mathbf {z} }}$
 
-%To compute $\mathbf{J}_b$, we need to evaluate
+The only term of the six in this equation that is not zero is
 
-%$\nabla\times \mathbf{M} = \left({\frac {1}{s }}{\frac {\partial M_{z}}{\partial \phi }}-{\frac {\partial M_{\phi }}{\partial z}}\right) {\hat {\boldsymbol {s }}}+\left({\frac {\partial M_{s }}{\partial z}}-{\frac {\partial M_{z}}{\partial s }}\right) {\hat {\boldsymbol {\phi }}}+{\frac {1}{s }}\left({\frac {\partial \left(s M_{\phi }\right)}{\partial s }}-{\frac {\partial M_{s }}{\partial \phi }}\right) {\hat {\mathbf {z} }}$
+${\frac {1}{s }}\left({\frac {\partial \left(s M_{\phi }\right)}{\partial s }}\right) {\hat {\mathbf {z} }} = {\frac {1}{s }}\left({\frac {\partial \left(s (M_os^2/R^2)\right)}{\partial s }}\right) {\hat {\mathbf {z} }}$
 
-%The only term of the six in this equation that is not zero is
+So
 
-%${\frac {1}{s }}\left({\frac {\partial \left(s M_{\phi }\right)}{\partial s }}\right) {\hat {\mathbf {z} }} = {\frac {1}{s }}\left({\frac {\partial \left(s (bs^2)\right)}{\partial s }}\right) {\hat {\mathbf {z} }}$
+$\mathbf{J}_b = \nabla\times \mathbf{M} = (3M_os/R^2) {\hat {\mathbf {z} }}$
 
-%So
+On the top cap, $\hat{\mathbf{n}} = \hat{\mathbf{z}}$,
 
-%$\mathbf{J}_b = \nabla\times \mathbf{M} = 3bs {\hat {\mathbf {z} }}$
+$\mathbf{K}_b=\mathbf{M}\times \hat{\mathbf{n}} = (M_os^2/R^2)\hat{\boldsymbol{\phi}}\times \hat{\mathbf{z}}=(M_os^2/R^2)\hat{\mathbf{s}}$
 
-%This volume current can be thought of current flowing along the axis of the tube. At the very center, the flow is zero. The flow inside the tube is largest near the inner walls of the tube. To find the net current flowing in the vertical direction due to $\mathbf{J}_b$, we need to integrate $\mathbf{J}_b$, which is a flow per unit area, over the cross-section of the tube.
+On the bottom cap,
 
-%$$I\_J=\int \mathbf{J}\_b \bfcdot d\mathbf{A} = ... = \int_{0}^{2\pi}\int_{0}^a J_b s ds d\phi=\int_{0}^{2\pi}\int_{0}^a (3bs) s ds d\phi = 2\pi ba^3$$
+$\mathbf{K}_b=\mathbf{M}\times \hat{\mathbf{n}} = (M_os^2/R^2)\hat{\boldsymbol{\phi}}\times (-\hat{\mathbf{z}})=-(M_os^2/R^2)\hat{\mathbf{s}}$
 
-%(You should know how to fill in the missing steps indicated by "...".) 
+On the side, $s=R$ so $M_\phi(R)=M_oR^2/R^2=M_o$
 
-%On the top cap, $\hat{\mathbf{n}} = \hat{\mathbf{z}}$,
+$\mathbf{K}_b=\mathbf{M}\times \hat{\mathbf{n}} = M_o\hat{\boldsymbol{\phi}}\times \hat{\mathbf{s}}=-M_o\hat{\mathbf{z}}$
 
-%$\mathbf{K}_b=\mathbf{M}\times \hat{\mathbf{n}} = bs^2\hat{\boldsymbol{\phi}}\times \hat{\mathbf{z}}=bs^2\hat{\mathbf{s}}$
+The technique that I use to figure out the cross products of unit vectors is to draw them out as three perpendicular vectors and then use the "right-hand cross-product method". 
 
-%On the bottom cap,
+A common error is to write the side surface current density as
 
-%$\mathbf{K}_b=\mathbf{M}\times \hat{\mathbf{n}} = bs^2\hat{\boldsymbol{\phi}}\times (-\hat{\mathbf{z}})=-bs^2\hat{\mathbf{s}}$
+$\mathbf{K}_b=-(M_os^2/R^2)\hat{\mathbf{z}}$ instead of $\mathbf{K}_b=-(M_oR^2/R^2)\hat{\mathbf{z}}$
 
-%On the side,
+This is an error because this current is flowing at a fixed value of $s=R$. This error occurs because implicit in the equation is $\mathbf{K}_b = \mathbf{M}\times \hat{\mathbf{n}}$ is the statement "evaluated on the surface". (I also see this error made in calculations of the bound surface charge density $\sigma_b$).
 
-%$\mathbf{K}_b=\mathbf{M}\times \hat{\mathbf{n}} = ba^2\hat{\boldsymbol{\phi}}\times \hat{\mathbf{s}}=-ba^2\hat{\mathbf{z}}$
+You may be thinking that I made this error for my answer for the suface current on the caps. My answer is correct but the explanation is a bit subtle, which is presumably why the problem statement says "long tube" - at least in part so we don't need deal with the caps.
 
-%The technique that I use to figure out the cross products of unit vectors is to draw them out as three perpendicular vectors and then use the "right-hand cross-product method". 
+So the current on the sides flows downward. We are told this is a long tube, so we'll ignore further consideration of the caps.
 
-%A common error is to write the side surface current density as
+To find the magnetic field, use Ampere's Law with an Amperian loop being a circle parallel to the $x-y$-plane and centered on the origin.
 
-%$\mathbf{K}_b=-bs^2\hat{\mathbf{z}}$ instead of $\mathbf{K}_b=-ba^2\hat{\mathbf{z}}$
+For all $s$, we can write $\oint\mathbf{B}\bfcdot d\mathbf{l}=2\pi s B_\phi$ and $B_s=B_z=0$ based on a symmetry argument (what is it?).
 
-%This is an error because this current is flowing at a fixed value of $s=a$. This error occurs because implicit in the equation is $\mathbf{K}_b = \mathbf{M}\times \hat{\mathbf{n}}$ is the statement "evaluated on the surface". (I also see this error made in calculations of the bound surface charge density $\sigma_b$).
+For $s\lt R$,
 
-%You may be thinking that I made this error for my answer for the suface current on the caps. My answer is correct but the explanation is a bit subtle, which is presumably why the problem statement says "long tube" - at least in part so we don't need deal with the caps.
+The enclosed current is due to $J_b$ only. The current on the cylinder's sides does not pass through the Amperian loop. The current density depends on radius, so integration is require to find the amount of current from $J_b$ that flows through the Amperian loop.
 
-%So the current on the sides flows downward. We are told this is a long tube, so we'll ignore further consideration of the caps.
+$\displaystyle I_{b\text{ }encl}(s) = \int \mathbf{J}\_b \bfcdot d\mathbf{a} = ... = \int_{0}^{2\pi}\int_{0}^s J_b s' ds' d\phi=\int_{0}^{2\pi}\int_{0}^R (3M_os/R^2) s' ds' d\phi = 2\pi M_os^3/R^2$
 
-%To find the net amount of current due to $\mathbf{K}_b$ that flows through the $x-y$-plane, we need to integrate $\mathbf{K}_b$, which is a current per unit length over the rim of the tube. The result is
+(You should know how to justify and fill in the missing steps indicated by "...".) 
 
-%$I_K=(2\pi a) (-ba^2)=-2\pi b a^3$
+From $2\pi s B_{b\phi} = \mu_o I_{b\text{ }encl}$, we find
 
-%So the total downward current $I_K$ flowing on the tube's side is equal and opposite to the upward volume current $I_J$: The net amount of bound current flowing through the $x-y$-plane is zero. This is remnicient of polarization problems where if an object has a polarization $\mathbf{P}$, we always find the net bound charge on the object, after integrating the volume and surface charge densities, is zero.
+$B_{b\phi} = (\mu_o M_os^2)/R^2$
 
-%To find the magnetic field, use Ampere's Law with an Amperian loop being a circle parallel to the $x-y$-plane. This problem very similar to a standard example given in intro texts, so I won't give the details here. The result is
+For $s\gt R$,
 
-%* $\mathbf{B}=\mu_o b s^2 \hat{\boldsymbol{\phi}}$ for $s < a$
-%* $\mathbf{B}=0$ for $s > a$ (since $I_{encl}$ is zero)
+To find the net amount of current due to $\mathbf{K}_b$ that flows through the $x-y$-plane, we need to integrate $\mathbf{K}_b$, which is a current per unit length over the rim of the tube. The result is
+
+$I_K=(2\pi R) (-M_o)=-2\pi M_oR$
+
+For $s\gt R$, we need to substitute $s=R$ in the equation for the enclosed bound current to get the enclosed current due to $J_b$. This gives
+
+$I_J=2\pi M_o R$
+
+So the total downward current $I_K$ flowing on the tube's side is equal and opposite to the upward volume current $I_J$: The net amount of bound current flowing through the $x$--$y$ plane is zero. This is reminicient of polarization problems where if an object has a polarization $\mathbf{P}$, we always find the net bound charge on the object, after integrating the volume and surface charge densities is zero.
+
+This volume current can be thought of current flowing along the axis of the tube. At the very center, the flow is zero. The flow inside the tube is largest near the inner walls of the tube. To find the net current flowing in the vertical direction due to $\mathbf{J}_b$, we need to integrate $\mathbf{J}_b$, which is a flow per unit area, over the cross-section of the tube.
+
+$I_{b\text{ }encl}=I_K+I_J=-2\pi M_oR + 2\pi M_oR = 0$
+
+From $2\pi s B_{b\phi} = \mu_o I_{b\text{ }encl}$, we find
+
+$B_{b\phi}=0$.
+
+Thus,
+
+$\displaystyle\mathbf{B}_b=\frac{\mu_o M_o}{2\pi}\frac{s^2}{R^2}\hat{\boldsymbol{\phi}}$ for $s < R$
+
+$\displaystyle\mathbf{B}\_b=0$ for $s > R$
 
 ## Problem -- Magnetized Sphere I.
 
