@@ -229,7 +229,6 @@
 * Last class
 * [HW #12](hw12.html) due
 * Final review
-* Post final review problems
 
 ## Thursday, December 9th
 
