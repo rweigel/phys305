@@ -301,7 +301,7 @@ There will be two exams during the semester and a cumulative final exam. The exa
 
 The midterm will cover Chapters 1-3 of Griffiths
 
-The final exam will cover Chapters 2-6 of Griffiths
+The final exam will cover Chapters 4-6 of Griffiths
 
 The nominal percentage-to-letter grade conversion is (this is subject to change such that the required percentage score for a given letter grade is lower)
 
