@@ -96,27 +96,27 @@ The sum of the fields due to the three surface charge densities $\mathbf{E}\_{bi
 
 Solve Example 4.5 of Griffiths without using Gauss's law for dielectrics (which is $\oint\mathbf{D}\bfcdot d\mathbf{A}=Q_{f\text{ }encl})$.
 
-Start with $\mathbf{E}=\mathbf{E}_b + \mathbf{E}_Q$ and then find $\mathbf{E}_b$ by finding the surface charge densities on the inner and outer surface. These surface charge densities are $\sigma_b(R_i)=\mathbf{P}(R_i)\bfcdot\hat{\mathbf{n}}$ and $\sigma_b(R_o)=\mathbf{P}(R_o)\bfcdot\hat{\mathbf{n}}$. To find $\mathbf{E}_b$, use the relationship $\mathbf{P}=\epsilon_o\chi_e\mathbf{E}$.
+Start with $\mathbf{E}=\mathbf{E}_b + \mathbf{E}_Q$ and then find $\mathbf{E}_b$ by finding the surface charge densities on the inner and outer surface. These surface charge densities are $\sigma_b(a)=\mathbf{P}(a)\bfcdot\hat{\mathbf{n}}$ and $\sigma_b(b)=\mathbf{P}(b)\bfcdot\hat{\mathbf{n}}$. To find $\mathbf{E}_b$, use the relationship $\mathbf{P}=\epsilon_o\chi_e\mathbf{E}$.
 
 Once $\mathbf{E}_b$ is found, $\mathbf{E}=\mathbf{E}_b + \mathbf{E}_Q$ can be used to solve for $\mathbf{E}$.
 
-Hint: Inside the dielectric, the equation for $\mathbf{E}$ should depend on $E_r(R_i)$, $r$, and constants. To finish the problem, one needs to solve for the unknown $E(R_i)$. This can be done by setting $r=R_i$ in the equation for $\mathbf{E}$.
+Hint: Inside the dielectric, the equation for $\mathbf{E}$ should depend on $E_r(a)$, $r$, and constants. To finish the problem, one needs to solve for the unknown $E(a)$. This can be done by setting $r=a$ in the equation for $\mathbf{E}$.
 
 **Answer**
 
-Inside the dielectric, the field is due to $\sigma_b(R_i)=-P(R_i)$ and the uniform charge on the conducting surface. The net field inside is then
+Inside the dielectric, the field is due to $\sigma_b(a)=-P(a)$ and the uniform charge on the conducting surface. The net field inside is then
 
-$\displaystyle E_r(r) = k\frac{Q}{r^2}+k\frac{\sigma_b(R_i)4\pi a^2}{r^2} = k\frac{Q}{r^2}-\frac{a^2}{r^2}P(R_i)$
+$\displaystyle E_r(r) = k\frac{Q}{r^2}+k\frac{\sigma_b(a)4\pi a^2}{r^2} = k\frac{Q}{r^2}-\frac{1}{4\pi\epsilon_o}\frac{P(a)4\pi a^2}{r^2}=k\frac{Q}{r^2}-\frac{1}{\epsilon_o}\frac{P(a) a^2}{r^2}$
 
-We don't know $P(R_i)$ yet. However, for a linear dielectric, the polarization $P_r$ is related $E_r$ by $P_r=\chi_eE_r$. Substitution gives
+We don't know $P(a)$ yet. However, for a linear dielectric, the polarization $P_r$ is related $E_r$ by $P_r=\epsilon_o\chi_eE_r$. Substitution gives
 
-$\displaystyle E_r(r)=k\frac{Q}{r^2}-\frac{R_i^2}{r^2}\chi_e E_r(R_i)$
+$\displaystyle E_r(r)=k\frac{Q}{r^2}-\frac{a^2}{r^2}\chi_e E_r(a)$
 
-To finish the problem, set $r=R_i$, solve for $E_r(R_i)$, and then substitute the found value of $E_r(R_i)$ into the above equation.
+To finish the problem, set $r=a$, solve for $E_r(a)$, and then substitute the found value of $E_r(a)$ into the above equation.
 
-Setting $r=R_i$ gives
+Setting $r=a$ gives
 
-$\displaystyle E_r(R_i)=k\frac{Q}{R_i^2}-\chi_e E_r(R_i)\quad\Rightarrow\quad E_r(R_i)=\frac{kQ}{(1+\chi_e)R_i^2}$
+$\displaystyle E_r(a)=k\frac{Q}{a^2}-\chi_e E_r(a)\quad\Rightarrow\quad E_r(a)=\frac{kQ}{(1+\chi_e)a^2}$
 
 Substitution into the equation above for $E_r(r)$ gives
 
