@@ -283,6 +283,49 @@ A sphere of radius $R_o$ has a spherical cavity of radius $R_i$. The sphere and 
 
 %2. One can use Gauss's law with the above charge densities to find: $\mathbf{E}=0$ for $r\lt R_i$ and $r\gt R_o$ and $\mathbf{E}=-P_r(r)\hat{\mathbf{r}}/\epsilon_o$, where $P_r(r) = P_o r^2/R_i^2$. It is easier to use Gauss's law for dielectrics. Inside the sphere, there is no free charge, so $\oint\mathbf{D}\bfcdot d\mathbf{A}=0$. From symmetry arguments (what are they?), we can write $\mathbf{D}=D_r(r)\hat{\mathbf{r}}$ and so the integral reduces to $D_r 4\pi r^2=0 \Rightarrow D_r=0$ for all $r\gt 0$.  Using the definition of $\mathbf{D}=\epsilon_o\mathbf{E}+\mathbf{P}$ with $\mathbf{P}=0$ for $0\lt r\lt R_i$ and $r\gt R_o$ gives $\mathbf{E}=0$ in these regions. $E_r=0$ at $r=0$ from a symmetry argument (what is it?). Inside the sphere, $\mathbf{P}$ is non--zero and $D_r=0 \Rightarrow E_r + P_r/\epsilon_0\Rightarrow E_r=-P_r/\epsilon_o$ as before.
 
+## Gauss's Law and Potential Differences
+
+The following figure shows a cross section of three spherical objects.
+
+* For the charged solid sphere within $r\le R$, $\rho=(Q/\pi R^4)r$
+* The net charge on the conducting shell is $-Q$. This shell has an inner radius of $2R$ and an outer radius of $3R$.
+* The ("frozen in") polarization of the polarized outer shell is $\displaystyle\mathbf{P}=\frac{P_o}{4\pi}\frac{R^2}{r^2}\hat{\mathbf{r}}$. This shell has an inner radius of $4R$ and an outer radius of $5R$.
+
+1. Find $E_r(r)$
+2. Find the potential difference between the charged solid sphere and the inner surface of the conductor (that is, find $V(2R)-V(R)$).
+
+<img src="figures/Gauss_Law_Compound.svg" width="80%"/>
+
+%**Answer**
+
+%1. For $r\le R$, $Q_{encl}=Qr^4/R^4$, so $E_r(r)=kQr^2/R^4$
+%
+%   For $R\le r\lt 2R$, $Q_{encl}=Q$, so $E_r(r)=kQ/r^2$
+%
+%   For $2R\le r\lt 3R$, $E_r(r)=0$
+%   
+%   For $3R\le r\lt 4R$, $Q_{encl}=0$, so $E_r(r)=0$
+%
+%   For $r \gt 4R$, the field due to the charges on the conductor and solid sphere is zero.
+%
+%   At $r=4R$, $\sigma_{bi}=-P_o/(4\pi (4R)^2)$, so $Q_{bi}=\sigma_{bi} 4\pi (4R)^2 = -P_o R^2$
+%
+%   $\rho_b=0$ inside polarized object.
+%   
+%   Inside the polarized object, $E_{b\text{ }r}(r)=kQ_{b\text{ }encl}/r^2 = kQ_{bi}/r^2 = -kP_oR^2/r^2$
+%   
+%   At $r=5R$, $\sigma_b=P_o/(4\pi (5R)^2)$ so $Q_{bo} = P_oR^2$.
+%
+%   Outside the polarized object, $Q_{b\text{ }encl}=Q_{bi}+Q_{bo}=0$, so $E_{b\text{ }r}(r)=0$.
+%   
+%   The total field for $r\gt 4R$ is the field due to the bound charges and the field due to the other charges. The field due to the other charges is zero, so the field is only due to the bound charges.
+%   
+%   For $4R\lt r\lt 5R$, $E_r(r)=-kP_oR^2/r^2$
+%   
+%   For $r\gt 5R$, $E_r(r)=0$   
+%   
+%2. $V(2R)-V(R)=-\int_{R}^{2R}E_r(r)dr=-kQ/2R$. Could also use point charge formula $V=kQ/r$ because field is equivalent to that of a point charge $Q$ at the origin, so $V(2R)-V(R)=kQ\left(1/2R-1/R\right)=-kQ/2R$.
+
 ## Cube with $\zhat$ Polarization
 
 A cube with side length $2a$ and centered on the origin has a polarization $\mathbf{P}=P_o\hat{\mathbf{z}}$.

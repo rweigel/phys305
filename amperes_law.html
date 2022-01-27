@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>hw11</title>
+    <title>amperes_law</title>
     <link id="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%220.9em%22 font-size=%22100%22>📖</text></svg>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.12/dist/katex.min.css" />
     <style>
@@ -124,34 +124,194 @@
 
     <div id="toc">
         <ol>
-            <li><a number="1" href="#two-current-sheets" class="highlighted">Two current sheets</a></li>
-            <li><a number="2" href="#long-solid-cylindrical-wire">Long solid cylindrical wire</a></li>
+            <li><a number="1" href="#ampere-s-law">Ampere’s Law</a></li>
+            <li><a number="2" href="#current-sheet">Current Sheet</a></li>
+            <li><a number="3" href="#current-carrying-slab" class="highlighted">Current–Carrying Slab</a></li>
+            <li><a number="4" href="#long-solid-cylindrical-wire">Long solid cylindrical wire</a></li>
         </ol>
     </div>
     <div id="display">
         <div class="section">
-            <div class="block">
-                <p>Due on Thursday, November 17th at 3:00 pm.</p>
-
-            </div>
-            <div class="block">
-                <p>Send your solutions to the email address <a href="mailto:rweigel+phys305@gmu.edu">rweigel+phys305@gmu.edu</a> as a scanned PDF. Use a file name of <code>Yourlastname_PHYS305_HW11.pdf</code> (one file only, please). Capitalize the first letter in your last name and use caps and underscores as indicated. <strong>Include your name on the first sheet</strong>.</p>
-
-            </div>
-            <div class="block">
-                <p>This HW covers 5.2 and 5.3 of Griffiths.</p>
-
-            </div>
 
         </div>
         <div class="section">
 
             <div class="block">
-                <h1 class="highlighted"><a name="two-current-sheets" number="1" class="hanchor" href="#two-current-sheets"><span class="hnumber">1 </span> <span class="htext">Two current sheets</span></a></h1>
+                <h1><a name="ampere-s-law" number="1" class="hanchor" href="#ampere-s-law"><span class="hnumber">1 </span> <span class="htext">Ampere’s Law</span></a></h1>
 
             </div>
             <div class="block">
-                <p class="">In the following figure, the cross–section of two planes is shown. The planes are infinite in extent in the <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                <p>Getting signs correct. Which way should integration be performed? Reference back to notes on line integrals. Cover why integral is from <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mi>x</mi>
+                                            <mi>o</mi>
+                                        </msub>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x_o</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> to <span len="5" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mi>x</mi>
+                                            <mi>f</mi>
+                                        </msub>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x_f</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> with <span len="12" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mi>x</mi>
+                                            <mi>f</mi>
+                                        </msub>
+                                        <mo>&gt;</mo>
+                                        <msub>
+                                            <mi>x</mi>
+                                            <mi>o</mi>
+                                        </msub>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x_f\gt x_o</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8252079999999999em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> when the arrow on the line of integration is from right to left.</p>
+
+            </div>
+            <!--
+% Copied to notes
+-->
+            <div class="block">
+                <p>The infinitely long solid cylinder shown on the left in the following figure carries a current in the <span len="4" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mo>+</mo>
+                                        <mi>z</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">+z</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span></span></span></span> direction. In a., b., and c., the loops shown as dotted lines are in the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>y</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">y</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span>–<span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>z</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">z</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span></span></span></span> plane. In d., e., and f., the loops are in the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span>-<span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>y</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">y</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span> plane.</p>
+
+            </div>
+            <div class="block">
+                <ol>
+                    <li>
+                        <div class="block">
+                            <p>Which, if any, of loops a.–f. can be used with Ampere’s law to find <span len="8" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>B</mi>
+                                                        <mi>ϕ</mi>
+                                                    </msub>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">B_\phi</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">ϕ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>? </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>For each of the loops not selected for your answer to part 1., explain why they cannot be used with Ampere’s law to find <span len="8" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>B</mi>
+                                                        <mi>ϕ</mi>
+                                                    </msub>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">B_\phi</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">ϕ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Assuming that the radius of the cylinder is <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>R</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">R</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span> and that it carries a current <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>I</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">I</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span></span></span></span>, what is <span len="37" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi mathvariant="bold">∇</mi>
+                                                    <mo>×</mo>
+                                                    <mi mathvariant="bold">B</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\boldsymbol{\nabla}\times\mathbf{B}</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76944em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord"><span class="mord mathbf">∇</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord mathbf">B</span></span></span></span> inside and outside of the cylinder?</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="block inline-html">
+
+                <img src="figures/Amperes_Law_Conceptual.svg">
+            </div>
+            <!--
+%<strong>Answer</strong>
+-->
+            <!--
+%1. e.
+-->
+            <!--
+%2. a., b., and c.: $B_\phi\hat{\boldsymbol{\phi}}\bfcdot d\mathbf{l}=0$, which gives no information about $B_\phi$.
+-->
+            <!--
+%   e. and f.: $B_\phi$ may only depend on $s$ so it is not constant on the loop. (System is invariant with respect to translation along $z$ and rotation about $\phi$, so $B_\phi$ can only possibly depend on $s$.)
+-->
+            <!--
+%3. $\displaystyle \mu_o\frac{I}{\pi R^2}\zhat$ and zero, which follows from $\boldsymbol{\nabla}\times\mathbf{B}=\mu_o\mathbf{J}$ 
+-->
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="current-sheet" number="2" class="hanchor" href="#current-sheet"><span class="hnumber">2 </span> <span class="htext">Current Sheet</span></a></h1>
+
+            </div>
+            <div class="block">
+                <p>In the following figure, the cross–section of two planes is shown. The planes are infinite in extent in the <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                 <semantics>
                                     <mrow>
                                         <mo>±</mo>
@@ -179,61 +339,8 @@
                             </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">±</span><span class="mord mathnormal">x</span></span></span></span> direction.</p>
 
             </div>
-            <!--
-% Copied to notes
--->
-            <!--
-% Copied to note
--->
-            <!--
-% Copied to not
--->
-            <!--
-% Copied to no
--->
-            <!--
-% Copied to n
--->
-            <!--
-% Copied to 
--->
-            <!--
-% Copied to
--->
-            <!--
-% Copied t
--->
-            <!--
-% Copied 
--->
-            <!--
-% Copied
--->
-            <!--
-% Copie
--->
-            <!--
-% Copi
--->
-            <!--
-% Cop
--->
-            <!--
-% Co
--->
-            <!--
-% C
--->
-            <!--
-% 
--->
-            <!--
-%
-In the following figure, the cross–section of two planes is shown. The planes are infinite in extent in the $\pm z$ direction and $w\gg t$, so they are infinite in extent in the $\pm x$ direction.
--->
-
             <div class="block">
-                <p class="">On the red plane, the surface current density is <span len="21" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                <p>On the red plane, the surface current density is <span len="21" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                 <semantics>
                                     <mrow>
                                         <mi mathvariant="bold">K</mi>
@@ -639,7 +746,7 @@ In the following figure, the cross–section of two planes is shown. The planes 
 
                         </div>
                         <div class="block">
-                            <p class=""><span len="96" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <p><span len="96" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                             <semantics>
                                                 <mrow>
                                                     <msubsup>
@@ -699,11 +806,11 @@ In the following figure, the cross–section of two planes is shown. The planes 
 
                         </div>
                         <div class="block">
-                            <p class="">Therefore, we have shown</p>
+                            <p>Therefore, we have shown</p>
 
                         </div>
                         <div class="block">
-                            <p class=""><span len="106" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <p><span len="106" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                             <semantics>
                                                 <mrow>
                                                     <mrow>
@@ -766,11 +873,178 @@ In the following figure, the cross–section of two planes is shown. The planes 
         <div class="section">
 
             <div class="block">
-                <h1 class=""><a name="long-solid-cylindrical-wire" number="2" class="hanchor" href="#long-solid-cylindrical-wire"><span class="hnumber">2 </span> <span class="htext">Long solid cylindrical wire</span></a></h1>
+                <h1 class="highlighted"><a name="current-carrying-slab" number="3" class="hanchor" href="#current-carrying-slab"><span class="hnumber">3 </span> <span class="htext">Current–Carrying Slab</span></a></h1>
 
             </div>
             <div class="block">
-                <p class="">The cross–section of a long and solid cylindrical wire is shown in the following figure. The wire is infinite in extent in the <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                <p>The slab shown on the left in the following figure carries a current density of <span len="10" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <msub>
+                                            <mi>J</mi>
+                                            <mi>o</mi>
+                                        </msub>
+                                        <mover accent="true">
+                                            <mi mathvariant="bold">x</mi>
+                                            <mo>^</mo>
+                                        </mover>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">J_o\mathbf{\hat{x}}</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85788em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.09618em;">J</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.09618em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.70788em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">x</span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2875em;"><span class="mord mathbf">^</span></span></span></span></span></span></span></span></span></span>. A cross section of the slab is shown on the right. Assume <span len="8" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>w</mi>
+                                        <mo>≫</mo>
+                                        <mi>t</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">w\gg t</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≫</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathnormal">t</span></span></span></span> so that the slab can be treated as infinite in the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>x</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">x</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span> and <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <semantics>
+                                    <mrow>
+                                        <mi>y</mi>
+                                    </mrow>
+                                    <annotation encoding="application/x-tex">y</annotation>
+                                </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span> directions.</p>
+
+            </div>
+            <div class="block">
+                <ol>
+                    <li>
+                        <div class="block">
+                            <p>What is the direction of <span len="12" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi mathvariant="bold">B</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\mathbf{B}</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord mathbf">B</span></span></span></span> outside of the slab (<span len="10" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>z</mi>
+                                                    <mo>&gt;</mo>
+                                                    <mi>t</mi>
+                                                    <mi mathvariant="normal">/</mi>
+                                                    <mn>2</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">z\gt t/2</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">t</span><span class="mord">/2</span></span></span></span> and <span len="11" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>z</mi>
+                                                    <mo>&lt;</mo>
+                                                    <mo>−</mo>
+                                                    <mi>t</mi>
+                                                    <mi mathvariant="normal">/</mi>
+                                                    <mn>2</mn>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">z\lt -t/2</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">−</span><span class="mord mathnormal">t</span><span class="mord">/2</span></span></span></span>)?</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>What is <span len="12" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi mathvariant="bold">B</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\mathbf{B}</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord mathbf">B</span></span></span></span> in the <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>x</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">x</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span>–<span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi>y</mi>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">y</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span> plane?</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <p>Find <span len="15" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <semantics>
+                                                <mrow>
+                                                    <mi mathvariant="bold">B</mi>
+                                                    <mo stretchy="false">(</mo>
+                                                    <mi>z</mi>
+                                                    <mo stretchy="false">)</mo>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">\mathbf{B}(z)</annotation>
+                                            </semantics>
+                                        </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathbf">B</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span></span></span></span></p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="block inline-html">
+
+                <img src="figures/Amperes_Law_Current_Carrying_Slab.svg" width="90%" class="">
+            </div>
+            <!--
+%<strong>Answer</strong>
+%
+-->
+
+            <!--
+%1. $z\gt +t/2$, $\mathbf{B}$ in $-\yhat$
+%
+-->
+            <!--
+%    $z\lt -t/2$, $\mathbf{B}$ in $+\yhat$ 
+%    
+-->
+            <!--
+%2. $\mathbf{B}=0$
+%
+-->
+            <!--
+%3. Inside, $B_y=-\mu_oJ_oz$.
+%
+-->
+            <!--
+%    $z&gt;+t/2$, $B_y=-\mu_oJ_ot/2$
+%    
+-->
+            <!--
+%    $z&lt;-t/2$, $B_y=+\mu_oJ_ot/2$
+-->
+            <!--
+%    $z&lt;-t/2$, $B_y=+\mu_oJ_ot/2$
+-->
+        </div>
+        <div class="section">
+
+            <div class="block">
+                <h1><a name="long-solid-cylindrical-wire" number="4" class="hanchor" href="#long-solid-cylindrical-wire"><span class="hnumber">4 </span> <span class="htext">Long solid cylindrical wire</span></a></h1>
+
+            </div>
+            <!--
+% Copied to notes
+-->
+            <div class="block">
+                <p>The cross–section of a long and solid cylindrical wire is shown in the following figure. The wire is infinite in extent in the <span len="7" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                 <semantics>
                                     <mrow>
                                         <mo>±</mo>
@@ -809,61 +1083,8 @@ In the following figure, the cross–section of two planes is shown. The planes 
                             </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.09618em;">J</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.09618em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> over the cross–section shown.)</p>
 
             </div>
-            <!--
-% Copied to notes
--->
-            <!--
-% Copied to note
--->
-            <!--
-% Copied to not
--->
-            <!--
-% Copied to no
--->
-            <!--
-% Copied to n
--->
-            <!--
-% Copied to 
--->
-            <!--
-% Copied to
--->
-            <!--
-% Copied t
--->
-            <!--
-% Copied 
--->
-            <!--
-% Copied
--->
-            <!--
-% Copie
--->
-            <!--
-% Copi
--->
-            <!--
-% Cop
--->
-            <!--
-% Co
--->
-            <!--
-% C
--->
-            <!--
-% 
--->
-            <!--
-%
-The cross–section of a long and solid cylindrical wire is shown in the following figure. The wire is infinite in extent in the $\pm z$ direction. A constant current density per unit area of $J_o$ flows along the wire in the $+z$ direction. (The total current flowing along the wire is the integral of $J_o$ over the cross–section shown.)
--->
-
             <div class="block">
-                <p class="">An Amperian loop of radius <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                <p>An Amperian loop of radius <span len="3" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                 <semantics>
                                     <mrow>
                                         <mi>s</mi>
@@ -1941,7 +2162,7 @@ The cross–section of a long and solid cylindrical wire is shown in the followi
 
                         </div>
                     </li>
-                    <li class="">
+                    <li>
                         <div class="block">
                             <p><span len="439" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                             <semantics>
@@ -2238,7 +2459,7 @@ The cross–section of a long and solid cylindrical wire is shown in the followi
 
                         </div>
                         <div class="block">
-                            <p class="">For <span len="8" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <p>For <span len="8" class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
                                             <semantics>
                                                 <mrow>
                                                     <mi>s</mi>

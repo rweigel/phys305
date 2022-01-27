@@ -6,6 +6,8 @@ The is HW covers [monopole expansion](monopole_expansion.html) (Griffiths 3.4) a
 
 # Perfect Dipole on $x$--axis
 
+% Copied to notes
+
 In class, I showed how one can use the equation
 
 $\displaystyle V = \frac{kq}{\char"0509} = \frac{kq}{r}\sum_{n=0}^\infty\left(\frac{r'}{r}\right)^nP_n(\cos\alpha)$

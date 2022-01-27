@@ -83,7 +83,63 @@ This $\mathbf{B}$ has the same form as a [magnetic dipole](magnetic_dipoles.html
 
 If $\mathbf{A}= \alpha\hat{\boldsymbol{\phi}}$, where $\alpha$ is a constant, what is $\mathbf{B}$?
 
-% Answer: See 5.24 of Griffiths
+
+**Answer**
+
+The curl of a vector $\mathbf{A}$ in spherical coordinates is
+
+$\displaystyle\boldsymbol{\nabla}\times \mathbf{A} =
+{\frac {1}{r\sin \theta }}\left({\frac {\partial }{\partial \theta }}\left(A_{\phi }\sin \theta \right)
+-
+{\frac {\partial A_{\theta }}{\partial \phi }}\right) {\hat {\mathbf {r} }}
++
+{\frac {1}{r}}\left({\frac {1}{\sin \theta }}{\frac {\partial A_{r}}{\partial \phi }}
+-
+{\frac {\partial }{\partial r}}\left(rA_{\phi }\right)\right) {\hat {\boldsymbol {\theta }}}
++
+{\frac {1}{r}}\left({\frac {\partial }{\partial r}}\left(rA_{\theta }\right)
+-
+{\frac {\partial A_{r}}{\partial \theta }}\right) {\hat {\boldsymbol {\phi }}}$
+
+In this problem, $A_r=A_\theta=0$ and $A_\phi=\alpha$.
+
+Of the six terms involving partial derivatives, only two are non--zero, so
+
+$\displaystyle\boldsymbol{\nabla}\times \mathbf{A} =
+{\frac {1}{r\sin \theta }}\left({\frac {\partial }{\partial \theta }}\left(A_{\phi }\sin \theta \right)
+-
+0\right) {\hat {\mathbf {r} }}
++
+{\frac {1}{r}}\left(0
+-
+{\frac {\partial }{\partial r}}\left(rA_{\phi }\right)\right) {\hat {\boldsymbol {\theta }}}
++
+{\frac {1}{r}}\left( 0
+-
+0\right) {\hat {\boldsymbol {\phi }}}$.
+
+Evaluation gives 
+
+$\displaystyle\mathbf{B}= \frac{\alpha}{r\tan\theta}\hat {\mathbf {r} } - \frac{\alpha}{r}\hat{\boldsymbol {\theta }}$
+
+One could also do the same calculation in cylindrical coordinates using
+
+$\displaystyle\boldsymbol{\nabla}\times \mathbf{A} = 
+\left({\frac {1}{s }}{\frac {\partial A_{z}}{\partial \phi }}-{\frac {\partial A_{\phi }}{\partial z}}\right) {\hat {\boldsymbol {s }}}
++
+\left({\frac {\partial A_{s}}{\partial z}}-{\frac {\partial A_{z}}{\partial s}}\right) {\hat {\boldsymbol {\phi }}}
++
+{\frac {1}{s}}\left({\frac {\partial \left(s A_{\phi }\right)}{\partial s}}-{\frac {\partial A_{s}}{\partial \phi }}\right) {\hat {\mathbf {z} }}$
+
+In this case,
+
+$\displaystyle\mathbf{B}=\frac{\alpha}{s}\zhat$.
+
+Using $\zhat = \cos\theta \hat {\mathbf {r} } - \sin\theta \hat {\boldsymbol {\theta} }$ and $s=r\sin\theta$, this is
+
+$\displaystyle\mathbf{B}=\frac{\alpha}{r\sin\theta}\left(\cos\theta \hat {\mathbf {r} } - \sin\theta \hat {\boldsymbol {\theta} }\right)=\frac{\alpha}{r\tan\theta}\hat {\mathbf {r} } - \frac{\alpha}{r}\hat{\boldsymbol {\theta }}$,
+
+which is the same as that found using the curl in spherical coordinates.
 
 ## Problem -- $\mathbf{A}\sim |y|\zhat$
 
@@ -93,7 +149,59 @@ If $\mathbf{A} = -\alpha y \xhat$ for $y\gt 0$ and $\mathbf{A} = +\alpha y \xhat
 2. plot $B_x(y)$.
 3. Based on the plot for 2., what is the current system that produced this $\mathbf{B}$?
 
-% Answer: See 5.27 of Griffiths
+**Answer**
+
+$\boldsymbol{\nabla}\times \mathbf{A} = \left(\frac{\partial A_z }{\partial y} - \frac{\partial A_y }{\partial z} \right)\xhat +  \left(\frac{\partial A_x }{\partial z} - \frac{\partial A_z }{\partial x} \right)\yhat +  \left(\frac{\partial A_y }{\partial x} - \frac{\partial A_x }{\partial y} \right)\zhat $
+
+$A_x=0$, $A_y=0$, and $A_z=\mp \alpha y$
+
+Inserting zeros for terms involving partial derivative of $A_x$ and $A_y$ gives
+
+$\boldsymbol{\nabla}\times \mathbf{A} = \left(\frac{\partial A_z }{\partial y} - 0 \right)\xhat +  \left(0 - \frac{\partial A_z }{\partial x} \right)\yhat +  \left(0 + 0\right)\zhat $
+
+Evaluation gives
+
+$\mathbf{B} = \boldsymbol{\nabla}\times \mathbf{A} = \mp\alpha\xhat$
+
+This is the field of a sheet of current in the $x$--$y$ plane with current flowing in the $+\zhat$ direction. (To see this, draw out the bound current sheets and see [HW #11.1](hw11.html#two-current-sheet).
+
+## Dipole Vector Potential
+
+The general equation for the vector potential for a magnetic dipole is
+
+$$\mathbf{A}=\frac{\mu_o}{4\pi}\frac{\mathbf{m}\times\hat{\mathbf{r}}}{r^2}$$
+
+If $\mathbf{m}=m_o\xhat$, find $\mathbf{B}$ in cartesian coordinates with cartesian unit vectors. Note that you can check your answer using equation 5.89 of Griffiths 4th edition:
+
+$$\mathbf{B} = \frac{\mu_o}{4\pi}\frac{1}{r^3}\left[3(\mathbf{m}\bfcdot\hat{\mathbf{r}})\hat{\mathbf{r}} - \mathbf{m}\right]$$
+
+**Answer**
+
+_Method 1_
+
+In [Magnetic Dipoles](magnetic_dipoles.html), the equation for a with dipole $\mathbf{m}=I\pi b^2\zhat$ was given as
+
+$\displaystyle\mathbf{B}=\frac{\mu_o}{4\pi}\frac{I\pi b^2}{r^5}\left(3xz\hat{\mathbf{x}}+3yz\hat{\mathbf{y}}+(3z^2-r^2)\hat{\mathbf{z}}\right)$
+
+Swapping $z$ and $x$ and replacing $I\pi b^2$ with $m_o$ gives the answer to this problem:
+
+$\displaystyle\mathbf{B}=\frac{\mu_o}{4\pi}\frac{m_o}{r^5}\left[(3x^2-r^2)\hat{\mathbf{x}}+3xy\hat{\mathbf{y}}+3xz\hat{\mathbf{z}}\right]$
+
+_Method 2_
+
+Using $\mathbf{\hat{r}}=\mathbf{r}/r$ and $\mathbf{r}=x\xhat+y\yhat+z\zhat$,
+
+$\displaystyle \mathbf{A}=\frac{\mu_om_o}{4\pi}\frac{\xhat\times \mathbf{\hat{r}}}{r^3}=\frac{\mu_om_o}{4\pi}\frac{\xhat\times (x\xhat+y\yhat+z\zhat)}{r^3}=\frac{\mu_om_o}{4\pi}\left(\frac{-z\yhat+y\zhat}{r^3}\right)$
+
+Written fully in cartesian coordinates, this is
+
+$\displaystyle \mathbf{A}=\frac{\mu_om_o}{4\pi}\left(\frac{-z\yhat+y\zhat}{\left(x^2+y^2+z^2\right)^{3/2}}\right)$
+
+Using this and
+
+$\displaystyle\boldsymbol{\nabla}\times \mathbf{A} = \left(\frac{\partial A_z }{\partial y} - \frac{\partial A_y }{\partial z} \right)\xhat +  \left(\frac{\partial A_x }{\partial z} - \frac{\partial A_z }{\partial x} \right)\yhat +  \left(\frac{\partial A_y }{\partial x} - \frac{\partial A_x }{\partial y} \right)\zhat$
+
+will give the same answer as given above.
 
 # Computing $\mathbf{A}$
 
@@ -142,7 +250,27 @@ as found earlier.
 
 ## Problem -- $\mathbf{A}$ due to a finite wire segment
 
-For a segment of wire that extends from $-L/2$ to $L/2$ on the $z$--axis with a current that flows in the $+z$ direction, find $\mathbf{A}(s)$.
+For a segment of wire that extends from $-L/2$ to $L/2$ on the $z$--axis with a current that flows in the $+z$ direction, find $\mathbf{A}(x)$.
+
+**Answer**
+
+In general,
+
+$\displaystyle \mathbf{A}(\mathbf{r})=\frac{\mu_o}{4\pi}\int \frac{\mathbf{I}(\mathbf{r}')}{\char"0509}dl'$
+
+For this problem,
+
+$\displaystyle \mathbf{A}(x)=\frac{\mu_o}{4\pi}\int_{-L/2}^{L/2}\frac{I\zhat}{\sqrt{x^2+z'^2}}dz'$
+
+Let $u=xz'$, then
+
+$\displaystyle\mathbf{A}=\zhat\frac{\mu_oI}{4\pi}\frac{x}{|x|}\int_{-L/2x}^{L/2x} \frac{du}{\sqrt{1+u^2}}$
+
+The integral can be evaluated using an [integral table](https://www.wolframalpha.com/input/?i=integrate+1%2Fsqrt%28a%5E2%2Bx%5E2%29).
+
+$\displaystyle\int_{u_f}^{u_o}\frac{du}{\sqrt{1+u^2}}=\tanh^{-1}\left(\frac{u}{\sqrt{1 + u^2}}\right)\Bigg|_{u_f}^{u_o}$
+
+% + constant
 
 ## Example -- Magnetic Dipole $\mathbf{A}$ Derivation
 

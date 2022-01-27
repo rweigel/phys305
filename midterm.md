@@ -89,6 +89,7 @@ $\mathbf{r}=x\xhat + y\yhat$
 $\displaystyle d\mathbf{E}=\sqrt{2}k\lambda_o\frac{(x-x')\xhat + [y-b-x')]\yhat}{\left[(x-x')^2+(y-b-x')^2\right]^{3/2}}dx'$
 
 $\displaystyle\mathbf{E}(x,y)=\sqrt{2}k\lambda_o\int_{-b}^0\frac{(x-x')\xhat + [y-b-x')]\yhat}{\left[(x-x')^2+(y-b-x')^2\right]^{3/2}}dx'$
+
 \newpage
 
 ## Boundary Value Problem (20 pts)

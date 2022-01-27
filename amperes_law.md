@@ -1,12 +1,29 @@
-Due on Thursday, November 17th at 3:00 pm.
+# Ampere's Law
 
-Send your solutions to the email address rweigel+phys305@gmu.edu as a scanned PDF. Use a file name of `Yourlastname_PHYS305_HW11.pdf` (one file only, please). Capitalize the first letter in your last name and use caps and underscores as indicated. **Include your name on the first sheet**.
-
-This HW covers 5.2 and 5.3 of Griffiths.
-
-# Two current sheets
+Getting signs correct. Which way should integration be performed? Reference back to notes on line integrals. Cover why integral is from $x_o$ to $x_f$ with $x_f\gt x_o$ when the arrow on the line of integration is from right to left.
 
 % Copied to notes
+
+The infinitely long solid cylinder shown on the left in the following figure carries a current in the $+z$ direction. In a., b., and c., the loops shown as dotted lines are in the $y$--$z$ plane. In d., e., and f., the loops are in the $x$-$y$ plane.
+
+1. Which, if any, of loops a.--f. can be used with Ampere's law to find $B_\phi$? 
+2. For each of the loops not selected for your answer to part 1., explain why they cannot be used with Ampere's law to find $B_\phi$.
+2. Assuming that the radius of the cylinder is $R$ and that it carries a current $I$, what is $\boldsymbol{\nabla}\times\mathbf{B}$ inside and outside of the cylinder?
+
+<img src="figures/Amperes_Law_Conceptual.svg"/>
+
+%**Answer**
+
+%1. e.
+
+%2. a., b., and c.: $B_\phi\hat{\boldsymbol{\phi}}\bfcdot d\mathbf{l}=0$, which gives no information about $B_\phi$.
+
+%   e. and f.: $B_\phi$ may only depend on $s$ so it is not constant on the loop. (System is invariant with respect to translation along $z$ and rotation about $\phi$, so $B_\phi$ can only possibly depend on $s$.)
+
+%3. $\displaystyle \mu_o\frac{I}{\pi R^2}\zhat$ and zero, which follows from $\boldsymbol{\nabla}\times\mathbf{B}=\mu_o\mathbf{J}$ 
+
+
+# Current Sheet
 
 In the following figure, the cross--section of two planes is shown. The planes are infinite in extent in the $\pm z$ direction and $w\gg t$, so they are infinite in extent in the $\pm x$ direction.
 
@@ -43,6 +60,29 @@ The Amperian loop to be used in part 3. of this problem is shown as a dotted lin
    
    $\left(\oint \mathbf{B}\bfcdot d\mathbf{l} = \mu_oK_od\right) = \left(\mu_o I_{encl} = \mu_o K_o d\right)$
    
+# Current--Carrying Slab
+
+The slab shown on the left in the following figure carries a current density of $J_o\xhat$. A cross section of the slab is shown on the right. Assume $w\gg t$ so that the slab can be treated as infinite in the $x$ and $y$ directions.
+
+1. What is the direction of $\mathbf{B}$ outside of the slab ($z\gt t/2$ and $z\lt -t/2$)?
+2. What is $\mathbf{B}$ in the $x$--$y$ plane?
+3. Find $\mathbf{B}(z)$
+
+<img src="figures/Amperes_Law_Current_Carrying_Slab.svg" width="90%"/>
+
+%**Answer**
+%
+%1. $z\gt +t/2$, $\mathbf{B}$ in $-\yhat$
+%
+%    $z\lt -t/2$, $\mathbf{B}$ in $+\yhat$ 
+%    
+%2. $\mathbf{B}=0$
+%
+%3. Inside, $B_y=-\mu_oJ_oz$.
+%
+%    $z>+t/2$, $B_y=-\mu_oJ_ot/2$
+%    
+%    $z<-t/2$, $B_y=+\mu_oJ_ot/2$
 
 # Long solid cylindrical wire
 
@@ -115,6 +155,3 @@ When using Ampere's law, one must choose a direction of integration around the l
   For $s\le R$, the current $J_o$ was given to flow out of the page, which means $\mathbf{J}=J_o\zhat$.
   
   For $s\ge R$, we get $\boldsymbol{\nabla}\times \mathbf{B}=0$. This is expected because no current flows outside the wire.
-
-   
-   

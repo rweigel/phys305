@@ -795,11 +795,10 @@ Substituing for $\sigma$ gives
 
 $$\mathbf{E} \simeq \frac{Q}{4\pi\epsilon_0} \frac{1}{z^2}\frac{z}{|z|}\hat{\mathbf{z}}$$
 
-
 ## Charge on Cylinder
 
-Charge is uniformly distributed on the curved surface of a cylinder of length $h$ and radius $R$. The cylinder is centered on the origin, and aligned with the $z$--axis, and has a charge density of $\sigma_o$.
+Charge is uniformly distributed on the curved surface of a cylinder of length $h$ and radius $R$. The cylinder is centered on the origin, aligned with the $z$--axis, and has a charge density of $\sigma_o$.
 
 <img src="figures/Continuous-Charge-Densities-Cylinder.svg"/>
 
-Find an equation for $\mathbf{E}$ on the $z$--axis in terms of an integral with an integrand that depends only on $dz'$, $z'$, $z$, and $R$. You do not need to evaluate the integral.
+Find an equation for $\mathbf{E}$ on the $z$--axis in terms of a single integral with an integrand that depends only on $dz'$, $z'$, $z$, and $R$. You do not need to evaluate the integral.

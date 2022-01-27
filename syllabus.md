@@ -226,7 +226,9 @@
 * Discuss [HW #12](hw12.html)
 
 ## Thursday, December 2nd
+
 * Last class
+* [Class Video](https://gmu.zoom.us/rec/share/epDQL1EXDoG8ujkVj1eJ0GWL_mPRPL_Pt3w41Z9IkF_h32aH2TW_OJxdldVlRp_n.b3brGpydrNUOAYKu)
 * [HW #12](hw12.html) due
 * Final review
 

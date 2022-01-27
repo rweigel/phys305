@@ -7,25 +7,29 @@ $$\boldsymbol{\nabla}\times \mathbf{A} = \left(\frac{\partial A_z }{\partial y} 
 
 ## Cylindrical
 
-Gradient for scalar function $f = f(\rho,\theta,\phi)$
+Gradient for scalar function $f = f(s, \phi, z)$
+
 $$\nabla f = {\partial f \over \partial \rho}\hat{\boldsymbol \rho}+ {1 \over \rho}{\partial f \over \partial \phi}\hat{\boldsymbol \phi}+ {\partial f \over \partial z}\hat{\mathbf z}$$
 
-Divergence for vector function expressed as 
+$$\nabla f = {\partial f \over \partial s}\hat{\boldsymbol s}+ {1 \over s}{\partial f \over \partial s}\hat{\boldsymbol \phi}+ {\partial f \over \partial z}\hat{\mathbf z}$$
 
-$$\boldsymbol{\nabla}\cdot\mathbf{A}={1 \over \rho}{\partial \left( \rho A_\rho  \right) \over \partial \rho}+{1 \over \rho}{\partial A_\phi \over \partial \phi}+{\partial A_z \over \partial z}$$
 
-$$\boldsymbol{\nabla}\cdot\mathbf{A}={1 \over s}{\partial \left( s A_s  \right) \over \partial s}+{1 \over s}{\partial A_\phi \over \partial \phi}+{\partial A_z \over \partial z}$$
+Divergence for vector function $\mathbf{F}(s, \phi, z)$
+
+$$\boldsymbol{\nabla}\cdot\mathbf{U}={1 \over \rho}{\partial \left( \rho U_\rho  \right) \over \partial \rho}+{1 \over \rho}{\partial U_\phi \over \partial \phi}+{\partial U_z \over \partial z}$$
+
+$$\boldsymbol{\nabla}\cdot\mathbf{U}={1 \over s}{\partial \left( s U_s  \right) \over \partial s}+{1 \over s}{\partial U_\phi \over \partial \phi}+{\partial U_z \over \partial z}$$
 
 Curl for vector function expressed as 
 
 $$\boldsymbol{\nabla}\times \mathbf{A} = \left({\frac {1}{\rho }}{\frac {\partial A_{z}}{\partial \phi }}-{\frac {\partial A_{\phi }}{\partial z}}\right) {\hat {\boldsymbol {\rho }}}+\left({\frac {\partial A_{\rho }}{\partial z}}-{\frac {\partial A_{z}}{\partial \rho }}\right) {\hat {\boldsymbol {\phi }}}+{\frac {1}{\rho }}\left({\frac {\partial \left(\rho A_{\phi }\right)}{\partial \rho }}-{\frac {\partial A_{\rho }}{\partial \phi }}\right) {\hat {\mathbf {z} }}$$
 
-$$\boldsymbol{\nabla}\times \mathbf{A} = 
-\left({\frac {1}{s }}{\frac {\partial A_{z}}{\partial \phi }}-{\frac {\partial A_{\phi }}{\partial z}}\right) {\hat {\boldsymbol {s }}}
+$$\boldsymbol{\nabla}\times \mathbf{U} = 
+\left({\frac {1}{s }}{\frac {\partial U_{z}}{\partial \phi }}-{\frac {\partial U_{\phi }}{\partial z}}\right) {\hat {\boldsymbol {s }}}
 +
-\left({\frac {\partial A_{s}}{\partial z}}-{\frac {\partial A_{z}}{\partial s}}\right) {\hat {\boldsymbol {\phi }}}
+\left({\frac {\partial U_{s}}{\partial z}}-{\frac {\partial U_{z}}{\partial s}}\right) {\hat {\boldsymbol {\phi }}}
 +
-{\frac {1}{s}}\left({\frac {\partial \left(s A_{\phi }\right)}{\partial s}}-{\frac {\partial A_{s}}{\partial \phi }}\right) {\hat {\mathbf {z} }}$$
+{\frac {1}{s}}\left({\frac {\partial \left(s U_{\phi }\right)}{\partial s}}-{\frac {\partial U_{s}}{\partial \phi }}\right) {\hat {\mathbf {z} }}$$
 
 
 $$\boldsymbol{\nabla}\times \mathbf{B} = 
@@ -43,6 +47,21 @@ $$\boldsymbol{\nabla}\cdot(\boldsymbol{\nabla}f) = \nabla^2f={1 \over \rho}{\par
 $$\mathbf{\nabla} f = {\partial f \over \partial r}\hat{\mathbf r}+ {1 \over r}{\partial f \over \partial \theta}\hat{\boldsymbol \theta}+ {1 \over r\sin\theta}{\partial f \over \partial \phi}\hat{\boldsymbol \phi}$$
 
 $$\boldsymbol{\nabla}\cdot\mathbf{A}={1 \over r^2}{\partial \left( r^2 A_r \right) \over \partial r} + {1 \over r\sin\theta}{\partial \over \partial \theta} \left(  A_\theta\sin\theta \right) + {1 \over r\sin\theta}{\partial A_\phi \over \partial \phi}$$
+
+$$\boldsymbol{\nabla}\cdot\mathbf{U}={1 \over r^2}{\partial \left( r^2 U_r \right) \over \partial r} + {1 \over r\sin\theta}{\partial \over \partial \theta} \left(  U_\theta\sin\theta \right) + {1 \over r\sin\theta}{\partial U_\phi \over \partial \phi}$$
+
+$\boldsymbol{\nabla}\times \mathbf{U} =
+{\frac {1}{r\sin \theta }}\left({\frac {\partial }{\partial \theta }}\left(U_{\phi }\sin \theta \right)
+-
+{\frac {\partial U_{\theta }}{\partial \phi }}\right) {\hat {\mathbf {r} }}
++
+{\frac {1}{r}}\left({\frac {1}{\sin \theta }}{\frac {\partial U_{r}}{\partial \phi }}
+-
+{\frac {\partial }{\partial r}}\left(rU_{\phi }\right)\right) {\hat {\boldsymbol {\theta }}}
++
+{\frac {1}{r}}\left({\frac {\partial }{\partial r}}\left(rU_{\theta }\right)
+-
+{\frac {\partial U_{r}}{\partial \theta }}\right) {\hat {\boldsymbol {\phi }}}$
 
 $\boldsymbol{\nabla}\times \mathbf{A} =
 {\frac {1}{r\sin \theta }}\left({\frac {\partial }{\partial \theta }}\left(A_{\phi }\sin \theta \right)

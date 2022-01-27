@@ -134,6 +134,37 @@ $\mathbf{B}=0$ for $s\ge R$
 
 # Problems
 
+## $\mathbf{B}$ Due to a Long Magnetized Solid Cylinder I.
+
+A long solid cylinder of radius $R$ has a magnetization $\mathbf{M}=M_o\zhat$. The cylinder is centered on the origin and aligned with the $z$--axis.
+
+1. Find the bound currents $\mathbf{K}_b$ and $\mathbf{J}_b$.
+2. Find $\mathbf{B}_b(s)$, which is the magnetic field due to the bound current densities found in part 1. of this problem.
+
+**Answer**
+
+1. $\mathbf{K}_b=M_o\hat{\boldsymbol{\phi}}$ on the curved surface, $\mathbf{K_b}=0$ on the top/bottom caps, and $\mathbf{J}_b=0$. 
+
+2. The bound currents are equivalent to the current on a long solenoid, for which the current flows azimuthally around a cylinder. The magnetic field for a long solenoid of length $L$ is $\mathbf{B}=0$ outside and $B=\mu_o NI/L$ inside. The direction of this field is given by the right--hand rule. $N$ is the number of times the wire is wrapped around the cylinder. $N I/L$ corresponds to a surface current $K$, so the field inside can be written as $B=\mu_oK$. Replacing $K$ with $M_o$ and using the right--hand rule to conclude the direction of $\mathbf{B}_b$ is $+\zhat$ (which is the same direction as $\mathbf{M}$, as expected),  
+
+   $\mathbf{B}_b=\mu_oM_o\zhat=\mu_o\mathbf{M}$ for $s\lt R$
+   
+   $\mathbf{B}_b=0$ for $s\gt R$.
+
+
+## $\mathbf{B}$ Due to a Long Magnetized Solid Cylinder II.
+
+A long cylinder of radius $R$ has a magnetization of $\mathbf{M}=(M_os/R)\hat{\boldsymbol{\phi}}$. The cylinder is centered on the origin and aligned with the $z$--axis.
+
+1. Find the bound currents $\mathbf{K}_b$ and $\mathbf{J}_b$.
+2. Find $\mathbf{B}_b(s)$, which is the magnetic field due to the bound current densities found in part 1. of this problem.
+
+**Answer**
+
+If the cylinder is long, their contribution to $\mathbf{B}_b$ from the top and bottom caps can be neglected.
+
+1. $\mathbf{K}_b=-M_o\zhat$ on side and $\mathbf{K}_b=\pm M_os/R$ on top/bottom cap. $\mathbf{J}_b=(2M_o/R)\zhat$.
+2. $B_{b\phi}=\mu_oM_os/R$ from Ampere's law with an Amperian loop centered on the origin and in the $x$--$y$ plane. $B_s=B_z=0$ follows from thinking of the bound currents as being created my many closly spaced infinitely long wires and cancellation symmetry. Thus, $\mathbf{B}_b=(\mu_oM_os/R)\hat{\boldsymbol{\phi}}=\mu_o\mathbf{M}$.
 ## Problem -- Long Magnetized Solid Cylinder I.
 
 A long solid cylinder of radius $R$ has a magnetization $\mathbf{M}=M_o\zhat$. The cylinder is centered on the origin and aligned with the $z$--axis.

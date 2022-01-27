@@ -6,6 +6,8 @@ This homework covers [Boundary Value Problems](boundary_value_problems.html). Se
 
 # Integrals
 
+% Copied to notes
+
 1. Show that $\displaystyle\int_0^\pi \sin 2x \sin x dx$ = 0. (Note that without any calculation, this is expected from a plot of $\sin x$ and $\sin 2x$ and thinking about the area under the curve for their product.)
 
 2. Show that $\displaystyle \int_0^\pi \sin nx \sin lx dx$ = 0 for integer $n$ and $l$ if $l\ne n$ by explicitly evaluating the integral.
@@ -31,6 +33,8 @@ This homework covers [Boundary Value Problems](boundary_value_problems.html). Se
 
 # &nbsp;2-D Boundary Value Problem
 
+% Copied to notes
+
 In class, I started the problem of finding the potential $V(x,y)$ inside of a long square duct with boundary conditions
 
 1. $V(0,y) = 0$ (left)
@@ -55,6 +59,8 @@ $C_n=0$ for $n=2,4,...$
 $\displaystyle V(x,y)=\frac{4V_o}{\pi}\sum_{n=1,3,...}^\infty \sin(n\pi x/a)\frac{\sinh(n\pi y/a)}{n\sinh(n\pi)}$
 
 # &nbsp;2-D Boundary Value Problem
+
+% Copied to notes
 
 Find the potential $V(x,y)$ inside of a long rectangular duct, $0 \le x\le b$; $0 \le y\le a$, with boundary conditions
 
@@ -99,9 +105,13 @@ and Fourier's trick as usual. In this case, we arrive at the simplified form giv
 
 # Extra Credit 1.
 
+% Copied to notes
+
 Show that your answer to the previous problem is consistent with the solution for Griffiths Example 3.3 in the limit that $a/b\rightarrow 0$.
 
 # Extra Credit 2.
+
+% Copied to notes
 
 In problem 2., you will find the $C_n$s in
 
@@ -110,5 +120,7 @@ $\displaystyle V(x,y)=\sum_{n=0}^\infty C_n \sin \left(\frac{n\pi}{a} x \right)\
 Use this equation with the values of $C_n$ found in your solution and plot $V(x,a)$ vs. $x$ in the range $x=0$ to $x=a$. Plot only the terms in the sum for $n\le 10$.
 
 # Extra Credit 3.
+
+% Copied to notes
 
 Use the equation for $V(x,y)$ found in problem 2. along with the equation that relates the electric field just outside of a conductor to $\sigma$ to find the surface charge density on the conductor at a potential of $V_o$. Plot $\sigma(x,a)$ vs. $x$ in the range $x=0$ to $x=a$. Plot only the terms in the sum for $n\le 10$.

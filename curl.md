@@ -1,4 +1,6 @@
 
+Add a discussion on computing in cartesian coordinates.
+
 The electrostatic curl equation in differential form
 
 $$\nabla\times\mathbf{E} =0$$

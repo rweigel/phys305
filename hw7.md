@@ -58,6 +58,8 @@ where $u\equiv R/z_o$. Note that because $u\lt 1$, $\sigma \lt 0$, as expected b
 
 # Monopole Expansion
 
+%copied to notes
+
 For a point charge $q$ at $z=d$,
 
 1. Find the exact equation for $V(z)$, the potential on the $z$ axis.
