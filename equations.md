@@ -1,28 +1,108 @@
-# Equations
+# Vector Equations
 
 ## Cartesian
 
-$$\boldsymbol{\nabla}\times \mathbf{A} = \left(\frac{\partial A_z }{\partial y} - \frac{\partial A_y }{\partial z} \right)\xhat +  \left(\frac{\partial A_x }{\partial z} - \frac{\partial A_z }{\partial x} \right)\yhat +  \left(\frac{\partial A_y }{\partial x} - \frac{\partial A_x }{\partial y} \right)\zhat $$
+Gradient for scalar function $f(x, y, z)$
 
+$$
+\nabla f = 
+{\partial f \over \partial x}\xhat
++
+{\partial f \over \partial x}\yhat
++
+{\partial f \over \partial x}\zhat
+$$
 
+Divergence of a vector function $\mathbf{U}(x, y, z)$
+
+$$
+\boldsymbol{\nabla}\cdot\mathbf{U} =
+{\partial U_x \over \partial x}
++
+{\partial U_y \over \partial y}
++
+{\partial U_z \over \partial z}
+$$
+
+Curl for vector function $\mathbf{U}(x,y,z)$
+
+$$
+\boldsymbol{\nabla}\times \mathbf{U} = 
+\left(\frac{\partial U_z }{\partial y}
+-
+\frac{\partial U_y }{\partial z} \right)\xhat
++
+\left(\frac{\partial U_x }{\partial z}
+-
+\frac{\partial U_z }{\partial x} \right)\yhat
++
+\left(\frac{\partial U_y }{\partial x}
+-
+\frac{\partial U_x }{\partial y} \right)\zhat
+$$
+
+Laplacian for scalar function $f(x,y,z)$
+
+$$\nabla^2f=\boldsymbol{\nabla}\cdot(\boldsymbol{\nabla}f) =
+{\partial^2 f \over \partial x^2}
++
+{\partial^2 f \over \partial y^2}
++
+{\partial^2 f \over \partial z^2}
+$$
+ 
 ## Cylindrical
 
-Gradient for scalar function $f = f(s, \phi, z)$
+Gradient for scalar function $f(s, \phi, z)$
 
-$$\nabla f = {\partial f \over \partial \rho}\hat{\boldsymbol \rho}+ {1 \over \rho}{\partial f \over \partial \phi}\hat{\boldsymbol \phi}+ {\partial f \over \partial z}\hat{\mathbf z}$$
+$$
+\nabla f = 
+{\partial f \over \partial \rho}\hat{\boldsymbol \rho}
++
+{1 \over \rho}{\partial f \over \partial \phi}\hat{\boldsymbol \phi}
++
+{\partial f \over \partial z}\hat{\mathbf z}
+$$
 
-$$\nabla f = {\partial f \over \partial s}\hat{\boldsymbol s}+ {1 \over s}{\partial f \over \partial s}\hat{\boldsymbol \phi}+ {\partial f \over \partial z}\hat{\mathbf z}$$
+$$
+\nabla f = 
+{\partial f \over \partial s}\hat{\boldsymbol s}
++
+{1 \over s}{\partial f \over \partial s}\hat{\boldsymbol \phi}
++
+{\partial f \over \partial z}\hat{\mathbf z}
+$$
 
 
-Divergence for vector function $\mathbf{F}(s, \phi, z)$
+Divergence of a vector function $\mathbf{U}(s, \phi, z)$
 
-$$\boldsymbol{\nabla}\cdot\mathbf{U}={1 \over \rho}{\partial \left( \rho U_\rho  \right) \over \partial \rho}+{1 \over \rho}{\partial U_\phi \over \partial \phi}+{\partial U_z \over \partial z}$$
+$$
+\boldsymbol{\nabla}\cdot\mathbf{U} =
+{1 \over \rho}{\partial \left( \rho U_\rho  \right) \over \partial \rho}
++
+{1 \over \rho}{\partial U_\phi \over \partial \phi}
++
+{\partial U_z \over \partial z}
+$$
 
-$$\boldsymbol{\nabla}\cdot\mathbf{U}={1 \over s}{\partial \left( s U_s  \right) \over \partial s}+{1 \over s}{\partial U_\phi \over \partial \phi}+{\partial U_z \over \partial z}$$
+$$
+\boldsymbol{\nabla}\cdot\mathbf{U} = 
+{1 \over s}{\partial \left( s U_s  \right) \over \partial s}
++
+{1 \over s}{\partial U_\phi \over \partial \phi}
++
+{\partial U_z \over \partial z}
+$$
 
-Curl for vector function expressed as 
+Curl of a vector function $\mathbf{U}(x,y,z)$
 
-$$\boldsymbol{\nabla}\times \mathbf{A} = \left({\frac {1}{\rho }}{\frac {\partial A_{z}}{\partial \phi }}-{\frac {\partial A_{\phi }}{\partial z}}\right) {\hat {\boldsymbol {\rho }}}+\left({\frac {\partial A_{\rho }}{\partial z}}-{\frac {\partial A_{z}}{\partial \rho }}\right) {\hat {\boldsymbol {\phi }}}+{\frac {1}{\rho }}\left({\frac {\partial \left(\rho A_{\phi }\right)}{\partial \rho }}-{\frac {\partial A_{\rho }}{\partial \phi }}\right) {\hat {\mathbf {z} }}$$
+$$
+\boldsymbol{\nabla}\times \mathbf{A} = 
+\left({\frac {1}{\rho }}{\frac {\partial A_{z}}{\partial \phi }}-{\frac {\partial A_{\phi }}{\partial z}}\right) {\hat {\boldsymbol {\rho }}}
++
+\left({\frac {\partial A_{\rho }}{\partial z}}-{\frac {\partial A_{z}}{\partial \rho }}\right) {\hat {\boldsymbol {\phi }}}
++
+{\frac {1}{\rho }}\left({\frac {\partial \left(\rho A_{\phi }\right)}{\partial \rho }}-{\frac {\partial A_{\rho }}{\partial \phi }}\right) {\hat {\mathbf {z} }}$$
 
 $$\boldsymbol{\nabla}\times \mathbf{U} = 
 \left({\frac {1}{s }}{\frac {\partial U_{z}}{\partial \phi }}-{\frac {\partial U_{\phi }}{\partial z}}\right) {\hat {\boldsymbol {s }}}
@@ -37,20 +117,50 @@ $$\boldsymbol{\nabla}\times \mathbf{B} =
 +
 \left({\frac {\partial B_{s}}{\partial z}}-{\frac {\partial B_{z}}{\partial s}}\right) {\hat {\boldsymbol {\phi }}}
 +
-{\frac {1}{s}}\left({\frac {\partial \left(s B_{\phi }\right)}{\partial s}}-{\frac {\partial B_{s}}{\partial \phi }}\right) {\hat {\mathbf {z} }}$$
+{\frac {1}{s}}\left({\frac {\partial \left(s B_{\phi }\right)}{\partial s}}-{\frac {\partial B_{s}}{\partial \phi }}\right) {\hat {\mathbf {z} }}
+$$
 
 Laplacian for scalar function $f = f(\rho,\theta,\phi)$
-$$\boldsymbol{\nabla}\cdot(\boldsymbol{\nabla}f) = \nabla^2f={1 \over \rho}{\partial \over \partial \rho}\left(\rho {\partial f \over \partial \rho}\right) + {1 \over \rho^2}{\partial^2 f \over \partial \phi^2}+ {\partial^2 f \over \partial z^2}$$
+
+$$
+\nabla^2f =
+\boldsymbol{\nabla}\cdot(\boldsymbol{\nabla}f) = 
+{1 \over \rho}{\partial \over \partial \rho}\left(\rho {\partial f \over \partial \rho}\right)
++
+{1 \over \rho^2}{\partial^2 f \over \partial \phi^2} + {\partial^2 f \over \partial z^2}
+$$
 
 ## Spherical
 
-$$\mathbf{\nabla} f = {\partial f \over \partial r}\hat{\mathbf r}+ {1 \over r}{\partial f \over \partial \theta}\hat{\boldsymbol \theta}+ {1 \over r\sin\theta}{\partial f \over \partial \phi}\hat{\boldsymbol \phi}$$
+$$
+\mathbf{\nabla} f = 
+{\partial f \over \partial r}\hat{\mathbf r}
++
+{1 \over r}{\partial f \over \partial \theta}\hat{\boldsymbol \theta}
++
+{1 \over r\sin\theta}{\partial f \over \partial \phi}\hat{\boldsymbol \phi}
+$$
 
-$$\boldsymbol{\nabla}\cdot\mathbf{A}={1 \over r^2}{\partial \left( r^2 A_r \right) \over \partial r} + {1 \over r\sin\theta}{\partial \over \partial \theta} \left(  A_\theta\sin\theta \right) + {1 \over r\sin\theta}{\partial A_\phi \over \partial \phi}$$
+$$
+\boldsymbol{\nabla}\cdot\mathbf{A} =
+{1 \over r^2}{\partial \left( r^2 A_r \right) \over \partial r}
++
+{1 \over r\sin\theta}{\partial \over \partial \theta} \left(  A_\theta\sin\theta \right)
++
+{1 \over r\sin\theta}{\partial A_\phi \over \partial \phi}
+$$
 
-$$\boldsymbol{\nabla}\cdot\mathbf{U}={1 \over r^2}{\partial \left( r^2 U_r \right) \over \partial r} + {1 \over r\sin\theta}{\partial \over \partial \theta} \left(  U_\theta\sin\theta \right) + {1 \over r\sin\theta}{\partial U_\phi \over \partial \phi}$$
+$$
+\boldsymbol{\nabla}\cdot\mathbf{U} = 
+{1 \over r^2}{\partial \left( r^2 U_r \right) \over \partial r}
++
+{1 \over r\sin\theta}{\partial \over \partial \theta} \left(  U_\theta\sin\theta \right)
++
+{1 \over r\sin\theta}{\partial U_\phi \over \partial \phi}
+$$
 
-$\boldsymbol{\nabla}\times \mathbf{U} =
+$\displaystyle
+\boldsymbol{\nabla}\times \mathbf{U} =
 {\frac {1}{r\sin \theta }}\left({\frac {\partial }{\partial \theta }}\left(U_{\phi }\sin \theta \right)
 -
 {\frac {\partial U_{\theta }}{\partial \phi }}\right) {\hat {\mathbf {r} }}
@@ -63,7 +173,8 @@ $\boldsymbol{\nabla}\times \mathbf{U} =
 -
 {\frac {\partial U_{r}}{\partial \theta }}\right) {\hat {\boldsymbol {\phi }}}$
 
-$\boldsymbol{\nabla}\times \mathbf{A} =
+$\displaystyle
+\boldsymbol{\nabla}\times \mathbf{A} =
 {\frac {1}{r\sin \theta }}\left({\frac {\partial }{\partial \theta }}\left(A_{\phi }\sin \theta \right)
 -
 {\frac {\partial A_{\theta }}{\partial \phi }}\right) {\hat {\mathbf {r} }}
@@ -76,14 +187,34 @@ $\boldsymbol{\nabla}\times \mathbf{A} =
 -
 {\frac {\partial A_{r}}{\partial \theta }}\right) {\hat {\boldsymbol {\phi }}}$
 
-$$\nabla^2f={ {1 \over r^{2}}{\partial  \over \partial r}\left(r^{2}{\partial f \over \partial r}\right)+{1 \over r^{2}\sin \theta }{\partial  \over \partial \theta }\left(\sin \theta {\partial f \over \partial \theta }\right)+{1 \over r^{2}\sin ^{2}\theta }{\partial ^{2}f \over \partial \phi ^{2}}}$$
+$\displaystyle
+\nabla^2f={ {1 \over r^{2}}{\partial  \over \partial r}\left(r^{2}{\partial f \over \partial r}\right)+{1 \over r^{2}\sin \theta }{\partial  \over \partial \theta }\left(\sin \theta {\partial f \over \partial \theta }\right)+{1 \over r^{2}\sin ^{2}\theta }{\partial ^{2}f \over \partial \phi ^{2}}}$$
+
+# First--Order Approximations
+
+For $\delta \ll 1$,
+
+$$(1+\delta)^n \simeq 1 + n\delta$$
+
+$$\ln(1+\delta) \simeq \delta$$
+
+$$\cos\delta \simeq 1 - \delta^2/2$$
+
+$$\sin\delta \simeq \delta$$
+
+$$e^\delta \simeq 1 + \delta$$
+
+# Other
+
+$$e^{i\theta}=\cos\theta + i\sin\theta$$
+
 
 # Equations you should know
 
 ## Undergraduate
 
-1. Gradient, divergence, and Laplacian; how to quickly derive the curl.
-2. An example problem where gradient, divergence, curl, Laplacian is used in cartesian, cylindrical, and spherical.
+1. Cartesian gradient, divergence, and Laplacian; how to quickly derive the curl.
+2. A 1--D example problem where gradient, divergence, curl, Laplacian is used in cartesian, cylindrical, and spherical.
 3. $(1+\delta)^n$ for small $\delta$; same for $\ln(1+\delta)$, $\sin(\delta)$, $\cos(\delta)$, $e^{\delta}$ (all can be derived using a Taylor series; a plot can help - e.g., $\cos\delta$ near $\delta=0$ appears to be a concave-down parabola):
    1. $(1+\delta)^n \simeq 1 + n\delta$
    2. $\ln(1+\delta) \simeq \delta$
@@ -95,9 +226,5 @@ $$\nabla^2f={ {1 \over r^{2}}{\partial  \over \partial r}\left(r^{2}{\partial f 
 
 ## Graduate
 
-* \((1+\delta)^n\) to first order in \(\delta\); same for \(\ln(1+\delta)\), \(\sin(\delta)\), \(\cos(\delta)\), \(e^{\delta}\)
-* \(e^{i\theta}=\cos\theta + i\sin\theta\) and how to get formulas from \(\sinh x\) and \(\cosh x\) from it. How to derive trig identities using it.
-* Radial component of \(\nabla^2f\) in cylindrical and spherical (can reason out by using know problem solution as guide)
-* Radial component of \(\boldsymbol{\nabla}\boldsymbol{\cdot}\mathbf{A}\)
 * Divergence theorem (can reason out by using know problem solution as guide)
 * Stokes theorem (can reason out by using know problem solution as guide)
