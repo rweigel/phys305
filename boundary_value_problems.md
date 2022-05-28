@@ -425,17 +425,18 @@ Laplace's equation in 2-D cartesian coordinates is
 
 $$\nabla^2V = \frac{\partial^2 V}{\partial x^2} + \frac{\partial^2 V}{\partial y^2} = 0$$
 
-For arbitrary constants $A,B,C,D,$ and $m$ the following four equations satisfy it
+For arbitrary constants $A,B,C,D,$ and $m$ the following equations satisfy it
 
 1. $V(x,y) = \big(A\cosh mx+B\sinh mx\big)\big(C\cos my+D\sin my\big)$
 2. $V(x,y) = \big(A\cos mx+B\sin mx)(C\cosh my+D\sinh my\big)$
 3. $V(x,y) = \big(Ae^{mx}+Be^{-mx})(C\cos my+D\sin my\big)$
 4. $V(x,y) = \big(A\cos mx+B\sin mx\big)\big(Ce^{my}+De^{-my}\big)$
+5. $V(x,y) =  \big(A\cos(mx+B)\big)\big(C\cosh(mx+B)\big)$
+6. $V(x,y) =  \big(A\cosh(mx+B)\big)\big(C\cosh(mx+B)\big)$
 
 (This can be shown using the method of Separation of Variables covered in Chapter 3 of Griffiths. I use $m$ on this page instead of $k$ as is done in the text because I have been using $k$ for $1/(4\pi\epsilon_0)$.) 
 
-All four forms are equivalent in the sense that the constants in one equation can be written in terms of constants in any of the other equations. For example, if we write form 3. as $V(x,y) = \big(A'e^{m'x}+Be^{-m'x})(C'\cos m'y+D'\sin m'y\big)$, then one can show that $A=(A'+B')/2$, $B=(A'-B')/2$, $C=C'$, $D=D'$, and $m=m'$.
-
+All forms are equivalent in the sense that the constants in one equation can be written in terms of constants in any of the other equations. For example, if we write form 3. as $V(x,y) = \big(A'e^{m'x}+Be^{-m'x})(C'\cos m'y+D'\sin m'y\big)$, then one can show that $A=(A'+B')/2$, $B=(A'-B')/2$, $C=C'$, $D=D'$, and $m=m'$.
 
 The reason that all four forms are listed is that for certain problems, a certain choice of the form to start with leads to less algebra. 
 
@@ -824,6 +825,7 @@ Then for any $n$,
 = & \text{ } C_n \sin [n\pi y/a] (-n\pi x/a)(-n\pi x/a)e^{-n\pi x/a} + C_n e^{-n\pi x/a}(n\pi x/a)(-n\pi x/a)\sin [n\pi y/a] \\
 = & \text{ } 0
 \end{aligned}
+
 
 The Laplacian of a sum can be written as the sum of Laplacians
 

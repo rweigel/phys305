@@ -498,6 +498,22 @@ $$\int_0^1 \mathbf{\hat{s}} ds$$
 
 and use a sketch to show that your answer has the expected direction.
 
+## Problems
+
+Evaluate
+
+$\int_0^{1}\int_0^{1} \hat{\boldsymbol{\phi}} dx dy$
+
+$\int_0^{2\pi} \hat{\boldsymbol{\theta}} d\theta$
+
+$\int_0^{2\pi} \hat{\mathbf{r}} d\theta$
+
+$\int_0^{1}\int_0^{1}\int_0^{1} \hat{\mathbf{r}} dx dy dz$
+
+$\int_0^{1}\int_0^{1}\int_0^{1} r\hat{\mathbf{r}} dx dy dz$
+
+$\int_0^{1} \int_0^{1} \rho^2 dx dy$
+
 # Tangent Unit Vectors
 
 ## Computing
@@ -683,6 +699,83 @@ Use the equation for $\mathbf{\hat{n}}$ to find a normal vector for the surface 
 
 %$\mathbf{\hat{n}}=\displaystyle\mathbf{u}\times\mathbf{v}=\frac{\xhat - \yhat}{|\xhat - \yhat|}=\frac{\xhat - \yhat}{\sqrt{2}}$
 
+# Dot Products
+
+By definition, for unit vectors,
+
+* $\hat{\mathbf{u}}\cdot\hat{\mathbf{u}} = 1$
+* $\hat{\mathbf{u}}\cdot\hat{\mathbf{v}} = 0$
+
+where $\hat{\mathbf{u}}$ and $\hat{\mathbf{v}}$ are unit vectors from the same coordinate system.
+
+$c\hat{\mathbf{x}}\cdot d\hat{\mathbf{x}} = cd \hat{\mathbf{x}}\cdot\hat{\mathbf{x}} = cd$
+
+By definition, 
+
+$\mathbf{A}\cdot \mathbf{B} = (A_x\hat{\mathbf{x}} + A_y\hat{\mathbf{y}} + A_z\hat{\mathbf{z}})\cdot (B_x\hat{\mathbf{x}} + B_y\hat{\mathbf{y}} + B_z\hat{\mathbf{z}})$
+
+which gives nine dot products
+
+$$
+\begin{align} & A_x\hat{\mathbf{x}}\cdot B_x\hat{\mathbf{x}}+A_x\hat{\mathbf{x}}\cdot B_y\hat{\mathbf{y}}+A_x\hat{\mathbf{x}}\cdot B_z\hat{\mathbf{z}} \\ + & A_y\hat{\mathbf{y}}\cdot B_x\hat{\mathbf{x}}+A_y\hat{\mathbf{y}}\cdot B_y\hat{\mathbf{y}}+A_y\hat{\mathbf{y}}\cdot B_z\hat{\mathbf{z}} \\ + & A_z\hat{\mathbf{y}}\cdot B_x\hat{\mathbf{x}}+A_z\hat{\mathbf{y}}\cdot B_y\hat{\mathbf{y}}+A_z\hat{\mathbf{y}}\cdot B_z\hat{\mathbf{z}}
+\end{align}
+$$
+
+of which three are not zero due to the dot product property of unit vectors.
+
+$$\mathbf{A}\cdot \mathbf{B} = A_xB_x+A_yB_y+A_zB_z$$
+
+The dot product is often used to denote the squared magnitude of a vector
+
+$\mathbf{A}\cdot \mathbf{A} = A^2 = A_x^2 + A_y^2 + A_z^2$
+
+$\mathbf{A}\cdot \mathbf{B}$
+* Is a scalar
+* Is also called the projection of $\mathbf{A}$ onto $\mathbf{A}$ 
+* Is distributive: $\mathbf{A}\cdot (\mathbf{B}+\mathbf{C}) = \mathbf{A}\cdot \mathbf{B} + \mathbf{A}\cdot \mathbf{C}$
+* Is commutative: $\mathbf{A}\cdot \mathbf{B} = \mathbf{B}\cdot \mathbf{A}$
+
+$\mathbf{A}\cdot \mathbf{B} =AB\cos(\alpha)$, where $\alpha$ is angle between $\mathbf{A}$ and $\mathbf{B}$
+
+$\mathbf{A}\cdot \mathbf{B}$ can be used to easily compute the angle between two 3-dimensional vectors
+
+## Problems
+
+###
+
+Write $\mathbf{F}\cdot \mathbf{r}$ in terms of  $F_x,F_y,F_z,r_x,r_y,$ and $r_z$.
+
+Write $\frac{1}{2}m\mathbf{V}\cdot \mathbf{V}$ in terms of $V_x,V_y,$, and $V_z$.
+
+###
+
+Write $\mathbf{A}\cdot \mathbf{B}\cdot \mathbf{C}$ in terms of  $A_x,A_y,A_z,B_x,B_y,B_z,C_x,C_y$ and $C_z$.
+
+###
+
+Compute $V^2-\mathbf{V}\cdot\mathbf{V}$ where $\mathbf{V}=1\hat{\mathbf{x}}+2\hat{\mathbf{x}}+3\hat{\mathbf{x}}$.
+
+###
+
+Given $\mathbf{F} = \hat{\mathbf{x}} + \hat{\mathbf{z}}$ and $\mathbf{r} = \hat{\mathbf{y}} + \hat{\mathbf{z}}$, compute angle between $\mathbf{F}$ and $\mathbf{r}$ using
+* $\mathbf{F}\cdot \mathbf{r} = Fr\cos(\alpha)$
+* the law of cosines or some other geometrical method
+* graphically
+
+###
+
+Give an explanation for the statement "$\mathbf{A}\cdot \mathbf{B}$ is the projection of $\mathbf{A}$ onto $\mathbf{B}$".
+
+Is it valid to also say "$\mathbf{A}\cdot \mathbf{B}$ is the projection of $\mathbf{B}$ onto $\mathbf{A}$"?
+
+###
+
+Show that the dot product is distributive.
+
+###
+
+Show that the dot product is commutative.
+
 # Cross Products
 
 The motivation for the cross product notation is that we often find equations of the form $AB\sin\theta$ where $A$ and $B$ are the magnitudes of vector $\mathbf{A}$ and $\mathbf{B}$, respectively, and $\sin\theta$ is the angle between the two vectors with $\theta =0$ along $\mathbf{A}$. Associated with the scalar $AB\sin\theta$ is a direction that is perpendicular to the plane that both $\mathbf{A}$ and $\mathbf{B}$ lie in. Calling the normal vector $\hat{\mathbf{n}}$, we are often interested in the quantity
@@ -730,3 +823,53 @@ For example, in $\xhat\times\yhat$, to go from $\xhat$ to $\yhat$, your rotate c
 The same procedure can be used for cylindrical and spherical unit vectors by using one of the diagrams in the following figure. Note that the order of the unit vectors is the same as one usually writes the coordinates. For example, we typically write $(x,y,z)$, $(s,\phi,z)$, and $(r,\theta,\phi)$ when indicating a position in cartesian, cylindrical, and spherical coordinates, respectively.
 
 <img src="figures/Cross-Product-Cycle-All.svg"/>
+
+
+$$\mathbf{A}\times \mathbf{B} = (A_x\hat{\mathbf{i}} + A_y\hat{\mathbf{j}} + A_z\hat{\mathbf{k}})\times (B_x\hat{\mathbf{i}} + B_y\hat{\mathbf{j}} + B_z\hat{\mathbf{k}})$$
+
+$$\mathbf{A}\times \mathbf{B} = (A_yB_z - A_zB_y)\hat{\mathbf{i}} + (A_zB_x - A_xBz)\hat{\mathbf{j}} + (A_xB_y - A_yB_x)\hat{\mathbf{k}}$$
+
+Note that each component has no subscripted term corresponding to that component (e.g., $x-$component does not have $A_x$ or $B_x$.
+
+Above is difficult to memorize.  Use the determinant method to help.
+
+----
+
+* $\mathbf{A}\times \mathbf{B} = \mathbf{A}\mathbf{B}\sin(\theta)\hat{\mathbf{n}}$, where $\hat{\mathbf{n}}$ is unit vector to plane of $\mathbf{A}$ and $\mathbf{B}$
+* Right-hand rule used to determine direction of $\hat{\mathbf{n}}$
+* Distributive: $\mathbf{A}\times (\mathbf{B}+\mathbf{C})$ = $(\mathbf{A}\times \mathbf{B}) + (\mathbf{A}\times \mathbf{C})$
+* Not communicative: $\mathbf{B}\times \mathbf{A} = -(\mathbf{A}\times \mathbf{B})$
+* $|\mathbf{A}\times \mathbf{B}|$ is area of parallelogram generated by $\mathbf{A}$ and $\mathbf{B}$
+* Cross product of two parallel vectors is zero: $\mathbf{A}\times (a\mathbf{A}) = 0$, where $a$ is scalar
+
+Using $\mathbf{A}\times \mathbf{B} = \mathbf{A}\mathbf{B}\sin(\theta)\hat{\mathbf{n}}$, show that $\mathbf{A}\times (\mathbf{B}+C) = \mathbf{A}\cdot \mathbf{B} + \mathbf{A}\cdot C$ (i.e., show that cross product is distributive). Assume all vectors are in the $x-y$ plane. (similar to p1.1 DJG89)
+
+Using $\mathbf{A}\times \mathbf{B} = \mathbf{A}\mathbf{B}\sin(\theta)\hat{\mathbf{n}}$, show that $\mathbf{B}\times \mathbf{A} = -(\mathbf{A}\times \mathbf{B})$.
+
+Is $(\mathbf{A}\times \mathbf{B})\times \mathbf{C} = \mathbf{A}\times (\mathbf{B}+\mathbf{C})$ (i.e., is the cross product associative?). (similar to p1.2 JDG89).
+
+Does $\mathbf{A}\cdot \mathbf{B}\times \mathbf{C}$ mean $(\mathbf{A}\cdot \mathbf{B}) \times \mathbf{C}$ or $\mathbf{A}\cdot (\mathbf{B}\times \mathbf{C})$?
+
+# Triple Products
+
+Dot and cross product combinations.
+
+* $\mathbf{A}\cdot(\mathbf{B}\times \mathbf{C}) = \mathbf{B}\cdot(\mathbf{C}\times \mathbf{A}) = \mathbf{C}\cdot(\mathbf{A}\times \mathbf{B})$.  Note that "alphabetical" ordering is preserved.
+* $\mathbf{A}\cdot (\mathbf{B}\times \mathbf{C}) = (\mathbf{A}\times \mathbf{B})\cdot \mathbf{C}$
+* Geometrically, $|\mathbf{A}\cdot(\mathbf{B}\times \mathbf{C})|$ is a volume.
+
+Draw a volume corresponding to $|\mathbf{A}\cdot(\mathbf{B}\times \mathbf{C})|$ by drawing three vectors and additional lines to complete the volume boundary.  Use the fact that $\mathbf{B}\times \mathbf{C}$ is an area.  Use the diagram to argue
+
+* BAC-CAB rule $\mathbf{A}\times(\mathbf{B}\times \mathbf{C}) = \mathbf{B}\times(\mathbf{A}\cdot \mathbf{C}) - \mathbf{C}(\mathbf{A}\cdot \mathbf{B})$
+* A term with more than one cross product can be simplified to have only one cross product.
+
+Show that $(\mathbf{A}\times \mathbf{B})\cdot (\mathbf{C}\times \mathbf{D}) = (\mathbf{A}\cdot \mathbf{C})(\mathbf{B}\cdot \mathbf{D}) - (\mathbf{A}\cdot D)(\mathbf{B}\cdot \mathbf{C})$.
+
+Show that $\mathbf{A}\times (\mathbf{B}\times (\mathbf{C}\times \mathbf{D})) = \mathbf{B}(\mathbf{A}\cdot(\mathbf{C}\times \mathbf{D})) - (\mathbf{A}\cdot \mathbf{B})(\mathbf{C}\times \mathbf{D})$.
+
+Prove the BAC-CAB rule $\mathbf{A}\times(\mathbf{B}\times \mathbf{C}) = \mathbf{B}\times(\mathbf{A}\cdot \mathbf{C}) - \mathbf{C}(\mathbf{A}\cdot \mathbf{C})$ (DJG89 p 1.6).
+
+Prove that $(\mathbf{A}\times(\mathbf{B}\times \mathbf{C})) + (\mathbf{B}\times(\mathbf{C}\times \mathbf{A})) + (\mathbf{C}\times (\mathbf{A}\times \mathbf{B})) = 0$ (DJG89 p1.7).
+
+Under what conditions does $\mathbf{A}\times (\mathbf{B}\times \mathbf{C}) = (\mathbf{A}\times \mathbf{B})\times \mathbf{C}$ (DJG89 p 1.7).
+

@@ -1,3 +1,34 @@
+# Legendre polynomials
+
+$${\displaystyle {\begin{array}{r|r}n&P_{n}(x)\\\hline 0&1\\1&x\\2&{\tfrac {1}{2}}\left(3x^{2}-1\right)\\3&{\tfrac {1}{2}}\left(5x^{3}-3x\right)\\4&{\tfrac {1}{8}}\left(35x^{4}-30x^{2}+3\right) \end{array}}}$$
+
+# Coordinate Transformation
+
+## Cartesian $\leftrightarrow$ Cylindrical
+$$\begin{bmatrix}\hat{\mathbf{r}} \\ \boldsymbol{\hat{\phi}} \\ \hat{\mathbf{z}}\end{bmatrix}  = \begin{bmatrix}\cos \phi & \sin \phi & 0 \\ -\sin \phi &\cos \phi & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix}\hat{\mathbf{x}} \\ \hat{\mathbf{y}} \\ \hat{\mathbf{z}}\end{bmatrix}$$
+
+$$\begin{bmatrix}\hat{\mathbf{x}} \\ \hat{\mathbf{y}} \\ \hat{\mathbf{z}}\end{bmatrix}  = \begin{bmatrix}\cos \phi & -\sin \phi & 0 \\ \sin \phi &\cos \phi & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix}\hat{\mathbf{r}} \\ \boldsymbol{\hat{\phi}} \\ \hat{\mathbf{z}}\end{bmatrix}$$
+
+# Cartesian $\leftrightarrow$ Spherical
+
+$$\begin{bmatrix}{\hat{\boldsymbol{r}}} \\ {\hat{\boldsymbol{\theta }}} \\ {\hat{\boldsymbol{\varphi }}}\end{bmatrix} = \begin{bmatrix}\sin \theta\cos \varphi & \sin\theta \sin\varphi & \cos\theta \\ \cos\theta \cos\varphi & \cos\theta \sin\varphi & -\sin\theta \\ -\sin\varphi & \cos\varphi & 0 \end{bmatrix} \begin{bmatrix}{\hat{\mathbf{x}}} \\ {\hat{\mathbf{y}}} \\{\hat{\mathbf{z}}}\end{bmatrix}$$
+
+$$\begin{bmatrix}\hat{\mathbf{x}} \\ \hat{\mathbf{y}} \\ \hat{\mathbf{z}}\end{bmatrix} = \begin{bmatrix} \sin\theta\cos\varphi & \cos\theta\cos\varphi & -\sin\varphi \\ \sin\theta\sin\varphi & \cos\theta\sin\varphi &  \cos\varphi \\ \cos \theta & -\sin\theta & 0 \end{bmatrix} \begin{bmatrix}\hat{\boldsymbol{r}} \\ \hat{\boldsymbol{\theta}} \\ \hat{\boldsymbol{\varphi}}\end{bmatrix}$$
+
+=== Problems ===
+
+* Convert \(\) to 
+* Convert \(\) to
+* Convert \(\) to 
+
+=== Problems ===
+
+Derive the matrix transformation equations using a diagram.
+
+**Notes**
+
+See any Calculus Textbook. These transformations can always be looked up, but if you are able to easily derive them, typical coordinate transformation problems that can't be looked up will be easy.
+
 # Vector Equations
 
 ## Cartesian
