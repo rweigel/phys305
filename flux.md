@@ -485,70 +485,7 @@ In the case of electric flux, the analog to a source or sink is the electric fie
 
 # Electric Current
 
-<div style="background-color:yellow">
-**This section on surface currents can be skipped. We will revisit it in Chapter 5.**
-</div>
-
-This topic is covered briefly in Chapter 5.1.3 of Griffiths. At this point, these notes only contain an overview, and examples and problems will be added when Chapter 5 is covered.
-
-## Definitions
-
-The current that flows through a wire has units of charge/s. The equation developed for $\dot{N}$ at a point on a line can be used to compute current if we redefine $\lambda$ to be the number of charges per unit length instead of the number of particles per unit length. In this case, instead of using $\dot{N}$, we use $I$:
-
-$$I=\lambda v$$
-
-Similarly, re--defining $\sigma$ as the number of charges per unit area, the flow of current past a line $\mathcal{L}$ is
-
-$$I=\int_{\mathcal{L}}\sigma \mathbf{v}\bfcdot \hat{\mathbf{n}}dl$$
-
-Finally, redefining $\rho$ as the number of charges per unit volume, the flow of current past an area $\mathcal{A}$ is 
-
-$$I=\int_{\mathcal{A}}\rho \mathbf{v}\bfcdot \hat{\mathbf{n}}dA$$
-
-### Example -- Computing Total Charge Passing a Point
-
-### Problem -- Computing Total Charge Passing a Line
-
-## Surface Currents
-
-When working with current flowing on a surface, we will need to use the current densities $\mathbf{K}$ and $\mathbf{J}$, respectively.
-
-Surface currents are described and used in Chapter 5.1 of Griffiths.
-
-### Surface Current $\mathbf{K}$
-
-
-$\mathbf{K}$ has units of (charge/s)/length = (current/length) and is defined by
-
-$\displaystyle \mathbf{K} \equiv \sigma \mathbf{v}$ so that $\displaystyle I=\int_{\mathcal{L}}\sigma\mathbf{v}\bfcdot \hat{\mathbf{n}}=\int_{\mathcal{L}}\mathbf{K}\bfcdot \hat{\mathbf{n}}dl$
-
-From which it follows that
-
-$\displaystyle dI = \mathbf{K}\bfcdot \hat{\mathbf{n}}dl=Kdl_\perp$
-
-where $dl_\perp$ is a differential element of length that is perpendicular to $\mathbf{K}$.
-
-Griffiths uses the equivalent definition
-
-$\displaystyle \mathbf{K} \equiv \frac{d\mathbf{I}}{dl_\perp}$
-
-which follows from $dI=Kdl_\perp$ by multiplying both sides by a unit vector in the direction of $\mathbf{K}$.
-
-### Volume Current $\mathbf{J}$
-
-$\mathbf{J}$ has units of (charge/s)/area and is defined by
-
-$\displaystyle\mathbf{J} \equiv \rho \mathbf{v}$ so that $\displaystyle I=\int_{\mathcal{A}} \rho\mathbf{v}\bfcdot \hat{\mathbf{n}}=\int_{\mathcal{A}} \mathbf{J}\bfcdot \hat{\mathbf{n}}dA$
-
-From which it follows that
-
-$\displaystyle dI = \mathbf{J}\bfcdot \hat{\mathbf{n}}dA=Jda_\perp$
-
-Griffiths uses the equivalent definition
-
-$\displaystyle \mathbf{J} \equiv \frac{d\mathbf{I}}{da_\perp}$
-
-which follows from $dI = Jda_\perp$ by multiplying both sides by a unit vector in the direction of $\mathbf{J}$.
+See current.md
 
 # Electric Flux
 
