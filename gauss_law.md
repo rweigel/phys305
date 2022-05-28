@@ -48,6 +48,22 @@ No. All we can say is that $\oint \mathbf{E}\cdot d\mathbf{A}=0$. There are two 
 
 A point charge is located at $z=b$. Consider a Gaussian sphere centered on the origin with a radius of $b/2$. The point charge is outside of the sphere, so $Q_{encl}=0$. Does it follow that $\mathbf{E}=0$ on the surface of the Gaussian sphere? If not, what can you say about $\mathbf{E}$ on the surface of the Gaussian sphere?
 
+## Problem
+
+The electric field was measured by placing a lump of charge in a cubical cardboard box of side length 1 meter and measuring the electric field at the center of each face of the box. The measurements of the electric field for each face (in mV/m) are shown below.
+
+```
+Face #     Ex       Ey      Ez
+  1
+  2
+  3
+  4
+  5
+  6
+```
+
+Estimate the charge inside of the box.
+
 ## Differential Form
 
 Gauss's law in differential form relates the divergence of the vector field $\mathbf{E}$ at anly location in space to the charge density, $\rho$, at that location:
@@ -305,6 +321,85 @@ $\displaystyle\mathbf{E}(s) = \frac{\lambda_o}{2\pi\epsilon_o}\frac{\hat{\mathbf
 
 To be technically correct, we should also state that this result is valid only in the limit that the length of the line approaches infinity, or equivalently, at locations near the center of a finite line of charge at a radial distance from the center that approaches zero.
 
+## Example -- Long Line of Charge Alt. Version
+
+In general, in cylindrical coordinates, the electric field has the form
+
+$$\mathbf{E}(s,\phi,z)=E_s(s,\phi,z)\hat{\mathbf{s}}+E_{\phi}(s,\phi,z)\hat{\boldsymbol{\phi}}+E_z(s,\phi,z)\hat{\mathbf{z}}$$
+
+where $s$ is the radial coordinate in cylindrical coordinates.
+
+Consider an infinite line of charge with a uniform charge per unit length of $\lambda_o$ on the $z$-axis. The typical approach to finding that the equation for the electric field is
+
+$$\mathbf{E}(s)=\frac{\lambda_o}{2\pi\epsilon_o}\frac{\hat{\mathbf{s}}}{s}$$
+
+is to use a cylindrical Gaussian surface and Gauss' law. When using Gauss' law, one must make arguments for why
+
+1. $E_s$ does not depend on $\phi$ and $z$
+
+2. $E_z=0$
+
+With these two justifications and Gauss' law, one arrives at only an equation for the radial component of the electric field, $E_s$. To complete the solution, one also needs to provide an argument for why 
+
+3. $E_{\phi}=0$.
+
+Derive the equation given above for the electric field using Gauss' law and explicitly state arguments for 1.-3.
+
+**Solution**
+
+I gave this problem because I have come to realize that students can use Gauss' law to find the electric field, but can't often answer conceptual questions about justifications for the steps needed to get the solution. The problem is that most textbooks don't emphasize the arguments or provide follow-up questions to test their understanding of the arguments and so students don't think too deeply about them.
+
+Understanding the reasoning for this problem is critical for understanding the boundary condition equations
+
+$$(\mathbf{E}\_2-\mathbf{E}\_1)\cdot \hat{\mathbf{n}} = \mathbf{E}\_{2\perp}-\mathbf{E}\_{1\perp} = \left[-\frac{\partial \Psi_2}{\partial n}+\frac{\partial \Psi_1}{\partial n}\right]_{n=0}=\frac{\sigma}{\epsilon_o}$$
+
+$$\mathbf{E}\_{2\parallel}-\mathbf{E}\_{2\parallel}=(\mathbf{E}\_2-\mathbf{E}\_1)\cdot \hat{\mathbf{t}}=0$$
+
+where $n$ is the coordinate that is perpendicular to the boundary surface and outward to the volume enclosed by the boundary surface; $t$ is any coordinate parallel to the surface.
+
+Several students used the solution for $\mathbf{E}$ given for arguments 1.-3., but this is circular reasoning. The point of the problem is to justify all of the steps needed to get to the solution.
+
+I did not expect a solution with the level of detail in what follows. I generally looked for arguments or words that seemed close to something said below. I did not write extended comments on your solutions for statements that were wrong - you should be able to determine what was wrong by reading the following solution.
+
+1. $E_s$ does not depend on $z$ because the charge distribution does not change if we shift the origin of $z$. Said another way, two people who solve this problem using a different location for $z=0$ should get the same result. $E_s$ does not depend on $\phi$ because if we rotate the charge distribution around the $z$-axis by $\phi$, the charge distribution does not change. Said another way, two people who solve the problem using a different $\phi=0$ line perpendicular to the line of charge should get the same answer. The same argument can be used to argue that $E_z$ and $E_{\phi}$ do not depend on $\phi$ and $z$, but this is not needed because in 2. and 3. they are found to be zero.
+
+2. $E_z=0$ - Assume the line extends from $z=\pm L$. Adding the electric field due to a differential charge at $z$ to that from a differential charge at $-z$ gives an electric field that points in the $\hat{\mathbf{s}}$ direction in the $x-y$ plane. An infinite line of charge can be created by letting $L\rightarrow\infty$. Or, for very small $s$, in the $x-y$ plane the line of charge appears infinite.
+
+3. $E_{\phi}=0$ by the same argument as 2.
+
+_Detailed solution using 1.-3. and Gauss' law_
+
+$$\mathbf{E}(s,\phi,z)=E_s(s,\phi,z)\hat{\mathbf{s}}+E_{\phi}(s,\phi,z)\hat{\boldsymbol{\phi}}+E_z(s,\phi,z)\hat{\mathbf{z}}$$
+
+A Gaussian cylinder of radius $s$ and a height $h$ and centerline along the $z$-axis has three surfaces, with normals of $\hat{\mathbf{z}}$ on the top cap, $-\hat{\mathbf{z}}$ on the bottom cap, and $\hat{\mathbf{s}}$ on the curved side.
+
+$$\oint \mathbf{E}\cdot \hat{\mathbf{n}}da = \int_\text{top cap} \mathbf{E}\cdot \hat{\mathbf{z}} da +  \int_\text{bottom cap} \mathbf{E}\cdot (-\hat{\mathbf{z}}) da + \int_\text{side}\mathbf{E}\cdot \hat{\mathbf{s}} da$$
+
+$\mathbf{E}\cdot \hat{\mathbf{z}} = E_z(s,\phi,z)$ and we have argued that $E_z=0$, so the first two integrals are zero.
+
+$\mathbf{E}\cdot \hat{\mathbf{s}} = E_s(s,\phi,z)$, so the last integral is, using $da=sdzd\phi$,
+
+$$\int_\text{side}\mathbf{E}\cdot \hat{\mathbf{s}} da = \int_{z=-h/2}^{h/2}\int_{\phi=0}^{2\pi} E_s(s,\phi,z) sdz\thinspace d\phi$$
+
+Because $E_s$ is independent of $z$, we can write
+
+$$\int_{z=-h/2}^{h/2}\int_{\phi=0}^{2\pi} E_s(s,\phi,z) sdz\thinspace d\phi=\int_{z=-h/2}^{h/2}\int_{\phi=0}^{2\pi} E_s(s,\phi) sdz\thinspace d\phi=h\int_{\phi=0}^{2\pi} E_s(s,\phi) sd\phi$$
+
+Because $E_s$ is independent of $\phi$, we can write
+
+$$h\int_{\phi=0}^{2\pi} E_s(s,\phi) sd\phi=h\int_{\phi=0}^{2\pi} E_s(s) sd\phi$$
+
+Because $s$ and $\phi$ are orthogonal,
+
+$$h\int_{\phi=0}^{2\pi} E_s(s) sd\phi=hE_s(s) s\int_{\phi=0}^{2\pi} d\phi=hE_s(s) s2\pi$$
+
+Note that Gauss' law only gave us $E_s$ - we had to argue why $E_{\phi}$ and $E_z$ were zero. In addition, in order to do the integration in Gauss' law, we needed to provide additional justification for why $E_s$ could only depend on $s$. So this Gauss' law problem had two separate components: 1. arguments that reduce and simplify the general solution
+
+$$\mathbf{E}(s,\phi,z)=E_s(s,\phi,z)\hat{\mathbf{s}}+E_{\phi}(s,\phi,z)\hat{\boldsymbol{\phi}}+E_z(s,\phi,z)\hat{\mathbf{z}}$$
+
+and then 2. evaluation of the integral in Gauss' law. I find that students that don't understand 1. are not able to articulate why a given Gaussian surface can't be used to find the electric field. For example, their answer to why a Gaussian sphere could not be used to find the electric field in this problem typically only involves an ambiguous statement about symmetry; "symmetry" is ambiguous because both a Gaussian sphere and a Gaussian cylinder have symmetry).
+
+
 ## Problem -- Long Cylinder
 
 
@@ -534,7 +629,6 @@ A non-conducting spherical shell is covered with charge uniformly on its surface
 %Nope. Gauss' Law is generally only useful for computing \(\mathbf{E}\) when it can be pulled out of the integral. Here we don't have a symmetry argument that would allow this. To compute the electric field, you would need to do an integral like the ones done for continuous charge distributions. And it would be complicated.
 
 3. If the dent is inward (so sphere was punched from the outside), will the electric field at the origin be larger or smaller than that for the un-dented sphere? Justify your answer.
-
 
 # Using -- Charges on a Conductor
 
@@ -776,7 +870,7 @@ The final plot is shown in the following figure. It was assumed that $Q/A=4\sigm
 
 <img src="figures/Conductors-Slab-Between-Sheets-Solution.svg"/>
 
-## Example -- Charge Inside Conductor with a Cavity
+## Example -- Charge Inside Sphere with a Cavity
 
 A charge $q$ is placed at the center of an uncharged spherical conductor of radius $2R$ with a spherical cavity of radius $R$.
 
@@ -816,6 +910,28 @@ The plot shown has $E_r=kq/R^2$ when $r=R$ and $E_r=kq/(4R^2)$ when $r=2R$. If t
 
 <img src="figures/Conductors_Sphere_with_Cavity_Plot.svg"/>
 
+## Problem -- Charge Inside Conductor with a Cavity
+
+An uncharged conducting sphere of radius $2b$ is centered on the origin and has a spherical cavity of radius $b$ that is also centered on the origin.
+
+1. If a charge of $+q$ is at the origin, explain why the surfaces at $r=2b$ and $r=b$ each have a net charge of $+q$ and $-q$, respectively, and not, say, $+q/2$ and $-q/2$.
+1. Repeat this question for the case where the inner surface of the cavity is not spherical (but the charge at the origin is still in a cavity)
+
+**Solution**
+
+Several students used the justification of "E is zero inside a conductor". This is not a full justification. If someone said "$+q/2$ and $-q/2$ give E of zero inside the conductor", your proof that this statement is wrong would require using Gauss' law.
+
+1.
+
+Gauss' law using a sphere of radius $b\lt r\lt 2b$:
+
+$$\oint \mathbf{E}\cdot d\mathbf{a} = \frac{Q_{encl}}{\epsilon_o} = \frac{q + q_{r=b}}{\epsilon_o}$$
+
+LHS is zero because field is zero inside conductor. So $q_{r=b}=-q$.
+
+2. 
+
+Same approach but the surface is not a sphere but rather a surface that is always inside conductor; $q_{r=b}=-q$.
 ## Problem -- Charge Inside Conductor with a Cavity
 
 Repeat the previous problem when the conductor has a net charge of $3Q$.

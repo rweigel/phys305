@@ -288,3 +288,15 @@ Verify the divergence theorem using
 Sketch the vector field $\mathbf{U}=\hat{\mathbf{r}}/r^2$ and a sphere of radius $R$ centered on $z=2R$.
 
 Then use the divergence theorem to find the flux $\Phi_U$ through the sphere. If you choose to evaluate a surface integral rather than a volume integral, keep in mind that the normal to this sphere is not simply $\hat{\mathbf{r}}$ because it is not centered on the origin.
+
+### Uniform Field and Cube
+
+Show by direct calculation that
+
+$$\oint_{\mathcal{S}}\mathbf{A}\bfcdot d\mathbf{a} = \int_{\mathcal{V}} \boldsymbol{\nabla} \cdot \mathbf{A}\thinspace d^3x$$
+
+is satisfied when $\mathbf{A}=A_x(x)\xhat$ and $\mathcal{V}$ is an origin--centered cube of side length $b$ with its sides parallel to the coordinate planes.
+
+### Divergence Theorem
+
+Solve II-27 and II-28 of [Schey, 2005](https://drive.google.com/drive/folders/001s8T-MO_G7YfPuAiHesVK3yFNy82noAsg?usp=sharing).
