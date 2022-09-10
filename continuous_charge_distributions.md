@@ -773,7 +773,8 @@ From step 1, we expect that
 (b) For $z\gg R$, we expect $\mathbf{E}=\pm kQ\zhat/z^2$ with the sign the same as that of $z$.
 
 
-(a) For $z\ll R$, only the first term in parenthesis is large
+(a) For $z\ll R$, only the first term in parenthesis is large, so
+
 $$\mathbf{E} = \frac{\sigma}{2\epsilon_0}\frac{z}{|z|}\hat{\mathbf{z}}$$
 
 Notice how the ${z}/{|z|}$ term tells use the direction of the electric field. When $z>0$, this term is $+1$. When $z<0$, this term is $-1$.
