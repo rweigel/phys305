@@ -1,6 +1,4 @@
-# Introduction 0
-
-Dielectrics (Polarizable Material)
+# Introduction
 
 When there is only one dipole in a constant electric field, it is easy to compute the modified electric field.
 
@@ -24,6 +22,34 @@ where $\chi_e$ is a dimensionless proportionality constant and $\mathbf{E}$ is t
 In the following two examples, we give a physical justification for this equation for non-polar and polar dielectrics.
 
 The interpretation of this equation is that in a given volume in the dielectric, the induced polarization is proportional to the electric field, $\mathbf{E}$, at that location. The electric field at a given location in the material depends on the external electric field, $\mathbf{E}_o$, ''and'' the electric field created by all of the other induced dipoles in the material. This fact makes the calculation of the electric field inside of a dielectric complicated. This complication is highlighted in an example below.
+
+In [Continuous Electric Dipole Distributions](continuous_electric_dipole_distributions.html), the problem of finding the electric field due to an object that had a polarization $\mathbf{P}$ "frozen in" was considered.
+
+The approach was to find the bound charge densities that result from this polarization. Then the electric field due to the bound charge densities was computed.
+
+Consider an object that is unpolarized ($\mathbf{P}=0$), but is placed in an external electric field, $\mathbf{E}_{ext}$. In response to this electric field, atomic--sized dipoles will tend to form. Thes induced dipoles create an electric field, which called an induced electric field.
+
+The total field is then
+
+$\mathbf{E}\_{total}=\mathbf{E}\_{external} + \mathbf{E}_{induced}$
+
+By convention, we drop the "total" subscript and abbreviate "external" as "ext". Given that the induced field is can be computed from bound charge densities, we can use $\mathbf{E}\_b$ in place of $\mathbf{E}\_{induced}$ to emphasize this point. In this notation, we have
+
+$\mathbf{E}=\mathbf{E}\_{ext} + \mathbf{E}_{b}$
+
+It is important to note that $\mathbf{E}_b$ depends on $\mathbf{E}$.
+
+Without additional information, it is not possible to compute $\mathbf{E}$ -- we need to know how much $\mathbf{P}$ is generated given $\mathbf{E}$. Once we have $\mathbf{P}$, we can compute the bound charge densities and then $\mathbf{E}_b$.
+
+For many materials, the relationship between $\mathbf{P}$ and $\mathbf{E}$ is linear:
+
+$\mathbf{P}=\epsilon_o\chi_e\mathbf{E}$
+
+where the constant $\chi_e$ is the **electric susceptibility**.
+
+A constant that often appears in induced polarization problems is $\epsilon_o(1+\chi_e)$, which is called **permittivity** or the **dielectric constant**:
+
+$\epsilon\equiv \epsilon_o(1+\chi_e)$
 
 ## Mental Model for Non-Polar Dielectrics
 
@@ -223,73 +249,7 @@ A perfect dipole $\mathbf{p}=p_o\hat{\mathbf{z}}$ at the origin is at the center
 
 (Note - this one cannot be solved using the method of images because the method of images cannot be used to find the potential for a point charge inside or outside of a dielectric. One needs to use the standard boundary value method that starts with $\sum_{l=0}^{\infty} (A_lr^l+B_l/r^{l+1})P_l(\cos\theta)$ ).
 
-# Introduction
-
-In [Continuous Electric Dipole Distributions](continuous_electric_dipole_distributions.html), the problem of finding the electric field due to an object that had a polarization $\mathbf{P}$ "frozen in" was considered.
-
-The approach was to find the bound charge densities that result from this polarization. Then the electric field due to the bound charge densities was computed.
-
-Consider an object that is unpolarized ($\mathbf{P}=0$), but is placed in an external electric field, $\mathbf{E}_{ext}$. In response to this electric field, atomic--sized dipoles will tend to form. Thes induced dipoles create an electric field, which called an induced electric field.
-
-The total field is then
-
-$\mathbf{E}\_{total}=\mathbf{E}\_{external} + \mathbf{E}_{induced}$
-
-By convention, we drop the "total" subscript and abbreviate "external" as "ext". Given that the induced field is can be computed from bound charge densities, we can use $\mathbf{E}\_b$ in place of $\mathbf{E}\_{induced}$ to emphasize this point. In this notation, we have
-
-$\mathbf{E}=\mathbf{E}\_{ext} + \mathbf{E}_{b}$
-
-It is important to note that $\mathbf{E}_b$ depends on $\mathbf{E}$.
-
-Without additional information, it is not possible to compute $\mathbf{E}$ -- we need to know how much $\mathbf{P}$ is generated given $\mathbf{E}$. Once we have $\mathbf{P}$, we can compute the bound charge densities and then $\mathbf{E}_b$.
-
-For many materials, the relationship between $\mathbf{P}$ and $\mathbf{E}$ is linear:
-
-$\mathbf{P}=\epsilon_o\chi_e\mathbf{E}$
-
-where the constant $\chi_e$ is the **electric susceptibility**.
-
-A constant that often appears in induced polarization problems is $\epsilon_o(1+\chi_e)$, which is called **permittivity** or the **dielectric constant**:
-
-$\epsilon\equiv \epsilon_o(1+\chi_e)$
-
-## Example -- Infinite Slab
-
-An object with an electric susceptibility of $\chi_e$ is in the region $|z| \le t$. The object is infinite in extent in the $x$ and $y$ directions.
-
-There is an external electric field of $E_o\zhat$.
-
-Find $\mathbf{E}$
-
-**Answer**
-
-$\mathbf{E}=\mathbf{E}\_{ext} + \mathbf{E}_{b}$
-
-$E_z = E_{ext\text{ z}} + E_{b\text{ z}}$
-
-$E_z = E_o + E_{b\text{ z}}$
-
-At this point, $E_z$ and $E_{b\text{ z}}$ are unknown. We know that $E_{b\text{ z}}$ is related to $P_z$, which is in turn related to $E_z$.
-
-The bound surface densities are $\sigma_b=\pm P_z$ on the top/bottom surfaces of the slab. The polarization is related to $E_z$ by $P_z = \epsilon_o\chi_e E_z$, so $\sigma_b=\pm \epsilon_o\chi_e E_z$.
-
-$\rho_b=0$. This can be seen by taking the divergence of both sides of $\mathbf{E} = \mathbf{E}\_{ext} + \mathbf{E}_{b}$, which gives $\boldsymbol{\nabla}\bfcdot\mathbf{E} = 0 + \rho_b$. Using $\rho_b=-\epsilon_o\boldsymbol{\nabla}\bfcdot\mathbf{P}$ and $\mathbf{P}=\epsilon_o\chi_e\mathbf{E}$ results in $\rho_b=0$ and $dE_z/dz=0$, so the field inside of the dielectric is constant.
-
-% This need to be justified. See notes where rho_b is related to rho_f.
-
-As a result of $\sigma_b$, the $E_{b\text{ z}}=-P_z/\epsilon_o=-\chi_e E_z$ in the slab and $E_{b\text{ z}}=0$ outside of the slab.
-
-Thus, inside the slab
-
-$E_z = E_o + E_{b\text{ z}}=E_o-\chi_e E_z$
-
-Solving for $E_z$ gives
-
-$\displaystyle E_z=\frac{E_o}{1+\chi_e}$
-
-Outside the slab, $E_z=E_o$.
-
-Inside the slab, the induced polarization opposes the external electric field and causes the field to be smaller. Outside the slab, the induced electric field has no effect.
+# Problems 
 
 ## Problem -- Infinite Slab
 
@@ -354,8 +314,6 @@ $\sigma_{bi}$ creates $\mathbf{E}\_{bi}$, which is zero for $r\lt a$ and $4\pi a
 $\sigma_{bo}$ creates $\mathbf{E}\_{bo}$, which is zero for $r\lt b$ and $4\pi b^2\sigma_{bo}/4\pi\epsilon_o r^2$ for $r\gt b$.
 
 The sum of the fields due to the three surface charge densities $\mathbf{E}\_{bi} + \mathbf{E}\_{bo} + \mathbf{E}\_Q$ gives $\mathbf{E}$ given in Example 4.5.
-
-# Problems
 
 ## Dielectric Around a Charged Sphere
 
@@ -451,17 +409,16 @@ The equation for $\Phi_D$ looks similar to that for $\Phi_E$, except that its ri
 $-\oint_{S}\mathbf{P}\cdot d\mathbf{a} = -\oint_{S}\mathbf{P}\cdot \hat{\mathbf{n}}da = -\oint_{S}\sigma_bda$
 
 $\sigma_b$ refers to charges ''on'', but not inside of, a Gaussian surface. Because we are talking about dipoles, there must be an equal an opposite number of charges just below, and so inside, the Gaussian surface. So $Q_{Bound\thinspace enclosed} = -\oint_{S}\sigma_bda$.
-----
 
 ## Historical Origin and Units on $\mathbf{D}$
 
 The units on electric displacement are 
 
-$[\mathbf{D}]=\frac{\mbox{Coulomb}}{\mbox{m}^2}$
+$[\mathbf{D}]=\ds\frac{\mbox{Coulomb}}{\mbox{m}^2}$
 
 whereas for electric field
 
-$[\mathbf{E}]=\frac{\mbox{Newtons}}{\mbox{Coulomb}}$
+$[\mathbf{E}]=\ds\frac{\mbox{Newtons}}{\mbox{Coulomb}}$
 
 In a sense, $\mathbf{D}$ is more natural quantity with regard to its units - because the units in its denominator are $m^2$, it ''seems'' like a quantity that you would want to integrate over an area. But then this leads to the awkward question of "Flux is usually a quantity fo 'stuff' flowing through a surface". According to Gauss' Law for dielectrics, the 'stuff' has units of coulombs. But no actual charge flows through the surface?!" When the laws of electricity were being formulated, Faraday, Maxwell and others were very much influenced by the physics of fluid flow. The word "flux" means flow. In Faraday's 1837 experiment, he noted that it was if charge was induced on the outer sphere and was displaced by lines of force originating on the inner sphere. [https://docs.lib.noaa.gov/rescue/Rarebook_treasures/QC503F211839_PDF/QC503F211839v2.pdf] [https://en.wikisource.org/wiki/Page%3AA_Treatise_on_Electricity_and_Magnetism_-_Volume_1.djvu/100 First reference of Maxwell to "displacement"]
 

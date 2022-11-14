@@ -30,7 +30,7 @@ In the following diagram, the starting point is $a_1$. At this point, the direct
 
 <img src="figures/Field_Lines_Constant_1a.svg" width="100%"/>
 
-The interpretation of this diagram is that at any point, the direction of the force on a particle placed there is downwards. As noted earlier, a common misconception is that the field line corresponds to the path of a particle. To see that this is not true in general, consider a particle released with zero vertical velocity a horizontal velocity at point $a_1$. As shown in the following figure, the trajectory of the particle will be a parabola and the trajectory will cross field lines instead of following along them.
+The interpretation of this diagram is that at any point, the direction of the force on a particle placed there is downwards. As noted earlier, a common misconception is that the field line corresponds to the path of a particle. To see that this is not true in general, consider a particle released with zero vertical velocity a horizontal velocity at point $a_1$. As shown in the following figure, the trajectory of the particle will be a parabola and the trajectory will cross field lines.
 
 <img src="figures/Field_Lines_Constant_1b.svg" width="100%"/>
 

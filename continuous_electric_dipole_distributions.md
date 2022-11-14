@@ -40,7 +40,7 @@ A corresponding equation for $\mathbf{E}$ could also be derived. However, it is 
 
 A solid cylinder of radius $R$ and height $h$ is aligned with the $z$-axis, centered on the origin, and has a polarization $\mathbf{P}=P_o\hat{\mathbf{z}}$.
 
-1. Compute the potential on the $z$--axis using $\displaystyle V=\frac{1}{4\pi\epsilon_o}\int\frac{\mathbf{P}\bfcdot\hat{\textbf{\char"0509}}}{\char"0509^2}d\tau'$.
+1. Compute the potential on the $z$--axis using $\displaystyle V=\frac{1}{4\pi\epsilon_o}\int\frac{\mathbf{P}\bfcdot\hat{\textbf{\char"0509}}}{\char"0509^2}d\tau'$
 
 2. Show that the result for $V(z)$ is idential to the equation for potential for two disks centerd on $z=\pm h/2$ with $\sigma=\pm P_o$.
 
@@ -113,13 +113,17 @@ A solid cylinder of radius $R$ and height $h$ is aligned with the $z$-axis, cent
 
 **Answer**
 
-This problem was solved earlier using the formula $V(\mathbf{r})=\frac{1}{4\pi\epsilon_o}\int\frac{\mathbf{P}\bfcdot\hat{\textbf{\char"0509}}}{\char"0509^2}d\tau'$. Here it is solved using the alternative form for $V$ that involves bound charge densities.
+This problem was solved earlier using the formula 
+
+$$V(\mathbf{r})=\frac{1}{4\pi\epsilon_o}\int\frac{\mathbf{P}\bfcdot\hat{\textbf{\char"0509}}}{\char"0509^2}d\tau'$$
+
+Here it is solved using the alternative form for $V$ that involves bound charge densities.
 
 $\rho_b=-\boldsymbol{\nabla}\bfcdot\mathbf{P}=0$ can be shown by direct calculation using the divergence formula in either cartesian or cylindrical coordinates. Using $\sigma_b\equiv \mathbf{P}\bfcdot \hat{\mathbf{n}}$, on the top/bottom caps $\hat{\mathbf{n}}=\pm \zhat$ so $\sigma_b=\pm P_o$. On the side surface, $\hat{\mathbf{s}}$, so $\sigma_b=0$. 
 
 To find the electric field, we could compute the potential using 
 
-$\displaystyle V(\mathbf{r})=\frac{1}{4\pi\epsilon_o}\oint \frac{\sigma_b}{\char"0509}da'$
+$$V(\mathbf{r})=\frac{1}{4\pi\epsilon_o}\oint \frac{\sigma_b}{\char"0509}da'$$
 
 and then compute $\mathbf{E}=-\boldsymbol{\nabla}V$. Or, we can simply use [the equation for the electric field on the $z$--axis due to a uniformly charged disk](continuous_charge_distributions.html#charge-on-disk)  found previously:
 
