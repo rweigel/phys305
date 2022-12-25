@@ -35,6 +35,113 @@ The Lorentz force law allows us to calculate $\mathbf{F}$ given $\mathbf{v}$.
 # Computing single charge trajectories
 
 
+# Forces on Curved Wires
+
+If a wire is curved, the direction of current changes. The equation used previously
+
+$$\mathbf{F} = I\mathbf{L}\times\mathbf{B}$$
+
+only applies for a straight segment of wire. However, one can use this equation on segments that are infinitesimally small, $d\mathbf{l}$, because such segments are straight. In this case, the force on a segment with  differential length $d\mathbf{l}$ is
+
+$$\mathbf{F}_{\text{on }dl} = Id\mathbf{l}\times\mathbf{B}$$
+
+To determine the total force on the segment, the forces on each $d\mathbf{l}$ must be summed
+
+$$\mathbf{F}= \int I(d\mathbf{l}\times\mathbf{B})$$
+
+where the integration is over the full length of the wire. The main challenge in using this equation is finding an equation for $d\mathbf{l}$. The textbook covers a simple case of a circular wire segment and uses a method that is useful for a limited number of problems. Here, we'll solve the problem for a straight wire in a more general way that will apply to curved wires. (At this point, you may want to review the chapter on line integrals in your Calculus textbook as the following is only a brief summary of that content.)
+
+\input{Lorentz Force Law/figures/Integration_Simple}
+
+First, consider the wire segment shown in the figure above. when $\mathbf{B}=B_o\hat{\mathbf{x}}$. Because it is a straight segment, integration is not actually needed and the equation $\mathbf{F} = I\mathbf{L}\times\mathbf{B}$ can be used. However, we'll use this problem to build up an understanding of how to find an equation for $d\mathbf{l}$. 
+
+In general, one starts with the equation
+
+$$d\mathbf{l}=dx\hat{\mathbf{x}}+dy\hat{\mathbf{y}}$$
+
+and then attempts to write $dy$ in terms of $dx$ (or vice-versa). For this problem, we will write $dy$ in terms of $dx$ and then integrate over the range of $x$ that the wire extends.
+
+From the diagram, we can conclude
+
+$$\frac{dx}{-dy} = \tan \alpha \quad\Rightarrow\quad dy = -dx/\tan \alpha $$
+
+a negative sign is in front of $dy$ because a positive $dx$ corresponds to a negative $dy$.
+
+We now have $d\mathbf{l}$ in terms of $dx$ only because we can write
+
+$$d\mathbf{l}=dx\hat{\mathbf{x}}-(dx/\tan\alpha)\hat{\mathbf{y}}$$
+
+The wire extends from $x=0$ to $x=9L_o\tan\alpha$, which will be used for the limits of integration because we are integrating with respect to $dx$.
+
+We now have all of the information required to evaluate $\mathbf{F}= \int I(d\mathbf{l}\times\mathbf{B})$
+
+$$
+\begin{align*}
+\mathbf{F} & = \int_0^{9L_o\tan\alpha}  I_o\Big(dx\hat{\mathbf{x}}-(dx/\tan\alpha)\hat{\mathbf{y}}\Big)\times(B_o\hat{\mathbf{x}})\\
+& = \int_0^{9L_o\tan\alpha}  I_oB_odx\Big(\hat{\mathbf{x}}\times \hat{\mathbf{x}} -  (1/\tan\alpha)\hat{\mathbf{y}}\times \hat{\mathbf{x}}\Big)\\
+& = \int_0^{9L_o\tan\alpha}  I_oB_odx\Big(- (1/\tan\alpha)\hat{\mathbf{y}}\times \hat{\mathbf{x}}\Big)\\
+& = (I_oB_o/\tan \alpha)\int_0^{9L_o\tan\alpha} dx\hat{\mathbf{z}}\\
+& =9I_oB_oL_o\hat{\mathbf{z}}
+\end{align*}
+$$
+
+This is the same result that you would obtain using $\mathbf{F}=I\mathbf{L}\times\mathbf{B}$ using $I=I_o$, $\mathbf{L}=9L_o\tan\alpha\hat{\mathbf{x}}-9L_o\hat{\mathbf{y}}$, and $\mathbf{B}=B_o\hat{\mathbf{x}}$. Notice that the answer only depends on the the vertical length $9L_o$ shown on the diagram -- the horizontal length and $\alpha$ were not given and neither appear in the answer. Why?
+
+\newpage
+
+## Problem
+
+\input{Lorentz Force Law/figures/Integration_Simple2}
+
+1. Use the integration method used in the above example for the wire segment shown in above to find $\mathbf{F}$ when $\mathbf{B}=B_o\hat{\mathbf{x}}$. Show your work below and provide a diagram to justify relationships between $dx$ and $dy$. Also, verify that your computed $\mathbf{F}$ is consistent with the general direction that you expect from using the right-hand-rule.
+
+   \ifsolutions
+   {\bf Answer: }In general, one starts with the equation
+
+   $$d\mathbf{l}=dx\hat{\mathbf{x}}+dy\hat{\mathbf{y}}$$
+
+   Here we need to modify this equation based on the diagram for $d\mathbf{l}$ shown in Figure 5. (By convention, $dx$ and $dy$ are positive.)
+
+   $$d\mathbf{l}=-dx\hat{\mathbf{x}}-dy\hat{\mathbf{y}}$$
+
+   This gives a direction of $d\mathbf{l}$ consistent with the diagram shown in the figure. Next, we need to write $dy$ in terms of $dx$ (or vice-versa). For this problem, we will write $dy$ in terms of $dx$ and then integrate over the range of $x$ that the wire extends.
+
+   From the diagram, we can conclude
+
+   $$\frac{dx}{dy} = \tan \beta \quad\Rightarrow\quad dy = dx/\tan \beta $$
+
+   That is, a change in $dx$ corresponds to a change in $dy$ with the same sign.
+
+   We now have $d\mathbf{l}$ in terms of $dx$ only. The modified differential length is
+
+   $$d\mathbf{l}= -dx\hat{\mathbf{x}}-(dx/\tan\beta)\hat{\mathbf{y}}$$
+
+   The wire extends from $x=0$ to $x=10L_o\tan\beta$, which will be used for the limits of integration because we are integrating with respect to $dx$.
+
+   We now have all of the information required to evaluate $\mathbf{F}= \int I(d\mathbf{l}\times\mathbf{B})$
+
+   $$
+   \begin{align}
+   \mathbf{F} & = \int_{-10L_o\tan\alpha}^0  I_o\Big(-dx\hat{\mathbf{x}}-(dx/\tan\beta)\hat{\mathbf{y}}\Big)\times(B_o\hat{\mathbf{x}})\\
+   & =  \int_{-10L_o\tan\alpha}^0  I_oB_odx\Big(-\hat{\mathbf{x}}\times \hat{\mathbf{x}}\; - \; (1/\tan\beta)\hat{\mathbf{y}}\times \hat{\mathbf{x}}\Big)\\
+   & =  \int_{-10L_o\tan\alpha}^0   I_oB_odx\Big((-1/\tan\beta)\hat{\mathbf{y}}\times \hat{\mathbf{x}}\Big)\\
+   & = (I_oB_o/\tan \beta)\int_{-10L_o\tan\beta}^0 dx\hat{\mathbf{z}}\\
+   & = 10I_oB_oL_o\hat{\mathbf{z}}
+   \end{align}
+   $$
+
+   To arrive at this result using $\mathbf{F}=I\mathbf{L}\times\mathbf{B}$, use $\mathbf{L}=-10L_o\hat{\mathbf{x}}-10L_o\hat{\mathbf{y}}$ and $\mathbf{B}=B_o\hat{\mathbf{x}}$.
+   \else
+   \vspace{4cm}
+   \fi
+
+2. Use the integration method used in the example for the wire segment shown in the figure above to find $\mathbf{F}$ when $\mathbf{B}=B_o\hat{\mathbf{x}}$. Show your work below and provide a diagram to justify relationships between $dx$ and $dy$. Also, verify that your computed $\mathbf{F}$ is consistent with the general direction that you expect from using the right-hand rule.
+
+   \ifsolutions
+   {\bf Answer:} There is a typo in this problem statement. The question should state ``in the wire segment shown in the figure, except with the current direction reversed''. If you read through the answer to part 1., you should see that the replacement of $I_o$ with $-I_o$ in the final answer is the answer to this question.
+   \else
+   \vspace{4cm}
+   \fi
 # Force on Current Loop
 
 A current loop with a radius of $b$ is parallel to the $x-y$ plane and centered on $z=d$. The current in the loop is  $I$.

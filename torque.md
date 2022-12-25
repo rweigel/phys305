@@ -1,5 +1,5 @@
 
-In the previous section, you considered forces on the current loops when $\mathbf{B}=B_o\hat{\mathbf{z}}$. The forces on all of the current loops that you drew in Problem 1.1 should have been such that the loop did not translate or rotate (the net force should have been zero).
+In the previous section, you considered forces on the current loops when $\mathbf{B}=B_o\hat{\mathbf{z}}$. The forces on all of the current loops that you drew in Problem 1.1 should have been such that the loop did not translate (the net force should have been zero).
 
 A current loop in a constant magnetic field will never experience a net force, and you should have found in the previous section that the net force on each loop was zero. The explanation for this is not covered in your textbook, but you will or have probably encountered this in your Calculus class.
 
