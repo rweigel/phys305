@@ -163,13 +163,13 @@ Note that the loop shown will create a magnetic field. However, when computing t
 
 **Answer**
 
-<img src="figures/Lorentz_Force_Shifted_Ring_Answer.svg"/>
+<img src="figures/Lorentz_Force_Shifted_Ring_Solution.svg" width="100%"/>
 
-1\. At this point (and actually any point on the wire), $\cos\theta=d/r$ and $\sin\theta=b/r$, where $r=\sqrt{b^2+d^2}$. Substitution gives
+1\. At the point on the wire shown on (b) and (c) (and actually any point on the wire), $\cos\theta=d/r$ and $\sin\theta=b/r$, where $r=\sqrt{b^2+d^2}$. Substitution gives
 
 $\displaystyle\mathbf{B}_{ext}=\frac{\mu_o}{4\pi}\frac{m_o}{(b^2+d^2)^2}\left(2d\hat{\mathbf{r}}+b\hat{\boldsymbol{\theta}}\right)$
 
-2\. From part (c) of the figure above, at any point on the wire, the field has components in $+s$ and $+z$ directions (for small enough $\theta$). The cross product of $\hat{\mathbf{s}}$ with $\mathbf{I}$, which is into the page in the view of part (c), gives a $+\zhat$ force.
+2\. From part (c) of the figure above, at any point on the wire, the field has components in $+s$ and $+z$ directions (the $z$ component direction depends on $\theta$, however). The cross product of $\hat{\mathbf{s}}$ with $\mathbf{I}$, which is into the page in the view of part (c), gives a $+\zhat$ force.
 
 3\. The cross product $\mathbf{B}=B_z\zhat$ with $\mathbf{I}$ gives a force in the $-\hat{\mathbf{s}}$ direction on each element of the wire. This force tends to compress the wire. The sum of the forces over the differential element is zero. (If you compress a ball, you are applying a force to each element on the surface, but the net force is zero because the ball does not accelerate.)
 
