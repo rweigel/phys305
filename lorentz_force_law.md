@@ -169,13 +169,15 @@ Note that the loop shown will create a magnetic field. However, when computing t
 
 $\displaystyle\mathbf{B}_{ext}=\frac{\mu_o}{4\pi}\frac{m_o}{(b^2+d^2)^2}\left(2d\hat{\mathbf{r}}+b\hat{\boldsymbol{\theta}}\right)$
 
-2\. From part (c) of the figure above, at any point on the wire, the field has components in $+s$ and $+z$ directions (the $z$ component direction depends on $\theta$, however). The cross product of $\hat{\mathbf{s}}$ with $\mathbf{I}$, which is into the page in the view of part (c), gives a $+\zhat$ force.
+2\. From part (c) of the figure above, and at the position on the wire shown, the field has components in the $+y$ and $+z$ directions (the $z$ component direction depends on $\theta$). The differential force on the point shown is
 
-3\. The cross product $\mathbf{B}=B_z\zhat$ with $\mathbf{I}$ gives a force in the $-\hat{\mathbf{s}}$ direction on each element of the wire. This force tends to compress the wire. The sum of the forces over the differential element is zero. (If you compress a ball, you are applying a force to each element on the surface, but the net force is zero because the ball does not accelerate.)
+$d\mathbf{F}= dl \mathbf{I}\times \mathbf{B}$
 
-4\. The easiest way to solve this is to write $\mathbf{B}\_{ext}$ with cylindrical unit vectors (given that $\mathbf{I}$ was written with a cylindrical unit vector and we need to compute $\mathbf{I}\times \mathbf{B}\_{ext}$). 
+The cross product of $\mathbf{I}=I_o\xhat$ with $\mathbf{B}=B_y\zhat$ gives a force in the $+\hat{\mathbf{z}}$ direction. Try plotting the system looking down at from the $+z$--axis; then ask what the direction of force is due to the $B_y$ at four locations on the loop that are separated by $90^\circ$. You should find that the force due to $B_y$ on all elements of the wire will be upward, and so the net horizontal force will be non--zero. The wire will tend to move in the $+z$ direction.
 
-The given field is
+3\. The cross product of $\mathbf{I}=I_o\xhat$ with $\mathbf{B}=B_z\zhat$ gives a force in the $-\hat{\mathbf{y}}$ direction. Try plotting the system looking down at from the $+z$--axis; then ask what the direction of force is due to the $B_z$ at four locations on the loop that are separated by $90^\circ$. You should find that the force due to $B_z\zhat$ on all elements of the wire will be inward, and so the net horizontal force will be zero. The wire will tend to compress, but it will not translate horizontally.
+
+4\. The given field is
 $\mathbf{B}_{ext}=B_o(2\cos\theta\hat{\mathbf{r}} + \sin\theta\boldsymbol{\hat{\theta}})$, where $B_o\equiv\mu_o m_o/4\pi r^3$ and $r$, $\sin\theta$, and $\cos\theta$ are given in the answer to part 1.
 
 To write $\mathbf{B}_{ext}$ in cylindrical coordinates, one can use a diagram to show that
