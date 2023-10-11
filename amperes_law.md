@@ -37,6 +37,7 @@ The Amperian loop to be used in part 3. of this problem is shown as a dotted lin
 1. Find $\mathbf{B}$ using the equation for the magnetic field due to a large flat current sheet (Equation 5.58 of Griffiths 4th Edition) and superposition.
 2. Sketch $B_x(y)$ in the range $-2t\le y\le 2t$.
 3. Show that $\oint \mathbf{B}\bfcdot d\mathbf{l} = \mu_o I_{encl}$ is satisfied for the Amperian loop shown.
+4. In electrostatics, when one crossed a sheet of current, there was a change in the electric field. This fact was used for boundary value problems. In magnetostatics, when crosses a plane of current, there is a change in the magnetic field. Find an equation for $B_{a\parallel}-B_{b\parallel}$, where $B_{a\parallel}$ is the component of the field that is parallel to the plane just above the blue plane and $B_{b\parallel}$ is the component of the field that is parallel to the plane just below the blue plane.
 
 **Answer**
 
@@ -52,17 +53,20 @@ The Amperian loop to be used in part 3. of this problem is shown as a dotted lin
 
 3. The sign of $I_{encl}$ depends on the direction of integration around the Amperian loop. Choosing clockwise roation, $I_{encl}=+K_od$, where $d$ is the width of the loop. (The sign of $I_{encl}$ is positive if you wrap your fingers around loop in the direction of integration and the flow of current through the loop is in the direction of your thumb.) 
 
-   $$\oint \mathbf{B}\bfcdot d\mathbf{l}=\int_{1}\mathbf{B}\bfcdot d\mathbf{l}+\int_{2}\mathbf{B}\bfcdot d\mathbf{l}+\int_{3}\mathbf{B}\bfcdot d\mathbf{l}+\int_{4}\mathbf{B}\bfcdot d\mathbf{l}$$
-   
+   $$\oint \mathbf{B}\bfcdot d\mathbf{l}=\int_{1}\mathbf{B}\bfcdot d\mathbf{l}+\int_{2}\mathbf{B}\bfcdot d\mathbf{l}+\int_{3}\mathbf{B}\bfcdot 
+   d\mathbf{l}+\int_{4}\mathbf{B}\bfcdot d\mathbf{l}$$
+
    On segments $1$ and $3$, $\mathbf{B}$ is perpendicular to $d\mathbf{l}$, so their integrands are zero. On segment $4$, $\mathbf{B}$ is zero, so its integrand is zero.
-   
+
    On segment $2$, $d\mathbf{l}=-dx\xhat$ and
 
    $$\int_{0}^d\mathbf{B}\bfcdot d\mathbf{l}=\int_{0}^d(-\mu_oK_o\xhat)\bfcdot (-dx\xhat)=\mu_oK_od$$
-   
+
    Therefore, we have shown
-   
+
    $$\left(\oint \mathbf{B}\bfcdot d\mathbf{l} = \mu_oK_od\right) = \Big(\mu_o I_{encl} = \mu_o K_o d\Big)$$
+
+4. $B_{a\parallel}-B_{b\parallel} = 0 - (-\mu_oK_o) = \mu_oK_o$. This equation is consistent with the general boundary equation 2.14(4) of Ramo $\hat{\mathbf{n}} \times (\mathbf{H}_1-\mathbf{H}_2)=\mathbf{K}_f$, where $\hat{\mathbf{n}}$ is the normal to the surface that points into region $1$. A question was raised about the fact that the loop was not centered on the sheet. To use Ampere's law to find the field due to an infinite sheet, one needs to use a centered loop. Ampere's law applies to any closed loop, and so we should find that Ampere's law is satisfied for this loop, even if it could not have been used to find the field due to an infinite sheet.
 
 # Current--Carrying Slab
 
