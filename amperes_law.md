@@ -35,7 +35,7 @@ The Amperian loop to be used in part 3. of this problem is shown as a dotted lin
 <img src="figures/Amperes_Law_Two_Sheets.svg"/>
 
 1. Find $\mathbf{B}$ using the equation for the magnetic field due to a large flat current sheet (Equation 5.58 of Griffiths 4th Edition) and superposition.
-2. Plot $B_x(y)$ in the range $-2t\le y\le 2t$.
+2. Sketch $B_x(y)$ in the range $-2t\le y\le 2t$.
 3. Show that $\oint \mathbf{B}\bfcdot d\mathbf{l} = \mu_o I_{encl}$ is satisfied for the Amperian loop shown.
 
 **Answer**
@@ -46,20 +46,24 @@ The Amperian loop to be used in part 3. of this problem is shown as a dotted lin
   
   This configuration is analagous to two sheets of charge with charge density $\pm \sigma_o$; outside, the field is zero and inside it is $\sigma_o/\epsilon_o$.
 
-3. The sign of $I_{encl}$ depends on the direction of integration around the Amperian loop. Choosing clockwise roation, $I_{encl}=K_od$, where $d$ is the width of the loop. If $1$ is the right segment, $2$ is the lower, $3$ is the left, and $4$ is the top, then
+2. 
 
-   $\oint \mathbf{B}\bfcdot d\mathbf{l}=\int_{1}\mathbf{B}\bfcdot d\mathbf{l}+\int_{2}\mathbf{B}\bfcdot d\mathbf{l}+\int_{3}\mathbf{B}\bfcdot d\mathbf{l}+\int_{4}\mathbf{B}\bfcdot d\mathbf{l}$.
+<img src="figures/Amperes_Law_Two_Sheets_Solution.svg"/>
+
+3. The sign of $I_{encl}$ depends on the direction of integration around the Amperian loop. Choosing clockwise roation, $I_{encl}=+K_od$, where $d$ is the width of the loop. (The sign of $I_{encl}$ is positive if you wrap your fingers around loop in the direction of integration and the flow of current through the loop is in the direction of your thumb.) 
+
+   $$\oint \mathbf{B}\bfcdot d\mathbf{l}=\int_{1}\mathbf{B}\bfcdot d\mathbf{l}+\int_{2}\mathbf{B}\bfcdot d\mathbf{l}+\int_{3}\mathbf{B}\bfcdot d\mathbf{l}+\int_{4}\mathbf{B}\bfcdot d\mathbf{l}$$
    
    On segments $1$ and $3$, $\mathbf{B}$ is perpendicular to $d\mathbf{l}$, so their integrands are zero. On segment $4$, $\mathbf{B}$ is zero, so its integrand is zero.
    
    On segment $2$, $d\mathbf{l}=-dx\xhat$ and
 
-   $\int_{0}^d\mathbf{B}\bfcdot d\mathbf{l}=\int_{0}^d(-\mu_oK_o\xhat)\bfcdot (-dx\xhat)=\mu_oK_od$
+   $$\int_{0}^d\mathbf{B}\bfcdot d\mathbf{l}=\int_{0}^d(-\mu_oK_o\xhat)\bfcdot (-dx\xhat)=\mu_oK_od$$
    
    Therefore, we have shown
    
-   $\left(\oint \mathbf{B}\bfcdot d\mathbf{l} = \mu_oK_od\right) = \left(\mu_o I_{encl} = \mu_o K_o d\right)$
-   
+   $$\left(\oint \mathbf{B}\bfcdot d\mathbf{l} = \mu_oK_od\right) = \Big(\mu_o I_{encl} = \mu_o K_o d\Big)$$
+
 # Current--Carrying Slab
 
 The slab shown on the left in the following figure carries a current density of $J_o\xhat$. A cross section of the slab is shown on the right. Assume $w\gg t$ so that the slab can be treated as infinite in the $x$ and $y$ directions.
@@ -70,19 +74,19 @@ The slab shown on the left in the following figure carries a current density of 
 
 <img src="figures/Amperes_Law_Current_Carrying_Slab.svg" width="90%"/>
 
-%**Answer**
-%
-%1. $z\gt +t/2$, $\mathbf{B}$ in $-\yhat$
-%
-%    $z\lt -t/2$, $\mathbf{B}$ in $+\yhat$ 
-%    
-%2. $\mathbf{B}=0$
-%
-%3. Inside, $B_y=-\mu_oJ_oz$.
-%
-%    $z>+t/2$, $B_y=-\mu_oJ_ot/2$
-%    
-%    $z<-t/2$, $B_y=+\mu_oJ_ot/2$
+**Answer**
+
+1. $z\gt +t/2$, $\mathbf{B}$ in $-\yhat$
+
+   $z\lt -t/2$, $\mathbf{B}$ in $+\yhat$ 
+
+2. $\mathbf{B}=0$
+
+3. Inside, $B_y=-\mu_oJ_oz$.
+
+    $z>+t/2$, $B_y=-\mu_oJ_ot/2$
+    
+    $z<-t/2$, $B_y=+\mu_oJ_ot/2$
 
 # Long solid cylindrical wire
 
