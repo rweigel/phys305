@@ -168,7 +168,7 @@ Finally, combine the two equations
 
 $$\oint \mathbf{E}\_I\cdot d\mathbf{A} = \frac{q_{1i}+q_{2i}+...}{\epsilon_0}$$
 
-$$\oint \mathbf{E}\_O\cdot d\mathbf{A} = \frac{q_{1i}+q_{2i}+...}{\epsilon_0}$$
+$$\oint \mathbf{E}\_O\cdot d\mathbf{A} = 0$$
 
 to give
 

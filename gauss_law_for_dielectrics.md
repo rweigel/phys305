@@ -71,11 +71,15 @@ whereas for electric field
 
 $[\mathbf{E}]=\frac{\mbox{Newtons}}{\mbox{Coulomb}}$
 
-In a sense, $\mathbf{D}$ is more natural quantity with regard to its units - because the units in its denominator are $m^2$, it ''seems'' like a quantity that you would want to integrate over an area. But then this leads to the awkward question of "Flux is usually a quantity fo 'stuff' flowing through a surface". According to Gauss' Law for dielectrics, the 'stuff' has units of coulombs. But no actual charge flows through the surface?!" When the laws of electricity were being formulated, Faraday, Maxwell and others were very much influenced by the physics of fluid flow. The word "flux" means flow. In Faraday's 1837 experiment, he noted that it was if charge was induced on the outer sphere and was displaced by lines of force originating on the inner sphere. [https://docs.lib.noaa.gov/rescue/Rarebook_treasures/QC503F211839_PDF/QC503F211839v2.pdf] [https://en.wikisource.org/wiki/Page%3AA_Treatise_on_Electricity_and_Magnetism_-_Volume_1.djvu/100 First reference of Maxwell to "displacement"]
+In a sense, $\mathbf{D}$ is more natural quantity with regard to its units - because the units in its denominator are $\text{m}^2$, it ''seems'' like a quantity that you would want to integrate over an area. But then this leads to the awkward question of "Flux is usually a quantity fo 'stuff' flowing through a surface". According to Gauss' Law for dielectrics, the 'stuff' has units of coulombs. But no actual charge flows through the surface?!" When the laws of electricity were being formulated, Faraday, Maxwell and others were very much influenced by the physics of fluid flow. The word "flux" means flow. In Faraday's 1837 experiment, he noted that it was if charge was induced on the outer sphere and was displaced by lines of force originating on the inner sphere. First reference of Maxwell to "displacement": https://docs.lib.noaa.gov/rescue/Rarebook_treasures/QC503F211839_PDF/QC503F211839v2.pdf; see also https://en.wikisource.org/wiki/Page%3AA_Treatise_on_Electricity_and_Magnetism_-_Volume_1.djvu/100 and http://www.jpier.org/PIER/pier149/17.14092503.pdf
 
-See also http://www.jpier.org/PIER/pier149/17.14092503.pdf
+This is one of the many reasons why E&M is conceptually difficult. Consider [Lord Kelvin's opinion](https://books.google.com/books?id=mN0TDAAAQBAJ&lpg=PA229&ots=mlKk9PJkji&dq=Nov.%2028%201846%20Faraday%20publication&pg=PA229#v=onepage&q=Nov.%2028%201846%20Faraday%20publication&f=false):
 
-This is one of the many reasons why E&M is conceptually difficult. Consider Lord Kelvin's opinion: "That is why I take plain dynamics. I can get a model in plain dynamics; I cannot in electromagnetics." [http://zapatopi.net/kelvin/quotes/]. Also "I have not had a moment's peace or happiness in respect to electromagnetic theory since Nov. 28 1846." [https://books.google.com/books?id=mN0TDAAAQBAJ&lpg=PA229&ots=mlKk9PJkji&dq=Nov.%2028%201846%20Faraday%20publication&pg=PA229#v=onepage&q=Nov.%2028%201846%20Faraday%20publication&f=false]. See [https://books.google.com/books?id=kdm9nmAkKvIC&lpg=PA1015&dq=November%2028%201846%20kelvin&pg=PA1015#v=onepage&q=November%2028%201846%20kelvin&f=false] for the relevance of the date."
+> That is why I take plain dynamics. I can get a model in plain dynamics; I cannot in electromagnetics. [http://zapatopi.net/kelvin/quotes/].
+
+Also
+
+> "I have not had a moment's peace or happiness in respect to electromagnetic theory since Nov. 28 1846.
 
 # Using Gauss' Law for Dielectrics
 
