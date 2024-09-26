@@ -73,7 +73,7 @@ In reality, the "pure" dipoles are not created by gluing dipoles into and onto a
 
 An external electric field, $\mathbf{E}\_{ext}=E_{ext}\hat{\mathbf{x}}$ is created by two non-conducting sheets of charge.
 
-A dielectric slab is placed between the sheet.
+A dielectric slab is placed between the sheets.
 
 Find $\mathbf{E}_b$ and $\mathbf{E}$ inside the dielectric slab assuming that the dipole density induced in the slab depends on the electric field in the slab according to $\mathbf{P}=\epsilon_o\chi_e\mathbf{E}$, where $\mathbf{E}$ is the total electric field, which is due to the induced bound charge densities and the external electric field.
 
