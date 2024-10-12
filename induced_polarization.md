@@ -732,9 +732,9 @@ In summary,
 
 It may not be obvious how to plot these lines, but the task is simplified by noting that $V$ must be continuous and decreasing as one moves away from the charged cylinder. This is enough information to start a sketch. Note that one often sets the potential to zero at infinity. With a cylinder that is infinite in length, the potential is infinite at infinity. A similar issue occurs with infinite sheets of charge.
 
-=== Dielectric Around Line of Charge ===
+### Dielectric Around Line of Charge
 
-=== Dielectrics Around Shell of Charge ===
+### Dielectrics Around Shell of Charge
 
 A spherical shell of radius $a$ has a free surface density of $\sigma_0$ and is centered at the origin.
 
@@ -863,7 +863,6 @@ To check your answers, you can use Gauss' Law with a surface inside each of the 
 [[Image:sphere.png|400px]]
 
 ### Dielectrics around a Point Charge
-
 
 A positive point charge is at the origin. Three spherical dielectrics are also centered on the origin. They have
 
