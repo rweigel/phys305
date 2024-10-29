@@ -18,7 +18,7 @@ In the limit $b/r\rightarrow 0$, the current loop is referred to as a **perfect 
 
 Starting with the equation for $\mathbf{B}$ above for a magnetic dipole in spherical coordinates with spherical unit vectors, show that
 
-$$\mathbf{B}=\frac{\mu_o}{4\pi}\frac{\pi b^2}{r^5}\left(3xz\hat{\mathbf{x}}+3yz\hat{\mathbf{y}}+(3z^2-r^2)\hat{\mathbf{z}}\right)$$
+$$\mathbf{B}=\frac{\mu_o}{4\pi}\frac{I\pi b^2}{r^5}\left(3xz\hat{\mathbf{x}}+3yz\hat{\mathbf{y}}+(3z^2-r^2)\hat{\mathbf{z}}\right)$$
 
 %**Answer**
 
